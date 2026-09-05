@@ -95,6 +95,8 @@ if performance.get('status') != 'complete' or set(performance.get('measurements'
 audit = json.loads((ROOT / 'reports/delivery-readiness-audit.json').read_text())
 if audit.get('status') != 'ready_for_packaging':
     raise SystemExit('A completed requirement-by-requirement readiness audit is required')
+if any(audit.get(name + '_commit') != snapshot_manifest['commits'][name] for name in ['service', 'eval']):
+    raise SystemExit('Readiness audit source commits differ from selected snapshot')
 
 secrets = []
 for line in (ROOT / '.env').read_text().splitlines():
@@ -116,6 +118,15 @@ def digest(path, check_secrets=False):
                 raise ValueError('Configured credential found in selected artifact: ' + str(path))
             tail = (tail + chunk)[-overlap:] if overlap else b''
     return h.hexdigest()
+
+
+if audit.get('audit_script_sha256') != digest(ROOT / 'scripts/audit-delivery-readiness.py'):
+    raise SystemExit('Readiness audit implementation changed; rerun it')
+if not audit.get('evidence_sha256'):
+    raise SystemExit('Readiness audit must bind the reviewed evidence files')
+for name, expected in audit['evidence_sha256'].items():
+    if digest(ROOT / name) != expected:
+        raise SystemExit('Evidence changed after readiness audit: ' + name)
 
 
 # Git object payloads must also be inspected: compressed packfiles cannot be
