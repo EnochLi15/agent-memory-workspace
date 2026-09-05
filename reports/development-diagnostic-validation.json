@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-09-05T07:37:47.221807+00:00",
+  "source_directory": "eval/artifacts/dev-v6-U3-memops/diagnostic-hypotheses-v2",
+  "summary": {
+    "planned": 17,
+    "counts": {
+      "answer_misuse": 10,
+      "judge_or_rubric_disagreement": 4,
+      "missing_supporting_evidence": 2,
+      "time_or_state": 1
+    },
+    "scope": "Model-generated evidence-bound hypotheses, not verified causal attribution; runtime failures remain in error-analysis."
+  },
+  "verified_quote_substrings": true,
+  "accepted_quotes": 17,
+  "rejected_quote_proposals": 17,
+  "rows_with_schema_warnings": 10,
+  "source_sha256": "85eb1919de6dc81054e907bfd9ff852104a4950fc5409db7c270c5375f48e608",
+  "scope": "Posthoc model hypotheses only; substring validation does not verify the diagnostic causal explanation. Rejected proposals are retained separately and must not be cited as evidence."
+}

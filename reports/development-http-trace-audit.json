@@ -1,0 +1,315 @@
+{
+  "checked_at": "2026-09-05T07:37:47.240630+00:00",
+  "runs": [
+    {
+      "run_id": "dev-v6-B1-memops",
+      "checked_at": "2026-09-05T07:36:59.135Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "c6a09ecde49ad14b7c9e08ee7c74f39a727042c2f58f946048ae93e056c07913",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "b776d02afc8e58337a48ea3dac5aa3febb32cde57bfd0a1222a8daa0a478b41d",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B1-locomo",
+      "checked_at": "2026-09-05T07:36:58.913Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "386659a67278572a245391620a6f53b5b70296b52ba830811776f6b1314621a7",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "e3c5f9a5ed123894eb5b78fadfadd5aeb805c7852e38fc1655c2a07ebf07293c",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B3-memops",
+      "checked_at": "2026-09-05T07:36:59.982Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "ac3572233ab0de1df2b9ee6afe039fc05d341a957e6612a585475682c479cedb",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "f92e82a5a9721ab1e4cd2fb4b0e97acf5fb46f28f911225023d17e1e60100b5a",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B3-locomo",
+      "checked_at": "2026-09-05T07:36:59.751Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "0ef3c89e64debe41855d8d904c6497dae70221af8c4650d3171b09b8355cb01b",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "6816e0aaac2fa85af78c9758cd2654746096bcb10943055f9ba124619b884e57",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-U3-memops",
+      "checked_at": "2026-09-05T07:37:01.327Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "39cbafce569c1112fbf63709be8111afc31b1ad28d4a1707df7b2bef808da3f6",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-U3-locomo",
+      "checked_at": "2026-09-05T07:37:01.054Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "463d9571a4b6f22b6cc92751faaf4badef01d60b4a05fd18ab4b9bc21860c9d5",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B0-locomo",
+      "checked_at": "2026-09-05T07:36:58.499Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "b66f8c00a158d1185cc922db5f274303a48a6dbf52564a7e8c057e87bab24598",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "07dd2d9f91643ef830c309ca7f82e47eb96046c2cfe084307e71a920c5074d90",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B0-memops",
+      "checked_at": "2026-09-05T07:36:58.702Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "5b2f0096054185fc84335d7630faa09e2a94606c4020ce5a0d3e0c1c2c60eb00",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "f8723a42b69de052191a92a38f0f2af68cfac9aee3bee8ab0d667e485c0b79c3",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B2-locomo",
+      "checked_at": "2026-09-05T07:36:59.331Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "dd83ff21ee64979d46201d1376312c0e8e12d1de87d17cb7008d43bf7c75ec9c",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "7799f3101957587914213492a6114992ed0d8ff25d4a0713265d8e0f77145be4",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B2-memops",
+      "checked_at": "2026-09-05T07:36:59.521Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "38bd26a4a03fc9dd380a4d8949040d62f3cebdd562e12ceb93c429e08a2d65dc",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "fa361f8f2d99d14d3828a9e61d3a876361b4712bb55f33f23c770b2b3fb84873",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-U2-locomo",
+      "checked_at": "2026-09-05T07:37:00.631Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "085f15f9cd1a583bbebb7a10e166f00eb8268246a4c6ad440b08811d97312add",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "6816e0aaac2fa85af78c9758cd2654746096bcb10943055f9ba124619b884e57",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-U2-memops",
+      "checked_at": "2026-09-05T07:37:00.835Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "f8bd57b00f27553da352d630dd5e8ea2b4e7d459463d9136f2036d022576bc17",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "f92e82a5a9721ab1e4cd2fb4b0e97acf5fb46f28f911225023d17e1e60100b5a",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B4-locomo",
+      "checked_at": "2026-09-05T07:37:00.123Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "d2e26015cb5d4e6e2f1e1885608d71057f518f908534960665ca1f0471660d3b",
+        "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+        "requests": "6816e0aaac2fa85af78c9758cd2654746096bcb10943055f9ba124619b884e57",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 92,
+        "observed_add_attempts": 92,
+        "distinct_observed_adds": 92,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    },
+    {
+      "run_id": "dev-v6-B4-memops",
+      "checked_at": "2026-09-05T07:37:00.379Z",
+      "passed": true,
+      "hashes": {
+        "manifest": "88f90ff943a2c0bc798dfd5ea07f88009b546d3dc1225c16b0d1f7599d5724ff",
+        "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+        "requests": "f92e82a5a9721ab1e4cd2fb4b0e97acf5fb46f28f911225023d17e1e60100b5a",
+        "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+        "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "counts": {
+        "planned_questions": 30,
+        "dataset_questions_in_selected_samples": 30,
+        "expected_add_chunks": 259,
+        "observed_add_attempts": 259,
+        "distinct_observed_adds": 259,
+        "observed_searches": 30
+      },
+      "violations": [],
+      "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+    }
+  ],
+  "all_passed": true,
+  "scope": "Finished development traces only. Rerun audit-http-trace.mjs on final heldout and remaining comparisons after completion. Answer field whitelist is source-reviewed, not an outbound network capture."
+}
