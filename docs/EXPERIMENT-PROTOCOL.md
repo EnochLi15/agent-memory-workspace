@@ -56,3 +56,14 @@ python3 scripts/grouped-statistics.py --run-id holdout-v2-U3-memops --data .data
 `python/upstream/memops/operation_metrics.py` 保留原版判分逻辑。通过 `.venv/bin/python scripts/memops-diagnostic.py --run-id ID` 在已配置环境中分析保存答案，输出 lifecycle 子指标，且不访问记忆服务或重做 Answer。该口径和本地 rubric 代理分开报告；开发集中相同答案已观察到明显判分分歧，详见 `reports/development-judge-comparison.json`（总控仓库）。
 
 无说话人标签敏感性实验为 dev-v5-unlabelled-U3-locomo，匹配旧 dev-v5-U3-locomo 的生产源码与模型；两者输入 hash 有意不同。它仅说明该输入转换的敏感性，不能充当最新候选的同输入算法对比。
+
+## 收尾数据审计与用量汇总
+
+全部34组运行完成后，在总控仓库执行以下只读统计命令：
+
+```sh
+python3 scripts/audit-completed-runs.py --require-all
+python3 scripts/summarize-costs.py --require-complete
+```
+
+前者逐条核对HTTP输入、终态问题集合、选项类型及普通Answer源码边界，补充时延尾部、证据条数和实际预算函数估算；后者汇总服务模型日志与已有资源采样。严格开关会拒绝在实验未完成时生成最终审计。省略开关时仅生成显式标为不完整的快照；原版mem0来源ID和未记录账单的范围限制写入产物。
