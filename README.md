@@ -4,7 +4,7 @@
 
 ## 快速运行
 
-宿主机：Node 24.18.0、Docker。使用 `nvm use`，然后：
+宿主机：Node 24.18.0、Python 3、Docker。使用 `nvm use`，然后：
 
 ```sh
 make init
