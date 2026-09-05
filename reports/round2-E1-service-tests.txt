@@ -1,0 +1,59 @@
+
+> agent-memory-service@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ SIGKILL during a real SQLite transaction rolls back erasure, vectors, source, FTS and receipt (141.751917ms)
+✔ queued add deadlines return promptly and cannot commit late model responses (668.233375ms)
+✔ raw-only experiment preserves source roles and old statements without claiming lifecycle (254.022ms)
+✔ same-time conflict stays explicit; later state resolves it; as-of honors day boundary (56.714916ms)
+✔ new raw replay and differently named fact cannot recover erased value (44.657709ms)
+✔ erasure invalidates transitive derived facts but retains independent same-message neighbor (12.1055ms)
+✔ explicit restore grants only new value and leaves old replay blocked (9.321125ms)
+✔ correction retracts false history; scoped current relation removal preserves real history (13.941792ms)
+✔ embedding space mismatch rolls back request and original source (7.981209ms)
+✔ invalid extraction schema and wrong vector dimensions degrade without fabricated vectors (8.087042ms)
+✔ fabricated source is replaced only by grounded recovery; unknown operation ID is rejected (17.263917ms)
+✔ bounded entity expansion retrieves the second hop without inventing a conclusion (11.457792ms)
+✔ querying with another embedding space uses lexical fallback rather than mixing vectors (6.775166ms)
+✔ a valid but unrelated target ID cannot authorize deletion (15.116625ms)
+✔ partially recovered raw evidence becomes invisible when a linked fact is superseded or erased (21.814292ms)
+✔ forget closes alternate representations and leaves a value-free operation trace (13.96325ms)
+✔ a model plan alias becomes a tentative event without a second inference (4.97ms)
+✔ derived evidence follows the current or historical visibility of its dependencies (13.790459ms)
+✔ streaming extraction aggregates chunks and rejects premature EOF (32.425375ms)
+✔ polite retirement intents survive model validation and erase evidence while retaining neighbors (25.899292ms)
+✔ retirement paraphrase is handled even when the model emits empty arrays (10.878958ms)
+✔ unresolved real commands cannot degrade to a successful empty operation list (6.248375ms)
+✔ one covered command cannot hide a second unresolved command (6.717875ms)
+✔ negation, quoted imperative, conditional and third-party request preserve stored values (10.31575ms)
+✔ unrelated quotation does not veto a separate real command (6.745042ms)
+✔ same-chunk handles bind only earlier sourced facts and are erased in the transaction (9.909042ms)
+✔ HTTP success means retirement took effect; unresolved deletion returns failure atomically (136.327791ms)
+✔ same-value records in another scope survive deletion and mixed-source redaction (9.559042ms)
+✔ repeating a completed property deletion is a safe no-op but an unrelated missing target is not (12.499625ms)
+✔ only prescribed routes, exact receipt, validation and top_k boundary (235.179167ms)
+✔ strict tenant separation including names and path-like identities (85.510541ms)
+✔ query options neither become evidence nor cross the tenant boundary (95.753083ms)
+✔ idempotency and payload conflict (71.649ms)
+✔ current state excludes old value, explicit history preserves it (72.0515ms)
+✔ late historical state cannot replace newer state (69.358416ms)
+✔ tentative plan and multiple hobbies do not overwrite confirmed facts (72.278083ms)
+✔ forget suppresses all retrieval paths, retains neighbor and resists replay (73.36ms)
+✔ forget it and do not forget are not destructive (66.656917ms)
+✔ one message can update a retained fact and forget a different property (68.507709ms)
+✔ a fact introduced and forgotten within one add never becomes searchable (73.759791ms)
+✔ descriptions of human forgetfulness are evidence, not memory deletion commands (78.266959ms)
+✔ named assistant participant and Chinese evidence stay distinct (69.176375ms)
+✔ concurrent user writes are serialized and remain searchable (105.962584ms)
+✔ committed state survives restart including forgotten content (125.260125ms)
+✔ quoted and hypothetical forgetting never mutates real memory (66.039125ms)
+✔ fault at each transactional boundary leaves no facts, source, index or receipt (17.81125ms)
+✔ lost HTTP response after commit remains idempotent across a service restart (214.566708ms)
+ℹ tests 47
+ℹ suites 0
+ℹ pass 47
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1982.75675

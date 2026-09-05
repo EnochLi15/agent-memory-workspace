@@ -1,0 +1,66 @@
+{
+  "checked_at": "2026-09-05T11:53:17.283Z",
+  "scope": "Deterministic Extractor.prepare probe with a stubbed model, synthetic data, no network and no storage writes. Demonstrates a failure mechanism; does not reconstruct the unlogged model response of the historical benchmark.",
+  "source_sha256": {
+    "extraction": "c367695d56b86f7d2236821c867266062ae961d836832846b187468311f3baf7",
+    "compiled_extraction": "6295b690e4307faea184c98fd310c6e1b2030abc48ba4f517ba2cce1cfbae4d6",
+    "probe": "dfe323c4e9101c96139ba9b4fb5a9fbc611ede154bf5eeb933348025857e7713"
+  },
+  "rows": [
+    {
+      "content": "Forget the Acme quote entirely.",
+      "stub_model_calls": 1,
+      "returned_operations": [
+        {
+          "type": "forget",
+          "target_ids": [
+            "known-quote"
+          ]
+        }
+      ],
+      "degraded": [],
+      "returned_fact_count": 0
+    },
+    {
+      "content": "Please forget the Acme quote entirely.",
+      "stub_model_calls": 1,
+      "returned_operations": [
+        {
+          "type": "forget",
+          "target_ids": [
+            "known-quote"
+          ]
+        }
+      ],
+      "degraded": [],
+      "returned_fact_count": 0
+    },
+    {
+      "content": "You can forget the Acme quote entirely.",
+      "stub_model_calls": 2,
+      "returned_operations": [],
+      "degraded": [
+        "extraction_offline"
+      ],
+      "returned_fact_count": 0
+    },
+    {
+      "content": "I do not need the Acme quote stored anymore.",
+      "stub_model_calls": 2,
+      "returned_operations": [],
+      "degraded": [
+        "extraction_offline"
+      ],
+      "returned_fact_count": 1
+    },
+    {
+      "content": "Do not forget the Acme quote.",
+      "stub_model_calls": 2,
+      "returned_operations": [],
+      "degraded": [
+        "extraction_offline"
+      ],
+      "returned_fact_count": 0
+    }
+  ]
+}

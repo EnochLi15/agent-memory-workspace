@@ -1,0 +1,26 @@
+
+> agent-memory-eval@0.1.0 test
+> node --import tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p 'test_*.py'
+
+✔ chunk limits preserve order, role and session marker without injecting answer fields (0.955958ms)
+✔ canonical contract checksum validates distributed schema (0.750833ms)
+✔ HTTP client rejects wrong receipt echo and unsorted results (35.196ms)
+✔ report keeps infrastructure failures in denominator and de-duplicates resumed judgments (3.436541ms)
+✔ streamed model completion survives UTF-8 and event boundary splits (14.582042ms)
+✔ MemOps pair IDs distinguish evaluation settings and individual question instances (1.221959ms)
+✔ resume refuses a changed service commit before making another HTTP request (608.363333ms)
+{"event":"sample_complete","sample":"s","judged":1,"planned":1}
+✔ transient add failure retries the identical request and records each attempt (1229.940917ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2218.726458
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.121s
+
+OK

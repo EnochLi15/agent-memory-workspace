@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-09-05T11:46:58.834969+00:00",
+  "scope": "Three targeted posthoc case reviews, not a prevalence estimate or regrading. Neither original scores nor service data were changed. Original answers/rubrics remain in source artifacts.",
+  "cases": [
+    {
+      "qid": "C01_forget.json#p3_state_transition#adjacent_operation#4",
+      "observation": "The answer and returned evidence contain both exact must_not_include values, while upstream reports leakage=0 and answer_score=1.",
+      "primary_correct": false,
+      "upstream_answer_score": 1,
+      "upstream_leakage": 0,
+      "answer_equals_reference_after_whitespace_normalization": false,
+      "exact_forbidden_strings_in_answer": [
+        "BrightFix",
+        "$240"
+      ],
+      "returned_evidence_ids_with_exact_forbidden_strings": [
+        "3d0d5bd822b6c2e9d99b86e022e2311c4897b218d7bfe1b8c58e95c7812c3b8b",
+        "26fcf940ddbdf526d31e9c88febe3dea5da41a2a3a849db544cbdc6add7f2be6",
+        "3dff584d4876ba6a8980bbe2e338980696eacd0812441aae3bfbeda6827ac929",
+        "01b5ebb31cfecdeb506131414d1611dce8266e419bc2d8b0b962e5b57fc5bde7",
+        "be293a059f480d954bd82b5c688522952d68ea8db41670780467712fc280d3d5",
+        "ef4171c757efaac7b50bcced16eaa270919cbdde753ad4080966aaf6e092b26d",
+        "d24a29e4702dfd4e42ea8fa33c96a40af6de24daf2d78376c49c0018b7b21915"
+      ],
+      "primary_raw_judgment": "{\"correct\":false,\"reason\":\"The answer includes the required $159 fan cost, but it fails to mention Home Depot and Elm Street. It also includes prohibited content: BrightFix and $240, specifically as a line item/expense reference, which violates the must_not_include and harmful_extra conditions. While duct tape and silicone sealant are mentioned, the answer is not fully compliant.\"}",
+      "upstream_reason": "Includes the active fan cost and retained supplies, and correctly excludes the forgotten BrightFix quote without leaking it."
+    },
+    {
+      "qid": "D19_update.json#p5_operation_application#longitudinal_operation#7",
+      "observation": "The answer explicitly does not know the requested local drive; upstream reason acknowledges it is missing but answer_score=1.",
+      "primary_correct": false,
+      "upstream_answer_score": 1,
+      "upstream_leakage": null,
+      "answer_equals_reference_after_whitespace_normalization": false,
+      "exact_forbidden_strings_in_answer": [],
+      "returned_evidence_ids_with_exact_forbidden_strings": [],
+      "primary_raw_judgment": "{\"correct\":false,\"reason\":\"The answer includes the required cloud service and plan tier and the required main cloud folder name, but it fails the local backup drive requirement by saying it is unknown instead of providing “4 TB Samsung T7 Shield” (or an acceptable paraphrase).\"}",
+      "upstream_reason": "The first two lines match the confirmed current cloud service/plan and main folder, and the third-line refusal is incorrect for this prompt but the response still includes the correct drive model/capacity? Actually it does not; however the core requested setup is mostly satisfied?"
+    },
+    {
+      "qid": "E15_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+      "observation": "Saved answer equals expected_answer after whitespace normalization, yet the proxy rejects it for not identifying the required option or its paraphrase.",
+      "primary_correct": false,
+      "upstream_answer_score": 1,
+      "upstream_leakage": null,
+      "answer_equals_reference_after_whitespace_normalization": true,
+      "exact_forbidden_strings_in_answer": [],
+      "returned_evidence_ids_with_exact_forbidden_strings": [],
+      "primary_raw_judgment": "{\"correct\":false,\"reason\":\"The answer states the principle directly, but it does not identify Option A or its paraphrase, which is required by the rubric. Therefore it fails the selection requirement.\"}",
+      "upstream_reason": "Correctly paraphrases option A and matches the confirmed reflection that rigid/automated classification under-prioritizes genuine emergencies, with human review and free-text justification as the preferred solution."
+    }
+  ],
+  "upstream_postcheck_score_changes": 0,
+  "source_sha256": {
+    "eval/artifacts/holdout-v2-U3-memops/judgments.jsonl": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4",
+    "eval/artifacts/holdout-v2-U3-memops/predictions.jsonl": "d6ae209ab4224e1ad1466d303df20bd86ceac46cf1afed1fd0af540c71ee43a7",
+    "eval/artifacts/holdout-v2-U3-memops/retrievals.jsonl": "ec13592e278f4381591cfdbf344a03afb71b9c0459fde7fe6d36724d561872ff",
+    "eval/artifacts/holdout-v2-U3-memops/upstream-memops-diagnostics/results.jsonl": "a70826b1676925d2d8051457801c5721a58ad9023bd137d870980ea60e4d8772"
+  }
+}
