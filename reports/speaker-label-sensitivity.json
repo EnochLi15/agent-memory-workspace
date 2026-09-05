@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-09-05T08:28:56.520854+00:00",
+  "runs": [
+    {
+      "run_id": "dev-v5-U3-locomo",
+      "service_commit": "13b83ffff73973a65de7f969bdcb0231ecbe815b",
+      "dataset_sha256": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+      "correct": 17,
+      "planned": 30,
+      "input_sha256": {
+        "manifest.json": "9c5259a99452524eda1e0c106a5ffd761ef09f70e25064271e3858fc90cf23db",
+        "judgments.jsonl": "96b495f45de08521d3b72dcda330dbe731147a4f0b43d5a9691fb148960e255f",
+        "retrievals.jsonl": "349e93b3d0042139541ecc49fb9b9cacdcddc492322b401fb9f39a354ac5fdc3"
+      }
+    },
+    {
+      "run_id": "dev-v5-unlabelled-U3-locomo",
+      "service_commit": "13b83ffff73973a65de7f969bdcb0231ecbe815b",
+      "dataset_sha256": "ec55024f235d702a8d3e68c8b1d8e529a1c527e9d186254852989d3b28964f81",
+      "correct": 12,
+      "planned": 30,
+      "input_sha256": {
+        "manifest.json": "bf2eaafaf84226e2ae340ec97c285d2bed9f24cabb89f3366f360ee685d46a8a",
+        "judgments.jsonl": "377d873e098e3b73c9d36df6dc200ab1f02bdad806ce88b33c480575df94b08a",
+        "retrievals.jsonl": "7d6b75d2765337b4cfc7ddbdaec11a3331d216d73e749e738f72566566db3f34"
+      }
+    }
+  ],
+  "same_service_src_tree": "0a2d7a0292a9fa56da4f5c772fa6dff500ac1b26",
+  "matched_evaluation_fields": [
+    "samples",
+    "planned_questions",
+    "answer_model",
+    "answer_inference",
+    "answer_base",
+    "judge_model",
+    "judge_kind",
+    "judge_base",
+    "answer_prompt_sha256",
+    "rubric_prompt_sha256",
+    "top_k",
+    "chunk_messages",
+    "chunk_words"
+  ],
+  "group_units": 2,
+  "unlabelled_minus_labelled": -0.16666666666666666,
+  "group_bootstrap_95": [
+    -0.18518518518518517,
+    0.0
+  ],
+  "changes": [
+    {
+      "qid": "conv-44#q0085",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0022",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0001",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0024",
+      "direction": "labelled_wrong_to_unlabelled_correct"
+    },
+    {
+      "qid": "conv-44#q0048",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0104",
+      "direction": "labelled_wrong_to_unlabelled_correct"
+    },
+    {
+      "qid": "conv-44#q0077",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0018",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    },
+    {
+      "qid": "conv-44#q0055",
+      "direction": "labelled_correct_to_unlabelled_wrong"
+    }
+  ],
+  "scope": "Completed earlier-source input sensitivity experiment, not latest-candidate algorithm ablation. Dataset content intentionally differs by speaker-name prefix removal. Same question/gold selection and scoring settings; independent ingestion and generation may also vary. Two development conversations give very limited generalization evidence."
+}

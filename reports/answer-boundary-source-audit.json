@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T07:39:08.043710+00:00",
+  "checked_at": "2026-09-05T08:27:47.372354+00:00",
   "reviewed_file": "eval/src/runner.ts",
   "reviewed_source_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
   "ordinary_answer_user_fields": [
@@ -66,7 +66,11 @@
       "eval_commit": "b7cdcd6bf0aa4f16a47b76bee4444effc94eaff3",
       "runs": [
         "dev-v6-B5-locomo",
-        "dev-v6-B5-memops"
+        "dev-v6-B5-memops",
+        "dev-v6-B6-locomo",
+        "dev-v6-B6-memops",
+        "dev-v6-no_lifecycle-locomo",
+        "dev-v6-no_lifecycle-memops"
       ],
       "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
       "same_as_reviewed_runner": true
@@ -79,7 +83,30 @@
       ],
       "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
       "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "c4c11ba2373e6efff8ff40b6b7f349f4684aa8cd",
+      "runs": [
+        "dev-v6-no_hop-locomo",
+        "dev-v6-no_hop-memops",
+        "dev-v6-no_rerank-locomo",
+        "dev-v6-no_rerank-memops",
+        "current-source"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "c960f176f62945c581f7c5af3cac9e76aa569b33",
+      "runs": [
+        "dev-v6-no_raw-locomo",
+        "dev-v6-no_raw-memops",
+        "dev-v6-no_time-locomo",
+        "dev-v6-no_time-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
     }
   ],
-  "scope": "Source audit and byte equivalence for each listed evaluator commit. This is not a packet capture or proof about unlogged external infrastructure. Future comparison runs must be checked at final freeze."
+  "scope": "Source audit and byte equivalence across all currently launched campaign evaluator commits and latest delivery source. This is not a network capture or proof about unlogged external infrastructure. Recheck future launches at final freeze."
 }

@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-09-05T08:26:22.079396+00:00",
+  "source_snapshot": {
+    "commits": {
+      "service": "842b13062feeacb80ad59d07170ceb1c378eb681",
+      "eval": "c4c11ba2373e6efff8ff40b6b7f349f4684aa8cd",
+      ".": "2d9301e710e546fa216dfdb8ec9ec44a02eb9f2e"
+    },
+    "recursive_clone": "passed",
+    "submodules": " c4c11ba2373e6efff8ff40b6b7f349f4684aa8cd eval (heads/main)\n 842b13062feeacb80ad59d07170ceb1c378eb681 service (heads/main)\n"
+  },
+  "commands": [
+    "make init test baseline-init eval-init build",
+    "docker compose up -d --no-build --wait --wait-timeout 90",
+    "independent eval container contract",
+    "independent eval container run fixtures/smoke.json",
+    "eval image Python statistics tests --network none"
+  ],
+  "service_tests": 37,
+  "eval_node_tests": 8,
+  "eval_python_tests": 2,
+  "baseline_http_guard_tests": 2,
+  "upstream_split_parity": "passed",
+  "compose_project": "comp-memory-final-functional",
+  "fresh_volume": true,
+  "contract": {
+    "contract": "passed",
+    "base_url": "http://memory-service:8088",
+    "user_id": "contract-1788596563112",
+    "checks": [
+      "health",
+      "echo",
+      "idempotency",
+      "read-after-write",
+      "tenant-isolation",
+      "top-k",
+      "three-routes",
+      "validation",
+      "conflict",
+      "forget-all-paths",
+      "retained-neighbor"
+    ]
+  },
+  "container_smoke": {
+    "planned": 4,
+    "judged": 4,
+    "correct": 4,
+    "scope": "offline service with remote Answer/rubric Judge; synthetic integration evidence, not benchmark quality"
+  },
+  "images": {
+    "service": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+    "eval": "sha256:e18ff29587142192094052861d405f159fe6bcc7c21718832e6c37e743dde02b"
+  },
+  "logs_sha256": {
+    "artifacts/final-functional-validation/agent-memory-final-functional-clone.log": "466bdff1ae10a6ef2b3020abdd218155b967b26473980af9eba862e634a1c68f",
+    "artifacts/final-functional-validation/agent-memory-final-clone-start.log": "8a613204e19c136e9983bee078cdeaa61a8af8e6cf36804699445a9e2123693c",
+    "artifacts/final-functional-validation/agent-memory-final-clone-contract.log": "5dfeb7ac1efb3fb1728085ca907517ef5d337d6549b4e514dbb2a92a8f06b2a4",
+    "artifacts/final-functional-validation/agent-memory-final-clone-smoke.log": "b13384c92e604c158741cc99018129f066cee748cd4b23667fc28d29c7d7c4f8",
+    "artifacts/final-functional-validation/agent-memory-container-grouped-tests.log": "99d5474f913652fd77e6d7475755e595028241d6d4841a757915dd2090c54bf6"
+  }
+}

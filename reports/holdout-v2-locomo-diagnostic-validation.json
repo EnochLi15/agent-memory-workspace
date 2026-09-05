@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-09-05T08:26:56.430873+00:00",
+  "source_directory": "eval/artifacts/holdout-v2-U3-locomo/diagnostic-hypotheses",
+  "summary": {
+    "planned": 344,
+    "counts": {
+      "missing_supporting_evidence": 149,
+      "answer_misuse": 82,
+      "judge_or_rubric_disagreement": 97,
+      "multi_fact_or_list_incomplete": 5,
+      "time_or_state": 10,
+      "subject_or_attribution": 1
+    },
+    "scope": "Model-generated evidence-bound hypotheses, not verified causal attribution; runtime failures remain in error-analysis."
+  },
+  "qid_coverage_exact": true,
+  "verified_quote_substrings": true,
+  "accepted_quotes": 281,
+  "rejected_quote_proposals": 406,
+  "rows_with_schema_warnings": 218,
+  "input_sha256": {
+    "eval/artifacts/holdout-v2-U3-locomo/diagnostic-hypotheses/questions.jsonl": "11d1ccea12b1d5b2332fab185b4c691c53c45389d094d171b7809f2b42a467b9",
+    "eval/artifacts/holdout-v2-U3-locomo/diagnostic-hypotheses/summary.json": "5f508f35e8ebc4547ab123859fd351a9f6d2380afb9ab44fc12c9349ceaf7c3a",
+    "eval/artifacts/holdout-v2-U3-locomo/diagnostic-hypotheses/manifest.json": "fb20d553ec358ca2a9c07c3e9f6b1085e5da107c29d124cade0509e82c97d902",
+    "eval/artifacts/holdout-v2-U3-locomo/retrievals.jsonl": "9fd92d9bc44dffc714d59eb03f9196f27790740093e62f3fa0d091d7730524bd",
+    "eval/artifacts/holdout-v2-U3-locomo/judgments.jsonl": "0e845a0b0fe58aada93aa15a6b9cc5be50f5fdb5d4777a9a9060bf9a84089573"
+  },
+  "scope": "Posthoc model hypotheses only; exact substring checks do not verify causal explanations or change any scores. Rejected quote proposals remain separate and must not be cited as evidence."
+}
