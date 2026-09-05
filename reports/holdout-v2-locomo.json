@@ -1,0 +1,148 @@
+{
+  "checked_at": "2026-09-05T08:18:50.443810+00:00",
+  "source_run": "holdout-v2-U3-locomo",
+  "finished_at": "2026-09-05T08:13:02.289Z",
+  "metrics": {
+    "sample_bootstrap_95": [
+      0.21951219512195122,
+      0.3605015673981191
+    ],
+    "evidence_coverage": {
+      "questions": 498,
+      "any_hit": 0.5502008032128514,
+      "all_hit": 0.36947791164658633,
+      "mean_fraction": 0.4636838671211455,
+      "scope": "original source ID recall, not semantic entailment"
+    },
+    "mode": "upstream-reproduction",
+    "planned": 500,
+    "judged": 500,
+    "correct": 156,
+    "accuracy_over_planned": 0.312,
+    "judged_accuracy": 0.312,
+    "incomplete": 0,
+    "slices": {
+      "locomo/3": {
+        "total": 55,
+        "judged": 55,
+        "correct": 22
+      },
+      "locomo/1": {
+        "total": 149,
+        "judged": 149,
+        "correct": 46
+      },
+      "locomo/2": {
+        "total": 148,
+        "judged": 148,
+        "correct": 9
+      },
+      "locomo/4": {
+        "total": 148,
+        "judged": 148,
+        "correct": 79
+      }
+    },
+    "add_ms": {
+      "p50": 19294.53916699998,
+      "p95": 56233.746208,
+      "max": 86465.62108300067
+    },
+    "search_ms": {
+      "p50": 10880.661625000648,
+      "p95": 19708.74766600004,
+      "max": 36463.94137499994
+    }
+  },
+  "grouped_statistics": {
+    "run_id": "holdout-v2-U3-locomo",
+    "planned": 500,
+    "judged": 500,
+    "correct": 156,
+    "group_units": 8,
+    "group_question_counts": {
+      "conv-42": 179,
+      "conv-49": 107,
+      "conv-30": 32,
+      "conv-41": 52,
+      "conv-50": 62,
+      "conv-47": 26,
+      "conv-26": 33,
+      "conv-43": 9
+    },
+    "group_bootstrap_95": [
+      0.20555555555555555,
+      0.3613053613053613
+    ],
+    "seed": 20260905,
+    "draws": 1000,
+    "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy.",
+    "scope": "Supplement to original per-sample metrics. Dataset group_id binds MemOps background variants together. Errors remain non-correct in the planned denominator; not an official competition score.",
+    "hashes": {
+      "dataset": "111784f360e5f428304ce3f156f0afe1fce0e9e2b9cc7f988878ab68de0e162d",
+      "manifest": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
+      "judgments": "0e845a0b0fe58aada93aa15a6b9cc5be50f5fdb5d4777a9a9060bf9a84089573",
+      "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+    }
+  },
+  "trace_audit": {
+    "run_id": "holdout-v2-U3-locomo",
+    "checked_at": "2026-09-05T08:18:50.151Z",
+    "passed": true,
+    "hashes": {
+      "manifest": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
+      "dataset": "111784f360e5f428304ce3f156f0afe1fce0e9e2b9cc7f988878ab68de0e162d",
+      "requests": "4b0efc3b962ed26af64ac0cc5980d4a672f5191dec78468bf51efd7ed3eeafd6",
+      "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+      "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+    },
+    "counts": {
+      "planned_questions": 500,
+      "dataset_questions_in_selected_samples": 500,
+      "expected_add_chunks": 307,
+      "observed_add_attempts": 307,
+      "distinct_observed_adds": 307,
+      "observed_searches": 500
+    },
+    "violations": [],
+    "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+  },
+  "error_inventory": {
+    "run_id": "holdout-v2-U3-locomo",
+    "planned": 500,
+    "wrong_judged": 344,
+    "unjudged": 0,
+    "observed_buckets": {
+      "no_gold_source_id_recalled": 195,
+      "partial_gold_source_ids_recalled": 63,
+      "all_gold_source_ids_recalled_but_wrong": 86
+    },
+    "scope": "Observed pipeline status and original source-ID recall only. These labels do not establish semantic support, causal blame, or Judge correctness. No model or service calls.",
+    "input_hashes": {
+      "manifest.json": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
+      "judgments.jsonl": "0e845a0b0fe58aada93aa15a6b9cc5be50f5fdb5d4777a9a9060bf9a84089573",
+      "retrievals.jsonl": "9fd92d9bc44dffc714d59eb03f9196f27790740093e62f3fa0d091d7730524bd",
+      "predictions.jsonl": "45eeacabddaba837ebbd23785f00e211e0ec18919bf0eac4c06d1b93cfb17367"
+    },
+    "observed_stages": {
+      "completed_answer_judgment": 344
+    },
+    "stage_scope": "Stage inferred from terminal status and persisted retrieval presence; search_or_retrieval_processing includes HTTP, response validation and local retrieval processing, not necessarily a service algorithm failure.",
+    "analysis_script_sha256": "6f868a8fad0b07224252d0022d2fe7f48be510c3496620ad5c29dc496a5fb642"
+  },
+  "category_labels": {
+    "1": "multi-hop",
+    "2": "temporal",
+    "3": "open-domain",
+    "4": "single-hop"
+  },
+  "category_mapping_reference": "https://github.com/snap-research/locomo/issues/29",
+  "hashes": {
+    "manifest.json": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
+    "metrics.json": "7cd337f6337158707ee0b5eeff8bd902aa88ebef2c09d428b85b2f587058b876",
+    "grouped-statistics/summary.json": "eb97923a18420971fa16f08dbbff6e619d10667e75f3f85281ba609a05f267dd",
+    "http-trace-audit.json": "bd18856be7878c826f7eeeaa458ba827374ba39fa96ab98df4c8539e6106da18",
+    "error-analysis/summary.json": "4e6243f2af3e6296e74068ccc29d849b6113c74769058a709423dfed0543661a"
+  },
+  "scope": "All 500 planned public heldout LoCoMo questions attempted and judged. Qwen3:14b Q4_K_M with pinned refined Judge; public conversion and subset, not an official platform result. Source-ID recall buckets are not causal diagnoses."
+}
