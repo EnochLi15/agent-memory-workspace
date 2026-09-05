@@ -1,14 +1,9 @@
 {
-  "checked_at": "2026-09-05T08:48:10.265844+00:00",
-  "complete_matrix": false,
+  "checked_at": "2026-09-05T09:02:31.800337+00:00",
+  "complete_matrix": true,
   "expected_runs": 34,
-  "audited_runs": 33,
-  "pending": [
-    {
-      "run_id": "holdout-v2-U3-memops",
-      "status": "running"
-    }
-  ],
+  "audited_runs": 34,
+  "pending": [],
   "reviewed_runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
   "token_estimator_sha256": "346dfb2ab986523e37e86ee24b1bbb6fa98bc359bab507fb5766b94c30cb4af5",
   "audit_script_sha256": "eb4fe6993d7ca5ccfd60f03352c25addb33330bd07b2c794bb500842796a067b",
@@ -17,7 +12,7 @@
       "run_id": "dev-v6-U3-locomo",
       "http_trace": {
         "run_id": "dev-v6-U3-locomo",
-        "checked_at": "2026-09-05T08:48:05.833Z",
+        "checked_at": "2026-09-05T09:02:26.766Z",
         "passed": true,
         "hashes": {
           "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
@@ -105,7 +100,7 @@
       "run_id": "dev-v6-U3-memops",
       "http_trace": {
         "run_id": "dev-v6-U3-memops",
-        "checked_at": "2026-09-05T08:48:05.978Z",
+        "checked_at": "2026-09-05T09:02:26.916Z",
         "passed": true,
         "hashes": {
           "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
@@ -194,7 +189,7 @@
       "run_id": "dev-v6-B2-locomo",
       "http_trace": {
         "run_id": "dev-v6-B2-locomo",
-        "checked_at": "2026-09-05T08:48:06.098Z",
+        "checked_at": "2026-09-05T09:02:27.036Z",
         "passed": true,
         "hashes": {
           "manifest": "dd83ff21ee64979d46201d1376312c0e8e12d1de87d17cb7008d43bf7c75ec9c",
@@ -282,7 +277,7 @@
       "run_id": "dev-v6-B2-memops",
       "http_trace": {
         "run_id": "dev-v6-B2-memops",
-        "checked_at": "2026-09-05T08:48:06.237Z",
+        "checked_at": "2026-09-05T09:02:27.175Z",
         "passed": true,
         "hashes": {
           "manifest": "38bd26a4a03fc9dd380a4d8949040d62f3cebdd562e12ceb93c429e08a2d65dc",
@@ -370,7 +365,7 @@
       "run_id": "dev-v6-B0-locomo",
       "http_trace": {
         "run_id": "dev-v6-B0-locomo",
-        "checked_at": "2026-09-05T08:48:06.364Z",
+        "checked_at": "2026-09-05T09:02:27.297Z",
         "passed": true,
         "hashes": {
           "manifest": "b66f8c00a158d1185cc922db5f274303a48a6dbf52564a7e8c057e87bab24598",
@@ -458,7 +453,7 @@
       "run_id": "dev-v6-B0-memops",
       "http_trace": {
         "run_id": "dev-v6-B0-memops",
-        "checked_at": "2026-09-05T08:48:06.506Z",
+        "checked_at": "2026-09-05T09:02:27.435Z",
         "passed": true,
         "hashes": {
           "manifest": "5b2f0096054185fc84335d7630faa09e2a94606c4020ce5a0d3e0c1c2c60eb00",
@@ -547,7 +542,7 @@
       "run_id": "dev-v6-B1-locomo",
       "http_trace": {
         "run_id": "dev-v6-B1-locomo",
-        "checked_at": "2026-09-05T08:48:06.630Z",
+        "checked_at": "2026-09-05T09:02:27.559Z",
         "passed": true,
         "hashes": {
           "manifest": "386659a67278572a245391620a6f53b5b70296b52ba830811776f6b1314621a7",
@@ -635,7 +630,7 @@
       "run_id": "dev-v6-B1-memops",
       "http_trace": {
         "run_id": "dev-v6-B1-memops",
-        "checked_at": "2026-09-05T08:48:06.771Z",
+        "checked_at": "2026-09-05T09:02:27.698Z",
         "passed": true,
         "hashes": {
           "manifest": "c6a09ecde49ad14b7c9e08ee7c74f39a727042c2f58f946048ae93e056c07913",
@@ -723,7 +718,7 @@
       "run_id": "dev-v6-U2-locomo",
       "http_trace": {
         "run_id": "dev-v6-U2-locomo",
-        "checked_at": "2026-09-05T08:48:06.893Z",
+        "checked_at": "2026-09-05T09:02:27.818Z",
         "passed": true,
         "hashes": {
           "manifest": "085f15f9cd1a583bbebb7a10e166f00eb8268246a4c6ad440b08811d97312add",
@@ -811,7 +806,7 @@
       "run_id": "dev-v6-U2-memops",
       "http_trace": {
         "run_id": "dev-v6-U2-memops",
-        "checked_at": "2026-09-05T08:48:07.030Z",
+        "checked_at": "2026-09-05T09:02:27.959Z",
         "passed": true,
         "hashes": {
           "manifest": "f8bd57b00f27553da352d630dd5e8ea2b4e7d459463d9136f2036d022576bc17",
@@ -899,7 +894,7 @@
       "run_id": "dev-v6-B3-locomo",
       "http_trace": {
         "run_id": "dev-v6-B3-locomo",
-        "checked_at": "2026-09-05T08:48:07.150Z",
+        "checked_at": "2026-09-05T09:02:28.080Z",
         "passed": true,
         "hashes": {
           "manifest": "0ef3c89e64debe41855d8d904c6497dae70221af8c4650d3171b09b8355cb01b",
@@ -987,7 +982,7 @@
       "run_id": "dev-v6-B3-memops",
       "http_trace": {
         "run_id": "dev-v6-B3-memops",
-        "checked_at": "2026-09-05T08:48:07.286Z",
+        "checked_at": "2026-09-05T09:02:28.218Z",
         "passed": true,
         "hashes": {
           "manifest": "ac3572233ab0de1df2b9ee6afe039fc05d341a957e6612a585475682c479cedb",
@@ -1075,7 +1070,7 @@
       "run_id": "dev-v6-B4-locomo",
       "http_trace": {
         "run_id": "dev-v6-B4-locomo",
-        "checked_at": "2026-09-05T08:48:07.417Z",
+        "checked_at": "2026-09-05T09:02:28.336Z",
         "passed": true,
         "hashes": {
           "manifest": "d2e26015cb5d4e6e2f1e1885608d71057f518f908534960665ca1f0471660d3b",
@@ -1163,7 +1158,7 @@
       "run_id": "dev-v6-B4-memops",
       "http_trace": {
         "run_id": "dev-v6-B4-memops",
-        "checked_at": "2026-09-05T08:48:07.556Z",
+        "checked_at": "2026-09-05T09:02:28.472Z",
         "passed": true,
         "hashes": {
           "manifest": "88f90ff943a2c0bc798dfd5ea07f88009b546d3dc1225c16b0d1f7599d5724ff",
@@ -1251,7 +1246,7 @@
       "run_id": "dev-v6-B5-locomo",
       "http_trace": {
         "run_id": "dev-v6-B5-locomo",
-        "checked_at": "2026-09-05T08:48:07.677Z",
+        "checked_at": "2026-09-05T09:02:28.593Z",
         "passed": true,
         "hashes": {
           "manifest": "477ab7a1f0e71f3920f1e0661c4487986b938482c4c82d6c5ac7d11202d46280",
@@ -1339,7 +1334,7 @@
       "run_id": "dev-v6-B5-memops",
       "http_trace": {
         "run_id": "dev-v6-B5-memops",
-        "checked_at": "2026-09-05T08:48:07.813Z",
+        "checked_at": "2026-09-05T09:02:28.732Z",
         "passed": true,
         "hashes": {
           "manifest": "7988f7e19929e4374a0ba67a19dbece2e5a1fb8fad17fb8e279109fafae110c6",
@@ -1427,7 +1422,7 @@
       "run_id": "dev-v6-B6-locomo",
       "http_trace": {
         "run_id": "dev-v6-B6-locomo",
-        "checked_at": "2026-09-05T08:48:07.933Z",
+        "checked_at": "2026-09-05T09:02:28.851Z",
         "passed": true,
         "hashes": {
           "manifest": "62dbc11f92073d9cec7258ac194a366ed24724a5a3814a8fb0c96c7f7dea8e79",
@@ -1515,7 +1510,7 @@
       "run_id": "dev-v6-B6-memops",
       "http_trace": {
         "run_id": "dev-v6-B6-memops",
-        "checked_at": "2026-09-05T08:48:08.073Z",
+        "checked_at": "2026-09-05T09:02:28.990Z",
         "passed": true,
         "hashes": {
           "manifest": "b09ed25d7a3356911692be0a52b0a19047b8e63ed7cc8f269693fdc00269dc3a",
@@ -1603,7 +1598,7 @@
       "run_id": "dev-v6-no_lifecycle-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_lifecycle-locomo",
-        "checked_at": "2026-09-05T08:48:08.195Z",
+        "checked_at": "2026-09-05T09:02:29.117Z",
         "passed": true,
         "hashes": {
           "manifest": "b6f90870e1ea68ce38b4af00982f9e27a7042fa39ee69964399b4f7830f4de2e",
@@ -1691,7 +1686,7 @@
       "run_id": "dev-v6-no_lifecycle-memops",
       "http_trace": {
         "run_id": "dev-v6-no_lifecycle-memops",
-        "checked_at": "2026-09-05T08:48:08.336Z",
+        "checked_at": "2026-09-05T09:02:29.254Z",
         "passed": true,
         "hashes": {
           "manifest": "94421abeb8880ed6727bd4f51a486c73e140767088811e90cd4e8f5c85309e25",
@@ -1779,7 +1774,7 @@
       "run_id": "dev-v6-no_raw-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_raw-locomo",
-        "checked_at": "2026-09-05T08:48:08.457Z",
+        "checked_at": "2026-09-05T09:02:29.374Z",
         "passed": true,
         "hashes": {
           "manifest": "243b3af8ece609ebfb595ad3b8ed4ce2e826e208cf117fec66372733cfb596c4",
@@ -1867,7 +1862,7 @@
       "run_id": "dev-v6-no_raw-memops",
       "http_trace": {
         "run_id": "dev-v6-no_raw-memops",
-        "checked_at": "2026-09-05T08:48:08.600Z",
+        "checked_at": "2026-09-05T09:02:29.512Z",
         "passed": true,
         "hashes": {
           "manifest": "2c08e8aaada52042b2d8887a20546ed5ccc0b45c39b460e59f1c5d8bce84ecdb",
@@ -1955,7 +1950,7 @@
       "run_id": "dev-v6-no_time-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_time-locomo",
-        "checked_at": "2026-09-05T08:48:08.722Z",
+        "checked_at": "2026-09-05T09:02:29.629Z",
         "passed": true,
         "hashes": {
           "manifest": "ec5b7ceb9904a4d0d2f7e9f3e38e1cca15758286581b63d64e6fc3e16c4b1cf4",
@@ -2043,7 +2038,7 @@
       "run_id": "dev-v6-no_time-memops",
       "http_trace": {
         "run_id": "dev-v6-no_time-memops",
-        "checked_at": "2026-09-05T08:48:08.859Z",
+        "checked_at": "2026-09-05T09:02:29.764Z",
         "passed": true,
         "hashes": {
           "manifest": "9ec91cc66c5b0a2f190307c0c5d573ba73520da06564decbb69c11f9f9886325",
@@ -2131,7 +2126,7 @@
       "run_id": "dev-v6-no_hop-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_hop-locomo",
-        "checked_at": "2026-09-05T08:48:08.982Z",
+        "checked_at": "2026-09-05T09:02:29.883Z",
         "passed": true,
         "hashes": {
           "manifest": "57ca27de1e06032b26dd5f00801f7c56d86ec3b8740058b4fe8c4cf592071907",
@@ -2219,7 +2214,7 @@
       "run_id": "dev-v6-no_hop-memops",
       "http_trace": {
         "run_id": "dev-v6-no_hop-memops",
-        "checked_at": "2026-09-05T08:48:09.124Z",
+        "checked_at": "2026-09-05T09:02:30.020Z",
         "passed": true,
         "hashes": {
           "manifest": "d1d7fab45e87a31536f8e7f67315c2748731536d1e79736ea1b46e72e5b93f98",
@@ -2307,7 +2302,7 @@
       "run_id": "dev-v6-no_rerank-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_rerank-locomo",
-        "checked_at": "2026-09-05T08:48:09.259Z",
+        "checked_at": "2026-09-05T09:02:30.145Z",
         "passed": true,
         "hashes": {
           "manifest": "dca32ee0f6bdeaa2216b49069432e8cc2db0d5af22352537fcdfdf8e550d845b",
@@ -2395,7 +2390,7 @@
       "run_id": "dev-v6-no_rerank-memops",
       "http_trace": {
         "run_id": "dev-v6-no_rerank-memops",
-        "checked_at": "2026-09-05T08:48:09.407Z",
+        "checked_at": "2026-09-05T09:02:30.280Z",
         "passed": true,
         "hashes": {
           "manifest": "c96101d226ea36cdb9a673308d08b6707d9711dfe1f3943e2d936e27a00fa06e",
@@ -2483,7 +2478,7 @@
       "run_id": "baseline-v7-U0-locomo",
       "http_trace": {
         "run_id": "baseline-v7-U0-locomo",
-        "checked_at": "2026-09-05T08:48:09.555Z",
+        "checked_at": "2026-09-05T09:02:30.398Z",
         "passed": true,
         "hashes": {
           "manifest": "135d23790dade6b7d3afe86fa6bb23f6c81dfc7fe23a325330644a87f7da4d67",
@@ -2573,7 +2568,7 @@
       "run_id": "baseline-v7-U0-memops",
       "http_trace": {
         "run_id": "baseline-v7-U0-memops",
-        "checked_at": "2026-09-05T08:48:09.688Z",
+        "checked_at": "2026-09-05T09:02:30.532Z",
         "passed": true,
         "hashes": {
           "manifest": "e4fed9b2f00755cdc2746f181944e76ff06ee2d50f2f3b6906c9044114491d19",
@@ -2662,7 +2657,7 @@
       "run_id": "baseline-v7-U1-locomo",
       "http_trace": {
         "run_id": "baseline-v7-U1-locomo",
-        "checked_at": "2026-09-05T08:48:09.806Z",
+        "checked_at": "2026-09-05T09:02:30.647Z",
         "passed": true,
         "hashes": {
           "manifest": "d64aae34513b6a798d2834c6d3758ba68341da49df2a8135e9f86bb16264372b",
@@ -2752,7 +2747,7 @@
       "run_id": "baseline-v7-U1-memops",
       "http_trace": {
         "run_id": "baseline-v7-U1-memops",
-        "checked_at": "2026-09-05T08:48:09.939Z",
+        "checked_at": "2026-09-05T09:02:30.785Z",
         "passed": true,
         "hashes": {
           "manifest": "cbbab72eac9156e41e19783c97d7a77f552714723aa465e91e0785e059b01280",
@@ -2841,7 +2836,7 @@
       "run_id": "holdout-v2-U3-locomo",
       "http_trace": {
         "run_id": "holdout-v2-U3-locomo",
-        "checked_at": "2026-09-05T08:48:10.075Z",
+        "checked_at": "2026-09-05T09:02:30.922Z",
         "passed": true,
         "hashes": {
           "manifest": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
@@ -2923,6 +2918,96 @@
         "ingest.jsonl": "327a8c7f5518a5cf3c5863aef679cabc0012bc0c465f267090e019e1f85eb942",
         "retrievals.jsonl": "9fd92d9bc44dffc714d59eb03f9196f27790740093e62f3fa0d091d7730524bd",
         "judgments.jsonl": "0e845a0b0fe58aada93aa15a6b9cc5be50f5fdb5d4777a9a9060bf9a84089573"
+      }
+    },
+    {
+      "run_id": "holdout-v2-U3-memops",
+      "http_trace": {
+        "run_id": "holdout-v2-U3-memops",
+        "checked_at": "2026-09-05T09:02:31.507Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+          "dataset": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+          "requests": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 500,
+          "dataset_questions_in_selected_samples": 500,
+          "expected_add_chunks": 2794,
+          "observed_add_attempts": 2613,
+          "distinct_observed_adds": 2613,
+          "observed_searches": 464
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 332,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "judged": 464,
+        "service_error": 36
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 2609,
+        "failed": 4
+      },
+      "add_attempt_ms": {
+        "n": 2613,
+        "mean": 7994.224478544191,
+        "p50": 4209.812334000133,
+        "p95": 26981.58633399941,
+        "p99": 73618.43987499923,
+        "max": 103652.06441699993
+      },
+      "successful_search_ms": {
+        "n": 464,
+        "mean": 10791.772897984903,
+        "p50": 10638.071167000104,
+        "p95": 16841.616500000004,
+        "p99": 21029.946125000017,
+        "max": 28397.27212499967
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 464,
+          "mean": 31.814655172413794,
+          "p50": 32,
+          "p95": 32,
+          "p99": 32,
+          "max": 32
+        },
+        "estimated_tokens": {
+          "n": 464,
+          "mean": 3868.450431034483,
+          "p50": 3864,
+          "p95": 4576,
+          "p99": 4801,
+          "max": 5039
+        },
+        "utf8_bytes": {
+          "n": 464,
+          "mean": 11594.717672413793,
+          "p50": 11578,
+          "p95": 13721,
+          "p99": 14400,
+          "max": 15143
+        },
+        "exact_duplicate_fraction_within_response": 0.0,
+        "token_scope": "Actual service estimateTokens function including Han adjustment. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "Source-ID coverage is available as an identifier diagnostic, not entailment."
+      },
+      "input_sha256": {
+        "manifest.json": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+        "requests.jsonl": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+        "ingest.jsonl": "96ff2396572948e35bdf2fff80768dc1702001d4658ee5240f8c0dcdea04a1e4",
+        "retrievals.jsonl": "ec13592e278f4381591cfdbf344a03afb71b9c0459fde7fe6d36724d561872ff",
+        "judgments.jsonl": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4"
       }
     }
   ],

@@ -1,0 +1,361 @@
+{
+  "checked_at": "2026-09-05T09:04:01.199638+00:00",
+  "run_id": "holdout-v2-U3-memops",
+  "primary_run_complete": true,
+  "metrics": {
+    "sample_bootstrap_95": [
+      0.2974559686888454,
+      0.40476190476190477
+    ],
+    "evidence_coverage": "N/A: dataset has no mapped source IDs",
+    "mode": "proxy",
+    "planned": 500,
+    "judged": 464,
+    "correct": 175,
+    "accuracy_over_planned": 0.35,
+    "judged_accuracy": 0.3771551724137931,
+    "incomplete": 36,
+    "slices": {
+      "memops/Forget/CandidateDisambiguation": {
+        "total": 21,
+        "judged": 21,
+        "correct": 14
+      },
+      "memops/Update/CandidateDisambiguation": {
+        "total": 20,
+        "judged": 18,
+        "correct": 11
+      },
+      "memops/Forget/OperationApplication": {
+        "total": 21,
+        "judged": 21,
+        "correct": 8
+      },
+      "memops/Update/OperationApplication": {
+        "total": 20,
+        "judged": 18,
+        "correct": 7
+      },
+      "memops/Forget/OperationTrace": {
+        "total": 21,
+        "judged": 21,
+        "correct": 0
+      },
+      "memops/Forget/StateTransition": {
+        "total": 21,
+        "judged": 21,
+        "correct": 0
+      },
+      "memops/Update/OperationTrace": {
+        "total": 20,
+        "judged": 18,
+        "correct": 1
+      },
+      "memops/Update/TargetBinding": {
+        "total": 20,
+        "judged": 18,
+        "correct": 9
+      },
+      "memops/Forget/TargetBinding": {
+        "total": 21,
+        "judged": 21,
+        "correct": 7
+      },
+      "memops/Reflect/CandidateDisambiguation": {
+        "total": 21,
+        "judged": 17,
+        "correct": 16
+      },
+      "memops/Reflect/OperationApplication": {
+        "total": 21,
+        "judged": 17,
+        "correct": 6
+      },
+      "memops/Reflect/OperationTrace": {
+        "total": 21,
+        "judged": 17,
+        "correct": 4
+      },
+      "memops/Reflect/StateTransition": {
+        "total": 21,
+        "judged": 17,
+        "correct": 6
+      },
+      "memops/Reflect/TargetBinding": {
+        "total": 21,
+        "judged": 17,
+        "correct": 6
+      },
+      "memops/TrajectoryOps/OperationApplication": {
+        "total": 21,
+        "judged": 21,
+        "correct": 8
+      },
+      "memops/TrajectoryOps/OperationTrace": {
+        "total": 21,
+        "judged": 21,
+        "correct": 0
+      },
+      "memops/Remember/CandidateDisambiguation": {
+        "total": 21,
+        "judged": 19,
+        "correct": 17
+      },
+      "memops/TrajectoryOps/StateTrajectory": {
+        "total": 21,
+        "judged": 21,
+        "correct": 3
+      },
+      "memops/Remember/OperationApplication": {
+        "total": 21,
+        "judged": 19,
+        "correct": 11
+      },
+      "memops/TrajectoryOps/StateTransition": {
+        "total": 21,
+        "judged": 21,
+        "correct": 15
+      },
+      "memops/Remember/OperationTrace": {
+        "total": 21,
+        "judged": 19,
+        "correct": 3
+      },
+      "memops/TrajectoryOps/TargetBinding": {
+        "total": 21,
+        "judged": 21,
+        "correct": 6
+      },
+      "memops/Remember/StateTransition": {
+        "total": 21,
+        "judged": 21,
+        "correct": 2
+      },
+      "memops/Remember/TargetBinding": {
+        "total": 21,
+        "judged": 19,
+        "correct": 15
+      }
+    },
+    "add_ms": {
+      "p50": 4209.812334000133,
+      "p95": 26981.58633399941,
+      "max": 103652.06441699993
+    },
+    "search_ms": {
+      "p50": 10638.071167000104,
+      "p95": 16841.616500000004,
+      "max": 28397.27212499967
+    }
+  },
+  "group_statistics": {
+    "run_id": "holdout-v2-U3-memops",
+    "planned": 500,
+    "judged": 464,
+    "correct": 175,
+    "group_units": 43,
+    "group_question_counts": {
+      "C01": 10,
+      "D19": 8,
+      "A02": 8,
+      "D05": 10,
+      "C28": 10,
+      "D25": 12,
+      "C23": 10,
+      "D22": 8,
+      "A14": 10,
+      "C27": 10,
+      "C10": 18,
+      "B24": 22,
+      "A06": 18,
+      "A29": 8,
+      "D20": 20,
+      "C02": 8,
+      "B02": 10,
+      "D21": 10,
+      "F08": 18,
+      "A01": 14,
+      "E15": 22,
+      "F06": 18,
+      "E11": 10,
+      "D01": 10,
+      "F15": 10,
+      "D24": 22,
+      "A28": 10,
+      "A16": 23,
+      "C04": 10,
+      "B28": 10,
+      "A04": 10,
+      "E13": 12,
+      "B11": 8,
+      "C31": 10,
+      "E07": 10,
+      "C06": 10,
+      "F01": 5,
+      "E03": 10,
+      "A13": 5,
+      "C30": 8,
+      "F17": 9,
+      "D17": 8,
+      "B01": 8
+    },
+    "group_bootstrap_95": [
+      0.2927835051546392,
+      0.40418118466898956
+    ],
+    "seed": 20260905,
+    "draws": 1000,
+    "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy.",
+    "scope": "Supplement to original per-sample metrics. Dataset group_id binds MemOps background variants together. Errors remain non-correct in the planned denominator; not an official competition score.",
+    "hashes": {
+      "dataset": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+      "manifest": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+      "judgments": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4",
+      "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+    }
+  },
+  "operation_slices": {
+    "Forget": {
+      "total": 105,
+      "judged": 105,
+      "correct": 29
+    },
+    "Update": {
+      "total": 80,
+      "judged": 72,
+      "correct": 28
+    },
+    "Reflect": {
+      "total": 105,
+      "judged": 85,
+      "correct": 38
+    },
+    "TrajectoryOps": {
+      "total": 105,
+      "judged": 105,
+      "correct": 32
+    },
+    "Remember": {
+      "total": 105,
+      "judged": 97,
+      "correct": 48
+    }
+  },
+  "question_type_slices": {
+    "CandidateDisambiguation": {
+      "total": 83,
+      "judged": 75,
+      "correct": 58
+    },
+    "OperationApplication": {
+      "total": 104,
+      "judged": 96,
+      "correct": 40
+    },
+    "OperationTrace": {
+      "total": 104,
+      "judged": 96,
+      "correct": 8
+    },
+    "StateTransition": {
+      "total": 84,
+      "judged": 80,
+      "correct": 23
+    },
+    "TargetBinding": {
+      "total": 104,
+      "judged": 96,
+      "correct": 43
+    },
+    "StateTrajectory": {
+      "total": 21,
+      "judged": 21,
+      "correct": 3
+    }
+  },
+  "failed_add_attempts": [
+    {
+      "request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+      "elapsed_ms": 9280.303208000027
+    },
+    {
+      "request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+      "elapsed_ms": 46818.26208399981
+    },
+    {
+      "request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+      "elapsed_ms": 37729.2247080002
+    },
+    {
+      "request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+      "elapsed_ms": 15851.164124999195
+    }
+  ],
+  "http_trace_audit": {
+    "run_id": "holdout-v2-U3-memops",
+    "checked_at": "2026-09-05T09:02:31.507Z",
+    "passed": true,
+    "hashes": {
+      "manifest": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+      "dataset": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+      "requests": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+      "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+      "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+    },
+    "counts": {
+      "planned_questions": 500,
+      "dataset_questions_in_selected_samples": 500,
+      "expected_add_chunks": 2794,
+      "observed_add_attempts": 2613,
+      "distinct_observed_adds": 2613,
+      "observed_searches": 464
+    },
+    "violations": [],
+    "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+  },
+  "error_analysis": {
+    "run_id": "holdout-v2-U3-memops",
+    "planned": 500,
+    "wrong_judged": 289,
+    "unjudged": 36,
+    "observed_buckets": {
+      "wrong_without_source_id_diagnostic": 289,
+      "service_error": 36
+    },
+    "scope": "Observed pipeline status and original source-ID recall only. These labels do not establish semantic support, causal blame, or Judge correctness. No model or service calls.",
+    "input_hashes": {
+      "manifest.json": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+      "judgments.jsonl": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4",
+      "retrievals.jsonl": "ec13592e278f4381591cfdbf344a03afb71b9c0459fde7fe6d36724d561872ff",
+      "predictions.jsonl": "d6ae209ab4224e1ad1466d303df20bd86ceac46cf1afed1fd0af540c71ee43a7"
+    },
+    "observed_stages": {
+      "completed_answer_judgment": 289,
+      "ingestion": 36
+    },
+    "stage_scope": "Stage inferred from terminal status and persisted retrieval presence; search_or_retrieval_processing includes HTTP, response validation and local retrieval processing, not necessarily a service algorithm failure.",
+    "analysis_script_sha256": "6f868a8fad0b07224252d0022d2fe7f48be510c3496620ad5c29dc496a5fb642"
+  },
+  "input_sha256": {
+    "manifest.json": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+    "metrics.json": "2f5706d8765a6f3bba3c75f0c2aa0d9507cbe2786f84b2491e8c4634ae951247",
+    "judgments.jsonl": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4",
+    "predictions.jsonl": "d6ae209ab4224e1ad1466d303df20bd86ceac46cf1afed1fd0af540c71ee43a7",
+    "retrievals.jsonl": "ec13592e278f4381591cfdbf344a03afb71b9c0459fde7fe6d36724d561872ff",
+    "ingest.jsonl": "96ff2396572948e35bdf2fff80768dc1702001d4658ee5240f8c0dcdea04a1e4",
+    "requests.jsonl": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017"
+  },
+  "scope": "Complete configured rubric-proxy primary evaluation. 36 ingestion-failed questions remain in the 500 planned denominator; 464 answers exist for separate upstream diagnostics. No original source-ID mapping is available for MemOps. Not an official competition score."
+}
