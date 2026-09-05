@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-05T08:43:21.231241+00:00",
+  "eval_commit": "8f5be514b7dec1e5d93a6fc831e2c768c093ec83",
+  "upstreams": [
+    {
+      "benchmark": "locomo",
+      "repository": "https://github.com/mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "files": {
+        "llm_judge.py": "a24d3480e003d985175b1889d6de208585fa694cdb1f02a3739f3cda30a9bb2a",
+        "llm_judge_runtime.py": "6fa81ca9b0347293f81666b794788b18e70018dadb5793895a8f0e53437d5790",
+        "LICENSE.txt": "6ff87f48bc663294a93fdfe0f8d0d1b89cb51653be8edb0c85b76b4880496d70",
+        "NOTICE": "b2bb3289e34653b903d49a0d0051ae856e7a7170ca3cf7f80a6efdbcb5dad3b7"
+      }
+    },
+    {
+      "benchmark": "memops",
+      "repository": "https://github.com/MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "files": {
+        "operation_metrics.py": "17c24362c174239eb7ef5e543bc651afed60ae445a4becd49acf24f6d3c646f0",
+        "LICENSE": "44321bf0b4b4e0fa2ea67a619db296eab0e38889e70580ef2cfc255fbf925e82"
+      }
+    }
+  ],
+  "scope": "Current vendored Judge/runtime, license and notice bytes match the pinned manifests. This verifies source integrity; inference model and dataset conversion differences remain stated separately."
+}
