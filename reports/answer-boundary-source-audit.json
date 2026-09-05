@@ -1,0 +1,85 @@
+{
+  "checked_at": "2026-09-05T07:39:08.043710+00:00",
+  "reviewed_file": "eval/src/runner.ts",
+  "reviewed_source_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+  "ordinary_answer_user_fields": [
+    "question",
+    "options",
+    "memories"
+  ],
+  "gold_usage": "Private references/rubrics are passed separately to Judge; source coverage is logged after retrieval and not included in ordinary Answer user JSON. Posthoc diagnostics use a separate script after run completion.",
+  "commits": [
+    {
+      "eval_commit": "7858b803a19643161fa9f1adabfa2efe49972c39",
+      "runs": [
+        "baseline-v7-U0-locomo",
+        "baseline-v7-U0-memops",
+        "baseline-v7-U1-locomo",
+        "baseline-v7-U1-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "1699ecb97575cd1867a318e87f7a4174a152719b",
+      "runs": [
+        "dev-v6-B0-locomo",
+        "dev-v6-B0-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "28815be2b9926103056993e470a9f73fc8b62181",
+      "runs": [
+        "dev-v6-B1-locomo",
+        "dev-v6-B1-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "36f03d64a57fed71e55ebfdec8b88ee3fd5e6269",
+      "runs": [
+        "dev-v6-B2-locomo",
+        "dev-v6-B2-memops",
+        "dev-v6-U3-locomo",
+        "dev-v6-U3-memops",
+        "holdout-v2-U3-locomo",
+        "holdout-v2-U3-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "5560644243bea5a428d9140f6c32f2178f536a9b",
+      "runs": [
+        "dev-v6-B3-locomo",
+        "dev-v6-B3-memops",
+        "dev-v6-B4-locomo",
+        "dev-v6-B4-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "b7cdcd6bf0aa4f16a47b76bee4444effc94eaff3",
+      "runs": [
+        "dev-v6-B5-locomo",
+        "dev-v6-B5-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    },
+    {
+      "eval_commit": "759093279e59988c335334452b0d0ce1eab3d06d",
+      "runs": [
+        "dev-v6-U2-locomo",
+        "dev-v6-U2-memops"
+      ],
+      "runner_sha256": "def61426012c7d17b47f1192ebaa8d16a3c5116e6ceb7a19662a4c574fb3a42c",
+      "same_as_reviewed_runner": true
+    }
+  ],
+  "scope": "Source audit and byte equivalence for each listed evaluator commit. This is not a packet capture or proof about unlogged external infrastructure. Future comparison runs must be checked at final freeze."
+}
