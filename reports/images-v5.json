@@ -1,0 +1,8 @@
+{
+  "service_commit": "13b83ffff73973a65de7f969bdcb0231ecbe815b",
+  "eval_commit": "bb1d38d33ba51feed42a449915376c9e4bcf69d8",
+  "images": {
+    "service": "sha256:63463d16bc644bd2b487c16ce37e2131f0b4c379206d64af69586ef7383fa6d1",
+    "eval": "sha256:81cc59512bcbbc32b74960619b4228b459a71094c14c8e44927f1fc2713b3fc1"
+  }
+}

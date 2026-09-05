@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-05T05:58:45.962Z",
+  "base": "http://127.0.0.1:8086",
+  "user": "perf-1788587905234",
+  "facts": 5000,
+  "concurrent_searches": 16,
+  "add_ms": {
+    "n": 100,
+    "p50": 177.55887499999972,
+    "p95": 342.2990000000009,
+    "p99": 381.8538750000007,
+    "max": 381.8538750000007
+  },
+  "search_ms": {
+    "n": 160,
+    "p50": 227.919249999999,
+    "p95": 252.6800000000003,
+    "p99": 256.1319169999988,
+    "max": 256.83020899999974
+  },
+  "health_ms_during_search": {
+    "n": 178,
+    "p50": 1.8940419999998994,
+    "p95": 3.353000000002794,
+    "p99": 4.758874999999534,
+    "max": 4.794416999997338
+  },
+  "search_throughput_per_second": 69.02839160310289,
+  "scope": "Offline engine; realistic partition scan and concurrent HTTP load; not LLM throughput.",
+  "service_commit": "13b83ffff73973a65de7f969bdcb0231ecbe815b",
+  "eval_commit": "bb1d38d33ba51feed42a449915376c9e4bcf69d8"
+}

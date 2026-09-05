@@ -2,7 +2,7 @@ SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 BASE_URL ?= http://127.0.0.1:8088
 RUN_ID ?=
-.PHONY: init build test up contract smoke eval-locomo eval-memops report down clean-run bundle
+.PHONY: init build test up contract smoke eval-init baseline-init data eval-locomo eval-memops report down clean-run bundle experiment
 init:
 	git submodule update --init --recursive
 	node -e 'if(Number(process.versions.node.split(".")[0])!==24)throw Error("Use Node 24.18.0: nvm use")'
@@ -16,6 +16,16 @@ build:
 test:
 	cd service && npm run build && npm test
 	cd eval && npm run build && npm test
+eval-init:
+	python3 -m venv eval/.venv
+	eval/.venv/bin/python -m pip install -r eval/python/requirements.lock
+baseline-init:
+	cd service/baseline && npm ci && node prepare-u1.mjs
+	cd service/baseline && MEM0_TELEMETRY=false MEM0_DIR=.data/config node --import tsx parity.ts
+data:
+	cd eval && npm run build && python3 scripts/download-data.py
+experiment:
+	python3 scripts/run-experiment.py --campaign "$(CAMPAIGN)" --profile "$(PROFILE)" --port "$(PORT)" $(EXPERIMENT_ARGS)
 up:
 	docker compose up -d --wait --wait-timeout 90
 contract:

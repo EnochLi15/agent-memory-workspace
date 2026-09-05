@@ -1,5 +1,8 @@
 {
-  "image": "sha256:2a01ca6a92116f1f10d283e70e046a8cb341b5b1ff77e2aea30cdee91147dfe8",
+  "run_id": "9da8328c501b",
+  "checked_at": "2026-09-05T05:58:17.538699+00:00",
+  "fresh_volume": true,
+  "image": "sha256:63463d16bc644bd2b487c16ce37e2131f0b4c379206d64af69586ef7383fa6d1",
   "network": "none",
   "checks": [
     "cold-start",
@@ -11,5 +14,5 @@
     "remove-and-recreate-with-volume"
   ],
   "status": "passed",
-  "retained_volume": "comp-memory-offline-audit-data"
+  "retained_volume": "comp-memory-offline-audit-9da8328c501b-data"
 }
