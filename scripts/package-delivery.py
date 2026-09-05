@@ -161,7 +161,7 @@ partial = output.with_suffix(output.suffix + '.partial')
 output.parent.mkdir(parents=True, exist_ok=True)
 generated = {'MANIFEST.json': (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode(),
              'README.md': readme.encode()}
-with tarfile.open(partial, 'w:gz', compresslevel=1) as archive:
+with tarfile.open(partial, 'w:gz', compresslevel=1, dereference=True) as archive:
     for name, path in sorted(files.items()):
         archive.add(path, arcname=name, recursive=False)
     for name, data in generated.items():
