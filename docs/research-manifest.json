@@ -1,0 +1,146 @@
+{
+  "kind": "design-research-manifest",
+  "date": "2026-09-05",
+  "evaluations_run": false,
+  "source_spec_sha256": "0bab9745f587c5ab2ab4e38648bd07ae1da076e71cd4e6590470b1baacd6a5a7",
+  "files": [
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "data/public/conversations.jsonl",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/data/public/conversations.jsonl",
+      "sha256": "abbe220013815b1761c07d9ab7d6147ee08fb089f1a8a083fd31188cdcd91444",
+      "bytes": 4195054
+    },
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "data/public/manifest.json",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/data/public/manifest.json",
+      "sha256": "1bebc6d3a66d493f9886a5498ced3d2727d4fca763476b7f9290037c89410e73",
+      "bytes": 408
+    },
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "data/public/questions.jsonl",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/data/public/questions.jsonl",
+      "sha256": "4dd84cf65a28ece0ed6b2a1b7b2700ea639f4e7b2c5e1afcc511e47e81732790",
+      "bytes": 1302480
+    },
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "src/export.py",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/src/export.py",
+      "sha256": "6b1c6d1b29d2e43280ffe745cff11de7cc61a5ae1239bd3928cf6a8b6d6ebafe",
+      "bytes": 15057
+    },
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "src/llm_judge.py",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/src/llm_judge.py",
+      "sha256": "a24d3480e003d985175b1889d6de208585fa694cdb1f02a3739f3cda30a9bb2a",
+      "bytes": 9778
+    },
+    {
+      "repository": "mem-eval-suite/LoCoMo_refined",
+      "revision": "887091190789e8d6760e70b9edd696539923dc4f",
+      "path": "src/llm_judge_runtime.py",
+      "url": "https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/src/llm_judge_runtime.py",
+      "sha256": "6fa81ca9b0347293f81666b794788b18e70018dadb5793895a8f0e53437d5790",
+      "bytes": 9215
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "5-test_operation_metrics.py",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/5-test_operation_metrics.py",
+      "sha256": "557e8e64b15eaca18464201d922f0db35d2fcb723daa9f0c60395eebc85bac62",
+      "bytes": 90913
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "5.5-evaluate_operation_metrics.py",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/5.5-evaluate_operation_metrics.py",
+      "sha256": "17c24362c174239eb7ef5e543bc651afed60ae445a4becd49acf24f6d3c646f0",
+      "bytes": 92396
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "README.md",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/README.md",
+      "sha256": "9c0b6e120e2789a9dc9b0194395bdc209d02266fd93386447df59a603c1b854e",
+      "bytes": 15238
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "generated_result/4-inject_evidence_with_distractors/A01_reflect.json",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/generated_result/4-inject_evidence_with_distractors/A01_reflect.json",
+      "sha256": "62de38454a8bde841e1c4a59d02545fb8cac645c342d0f11c0e2493eb119ed4e",
+      "bytes": 459177
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "generated_result/4-inject_evidence_with_distractors/A01_update.json",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/generated_result/4-inject_evidence_with_distractors/A01_update.json",
+      "sha256": "45fb87959fc176b375f6d806895fed9889d98ce4bd1a79eeb1e3f2a71b4d85bb",
+      "bytes": 408366
+    },
+    {
+      "repository": "MemTensor/MemOps",
+      "revision": "312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35",
+      "path": "generated_result/4-inject_evidence_with_distractors/A02_forget.json",
+      "url": "https://github.com/MemTensor/MemOps/blob/312af65e2c7b6d1b70f062ffa8b4cde32aaf6f35/generated_result/4-inject_evidence_with_distractors/A02_forget.json",
+      "sha256": "0055747cc51a329da4982281f5ca6c7d5bb478e9fa1aa5a3b7b8d1ed60b8cfc9",
+      "bytes": 437279
+    }
+  ],
+  "observed_statistics": {
+    "locomo": {
+      "samples": 10,
+      "questions": 1382,
+      "messages_min": 369,
+      "messages_max": 689,
+      "raw_category_counts": {
+        "1": 213,
+        "2": 299,
+        "3": 68,
+        "4": 802
+      }
+    },
+    "memops_three_sample_inspection_only": [
+      {
+        "file": "A01_reflect.json",
+        "sessions": 50,
+        "messages": 546,
+        "questions": 10
+      },
+      {
+        "file": "A01_update.json",
+        "sessions": 50,
+        "messages": 518,
+        "questions": 8
+      },
+      {
+        "file": "A02_forget.json",
+        "sessions": 50,
+        "messages": 524,
+        "questions": 10
+      }
+    ]
+  },
+  "candidate_versions_not_installed": {
+    "node": "24.20.0",
+    "fastify": "5.12.3",
+    "typescript": "7.0.2",
+    "better-sqlite3": "13.0.3",
+    "ajv": "8.20.0",
+    "vitest": "5.0.0"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "kind": "mem0-source-review",
+  "date": "2026-09-05",
+  "repository": "https://github.com/mem0ai/mem0",
+  "commit": "dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3",
+  "scope": "Selected TypeScript OSS source paths; partial static review only",
+  "source_imported_into_service": false,
+  "tests_run": false,
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "0bbcbe931c353293a2fafce08326181dfeea0e568c566afd4ce8337a70f5e219",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/LICENSE"
+    },
+    {
+      "path": "mem0-ts/src/oss/package.json",
+      "sha256": "e9e1dbf5cbdbbc0bff21d28b058c59bb371f7e32efa071fd7f1284f7622b4b3b",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/package.json"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/memory/index.ts",
+      "sha256": "dfdf890b3c1f4bf3d9288e45ff58603b4322634ecf6e788708ebe6a4f06df662",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/memory/index.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/memory/memory.types.ts",
+      "sha256": "ddfb5f55c4b2be17f39a24354885f0f6f236cf5c660fc9c7cdfe6875b4960f0e",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/memory/memory.types.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/prompts/index.ts",
+      "sha256": "d9f526f5975559c5a8fde264e5b996579350ed651cb429c0d55b3611842206d4",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/prompts/index.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/utils/scoring.ts",
+      "sha256": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/utils/scoring.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/utils/bm25.ts",
+      "sha256": "007c3040318fddd1b6183d6d13595b0b05058808af602ac79cb6adce738e341d",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/utils/bm25.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/utils/entity_extraction.ts",
+      "sha256": "05029afde477a934a6bade880780efe0ff7c4f30fa8fbc9c8227b2680bf96dfb",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/utils/entity_extraction.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/storage/SQLiteManager.ts",
+      "sha256": "9e18733f478acd2d62979a8925cf07b0bed4c61ed5a48f074f7820fccb98c0c3",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/storage/SQLiteManager.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/vector_stores/memory.ts",
+      "sha256": "1e71f3dd8471a89e4b822a482b37df9160c9da900f9f321bd7eaa256a9a9f52e",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/vector_stores/memory.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/vector_stores/base.ts",
+      "sha256": "0c866025ad01d4144a18346f057985223098a49f03f80943309601ebf382ec02",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/vector_stores/base.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/config/defaults.ts",
+      "sha256": "8a156c6f355f990ec2d547c65ad1cc641e83b7c1a878f6918916011b8193be3c",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/config/defaults.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/llms/base.ts",
+      "sha256": "8697b9185e8e4507ceed77ee7ba0f89450d6d289093ee787f41d13b3509c6f92",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/llms/base.ts"
+    },
+    {
+      "path": "mem0-ts/src/oss/src/embeddings/base.ts",
+      "sha256": "1eecf3f070d1c5fcfbf7d1ddab4aebeb44fc439a2635f95e6bbd60e1a3bc9777",
+      "url": "https://github.com/mem0ai/mem0/blob/dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3/mem0-ts/src/oss/src/embeddings/base.ts"
+    }
+  ]
+}
