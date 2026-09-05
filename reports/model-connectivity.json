@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-09-05T08:25:36.600512+00:00",
+  "base_url": "http://54.183.78.37:8080/v1",
+  "models": {
+    "status": 200,
+    "elapsed_ms": 729,
+    "ids": [
+      "gpt-5.6",
+      "gpt-5.6-sol",
+      "gpt-5.6-terra",
+      "gpt-5.6-luna",
+      "gpt-5.5",
+      "gpt-5.4",
+      "gpt-5.4-mini",
+      "gpt-5.3-codex-spark",
+      "codex-auto-review",
+      "gpt-5.2",
+      "gpt-image-1",
+      "gpt-image-1.5",
+      "gpt-image-2"
+    ]
+  },
+  "generation": {
+    "status": 200,
+    "elapsed_ms": 1679,
+    "model": "gpt-5.4-mini",
+    "content": "CONNECTED",
+    "usage": {
+      "prompt_tokens": 10,
+      "completion_tokens": 5,
+      "total_tokens": 15
+    }
+  },
+  "local": {
+    "status": 200,
+    "elapsed_ms": 20,
+    "models": [
+      {
+        "name": "qwen3:14b",
+        "size": 9276198565,
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8"
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "size": 274302450,
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f"
+      }
+    ]
+  },
+  "embedding": {
+    "status": 200,
+    "elapsed_ms": 88,
+    "count": 3,
+    "dimensions": [
+      768,
+      768,
+      768
+    ],
+    "finite": true,
+    "related_cosine": 0.8889280038156593,
+    "unrelated_cosine": 0.35419004134639487
+  },
+  "scope": "Observed model listing and one tested generation model. Listed aliases are not individually validated capabilities. No API credential is included."
+}
