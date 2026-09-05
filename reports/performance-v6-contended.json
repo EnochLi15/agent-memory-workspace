@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-05T06:46:29.163Z",
+  "base": "http://127.0.0.1:8086",
+  "user": "perf-1788589819886",
+  "facts": 5000,
+  "concurrent_searches": 16,
+  "add_ms": {
+    "n": 100,
+    "p50": 980.7605419999745,
+    "p95": 35699.01812500006,
+    "p99": 49537.99658399995,
+    "max": 49537.99658399995
+  },
+  "search_ms": {
+    "n": 160,
+    "p50": 5037.296665999922,
+    "p95": 11116.252749999985,
+    "p99": 12609.170292000053,
+    "max": 12953.76549999998
+  },
+  "health_ms_during_search": {
+    "n": 3345,
+    "p50": 3.078709000023082,
+    "p95": 11.396333000040613,
+    "p99": 24.491666999994777,
+    "max": 709.4573340000352
+  },
+  "search_throughput_per_second": 2.8034960392854047,
+  "scope": "Offline engine; realistic partition scan and concurrent HTTP load; not LLM throughput.",
+  "service_commit": "910b3dd42f2953a4cdb2a8061f4eefc5c2db42ea",
+  "environment": "Contended host: concurrent public evaluation, baselines, local Qwen3:14b and existing applications; swap used about 19 GiB. No attempt to isolate CPU/memory."
+}
