@@ -87,6 +87,12 @@ for benchmark, correct, judged in [('locomo', 156, 500), ('memops', 175, 464)]:
                 'Upstream diagnostics changed')
     primary[benchmark] = {k: metrics[k] for k in ['planned', 'judged', 'correct', 'accuracy_over_planned']}
 
+diagnostics = document('reports/holdout-v2-final-diagnostics.json')
+require(diagnostics['script_sha256'] == sha('scripts/summarize-holdout-diagnostics.py'),
+        'Regenerate final diagnostic summary with current script')
+for result in diagnostics['benchmarks'].values():
+    require(sha(result['audit_path']) == result['audit_sha256'], 'Diagnostic summary refers to a stale audit')
+
 performance = document('artifacts/final-performance/summary.json')
 require(performance['status'] == 'complete' and set(performance['measurements']) == {'primary', 'instrumented'},
         'Complete both final performance measurements')
