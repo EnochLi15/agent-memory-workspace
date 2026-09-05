@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-05T08:33:43.685663+00:00",
+  "run_id": "holdout-v2-U3-memops",
+  "run_still_active": true,
+  "failed_add_attempts": [
+    {
+      "request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+      "elapsed_ms": 9280.303208000027
+    }
+  ],
+  "affected_terminal_statuses": {
+    "service_error": 10
+  },
+  "affected_question_ids": [
+    "D24_reflect.json#p4_candidate_disambiguation#longitudinal_operation#7",
+    "D24_reflect.json#p5_operation_application#longitudinal_operation#9",
+    "D24_reflect.json#p1_operation_trace#adjacent_operation#0",
+    "D24_reflect.json#p3_state_transition#adjacent_operation#4",
+    "D24_reflect.json#p2_target_binding#adjacent_operation#2",
+    "D24_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+    "D24_reflect.json#p5_operation_application#adjacent_operation#8",
+    "D24_reflect.json#p1_operation_trace#longitudinal_operation#1",
+    "D24_reflect.json#p3_state_transition#longitudinal_operation#5",
+    "D24_reflect.json#p2_target_binding#longitudinal_operation#3"
+  ],
+  "observed_failure_stage": "service ingestion; operation target binding rejected",
+  "service_source_sha256": "0fb822dc95e587c0b08ed5d23984e5a374c3ccd1ba99578523590f43f07898aa",
+  "scope": "Checkpoint on infrastructure/operation status only, no partial answer scores inspected. Recorded OPERATION_TARGET is a service validation rejection, not a gateway outage. These questions remain in the 500 planned denominator. Upstream posthoc diagnostics can evaluate only saved answers; missing predictions must be counted separately in the final report."
+}
