@@ -1,0 +1,6 @@
+[submodule "service"]
+	path = service
+	url = ../agent-memory-service.git
+[submodule "eval"]
+	path = eval
+	url = ../agent-memory-eval.git
