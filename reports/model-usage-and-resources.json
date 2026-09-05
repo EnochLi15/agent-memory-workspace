@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-05T09:04:52.562717+00:00",
+  "checked_at": "2026-09-05T09:31:06.299937+00:00",
   "complete_evaluation_runs": true,
   "pending": [],
-  "script_sha256": "b8491e424938b89047581d71355ecdfe22ad221e3fde4d04f0e143e0be88cdc8",
+  "script_sha256": "7b5a0be188d39e677cf222d4acdd629d6f5c12ad62d4a9eaf9f9138d40b16cbd",
   "service_model_usage": [
     {
       "campaign": "dev-v6",
@@ -742,25 +742,25 @@
     },
     {
       "run_id": "holdout-v2-U3-memops",
-      "complete": false,
+      "complete": true,
       "source": "eval/artifacts/holdout-v2-U3-memops/upstream-memops-diagnostics/calls.jsonl",
-      "source_sha256": "3a0536f89a77002d2d1bca6a5e5c1f45079bb883f146af79a1977af912648037",
-      "recorded_calls": 47,
+      "source_sha256": "1a4d561814d0fff4a6646ec9339377a24291aa1a18c0c52f456888d68db40690",
+      "recorded_calls": 464,
       "provider_usage": {
-        "prompt_tokens": 304250,
-        "completion_tokens": 4617,
-        "total_tokens": 308867
+        "prompt_tokens": 3092320,
+        "completion_tokens": 44915,
+        "total_tokens": 3137235
       },
-      "cached_prompt_tokens": 32512,
+      "cached_prompt_tokens": 391936,
       "elapsed_ms": {
-        "n": 47,
-        "mean": 3380.4115736658905,
-        "p95": 4057.2290410054848,
-        "max": 5106.956375064328
+        "n": 464,
+        "mean": 3522.6092274972652,
+        "p95": 4839.046041946858,
+        "max": 11552.54270893056
       }
     }
   ],
-  "complete_memops_posthoc_logs": false,
+  "complete_memops_posthoc_logs": true,
   "host_sampling": {
     "source_sha256": "4dc7abd9b552c2db3cf871bf9cd55678e20fa942a9d615928ee0ab766c1e021d",
     "samples": 568,

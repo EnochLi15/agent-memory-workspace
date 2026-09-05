@@ -57,7 +57,13 @@ require(len(baseline) == 2 and all(r['exit_code'] == 0 for r in baseline), 'Fini
 usage = document('reports/model-usage-and-resources.json')
 require(usage['complete_evaluation_runs'] and usage['complete_memops_posthoc_logs'], 'Finish usage accounting')
 for row in usage['service_model_usage'] + usage['saved_memops_posthoc_usage']:
-    require(sha(row['source']) == row['source_sha256'], 'Usage log changed: ' + row['source'])
+    if 'source' in row:
+        require(sha(row['source']) == row['source_sha256'], 'Usage log changed: ' + row['source'])
+    else:
+        require(row.get('model_call_accounting', '').startswith('N/A:'), 'Missing explicit usage accounting scope')
+    if 'service_log_sha256' in row:
+        service_log = 'artifacts/' + row['campaign'] + '/' + row['profile'] + '-service.log'
+        require(sha(service_log) == row['service_log_sha256'], 'Service degradation log changed')
 require(usage['script_sha256'] == sha('scripts/summarize-costs.py'), 'Regenerate usage with current script')
 
 primary = {}
