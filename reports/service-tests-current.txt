@@ -1,0 +1,49 @@
+
+> agent-memory-service@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ SIGKILL during a real SQLite transaction rolls back erasure, vectors, source, FTS and receipt (1633.338084ms)
+✔ queued add deadlines return promptly and cannot commit late model responses (2106.889584ms)
+✔ raw-only experiment preserves source roles and old statements without claiming lifecycle (1736.347375ms)
+✔ same-time conflict stays explicit; later state resolves it; as-of honors day boundary (215.524291ms)
+✔ new raw replay and differently named fact cannot recover erased value (90.560333ms)
+✔ erasure invalidates transitive derived facts but retains independent same-message neighbor (83.475041ms)
+✔ explicit restore grants only new value and leaves old replay blocked (49.973125ms)
+✔ correction retracts false history; scoped current relation removal preserves real history (40.515083ms)
+✔ embedding space mismatch rolls back request and original source (19.754ms)
+✔ invalid extraction schema and wrong vector dimensions degrade without fabricated vectors (45.211959ms)
+✔ fabricated source is replaced only by grounded recovery; unknown operation ID is rejected (36.170042ms)
+✔ bounded entity expansion retrieves the second hop without inventing a conclusion (75.509292ms)
+✔ querying with another embedding space uses lexical fallback rather than mixing vectors (23.665166ms)
+✔ a valid but unrelated target ID cannot authorize deletion (23.256667ms)
+✔ partially recovered raw evidence becomes invisible when a linked fact is superseded or erased (46.844583ms)
+✔ forget closes alternate representations and leaves a value-free operation trace (32.745708ms)
+✔ a model plan alias becomes a tentative event without a second inference (49.388584ms)
+✔ derived evidence follows the current or historical visibility of its dependencies (58.940625ms)
+✔ streaming extraction aggregates chunks and rejects premature EOF (755.567ms)
+✔ only prescribed routes, exact receipt, validation and top_k boundary (1746.996959ms)
+✔ strict tenant separation including names and path-like identities (406.483416ms)
+✔ query options neither become evidence nor cross the tenant boundary (350.060666ms)
+✔ idempotency and payload conflict (162.221416ms)
+✔ current state excludes old value, explicit history preserves it (156.6895ms)
+✔ late historical state cannot replace newer state (141.171458ms)
+✔ tentative plan and multiple hobbies do not overwrite confirmed facts (165.713875ms)
+✔ forget suppresses all retrieval paths, retains neighbor and resists replay (180.31625ms)
+✔ forget it and do not forget are not destructive (217.514208ms)
+✔ one message can update a retained fact and forget a different property (161.438291ms)
+✔ a fact introduced and forgotten within one add never becomes searchable (124.777833ms)
+✔ descriptions of human forgetfulness are evidence, not memory deletion commands (135.158833ms)
+✔ named assistant participant and Chinese evidence stay distinct (113.294292ms)
+✔ concurrent user writes are serialized and remain searchable (248.1565ms)
+✔ committed state survives restart including forgotten content (358.919417ms)
+✔ quoted and hypothetical forgetting never mutates real memory (172.311458ms)
+✔ fault at each transactional boundary leaves no facts, source, index or receipt (190.4055ms)
+✔ lost HTTP response after commit remains idempotent across a service restart (742.189833ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9116.603

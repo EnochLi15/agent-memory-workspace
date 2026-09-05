@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-09-05T07:29:47.238160+00:00",
+  "run": "pronoun-v1",
+  "retrieval": {
+    "qid": "pronoun-actor",
+    "sample_id": "pronoun-chunks",
+    "benchmark": "locomo",
+    "category": "cross-chunk-reference",
+    "memories": [
+      {
+        "id": "c8dad8dfa2aca64d63ac292d5ff12b1b593f0919ff355ac7b1f68a9e618a76db",
+        "content": "She started a pottery class yesterday.\nVerbatim source context (use this to verify actor and negation):\nuser: She started a pottery class yesterday.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; original time: yesterday; source: 4ccdaa7a6135]",
+        "score": 0.98,
+        "created_at": "2024-05-05T10:00:00Z"
+      },
+      {
+        "id": "e696b2f36e4b019a3240e073c4a36600a69adc52106fae47ce820fd10fc83753",
+        "content": "I have a sister named Maya.\nVerbatim source context (use this to verify actor and negation):\nuser: [Session time: 10:00 am on 5 May, 2024]\nI have a sister named Maya.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; source: 6518baebcb7d]",
+        "score": 0.02,
+        "created_at": "2024-05-05T10:00:00Z"
+      }
+    ],
+    "elapsed_ms": 3648.109541,
+    "source_coverage": null
+  },
+  "prediction": {
+    "qid": "pronoun-actor",
+    "sample_id": "pronoun-chunks",
+    "benchmark": "locomo",
+    "category": "cross-chunk-reference",
+    "answer": "She did."
+  },
+  "judgment": {
+    "qid": "pronoun-actor",
+    "sample_id": "pronoun-chunks",
+    "benchmark": "locomo",
+    "category": "cross-chunk-reference",
+    "status": "judged",
+    "correct": false,
+    "raw": "{\"correct\":false,\"reason\":\"The answer does not clearly identify Maya by name; it only says \\\"She did,\\\" which is too ambiguous to satisfy the requirement.\"}"
+  },
+  "scope": "Cross-chunk antecedent and subsequent event both appear in returned evidence. The fixed Answer still answered only She did, so the end-to-end probe failed. Context retention is demonstrated; successful pronoun resolution by Answer is not."
+}
