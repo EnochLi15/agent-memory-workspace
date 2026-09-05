@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-09-05T08:45:02.164640+00:00",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/delivery/20260905-164500",
+  "command_exit": 1,
+  "observed_rejection": "Complete all 34 runs and strict request audits first",
+  "archive_created": false,
+  "scope": "Actual invocation refused incomplete campaign evidence before creating any delivery archive. This probes that gate only; final packaging requires all other gates and archive read-back verification."
+}
