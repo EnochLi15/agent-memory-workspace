@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-09-05T12:12:51.042Z",
+  "scope": "Real local Ollama embeddings and SQLite persistence; extraction fixture is deterministic, no remote LLM or benchmark accuracy claim",
+  "model": "nomic-embed-text:latest",
+  "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "checks": {
+    "source_vectors_768": true,
+    "semantic_source_recall": true,
+    "erased_source_and_fts": true,
+    "retained_fragment_invalidates_old_vector": true,
+    "retained_detail_after_restart": true,
+    "source_identifier_after_redaction": true
+  },
+  "elapsed_ms": 222.44424999999998,
+  "status": "passed",
+  "source_sha256": {
+    "service/src/passages.ts": "1ebb0bda2a1ffb9af4a237ece77363f30263c272c00cb30faf47b1c1994ca224",
+    "service/src/extraction.ts": "e607669d8f9ef344d0d1cfb2579f94c14881a9edfff139a74cb8002a5e59c9f0",
+    "service/src/storage.ts": "a52ee435265a800bb352fa9025fdb372127a917dfc47c46b27ea02cd34dfd1e5",
+    "service/src/retrieval.ts": "e0be8896aef6602b62ca6b792cbdb39f39148f21192c88b4a519cf1094f1c2a8",
+    "scripts/probes/source-index.mjs": "cb7e94550bcf2774db844c6910734145e148dfd7a12830be4ced44357dce4105"
+  }
+}
