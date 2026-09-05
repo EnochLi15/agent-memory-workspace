@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T09:39:24.630476+00:00",
+  "checked_at": "2026-09-05T09:44:30.552794+00:00",
   "status": "ready_for_packaging",
   "scope": "Pre-archive evidence readiness only. Final archive existence, readback hashes and recursive source clone must be verified separately. No universal quality or official-score claim.",
   "service_commit": "842b13062feeacb80ad59d07170ceb1c378eb681",

@@ -55,17 +55,22 @@ with tarfile.open(archive_path, 'r:gz') as archive:
             with archive.extractfile(member) as stream:
                 if member.size != expected['bytes'] or digest(stream) != expected['sha256']:
                     raise SystemExit('Archive entry checksum mismatch: ' + member.name)
-        if member.name.startswith('repositories/') or member.name in ['MANIFEST.json', 'source-manifest.json', 'README.md']:
-            archive.extract(member, verified, filter='data')
     readiness = json.load(archive.extractfile('reports/delivery-readiness-audit.json'))
     if readiness['status'] != 'ready_for_packaging':
         raise SystemExit('Missing prerequisite audit')
     for name, checksum in readiness['evidence_sha256'].items():
-        if name.startswith(('service/', 'eval/')) and not name.startswith('eval/artifacts/'):
-            continue  # Verify source-backed evidence against the actual clone below.
         packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/')) else name
+        if packaged not in entries:
+            continue  # Root scripts and service/eval sources live inside the Git mirrors.
         if entries[packaged]['sha256'] != checksum:
             raise SystemExit('Packaged evidence differs from readiness audit: ' + name)
+
+# Extract in one forward-only pass. Extracting each member immediately after
+# hashing it would repeatedly seek backwards through the compressed stream.
+with tarfile.open(archive_path, 'r|gz') as archive:
+    for member in archive:
+        if member.name.startswith('repositories/') or member.name in ['MANIFEST.json', 'source-manifest.json', 'README.md']:
+            archive.extract(member, verified, filter='data')
 
 clone = verified / 'workspace'
 with (verified / 'recursive-clone.log').open('w') as log:
@@ -80,7 +85,8 @@ for name, commit in source['commits'].items():
     with (verified / ('git-fsck-' + name.replace('.', 'workspace') + '.log')).open('w') as log:
         subprocess.run(['git', 'fsck', '--full'], cwd=clone / name, stdout=log, stderr=subprocess.STDOUT, check=True)
 for name, checksum in readiness['evidence_sha256'].items():
-    if name.startswith(('service/', 'eval/')) and not name.startswith('eval/artifacts/'):
+    packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/')) else name
+    if packaged not in entries:
         with (clone / name).open('rb') as stream:
             if digest(stream) != checksum:
                 raise SystemExit('Cloned source evidence mismatch: ' + name)

@@ -1,0 +1,12 @@
+{
+  "recorded_at": "2026-09-05T09:44:29.406777+00:00",
+  "first_archive_sha256": "b657b3a987c2b340ffe2d1b65c230d7e25d29830e38efc0fe6a74e8b81af45fa",
+  "first_archive_preserved": "delivery/attempt-1/agent-memory-delivery.tar.gz",
+  "first_source_snapshot": "delivery/20260905-173924",
+  "first_extracted_sources_preserved": "delivery/archive-verification-20260905-174001",
+  "observed_failure": "KeyError: 'scripts/package-delivery.py' during readiness evidence lookup after member hash verification",
+  "cause": "Root source scripts are stored inside the bare Git repository, not as top-level archive members; verifier only recognized service/eval source paths.",
+  "fix": "Resolve evidence present as archive members against the manifest; verify all remaining source paths against the actual recursive clone. Extract repositories in a forward-only pass after hash verification.",
+  "runtime_changes": false,
+  "follow_up": "Regenerate the source snapshot and delivery archive, then run the complete verifier. Actual pass/fail is recorded separately in delivery/final-verification.json."
+}
