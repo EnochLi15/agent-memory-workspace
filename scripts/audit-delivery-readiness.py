@@ -100,6 +100,7 @@ for result in diagnostics['benchmarks'].values():
     require(sha(result['audit_path']) == result['audit_sha256'], 'Diagnostic summary refers to a stale audit')
 
 performance = document('artifacts/final-performance/summary.json')
+require(document('reports/performance-final.json') == performance, 'Final performance report differs from raw summary')
 require(performance['status'] == 'complete' and set(performance['measurements']) == {'primary', 'instrumented'},
         'Complete both final performance measurements')
 for name, measurement in performance['measurements'].items():

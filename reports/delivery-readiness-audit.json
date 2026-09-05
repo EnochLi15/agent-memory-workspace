@@ -1,0 +1,214 @@
+{
+  "checked_at": "2026-09-05T09:39:24.630476+00:00",
+  "status": "ready_for_packaging",
+  "scope": "Pre-archive evidence readiness only. Final archive existence, readback hashes and recursive source clone must be verified separately. No universal quality or official-score claim.",
+  "service_commit": "842b13062feeacb80ad59d07170ceb1c378eb681",
+  "eval_commit": "8f5be514b7dec1e5d93a6fc831e2c768c093ec83",
+  "service_src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+  "audit_script_sha256": "78a2ba7ea2be05905afa3c8a4462d29cb06a94aa5531fdc2c9a71a711f4953f8",
+  "primary_results": {
+    "locomo": {
+      "planned": 500,
+      "judged": 500,
+      "correct": 156,
+      "accuracy_over_planned": 0.312
+    },
+    "memops": {
+      "planned": 500,
+      "judged": 464,
+      "correct": 175,
+      "accuracy_over_planned": 0.35
+    }
+  },
+  "requirements": [
+    {
+      "requirement": "C01-C05",
+      "status": "verified",
+      "evidence": [
+        "reports/clean-clone-final-functional.json",
+        "service/tests/service.test.ts"
+      ]
+    },
+    {
+      "requirement": "I01-I02,R02",
+      "status": "verified",
+      "evidence": [
+        "service/tests/service.test.ts"
+      ]
+    },
+    {
+      "requirement": "W01-W03",
+      "status": "verified",
+      "evidence": [
+        "reports/service-tests-current.txt",
+        "service/tests/service.test.ts",
+        "service/tests/crash.test.ts"
+      ]
+    },
+    {
+      "requirement": "L01-L05",
+      "status": "bounded_behavior_verified",
+      "evidence": [
+        "service/tests/lifecycle.test.ts",
+        "reports/semantic-acceptance.json"
+      ]
+    },
+    {
+      "requirement": "F01-F06",
+      "status": "bounded_behavior_verified",
+      "evidence": [
+        "service/tests/lifecycle.test.ts",
+        "reports/container-offline.json"
+      ]
+    },
+    {
+      "requirement": "S01-S02",
+      "status": "bounded_behavior_verified",
+      "evidence": [
+        "reports/semantic-acceptance.json"
+      ]
+    },
+    {
+      "requirement": "T01-T02",
+      "status": "known_answer_failures_disclosed",
+      "evidence": [
+        "reports/semantic-acceptance.json",
+        "reports/pronoun-acceptance.json"
+      ]
+    },
+    {
+      "requirement": "R01,R03",
+      "status": "measured_quality_limitations_disclosed",
+      "evidence": [
+        "reports/holdout-v2-locomo.json",
+        "reports/holdout-v2-memops.json"
+      ]
+    },
+    {
+      "requirement": "D01-D02",
+      "status": "verified_with_fallback_scope",
+      "evidence": [
+        "reports/container-offline.json",
+        "reports/embedding-import-verification.json"
+      ]
+    },
+    {
+      "requirement": "P01",
+      "status": "measured",
+      "evidence": [
+        "artifacts/final-performance/summary.json",
+        "reports/performance-v6-contended.json"
+      ]
+    },
+    {
+      "requirement": "U0-U3,B0-B6,ablations",
+      "status": "completed_no_superiority_claim",
+      "evidence": [
+        "reports/development-final-comparison.json",
+        "reports/development-upstream-all-baselines.json"
+      ]
+    },
+    {
+      "requirement": "1000_questions",
+      "status": "completed_36_service_errors_disclosed",
+      "evidence": [
+        "reports/holdout-v2-locomo.json",
+        "reports/holdout-v2-memops.json"
+      ]
+    },
+    {
+      "requirement": "HTTP_only_no_gold",
+      "status": "trace_and_source_audited",
+      "evidence": [
+        "reports/completed-run-audit.json",
+        "reports/dataset-reconstruction.json",
+        "reports/evaluator-runtime-equivalence.json"
+      ]
+    },
+    {
+      "requirement": "cost_and_resources",
+      "status": "observed_scope_disclosed",
+      "evidence": [
+        "reports/model-usage-and-resources.json",
+        "reports/storage-footprint.json"
+      ]
+    },
+    {
+      "requirement": "M0-M4",
+      "status": "implementation_and_configured_reproduction_complete",
+      "evidence": [
+        "reports/REQUIREMENT-AUDIT.md",
+        "reports/DELIVERY-REPORT.md"
+      ]
+    },
+    {
+      "requirement": "official_platform_score",
+      "status": "conditional_unavailable",
+      "evidence": [
+        "docs/EXPERIMENT-PROTOCOL.md"
+      ]
+    },
+    {
+      "requirement": "final_archive",
+      "status": "next_step_external_verification_required",
+      "evidence": [
+        "scripts/package-delivery.py"
+      ]
+    }
+  ],
+  "known_limitations": [
+    "36 planned MemOps questions have no prediction after four target-binding write refusals.",
+    "LoCoMo temporal, MemOps operation trace and state trajectory quality is weak.",
+    "Two synthetic fixed-Answer failures remain: relative date conversion and pronoun resolution.",
+    "Development comparisons do not demonstrate U3 superiority over original mem0.",
+    "Answer diagnostic flags do not measure database deletion or retention rates.",
+    "Official selector, Answer configuration and MemOps mapping are unavailable; local Qwen is quantized.",
+    "Metal cold-start failure is retained; independent CPU embedding import was tested successfully.",
+    "Cost and RSS reports cover explicitly observed subsets, not total billing or dedicated machine usage."
+  ],
+  "evidence_sha256": {
+    "artifacts/baseline-upstream-diagnostic-workflow.json": "b80793643d7ce976521219cce3bc3496b7bb03c9f4e738532545f75c05530d68",
+    "artifacts/final-performance/instrumented/metrics.json": "a598296bb2607e8c4ccb4af21e3ef126d6357d7f5bd303d17b2e089dbf2c8d01",
+    "artifacts/final-performance/instrumented/report.json": "02769da1fb4374ea6740a91bd8e396aaeb9730bcb093b0caa639da5755c992a8",
+    "artifacts/final-performance/primary/metrics.json": "e9e94056831e497d0ddb6f8c16945810dd8c10476f37a4680ba419bec8cb4cc2",
+    "artifacts/final-performance/primary/report.json": "7d298b4da66b372439921e052449d0be4067f685158210ae135bd0c0abc0eac7",
+    "artifacts/final-performance/summary.json": "2b50f1617c0437a43920dd85b6b46eb4622b295b929ec3df1f5d7d4ebc67b05b",
+    "artifacts/report-workflow.json": "c92f34b4de3df83b1d5d73fc0d0d971075f65a2ad5ea6762c6bb67d48172fc40",
+    "docs/EXPERIMENT-PROTOCOL.md": "9433b034dc7b0aece08d39de7a8cc62a102ba564a8248ce9b6ed9b00caf6f11e",
+    "eval/artifacts/holdout-v2-U3-locomo/manifest.json": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",
+    "eval/artifacts/holdout-v2-U3-locomo/metrics.json": "7cd337f6337158707ee0b5eeff8bd902aa88ebef2c09d428b85b2f587058b876",
+    "eval/artifacts/holdout-v2-U3-locomo/posthoc-audit.json": "5a28a485853e9daba41ab36adc68b89cfe638725558d51dd684cdf0066f01724",
+    "eval/artifacts/holdout-v2-U3-memops/manifest.json": "f8af9bc5cbbe6ad99a38d739feba18b2bcb08ad5d2024318862e280fca7287f9",
+    "eval/artifacts/holdout-v2-U3-memops/metrics.json": "2f5706d8765a6f3bba3c75f0c2aa0d9507cbe2786f84b2491e8c4634ae951247",
+    "eval/artifacts/holdout-v2-U3-memops/posthoc-audit.json": "0b34f48bdb6300a4a291d7cbc0cd2ed0d552078a685154ce17fe64ef2af33bfa",
+    "reports/DELIVERY-REPORT.md": "a00294ca803fec72715f76ce674b2f1a40f44fddcd240bff0234ce2fbccf9888",
+    "reports/REQUIREMENT-AUDIT.md": "ea3a883c5a74519b399397a3cfbe6ee0e07f88c13bf834dced0b9bf967cb8895",
+    "reports/clean-clone-final-functional.json": "e2990466ca692aac7cf094f31b0dde4823af29b51c9e52a782d47e6e25d5f25c",
+    "reports/command-boundary-audit.json": "8407d841de44fabdfd4800433201401508b45b4e0f3fa3c5a204c8df0a502f99",
+    "reports/completed-run-audit.json": "11b37a1761453ffc1093c3b7847f5523f7b06d3461dd943efaed96e9c9605e01",
+    "reports/container-offline.json": "aa709f96246add256814310a0479a31e294b04b252896e35f1fdeb6c5f98d86d",
+    "reports/dataset-reconstruction.json": "7a696e79cca219f488475f4ad3f72d2e8b14f7c6a41a7ebcfab66dec96842d5c",
+    "reports/development-final-comparison.json": "669b9aec5f347edaecaa9dbdbf86f777c22dd3719f4469ec4b6a6309cefff05f",
+    "reports/development-upstream-all-baselines.json": "da873ed18e63691165413b6caf58ac469d327c1240d83382f65b29ed892fa90b",
+    "reports/embedding-import-verification.json": "63b23ee356fe0b9e001f18d0b197593ee39fbec739e30cf9ba6535fe41b1f4ea",
+    "reports/evaluator-runtime-equivalence.json": "6622f881176e24c05ba2136494b2eda5367e2adbe5c03bf7a29b10a3d254fd6d",
+    "reports/holdout-v2-final-diagnostics.json": "d77ba97f04375fce7efaf059c31c6a51ecddefec956d1d0da001fcbc908a7bbd",
+    "reports/holdout-v2-locomo.json": "a73653f971db9fa6254ceab640ad8c712ce2299f1c78594f3bad402f5f966f40",
+    "reports/holdout-v2-memops.json": "aa1c30d61ba2e30da8e243dc78159df027dc9cea2ba634016fb24687c2eb1ab5",
+    "reports/license-image-supplement.json": "3a26619bc25e111a06fe9a0df6ee86e7b6f7779a114a5d3aef2a51ef58eafff5",
+    "reports/model-usage-and-resources.json": "2828dece676060526ae438ad26630a53ec172a1052219a2dc048525c8049c695",
+    "reports/performance-final.json": "2b50f1617c0437a43920dd85b6b46eb4622b295b929ec3df1f5d7d4ebc67b05b",
+    "reports/performance-v6-contended.json": "35eb1902fbdf3be0dfda21433ec1c0ca24f5b98d592232375f4ed3c3882e0867",
+    "reports/pronoun-acceptance.json": "e1b8dfa50ed40dffe758055beb81deab5254f16dcec2d4208b1b3d9ea1d93221",
+    "reports/runtime-bundles.json": "8ba6edad1175ef465b9c6e3f01a84690b40addcf394570fcc92c186aa0708e27",
+    "reports/semantic-acceptance.json": "9be5dc4467d8ff761b2549da80d003d03ae14384f0750b587a6e23a3a30af1eb",
+    "reports/service-tests-current.txt": "f17a47684b81ba0494057b6fb47e8d1073fd77a27a722a16f06f5d62dd898b86",
+    "reports/source-contract-audit.json": "85bf0e24796e78526b6e2f7ac1b68631137772ef15202462eaf02afd3a37b8ee",
+    "reports/storage-footprint.json": "92d65020b94412cb517f4c6061e05bb2fe79a21ce6020ef7f48405a9e8ffd82a",
+    "scripts/package-delivery.py": "4fe1f0ca04371016d286b26e2b7573c6fb3a390f17ebbf86f7764155517004c7",
+    "service/baseline/upstream/source-manifest.json": "f0c751963d7548adb6a5d8734a3cfeb59166176ec2d144ee43a61a02b806ce42",
+    "service/tests/crash.test.ts": "a0914a243d7da673d6bfbda474ceb43be19c0a620454acc0dd08cf5ec6dbbfb8",
+    "service/tests/lifecycle.test.ts": "e53931122c0a371a6f2627106549931ee9ba6bf3e2b28dedc4ed2fdc2d17a8d2",
+    "service/tests/service.test.ts": "1067bcbdcf9311abc33e43aa43ed495b50b38c5980077c479cbc410d0004b3cb"
+  }
+}

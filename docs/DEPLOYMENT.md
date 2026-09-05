@@ -76,6 +76,9 @@ python3 scripts/audit-delivery-readiness.py
 make bundle
 python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录> --plan
 python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录>
+python3 scripts/verify-delivery.py --archive delivery/agent-memory-delivery.tar.gz --health-url http://127.0.0.1:8088/health
 ```
 
 `delivery-readiness-audit.json`只证明已具备打包条件，不能证明尚未生成的压缩包有效。`--plan`只列清单，不代表交付完成。正式打包要求所有完成门槛、干净Git状态和快照版本一致，检查所选文件与Git可达历史是否包含配置中的真实密钥，并在打包后逐文件读回验证SHA256。包内保留历史失败结果，排除真实环境文件、运行数据库、依赖缓存和重复模型导入目录。外部`.sha256`用于验证压缩包本身；`MANIFEST.json`用于验证包内每个源文件。
+
+独立的`verify-delivery.py`再次核对归档清单，并从实际包内提取bare仓库进行递归克隆、提交一致性与Git对象完整性检查，结果写入包外`delivery/final-verification.json`。`--health-url`可选，仅在已有部署时提供。它验证归档及源码可恢复性，不重复宣称功能测试或公开评测已经重跑。

@@ -1,0 +1,236 @@
+{
+  "status": "complete",
+  "finished_at": "2026-09-05T09:36:42.437400+00:00",
+  "measurements": {
+    "primary": {
+      "started_host_state": {
+        "at": "2026-09-05T09:36:02.715242+00:00",
+        "load_average": [
+          4.40625,
+          4.123046875,
+          4.3759765625
+        ],
+        "host_process_cpu_percent_sum": 118.0,
+        "host_process_rss_kib_sum": 10577344.0,
+        "swap": "total = 10240.00M  used = 8804.75M  free = 1435.25M  (encrypted)",
+        "resident_ollama_models": [
+          {
+            "name": "nomic-embed-text:latest",
+            "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+            "size": 370031984,
+            "size_vram": 370031984,
+            "expires_at": "2026-09-05T17:36:32.836635+08:00"
+          }
+        ],
+        "scope": "Whole-host snapshot; user applications remain running and shared RSS may be counted more than once."
+      },
+      "finished_host_state": {
+        "at": "2026-09-05T09:36:22.594656+00:00",
+        "load_average": [
+          3.8759765625,
+          4.017578125,
+          4.3310546875
+        ],
+        "host_process_cpu_percent_sum": 55.300000000000004,
+        "host_process_rss_kib_sum": 9569760.0,
+        "swap": "total = 10240.00M  used = 8796.75M  free = 1443.25M  (encrypted)",
+        "resident_ollama_models": [
+          {
+            "name": "nomic-embed-text:latest",
+            "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+            "size": 370031984,
+            "size_vram": 370031984,
+            "expires_at": "2026-09-05T17:36:32.836635+08:00"
+          }
+        ],
+        "scope": "Whole-host snapshot; user applications remain running and shared RSS may be counted more than once."
+      },
+      "metrics": {
+        "date": "2026-09-05T09:36:22.503Z",
+        "base": "http://127.0.0.1:8086",
+        "user": "perf-1788600963183",
+        "facts": 5000,
+        "concurrent_searches": 16,
+        "add_ms": {
+          "n": 100,
+          "p50": 181.0254589999995,
+          "p95": 322.02887499999997,
+          "p99": 343.15591700000004,
+          "max": 343.15591700000004
+        },
+        "search_ms": {
+          "n": 160,
+          "p50": 214.27866699999868,
+          "p95": 221.14979200000016,
+          "p99": 222.3179170000003,
+          "max": 222.36000000000058
+        },
+        "health_ms_during_search": {
+          "n": 165,
+          "p50": 1.7770830000008573,
+          "p95": 2.181749999999738,
+          "p99": 2.896832999998878,
+          "max": 3.870249999999942
+        },
+        "search_throughput_per_second": 74.13176787747051,
+        "scope": "Offline engine; realistic partition scan and concurrent HTTP load; not LLM throughput."
+      },
+      "database_files_bytes": 7634944,
+      "instrumented": false,
+      "source_commit": "842b13062feeacb80ad59d07170ceb1c378eb681",
+      "src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+      "performance_script_sha256": "0700ee39da5273f12f673de53dc757631a96ff73a8d1f2e4ec77a486366dbb0b",
+      "preload_script_sha256": null,
+      "node": "v24.18.0",
+      "scope": "Fresh offline service, 5000 facts, real HTTP; no other experiment runs. User applications untouched. Instrumented latency includes diagnostic logging overhead."
+    },
+    "instrumented": {
+      "started_host_state": {
+        "at": "2026-09-05T09:36:22.670660+00:00",
+        "load_average": [
+          3.8759765625,
+          4.017578125,
+          4.3310546875
+        ],
+        "host_process_cpu_percent_sum": 67.0,
+        "host_process_rss_kib_sum": 9632736.0,
+        "swap": "total = 10240.00M  used = 8796.75M  free = 1443.25M  (encrypted)",
+        "resident_ollama_models": [
+          {
+            "name": "nomic-embed-text:latest",
+            "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+            "size": 370031984,
+            "size_vram": 370031984,
+            "expires_at": "2026-09-05T17:36:32.836635+08:00"
+          }
+        ],
+        "scope": "Whole-host snapshot; user applications remain running and shared RSS may be counted more than once."
+      },
+      "finished_host_state": {
+        "at": "2026-09-05T09:36:42.381485+00:00",
+        "load_average": [
+          3.71337890625,
+          3.9677734375,
+          4.3056640625
+        ],
+        "host_process_cpu_percent_sum": 66.6,
+        "host_process_rss_kib_sum": 9549648.0,
+        "swap": "total = 10240.00M  used = 8796.75M  free = 1443.25M  (encrypted)",
+        "resident_ollama_models": [],
+        "scope": "Whole-host snapshot; user applications remain running and shared RSS may be counted more than once."
+      },
+      "metrics": {
+        "date": "2026-09-05T09:36:42.276Z",
+        "base": "http://127.0.0.1:8086",
+        "user": "perf-1788600982913",
+        "facts": 5000,
+        "concurrent_searches": 16,
+        "add_ms": {
+          "n": 100,
+          "p50": 169.72783300000083,
+          "p95": 318.42362500000127,
+          "p99": 333.96099999999933,
+          "max": 333.96099999999933
+        },
+        "search_ms": {
+          "n": 160,
+          "p50": 220.57658399999855,
+          "p95": 230.26654100000087,
+          "p99": 231.83491700000013,
+          "max": 231.97470799999792
+        },
+        "health_ms_during_search": {
+          "n": 171,
+          "p50": 1.7668330000014976,
+          "p95": 2.1387089999989257,
+          "p99": 2.487333999997645,
+          "max": 3.954541999999492
+        },
+        "search_throughput_per_second": 71.77104990224278,
+        "scope": "Offline engine; realistic partition scan and concurrent HTTP load; not LLM throughput."
+      },
+      "database_files_bytes": 7614464,
+      "instrumented": true,
+      "source_commit": "842b13062feeacb80ad59d07170ceb1c378eb681",
+      "src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+      "performance_script_sha256": "0700ee39da5273f12f673de53dc757631a96ff73a8d1f2e4ec77a486366dbb0b",
+      "preload_script_sha256": "e0e5ce3894e9d4a44117309c7d6eb127e8c344d0e0d2415834794eb6a2037483",
+      "node": "v24.18.0",
+      "scope": "Fresh offline service, 5000 facts, real HTTP; no other experiment runs. User applications untouched. Instrumented latency includes diagnostic logging overhead.",
+      "worker_by_method": {
+        "commit": {
+          "dispatch_wait_ms": {
+            "n": 100,
+            "p50": 0.2392578125,
+            "p95": 0.260986328125,
+            "p99": 0.277587890625,
+            "max": 0.277587890625
+          },
+          "handler_ms": {
+            "n": 100,
+            "p50": 155.656005859375,
+            "p95": 293.48193359375,
+            "p99": 307.309814453125,
+            "max": 307.309814453125
+          }
+        },
+        "receipt": {
+          "dispatch_wait_ms": {
+            "n": 100,
+            "p50": 0.02783203125,
+            "p95": 0.047607421875,
+            "p99": 0.17529296875,
+            "max": 0.17529296875
+          },
+          "handler_ms": {
+            "n": 100,
+            "p50": 0.045654296875,
+            "p95": 0.069091796875,
+            "p99": 5.41845703125,
+            "max": 5.41845703125
+          }
+        },
+        "search": {
+          "dispatch_wait_ms": {
+            "n": 161,
+            "p50": 204.613525390625,
+            "p95": 214.556396484375,
+            "p99": 216.283447265625,
+            "max": 216.435546875
+          },
+          "handler_ms": {
+            "n": 161,
+            "p50": 13.44921875,
+            "p95": 15.1923828125,
+            "p99": 16.1796875,
+            "max": 19.447021484375
+          }
+        },
+        "snapshot": {
+          "dispatch_wait_ms": {
+            "n": 100,
+            "p50": 0.080322265625,
+            "p95": 0.145751953125,
+            "p99": 0.44873046875,
+            "max": 0.44873046875
+          },
+          "handler_ms": {
+            "n": 100,
+            "p50": 6.870849609375,
+            "p95": 14.24169921875,
+            "p99": 15.01318359375,
+            "max": 15.01318359375
+          }
+        }
+      },
+      "event_loop_windows": {
+        "count": 19,
+        "window_ms": 1000,
+        "resolution_ms": 10,
+        "largest_window_p99_ms": 17.465343,
+        "largest_observed_delay_ms": 53.313535,
+        "scope": "Largest individual one-second-window statistics, not pooled or averaged quantiles."
+      }
+    }
+  }
+}

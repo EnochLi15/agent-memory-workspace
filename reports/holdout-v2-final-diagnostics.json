@@ -1,0 +1,1062 @@
+{
+  "checked_at": "2026-09-05T09:36:07.917490+00:00",
+  "script_sha256": "beafa9c4c83e4f661ee8bc44b604171a5bba0d86399339f32cd1944f360140f6",
+  "benchmarks": {
+    "locomo": {
+      "audit_path": "eval/artifacts/holdout-v2-U3-locomo/posthoc-audit.json",
+      "audit_sha256": "5a28a485853e9daba41ab36adc68b89cfe638725558d51dd684cdf0066f01724",
+      "original_planned": 500,
+      "primary_statuses": {
+        "judged": 500
+      },
+      "hypotheses": {
+        "coverage_exact": true,
+        "summary": {
+          "planned": 344,
+          "counts": {
+            "missing_supporting_evidence": 149,
+            "answer_misuse": 82,
+            "judge_or_rubric_disagreement": 97,
+            "multi_fact_or_list_incomplete": 5,
+            "time_or_state": 10,
+            "subject_or_attribution": 1
+          },
+          "scope": "Model-generated evidence-bound hypotheses, not verified causal attribution; runtime failures remain in error-analysis."
+        },
+        "accepted_quotes": 281,
+        "rejected_quote_proposals": 406,
+        "rows_with_schema_warnings": 218,
+        "accepted_quotes_are_source_substrings": true,
+        "questions_sha256": "11d1ccea12b1d5b2332fab185b4c691c53c45389d094d171b7809f2b42a467b9",
+        "scope": "Hypotheses only; exact quotes do not establish causal explanations or justify changing scores."
+      }
+    },
+    "memops": {
+      "audit_path": "eval/artifacts/holdout-v2-U3-memops/posthoc-audit.json",
+      "audit_sha256": "0b34f48bdb6300a4a291d7cbc0cd2ed0d552078a685154ce17fe64ef2af33bfa",
+      "original_planned": 500,
+      "primary_statuses": {
+        "judged": 464,
+        "service_error": 36
+      },
+      "hypotheses": {
+        "coverage_exact": true,
+        "summary": {
+          "planned": 289,
+          "counts": {
+            "answer_misuse": 109,
+            "judge_or_rubric_disagreement": 70,
+            "missing_supporting_evidence": 54,
+            "multi_fact_or_list_incomplete": 51,
+            "time_or_state": 1,
+            "subject_or_attribution": 4
+          },
+          "scope": "Model-generated evidence-bound hypotheses, not verified causal attribution; runtime failures remain in error-analysis."
+        },
+        "accepted_quotes": 325,
+        "rejected_quote_proposals": 254,
+        "rows_with_schema_warnings": 135,
+        "accepted_quotes_are_source_substrings": true,
+        "questions_sha256": "b375dae9d74505c1388337361480db4706b96f38a107d7782bc0701255b306cb",
+        "scope": "Hypotheses only; exact quotes do not establish causal explanations or justify changing scores."
+      },
+      "upstream": {
+        "coverage_of_saved_answers_exact": true,
+        "original_planned": 500,
+        "saved_answers": 464,
+        "diagnostic_judged": 464,
+        "diagnostic_errors": 0,
+        "answer_correct": 348,
+        "missing_predictions": 36,
+        "missing_prediction_primary_statuses": {
+          "service_error": 36
+        },
+        "missing_prediction_qids": [
+          "D24_reflect.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "D24_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "D24_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "D24_reflect.json#p3_state_transition#adjacent_operation#4",
+          "D24_reflect.json#p2_target_binding#adjacent_operation#2",
+          "D24_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "D24_reflect.json#p5_operation_application#adjacent_operation#8",
+          "D24_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "D24_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "D24_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "E03_reflect.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "E03_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "E03_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "E03_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "E03_reflect.json#p2_target_binding#adjacent_operation#2",
+          "E03_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "E03_reflect.json#p5_operation_application#adjacent_operation#8",
+          "E03_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "E03_reflect.json#p3_state_transition#adjacent_operation#4",
+          "E03_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "C30_update.json#p4_candidate_disambiguation#longitudinal_operation#5",
+          "C30_update.json#p5_operation_application#longitudinal_operation#7",
+          "C30_update.json#p1_operation_trace#longitudinal_operation#1",
+          "C30_update.json#p2_target_binding#adjacent_operation#2",
+          "C30_update.json#p4_candidate_disambiguation#adjacent_operation#4",
+          "C30_update.json#p5_operation_application#adjacent_operation#6",
+          "C30_update.json#p1_operation_trace#adjacent_operation#0",
+          "C30_update.json#p2_target_binding#longitudinal_operation#3",
+          "D17_remember.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "D17_remember.json#p5_operation_application#longitudinal_operation#9",
+          "D17_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "D17_remember.json#p2_target_binding#adjacent_operation#2",
+          "D17_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "D17_remember.json#p5_operation_application#adjacent_operation#8",
+          "D17_remember.json#p1_operation_trace#adjacent_operation#0",
+          "D17_remember.json#p2_target_binding#longitudinal_operation#3"
+        ],
+        "binary_answer_diagnostic_flags": {
+          "leakage": {
+            "flagged": 17,
+            "applicable_judged_answers": 105
+          },
+          "over_forget": {
+            "flagged": 25,
+            "applicable_judged_answers": 105
+          },
+          "stale_value": {
+            "flagged": 12,
+            "applicable_judged_answers": 72
+          }
+        },
+        "upstream_summary": {
+          "scope": "upstream MemOps diagnostics on saved answers, not competition score; generation model differs from upstream default",
+          "planned": 464,
+          "judged": 464,
+          "answer_correct": 348,
+          "lifecycle": {
+            "leakage_rate": 0.1619047619047619,
+            "over_forget_rate": 0.23809523809523808,
+            "stale_value_rate": 0.16666666666666666,
+            "reflection_precision": 0.8571428571428571,
+            "reflection_recall": 0.9879518072289156,
+            "provenance_support_rate": 0.6758620689655173,
+            "trajectory_order_accuracy": 0.4418604651162791,
+            "final_state_accuracy": 0.6952380952380952,
+            "intermediate_state_accuracy": 0.4594594594594595,
+            "trajectory_provenance_support_rate": 0.4482758620689655
+          }
+        },
+        "results_sha256": "a70826b1676925d2d8051457801c5721a58ad9023bd137d870980ea60e4d8772",
+        "manifest_sha256": "9b243ac30879fc610a5947e994166eaf0431aa65202e5445fd95698a8e9bd6cb",
+        "scope": "Saved-answer diagnostics only. Questions without predictions were never judged here; they remain in the original planned denominator. Flags describe answers, not database erasure/retention."
+      },
+      "paired_judgment_table": {
+        "primary_true_upstream_true": 174,
+        "primary_false_upstream_false": 115,
+        "primary_false_upstream_true": 174,
+        "primary_true_upstream_false": 1
+      },
+      "paired_operation_slices": {
+        "Forget": {
+          "jointly_judged": 105,
+          "primary_correct": 29,
+          "upstream_correct": 65
+        },
+        "Update": {
+          "jointly_judged": 72,
+          "primary_correct": 28,
+          "upstream_correct": 52
+        },
+        "Reflect": {
+          "jointly_judged": 85,
+          "primary_correct": 38,
+          "upstream_correct": 81
+        },
+        "TrajectoryOps": {
+          "jointly_judged": 105,
+          "primary_correct": 32,
+          "upstream_correct": 68
+        },
+        "Remember": {
+          "jointly_judged": 97,
+          "primary_correct": 48,
+          "upstream_correct": 82
+        }
+      },
+      "disagreements": [
+        {
+          "qid": "C01_forget.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C01_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D19_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A02_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D19_update.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C01_forget.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A02_update.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D19_update.json#p5_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C01_forget.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D19_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C01_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A02_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D19_update.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A02_update.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C01_forget.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C28_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D05_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C28_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p6_remember_negative#longitudinal_operation#11",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D25_remember.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C23_forget.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C23_forget.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C23_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A14_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A14_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A14_trajectory_ops.json#p4_operation_application#adjacent_operation#6",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C23_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A14_trajectory_ops.json#p5_state_trajectory#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A14_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D22_update.json#p5_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D22_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C10_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C10_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C27_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C27_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C27_trajectory_ops.json#p4_operation_application#adjacent_operation#6",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C27_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_remember.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C27_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_remember.json#p6_remember_negative#adjacent_operation#10",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_remember.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_remember.json#p6_remember_negative#longitudinal_operation#11",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_remember.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_update.json#p5_operation_application#longitudinal_operation#7",
+          "primary_correct": true,
+          "upstream_correct": false
+        },
+        {
+          "qid": "A29_update.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_update.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_update.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_reflect.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B02_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C02_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B02_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C02_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B24_trajectory_ops.json#p5_state_trajectory#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D21_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D21_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D21_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D21_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D21_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F08_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_reflect.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F06_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F06_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F06_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E11_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E11_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E11_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F15_forget.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D01_reflect.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D24_remember.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A28_forget.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D24_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D24_remember.json#p6_remember_negative#adjacent_operation#10",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D24_remember.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D24_remember.json#p6_remember_negative#longitudinal_operation#11",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A28_forget.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C04_forget.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C04_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A06_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A04_forget.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E13_remember.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A04_forget.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E13_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E13_remember.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A04_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A04_forget.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E13_remember.json#p6_remember_negative#adjacent_operation#10",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B28_reflect.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E13_remember.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B11_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B11_update.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B11_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B11_update.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C31_forget.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "C06_forget.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F01_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F01_forget.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "D20_forget.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_remember.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_remember.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_update.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_remember.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_remember.json#p3_state_transition#longitudinal_operation#5",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A13_reflect.json#p1_operation_trace#adjacent_operation#0",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_update.json#p5_operation_application#longitudinal_operation#7",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "E15_remember.json#p6_remember_negative#adjacent_operation#10",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A16_update.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A13_reflect.json#p2_target_binding#longitudinal_operation#3",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B01_remember.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F17_remember.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "B01_remember.json#p5_operation_application#adjacent_operation#8",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F17_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F17_remember.json#p3_state_transition#adjacent_operation#4",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "F06_remember.json#p2_target_binding#adjacent_operation#2",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_remember.json#p5_operation_application#longitudinal_operation#9",
+          "primary_correct": false,
+          "upstream_correct": true
+        },
+        {
+          "qid": "A01_remember.json#p1_operation_trace#longitudinal_operation#1",
+          "primary_correct": false,
+          "upstream_correct": true
+        }
+      ],
+      "comparison_scope": "Same saved predictions; different judging protocols. No regenerated answers, no service calls, no change to primary scores. Missing predictions remain absent from this paired subset."
+    }
+  },
+  "scope": "Completed posthoc evidence only. Model explanations are hypotheses, and lifecycle flags describe answers rather than database deletion."
+}
