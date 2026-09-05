@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-09-05T06:46:03.135502+00:00",
+  "candidate": "910b3dd",
+  "current_service_commit": "dfa2471be649454dd520de27c3dbffbdd5e98ec0",
+  "src_git_trees": {
+    "910b3dd": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+    "HEAD": "15dac4dcd0ac787e1060432f72294b279ca2af3c"
+  },
+  "runtime_unchanged": true,
+  "changes": "Deadline test readiness and test-only U0/U1 HTTP ingestion guard; no production algorithm changes.",
+  "baseline_guard_tests": 2,
+  "baseline_restart_reason": "Baseline HTTP adapter did not coalesce in-flight requests: client timeout retries launched concurrent duplicate upstream adds. Superseded by a fresh guarded-adapter baseline campaign; upstream algorithms unchanged."
+}

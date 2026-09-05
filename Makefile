@@ -21,6 +21,7 @@ eval-init:
 	eval/.venv/bin/python -m pip install -r eval/python/requirements.lock
 baseline-init:
 	cd service/baseline && npm ci && node prepare-u1.mjs
+	cd service/baseline && node --import tsx --test ingestion-guard.test.ts
 	cd service/baseline && MEM0_TELEMETRY=false MEM0_DIR=.data/config node --import tsx parity.ts
 data:
 	cd eval && npm run build && python3 scripts/download-data.py
