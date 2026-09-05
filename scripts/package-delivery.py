@@ -92,9 +92,9 @@ if not performance_path.exists():
 performance = json.loads(performance_path.read_text())
 if performance.get('status') != 'complete' or set(performance.get('measurements', {})) != {'primary', 'instrumented'}:
     raise SystemExit('Both final performance results must be complete')
-audit = json.loads((ROOT / 'reports/final-delivery-audit.json').read_text())
-if audit.get('status') != 'passed':
-    raise SystemExit('A completed requirement-by-requirement delivery audit is required')
+audit = json.loads((ROOT / 'reports/delivery-readiness-audit.json').read_text())
+if audit.get('status') != 'ready_for_packaging':
+    raise SystemExit('A completed requirement-by-requirement readiness audit is required')
 
 secrets = []
 for line in (ROOT / '.env').read_text().splitlines():

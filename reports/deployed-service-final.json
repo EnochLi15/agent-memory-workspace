@@ -1,0 +1,43 @@
+{
+  "checked_at": "2026-09-05T09:06:32.993453+00:00",
+  "container": "comp-memory-delivery-memory-service-1",
+  "image": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+  "health_status": 200,
+  "configuration_matches_initial_deployment": true,
+  "configuration_without_credentials": {
+    "port": 8088,
+    "host": "0.0.0.0",
+    "dataDir": "/data",
+    "mode": "enhanced",
+    "llmBase": "http://54.183.78.37:8080/v1",
+    "llmModel": "gpt-5.4-mini",
+    "embeddingBase": "http://host.docker.internal:11434",
+    "embeddingModel": "nomic-embed-text:latest",
+    "embeddingDigest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "embeddingDimensions": 768,
+    "embeddingSpace": "nomic-embed-text:latest:0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f:768:nomic-prefix-v1",
+    "addTimeout": 115000,
+    "searchTimeout": 55000,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "retrieval": "hybrid",
+    "rerank": true,
+    "rawFallback": true,
+    "experimental": {
+      "rawOnly": false,
+      "lifecycle": true,
+      "temporal": true,
+      "multiHop": true,
+      "reflection": true
+    }
+  },
+  "embedding": {
+    "http_status": 200,
+    "count": 1,
+    "dimensions": 768,
+    "finite": true,
+    "elapsed_ms": 172.937041
+  },
+  "local_model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "scope": "Actual deployed container configuration, health and embedding route checked after primary evaluations finished. No memory namespaces modified. Full behavior tests and remote generation evidence are recorded separately."
+}
