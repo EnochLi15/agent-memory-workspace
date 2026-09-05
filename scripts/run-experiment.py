@@ -6,7 +6,7 @@ relying only on HTTP idempotent receipts; eval never reads service storage.
 """
 import argparse,json,os,pathlib,subprocess,time,urllib.request,hashlib
 root=pathlib.Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');args=p.parse_args()
 spec=json.loads((root/'configs/experiments.json').read_text());profile=spec['profiles'][args.profile]
 env=os.environ.copy()
 for line in (root/'.env').read_text().splitlines():
@@ -29,6 +29,7 @@ else:
  safe=json.loads(subprocess.check_output(['node','--input-type=module','-e',"import {configFromEnv} from './dist/config.js';const {llmKey,...safe}=configFromEnv();console.log(JSON.stringify(safe));"],cwd=cwd,env=env,text=True))
 safe['extraction_prompt_sha256']=hashlib.sha256((root/'service/src/prompts.ts').read_bytes()).hexdigest()
 safe['baseline_transport']='SSE-to-JSON; model/messages/options unchanged' if baseline else 'native SSE'
+safe['locomo_input_override']=args.locomo_data
 config_json=json.dumps(safe,sort_keys=True,separators=(',',':'));env['SERVICE_CONFIG_JSON']=config_json;env['SERVICE_CONFIG_SHA256']=hashlib.sha256(config_json.encode()).hexdigest()
 config_file=campaign/(args.profile+'-service.json')
 if config_file.exists():raise SystemExit('Experiment exists; choose a new campaign/profile')
@@ -43,10 +44,11 @@ try:
     if response.status==200:break
   except Exception:time.sleep(.25)
  else:raise RuntimeError('Service did not become ready')
- for benchmark in ['locomo','memops']:
+ for benchmark in (['locomo','memops'] if args.benchmark=='both' else [args.benchmark]):
   run_id=name+'-'+benchmark;run_env=env.copy();run_env['EVAL_PYTHON']=str(root/'eval/.venv/bin/python');run_env['MEMORY_LLM_BASE_URL']=answer_base
   run_env.pop('EVALUATOR_API_BASE',None);run_env.pop('EVALUATOR_API_KEY',None)
-  command=['node','dist/cli.js','run','--data',f'.data/{benchmark}-{args.split}.json','--run-id',run_id,'--memory-namespace',namespace,'--base-url',f'http://127.0.0.1:{args.port}','--concurrency',str(args.concurrency),'--judge-kind','refined-python' if benchmark=='locomo' else 'rubric']
+  data_file=args.locomo_data if benchmark=='locomo' and args.locomo_data else f'.data/{benchmark}-{args.split}.json'
+  command=['node','dist/cli.js','run','--data',data_file,'--run-id',run_id,'--memory-namespace',namespace,'--base-url',f'http://127.0.0.1:{args.port}','--concurrency',str(args.concurrency),'--judge-kind','refined-python' if benchmark=='locomo' else 'rubric']
   if benchmark=='locomo' and args.upstream_judge:
    run_env.update(EVALUATOR_API_BASE='http://127.0.0.1:8766/v1',EVALUATOR_API_KEY='local');command+=['--judge-model','qwen3:14b','--mode','upstream-reproduction']
   out=open(campaign/(args.profile+'-'+benchmark+'.log'),'w');job=subprocess.Popen(command,cwd=root/'eval',env=run_env,stdout=out,stderr=subprocess.STDOUT);jobs.append((benchmark,job,out));print(json.dumps({'event':'started','run_id':run_id,'pid':job.pid,'service_pid':service.pid}),flush=True)
