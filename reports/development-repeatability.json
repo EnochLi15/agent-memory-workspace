@@ -1,0 +1,100 @@
+{
+  "checked_at": "2026-09-05T08:03:19.619914+00:00",
+  "comparisons": {
+    "locomo": {
+      "run_a": "dev-v6-U3-locomo",
+      "run_b": "dev-v6-B6-locomo",
+      "same_semantic_service_config": true,
+      "ignored_service_fields": [
+        "port",
+        "ingestion_origin"
+      ],
+      "same_evaluation_fields": [
+        "memory_namespace",
+        "dataset_sha256",
+        "answer_model",
+        "answer_inference",
+        "answer_base",
+        "judge_model",
+        "judge_kind",
+        "judge_base",
+        "answer_prompt_sha256",
+        "rubric_prompt_sha256",
+        "top_k",
+        "chunk_messages",
+        "chunk_words"
+      ],
+      "same_service_src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+      "paired_questions": 30,
+      "same_full_evidence_payload": 1,
+      "same_ordered_evidence_content": 4,
+      "identical_answer_text": 5,
+      "different_answers_given_identical_full_evidence": 1,
+      "jointly_judged": 30,
+      "different_verdicts_on_jointly_judged": 5,
+      "different_verdicts_given_identical_answer": 0,
+      "file_hashes": {
+        "dev-v6-U3-locomo": {
+          "manifest.json": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "retrievals.jsonl": "dccaf9576db16fdd272c739014d35f27a71cd140ea0caa288cf1ecf65c5a3eea",
+          "predictions.jsonl": "fe622ec919359266d24557cb2e1e05d7124c62efb70d6a7076386e96ff80d1fa",
+          "judgments.jsonl": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63"
+        },
+        "dev-v6-B6-locomo": {
+          "manifest.json": "62dbc11f92073d9cec7258ac194a366ed24724a5a3814a8fb0c96c7f7dea8e79",
+          "retrievals.jsonl": "39971d351ad85ef1688a480989e934112ed555b05c791b918f102e50c692fa86",
+          "predictions.jsonl": "e5349b9daccd8acbe22fbb6080c88d37c1a92cce238c6bba607bbae66971d06b",
+          "judgments.jsonl": "b5cd5af4253a1523e3697319f4314918d5b2baea83e6f8488f266086cdd707e2"
+        }
+      }
+    },
+    "memops": {
+      "run_a": "dev-v6-U3-memops",
+      "run_b": "dev-v6-B6-memops",
+      "same_semantic_service_config": true,
+      "ignored_service_fields": [
+        "port",
+        "ingestion_origin"
+      ],
+      "same_evaluation_fields": [
+        "memory_namespace",
+        "dataset_sha256",
+        "answer_model",
+        "answer_inference",
+        "answer_base",
+        "judge_model",
+        "judge_kind",
+        "judge_base",
+        "answer_prompt_sha256",
+        "rubric_prompt_sha256",
+        "top_k",
+        "chunk_messages",
+        "chunk_words"
+      ],
+      "same_service_src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c",
+      "paired_questions": 30,
+      "same_full_evidence_payload": 4,
+      "same_ordered_evidence_content": 4,
+      "identical_answer_text": 6,
+      "different_answers_given_identical_full_evidence": 4,
+      "jointly_judged": 29,
+      "different_verdicts_on_jointly_judged": 6,
+      "different_verdicts_given_identical_answer": 0,
+      "file_hashes": {
+        "dev-v6-U3-memops": {
+          "manifest.json": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "retrievals.jsonl": "c3f8ec66778c1789e3b5ab3dfb54217dfc4bb03df61b5db6db88350edefed882",
+          "predictions.jsonl": "2267102e12bbae590b473da892edd3dd70415edddf85cf3751d3c7f67a1640b5",
+          "judgments.jsonl": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07"
+        },
+        "dev-v6-B6-memops": {
+          "manifest.json": "b09ed25d7a3356911692be0a52b0a19047b8e63ed7cc8f269693fdc00269dc3a",
+          "retrievals.jsonl": "1f479ca2fb7a145444bcdb620b90f9abcb4cf869f42a6e1fdcba0e6168a58f95",
+          "predictions.jsonl": "780236f91953e65251c1b3a12cfc7d61bd6f9d94a76f10a1753233be63ebd1aa",
+          "judgments.jsonl": "f9c88c6d079b5ab5f56481f0489da7ba1bc853df42686f27e774df0c9bfb7013"
+        }
+      }
+    }
+  },
+  "scope": "Two executions of the same configured candidate on the same ingested development memory. These observations expose run variability; they do not identify whether model sampling, opaque gateway revisions, rerank deadlines or host contention caused each difference. No heldout answers were inspected or used to change the candidate."
+}

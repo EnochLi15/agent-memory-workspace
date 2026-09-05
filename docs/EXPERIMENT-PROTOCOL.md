@@ -40,6 +40,8 @@ python3 scripts/compare-runs.py --campaign dev-v6 --include-campaign baseline-v7
 
 配对报告拒绝不匹配的数据、模型或 Answer/Judge 提示词；两批次同名配置会报歧义，防止隐式选分。所有原始错误保留在计划分母中，共同完成判分的子集另列条件性诊断，不替代完整题数结果。
 
+报告同时生成B0→B1→…→B6的逐阶段配对和U0→U1的重构质量对照，并保存每份输入文件及统计脚本的SHA256。B6与U3使用相同完整候选配置和相同灌入记忆，属于重复运行；它们的差异不能解释为新增组件收益。已完成的重复性核查见总控 `reports/development-repeatability.json`。固定的seed用于数据选择和统计重采样，远端模型内部采样和别名背后的权重版本不受该seed控制。
+
 对已完成运行，`scripts/analyze-errors.py --run-id ID` 生成完全基于保存证据的错误阶段与来源覆盖清单。`node --env-file=../.env scripts/diagnose-answers.mjs --run-id ID --data PATH` 额外调用模型生成错误假设；假设不代表经验证的因果归因，引用无效或模型失败单独记录。
 
 `python/upstream/memops/operation_metrics.py` 保留原版判分逻辑。通过 `.venv/bin/python scripts/memops-diagnostic.py --run-id ID` 在已配置环境中分析保存答案，输出 lifecycle 子指标，且不访问记忆服务或重做 Answer。该口径和本地 rubric 代理分开报告；开发集中相同答案已观察到明显判分分歧，详见 `reports/development-judge-comparison.json`（总控仓库）。
