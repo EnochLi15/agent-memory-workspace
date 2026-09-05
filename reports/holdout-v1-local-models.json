@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-05T06:08:43.115683+00:00",
+  "phase": "holdout-v1 start",
+  "ollama": {
+    "version": "0.31.2"
+  },
+  "models": [
+    {
+      "name": "qwen3:14b",
+      "model": "qwen3:14b",
+      "modified_at": "2026-09-05T13:05:11.761292895+08:00",
+      "size": 9276198565,
+      "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "14.8B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 40960,
+        "embedding_length": 5120
+      },
+      "capabilities": [
+        "completion",
+        "tools",
+        "thinking"
+      ]
+    },
+    {
+      "name": "nomic-embed-text:latest",
+      "model": "nomic-embed-text:latest",
+      "modified_at": "2026-05-11T14:49:59.424218144+08:00",
+      "size": 274302450,
+      "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "nomic-bert",
+        "families": [
+          "nomic-bert"
+        ],
+        "parameter_size": "137M",
+        "quantization_level": "F16",
+        "context_length": 2048,
+        "embedding_length": 768
+      },
+      "capabilities": [
+        "embedding"
+      ]
+    }
+  ]
+}

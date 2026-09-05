@@ -30,6 +30,15 @@ else:
 safe['extraction_prompt_sha256']=hashlib.sha256((root/'service/src/prompts.ts').read_bytes()).hexdigest()
 safe['baseline_transport']='SSE-to-JSON; model/messages/options unchanged' if baseline else 'native SSE'
 safe['locomo_input_override']=args.locomo_data
+if args.reuse_ingestion:
+ origins={}
+ for benchmark in (['locomo','memops'] if args.benchmark=='both' else [args.benchmark]):
+  origin=root/'eval/artifacts'/(namespace+'-'+benchmark);manifest_bytes=(origin/'manifest.json').read_bytes();prior=json.loads(manifest_bytes)
+  if prior['status']!='finished':raise SystemExit('Wait for the original ingestion experiment to finish')
+  last={row['request_id']:row for row in (json.loads(line) for line in (origin/'ingest.jsonl').read_text().splitlines())}
+  if any(row['status']!='ok' for row in last.values()):raise SystemExit('Cannot reuse an incomplete ingestion for a paired retrieval ablation')
+  origins[benchmark]={'run_id':prior['run_id'],'manifest_sha256':hashlib.sha256(manifest_bytes).hexdigest(),'service_commit':prior['service_commit'],'dataset_sha256':prior['dataset_sha256']}
+ safe['ingestion_origin']=origins
 config_json=json.dumps(safe,sort_keys=True,separators=(',',':'));env['SERVICE_CONFIG_JSON']=config_json;env['SERVICE_CONFIG_SHA256']=hashlib.sha256(config_json.encode()).hexdigest()
 config_file=campaign/(args.profile+'-service.json')
 if config_file.exists():raise SystemExit('Experiment exists; choose a new campaign/profile')
