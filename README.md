@@ -23,3 +23,5 @@ make down
 正式赛题 Answer、500+500 选择器与 MemOps 判分映射尚未提供。当前公开复现使用明确记录的本地转换与模型，不能当成正式平台得分。验证状态见 `docs/IMPLEMENTATION-STATUS.md`；已执行的工程和问答实验报告将放入 `reports/`。
 
 离线 Git 交付：`make bundle` 创建三个 bare 镜像，并实际验证递归克隆。内部相对 submodule URL 适配三个镜像相邻的目录；上传到代码托管平台时按实际位置配置远端。
+
+详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。本机交付实例已在 `http://127.0.0.1:8088` 运行并通过增强模式 contract，实际配置见 [部署验证](reports/deployed-service.json)；完整公共评测仍在执行，当前结果以 [实施状态](docs/IMPLEMENTATION-STATUS.md) 为准。

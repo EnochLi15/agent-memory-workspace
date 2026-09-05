@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-09-05T07:08:43.001037+00:00",
+  "base_url": "http://127.0.0.1:8088",
+  "compose_project": "comp-memory-delivery",
+  "container": "comp-memory-delivery-memory-service-1",
+  "image": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+  "configuration_without_credentials": {
+    "port": 8088,
+    "host": "0.0.0.0",
+    "dataDir": "/data",
+    "mode": "enhanced",
+    "llmBase": "http://54.183.78.37:8080/v1",
+    "llmModel": "gpt-5.4-mini",
+    "embeddingBase": "http://host.docker.internal:11434",
+    "embeddingModel": "nomic-embed-text:latest",
+    "embeddingDigest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "embeddingDimensions": 768,
+    "embeddingSpace": "nomic-embed-text:latest:0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f:768:nomic-prefix-v1",
+    "addTimeout": 115000,
+    "searchTimeout": 55000,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "retrieval": "hybrid",
+    "rerank": true,
+    "rawFallback": true,
+    "experimental": {
+      "rawOnly": false,
+      "lifecycle": true,
+      "temporal": true,
+      "multiHop": true,
+      "reflection": true
+    }
+  },
+  "configuration_sha256": "ae3278ff09d362b817821e193e5d6936604e364227c10f31306794c620b6be94",
+  "contract": {
+    "contract": "passed",
+    "base_url": "http://127.0.0.1:8088",
+    "user_id": "contract-1788591953820",
+    "checks": [
+      "health",
+      "echo",
+      "idempotency",
+      "read-after-write",
+      "tenant-isolation",
+      "top-k",
+      "three-routes",
+      "validation",
+      "conflict",
+      "forget-all-paths",
+      "retained-neighbor"
+    ]
+  },
+  "stop_preserving_data": "docker compose -p comp-memory-delivery down",
+  "scope": "Fresh dedicated deployment; benchmark namespaces and stores are not used."
+}
