@@ -68,11 +68,14 @@ LoCoMo 上游复现另外需要已安装的 Qwen3:14b Q4_K_M 和 eval 的 `ollam
 
 ## 最终归档
 
-完整评测、后处理、双阶段性能与逐项验收结束后，提交文档并用`make bundle`生成最新三仓库快照，再执行：
+完整评测、后处理、双阶段性能与报告结束后，先执行逐项证据核查，再提交文档并生成最新三仓库快照：
 
 ```sh
+python3 scripts/audit-delivery-readiness.py
+# 提交全部源代码、报告及审计记录后执行：
+make bundle
 python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录> --plan
 python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录>
 ```
 
-`--plan`只列清单，不代表交付完成。正式打包要求所有完成门槛、干净Git状态和快照版本一致，检查所选文件与Git可达历史是否包含配置中的真实密钥，并在打包后逐文件读回验证SHA256。包内保留历史失败结果，排除真实环境文件、运行数据库、依赖缓存和重复模型导入目录。外部`.sha256`用于验证压缩包本身；`MANIFEST.json`用于验证包内每个源文件。
+`delivery-readiness-audit.json`只证明已具备打包条件，不能证明尚未生成的压缩包有效。`--plan`只列清单，不代表交付完成。正式打包要求所有完成门槛、干净Git状态和快照版本一致，检查所选文件与Git可达历史是否包含配置中的真实密钥，并在打包后逐文件读回验证SHA256。包内保留历史失败结果，排除真实环境文件、运行数据库、依赖缓存和重复模型导入目录。外部`.sha256`用于验证压缩包本身；`MANIFEST.json`用于验证包内每个源文件。
