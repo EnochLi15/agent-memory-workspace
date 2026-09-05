@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-09-05T07:55:21.604392+00:00",
+  "archive_sha256": "9908e6e0d78ca92b7e132e754f6339084c7cb87fa87b9a6405e8f40203d99106",
+  "model_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "isolated_model_directory": "artifacts/embedding-import-cpu-verification/models",
+  "endpoint": "http://127.0.0.1:11435",
+  "model_count": 1,
+  "embedding_count": 3,
+  "dimensions": 768,
+  "finite": true,
+  "related_cosine": 0.7500803762396646,
+  "unrelated_cosine": 0.4699496988431499,
+  "cold_embedding_ms": 2184.543333016336,
+  "passed": true,
+  "runtime": "Ollama 0.31.2 / Apple M1 Pro",
+  "cpu_fallback_environment": {
+    "GGML_METAL_DEVICES": "0"
+  },
+  "scope": "Archive imported into a second new model directory and used by a separate temporary CPU Ollama server. No model pull was invoked. Existing localhost:11434 service and evaluated GPU model configuration were not modified.",
+  "temporary_server_stopped": true
+}

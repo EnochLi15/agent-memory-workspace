@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-09-05T07:55:43.630255+00:00",
+  "initial_import_attempt": {
+    "status": "failed",
+    "manifest_recognized": true,
+    "model_count": 1,
+    "embedding_timeout_seconds": 120,
+    "server_log": "artifacts/embedding-import-verification/server.log",
+    "server_log_sha256": "42bfc1b1a495ea59729098138814c8d57308530497fbe2ba07d9a0d075438e0a"
+  },
+  "minimal_reproducer": "/Applications/Ollama.app/Contents/Resources/llama-server --version",
+  "observations": [
+    {
+      "configuration": "inherited environment",
+      "result": "no output before 10-second deadline"
+    },
+    {
+      "configuration": "minimal environment with unchanged HOME",
+      "result": "no output before bounded deadline"
+    },
+    {
+      "configuration": "same executable with GGML_METAL_DEVICES=0",
+      "result": "exit 0, version 1 (cb295bf59)",
+      "elapsed_ms": 519.1875420277938
+    }
+  ],
+  "version_comparison": {
+    "existing_api": "0.31.2",
+    "installed_cli": "0.31.2"
+  },
+  "sample": {
+    "path": "artifacts/embedding-startup-diagnostic/llama-startup.sample",
+    "sha256": "08538a30765eba55786db6b1861473373a58a657cbd706ede1e9a4af05d36ba5",
+    "main_thread": "ggml_metal_library_init -> newLibraryWithSource -> MTLCompilerScheduler -> wait for compiler queue",
+    "compiler_thread": "xpc_connection_send_message_with_reply_sync"
+  },
+  "finding": "The observed stall precedes model loading and occurs in Metal shader-library initialization. Disabling Metal devices removes the minimal startup stall. This identifies the blocked path, not the underlying macOS compiler-service cause.",
+  "workaround_scope": "CPU-only fallback for a separate temporary/new Ollama instance; existing evaluated GPU runners and user services unchanged.",
+  "source_reference": "https://github.com/ggml-org/llama.cpp/blob/master/ggml/src/ggml-metal/ggml-metal.cpp",
+  "source_note": "Upstream backend registration reads GGML_METAL_DEVICES; installed executable contains and empirically honors this variable. Treat as version-specific rather than a guaranteed public Ollama API.",
+  "full_import_regression": "See embedding-import-verification.json when the CPU replay completes."
+}
