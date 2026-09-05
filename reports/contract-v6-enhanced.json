@@ -1,0 +1,20 @@
+{
+  "contract": "passed",
+  "base_url": "http://127.0.0.1:8100",
+  "user_id": "contract-1788589809494",
+  "checks": [
+    "health",
+    "echo",
+    "idempotency",
+    "read-after-write",
+    "tenant-isolation",
+    "top-k",
+    "three-routes",
+    "validation",
+    "conflict",
+    "forget-all-paths",
+    "retained-neighbor"
+  ],
+  "checked_at": "2026-09-05T06:35:23.826719+00:00",
+  "service_commit": "910b3dd42f2953a4cdb2a8061f4eefc5c2db42ea"
+}
