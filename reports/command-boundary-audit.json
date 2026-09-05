@@ -1,0 +1,30 @@
+{
+  "checked_at": "2026-09-05T07:46:01.701238+00:00",
+  "checks": {
+    "scoped_remove": true,
+    "traversal_rejected": true,
+    "symlink_rejected": true,
+    "target_removed": true,
+    "neighbor_retained": true
+  },
+  "script_sha256": "0b95a49369872d62ef86fc3eaa9567e2892adb1b932a14aa712408d6c45bcddc",
+  "command": "make clean-run RUN_ID=temporary-owned-fixture",
+  "scope": "Created disposable artifacts only; existing experiments and service databases untouched.",
+  "results": [
+    {
+      "case": "scoped_remove",
+      "returncode": 0,
+      "output": "python3 scripts/clean-run.py \"command-audit-8ab6f401ef93\"\nRemoved experiment artifacts only: /Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/command-audit-8ab6f401ef93\n"
+    },
+    {
+      "case": "traversal_rejected",
+      "returncode": 2,
+      "output": "python3 scripts/clean-run.py \"../command-audit-8ab6f401ef93\"\nAn explicit safe RUN_ID is required\nmake: *** [clean-run] Error 1\n"
+    },
+    {
+      "case": "symlink_rejected",
+      "returncode": 2,
+      "output": "python3 scripts/clean-run.py \"command-audit-8ab6f401ef93-link\"\nRefusing symlink\nmake: *** [clean-run] Error 1\n"
+    }
+  ]
+}
