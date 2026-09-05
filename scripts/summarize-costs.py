@@ -120,9 +120,12 @@ resource_summary = {'source_sha256': sha(resource_path), 'samples': len(resource
                     'experiment_cpu_percent_sum': stats([r['experiments']['cpu_percent_sum'] for r in resources]),
                     'ollama_process_rss_kib': stats([r['ollama']['rss_kib'] for r in resources]),
                     'ollama_cpu_percent_sum': stats([r['ollama']['cpu_percent_sum'] for r in resources]),
-                    'scope': '15-second process samples across concurrent experiments; not isolated per-campaign '
+                    'process_selection': ['run-experiment.py', 'ollama-judge-server.py',
+                                          'streaming-gateway.py', 'up to five descendant generations'],
+                    'scope': '15-second process samples across selected concurrent experiment processes; not isolated per-campaign '
                              'memory, GPU utilization, or integrated CPU time. Shared pages can be counted twice. '
-                             'User applications and Docker VM are not attributed; sampling began after run start.'}
+                             'Standalone posthoc/data-audit processes, user applications and Docker VM are not '
+                             'attributed; sampling began after run start and ends when the main campaign finishes.'}
 report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'complete_evaluation_runs': not pending, 'pending': pending,
           'script_sha256': sha(pathlib.Path(__file__)), 'service_model_usage': summaries,

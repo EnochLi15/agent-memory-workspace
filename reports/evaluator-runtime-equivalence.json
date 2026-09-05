@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-09-05T08:54:29.438135+00:00",
+  "reviewed_paths": [
+    "src",
+    "python/judge_bridge.py",
+    "python/upstream/llm_judge.py",
+    "python/upstream/llm_judge_runtime.py",
+    "python/upstream/memops/operation_metrics.py"
+  ],
+  "current_eval_commit": "8f5be514b7dec1e5d93a6fc831e2c768c093ec83",
+  "versions": [
+    {
+      "commit": "1699ecb97575cd1867a318e87f7a4174a152719b",
+      "runs": [
+        "dev-v6-B0-locomo",
+        "dev-v6-B0-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "28815be2b9926103056993e470a9f73fc8b62181",
+      "runs": [
+        "dev-v6-B1-locomo",
+        "dev-v6-B1-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "36f03d64a57fed71e55ebfdec8b88ee3fd5e6269",
+      "runs": [
+        "dev-v6-B2-locomo",
+        "dev-v6-B2-memops",
+        "dev-v6-U3-locomo",
+        "dev-v6-U3-memops",
+        "holdout-v2-U3-locomo",
+        "holdout-v2-U3-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "5560644243bea5a428d9140f6c32f2178f536a9b",
+      "runs": [
+        "dev-v6-B3-locomo",
+        "dev-v6-B3-memops",
+        "dev-v6-B4-locomo",
+        "dev-v6-B4-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "759093279e59988c335334452b0d0ce1eab3d06d",
+      "runs": [
+        "dev-v6-U2-locomo",
+        "dev-v6-U2-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "7858b803a19643161fa9f1adabfa2efe49972c39",
+      "runs": [
+        "baseline-v7-U0-locomo",
+        "baseline-v7-U0-memops",
+        "baseline-v7-U1-locomo",
+        "baseline-v7-U1-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "b7cdcd6bf0aa4f16a47b76bee4444effc94eaff3",
+      "runs": [
+        "dev-v6-B5-locomo",
+        "dev-v6-B5-memops",
+        "dev-v6-B6-locomo",
+        "dev-v6-B6-memops",
+        "dev-v6-no_lifecycle-locomo",
+        "dev-v6-no_lifecycle-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "c4c11ba2373e6efff8ff40b6b7f349f4684aa8cd",
+      "runs": [
+        "dev-v6-no_hop-locomo",
+        "dev-v6-no_hop-memops",
+        "dev-v6-no_rerank-locomo",
+        "dev-v6-no_rerank-memops"
+      ],
+      "runtime_differences_from_current": []
+    },
+    {
+      "commit": "c960f176f62945c581f7c5af3cac9e76aa569b33",
+      "runs": [
+        "dev-v6-no_raw-locomo",
+        "dev-v6-no_raw-memops",
+        "dev-v6-no_time-locomo",
+        "dev-v6-no_time-memops"
+      ],
+      "runtime_differences_from_current": []
+    }
+  ],
+  "scope": "Git byte comparison for all evaluator TypeScript source and dynamically loaded Judge implementations. Auxiliary posthoc/statistics scripts, licenses and tests are excluded deliberately; they are independently versioned and do not implement ordinary Answer/Judge runtime."
+}

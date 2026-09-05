@@ -35,6 +35,8 @@ LoCoMo固定上游的CC BY-NC 4.0许可与原始署名文件已随评测器保�
 
 普通Answer为gpt-5.4-mini。开发比较使用固定代理Judge；保留集LoCoMo使用原refined Judge及本地Qwen3:14b Q4_K_M，MemOps使用固定rubric代理，并对保存答案另跑原版MemOps诊断。没有把gold字段传入服务或普通Answer。运行错误保留在完整计划分母，未判定题另列，不能删除后美化成绩。
 
+收尾时再次核对了405个原始文件，并在独立临时目录重建两类完整标准化数据、4个dev/test划分文件及划分manifest；7个输出的SHA256均与实际评测文件一致，见 [数据重建核查](dataset-reconstruction.json)。所有已使用的9个评测源码版本，其整个TS运行源码及动态加载的Judge实现与当前版本均无差异，见 [评测运行代码等价核查](evaluator-runtime-equivalence.json)。
+
 以下32组开发与基线运行已经全部结束，44个配对统计均通过配置一致性核查；完整结果见 [最终开发对照摘要](development-final-comparison.json)：
 
 | 配置 | LoCoMo正确/计划 | MemOps正确/计划 |
