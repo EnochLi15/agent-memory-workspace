@@ -1,0 +1,40 @@
+{
+  "checked_at": "2026-09-05T06:57:02.174016+00:00",
+  "source_snapshot": {
+    "commits": {
+      "service": "dfa2471be649454dd520de27c3dbffbdd5e98ec0",
+      "eval": "fbc136234f60588bfadbdc3276cd24c52ed72736",
+      ".": "622eea51af51cc3a24104ac1bc02d7b6c3ca329d"
+    },
+    "recursive_clone": "passed",
+    "submodules": " fbc136234f60588bfadbdc3276cd24c52ed72736 eval (heads/main)\n dfa2471be649454dd520de27c3dbffbdd5e98ec0 service (heads/main)\n"
+  },
+  "clean_clone_commands": [
+    "make init",
+    "make test",
+    "make baseline-init",
+    "make eval-init"
+  ],
+  "service_tests": 35,
+  "eval_tests": 8,
+  "baseline_http_guard_tests": 2,
+  "upstream_split_parity": "passed",
+  "compose_project": "comp-memory-audited-v6",
+  "fresh_volume": true,
+  "contract": "passed, 11 categories after readiness",
+  "container_smoke": {
+    "planned": 4,
+    "judged": 4,
+    "correct": 4
+  },
+  "images": {
+    "service": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+    "eval": "sha256:331c0fe7791938b965378cfdfc84461323b9bf39bc651ace09648f753122cfa3"
+  },
+  "logs": {
+    "agent-memory-clean-clone-audited.log": "2af57ff121d6bdbf117fcae01530e06e0057f03256d65c7d03b5498db8e842e7",
+    "agent-memory-clone-contract-ready.log": "b514bba37d913b4b55548bfda51c8fa042784a94428bdeac48cf996af3bf938e",
+    "agent-memory-clone-smoke-ready.log": "b13384c92e604c158741cc99018129f066cee748cd4b23667fc28d29c7d7c4f8"
+  },
+  "initial_probe_note": "An initial contract/smoke invocation ran before compose readiness and failed to connect. Retained logs are distinct; the reported pass comes from the subsequent ready service."
+}
