@@ -1,0 +1,702 @@
+{
+  "checked_at": "2026-09-05T08:31:32.126433+00:00",
+  "complete_evaluation_runs": false,
+  "pending": [
+    "baseline-v7-U0-memops",
+    "baseline-v7-U1-memops",
+    "holdout-v2-U3-memops"
+  ],
+  "script_sha256": "f4be702ef0d11e393dda6df0c42ded733797edbf06019b2227e2c3d314142e72",
+  "service_model_usage": [
+    {
+      "campaign": "dev-v6",
+      "profile": "U3",
+      "source": "artifacts/dev-v6/U3-model-calls.jsonl",
+      "source_sha256": "ad0bc27dcf591f0cf7ecc1849d8ceb1fb072da65bcbc08c63c1e811a49898a06",
+      "first_at": "2026-09-05T06:20:19.274Z",
+      "last_at": "2026-09-05T06:53:21.485Z",
+      "generation": {
+        "recorded_attempts": 456,
+        "outcomes": {
+          "ok": 433,
+          "error": 23
+        },
+        "purposes": {
+          "extraction": 373,
+          "unrecorded": 23,
+          "rerank": 60
+        },
+        "provider_usage": {
+          "prompt_tokens": 3120980,
+          "completion_tokens": 168585,
+          "total_tokens": 3289565
+        },
+        "cached_prompt_tokens": 728320,
+        "attempts_with_usage": 433,
+        "elapsed_ms": {
+          "n": 456,
+          "mean": 7472.432826302631,
+          "p95": 24458.011041999795,
+          "max": 60237.16154100001
+        }
+      },
+      "embedding": {
+        "recorded_calls": 245,
+        "outcomes": {
+          "ok": 245
+        },
+        "vectors": 1877,
+        "reported_prompt_eval_count": 35462,
+        "elapsed_ms": {
+          "n": 245,
+          "mean": 794.9228195632656,
+          "p95": 2125.1350419998635,
+          "max": 15819.53887499997
+        }
+      },
+      "successful_add_degradation_events": 17,
+      "recorded_degradation_reasons": {
+        "source_span_partial": 5,
+        "extraction_offline": 11,
+        "embedding_lexical": 1
+      },
+      "service_log_sha256": "d6604a7c708fb1aa110b8e5925326ddcbeb5acb8ae7195f591b91713fc3c0398"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B2",
+      "source": "artifacts/dev-v6/B2-model-calls.jsonl",
+      "source_sha256": "bcd754fd40cf36384c8ffc479501a8eb559333eb3afc3b2a0035c7b2721efe99",
+      "first_at": "2026-09-05T06:20:20.385Z",
+      "last_at": "2026-09-05T06:47:57.033Z",
+      "generation": {
+        "recorded_attempts": 399,
+        "outcomes": {
+          "ok": 360,
+          "error": 39
+        },
+        "purposes": {
+          "extraction": 360,
+          "unrecorded": 39
+        },
+        "provider_usage": {
+          "prompt_tokens": 2695804,
+          "completion_tokens": 147715,
+          "total_tokens": 2843519
+        },
+        "cached_prompt_tokens": 660992,
+        "attempts_with_usage": 360,
+        "elapsed_ms": {
+          "n": 399,
+          "mean": 7549.720154481201,
+          "p95": 25029.372959,
+          "max": 70068.383041
+        }
+      },
+      "embedding": {
+        "recorded_calls": 250,
+        "outcomes": {
+          "ok": 250
+        },
+        "vectors": 1905,
+        "reported_prompt_eval_count": 37601,
+        "elapsed_ms": {
+          "n": 250,
+          "mean": 960.9107526759977,
+          "p95": 3855.103667000076,
+          "max": 12975.052916999965
+        }
+      },
+      "successful_add_degradation_events": 31,
+      "recorded_degradation_reasons": {
+        "source_span_partial": 6,
+        "extraction_offline": 25
+      },
+      "service_log_sha256": "4a5b0e671fe948a4ad9fe38368075bc88658ed02517cc5e2dd50f43a92eb14d3"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B0",
+      "model_call_accounting": "N/A: no model audit file; absence does not establish zero calls.",
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "bc185ed108f90b1669886dc8a07ebd2b1e93efcf2bae5a34dfbbfd8f637ad399"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B1",
+      "source": "artifacts/dev-v6/B1-model-calls.jsonl",
+      "source_sha256": "9a9d4e6006e093d5460310534a639f773a620538e0a047f1af9b0d92456b7841",
+      "first_at": "2026-09-05T06:40:16.263Z",
+      "last_at": "2026-09-05T07:18:41.261Z",
+      "generation": {
+        "recorded_attempts": 0,
+        "outcomes": {},
+        "purposes": {},
+        "provider_usage": {},
+        "cached_prompt_tokens": 0,
+        "attempts_with_usage": 0,
+        "elapsed_ms": {
+          "n": 0
+        }
+      },
+      "embedding": {
+        "recorded_calls": 411,
+        "outcomes": {
+          "ok": 411
+        },
+        "vectors": 4207,
+        "reported_prompt_eval_count": 432260,
+        "elapsed_ms": {
+          "n": 411,
+          "mean": 930.9215887031669,
+          "p95": 2396.950917000009,
+          "max": 4240.634374999965
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "U2",
+      "source": "artifacts/dev-v6/U2-model-calls.jsonl",
+      "source_sha256": "00af5528ca3473885c5151416a0d391f760602dcbbfa66dd8dc378d4de6045f8",
+      "first_at": "2026-09-05T07:19:10.052Z",
+      "last_at": "2026-09-05T07:24:21.689Z",
+      "generation": {
+        "recorded_attempts": 0,
+        "outcomes": {},
+        "purposes": {},
+        "provider_usage": {},
+        "cached_prompt_tokens": 0,
+        "attempts_with_usage": 0,
+        "elapsed_ms": {
+          "n": 0
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 387.5382603833331,
+          "p95": 825.0409999999974,
+          "max": 1052.0421250000009
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B3",
+      "source": "artifacts/dev-v6/B3-model-calls.jsonl",
+      "source_sha256": "0e59ac59349c00171f591cbf125bc4c08f73d6d5f66ce4f046c603ed88256637",
+      "first_at": "2026-09-05T07:24:38.749Z",
+      "last_at": "2026-09-05T07:29:41.583Z",
+      "generation": {
+        "recorded_attempts": 0,
+        "outcomes": {},
+        "purposes": {},
+        "provider_usage": {},
+        "cached_prompt_tokens": 0,
+        "attempts_with_usage": 0,
+        "elapsed_ms": {
+          "n": 0
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 393.4577319666642,
+          "p95": 771.4734590000007,
+          "max": 772.9751250000008
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B4",
+      "source": "artifacts/dev-v6/B4-model-calls.jsonl",
+      "source_sha256": "1868c6edbae955ef337b0156027af7155b5826dc9097ae7d0fd322e17c7675d3",
+      "first_at": "2026-09-05T07:29:59.612Z",
+      "last_at": "2026-09-05T07:35:22.969Z",
+      "generation": {
+        "recorded_attempts": 0,
+        "outcomes": {},
+        "purposes": {},
+        "provider_usage": {},
+        "cached_prompt_tokens": 0,
+        "attempts_with_usage": 0,
+        "elapsed_ms": {
+          "n": 0
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 420.5996992666643,
+          "p95": 1119.1008750000037,
+          "max": 2772.047957999999
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B5",
+      "source": "artifacts/dev-v6/B5-model-calls.jsonl",
+      "source_sha256": "2cf077d973c82e9bd088789afd734fe4fae85cae3a15b2317fb5a1d6be458f06",
+      "first_at": "2026-09-05T07:35:42.749Z",
+      "last_at": "2026-09-05T07:44:52.061Z",
+      "generation": {
+        "recorded_attempts": 60,
+        "outcomes": {
+          "ok": 56,
+          "error": 4
+        },
+        "purposes": {
+          "rerank": 56,
+          "unrecorded": 4
+        },
+        "provider_usage": {
+          "prompt_tokens": 596542,
+          "completion_tokens": 22474,
+          "total_tokens": 619016
+        },
+        "cached_prompt_tokens": 191744,
+        "attempts_with_usage": 56,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 8084.360811133332,
+          "p95": 12083.287125000003,
+          "max": 12231.110749999993
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 414.15510003333173,
+          "p95": 820.8086250000051,
+          "max": 1012.6499170000025
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "B6",
+      "source": "artifacts/dev-v6/B6-model-calls.jsonl",
+      "source_sha256": "b618254812147a876b1a078444c9127633a49359c36b24a17ca00f903bd747f0",
+      "first_at": "2026-09-05T07:45:09.892Z",
+      "last_at": "2026-09-05T07:54:16.291Z",
+      "generation": {
+        "recorded_attempts": 61,
+        "outcomes": {
+          "ok": 53,
+          "error": 8
+        },
+        "purposes": {
+          "rerank": 53,
+          "unrecorded": 8
+        },
+        "provider_usage": {
+          "prompt_tokens": 573453,
+          "completion_tokens": 21053,
+          "total_tokens": 594506
+        },
+        "cached_prompt_tokens": 554240,
+        "attempts_with_usage": 53,
+        "elapsed_ms": {
+          "n": 61,
+          "mean": 8167.944754114754,
+          "p95": 12100.829249999952,
+          "max": 12312.832166999986
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 416.4908104333325,
+          "p95": 853.3991669999668,
+          "max": 972.2509579999896
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "no_lifecycle",
+      "source": "artifacts/dev-v6/no_lifecycle-model-calls.jsonl",
+      "source_sha256": "89827b63e75cef2b7c70cb7f11163046fb75569a67f09e6bd0a09b83fa60e858",
+      "first_at": "2026-09-05T07:54:33.550Z",
+      "last_at": "2026-09-05T08:03:37.148Z",
+      "generation": {
+        "recorded_attempts": 60,
+        "outcomes": {
+          "ok": 53,
+          "error": 7
+        },
+        "purposes": {
+          "rerank": 53,
+          "unrecorded": 7
+        },
+        "provider_usage": {
+          "prompt_tokens": 595790,
+          "completion_tokens": 22573,
+          "total_tokens": 618363
+        },
+        "cached_prompt_tokens": 51456,
+        "attempts_with_usage": 53,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 8658.055509700001,
+          "p95": 12155.677958,
+          "max": 12313.827916999988
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 314.0182111166685,
+          "p95": 816.955707999994,
+          "max": 986.2742919999873
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "no_raw",
+      "source": "artifacts/dev-v6/no_raw-model-calls.jsonl",
+      "source_sha256": "4f3baedb4cc71362f228de23fa8f131b96c90853e58ac70e88e753e394eb271a",
+      "first_at": "2026-09-05T08:03:47.393Z",
+      "last_at": "2026-09-05T08:12:05.014Z",
+      "generation": {
+        "recorded_attempts": 60,
+        "outcomes": {
+          "ok": 52,
+          "error": 8
+        },
+        "purposes": {
+          "rerank": 52,
+          "unrecorded": 8
+        },
+        "provider_usage": {
+          "prompt_tokens": 557869,
+          "completion_tokens": 19271,
+          "total_tokens": 577140
+        },
+        "cached_prompt_tokens": 459776,
+        "attempts_with_usage": 52,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 8026.029554150001,
+          "p95": 12066.279540999996,
+          "max": 12165.940165999986
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 244.25585625000073,
+          "p95": 860.4910000000091,
+          "max": 1027.5446250000095
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "no_time",
+      "source": "artifacts/dev-v6/no_time-model-calls.jsonl",
+      "source_sha256": "9407d081f70d15b2a81b9d692d8db140762b22ffc5075ac48fe59feebb064b75",
+      "first_at": "2026-09-05T08:12:15.217Z",
+      "last_at": "2026-09-05T08:19:55.517Z",
+      "generation": {
+        "recorded_attempts": 60,
+        "outcomes": {
+          "ok": 56,
+          "error": 4
+        },
+        "purposes": {
+          "rerank": 56,
+          "unrecorded": 4
+        },
+        "provider_usage": {
+          "prompt_tokens": 602928,
+          "completion_tokens": 22333,
+          "total_tokens": 625261
+        },
+        "cached_prompt_tokens": 542208,
+        "attempts_with_usage": 56,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 7792.310337499997,
+          "p95": 12002.790083,
+          "max": 12004.190332999991
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 104.61364236666807,
+          "p95": 334.31304100000125,
+          "max": 675.2575829999987
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "no_hop",
+      "source": "artifacts/dev-v6/no_hop-model-calls.jsonl",
+      "source_sha256": "5dec471bd926e23a60f63f5147e534955e9b5d50046483c7d4e6a23c0dadf5ca",
+      "first_at": "2026-09-05T08:20:01.535Z",
+      "last_at": "2026-09-05T08:27:38.970Z",
+      "generation": {
+        "recorded_attempts": 60,
+        "outcomes": {
+          "ok": 54,
+          "error": 6
+        },
+        "purposes": {
+          "rerank": 54,
+          "unrecorded": 6
+        },
+        "provider_usage": {
+          "prompt_tokens": 583753,
+          "completion_tokens": 20934,
+          "total_tokens": 604687
+        },
+        "cached_prompt_tokens": 564224,
+        "attempts_with_usage": 54,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 7784.376200033334,
+          "p95": 12005.021584000002,
+          "max": 12005.594333000015
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 60.984727783335416,
+          "p95": 93.90783300000476,
+          "max": 103.18833299999824
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "dev-v6",
+      "profile": "no_rerank",
+      "source": "artifacts/dev-v6/no_rerank-model-calls.jsonl",
+      "source_sha256": "8c76df9e74f73203241616fd6d1f17fcc50e9c3a6d72f5239d0c5af0b7d8c691",
+      "first_at": "2026-09-05T08:27:46.514Z",
+      "last_at": "2026-09-05T08:30:21.716Z",
+      "generation": {
+        "recorded_attempts": 0,
+        "outcomes": {},
+        "purposes": {},
+        "provider_usage": {},
+        "cached_prompt_tokens": 0,
+        "attempts_with_usage": 0,
+        "elapsed_ms": {
+          "n": 0
+        }
+      },
+      "embedding": {
+        "recorded_calls": 60,
+        "outcomes": {
+          "ok": 60
+        },
+        "vectors": 60,
+        "reported_prompt_eval_count": 2054,
+        "elapsed_ms": {
+          "n": 60,
+          "mean": 86.84023608333426,
+          "p95": 277.08554100000003,
+          "max": 336.71120900000096
+        }
+      },
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "4b1828933ff7604ab7a4942a00dee11f9ecc6b0ff972e2556630639ff55165aa"
+    },
+    {
+      "campaign": "baseline-v7",
+      "profile": "U0",
+      "model_call_accounting": "N/A: no model audit file; absence does not establish zero calls.",
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "cbc8f4028720b904bd4a632f394a9aa24d8c9c7b4e1d4d6c272c5a40c612d246"
+    },
+    {
+      "campaign": "baseline-v7",
+      "profile": "U1",
+      "model_call_accounting": "N/A: no model audit file; absence does not establish zero calls.",
+      "successful_add_degradation_events": 0,
+      "recorded_degradation_reasons": {},
+      "service_log_sha256": "714eda1ce393346320c395271441663d8035c73e2ef6802cbdd7ab3c12720f77"
+    },
+    {
+      "campaign": "holdout-v2",
+      "profile": "U3",
+      "source": "artifacts/holdout-v2/U3-model-calls.jsonl",
+      "source_sha256": "1f88bfef321b5eb8d129cdf26ad8c7578fca30db56590aedb9165ec97cbe1d4e",
+      "first_at": "2026-09-05T06:20:18.172Z",
+      "last_at": "2026-09-05T08:31:27.515Z",
+      "generation": {
+        "recorded_attempts": 3305,
+        "outcomes": {
+          "ok": 3179,
+          "error": 126
+        },
+        "purposes": {
+          "extraction": 2408,
+          "rerank": 771,
+          "unrecorded": 126
+        },
+        "provider_usage": {
+          "prompt_tokens": 24552944,
+          "completion_tokens": 1105889,
+          "total_tokens": 25658833
+        },
+        "cached_prompt_tokens": 5753856,
+        "attempts_with_usage": 3179,
+        "elapsed_ms": {
+          "n": 3305,
+          "mean": 7351.232904302266,
+          "p95": 21638.397000000812,
+          "max": 80120.96216699993
+        }
+      },
+      "embedding": {
+        "recorded_calls": 1826,
+        "outcomes": {
+          "ok": 1826
+        },
+        "vectors": 9450,
+        "reported_prompt_eval_count": 185955,
+        "elapsed_ms": {
+          "n": 1826,
+          "mean": 582.5373982113963,
+          "p95": 1683.4763750000857,
+          "max": 15636.646542000002
+        }
+      },
+      "successful_add_degradation_events": 91,
+      "recorded_degradation_reasons": {
+        "extraction_offline": 63,
+        "source_span_partial": 28,
+        "embedding_lexical": 1
+      },
+      "service_log_sha256": "5bc6dbc3f1e6e6d91257ad52418c087d08f5a39b77ec792f6bb532ad7b9cc946"
+    }
+  ],
+  "host_sampling": {
+    "source_sha256": "f92ae8f262fc984ac03039b7ac65b7e043ba561677eda0d6ee6c5740894c5f01",
+    "samples": 446,
+    "first_at": "2026-09-05T06:35:30.441142+00:00",
+    "last_at": "2026-09-05T08:31:29.448119+00:00",
+    "experiment_process_rss_kib": {
+      "n": 446,
+      "mean": 488135.4618834081,
+      "p95": 1524128,
+      "max": 1911248
+    },
+    "experiment_cpu_percent_sum": {
+      "n": 446,
+      "mean": 70.14618834080717,
+      "p95": 125.60000000000001,
+      "max": 250.0
+    },
+    "ollama_process_rss_kib": {
+      "n": 446,
+      "mean": 7618542.134529148,
+      "p95": 10198112,
+      "max": 10260080
+    },
+    "ollama_cpu_percent_sum": {
+      "n": 446,
+      "mean": 9.673991031390134,
+      "p95": 34.400000000000006,
+      "max": 156.5
+    },
+    "scope": "15-second process samples across concurrent experiments; not isolated per-campaign memory, GPU utilization, or integrated CPU time. Shared pages can be counted twice. User applications and Docker VM are not attributed; sampling began after run start."
+  },
+  "scope": "Service-side observations only. Answer/Judge/posthoc model usage and original baseline billing are not logged. Failed generation calls may lack usage; failed embedding calls are not recorded by this hook. Contract probes on separate tenants can be included in the same process log. Cached tokens are a subset of prompt tokens. No monetary estimate."
+}

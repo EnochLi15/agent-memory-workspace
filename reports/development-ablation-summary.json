@@ -1,0 +1,425 @@
+{
+  "checked_at": "2026-09-05T08:32:37.987459+00:00",
+  "source": "eval/artifacts/comparisons/dev-v6-complete-ablations/comparison.json",
+  "source_sha256": "7f74c77c23ad38f3735c4b72f9afcc2b3fcbf16bfb2cb33ff9aeeaa3dfb2f3c8",
+  "completed_runs": 28,
+  "paired_comparisons": 38,
+  "ablation_pairs": [
+    {
+      "baseline": "no_hop",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 2,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 16,
+        "candidate_correct": 17,
+        "delta": 0.03333333333333333,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "dev-v6-no_hop-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.037037037037037035
+          ],
+          "wrong_to_correct": 3,
+          "correct_to_wrong": 2,
+          "baseline_manifest_sha256": "57ca27de1e06032b26dd5f00801f7c56d86ec3b8740058b4fe8c4cf592071907",
+          "baseline_judgments_sha256": "bbb6b9a4ada475d91e9c2dddbc49629db37860756f0e1968986084928e23fa0c"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_hop",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 8,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 18,
+        "candidate_correct": 12,
+        "delta": -0.20689655172413793,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "dev-v6-no_hop-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": -0.23333333333333334,
+          "group_delta_bootstrap_95": [
+            -0.4,
+            -0.09090909090909091
+          ],
+          "wrong_to_correct": 1,
+          "correct_to_wrong": 8,
+          "baseline_manifest_sha256": "d1d7fab45e87a31536f8e7f67315c2748731536d1e79736ea1b46e72e5b93f98",
+          "baseline_judgments_sha256": "7021974ffe50df308b8114a4b0fcd6152098206f5aaeca2b34168eb2ae63335b"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_lifecycle",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 1,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 12,
+        "candidate_correct": 17,
+        "delta": 0.16666666666666666,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "dev-v6-no_lifecycle-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.16666666666666666,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.18518518518518517
+          ],
+          "wrong_to_correct": 6,
+          "correct_to_wrong": 1,
+          "baseline_manifest_sha256": "b6f90870e1ea68ce38b4af00982f9e27a7042fa39ee69964399b4f7830f4de2e",
+          "baseline_judgments_sha256": "5fff6a61275af7be2723f801c9a93d908916a383e2242efa2c4590c0e1d41e46"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_lifecycle",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 5,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 15,
+        "candidate_correct": 12,
+        "delta": -0.10344827586206896,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "dev-v6-no_lifecycle-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": -0.1,
+          "group_delta_bootstrap_95": [
+            -0.2222222222222222,
+            0.0
+          ],
+          "wrong_to_correct": 2,
+          "correct_to_wrong": 5,
+          "baseline_manifest_sha256": "94421abeb8880ed6727bd4f51a486c73e140767088811e90cd4e8f5c85309e25",
+          "baseline_judgments_sha256": "d9d76bbc4ae6ed0d353da4c841368e72a7e5e1212d8e77cd338ded8bc4814ee4"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_raw",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 1,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 16,
+        "candidate_correct": 17,
+        "delta": 0.03333333333333333,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "dev-v6-no_raw-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.037037037037037035
+          ],
+          "wrong_to_correct": 2,
+          "correct_to_wrong": 1,
+          "baseline_manifest_sha256": "243b3af8ece609ebfb595ad3b8ed4ce2e826e208cf117fec66372733cfb596c4",
+          "baseline_judgments_sha256": "fedc450ee6c46860007af99a6c21a189fdb0de6cef93b1c1177d8de857dd2fda"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_raw",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 5,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 11,
+        "candidate_correct": 12,
+        "delta": 0.034482758620689655,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "dev-v6-no_raw-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            -0.1111111111111111,
+            0.2727272727272727
+          ],
+          "wrong_to_correct": 6,
+          "correct_to_wrong": 5,
+          "baseline_manifest_sha256": "2c08e8aaada52042b2d8887a20546ed5ccc0b45c39b460e59f1c5d8bce84ecdb",
+          "baseline_judgments_sha256": "8e333522f874280c1916ca8c065e6ed62b6973e035ed1b4e7e3664a24ec62a33"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_rerank",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 2,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 16,
+        "candidate_correct": 17,
+        "delta": 0.03333333333333333,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "dev-v6-no_rerank-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.037037037037037035
+          ],
+          "wrong_to_correct": 3,
+          "correct_to_wrong": 2,
+          "baseline_manifest_sha256": "dca32ee0f6bdeaa2216b49069432e8cc2db0d5af22352537fcdfdf8e550d845b",
+          "baseline_judgments_sha256": "276dc9caa77abd0c0d5ea6a6bc1b8779039173f81a9e18c18333028e4e9de130"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_rerank",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "wrong_to_correct": 4,
+      "correct_to_wrong": 4,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 12,
+        "candidate_correct": 12,
+        "delta": 0.0,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "dev-v6-no_rerank-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": 0.0,
+          "group_delta_bootstrap_95": [
+            -0.2222222222222222,
+            0.2727272727272727
+          ],
+          "wrong_to_correct": 4,
+          "correct_to_wrong": 4,
+          "baseline_manifest_sha256": "c96101d226ea36cdb9a673308d08b6707d9711dfe1f3943e2d936e27a00fa06e",
+          "baseline_judgments_sha256": "dbe10668a5515305bd324fea00b55cfb8ccdf345619854e039e2ae9fb36ce8d4"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_time",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 0,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 15,
+        "candidate_correct": 17,
+        "delta": 0.06666666666666667,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "dev-v6-no_time-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.06666666666666667,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.07407407407407407
+          ],
+          "wrong_to_correct": 2,
+          "correct_to_wrong": 0,
+          "baseline_manifest_sha256": "ec5b7ceb9904a4d0d2f7e9f3e38e1cca15758286581b63d64e6fc3e16c4b1cf4",
+          "baseline_judgments_sha256": "fe6e5e8a68381a402449cac02d7de6a709842d9db93d70bd7f378de0eea8fe39"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "no_time",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 5,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 15,
+        "candidate_correct": 12,
+        "delta": -0.10344827586206896,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "dev-v6-no_time-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": -0.13333333333333333,
+          "group_delta_bootstrap_95": [
+            -0.3,
+            0.0
+          ],
+          "wrong_to_correct": 1,
+          "correct_to_wrong": 5,
+          "baseline_manifest_sha256": "9ec91cc66c5b0a2f190307c0c5d573ba73520da06564decbb69c11f9f9886325",
+          "baseline_judgments_sha256": "df8f0ce74aeff4b1d2307ba8888d860a417171bb3258ba05399a38790c279227"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    }
+  ],
+  "scope": "Complete development ablations only; U0/U1 full comparison pending. Exploratory single executions with 2 LoCoMo and 3 MemOps groups; confidence intervals are not adjusted for multiple comparisons and do not remove run variability. No heldout-guided tuning."
+}
