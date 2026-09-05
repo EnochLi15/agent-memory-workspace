@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-05T07:16:36.956085+00:00",
+  "scope": "Synthetic enhanced HTTP probe after the completed noise acceptance sample.",
+  "request": {
+    "query": "What activity makes my spare time enjoyable?",
+    "user_id": "acceptance-v1:memops:noise",
+    "top_k": 100
+  },
+  "response": {
+    "data": [
+      {
+        "id": "93711d422b44f307493c949cfd04c7d36d2e0482d12f735edf6f9757ee2ebb5d",
+        "content": "I like painting.\nVerbatim source context (use this to verify actor and negation):\nuser: I like painting. My current job title is Data Analyst.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; source: be6a0e52d76b]",
+        "score": 0.99,
+        "created_at": "2024-05-05T10:00:00Z"
+      },
+      {
+        "id": "7ab62903b17ca6388cea646bc04b1293001648cc16833229e804d171d18039a3",
+        "content": "My current job title is Data Analyst.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; source: be6a0e52d76b]",
+        "score": 0.05,
+        "created_at": "2024-05-05T10:00:00Z"
+      },
+      {
+        "id": "f7a41aed5e276f648941872c0cbc0a2fbd8f8e932f400368dfe201a1962e9ad8",
+        "content": "I might become a Director next quarter, but it is not finalized.\nVerbatim source context (use this to verify actor and negation):\nuser: I might become a Director next quarter, but it is not finalized.\n[status: tentative; observed: 2024-05-05T10:00:00Z; original time: next quarter; source: b04d506d4715]",
+        "score": 0.01,
+        "created_at": "2024-05-05T10:00:00Z"
+      }
+    ]
+  },
+  "status": "passed"
+}

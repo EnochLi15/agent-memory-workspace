@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "at": "2026-09-05T07:21:50.192Z",
+      "thread_id": 1,
+      "kind": "worker_dispatch",
+      "method": "probe",
+      "dispatch_wait_ms": 244.1455078125,
+      "handler_ms": 80.119384765625
+    },
+    {
+      "at": "2026-09-05T07:21:50.314Z",
+      "thread_id": 1,
+      "kind": "worker_dispatch",
+      "method": "probe",
+      "dispatch_wait_ms": 364.847900390625,
+      "handler_ms": 81.583984375
+    }
+  ],
+  "scope": "Calibration on an ESM Worker matching the service; dispatch wait includes transfer and event-queue delay. Opt-in instrumentation adds overhead and is excluded from the production image.",
+  "service_tests": 37,
+  "service_tests_status": "passed"
+}

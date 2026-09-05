@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-09-05T07:23:29.550646+00:00",
+  "run": "acceptance-v1",
+  "metrics": {
+    "sample_bootstrap_95": [
+      0.625,
+      1
+    ],
+    "evidence_coverage": "N/A: dataset has no mapped source IDs",
+    "mode": "proxy",
+    "planned": 9,
+    "judged": 9,
+    "correct": 8,
+    "accuracy_over_planned": 0.8888888888888888,
+    "judged_accuracy": 0.8888888888888888,
+    "incomplete": 0,
+    "slices": {
+      "memops/authority": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      },
+      "memops/scope": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      },
+      "memops/scope-history": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "locomo/time": {
+        "total": 2,
+        "judged": 2,
+        "correct": 1
+      },
+      "memops/noise": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      }
+    },
+    "add_ms": {
+      "p50": 5071.076541999999,
+      "p95": 7908.377667,
+      "max": 7908.377667
+    },
+    "search_ms": {
+      "p50": 5195.131541999999,
+      "p95": 7243.921707999994,
+      "max": 7243.921707999994
+    }
+  },
+  "coverage": [
+    "unlabelled assistant echo",
+    "scope-specific update",
+    "valid scoped history",
+    "session anchor across the 20-message chunk boundary",
+    "month precision",
+    "100 conversational noise messages",
+    "tentative versus confirmed job"
+  ],
+  "relative_day_failure": {
+    "observed_answer": "Yesterday.",
+    "expected_date": "2024-05-04",
+    "source_support_present": true,
+    "support_excerpt": "Yesterday I visited the harbor.\nVerbatim source context (use this to verify actor and negation):\nuser: Yesterday I visited the harbor.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; original time: Yesterday; source: 6602c1a8ecd8]\nI am organizing a studio show in June 2024.\nVerbatim source context (use this to verify actor and negation):\nuser: [Session time: 10:00 am on 5 May, 2024]\nI am organizing a studio show in June 2024.\n[status: confirmed; observed: 2024-05-05T10:00:00Z; original time: June 2024; source: 4d94c2c5570c]",
+    "diagnosis": "The returned evidence contains the observation date and original relative expression, but the fixed Answer did not perform the calendar conversion. This is a failed end-to-end answer, not reported as a passing question."
+  },
+  "runtime_src_tree": "15dac4dcd0ac787e1060432f72294b279ca2af3c"
+}
