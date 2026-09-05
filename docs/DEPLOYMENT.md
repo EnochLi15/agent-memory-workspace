@@ -34,8 +34,10 @@ OLLAMA_MODELS="$PWD/.models" OLLAMA_HOST=127.0.0.1:11435 ollama serve
 
 增强模式在本地 `.env` 设置 `MEMORY_LLM_BASE_URL`、`MEMORY_LLM_API_KEY` 和明确的 `MEMORY_LLM_MODEL`；配置文件不要加入 Git。本文与交付包均不包含真实密钥。服务不会在请求过程中自动下载模型。向量空间不匹配会拒绝混写；更换模型后应创建新的数据目录并重新灌入。
 
+启用完整候选的重排时，在 `.env` 中设置 `MEMORY_RERANK=true`，再执行：
+
 ```sh
-MEMORY_MODE=enhanced MEMORY_RERANK=true docker compose up -d --no-build --wait --wait-timeout 90
+MEMORY_MODE=enhanced docker compose up -d --no-build --wait --wait-timeout 90
 ```
 
 ## 评测及三仓库源码
