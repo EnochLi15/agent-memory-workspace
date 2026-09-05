@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-09-05T07:05:37.662201+00:00",
+  "campaign": "dev-v6",
+  "profile": "U3",
+  "service_audit": {
+    "generation": {
+      "recorded_attempts": 456,
+      "outcomes": {
+        "ok": 433,
+        "error": 23
+      },
+      "by_purpose": {
+        "extraction": 373,
+        "null": 23,
+        "rerank": 60
+      },
+      "reported_usage": {
+        "prompt_tokens": 3120980,
+        "completion_tokens": 168585,
+        "total_tokens": 3289565
+      },
+      "cached_prompt_tokens": 728320
+    },
+    "embedding": {
+      "recorded_attempts": 245,
+      "outcomes": {
+        "ok": 245
+      },
+      "recorded_vectors": 1877,
+      "reported_prompt_eval_count": 35462
+    }
+  },
+  "scope": "Service-side model logs only. Remote token usage is provider-reported and incomplete for failed calls; no Answer/Judge or baseline billing estimate. Contract test on a separate tenant also used this process and is included."
+}
