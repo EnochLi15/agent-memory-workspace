@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-09-05T07:00:10.550226+00:00",
+  "upstream_commit": "dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3",
+  "upstream_files_verified": 227,
+  "contract_hashes": {
+    "service/contracts/contract.json": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab",
+    "eval/contracts/contract.json": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab"
+  },
+  "status": "passed"
+}
