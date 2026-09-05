@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-09-05T09:04:52.461543+00:00",
+  "directories": [
+    {
+      "relative_path": "service/baseline/.data/baseline-v7-U0",
+      "shared_by_runs": [
+        "baseline-v7-U0-locomo",
+        "baseline-v7-U0-memops"
+      ],
+      "files": 14,
+      "logical_file_bytes": 80334848,
+      "main_sqlite_files": 14,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/baseline/.data/baseline-v7-U1",
+      "shared_by_runs": [
+        "baseline-v7-U1-locomo",
+        "baseline-v7-U1-memops"
+      ],
+      "files": 14,
+      "logical_file_bytes": 79298560,
+      "main_sqlite_files": 14,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/.data/dev-v6-B0",
+      "shared_by_runs": [
+        "dev-v6-B0-locomo",
+        "dev-v6-B0-memops"
+      ],
+      "files": 7,
+      "logical_file_bytes": 21979136,
+      "main_sqlite_files": 7,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/.data/dev-v6-B1",
+      "shared_by_runs": [
+        "dev-v6-B1-locomo",
+        "dev-v6-B1-memops"
+      ],
+      "files": 7,
+      "logical_file_bytes": 88879104,
+      "main_sqlite_files": 7,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/.data/dev-v6-B2",
+      "shared_by_runs": [
+        "dev-v6-B2-locomo",
+        "dev-v6-B2-memops",
+        "dev-v6-no_lifecycle-locomo",
+        "dev-v6-no_lifecycle-memops"
+      ],
+      "files": 7,
+      "logical_file_bytes": 36560896,
+      "main_sqlite_files": 7,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/.data/dev-v6-U3",
+      "shared_by_runs": [
+        "dev-v6-B3-locomo",
+        "dev-v6-B3-memops",
+        "dev-v6-B4-locomo",
+        "dev-v6-B4-memops",
+        "dev-v6-B5-locomo",
+        "dev-v6-B5-memops",
+        "dev-v6-B6-locomo",
+        "dev-v6-B6-memops",
+        "dev-v6-U2-locomo",
+        "dev-v6-U2-memops",
+        "dev-v6-U3-locomo",
+        "dev-v6-U3-memops",
+        "dev-v6-no_hop-locomo",
+        "dev-v6-no_hop-memops",
+        "dev-v6-no_raw-locomo",
+        "dev-v6-no_raw-memops",
+        "dev-v6-no_rerank-locomo",
+        "dev-v6-no_rerank-memops",
+        "dev-v6-no_time-locomo",
+        "dev-v6-no_time-memops"
+      ],
+      "files": 9,
+      "logical_file_bytes": 36122624,
+      "main_sqlite_files": 9,
+      "wal_bytes": 0
+    },
+    {
+      "relative_path": "service/.data/holdout-v2-U3",
+      "shared_by_runs": [
+        "holdout-v2-U3-locomo",
+        "holdout-v2-U3-memops"
+      ],
+      "files": 62,
+      "logical_file_bytes": 210087936,
+      "main_sqlite_files": 62,
+      "wal_bytes": 0
+    }
+  ],
+  "total_unique_logical_bytes": 553263104,
+  "scope": "Post-evaluation metadata-only filesystem snapshot. Shared ingestion directories counted once. Includes committed, historical and partially ingested failed-sample stores plus any separate contract-probe tenants in the same process directory. Logical file bytes are not filesystem allocated bytes, process RSS or model weights. Live databases are excluded from the delivery archive."
+}

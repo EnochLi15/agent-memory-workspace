@@ -112,6 +112,9 @@ for name in ['dev-v6-B1-memops', 'dev-v6-U3-memops', 'baseline-v7-U0-memops',
         entry['availability'] = 'N/A: no saved call log yet'
     posthoc.append(entry)
 
+if args.require_complete and not all(row['complete'] for row in posthoc):
+    raise SystemExit('Wait for every saved MemOps posthoc call log before final usage accounting')
+
 resource_path = ROOT / 'artifacts/holdout-v2/resources.jsonl'
 resources = read_rows(resource_path)
 resource_summary = {'source_sha256': sha(resource_path), 'samples': len(resources),
@@ -139,4 +142,6 @@ report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()
                    'are not recorded by this hook. Contract probes on separate tenants can be included in '
                    'the same process log. Cached tokens are a subset of prompt tokens. No monetary estimate.'}
 (ROOT / 'reports/model-usage-and-resources.json').write_text(json.dumps(report, indent=2) + '\n')
-print(json.dumps({'service_profiles': len(summaries), 'complete': not pending, 'resource_samples': len(resources)}))
+print(json.dumps({'service_profiles': len(summaries), 'primary_runs_complete': not pending,
+                  'memops_posthoc_complete': all(row['complete'] for row in posthoc),
+                  'resource_samples': len(resources)}))
