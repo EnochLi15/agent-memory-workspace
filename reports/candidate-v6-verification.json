@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-09-05T06:19:50.920888+00:00",
+  "service_commit": "910b3dd42f2953a4cdb2a8061f4eefc5c2db42ea",
+  "eval_commit": "36f03d64a57fed71e55ebfdec8b88ee3fd5e6269",
+  "images": {
+    "service": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+    "eval": "sha256:95e97f30fbab9de2d457a41623b07c933fcbd50397543cb0b949c3a7cbe60e55"
+  },
+  "container_smoke": {
+    "planned": 4,
+    "judged": 4,
+    "correct": 4
+  },
+  "service_tests": 35,
+  "eval_tests": 8,
+  "candidate_change_reason": "Independent synthetic smoke exposed mixed-operation loss. Fixed per-clause fallback, same-chunk revocation and derived-state visibility; no holdout answers used."
+}

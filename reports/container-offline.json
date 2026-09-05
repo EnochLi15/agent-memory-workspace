@@ -1,8 +1,8 @@
 {
-  "run_id": "9da8328c501b",
-  "checked_at": "2026-09-05T05:58:17.538699+00:00",
+  "run_id": "53bb65b81281",
+  "checked_at": "2026-09-05T06:18:21.811123+00:00",
   "fresh_volume": true,
-  "image": "sha256:63463d16bc644bd2b487c16ce37e2131f0b4c379206d64af69586ef7383fa6d1",
+  "image": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
   "network": "none",
   "checks": [
     "cold-start",
@@ -14,5 +14,5 @@
     "remove-and-recreate-with-volume"
   ],
   "status": "passed",
-  "retained_volume": "comp-memory-offline-audit-9da8328c501b-data"
+  "retained_volume": "comp-memory-offline-audit-53bb65b81281-data"
 }

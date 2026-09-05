@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="SIGKILL during a real SQLite transaction rolls back erasure, vectors, source, FTS and receipt" time="0.185385" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/crash.test.ts"/>
+	<testcase name="queued add deadlines return promptly and cannot commit late model responses" time="0.779527" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/deadline.test.ts"/>
+	<testcase name="raw-only experiment preserves source roles and old statements without claiming lifecycle" time="0.383742" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/experiments.test.ts"/>
+	<testcase name="same-time conflict stays explicit; later state resolves it; as-of honors day boundary" time="0.029747" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="new raw replay and differently named fact cannot recover erased value" time="0.025928" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="erasure invalidates transitive derived facts but retains independent same-message neighbor" time="0.024189" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="explicit restore grants only new value and leaves old replay blocked" time="0.011373" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="correction retracts false history; scoped current relation removal preserves real history" time="0.010986" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="embedding space mismatch rolls back request and original source" time="0.013542" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="invalid extraction schema and wrong vector dimensions degrade without fabricated vectors" time="0.008368" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="fabricated source is replaced only by grounded recovery; unknown operation ID is rejected" time="0.007589" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="bounded entity expansion retrieves the second hop without inventing a conclusion" time="0.008010" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="querying with another embedding space uses lexical fallback rather than mixing vectors" time="0.008526" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="a valid but unrelated target ID cannot authorize deletion" time="0.007935" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="partially recovered raw evidence becomes invisible when a linked fact is superseded or erased" time="0.021080" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="forget closes alternate representations and leaves a value-free operation trace" time="0.011845" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="a model plan alias becomes a tentative event without a second inference" time="0.015854" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="derived evidence follows the current or historical visibility of its dependencies" time="0.012804" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/lifecycle.test.ts"/>
+	<testcase name="streaming extraction aggregates chunks and rejects premature EOF" time="0.087177" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/models.test.ts"/>
+	<testcase name="only prescribed routes, exact receipt, validation and top_k boundary" time="0.385745" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="strict tenant separation including names and path-like identities" time="0.078235" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="idempotency and payload conflict" time="0.084389" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="current state excludes old value, explicit history preserves it" time="0.071394" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="late historical state cannot replace newer state" time="0.071926" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="tentative plan and multiple hobbies do not overwrite confirmed facts" time="0.073813" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="forget suppresses all retrieval paths, retains neighbor and resists replay" time="0.081481" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="forget it and do not forget are not destructive" time="0.072998" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="one message can update a retained fact and forget a different property" time="0.075575" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="a fact introduced and forgotten within one add never becomes searchable" time="0.070184" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="descriptions of human forgetfulness are evidence, not memory deletion commands" time="0.081873" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="named assistant participant and Chinese evidence stay distinct" time="0.073473" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="concurrent user writes are serialized and remain searchable" time="0.079237" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="committed state survives restart including forgotten content" time="0.138475" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="quoted and hypothetical forgetting never mutates real memory" time="0.076737" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/service.test.ts"/>
+	<testcase name="fault at each transactional boundary leaves no facts, source, index or receipt" time="0.024648" classname="test" file="/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/storage.test.ts"/>
+	<!-- tests 35 -->
+	<!-- suites 0 -->
+	<!-- pass 35 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 2170.11025 -->
+</testsuites>
