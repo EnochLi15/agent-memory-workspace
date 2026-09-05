@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-05T07:03:44.606237+00:00",
+  "checked_at": "2026-09-05T07:41:39.634318+00:00",
   "archives": [
     {
       "path": "delivery/runtime-images.tar",
-      "bytes": 408954368,
-      "sha256": "7e35570d5a8b882038a55fdf6ebae32d8b32c83049c1bbceb130cf11a859b376"
+      "bytes": 408954880,
+      "sha256": "9a95bbe098a73ff879afa96a6ad044716129f1d9cda9f395d0bb2b7333d66ad0"
     },
     {
       "path": "delivery/local-embedding.tar",
@@ -12,14 +12,25 @@
       "sha256": "9908e6e0d78ca92b7e132e754f6339084c7cb87fa87b9a6405e8f40203d99106"
     }
   ],
-  "image_tags": [
-    [
-      "comp-agent-memory-service:dev"
-    ],
-    [
-      "comp-agent-memory-eval:dev"
-    ]
+  "images": [
+    {
+      "tags": [
+        "comp-agent-memory-service:dev"
+      ],
+      "id": "sha256:d3d789d8ff5b0d627a899ac0753d254a8e225532b3f5a6c77422cc0280ab80ad",
+      "architecture": "arm64"
+    },
+    {
+      "tags": [
+        "comp-agent-memory-eval:dev"
+      ],
+      "id": "sha256:16b8df58ffb3857706ec7fe8d14243932c037f7fa038fd63196053f0dd525a98",
+      "architecture": "arm64"
+    }
   ],
+  "archive_config_digests_verified": true,
+  "eval_commit": "b7cdcd6bf0aa4f16a47b76bee4444effc94eaff3",
+  "service_runtime_candidate": "910b3dd42f2953a4cdb2a8061f4eefc5c2db42ea",
   "architecture": "linux/arm64",
   "scope": "Runtime Docker images and selected local embedding; source Git mirrors and result artifacts packaged separately."
 }
