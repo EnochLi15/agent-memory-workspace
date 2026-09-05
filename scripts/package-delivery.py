@@ -75,6 +75,16 @@ for repository in ['.', 'service', 'eval']:
     commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=cwd, text=True).strip()
     if snapshot_manifest['commits'][repository] != commit:
         raise SystemExit('Create a fresh source snapshot before packaging: ' + repository)
+for repository in sorted((snapshot / 'repositories').glob('*.git')):
+    refs = subprocess.check_output(['git', 'for-each-ref', '--format=%(refname) %(objectname)'],
+                                   cwd=repository, text=True).splitlines()
+    if not refs:
+        raise SystemExit('Source mirror has no references')
+    for line in refs:
+        ref, oid = line.split()
+        path = repository / ref
+        if not path.is_file() or path.read_text().strip() != oid:
+            raise SystemExit('Create a new bundle with materialized references before packaging')
 if not json.loads((ROOT / 'reports/completed-run-audit.json').read_text())['complete_matrix']:
     raise SystemExit('Complete all 34 runs and strict request audits first')
 usage_report = json.loads((ROOT / 'reports/model-usage-and-resources.json').read_text())

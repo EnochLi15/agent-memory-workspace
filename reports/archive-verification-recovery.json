@@ -8,5 +8,20 @@
   "cause": "Root source scripts are stored inside the bare Git repository, not as top-level archive members; verifier only recognized service/eval source paths.",
   "fix": "Resolve evidence present as archive members against the manifest; verify all remaining source paths against the actual recursive clone. Extract repositories in a forward-only pass after hash verification.",
   "runtime_changes": false,
-  "follow_up": "Regenerate the source snapshot and delivery archive, then run the complete verifier. Actual pass/fail is recorded separately in delivery/final-verification.json."
+  "follow_up": "Regenerate the source snapshot and delivery archive, then run the complete verifier. Actual pass/fail is recorded separately in delivery/final-verification.json.",
+  "second_attempt": {
+    "archive_sha256": "4ad510c546f3344df4cf48b3f2047d9205f4ebfcf32503cfde484df919b34b47",
+    "preserved_archive": "delivery/attempt-2/agent-memory-delivery.tar.gz",
+    "source_snapshot": "delivery/20260905-174430",
+    "extracted_directory": "delivery/archive-verification-20260905-174530",
+    "observed_failure": "git clone exit 128: repository does not exist despite extracted HEAD, objects and packed-refs files",
+    "cause": "All refs were packed, so the empty refs directory was omitted by the files-only archive. Git requires that directory to recognize the bare repository.",
+    "fix": "In each newly-created private mirror, delete and recreate each identical ref through git update-ref to materialize it as a loose reference. Verify identities unchanged and require these files at packaging. Working repositories are untouched.",
+    "isolated_probe": "delivery/ref-layout-probe-174638",
+    "isolated_probe_result": {
+      "all_refs_materialized": true,
+      "files_only_tar_clone": "passed",
+      "same_head": true
+    }
+  }
 }

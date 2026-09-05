@@ -9,6 +9,18 @@ for folder,name in [('service','agent-memory-service.git'),('eval','agent-memory
     status=subprocess.check_output(['git','status','--porcelain'],cwd=source,text=True)
     if status.strip():raise SystemExit(f'Commit changes before bundling: {folder}')
     subprocess.run(['git','clone','--bare',str(source),str(repos/name)],check=True)
+    # A files-only archive would omit an empty refs/ directory when all refs
+    # are packed. Materialize the identical refs through Git in this NEW
+    # private mirror so its required directory survives archive extraction.
+    mirror=repos/name
+    refs=subprocess.check_output(['git','for-each-ref','--format=%(refname) %(objectname)'],cwd=mirror,text=True)
+    for line in refs.splitlines():
+        ref,oid=line.split()
+        subprocess.run(['git','update-ref','-d',ref,oid],cwd=mirror,check=True)
+        subprocess.run(['git','update-ref',ref,oid],cwd=mirror,check=True)
+        if not (mirror/ref).is_file():raise SystemExit('Missing portable loose reference: '+ref)
+    if refs!=subprocess.check_output(['git','for-each-ref','--format=%(refname) %(objectname)'],cwd=mirror,text=True):
+        raise SystemExit('Mirror reference identities changed')
     manifest[folder]=subprocess.check_output(['git','rev-parse','HEAD'],cwd=source,text=True).strip()
 clone=output/'recursive-clone'
 subprocess.run(['git','-c','protocol.file.allow=always','clone','--recurse-submodules',str(repos/'agent-memory-workspace.git'),str(clone)],check=True)

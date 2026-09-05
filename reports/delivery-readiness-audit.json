@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-05T09:44:30.552794+00:00",
+  "checked_at": "2026-09-05T09:47:47.707448+00:00",
   "status": "ready_for_packaging",
   "scope": "Pre-archive evidence readiness only. Final archive existence, readback hashes and recursive source clone must be verified separately. No universal quality or official-score claim.",
   "service_commit": "842b13062feeacb80ad59d07170ceb1c378eb681",
@@ -205,7 +205,7 @@
     "reports/service-tests-current.txt": "f17a47684b81ba0494057b6fb47e8d1073fd77a27a722a16f06f5d62dd898b86",
     "reports/source-contract-audit.json": "85bf0e24796e78526b6e2f7ac1b68631137772ef15202462eaf02afd3a37b8ee",
     "reports/storage-footprint.json": "92d65020b94412cb517f4c6061e05bb2fe79a21ce6020ef7f48405a9e8ffd82a",
-    "scripts/package-delivery.py": "4fe1f0ca04371016d286b26e2b7573c6fb3a390f17ebbf86f7764155517004c7",
+    "scripts/package-delivery.py": "8a174f5523a73b032aec23a1ea52cb788ce190606bde68b56752d4f422fc48a7",
     "service/baseline/upstream/source-manifest.json": "f0c751963d7548adb6a5d8734a3cfeb59166176ec2d144ee43a61a02b806ce42",
     "service/tests/crash.test.ts": "a0914a243d7da673d6bfbda474ceb43be19c0a620454acc0dd08cf5ec6dbbfb8",
     "service/tests/lifecycle.test.ts": "e53931122c0a371a6f2627106549931ee9ba6bf3e2b28dedc4ed2fdc2d17a8d2",
