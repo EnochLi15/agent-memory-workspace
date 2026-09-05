@@ -30,6 +30,15 @@ tar -xf /path/to/local-embedding.tar -C .models
 OLLAMA_MODELS="$PWD/.models" OLLAMA_HOST=127.0.0.1:11435 ollama serve
 ```
 
+本机独立冷启动时遇到过 Metal 着色器编译等待：模型列表正常，但推理子进程在加载模型之前超时。已用相同归档在第二个新目录验证 CPU 回退，三条768维向量成功生成，相关文本相似度高于无关文本。对本机 Ollama 0.31.2，可以只在新实例启动命令中加入：
+
+```sh
+GGML_METAL_DEVICES=0 OLLAMA_MODELS="$PWD/.models" \
+  OLLAMA_HOST=127.0.0.1:11435 ollama serve
+```
+
+这是实测的版本相关回退开关，不保证其它 Ollama 版本具有同样行为；[上游 Metal 后端源码](https://github.com/ggml-org/llama.cpp/blob/master/ggml/src/ggml-metal/ggml-metal.cpp)说明了该环境变量的读取方式。无需修改全局系统环境或重启已有正常模型服务。失败采样和完整回归分别见 `reports/embedding-startup-diagnostic.json`、`reports/embedding-import-verification.json`。CPU 回退用于新部署验证，本次公开评测的模型配置没有随之改变。
+
 宿主机服务将 `MEMORY_EMBEDDING_BASE_URL` 指向 `http://127.0.0.1:11435`。Docker Desktop 场景使用 `DOCKER_EMBEDDING_BASE_URL=http://host.docker.internal:11435`；Linux 上需按实际网络配置可达地址。已有本机模型服务使用 11434，不必再起第二个。
 
 增强模式在本地 `.env` 设置 `MEMORY_LLM_BASE_URL`、`MEMORY_LLM_API_KEY` 和明确的 `MEMORY_LLM_MODEL`；配置文件不要加入 Git。本文与交付包均不包含真实密钥。服务不会在请求过程中自动下载模型。向量空间不匹配会拒绝混写；更换模型后应创建新的数据目录并重新灌入。
