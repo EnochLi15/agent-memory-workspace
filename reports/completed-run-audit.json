@@ -1,17 +1,9 @@
 {
-  "checked_at": "2026-09-05T08:31:58.856371+00:00",
+  "checked_at": "2026-09-05T08:48:10.265844+00:00",
   "complete_matrix": false,
   "expected_runs": 34,
-  "audited_runs": 31,
+  "audited_runs": 33,
   "pending": [
-    {
-      "run_id": "baseline-v7-U0-memops",
-      "status": "running"
-    },
-    {
-      "run_id": "baseline-v7-U1-memops",
-      "status": "running"
-    },
     {
       "run_id": "holdout-v2-U3-memops",
       "status": "running"
@@ -25,7 +17,7 @@
       "run_id": "dev-v6-U3-locomo",
       "http_trace": {
         "run_id": "dev-v6-U3-locomo",
-        "checked_at": "2026-09-05T08:31:54.556Z",
+        "checked_at": "2026-09-05T08:48:05.833Z",
         "passed": true,
         "hashes": {
           "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
@@ -113,7 +105,7 @@
       "run_id": "dev-v6-U3-memops",
       "http_trace": {
         "run_id": "dev-v6-U3-memops",
-        "checked_at": "2026-09-05T08:31:54.709Z",
+        "checked_at": "2026-09-05T08:48:05.978Z",
         "passed": true,
         "hashes": {
           "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
@@ -202,7 +194,7 @@
       "run_id": "dev-v6-B2-locomo",
       "http_trace": {
         "run_id": "dev-v6-B2-locomo",
-        "checked_at": "2026-09-05T08:31:54.832Z",
+        "checked_at": "2026-09-05T08:48:06.098Z",
         "passed": true,
         "hashes": {
           "manifest": "dd83ff21ee64979d46201d1376312c0e8e12d1de87d17cb7008d43bf7c75ec9c",
@@ -290,7 +282,7 @@
       "run_id": "dev-v6-B2-memops",
       "http_trace": {
         "run_id": "dev-v6-B2-memops",
-        "checked_at": "2026-09-05T08:31:54.976Z",
+        "checked_at": "2026-09-05T08:48:06.237Z",
         "passed": true,
         "hashes": {
           "manifest": "38bd26a4a03fc9dd380a4d8949040d62f3cebdd562e12ceb93c429e08a2d65dc",
@@ -378,7 +370,7 @@
       "run_id": "dev-v6-B0-locomo",
       "http_trace": {
         "run_id": "dev-v6-B0-locomo",
-        "checked_at": "2026-09-05T08:31:55.106Z",
+        "checked_at": "2026-09-05T08:48:06.364Z",
         "passed": true,
         "hashes": {
           "manifest": "b66f8c00a158d1185cc922db5f274303a48a6dbf52564a7e8c057e87bab24598",
@@ -466,7 +458,7 @@
       "run_id": "dev-v6-B0-memops",
       "http_trace": {
         "run_id": "dev-v6-B0-memops",
-        "checked_at": "2026-09-05T08:31:55.250Z",
+        "checked_at": "2026-09-05T08:48:06.506Z",
         "passed": true,
         "hashes": {
           "manifest": "5b2f0096054185fc84335d7630faa09e2a94606c4020ce5a0d3e0c1c2c60eb00",
@@ -555,7 +547,7 @@
       "run_id": "dev-v6-B1-locomo",
       "http_trace": {
         "run_id": "dev-v6-B1-locomo",
-        "checked_at": "2026-09-05T08:31:55.378Z",
+        "checked_at": "2026-09-05T08:48:06.630Z",
         "passed": true,
         "hashes": {
           "manifest": "386659a67278572a245391620a6f53b5b70296b52ba830811776f6b1314621a7",
@@ -643,7 +635,7 @@
       "run_id": "dev-v6-B1-memops",
       "http_trace": {
         "run_id": "dev-v6-B1-memops",
-        "checked_at": "2026-09-05T08:31:55.523Z",
+        "checked_at": "2026-09-05T08:48:06.771Z",
         "passed": true,
         "hashes": {
           "manifest": "c6a09ecde49ad14b7c9e08ee7c74f39a727042c2f58f946048ae93e056c07913",
@@ -731,7 +723,7 @@
       "run_id": "dev-v6-U2-locomo",
       "http_trace": {
         "run_id": "dev-v6-U2-locomo",
-        "checked_at": "2026-09-05T08:31:55.653Z",
+        "checked_at": "2026-09-05T08:48:06.893Z",
         "passed": true,
         "hashes": {
           "manifest": "085f15f9cd1a583bbebb7a10e166f00eb8268246a4c6ad440b08811d97312add",
@@ -819,7 +811,7 @@
       "run_id": "dev-v6-U2-memops",
       "http_trace": {
         "run_id": "dev-v6-U2-memops",
-        "checked_at": "2026-09-05T08:31:55.798Z",
+        "checked_at": "2026-09-05T08:48:07.030Z",
         "passed": true,
         "hashes": {
           "manifest": "f8bd57b00f27553da352d630dd5e8ea2b4e7d459463d9136f2036d022576bc17",
@@ -907,7 +899,7 @@
       "run_id": "dev-v6-B3-locomo",
       "http_trace": {
         "run_id": "dev-v6-B3-locomo",
-        "checked_at": "2026-09-05T08:31:55.945Z",
+        "checked_at": "2026-09-05T08:48:07.150Z",
         "passed": true,
         "hashes": {
           "manifest": "0ef3c89e64debe41855d8d904c6497dae70221af8c4650d3171b09b8355cb01b",
@@ -995,7 +987,7 @@
       "run_id": "dev-v6-B3-memops",
       "http_trace": {
         "run_id": "dev-v6-B3-memops",
-        "checked_at": "2026-09-05T08:31:56.107Z",
+        "checked_at": "2026-09-05T08:48:07.286Z",
         "passed": true,
         "hashes": {
           "manifest": "ac3572233ab0de1df2b9ee6afe039fc05d341a957e6612a585475682c479cedb",
@@ -1083,7 +1075,7 @@
       "run_id": "dev-v6-B4-locomo",
       "http_trace": {
         "run_id": "dev-v6-B4-locomo",
-        "checked_at": "2026-09-05T08:31:56.245Z",
+        "checked_at": "2026-09-05T08:48:07.417Z",
         "passed": true,
         "hashes": {
           "manifest": "d2e26015cb5d4e6e2f1e1885608d71057f518f908534960665ca1f0471660d3b",
@@ -1171,7 +1163,7 @@
       "run_id": "dev-v6-B4-memops",
       "http_trace": {
         "run_id": "dev-v6-B4-memops",
-        "checked_at": "2026-09-05T08:31:56.395Z",
+        "checked_at": "2026-09-05T08:48:07.556Z",
         "passed": true,
         "hashes": {
           "manifest": "88f90ff943a2c0bc798dfd5ea07f88009b546d3dc1225c16b0d1f7599d5724ff",
@@ -1259,7 +1251,7 @@
       "run_id": "dev-v6-B5-locomo",
       "http_trace": {
         "run_id": "dev-v6-B5-locomo",
-        "checked_at": "2026-09-05T08:31:56.524Z",
+        "checked_at": "2026-09-05T08:48:07.677Z",
         "passed": true,
         "hashes": {
           "manifest": "477ab7a1f0e71f3920f1e0661c4487986b938482c4c82d6c5ac7d11202d46280",
@@ -1347,7 +1339,7 @@
       "run_id": "dev-v6-B5-memops",
       "http_trace": {
         "run_id": "dev-v6-B5-memops",
-        "checked_at": "2026-09-05T08:31:56.675Z",
+        "checked_at": "2026-09-05T08:48:07.813Z",
         "passed": true,
         "hashes": {
           "manifest": "7988f7e19929e4374a0ba67a19dbece2e5a1fb8fad17fb8e279109fafae110c6",
@@ -1435,7 +1427,7 @@
       "run_id": "dev-v6-B6-locomo",
       "http_trace": {
         "run_id": "dev-v6-B6-locomo",
-        "checked_at": "2026-09-05T08:31:56.803Z",
+        "checked_at": "2026-09-05T08:48:07.933Z",
         "passed": true,
         "hashes": {
           "manifest": "62dbc11f92073d9cec7258ac194a366ed24724a5a3814a8fb0c96c7f7dea8e79",
@@ -1523,7 +1515,7 @@
       "run_id": "dev-v6-B6-memops",
       "http_trace": {
         "run_id": "dev-v6-B6-memops",
-        "checked_at": "2026-09-05T08:31:56.949Z",
+        "checked_at": "2026-09-05T08:48:08.073Z",
         "passed": true,
         "hashes": {
           "manifest": "b09ed25d7a3356911692be0a52b0a19047b8e63ed7cc8f269693fdc00269dc3a",
@@ -1611,7 +1603,7 @@
       "run_id": "dev-v6-no_lifecycle-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_lifecycle-locomo",
-        "checked_at": "2026-09-05T08:31:57.077Z",
+        "checked_at": "2026-09-05T08:48:08.195Z",
         "passed": true,
         "hashes": {
           "manifest": "b6f90870e1ea68ce38b4af00982f9e27a7042fa39ee69964399b4f7830f4de2e",
@@ -1699,7 +1691,7 @@
       "run_id": "dev-v6-no_lifecycle-memops",
       "http_trace": {
         "run_id": "dev-v6-no_lifecycle-memops",
-        "checked_at": "2026-09-05T08:31:57.231Z",
+        "checked_at": "2026-09-05T08:48:08.336Z",
         "passed": true,
         "hashes": {
           "manifest": "94421abeb8880ed6727bd4f51a486c73e140767088811e90cd4e8f5c85309e25",
@@ -1787,7 +1779,7 @@
       "run_id": "dev-v6-no_raw-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_raw-locomo",
-        "checked_at": "2026-09-05T08:31:57.363Z",
+        "checked_at": "2026-09-05T08:48:08.457Z",
         "passed": true,
         "hashes": {
           "manifest": "243b3af8ece609ebfb595ad3b8ed4ce2e826e208cf117fec66372733cfb596c4",
@@ -1875,7 +1867,7 @@
       "run_id": "dev-v6-no_raw-memops",
       "http_trace": {
         "run_id": "dev-v6-no_raw-memops",
-        "checked_at": "2026-09-05T08:31:57.509Z",
+        "checked_at": "2026-09-05T08:48:08.600Z",
         "passed": true,
         "hashes": {
           "manifest": "2c08e8aaada52042b2d8887a20546ed5ccc0b45c39b460e59f1c5d8bce84ecdb",
@@ -1963,7 +1955,7 @@
       "run_id": "dev-v6-no_time-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_time-locomo",
-        "checked_at": "2026-09-05T08:31:57.637Z",
+        "checked_at": "2026-09-05T08:48:08.722Z",
         "passed": true,
         "hashes": {
           "manifest": "ec5b7ceb9904a4d0d2f7e9f3e38e1cca15758286581b63d64e6fc3e16c4b1cf4",
@@ -2051,7 +2043,7 @@
       "run_id": "dev-v6-no_time-memops",
       "http_trace": {
         "run_id": "dev-v6-no_time-memops",
-        "checked_at": "2026-09-05T08:31:57.780Z",
+        "checked_at": "2026-09-05T08:48:08.859Z",
         "passed": true,
         "hashes": {
           "manifest": "9ec91cc66c5b0a2f190307c0c5d573ba73520da06564decbb69c11f9f9886325",
@@ -2139,7 +2131,7 @@
       "run_id": "dev-v6-no_hop-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_hop-locomo",
-        "checked_at": "2026-09-05T08:31:57.899Z",
+        "checked_at": "2026-09-05T08:48:08.982Z",
         "passed": true,
         "hashes": {
           "manifest": "57ca27de1e06032b26dd5f00801f7c56d86ec3b8740058b4fe8c4cf592071907",
@@ -2227,7 +2219,7 @@
       "run_id": "dev-v6-no_hop-memops",
       "http_trace": {
         "run_id": "dev-v6-no_hop-memops",
-        "checked_at": "2026-09-05T08:31:58.034Z",
+        "checked_at": "2026-09-05T08:48:09.124Z",
         "passed": true,
         "hashes": {
           "manifest": "d1d7fab45e87a31536f8e7f67315c2748731536d1e79736ea1b46e72e5b93f98",
@@ -2315,7 +2307,7 @@
       "run_id": "dev-v6-no_rerank-locomo",
       "http_trace": {
         "run_id": "dev-v6-no_rerank-locomo",
-        "checked_at": "2026-09-05T08:31:58.155Z",
+        "checked_at": "2026-09-05T08:48:09.259Z",
         "passed": true,
         "hashes": {
           "manifest": "dca32ee0f6bdeaa2216b49069432e8cc2db0d5af22352537fcdfdf8e550d845b",
@@ -2403,7 +2395,7 @@
       "run_id": "dev-v6-no_rerank-memops",
       "http_trace": {
         "run_id": "dev-v6-no_rerank-memops",
-        "checked_at": "2026-09-05T08:31:58.305Z",
+        "checked_at": "2026-09-05T08:48:09.407Z",
         "passed": true,
         "hashes": {
           "manifest": "c96101d226ea36cdb9a673308d08b6707d9711dfe1f3943e2d936e27a00fa06e",
@@ -2491,7 +2483,7 @@
       "run_id": "baseline-v7-U0-locomo",
       "http_trace": {
         "run_id": "baseline-v7-U0-locomo",
-        "checked_at": "2026-09-05T08:31:58.423Z",
+        "checked_at": "2026-09-05T08:48:09.555Z",
         "passed": true,
         "hashes": {
           "manifest": "135d23790dade6b7d3afe86fa6bb23f6c81dfc7fe23a325330644a87f7da4d67",
@@ -2578,10 +2570,99 @@
       }
     },
     {
+      "run_id": "baseline-v7-U0-memops",
+      "http_trace": {
+        "run_id": "baseline-v7-U0-memops",
+        "checked_at": "2026-09-05T08:48:09.688Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "e4fed9b2f00755cdc2746f181944e76ff06ee2d50f2f3b6906c9044114491d19",
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "requests": "ea708e90abdcf96f719c8aaf91a9db2c1639c3beef79f88492035d764a2ff5c0",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 30,
+          "dataset_questions_in_selected_samples": 30,
+          "expected_add_chunks": 259,
+          "observed_add_attempts": 271,
+          "distinct_observed_adds": 259,
+          "observed_searches": 30
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 24,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "judged": 30
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 259,
+        "retrying": 12
+      },
+      "add_attempt_ms": {
+        "n": 271,
+        "mean": 25640.66282870109,
+        "p50": 11393.105957999825,
+        "p95": 115380.60595800006,
+        "p99": 120560.03474999999,
+        "max": 120939.85470800009
+      },
+      "successful_search_ms": {
+        "n": 30,
+        "mean": 2637.6865694333487,
+        "p50": 998.6195000000298,
+        "p95": 13978.683083999902,
+        "p99": 22645.40258300025,
+        "max": 22645.40258300025
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 30,
+          "mean": 32,
+          "p50": 32,
+          "p95": 32,
+          "p99": 32,
+          "max": 32
+        },
+        "estimated_tokens": {
+          "n": 30,
+          "mean": 2001.3333333333333,
+          "p50": 2077,
+          "p95": 2449,
+          "p99": 2616,
+          "max": 2616
+        },
+        "utf8_bytes": {
+          "n": 30,
+          "mean": 5989.133333333333,
+          "p50": 6197,
+          "p95": 7342,
+          "p99": 7852,
+          "max": 7852
+        },
+        "exact_duplicate_fraction_within_response": 0.0,
+        "token_scope": "Original baseline ceil(JS UTF-16 length / 3) budget heuristic. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "N/A for semantic comparison: unmodified mem0 does not guarantee original source-ID retention."
+      },
+      "input_sha256": {
+        "manifest.json": "e4fed9b2f00755cdc2746f181944e76ff06ee2d50f2f3b6906c9044114491d19",
+        "requests.jsonl": "ea708e90abdcf96f719c8aaf91a9db2c1639c3beef79f88492035d764a2ff5c0",
+        "ingest.jsonl": "93fabb239286fa1f445699cf9d10c34a3f9dfa362b72d726476e29360fa5eaf4",
+        "retrievals.jsonl": "5b312e7b5735b1df4838fa14c25c4df169337c646f65109f5708f40d3cac557f",
+        "judgments.jsonl": "e3c8874987b621ad59583379cacfa41f76a179f2b8773031e5bbf5746df045cd"
+      }
+    },
+    {
       "run_id": "baseline-v7-U1-locomo",
       "http_trace": {
         "run_id": "baseline-v7-U1-locomo",
-        "checked_at": "2026-09-05T08:31:58.532Z",
+        "checked_at": "2026-09-05T08:48:09.806Z",
         "passed": true,
         "hashes": {
           "manifest": "d64aae34513b6a798d2834c6d3758ba68341da49df2a8135e9f86bb16264372b",
@@ -2668,10 +2749,99 @@
       }
     },
     {
+      "run_id": "baseline-v7-U1-memops",
+      "http_trace": {
+        "run_id": "baseline-v7-U1-memops",
+        "checked_at": "2026-09-05T08:48:09.939Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "cbbab72eac9156e41e19783c97d7a77f552714723aa465e91e0785e059b01280",
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "requests": "cba8d5179fb035a5fbddd5f27f40213b6ec09bc62b136bfb04b03030415e6dc2",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 30,
+          "dataset_questions_in_selected_samples": 30,
+          "expected_add_chunks": 259,
+          "observed_add_attempts": 275,
+          "distinct_observed_adds": 259,
+          "observed_searches": 30
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 24,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "judged": 30
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 259,
+        "retrying": 16
+      },
+      "add_attempt_ms": {
+        "n": 275,
+        "mean": 24893.82933969093,
+        "p50": 11054.30999999959,
+        "p95": 120248.1657080003,
+        "p99": 120528.32475000015,
+        "max": 121273.82083299989
+      },
+      "successful_search_ms": {
+        "n": 30,
+        "mean": 1983.4407902334506,
+        "p50": 908.654583000578,
+        "p95": 12800.97666699998,
+        "p99": 17852.361250000075,
+        "max": 17852.361250000075
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 30,
+          "mean": 32,
+          "p50": 32,
+          "p95": 32,
+          "p99": 32,
+          "max": 32
+        },
+        "estimated_tokens": {
+          "n": 30,
+          "mean": 1994.3,
+          "p50": 2224,
+          "p95": 2566,
+          "p99": 2615,
+          "max": 2615
+        },
+        "utf8_bytes": {
+          "n": 30,
+          "mean": 5964.366666666667,
+          "p50": 6639,
+          "p95": 7676,
+          "p99": 7833,
+          "max": 7833
+        },
+        "exact_duplicate_fraction_within_response": 0.0,
+        "token_scope": "Original baseline ceil(JS UTF-16 length / 3) budget heuristic. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "N/A for semantic comparison: unmodified mem0 does not guarantee original source-ID retention."
+      },
+      "input_sha256": {
+        "manifest.json": "cbbab72eac9156e41e19783c97d7a77f552714723aa465e91e0785e059b01280",
+        "requests.jsonl": "cba8d5179fb035a5fbddd5f27f40213b6ec09bc62b136bfb04b03030415e6dc2",
+        "ingest.jsonl": "e7cb5393a0d52c40dff29ad6feb319e4480ad3427673e5eb8e87b2c11031cfbc",
+        "retrievals.jsonl": "213882d57e01cd0432d86f290fc8bfa0d990650497437a14d1b591b7c4a2518f",
+        "judgments.jsonl": "a2618e5bb09951cfa4a7c68208d3d2484f20d8e2cf133e1ef7edbbf1be86610e"
+      }
+    },
+    {
       "run_id": "holdout-v2-U3-locomo",
       "http_trace": {
         "run_id": "holdout-v2-U3-locomo",
-        "checked_at": "2026-09-05T08:31:58.662Z",
+        "checked_at": "2026-09-05T08:48:10.075Z",
         "passed": true,
         "hashes": {
           "manifest": "240954f36b262bfa232a31754cc0a50ac9759f7f9b20181eac064a813e030fca",

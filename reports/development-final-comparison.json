@@ -1,0 +1,569 @@
+{
+  "checked_at": "2026-09-05T08:48:42.449860+00:00",
+  "source": "eval/artifacts/comparisons/dev-v6/comparison.json",
+  "source_sha256": "45213b1bbfd44aec41916fc6cabe405b889f5a0596c3e73a28dae0dfa3206355",
+  "completed_runs": 32,
+  "paired_comparisons": 44,
+  "runs": [
+    {
+      "run_id": "baseline-v7-U0-locomo",
+      "profile": "U0",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 26,
+      "correct": 16,
+      "error_counts": {
+        "pipeline_error": 4
+      }
+    },
+    {
+      "run_id": "baseline-v7-U0-memops",
+      "profile": "U0",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 18,
+      "error_counts": {}
+    },
+    {
+      "run_id": "baseline-v7-U1-locomo",
+      "profile": "U1",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 28,
+      "correct": 17,
+      "error_counts": {
+        "pipeline_error": 2
+      }
+    },
+    {
+      "run_id": "baseline-v7-U1-memops",
+      "profile": "U1",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B0-locomo",
+      "profile": "B0",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B0-memops",
+      "profile": "B0",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 29,
+      "correct": 12,
+      "error_counts": {
+        "judge_error": 1
+      }
+    },
+    {
+      "run_id": "dev-v6-B1-locomo",
+      "profile": "B1",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 18,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B1-memops",
+      "profile": "B1",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 20,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B2-locomo",
+      "profile": "B2",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 9,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B2-memops",
+      "profile": "B2",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 12,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B3-locomo",
+      "profile": "B3",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B3-memops",
+      "profile": "B3",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 12,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B4-locomo",
+      "profile": "B4",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B4-memops",
+      "profile": "B4",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B5-locomo",
+      "profile": "B5",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 18,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B5-memops",
+      "profile": "B5",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B6-locomo",
+      "profile": "B6",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-B6-memops",
+      "profile": "B6",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-U2-locomo",
+      "profile": "U2",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-U2-memops",
+      "profile": "U2",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 11,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-U3-locomo",
+      "profile": "U3",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 17,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-U3-memops",
+      "profile": "U3",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 29,
+      "correct": 12,
+      "error_counts": {
+        "judge_error": 1
+      }
+    },
+    {
+      "run_id": "dev-v6-no_hop-locomo",
+      "profile": "no_hop",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_hop-memops",
+      "profile": "no_hop",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 19,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_lifecycle-locomo",
+      "profile": "no_lifecycle",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 12,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_lifecycle-memops",
+      "profile": "no_lifecycle",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_raw-locomo",
+      "profile": "no_raw",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_raw-memops",
+      "profile": "no_raw",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 11,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_rerank-locomo",
+      "profile": "no_rerank",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_rerank-memops",
+      "profile": "no_rerank",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 12,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_time-locomo",
+      "profile": "no_time",
+      "benchmark": "locomo",
+      "planned": 30,
+      "judged": 30,
+      "correct": 15,
+      "error_counts": {}
+    },
+    {
+      "run_id": "dev-v6-no_time-memops",
+      "profile": "no_time",
+      "benchmark": "memops",
+      "planned": 30,
+      "judged": 30,
+      "correct": 16,
+      "error_counts": {}
+    }
+  ],
+  "baseline_pairs": [
+    {
+      "baseline": "U0",
+      "candidate": "U1",
+      "benchmark": "locomo",
+      "comparison_kind": "refactor_quality_repeat",
+      "paired_questions": 30,
+      "jointly_judged": 25,
+      "joint_diagnostic": {
+        "baseline_correct": 15,
+        "candidate_correct": 15,
+        "delta": 0.0,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 5,
+      "correct_to_wrong": 4,
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "baseline-v7-U0-locomo",
+          "candidate": "baseline-v7-U1-locomo",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.037037037037037035
+          ],
+          "wrong_to_correct": 5,
+          "correct_to_wrong": 4,
+          "baseline_manifest_sha256": "135d23790dade6b7d3afe86fa6bb23f6c81dfc7fe23a325330644a87f7da4d67",
+          "baseline_judgments_sha256": "3c2787727e609798d9d7964ff7a7300256003b680499004c8e591463aa383874"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "d64aae34513b6a798d2834c6d3758ba68341da49df2a8135e9f86bb16264372b",
+          "judgments": "b4c4fefe02db14420f5bb1e2f98efbbde2ccaf1ce1bb5db745c2cd81c956157b",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "U0",
+      "candidate": "U1",
+      "benchmark": "memops",
+      "comparison_kind": "refactor_quality_repeat",
+      "paired_questions": 30,
+      "jointly_judged": 30,
+      "joint_diagnostic": {
+        "baseline_correct": 18,
+        "candidate_correct": 15,
+        "delta": -0.1,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 3,
+      "correct_to_wrong": 6,
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "baseline-v7-U0-memops",
+          "candidate": "baseline-v7-U1-memops",
+          "delta": -0.1,
+          "group_delta_bootstrap_95": [
+            -0.3333333333333333,
+            0.09090909090909091
+          ],
+          "wrong_to_correct": 3,
+          "correct_to_wrong": 6,
+          "baseline_manifest_sha256": "e4fed9b2f00755cdc2746f181944e76ff06ee2d50f2f3b6906c9044114491d19",
+          "baseline_judgments_sha256": "e3c8874987b621ad59583379cacfa41f76a179f2b8773031e5bbf5746df045cd"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "cbbab72eac9156e41e19783c97d7a77f552714723aa465e91e0785e059b01280",
+          "judgments": "a2618e5bb09951cfa4a7c68208d3d2484f20d8e2cf133e1ef7edbbf1be86610e",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "U0",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "comparison_kind": "full_candidate_comparison",
+      "paired_questions": 30,
+      "jointly_judged": 26,
+      "joint_diagnostic": {
+        "baseline_correct": 16,
+        "candidate_correct": 14,
+        "delta": -0.07692307692307693,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 5,
+      "correct_to_wrong": 4,
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "baseline-v7-U0-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.03333333333333333,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.037037037037037035
+          ],
+          "wrong_to_correct": 5,
+          "correct_to_wrong": 4,
+          "baseline_manifest_sha256": "135d23790dade6b7d3afe86fa6bb23f6c81dfc7fe23a325330644a87f7da4d67",
+          "baseline_judgments_sha256": "3c2787727e609798d9d7964ff7a7300256003b680499004c8e591463aa383874"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "U0",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "comparison_kind": "full_candidate_comparison",
+      "paired_questions": 30,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 17,
+        "candidate_correct": 12,
+        "delta": -0.1724137931034483,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 8,
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "baseline-v7-U0-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": -0.2,
+          "group_delta_bootstrap_95": [
+            -0.4444444444444444,
+            -0.09090909090909091
+          ],
+          "wrong_to_correct": 2,
+          "correct_to_wrong": 8,
+          "baseline_manifest_sha256": "e4fed9b2f00755cdc2746f181944e76ff06ee2d50f2f3b6906c9044114491d19",
+          "baseline_judgments_sha256": "e3c8874987b621ad59583379cacfa41f76a179f2b8773031e5bbf5746df045cd"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "U1",
+      "candidate": "U3",
+      "benchmark": "locomo",
+      "comparison_kind": "full_candidate_comparison",
+      "paired_questions": 30,
+      "jointly_judged": 28,
+      "joint_diagnostic": {
+        "baseline_correct": 17,
+        "candidate_correct": 15,
+        "delta": -0.07142857142857142,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 5,
+      "correct_to_wrong": 5,
+      "dataset_group_comparison": {
+        "group_units": 2,
+        "group_question_counts": {
+          "conv-44": 27,
+          "conv-48": 3
+        },
+        "paired": {
+          "baseline": "baseline-v7-U1-locomo",
+          "candidate": "dev-v6-U3-locomo",
+          "delta": 0.0,
+          "group_delta_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "wrong_to_correct": 5,
+          "correct_to_wrong": 5,
+          "baseline_manifest_sha256": "d64aae34513b6a798d2834c6d3758ba68341da49df2a8135e9f86bb16264372b",
+          "baseline_judgments_sha256": "b4c4fefe02db14420f5bb1e2f98efbbde2ccaf1ce1bb5db745c2cd81c956157b"
+        },
+        "hashes": {
+          "dataset": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+          "manifest": "a827a5bc775fceb87501d82be1a2ed596c48b48eaf5a8241e474e021c4c2e0bc",
+          "judgments": "54b0b603e560583945483bef4b01c45ce0f6fcf42eb5bb3359402883dee88d63",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    },
+    {
+      "baseline": "U1",
+      "candidate": "U3",
+      "benchmark": "memops",
+      "comparison_kind": "full_candidate_comparison",
+      "paired_questions": 30,
+      "jointly_judged": 29,
+      "joint_diagnostic": {
+        "baseline_correct": 15,
+        "candidate_correct": 12,
+        "delta": -0.10344827586206896,
+        "scope": "Conditional subset only; excluded failures may bias this diagnostic."
+      },
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 5,
+      "dataset_group_comparison": {
+        "group_units": 3,
+        "group_question_counts": {
+          "E10": 11,
+          "B05": 10,
+          "F07": 9
+        },
+        "paired": {
+          "baseline": "baseline-v7-U1-memops",
+          "candidate": "dev-v6-U3-memops",
+          "delta": -0.1,
+          "group_delta_bootstrap_95": [
+            -0.18181818181818182,
+            0.0
+          ],
+          "wrong_to_correct": 2,
+          "correct_to_wrong": 5,
+          "baseline_manifest_sha256": "cbbab72eac9156e41e19783c97d7a77f552714723aa465e91e0785e059b01280",
+          "baseline_judgments_sha256": "a2618e5bb09951cfa4a7c68208d3d2484f20d8e2cf133e1ef7edbbf1be86610e"
+        },
+        "hashes": {
+          "dataset": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+          "manifest": "4eaf55fd223db2f3c8899e6ef6537537c4c6d14333309566b1b1afc325fc38e4",
+          "judgments": "5c937f6ee2f41a166b29fa6301402d4e8f43442a3479341e3986c8d840e3cd07",
+          "script": "8e96c3564ed379747136bb4d947c44e4b7144545309bc2f7dbcfb979727add99"
+        },
+        "resampling": "Python random.Random; sample dataset group_id units with replacement, retaining all questions in each selected unit; question-weighted accuracy."
+      }
+    }
+  ],
+  "scope": "Complete configured development comparison; paired and grouped statistics are exploratory with few independent backgrounds. Jointly-judged subset is conditional and may be selected by pipeline failures. U0/U1 deterministic source/refactor equivalence does not imply identical independent remote-model executions."
+}
