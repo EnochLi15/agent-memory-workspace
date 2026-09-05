@@ -65,3 +65,14 @@ make init test baseline-init eval-init
 LoCoMo 上游复现另外需要已安装的 Qwen3:14b Q4_K_M 和 eval 的 `ollama-judge-server.py`。其 manifest digest 已保存于 `reports/holdout-v2-local-models.json`；9GB 级 Judge 权重没有混入 embedding 包。服务本身不依赖 Judge。正式平台提供资源后，应按正式模型与评分配置另建运行目录。
 
 已验证的冷启动、断网恢复、干净克隆和 4/4 合成端到端结果见 `reports/clean-clone-final-functional.json` 与 `reports/container-offline.json`。完整公共基准结果与诊断仍由独立实验目录记录。
+
+## 最终归档
+
+完整评测、后处理、双阶段性能与逐项验收结束后，提交文档并用`make bundle`生成最新三仓库快照，再执行：
+
+```sh
+python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录> --plan
+python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录>
+```
+
+`--plan`只列清单，不代表交付完成。正式打包要求所有完成门槛、干净Git状态和快照版本一致，检查所选文件与Git可达历史是否包含配置中的真实密钥，并在打包后逐文件读回验证SHA256。包内保留历史失败结果，排除真实环境文件、运行数据库、依赖缓存和重复模型导入目录。外部`.sha256`用于验证压缩包本身；`MANIFEST.json`用于验证包内每个源文件。
