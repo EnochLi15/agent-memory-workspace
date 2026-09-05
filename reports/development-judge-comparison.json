@@ -1,0 +1,195 @@
+{
+  "checked_at": "2026-09-05T06:51:11.280578+00:00",
+  "run": "dev-v6-U3-memops",
+  "rubric_proxy": {
+    "sample_bootstrap_95": [
+      0.30303030303030304,
+      0.5555555555555556
+    ],
+    "evidence_coverage": "N/A: dataset has no mapped source IDs",
+    "mode": "proxy",
+    "planned": 30,
+    "judged": 29,
+    "correct": 12,
+    "accuracy_over_planned": 0.4,
+    "judged_accuracy": 0.41379310344827586,
+    "incomplete": 1,
+    "slices": {
+      "memops/Forget/CandidateDisambiguation": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      },
+      "memops/TrajectoryOps/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/OperationApplication": {
+        "total": 2,
+        "judged": 2,
+        "correct": 0
+      },
+      "memops/Reflect/CandidateDisambiguation": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      },
+      "memops/TrajectoryOps/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Forget/OperationTrace": {
+        "total": 2,
+        "judged": 2,
+        "correct": 0
+      },
+      "memops/Reflect/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/TrajectoryOps/StateTrajectory": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Reflect/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/StateTransition": {
+        "total": 2,
+        "judged": 2,
+        "correct": 1
+      },
+      "memops/TrajectoryOps/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/TargetBinding": {
+        "total": 2,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Reflect/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/TrajectoryOps/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Reflect/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Update/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Update/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Update/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Update/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Remember/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Remember/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Remember/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Remember/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Remember/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      }
+    },
+    "add_ms": {
+      "p50": 3631.620916999993,
+      "p95": 30999.719417000073,
+      "max": 63432.286124999984
+    },
+    "search_ms": {
+      "p50": 10889.645166999951,
+      "p95": 25698.423082999885,
+      "max": 37055.69791700004
+    }
+  },
+  "upstream_diagnostics": {
+    "scope": "upstream MemOps diagnostics on saved answers, not competition score; generation model differs from upstream default",
+    "planned": 30,
+    "judged": 30,
+    "answer_correct": 23,
+    "lifecycle": {
+      "leakage_rate": 0.0,
+      "over_forget_rate": 0.0,
+      "stale_value_rate": 0.25,
+      "reflection_precision": 1.0,
+      "reflection_recall": 1.0,
+      "provenance_support_rate": 0.6896551724137931,
+      "trajectory_order_accuracy": 0.5,
+      "final_state_accuracy": 1.0,
+      "intermediate_state_accuracy": 1.0,
+      "trajectory_provenance_support_rate": 0.3333333333333333
+    }
+  },
+  "paired_verdict_counts": [
+    {
+      "proxy_status": "judged",
+      "proxy_correct": true,
+      "upstream_answer_correct": true,
+      "count": 12
+    },
+    {
+      "proxy_status": "judged",
+      "proxy_correct": false,
+      "upstream_answer_correct": false,
+      "count": 7
+    },
+    {
+      "proxy_status": "judged",
+      "proxy_correct": false,
+      "upstream_answer_correct": true,
+      "count": 10
+    },
+    {
+      "proxy_status": "judge_error",
+      "proxy_correct": false,
+      "upstream_answer_correct": true,
+      "count": 1
+    }
+  ],
+  "scope": "Same saved answers, different judge protocols. Neither is an official competition score. Upstream diagnostic uses pinned original logic with gpt-5.4-mini instead of its default model; rubric proxy follows the local conversion."
+}
