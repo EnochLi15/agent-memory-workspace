@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-09-05T07:03:44.606237+00:00",
+  "archives": [
+    {
+      "path": "delivery/runtime-images.tar",
+      "bytes": 408954368,
+      "sha256": "7e35570d5a8b882038a55fdf6ebae32d8b32c83049c1bbceb130cf11a859b376"
+    },
+    {
+      "path": "delivery/local-embedding.tar",
+      "bytes": 274319360,
+      "sha256": "9908e6e0d78ca92b7e132e754f6339084c7cb87fa87b9a6405e8f40203d99106"
+    }
+  ],
+  "image_tags": [
+    [
+      "comp-agent-memory-service:dev"
+    ],
+    [
+      "comp-agent-memory-eval:dev"
+    ]
+  ],
+  "architecture": "linux/arm64",
+  "scope": "Runtime Docker images and selected local embedding; source Git mirrors and result artifacts packaged separately."
+}
