@@ -1,0 +1,219 @@
+{
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-temporal-live/2026-09-05T12-24-08-120Z",
+  "started_at": "2026-09-05T12:24:08.216Z",
+  "scope": "Five synthetic acceptance cases with real HTTP, remote extraction/rerank, local embeddings and the unchanged ordinary Answer prompt; not benchmark accuracy",
+  "answer_model": "gpt-5.4-mini",
+  "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+  "source_sha256": {
+    "service/src/config.ts": "d21e6178653e55cc7d5e2865bf09f514568b4794d4d9d054a2bb43790228db61",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "194e6e9d797e056a7eeafcfbb6eef68be0e86686d02a001acaef01bd5d3592be",
+    "service/src/extraction.ts": "b451c1db1fdd013b8e16da265ebef5c9faf5e36a586d1544f6560f653ca5f22e",
+    "service/src/models.ts": "e3830f995d4aa8477f8bae5d7f37db59ab91b4ab7da85347d67e6ba75b5918d9",
+    "service/src/operation-intent.ts": "60fdc51f9ccb50719f11f686d8877141d214db5198b3cb5bf7ce7e0ba2b6c8b3",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "45f168008536bb458665e094fc93489c88caa3c27e871c67fc47852895b3b913",
+    "service/src/retrieval.ts": "cac01a6ecdbaa60133dc4f4dee523330c0eb0409cebd4e21f5848d3d8f99983d",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "1c49766435834cb71a3305cf6e18d229a185795a45b12bdd5ebcaab23346a657",
+    "service/src/temporal.ts": "ca4486e91154c618fed84285b458d4d699dfc4de37764aa220b9cc093d956638",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "578dde331cb76dff56539ec8e8ebb5967548c228ea713ebc92d1b378b8db44c7",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "cases": [
+    {
+      "id": "leap-day",
+      "query": "What calendar date did I visit the Harbor Museum?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 3275.8841669999997
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "source-2d4b99099b9632a9953223c0ab8825d3b20a0fe3a1a4c851369ba73563053b09",
+          "content": "[Session time: 1 March 2024] I visited the Harbor Museum yesterday.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2024-03-01T00:00:00Z; source: 81eeb10b40fb]",
+          "score": 0.98,
+          "created_at": "2024-03-01T00:00:00Z"
+        }
+      ],
+      "answer": "29 February 2024",
+      "answer_check": true,
+      "evidence_check": true
+    },
+    {
+      "id": "month-precision",
+      "query": "In what month and year did I join the night photography club?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 3655.773332999999
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "bcf3ce170b485ecbffe3521659e269d381e537ec13afa46b4a219a207cdf5742",
+          "content": "I joined the night photography club in November 2024.\nVerbatim source context (use this to verify actor and negation):\nuser: I joined the night photography club in November 2024. I remember the month but not the exact day.\n[status: confirmed; subject/speaker: user; scope: unspecified; event window: 2024-11-01 to 2024-12-01 (end exclusive, month precision); observed: 2025-01-01T00:00:00Z; original time: in November 2024; valid from: 2024-11; source: 1447ff5912d6]",
+          "score": 1,
+          "created_at": "2025-01-01T00:00:00Z"
+        },
+        {
+          "id": "source-71470775208652f40de5280ab65194d496780469bbbfafba18fb77e6e872be88",
+          "content": "I remember the month but not the exact day.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2025-01-01T00:00:00Z; source: 1447ff5912d6]",
+          "score": 0.2,
+          "created_at": "2025-01-01T00:00:00Z"
+        }
+      ],
+      "answer": "November 2024",
+      "answer_check": true,
+      "evidence_check": true
+    },
+    {
+      "id": "trajectory",
+      "query": "How did my city change over our conversation, in order?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 1881.8065829999978
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3145.4662080000016
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3171.9761670000007
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "event-481d745b6c793880f1f8d7b7d401d8cdb2cf03e100d5f3b8fdc13d51bed72fcb",
+          "content": "Memory operation remember current city. Source order 0. Before: [none]. After: I live in Oslo. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 481d745b6c79]",
+          "score": 0.99,
+          "created_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "id": "event-3d541b1c939917bb9e4fd19335a7a122c8c96a3ab09c829e918fbabfdbd00e69",
+          "content": "Memory operation update current city. Source order 10000000. Before: I live in Oslo. (confirmed; superseded). After: I now live in Bergen. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-02-01T00:00:00Z; source: 3d541b1c9399]",
+          "score": 0.98,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "event-b963369467cdff64c45419d02edaf784d8fc5fbe3850ebf0546fdb1857fe6748",
+          "content": "Memory operation update current city. Source order 20000000. Before: I now live in Bergen. (confirmed; superseded). After: I now live in Tromso. (confirmed; active).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: b963369467cd]",
+          "score": 0.97,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "37eb3669b19eb8610dfdbc07c386c9bbf51e2c6c5227135cb4c81b193d866c02",
+          "content": "I live in Oslo.\n[status: historical; valid until 2026-02-01T00:00:00Z; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; valid until: 2026-02-01T00:00:00Z; source: 481d745b6c79]",
+          "score": 0.9,
+          "created_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "id": "4657e613deca049da68e4529383b8ff2cd261e197e539f4f57c0ad9ace7fb5c3",
+          "content": "I now live in Bergen.\n[status: historical; valid until 2026-03-01T00:00:00Z; subject/speaker: user; scope: unspecified; observed: 2026-02-01T00:00:00Z; valid until: 2026-03-01T00:00:00Z; source: 3d541b1c9399]",
+          "score": 0.88,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "ea0de9699c885650ef0d4a0984108066f29178ad593ea709cf80226123389a5a",
+          "content": "I now live in Tromso.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: b963369467cd]",
+          "score": 0.87,
+          "created_at": "2026-03-01T00:00:00Z"
+        }
+      ],
+      "answer": "Oslo, then Bergen, then Tromso.",
+      "answer_check": true,
+      "evidence_check": true
+    },
+    {
+      "id": "forget-restore",
+      "query": "What is my access code now, and what did I ask you to do with the old one?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 2852.2092090000006
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2034.6629580000008
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3092.789792000003
+        }
+      ],
+      "status": "failed",
+      "memories": [
+        {
+          "id": "3aa4a5786ec34c8c08eba318da38c9a40d98ffe61a7eecd28c2b7774e05e6b5f",
+          "content": "Remember again: my access code is NEW-927.\nVerbatim source context (use this to verify actor and negation):\nuser: Remember again: my access code is NEW-927.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: f5473d4b8ef9]",
+          "score": 1,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "event-f5473d4b8ef9e6068edaab226975a5d85d2c113ad3adc28fe90351e0ebccbbfc",
+          "content": "Memory operation restore access code. Source order 20000000. Before: [value unavailable: removed, withdrawn, or dependent evidence no longer visible]. After: Remember again: my access code is NEW-927. (confirmed; active).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: f5473d4b8ef9]",
+          "score": 0.98,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "event-99f54453b70f285f6d329f58437d5b5c09a27c4b98d6531a57b4762aa233d87d",
+          "content": "Memory operation access code entry was explicitly removed from memory (forgotten). Source order 10000000. Before: [forgotten value not retained]. After: [absent].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-02-01T00:00:00Z; source: 99f54453b70f]",
+          "score": 0.76,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "event-8fa7567bf3f8fcf107f1780a4232406e425a3a0b5edb8cdd9ea1acb8e9f2d168",
+          "content": "Memory operation remember access code. Source order 3. Before: [none]. After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 8fa7567bf3f8]",
+          "score": 0.22,
+          "created_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "id": "cd553aefaeee83413180d80ed4210a73f6890f799ecad7ed680f175ba0392010",
+          "content": "My manager is Clara.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 8fa7567bf3f8]",
+          "score": 0.02,
+          "created_at": "2026-01-01T00:00:00Z"
+        }
+      ],
+      "answer": "Your access code now is NEW-927. I don’t know what you asked me to do with the old one.",
+      "answer_check": false,
+      "evidence_check": true
+    },
+    {
+      "id": "synthetic-anchor",
+      "query": "What exact calendar date did I see the meteor shower?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 1918.8719160000037
+        }
+      ],
+      "status": "failed",
+      "memories": [
+        {
+          "id": "5e5fd40dc8d27df06e49c0349fb4fe40ba9c8839389c3bf24bcfcc7cb58b4550",
+          "content": "I saw a meteor shower yesterday.\nVerbatim source context (use this to verify actor and negation):\nuser: [Session time: synthetic ordering marker 2000-01-01; not an event date] I saw a meteor shower yesterday.\n[status: confirmed; subject/speaker: user; scope: unspecified; event time unresolved: yesterday; synthetic order marker, not an event date: 2000-01-01T00:00:00Z; original time: yesterday; source: 1d6af6c57d0a]",
+          "score": 0.98,
+          "created_at": "2000-01-01T00:00:00Z"
+        }
+      ],
+      "answer": "I do not know the exact calendar date; the memory only says “yesterday” and does not resolve it to a specific date.",
+      "answer_check": false,
+      "evidence_check": true
+    }
+  ],
+  "finished_at": "2026-09-05T12:25:02.491Z",
+  "passed": 3,
+  "planned": 5,
+  "status": "incomplete"
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Targeted assistant inspection of the first synthetic acceptance run; original checks and answers remain unchanged. Not a new benchmark score.",
+  "cases": [
+    {
+      "id": "synthetic-anchor",
+      "original_status": "failed",
+      "assessment": "Answer correctly abstains from an exact date; preset regex omitted the phrase do not know. Fixing the checker requires a new acceptance protocol/version."
+    },
+    {
+      "id": "forget-restore",
+      "original_status": "failed",
+      "assessment": "New code and safe forgetting event were returned, but the Answer did not identify the prior user request. Add explicit actor/authorization metadata derived from validated operation provenance, then rerun; no original score is changed."
+    }
+  ]
+}

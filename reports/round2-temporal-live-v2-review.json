@@ -1,0 +1,17 @@
+{
+  "scope": "Targeted assistant review of temporal-synthetic-v2, without changing original answers or original scores. Synthetic acceptance only, not benchmark accuracy.",
+  "original_passed": 4,
+  "planned": 5,
+  "review_supported_passes": 3,
+  "cases": [
+    {
+      "id": "leap-day",
+      "assessment": "Service evidence correctly resolves yesterday against 1 March 2024 to 29 February. Answer returns the source date instead. This is an answer/evidence-use failure, not a calendar normalization failure. Test a clearer distinction between event date and source date with unchanged Answer."
+    },
+    {
+      "id": "forget-restore",
+      "original_status": "passed",
+      "assessment": "False positive: Answer states the new code and mentions forgotten, but explicitly does not know what the user asked. It fails the second requested component despite explicit authorization evidence. The v3 synthetic check rejects this saved counterexample. Actor metadata alone did not resolve the observed Answer failure."
+    }
+  ]
+}
