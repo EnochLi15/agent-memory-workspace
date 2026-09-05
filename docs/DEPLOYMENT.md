@@ -64,7 +64,7 @@ make init test baseline-init eval-init
 
 LoCoMo 上游复现另外需要已安装的 Qwen3:14b Q4_K_M 和 eval 的 `ollama-judge-server.py`。其 manifest digest 已保存于 `reports/holdout-v2-local-models.json`；9GB 级 Judge 权重没有混入 embedding 包。服务本身不依赖 Judge。正式平台提供资源后，应按正式模型与评分配置另建运行目录。
 
-已验证的冷启动、断网恢复、干净克隆和 4/4 合成端到端结果见 `reports/clean-clone-final-functional.json` 与 `reports/container-offline.json`。完整公共基准结果与诊断仍由独立实验目录记录。
+已验证的冷启动、断网恢复、干净克隆和 4/4 合成端到端结果见 `reports/clean-clone-final-functional.json` 与 `reports/container-offline.json`。补充许可与署名后的评测镜像运行文件等价记录见`reports/license-image-supplement.json`。完整公共基准结果与诊断仍由独立实验目录记录。
 
 ## 最终归档
 

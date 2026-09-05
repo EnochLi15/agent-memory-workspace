@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-05T08:27:09.853245+00:00",
+  "checked_at": "2026-09-05T08:38:40.286896+00:00",
   "archives": [
     {
       "path": "delivery/runtime-images.tar",
-      "bytes": 408797696,
-      "sha256": "e738dbb9f79fb207d7bbf53cbd9968eec1ef2f706641880aa2c73972076747f9"
+      "bytes": 408819712,
+      "sha256": "83d4f185115ef1825dfe249e65ab3ef1721b65e651bce89b129dbce87183ab60"
     },
     {
       "path": "delivery/local-embedding.tar",
@@ -24,12 +24,12 @@
       "tags": [
         "comp-agent-memory-eval:dev"
       ],
-      "id": "sha256:e18ff29587142192094052861d405f159fe6bcc7c21718832e6c37e743dde02b",
+      "id": "sha256:5b783cd44e7b679e92d332a3def751d99e4b18a4fec88e091a0fc7741f5e7bb5",
       "architecture": "arm64"
     }
   ],
   "archive_config_digests_verified": true,
-  "eval_commit": "c4c11ba2373e6efff8ff40b6b7f349f4684aa8cd",
+  "eval_commit": "8f5be514b7dec1e5d93a6fc831e2c768c093ec83",
   "service_runtime_candidate": "910b3dd42f2953a4cdb2a8061f4eefc5c2db42ea",
   "architecture": "linux/arm64",
   "scope": "Runtime Docker images and selected local embedding; source Git mirrors and result artifacts packaged separately."

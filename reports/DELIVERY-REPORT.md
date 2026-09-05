@@ -25,6 +25,8 @@
 | 清理范围 | make clean-run只删除指定自建测试目录，路径穿越与符号链接被拒绝，邻接目录保留 |
 | 数据边界 | 已完成开发运行的HTTP payload与原数据白名单逐条一致；普通Answer输入在已审查的9个评测源码版本中相同 |
 
+LoCoMo固定上游的CC BY-NC 4.0许可与原始署名文件已随评测器保留；[上游说明](https://github.com/mem-eval-suite/LoCoMo_refined/blob/887091190789e8d6760e70b9edd696539923dc4f/NOTICE)注明它基于Snap Research LoCoMo修改。本地仅进行了报告中列明的数据适配与划分。补齐署名后的最新镜像有41个运行文件与已完整测试的镜像逐字节相同，新增文件的hash在镜像内断网核验通过，见 [许可镜像补充验证](license-image-supplement.json)。
+
 逐项要求及证据边界见 [验收矩阵](REQUIREMENT-AUDIT.md)、[干净克隆记录](clean-clone-final-functional.json)、[HTTP数据审计](development-http-trace-audit.json) 和 [Answer源码审计](answer-boundary-source-audit.json)。最后一项是源码审查，不能冒充网络流量捕获。
 
 ## 公开评测协议与当前开发结果
