@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-09-05T08:12:36.070176+00:00",
+  "profiles": {
+    "B1": {
+      "summary": {
+        "scope": "upstream MemOps diagnostics on saved answers, not competition score; generation model differs from upstream default",
+        "planned": 30,
+        "judged": 30,
+        "answer_correct": 27,
+        "lifecycle": {
+          "leakage_rate": 0.4,
+          "over_forget_rate": 0.2,
+          "stale_value_rate": 0.0,
+          "reflection_precision": 1.0,
+          "reflection_recall": 1.0,
+          "provenance_support_rate": 0.8275862068965517,
+          "trajectory_order_accuracy": 0.5,
+          "final_state_accuracy": 0.8,
+          "intermediate_state_accuracy": 0.5,
+          "trajectory_provenance_support_rate": 0.5
+        }
+      },
+      "diagnostic_denominators": {
+        "leakage": {
+          "flagged": 4,
+          "applicable": 10
+        },
+        "over_forget": {
+          "flagged": 2,
+          "applicable": 10
+        },
+        "stale_value": {
+          "flagged": 0,
+          "applicable": 4
+        }
+      },
+      "hashes": {
+        "manifest.json": "941a9a23d6f970aec54233769282c8f435efe4232d73790f9c01ad76ad788784",
+        "summary.json": "67c535d2f8e341a5a18eb0ff3ebe9e17f6d5c8dcc852922aed1795bb68f7ed9d",
+        "results.jsonl": "9c91bac65f51eb5b985b9223019ee802611f045f87ca22ba44370d2eccd5fd62"
+      }
+    },
+    "U3": {
+      "summary": {
+        "scope": "upstream MemOps diagnostics on saved answers, not competition score; generation model differs from upstream default",
+        "planned": 30,
+        "judged": 30,
+        "answer_correct": 23,
+        "lifecycle": {
+          "leakage_rate": 0.0,
+          "over_forget_rate": 0.0,
+          "stale_value_rate": 0.25,
+          "reflection_precision": 1.0,
+          "reflection_recall": 1.0,
+          "provenance_support_rate": 0.6896551724137931,
+          "trajectory_order_accuracy": 0.5,
+          "final_state_accuracy": 1.0,
+          "intermediate_state_accuracy": 1.0,
+          "trajectory_provenance_support_rate": 0.3333333333333333
+        }
+      },
+      "diagnostic_denominators": {
+        "leakage": {
+          "flagged": 0,
+          "applicable": 10
+        },
+        "over_forget": {
+          "flagged": 0,
+          "applicable": 10
+        },
+        "stale_value": {
+          "flagged": 1,
+          "applicable": 4
+        }
+      },
+      "hashes": {
+        "manifest.json": "9d6344c0a083449c0800a67d08b1dfaa264e868fdd2eebaae7dd9890ebb68662",
+        "summary.json": "4d4725a3e26d3ccc7565ae458304b6660e06e6f9de50803df94782fb6cc1796a",
+        "results.jsonl": "4a00e5847bfb9f4642d617d4fbe9de4dd3dec78ae86ed93cf33ce23dde73b858"
+      }
+    }
+  },
+  "paired_answer_score": {
+    "questions": 30,
+    "B1_wrong_U3_correct": 2,
+    "B1_correct_U3_wrong": 6
+  },
+  "same_upstream_protocol_and_model": true,
+  "scope": "Same public development questions and each run's saved answers; no regeneration. Upstream lifecycle flags concern answers, not measured database erasure/retention rates. The generation model differs from the upstream default and neither score is official. Only ten Forget and four Update diagnostic questions; do not generalize to all inputs."
+}
