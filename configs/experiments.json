@@ -1,0 +1,31 @@
+{
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RERANK": "true"
+  },
+  "profiles": {
+    "U0": {"baseline": "U0", "environment": {}},
+    "U1": {"baseline": "U1", "environment": {}},
+    "U2": {"environment": {"MEMORY_RETRIEVAL":"mem0","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_RERANK":"false"}},
+    "U3": {"environment": {}},
+    "B0": {"environment": {"MEMORY_MODE":"offline","MEMORY_EXPERIMENT_RAW_ONLY":"true","MEMORY_EXPERIMENT_LIFECYCLE":"false","MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RAW_FALLBACK":"false","MEMORY_RETRIEVAL":"lexical","MEMORY_RERANK":"false"}},
+    "B1": {"environment": {"MEMORY_EXPERIMENT_RAW_ONLY":"true","MEMORY_EXPERIMENT_LIFECYCLE":"false","MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RAW_FALLBACK":"false","MEMORY_RERANK":"false"}},
+    "B2": {"environment": {"MEMORY_EXPERIMENT_LIFECYCLE":"false","MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RERANK":"false"}},
+    "B3": {"environment": {"MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RERANK":"false"}},
+    "B4": {"environment": {"MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RERANK":"false"}},
+    "B5": {"environment": {"MEMORY_EXPERIMENT_REFLECTION":"false"}},
+    "B6": {"environment": {}},
+    "no_lifecycle": {"environment": {"MEMORY_EXPERIMENT_LIFECYCLE":"false"}},
+    "no_raw": {"environment": {"MEMORY_RAW_FALLBACK":"false"}},
+    "no_time": {"environment": {"MEMORY_EXPERIMENT_TEMPORAL":"false"}},
+    "no_hop": {"environment": {"MEMORY_EXPERIMENT_MULTI_HOP":"false"}},
+    "no_rerank": {"environment": {"MEMORY_RERANK":"false"}}
+  }
+}

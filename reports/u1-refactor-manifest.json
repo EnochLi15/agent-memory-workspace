@@ -1,0 +1,16 @@
+{
+  "upstream_commit": "dae67f74f5cc7bf138c7d7d6f9cec5ce4b4373b3",
+  "transformation": "extract write preparation and search orchestration methods; preserve bodies, this binding, shared helper identity",
+  "methods": [
+    {
+      "method": "addToVectorStore",
+      "body_sha256": "da0aacc0dc5f83ef97f528a2c8e3a5fdc4cf56afe1db30fd96d44ddec57a6327",
+      "bytes": 13860
+    },
+    {
+      "method": "search",
+      "body_sha256": "df7408e9c2dd5ea8fa3f304ef1bcae5dcfd3cb49647bcff6242fe11e45131220",
+      "bytes": 10607
+    }
+  ]
+}

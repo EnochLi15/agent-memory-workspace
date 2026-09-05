@@ -1,0 +1,81 @@
+{
+  "status": "passed",
+  "checks": [
+    "exact extraction prompts",
+    "two extracted facts",
+    "hash deduplication",
+    "additive update behavior",
+    "three scored search queries",
+    "tenant filter",
+    "invalid top_k rejection"
+  ],
+  "model": "deterministic fixtures; no external LLM",
+  "results": [
+    [
+      {
+        "memory": "The user is friends with Clara.",
+        "score": 0.5225673554609959
+      },
+      {
+        "memory": "The user lives in Oslo.",
+        "score": 0.5330654204444465
+      },
+      {
+        "memory": "The user now lives in Bergen.",
+        "score": 0.6211447481102248
+      },
+      {
+        "memory": "user is friends with",
+        "score": 0.4123844420915305
+      },
+      {
+        "memory": "user lives in",
+        "score": 0.41247942999201503
+      }
+    ],
+    [
+      {
+        "memory": "The user is friends with Clara.",
+        "score": 0.6310418294642689
+      },
+      {
+        "memory": "The user lives in Oslo.",
+        "score": 0.39369504426307766
+      },
+      {
+        "memory": "The user now lives in Bergen.",
+        "score": 0.46497699965263184
+      },
+      {
+        "memory": "user is friends with",
+        "score": 0.3100879258176445
+      },
+      {
+        "memory": "user lives in",
+        "score": 0.3100879258176445
+      }
+    ],
+    [
+      {
+        "memory": "The user is friends with Clara.",
+        "score": 0.4388059704280904
+      },
+      {
+        "memory": "The user lives in Oslo.",
+        "score": 0.6308420292644688
+      },
+      {
+        "memory": "The user now lives in Bergen.",
+        "score": 0.5375181160122713
+      },
+      {
+        "memory": "user is friends with",
+        "score": 0.3100879258176445
+      },
+      {
+        "memory": "user lives in",
+        "score": 0.3100879258176445
+      }
+    ]
+  ]
+}
