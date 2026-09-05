@@ -1,0 +1,191 @@
+{
+  "checked_at": "2026-09-05T08:52:52.444970+00:00",
+  "runs": [
+    {
+      "profile": "U0",
+      "run_id": "baseline-v7-U0-memops",
+      "answer_correct": 26,
+      "saved_answers": 30,
+      "judged": 30,
+      "answer_level_flags": {
+        "leakage": {
+          "flagged": 5,
+          "applicable_answers": 10
+        },
+        "over_forget": {
+          "flagged": 0,
+          "applicable_answers": 10
+        },
+        "stale_value": {
+          "flagged": 0,
+          "applicable_answers": 4
+        }
+      },
+      "upstream_lifecycle_summary": {
+        "leakage_rate": 0.5,
+        "over_forget_rate": 0.0,
+        "stale_value_rate": 0.0,
+        "reflection_precision": 1.0,
+        "reflection_recall": 1.0,
+        "provenance_support_rate": 0.8214285714285714,
+        "trajectory_order_accuracy": 1.0,
+        "final_state_accuracy": 1.0,
+        "intermediate_state_accuracy": 1.0,
+        "trajectory_provenance_support_rate": 1.0
+      },
+      "input_sha256": {
+        "manifest.json": "391079dee36bf882a14cb51ee2e50b98b969b42019ccf9caa70d77fd1fb368ce",
+        "summary.json": "59f0ce2032ea63553f17a9e30996660f8427b805416bf8fa2130cd4406307ccb",
+        "results.jsonl": "d25d5eb7057710169134d6b0bca6df644f2c2905522978c7b329c051fee2222d",
+        "calls.jsonl": "671ba15ca7edbf761c4a97e3ecfce616af3dc748fc70d12936e5c4e3ed7b1bef"
+      }
+    },
+    {
+      "profile": "U1",
+      "run_id": "baseline-v7-U1-memops",
+      "answer_correct": 25,
+      "saved_answers": 30,
+      "judged": 30,
+      "answer_level_flags": {
+        "leakage": {
+          "flagged": 2,
+          "applicable_answers": 10
+        },
+        "over_forget": {
+          "flagged": 1,
+          "applicable_answers": 10
+        },
+        "stale_value": {
+          "flagged": 0,
+          "applicable_answers": 4
+        }
+      },
+      "upstream_lifecycle_summary": {
+        "leakage_rate": 0.2,
+        "over_forget_rate": 0.1,
+        "stale_value_rate": 0.0,
+        "reflection_precision": 1.0,
+        "reflection_recall": 1.0,
+        "provenance_support_rate": 0.7586206896551724,
+        "trajectory_order_accuracy": 1.0,
+        "final_state_accuracy": 0.75,
+        "intermediate_state_accuracy": 1.0,
+        "trajectory_provenance_support_rate": 0.75
+      },
+      "input_sha256": {
+        "manifest.json": "351a14f62a751e1dc15c614da20b5d2cad5b4869a1e809a51caa7f600a1bc80a",
+        "summary.json": "f6d2b8abfbd79c5cb98c79ba5a1d75c067c9b4767e94ecc82e7a265f6ccd579d",
+        "results.jsonl": "53f3ece7a8f0d0b99c2ee3ee063d7df56652d1d47a33eb100ede2e90626a7030",
+        "calls.jsonl": "33151671863d1d1531d250c53913d92cc9d84817f9f593caa9911973baff025a"
+      }
+    },
+    {
+      "profile": "B1",
+      "run_id": "dev-v6-B1-memops",
+      "answer_correct": 27,
+      "saved_answers": 30,
+      "judged": 30,
+      "answer_level_flags": {
+        "leakage": {
+          "flagged": 4,
+          "applicable_answers": 10
+        },
+        "over_forget": {
+          "flagged": 2,
+          "applicable_answers": 10
+        },
+        "stale_value": {
+          "flagged": 0,
+          "applicable_answers": 4
+        }
+      },
+      "upstream_lifecycle_summary": {
+        "leakage_rate": 0.4,
+        "over_forget_rate": 0.2,
+        "stale_value_rate": 0.0,
+        "reflection_precision": 1.0,
+        "reflection_recall": 1.0,
+        "provenance_support_rate": 0.8275862068965517,
+        "trajectory_order_accuracy": 0.5,
+        "final_state_accuracy": 0.8,
+        "intermediate_state_accuracy": 0.5,
+        "trajectory_provenance_support_rate": 0.5
+      },
+      "input_sha256": {
+        "manifest.json": "941a9a23d6f970aec54233769282c8f435efe4232d73790f9c01ad76ad788784",
+        "summary.json": "67c535d2f8e341a5a18eb0ff3ebe9e17f6d5c8dcc852922aed1795bb68f7ed9d",
+        "results.jsonl": "9c91bac65f51eb5b985b9223019ee802611f045f87ca22ba44370d2eccd5fd62",
+        "calls.jsonl": "34b41a1802618b2e34fbe643136fe7d83ca20684e0b106948d54fba1eb061cd5"
+      }
+    },
+    {
+      "profile": "U3",
+      "run_id": "dev-v6-U3-memops",
+      "answer_correct": 23,
+      "saved_answers": 30,
+      "judged": 30,
+      "answer_level_flags": {
+        "leakage": {
+          "flagged": 0,
+          "applicable_answers": 10
+        },
+        "over_forget": {
+          "flagged": 0,
+          "applicable_answers": 10
+        },
+        "stale_value": {
+          "flagged": 1,
+          "applicable_answers": 4
+        }
+      },
+      "upstream_lifecycle_summary": {
+        "leakage_rate": 0.0,
+        "over_forget_rate": 0.0,
+        "stale_value_rate": 0.25,
+        "reflection_precision": 1.0,
+        "reflection_recall": 1.0,
+        "provenance_support_rate": 0.6896551724137931,
+        "trajectory_order_accuracy": 0.5,
+        "final_state_accuracy": 1.0,
+        "intermediate_state_accuracy": 1.0,
+        "trajectory_provenance_support_rate": 0.3333333333333333
+      },
+      "input_sha256": {
+        "manifest.json": "9d6344c0a083449c0800a67d08b1dfaa264e868fdd2eebaae7dd9890ebb68662",
+        "summary.json": "4d4725a3e26d3ccc7565ae458304b6660e06e6f9de50803df94782fb6cc1796a",
+        "results.jsonl": "4a00e5847bfb9f4642d617d4fbe9de4dd3dec78ae86ed93cf33ce23dde73b858",
+        "calls.jsonl": "10fb5b451649869284f8c02925bcf5c0d81ee2109487a72c16af6d2c790e6ca3"
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "baseline": "U0",
+      "candidate": "U3",
+      "questions": 30,
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 4
+    },
+    {
+      "baseline": "U1",
+      "candidate": "U3",
+      "questions": 30,
+      "wrong_to_correct": 1,
+      "correct_to_wrong": 3
+    },
+    {
+      "baseline": "B1",
+      "candidate": "U3",
+      "questions": 30,
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 6
+    }
+  ],
+  "matching_upstream_fields": [
+    "upstream_revision",
+    "script_sha256",
+    "gold_files",
+    "model"
+  ],
+  "scope": "Same saved-answer upstream diagnostic protocol and question set; not the primary rubric score. Endpoint/model-weight identity cannot be established from model aliases. Binary leakage/over-forget/stale-value flags describe answers on applicable questions, not database erasure or retention measurements. Independent generation and judging can vary."
+}
