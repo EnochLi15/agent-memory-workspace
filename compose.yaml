@@ -1,0 +1,24 @@
+name: comp-agent-memory
+services:
+  memory-service:
+    image: comp-agent-memory-service:dev
+    build: ./service
+    init: true
+    ports:
+      - "127.0.0.1:${MEMORY_PORT:-8088}:8088"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8088
+      MEMORY_MODE: ${MEMORY_MODE:-offline}
+      MEMORY_DATA_DIR: /data
+      MEMORY_EMBEDDING_BASE_URL: ${DOCKER_EMBEDDING_BASE_URL:-http://host.docker.internal:11434}
+      MEMORY_EMBEDDING_DIGEST: 0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f
+    volumes:
+      - memory-data:/data
+    restart: unless-stopped
+    stop_grace_period: 125s
+volumes:
+  memory-data:

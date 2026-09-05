@@ -1,0 +1,386 @@
+{
+  "date": "2026-09-05T05:19:19.000Z",
+  "scope": "Synthetic behavioral comparison, not benchmark accuracy",
+  "systems": {
+    "U0": {
+      "old_city_in_current_evidence": true,
+      "forgotten_value_in_evidence": true,
+      "neighbor_retained": true,
+      "evidence": {
+        "current": {
+          "data": [
+            {
+              "id": "e5e63662-c498-468e-90c5-5d79ca68ad28",
+              "content": "User now lives in Portland, and Portland is the user's current city.",
+              "score": 0.4666468274728187,
+              "created_at": "2026-09-05T05:19:27.166Z"
+            },
+            {
+              "id": "ed5a7ef2-848f-4c99-b6ef-8ba4aa048c3a",
+              "content": "s city",
+              "score": 0.3148074887116447,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "f38c2f2f-cc27-4618-932a-090cfca11d79",
+              "content": "User currently lives in Seattle.",
+              "score": 0.24915770444297852,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "2755e32f-dd50-4bd9-8294-dc3a92cf5c40",
+              "content": "currently lives in",
+              "score": 0.24867848477834903,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "adc6b5f7-a2a9-404e-aa45-5f509a63d8c8",
+              "content": "now lives in",
+              "score": 0.21754996701558235,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c8a6d2e8-26ae-4637-a592-db1ac3b871bc",
+              "content": "Seattle",
+              "score": 0.19229601090384718,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "b7ef3c3c-ef98-4261-b322-daad1d218168",
+              "content": "Portland",
+              "score": 0.1832768018472392,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "b6d895c3-7f5a-4065-ac90-ffd6790f624e",
+              "content": "is the user",
+              "score": 0.17478499472043435,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c0a126f7-5221-48d7-8931-b5eab56796b7",
+              "content": "s manager is",
+              "score": 0.1657572942148472,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c19f81b5-1ff6-4080-9603-38921b111265",
+              "content": "User's access code is LL-378.",
+              "score": 0.16551993967942646,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "d2e24229-9816-4070-98f1-4154cee9e343",
+              "content": "User's manager is Clara.",
+              "score": 0.16068115004445788,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "45092e4f-ce8b-448b-af80-7edffce3b472",
+              "content": "LL-378",
+              "score": 0.16007994608930784,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c839af08-54a5-4f7c-9aa2-697c6e546c09",
+              "content": "Clara",
+              "score": 0.15362116812639276,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "3d737497-a907-4f50-8ece-0740cd5367ae",
+              "content": "s access code is",
+              "score": 0.14500042952002007,
+              "created_at": "1970-01-01T00:00:00Z"
+            }
+          ]
+        },
+        "forgotten": {
+          "data": [
+            {
+              "id": "c19f81b5-1ff6-4080-9603-38921b111265",
+              "content": "User's access code is LL-378.",
+              "score": 0.722470353481439,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "b9a82580-fb90-4010-9826-ff727f745c06",
+              "content": "User asked to forget the access code while retaining the user's manager and current city.",
+              "score": 0.40087552407332894,
+              "created_at": "2026-09-05T05:19:29.263Z"
+            },
+            {
+              "id": "45092e4f-ce8b-448b-af80-7edffce3b472",
+              "content": "LL-378",
+              "score": 0.31584723312825796,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "3d737497-a907-4f50-8ece-0740cd5367ae",
+              "content": "s access code is",
+              "score": 0.3028117047249285,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "e5e63662-c498-468e-90c5-5d79ca68ad28",
+              "content": "User now lives in Portland, and Portland is the user's current city.",
+              "score": 0.2908157318248093,
+              "created_at": "2026-09-05T05:19:27.166Z"
+            },
+            {
+              "id": "8c832b09-3bfa-4839-9d19-2967b2eb6e8f",
+              "content": "access code while retaining",
+              "score": 0.2793952321219488,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "b6d895c3-7f5a-4065-ac90-ffd6790f624e",
+              "content": "is the user",
+              "score": 0.1917447350283747,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "d2e24229-9816-4070-98f1-4154cee9e343",
+              "content": "User's manager is Clara.",
+              "score": 0.1753471897901439,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "f38c2f2f-cc27-4618-932a-090cfca11d79",
+              "content": "User currently lives in Seattle.",
+              "score": 0.16664584424125747,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "adc6b5f7-a2a9-404e-aa45-5f509a63d8c8",
+              "content": "now lives in",
+              "score": 0.16508216133596704,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "d6ee8af3-dd75-48a3-8c92-17ffe6509a2c",
+              "content": "asked to forget the",
+              "score": 0.1611757827924204,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c0a126f7-5221-48d7-8931-b5eab56796b7",
+              "content": "s manager is",
+              "score": 0.157629538745157,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "2755e32f-dd50-4bd9-8294-dc3a92cf5c40",
+              "content": "currently lives in",
+              "score": 0.1516271371450008,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "df9682b8-9417-432b-8e8c-0a3a757e708a",
+              "content": "s manager and",
+              "score": 0.14808420813868486,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c839af08-54a5-4f7c-9aa2-697c6e546c09",
+              "content": "Clara",
+              "score": 0.1468651706459358,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "ed5a7ef2-848f-4c99-b6ef-8ba4aa048c3a",
+              "content": "s city",
+              "score": 0.1407652036376608,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "b7ef3c3c-ef98-4261-b322-daad1d218168",
+              "content": "Portland",
+              "score": 0.14061310839791222,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c8a6d2e8-26ae-4637-a592-db1ac3b871bc",
+              "content": "Seattle",
+              "score": 0.1393182237972913,
+              "created_at": "1970-01-01T00:00:00Z"
+            }
+          ]
+        },
+        "neighbor": {
+          "data": [
+            {
+              "id": "d2e24229-9816-4070-98f1-4154cee9e343",
+              "content": "User's manager is Clara.",
+              "score": 0.48990574825439887,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "b9a82580-fb90-4010-9826-ff727f745c06",
+              "content": "User asked to forget the access code while retaining the user's manager and current city.",
+              "score": 0.39780933649813904,
+              "created_at": "2026-09-05T05:19:29.263Z"
+            },
+            {
+              "id": "c0a126f7-5221-48d7-8931-b5eab56796b7",
+              "content": "s manager is",
+              "score": 0.3405795958538098,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "df9682b8-9417-432b-8e8c-0a3a757e708a",
+              "content": "s manager and",
+              "score": 0.3219172500225451,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "e5e63662-c498-468e-90c5-5d79ca68ad28",
+              "content": "User now lives in Portland, and Portland is the user's current city.",
+              "score": 0.3054733874612041,
+              "created_at": "2026-09-05T05:19:27.166Z"
+            },
+            {
+              "id": "b6d895c3-7f5a-4065-ac90-ffd6790f624e",
+              "content": "is the user",
+              "score": 0.23754843612887253,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c19f81b5-1ff6-4080-9603-38921b111265",
+              "content": "User's access code is LL-378.",
+              "score": 0.19004254305902032,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "adc6b5f7-a2a9-404e-aa45-5f509a63d8c8",
+              "content": "now lives in",
+              "score": 0.17779762891222375,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "d6ee8af3-dd75-48a3-8c92-17ffe6509a2c",
+              "content": "asked to forget the",
+              "score": 0.1734319484785391,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c839af08-54a5-4f7c-9aa2-697c6e546c09",
+              "content": "Clara",
+              "score": 0.1699261879053904,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "2755e32f-dd50-4bd9-8294-dc3a92cf5c40",
+              "content": "currently lives in",
+              "score": 0.16872323367565029,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "45092e4f-ce8b-448b-af80-7edffce3b472",
+              "content": "LL-378",
+              "score": 0.1648935031060788,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "f38c2f2f-cc27-4618-932a-090cfca11d79",
+              "content": "User currently lives in Seattle.",
+              "score": 0.16175552679798225,
+              "created_at": "2026-09-05T05:19:24.730Z"
+            },
+            {
+              "id": "3d737497-a907-4f50-8ece-0740cd5367ae",
+              "content": "s access code is",
+              "score": 0.15680009244685728,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "ed5a7ef2-848f-4c99-b6ef-8ba4aa048c3a",
+              "content": "s city",
+              "score": 0.1564459106751832,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "b7ef3c3c-ef98-4261-b322-daad1d218168",
+              "content": "Portland",
+              "score": 0.14950272258115366,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "8c832b09-3bfa-4839-9d19-2967b2eb6e8f",
+              "content": "access code while retaining",
+              "score": 0.1429375619335634,
+              "created_at": "1970-01-01T00:00:00Z"
+            },
+            {
+              "id": "c8a6d2e8-26ae-4637-a592-db1ac3b871bc",
+              "content": "Seattle",
+              "score": 0.12915207276599275,
+              "created_at": "1970-01-01T00:00:00Z"
+            }
+          ]
+        }
+      }
+    },
+    "candidate": {
+      "old_city_in_current_evidence": false,
+      "forgotten_value_in_evidence": false,
+      "neighbor_retained": true,
+      "evidence": {
+        "current": {
+          "data": [
+            {
+              "id": "5ef3fb3be518354e021efb4f8db8674f80834abcff86723f99c5be5c46682e09",
+              "content": "I now live in Portland. That is my current city.\n[status: confirmed; observed: 2026-02-01T00:00:00Z; original time: now; source: 2fd5466650267bb91279d0dc41d41d5decc73ff54b3930ccc3c4b7702c87aa78]",
+              "score": 0.03278689,
+              "created_at": "2026-02-01T00:00:00Z"
+            },
+            {
+              "id": "c28abf21c00863776d8735837aa402fcfa10270d2ebc7c66adf03247b7a67e75",
+              "content": "My manager is Clara.\n[status: confirmed; observed: 2026-01-01T00:00:00Z; original time: current; source: 085596db95c7158dad86b7d5767535b2a114330b0dbfa1ae635a42049a6c42ef]",
+              "score": 0.01612903,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "ce720b60eb60ce896a062306abec30010c4258fd3cae0287607860c68ea48a51",
+              "content": "My access code is LL-378.\n[status: confirmed; observed: 2026-01-01T00:00:00Z; original time: current; source: 085596db95c7158dad86b7d5767535b2a114330b0dbfa1ae635a42049a6c42ef]",
+              "score": 0.01587302,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ]
+        },
+        "forgotten": {
+          "data": [
+            {
+              "id": "c28abf21c00863776d8735837aa402fcfa10270d2ebc7c66adf03247b7a67e75",
+              "content": "My manager is Clara.\n[status: confirmed; observed: 2026-01-01T00:00:00Z; original time: current; source: 085596db95c7158dad86b7d5767535b2a114330b0dbfa1ae635a42049a6c42ef]",
+              "score": 0.01639344,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "5ef3fb3be518354e021efb4f8db8674f80834abcff86723f99c5be5c46682e09",
+              "content": "I now live in Portland. That is my current city.\n[status: confirmed; observed: 2026-02-01T00:00:00Z; original time: now; source: 2fd5466650267bb91279d0dc41d41d5decc73ff54b3930ccc3c4b7702c87aa78]",
+              "score": 0.01612903,
+              "created_at": "2026-02-01T00:00:00Z"
+            }
+          ]
+        },
+        "neighbor": {
+          "data": [
+            {
+              "id": "c28abf21c00863776d8735837aa402fcfa10270d2ebc7c66adf03247b7a67e75",
+              "content": "My manager is Clara.\n[status: confirmed; observed: 2026-01-01T00:00:00Z; original time: current; source: 085596db95c7158dad86b7d5767535b2a114330b0dbfa1ae635a42049a6c42ef]",
+              "score": 0.03278689,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "5ef3fb3be518354e021efb4f8db8674f80834abcff86723f99c5be5c46682e09",
+              "content": "I now live in Portland. That is my current city.\n[status: confirmed; observed: 2026-02-01T00:00:00Z; original time: now; source: 2fd5466650267bb91279d0dc41d41d5decc73ff54b3930ccc3c4b7702c87aa78]",
+              "score": 0.01612903,
+              "created_at": "2026-02-01T00:00:00Z"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

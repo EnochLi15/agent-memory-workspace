@@ -1,0 +1,15 @@
+{
+  "image": "sha256:2a01ca6a92116f1f10d283e70e046a8cb341b5b1ff77e2aea30cdee91147dfe8",
+  "network": "none",
+  "checks": [
+    "cold-start",
+    "synchronous-add",
+    "forget",
+    "sigkill-restart",
+    "retained-neighbor",
+    "tenant-isolation",
+    "remove-and-recreate-with-volume"
+  ],
+  "status": "passed",
+  "retained_volume": "comp-memory-offline-audit-data"
+}
