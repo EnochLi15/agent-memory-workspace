@@ -1,12 +1,10 @@
 {
-  "checked_at": "2026-09-05T08:31:32.126433+00:00",
+  "checked_at": "2026-09-05T08:50:00.499680+00:00",
   "complete_evaluation_runs": false,
   "pending": [
-    "baseline-v7-U0-memops",
-    "baseline-v7-U1-memops",
     "holdout-v2-U3-memops"
   ],
-  "script_sha256": "f4be702ef0d11e393dda6df0c42ded733797edbf06019b2227e2c3d314142e72",
+  "script_sha256": "6e71acacab83dff660073030ff9e887f661051cbfd4fa584dccce12269bc50e7",
   "service_model_usage": [
     {
       "campaign": "dev-v6",
@@ -616,87 +614,171 @@
       "campaign": "holdout-v2",
       "profile": "U3",
       "source": "artifacts/holdout-v2/U3-model-calls.jsonl",
-      "source_sha256": "1f88bfef321b5eb8d129cdf26ad8c7578fca30db56590aedb9165ec97cbe1d4e",
+      "source_sha256": "ec8dadb09063d45ea1ef9473aeaaa10455291b5cf3fd21ea157bfa1a6fd87b73",
       "first_at": "2026-09-05T06:20:18.172Z",
-      "last_at": "2026-09-05T08:31:27.515Z",
+      "last_at": "2026-09-05T08:49:59.757Z",
       "generation": {
-        "recorded_attempts": 3305,
+        "recorded_attempts": 3799,
         "outcomes": {
-          "ok": 3179,
-          "error": 126
+          "ok": 3657,
+          "error": 142
         },
         "purposes": {
-          "extraction": 2408,
-          "rerank": 771,
-          "unrecorded": 126
+          "extraction": 2828,
+          "rerank": 829,
+          "unrecorded": 142
         },
         "provider_usage": {
-          "prompt_tokens": 24552944,
-          "completion_tokens": 1105889,
-          "total_tokens": 25658833
+          "prompt_tokens": 27726252,
+          "completion_tokens": 1242175,
+          "total_tokens": 28968427
         },
-        "cached_prompt_tokens": 5753856,
-        "attempts_with_usage": 3179,
+        "cached_prompt_tokens": 6784768,
+        "attempts_with_usage": 3657,
         "elapsed_ms": {
-          "n": 3305,
-          "mean": 7351.232904302266,
+          "n": 3799,
+          "mean": 7143.630477145562,
           "p95": 21638.397000000812,
           "max": 80120.96216699993
         }
       },
       "embedding": {
-        "recorded_calls": 1826,
+        "recorded_calls": 2022,
         "outcomes": {
-          "ok": 1826
+          "ok": 2022
         },
-        "vectors": 9450,
-        "reported_prompt_eval_count": 185955,
+        "vectors": 10435,
+        "reported_prompt_eval_count": 207181,
         "elapsed_ms": {
-          "n": 1826,
-          "mean": 582.5373982113963,
-          "p95": 1683.4763750000857,
+          "n": 2022,
+          "mean": 538.376490895162,
+          "p95": 1616.095250000013,
           "max": 15636.646542000002
         }
       },
-      "successful_add_degradation_events": 91,
+      "successful_add_degradation_events": 108,
       "recorded_degradation_reasons": {
-        "extraction_offline": 63,
-        "source_span_partial": 28,
+        "extraction_offline": 71,
+        "source_span_partial": 37,
         "embedding_lexical": 1
       },
-      "service_log_sha256": "5bc6dbc3f1e6e6d91257ad52418c087d08f5a39b77ec792f6bb532ad7b9cc946"
+      "service_log_sha256": "db49c509811482147f0f2a735a9b287e74064ff460d8c8816ac107fa03af3539"
     }
   ],
+  "saved_memops_posthoc_usage": [
+    {
+      "run_id": "dev-v6-B1-memops",
+      "complete": true,
+      "source": "eval/artifacts/dev-v6-B1-memops/upstream-memops-diagnostics/calls.jsonl",
+      "source_sha256": "34b41a1802618b2e34fbe643136fe7d83ca20684e0b106948d54fba1eb061cd5",
+      "recorded_calls": 30,
+      "provider_usage": {
+        "prompt_tokens": 189828,
+        "completion_tokens": 2744,
+        "total_tokens": 192572
+      },
+      "cached_prompt_tokens": 57856,
+      "elapsed_ms": {
+        "n": 30,
+        "mean": 3965.8003986929543,
+        "p95": 7774.33862502221,
+        "max": 10857.793542090803
+      }
+    },
+    {
+      "run_id": "dev-v6-U3-memops",
+      "complete": true,
+      "source": "eval/artifacts/dev-v6-U3-memops/upstream-memops-diagnostics/calls.jsonl",
+      "source_sha256": "10fb5b451649869284f8c02925bcf5c0d81ee2109487a72c16af6d2c790e6ca3",
+      "recorded_calls": 30,
+      "provider_usage": {
+        "prompt_tokens": 190195,
+        "completion_tokens": 2813,
+        "total_tokens": 193008
+      },
+      "cached_prompt_tokens": 23552,
+      "elapsed_ms": {
+        "n": 30,
+        "mean": 4232.339631952345,
+        "p95": 9202.045250101946,
+        "max": 9790.602708002552
+      }
+    },
+    {
+      "run_id": "baseline-v7-U0-memops",
+      "complete": false,
+      "source": "eval/artifacts/baseline-v7-U0-memops/upstream-memops-diagnostics/calls.jsonl",
+      "source_sha256": "374da59e7016666d320c945ba7f26f271fb7622191afa56f8d26695b23fcfd90",
+      "recorded_calls": 9,
+      "provider_usage": {
+        "prompt_tokens": 59670,
+        "completion_tokens": 842,
+        "total_tokens": 60512
+      },
+      "cached_prompt_tokens": 18176,
+      "elapsed_ms": {
+        "n": 9,
+        "mean": 3444.833032321185,
+        "p95": 4566.356957890093,
+        "max": 4566.356957890093
+      }
+    },
+    {
+      "run_id": "baseline-v7-U1-memops",
+      "complete": false,
+      "source": "eval/artifacts/baseline-v7-U1-memops/upstream-memops-diagnostics/calls.jsonl",
+      "source_sha256": "aa361e433d3ddc197d879b0d52e8d937952297789e27325db79d1f53ee41e20e",
+      "recorded_calls": 9,
+      "provider_usage": {
+        "prompt_tokens": 59500,
+        "completion_tokens": 874,
+        "total_tokens": 60374
+      },
+      "cached_prompt_tokens": 18176,
+      "elapsed_ms": {
+        "n": 9,
+        "mean": 3283.6803424741247,
+        "p95": 3947.019375045784,
+        "max": 3947.019375045784
+      }
+    },
+    {
+      "run_id": "holdout-v2-U3-memops",
+      "complete": false,
+      "availability": "N/A: no saved call log yet"
+    }
+  ],
+  "complete_memops_posthoc_logs": false,
   "host_sampling": {
-    "source_sha256": "f92ae8f262fc984ac03039b7ac65b7e043ba561677eda0d6ee6c5740894c5f01",
-    "samples": 446,
+    "source_sha256": "60faede6f1f7c8d4fdd48c3b592c2dcf717dc631646b0bfbbbca2b1a5d5aea45",
+    "samples": 519,
     "first_at": "2026-09-05T06:35:30.441142+00:00",
-    "last_at": "2026-09-05T08:31:29.448119+00:00",
+    "last_at": "2026-09-05T08:49:49.113919+00:00",
     "experiment_process_rss_kib": {
-      "n": 446,
-      "mean": 488135.4618834081,
-      "p95": 1524128,
+      "n": 519,
+      "mean": 570398.2427745665,
+      "p95": 1503968,
       "max": 1911248
     },
     "experiment_cpu_percent_sum": {
-      "n": 446,
-      "mean": 70.14618834080717,
-      "p95": 125.60000000000001,
+      "n": 519,
+      "mean": 66.61252408477841,
+      "p95": 135.6,
       "max": 250.0
     },
     "ollama_process_rss_kib": {
-      "n": 446,
-      "mean": 7618542.134529148,
-      "p95": 10198112,
+      "n": 519,
+      "mean": 6584554.789980732,
+      "p95": 10197728,
       "max": 10260080
     },
     "ollama_cpu_percent_sum": {
-      "n": 446,
-      "mean": 9.673991031390134,
-      "p95": 34.400000000000006,
+      "n": 519,
+      "mean": 9.508285163776494,
+      "p95": 35.8,
       "max": 156.5
     },
     "scope": "15-second process samples across concurrent experiments; not isolated per-campaign memory, GPU utilization, or integrated CPU time. Shared pages can be counted twice. User applications and Docker VM are not attributed; sampling began after run start."
   },
-  "scope": "Service-side observations only. Answer/Judge/posthoc model usage and original baseline billing are not logged. Failed generation calls may lack usage; failed embedding calls are not recorded by this hook. Contract probes on separate tenants can be included in the same process log. Cached tokens are a subset of prompt tokens. No monetary estimate."
+  "scope": "Service-side observations plus saved upstream MemOps posthoc calls. Ordinary Answer/Judge, hypothesis-generator and original baseline service billing are not logged. Posthoc requests that fail before writing a call log can be absent. Failed generation calls may lack usage; failed embedding calls are not recorded by this hook. Contract probes on separate tenants can be included in the same process log. Cached tokens are a subset of prompt tokens. No monetary estimate."
 }

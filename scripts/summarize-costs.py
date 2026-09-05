@@ -89,6 +89,29 @@ for campaign, profile in groups:
         record['service_log_sha256'] = sha(service_log)
     summaries.append(record)
 
+posthoc = []
+for name in ['dev-v6-B1-memops', 'dev-v6-U3-memops', 'baseline-v7-U0-memops',
+             'baseline-v7-U1-memops', 'holdout-v2-U3-memops']:
+    directory = ROOT / 'eval/artifacts' / name / 'upstream-memops-diagnostics'
+    calls = directory / 'calls.jsonl'
+    entry = {'run_id': name, 'complete': (directory / 'summary.json').exists()}
+    if calls.exists():
+        observed = read_rows(calls)
+        usage = collections.Counter()
+        cached = 0
+        for row in observed:
+            u = row.get('usage') or {}
+            for key in ['prompt_tokens', 'completion_tokens', 'total_tokens']:
+                usage[key] += u.get(key, 0)
+            cached += (u.get('prompt_tokens_details') or {}).get('cached_tokens', 0)
+        entry.update(source=str(calls.relative_to(ROOT)), source_sha256=sha(calls),
+                     recorded_calls=len(observed), provider_usage=dict(usage),
+                     cached_prompt_tokens=cached,
+                     elapsed_ms=stats([row['elapsed_ms'] for row in observed]))
+    else:
+        entry['availability'] = 'N/A: no saved call log yet'
+    posthoc.append(entry)
+
 resource_path = ROOT / 'artifacts/holdout-v2/resources.jsonl'
 resources = read_rows(resource_path)
 resource_summary = {'source_sha256': sha(resource_path), 'samples': len(resources),
@@ -103,9 +126,13 @@ resource_summary = {'source_sha256': sha(resource_path), 'samples': len(resource
 report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'complete_evaluation_runs': not pending, 'pending': pending,
           'script_sha256': sha(pathlib.Path(__file__)), 'service_model_usage': summaries,
+          'saved_memops_posthoc_usage': posthoc,
+          'complete_memops_posthoc_logs': all(row['complete'] for row in posthoc),
           'host_sampling': resource_summary,
-          'scope': 'Service-side observations only. Answer/Judge/posthoc model usage and original baseline '
-                   'billing are not logged. Failed generation calls may lack usage; failed embedding calls '
+          'scope': 'Service-side observations plus saved upstream MemOps posthoc calls. Ordinary '
+                   'Answer/Judge, hypothesis-generator and original baseline service billing are not logged. '
+                   'Posthoc requests that fail before writing a call log can be absent. '
+                   'Failed generation calls may lack usage; failed embedding calls '
                    'are not recorded by this hook. Contract probes on separate tenants can be included in '
                    'the same process log. Cached tokens are a subset of prompt tokens. No monetary estimate.'}
 (ROOT / 'reports/model-usage-and-resources.json').write_text(json.dumps(report, indent=2) + '\n')

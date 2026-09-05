@@ -77,11 +77,15 @@ for repository in ['.', 'service', 'eval']:
         raise SystemExit('Create a fresh source snapshot before packaging: ' + repository)
 if not json.loads((ROOT / 'reports/completed-run-audit.json').read_text())['complete_matrix']:
     raise SystemExit('Complete all 34 runs and strict request audits first')
-if not json.loads((ROOT / 'reports/model-usage-and-resources.json').read_text())['complete_evaluation_runs']:
+usage_report = json.loads((ROOT / 'reports/model-usage-and-resources.json').read_text())
+if not usage_report['complete_evaluation_runs'] or not usage_report.get('complete_memops_posthoc_logs'):
     raise SystemExit('Complete model usage summary first')
 workflow = json.loads((ROOT / 'artifacts/report-workflow.json').read_text())['results']
 if len(workflow) != 3 or any(r['status'] != 'complete' for r in workflow):
     raise SystemExit('Complete posthoc reporting first')
+baseline_diagnostics = json.loads((ROOT / 'artifacts/baseline-upstream-diagnostic-workflow.json').read_text())['results']
+if len(baseline_diagnostics) != 2 or any(r['exit_code'] != 0 for r in baseline_diagnostics):
+    raise SystemExit('Complete both original-baseline lifecycle diagnostics first')
 performance_path = ROOT / 'artifacts/final-performance/summary.json'
 if not performance_path.exists():
     raise SystemExit('Complete both final performance runs first')
