@@ -1,5 +1,6 @@
 # 实施决策与设计差异
 
+- 总控使用标准库 Python 辅助有限实验编排、归档和验收，复用 eval 已需准备的 Python 环境，避免额外TS脚本运行依赖；服务和主评测器仍为严格TypeScript，官方Judge继续独立Python执行。该选择替代设计表中仅列出的Shell/TS编排选项。
 - 使用本机已有 Node 24.18.0 固定版本；TypeScript 7.0.2 strict、Node 内置测试运行器。计划中的 Vitest 没有成为依赖。
 - 默认本地向量模型为已安装 nomic-embed-text:latest（768维），固定 digest 并实调验证，不重复安装另一 embedding。
 - 远端结构化抽取使用 SSE 流接收，解决实测长请求被网关关闭的问题；对外 add 仍在事务完成后一次返回。
