@@ -1,0 +1,26 @@
+{
+  "protocol": "round2-running-experiment-checkpoint-v1",
+  "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
+  "observed_at": "2026-09-06T09:29:42.319591+00:00",
+  "status": "running",
+  "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
+  "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+  "workspace_commit": "6153217490a583e4425593bf38fa1d286ed37e48",
+  "started_at": "2026-09-06T09:29:21.559Z",
+  "samples": [
+    "E10_reflect",
+    "B05_forget",
+    "F07_trajectory_ops",
+    "F07_update",
+    "E10_remember"
+  ],
+  "planned_questions": 30,
+  "service_pid": 88665,
+  "eval_pid": 88666,
+  "runner_session_id": 98822,
+  "port": 8110,
+  "source_snapshot": "artifacts/round2-runtime-91782c6",
+  "completed_ingest_attempts_at_observation": 0,
+  "latest_ingest": null,
+  "note": "Five complete exposed development backgrounds in fresh v8 storage. Running status is a snapshot, not a score. Revalidate PIDs/artifacts before resuming; never restart blindly. Production8088 and historical331/1000 unchanged."
+}
