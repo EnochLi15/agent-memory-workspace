@@ -1,0 +1,40 @@
+{
+  "protocol": "resolved-source-retention-verifier-controls-v1",
+  "scope": "Three synthetic verifier-only cases with fixture source actions and facts; real verification model, no extraction/storage or benchmark accuracy.",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-retention-controls-CINJl6",
+  "source_sha256": {
+    "models.ts": "4393cbf34f38206ac89e1135a34da5a029ec285f3ebbfe3627cff79736cd07b6",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "types.ts": "9fad8597deb3ac09183c4b8093d8b608d40024bd4ff5d46ea3d6771f51482f71"
+  },
+  "started_at": "2026-09-06T09:24:54.998Z",
+  "results": [
+    {
+      "name": "existing_active_retention",
+      "findings": [
+        "message 0: This is an unresolved memory instruction to retain specific information, and no existing active facts or proposed operations/facts represent it.; missing statement: Keep my brother's real gym and my browser preference."
+      ],
+      "pass": false,
+      "elapsed_ms": 8662.318541
+    },
+    {
+      "name": "new_personal_detail_requires_memory",
+      "findings": [
+        "message 0: The user's dentist fact is not represented, and the explicit keep/retain instructions for the brother's gym and browser preference are not represented or shown as already-active existing facts.; missing statement: Keep my brother's real gym and my browser preference. My dentist is Dr. Lumen."
+      ],
+      "pass": true,
+      "elapsed_ms": 9223.404584
+    },
+    {
+      "name": "missing_existing_record_cannot_use_retention_exception",
+      "findings": [
+        "message 0: The resolved source action covers the request not to store the erroneous claim about the user's gym, but the instruction to keep the brother's real gym and browser preference is not represented, and no active existing facts are provided to make this a no-op retention clause.; missing statement: Keep my brother's real gym and my browser preference."
+      ],
+      "pass": true,
+      "elapsed_ms": 9015.505208000002
+    }
+  ],
+  "status": "failed",
+  "finished_at": "2026-09-06T09:25:21.902Z"
+}

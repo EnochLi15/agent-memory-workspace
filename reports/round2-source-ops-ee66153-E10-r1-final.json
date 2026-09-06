@@ -1,0 +1,270 @@
+{
+  "protocol": "round2-full-E10-source-operations-review-v1",
+  "scope": "One complete exposed E10_reflect development background, 50 original sessions. Frozen v6 ee66153, not current v7/v8. Not a new holdout or overall benchmark score.",
+  "status": "finished",
+  "service_commit": "ee661539023bae83f166b2f8bd154e2012b0ae76",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "workspace_commit": "08577df4afbe41da2e429bd8f44666e4d74d1d3f",
+  "started_at": "2026-09-06T08:56:14.985Z",
+  "finished_at": "2026-09-06T09:17:54.455Z",
+  "wall_seconds": 1299.47,
+  "ingestion": {
+    "sessions": 50,
+    "unique_requests": 52,
+    "attempts": 53,
+    "outcomes": {
+      "ok": 52,
+      "retrying": 1
+    },
+    "terminal_ok": 52,
+    "non_ok_attempts": [
+      {
+        "request_id": "round2-source-ops-ee66153-E10-r1-facts:memops:E10_reflect:segment-45:0",
+        "status": "retrying",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+        "elapsed_ms": 90027.86766700004
+      }
+    ],
+    "retry_followups": [
+      {
+        "request_id": "round2-source-ops-ee66153-E10-r1-facts:memops:E10_reflect:segment-45:0",
+        "sample_id": "E10_reflect",
+        "status": "ok",
+        "attempt": 1,
+        "elapsed_ms": 91186.85941699997,
+        "message_count": 15
+      }
+    ],
+    "summed_attempt_ms": 1267978.6031699998,
+    "all_final_adds_ok": true
+  },
+  "metrics": {
+    "sample_bootstrap_95": [
+      0.6666666666666666,
+      0.6666666666666666
+    ],
+    "evidence_coverage": "N/A: dataset has no mapped source IDs",
+    "mode": "proxy",
+    "planned": 6,
+    "judged": 6,
+    "correct": 4,
+    "accuracy_over_planned": 0.6666666666666666,
+    "judged_accuracy": 0.6666666666666666,
+    "incomplete": 0,
+    "slices": {
+      "memops/Reflect/CandidateDisambiguation": {
+        "total": 2,
+        "judged": 2,
+        "correct": 2
+      },
+      "memops/Reflect/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Reflect/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Reflect/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      }
+    },
+    "add_ms": {
+      "p50": 18679.562250000003,
+      "p95": 64090.41970900004,
+      "max": 91186.85941699997
+    },
+    "search_ms": {
+      "p50": 182.5065829998348,
+      "p95": 440.29745800001547,
+      "max": 440.29745800001547
+    }
+  },
+  "model_stages": {
+    "embedding": {
+      "attempts": 57,
+      "outcomes": {
+        "ok": 57
+      },
+      "summed_attempt_ms": 16622.101171000057,
+      "usage_reported_attempts": 0,
+      "reported_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    "extraction": {
+      "attempts": 53,
+      "outcomes": {
+        "ok": 53
+      },
+      "summed_attempt_ms": 732449.062878,
+      "usage_reported_attempts": 53,
+      "reported_tokens": {
+        "prompt_tokens": 552993,
+        "completion_tokens": 33685,
+        "total_tokens": 586678
+      }
+    },
+    "repair": {
+      "attempts": 6,
+      "outcomes": {
+        "ok": 4,
+        "error": 2
+      },
+      "summed_attempt_ms": 62585.774626,
+      "usage_reported_attempts": 4,
+      "reported_tokens": {
+        "prompt_tokens": 64447,
+        "completion_tokens": 2467,
+        "total_tokens": 66914
+      }
+    },
+    "source_erasure": {
+      "attempts": 1,
+      "outcomes": {
+        "ok": 1
+      },
+      "summed_attempt_ms": 9528.26995799999,
+      "usage_reported_attempts": 1,
+      "reported_tokens": {
+        "prompt_tokens": 3275,
+        "completion_tokens": 432,
+        "total_tokens": 3707
+      }
+    },
+    "source_operation": {
+      "attempts": 2,
+      "outcomes": {
+        "ok": 2
+      },
+      "summed_attempt_ms": 16401.070624999935,
+      "usage_reported_attempts": 2,
+      "reported_tokens": {
+        "prompt_tokens": 36102,
+        "completion_tokens": 684,
+        "total_tokens": 36786
+      }
+    },
+    "verification": {
+      "attempts": 53,
+      "outcomes": {
+        "ok": 52,
+        "error": 1
+      },
+      "summed_attempt_ms": 412846.2093730008,
+      "usage_reported_attempts": 52,
+      "reported_tokens": {
+        "prompt_tokens": 282918,
+        "completion_tokens": 16025,
+        "total_tokens": 298943
+      }
+    }
+  },
+  "model_cost_note": "Reported token totals exclude calls without usage and evaluator Answer/Judge calls. No guessed price or zero-cost assumption for missing usage. Summed attempt time is not a latency percentile.",
+  "failure_review": [
+    {
+      "qid": "E10_reflect.json#p1_operation_trace#longitudinal_operation#1",
+      "category": "Reflect/OperationTrace",
+      "answer": "You described a consistent pattern of preferring calm, simple, low-key, and predictable choices: plain drip coffee and a reliable morning routine; texting or online booking instead of phone calls for appointments; quiet early gym sessions without crowds or noise; and weekends spent staying in, cooking simple one-pot or sheet-pan meals, and avoiding big social plans.",
+      "judge": {
+        "correct": false,
+        "reason": "The answer captures the overall theme and includes some acceptable paraphrases, but it misses a key must-include detail: it does not specifically mention \"black drip coffee\". It also weakly paraphrases appointments as \"texting or online booking\" rather than clearly \"texting over phone calls,\" and it omits the explicit connection to low-key weekends staying in by not using that phrasing directly. Since all must-include semantic conditions are required, this is incorrect."
+      },
+      "returned_evidence_count": 32,
+      "evidence_term_positions_1based": {
+        "black coffee": [
+          6
+        ],
+        "drip coffee": [
+          7,
+          20,
+          25
+        ],
+        "texting": [
+          2,
+          5,
+          6
+        ],
+        "spin class": [
+          16
+        ],
+        "default": [
+          16,
+          23
+        ],
+        "weekend": [
+          3,
+          4,
+          6,
+          13,
+          16,
+          19,
+          23,
+          26,
+          28,
+          32
+        ]
+      },
+      "diagnosis": "Relevant source details are present among returned memories; final Answer omitted required details. This establishes an answer-completeness issue, not solely a retrieval miss. Evidence clutter/order and rubric sensitivity remain hypotheses requiring paired validation."
+    },
+    {
+      "qid": "E10_reflect.json#p3_state_transition#longitudinal_operation#5",
+      "category": "Reflect/StateTransition",
+      "answer": "The principle applies to assistant suggestions where there are choices of environment, pace, or complexity: calm, simple, predictable options; lower-stimulation defaults; quieter versions of whatever is being discussed. The memories specifically support this for things like vacations, weekend plans, gym times, coffee, morning routines, and home movie watching.\n\nIt would be an overreach to assume you would never do anything social or energetic. You explicitly said you are not avoiding social situations altogether, and you gave a spin class with a coworker as an example. So the safer inference is that calm, low-key options are your default, not that social or energetic activities are off-limits.",
+      "judge": {
+        "correct": false,
+        "reason": "The answer captures the general idea of a calm/default preference and notes that social or energetic activities are not off-limits, but it misses required specifics from the rubric: it does not clearly list the required daily defaults of coffee, communication, gym, and weekends. It also fails to explicitly state that the spin class example shows the principle is a default, not an absolute rule. Additionally, it introduces unsupported examples like vacations and home movie watching instead of the requested specific areas."
+      },
+      "returned_evidence_count": 32,
+      "evidence_term_positions_1based": {
+        "black coffee": [
+          1
+        ],
+        "drip coffee": [
+          23
+        ],
+        "texting": [
+          1
+        ],
+        "spin class": [
+          3,
+          12
+        ],
+        "default": [
+          3,
+          17,
+          32
+        ],
+        "weekend": [
+          1,
+          5,
+          9
+        ]
+      },
+      "diagnosis": "Relevant source details are present among returned memories; final Answer omitted required details. This establishes an answer-completeness issue, not solely a retrieval miss. Evidence clutter/order and rubric sensitivity remain hypotheses requiring paired validation."
+    }
+  ],
+  "reuse_note": "Full E10 ingestion is complete, but this is only one background. Any paired reuse requires exact frozen service/eval/config/data identities. Current modified v8 cannot reuse this v6 database. Five-background and three full paired repeat gates remain open.",
+  "artifact_sha256": {
+    "metrics.json": "146d3de68eccb38da1ed416c172ce1db84c4754c9cb5a0e643c2689e4bab9c55",
+    "predictions.jsonl": "6f80b555770aaeaed1742a7f0e5de8117b7f5e93a841ecf1c6090a1b63588873",
+    "judgments.jsonl": "61ebaf8f4332a61581fa528eabd50a754acc32691e49e13594751e633a586dc8",
+    "report.md": "1ba6caa06882b9e8412eacb613eba952de33d1e6a8c353e7a5318c53b3e56d6a",
+    "ingest.jsonl": "f59bc7e8eb3c563f31b1119df9cb15608d0c75db03825a6a3ca71ed8614e9cd2",
+    "requests.jsonl": "65609ad6cd52d1c1130796ee880f6073ab835d5ddf20ff48a6d6f522cd654096",
+    "manifest.json": "5aceff0d8c07f0e55cad61a98c6f6d60bcc2a78d5c0e1737541027180a2c2097",
+    "retrievals.jsonl": "f3783697ffb78dc7cb728e442222184736b092144ed5c2cf420c0d1566e1658f"
+  }
+}
