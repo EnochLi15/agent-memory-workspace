@@ -1,0 +1,19 @@
+{
+  "protocol": "v1-isolated-http-storage-readback-v1",
+  "checked_at": "2026-09-06T20:38:44.531555+00:00",
+  "service_commit": "57d8e65b89ccec41d0fa29d261a6512f2cb1864f",
+  "passed": true,
+  "checks": {
+    "Hilton_current": true,
+    "Marriott_default_superseded": true,
+    "Marriott_history_retained": true,
+    "Sarah_Conrad_retained": true,
+    "user_Delta_number_retained": true
+  },
+  "scope": "Read-only logical storage of one isolated post-HTTP diagnostic, not a fresh full background or benchmark score. D25 expectation was frozen before original candidate ingestion reached this segment.",
+  "evidence_sha256": {
+    "artifacts/v1-delivery-tools/artifacts/round2-fresh-failed-add-Okcxvr/report.json": "8a1f9e7a1484309be597752ec7cddc9cc78533dbbc089d11659faf9cc7e95107",
+    "artifacts/v1-delivery-tools/artifacts/round2-fresh-failed-add-Okcxvr/data/615e601ea7373247d09929dc66702793c9842c9393a3c6a258a48fae95c33010/memory.sqlite": "c172f32719ca5d4411b6aa19e91a26bd7998013e19dad1d6b7f643dfebbee96f",
+    "artifacts/v1-long-33a9e05-01/storage-expectations.json": "429f2c204c95e822657cf235981ac617df437a6942f4e55ec70d3ea0d2df7f9b"
+  }
+}

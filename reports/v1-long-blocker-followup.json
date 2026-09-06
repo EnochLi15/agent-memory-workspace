@@ -1,6 +1,6 @@
 {
   "protocol": "v1-long-blocker-followup-v1",
-  "updated_at": "2026-09-06T20:34:32.997104+00:00",
+  "updated_at": "2026-09-06T20:38:44.534947+00:00",
   "status": "in_progress",
   "failed_campaign": "v1-long-33a9e05-01",
   "original_service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
@@ -21,18 +21,18 @@
       "case": "memops:D25_remember:segment-49:0",
       "cause": "Model retained a concrete colliding value using a pronoun-only quote. Existing decoder correctly refused this unsupported independent-value witness.",
       "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged.",
-      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running.",
-      "status": "capacity_fixed_regressions_passed_fresh_http_pending"
+      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open.",
+      "status": "http_accepted_but_frozen_erasure_scope_failed"
     },
     {
       "case": "memops:D22_update:segment-7:0",
       "cause": "Model returned false support booleans with reasons claiming the facts were actually supported; both repair responses were empty.",
       "change": "Clarified executable boolean/reason consistency. Decoder still honors false and does not allow a favorable resample or reinterpret prose as approval.",
-      "evidence": "Regression verifies contradictory prose cannot clear an unchanged semantic rejection; full HTTP diagnostic pending.",
-      "status": "rejection_preserved_http_pending"
+      "evidence": "Fresh HTTP accepted in 40.0s, single revision and receipt. Read-only checks confirm Hilton current, Marriott default superseded, Marriott history and Sarah Conrad retained, and user Delta number retained. Full background pending.",
+      "status": "isolated_http_and_storage_passed_full_background_pending"
     }
   ],
-  "scope": "Original long pair remains frozen and incomplete; no scores replaced. Fixes are in an independent service worktree. Must pass the complete fixed backgrounds and updated deployment checks before formal release.",
+  "scope": "Original long pair finished with 28 service-error questions and 5 correct of 37 planned. No scores replaced. Isolated diagnostics do not qualify the final candidate; D25 historical erasure remains a release blocker.",
   "evidence_sha256": {
     "artifacts/v1-long-33a9e05-01/conv30-session13-failure/fix-before-test.log": "8b8918f757fa0b29df5850806cf3e949743ee59a3fe1610c80cce14c24a8079c",
     "artifacts/v1-long-33a9e05-01/conv30-session13-failure/fix-after-test.log": "d39b0ad3923a12d64447bb42cf4f8bf98d8c45308384aba927c1e471aa750735",
@@ -47,6 +47,10 @@
   },
   "diagnostic_reports": [
     "reports/round2-fresh-failed-add-PMc5CM.json",
-    "reports/round2-fresh-failed-add-UsG115.json"
+    "reports/round2-fresh-failed-add-UsG115.json",
+    "reports/round2-fresh-failed-add-6KKzev.json",
+    "reports/round2-fresh-failed-add-Okcxvr.json",
+    "reports/v1-d25-diagnostic-storage.json",
+    "reports/v1-d22-diagnostic-storage.json"
   ]
 }
