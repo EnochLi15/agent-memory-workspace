@@ -1,6 +1,6 @@
 {
   "protocol": "round2-joint-full-regression-progress-v1",
-  "observed_at": "2026-09-06T12:14:15.175663+00:00",
+  "observed_at": "2026-09-06T12:29:10.707583+00:00",
   "campaign": "round2-joint-87d67b1-dev-r1",
   "service_runtime_snapshot": "artifacts/round2-runtime-87d67b1",
   "processes": {
@@ -90,9 +90,9 @@
         },
         "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b"
       },
-      "ingest_attempts": 115,
-      "successful_requests": 112,
-      "failed_attempts": 3,
+      "ingest_attempts": 154,
+      "successful_requests": 150,
+      "failed_attempts": 4,
       "latest_failed_requests": [
         {
           "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-19:0",
@@ -114,11 +114,18 @@
           "attempt": 0,
           "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Connection error.\"}}",
           "elapsed_ms": 11868.543459000066
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:F07_update:segment-36:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 46204.18208299996
         }
       ],
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:F07_update:segment-26:0",
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-27:0",
       "question_statuses": {
-        "service_error": 21
+        "service_error": 25
       },
       "judged_correct": 0
     }

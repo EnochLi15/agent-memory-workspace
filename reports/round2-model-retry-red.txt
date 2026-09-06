@@ -1,0 +1,71 @@
+✖ repair retries wait for a short provider hint and send exactly the same body (23.726542ms)
+✖ permanent provider errors and excessive retry hints do not spend a second call (12.712625ms)
+✖ request cancellation interrupts backoff before a second model call (4.214167ms)
+✔ transient provider failure still permits at most the original two attempts (4.990292ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.021583
+
+✖ failing tests:
+
+test at tests/model-retry.test.ts:1:1083
+✖ repair retries wait for a short provider hint and send exactly the same body (23.726542ms)
+  Error: 503 retry arrived too early
+      at APIError.generate (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/openai/src/core/error.ts:100:14)
+      at OpenAI.makeStatusError (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/openai/src/client.ts:488:28)
+      at OpenAI.makeRequest (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/openai/src/client.ts:738:24)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Models.json (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/models.ts:79:22)
+      at async <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:16:30)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:6:6)
+      at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:12:2)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    status: 503,
+    headers: {},
+    requestID: null,
+    error: { message: 'retry arrived too early' },
+    code: undefined,
+    param: undefined,
+    type: undefined
+  }
+
+test at tests/model-retry.test.ts:1:1807
+✖ permanent provider errors and excessive retry hints do not spend a second call (12.712625ms)
+  AssertionError [ERR_ASSERTION]: permanent
+  
+  2 !== 1
+  
+      at TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:21:379)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/model-retry.test.ts:1:2343
+✖ request cancellation interrupts backoff before a second model call (4.214167ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:26:277)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:6:6)
+      at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/model-retry.test.ts:26:2)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }

@@ -1,0 +1,68 @@
+{
+  "protocol": "frozen-f07-update-repair-failure-v1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-F07-update-87d67b1-repair-failure-kcnvyi11",
+  "observed_at": "2026-09-06T12:23:34.460159+00:00",
+  "failure": {
+    "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:F07_update:segment-36:0",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+    "elapsed_ms": 46204.18208299996
+  },
+  "hashes": {
+    "request.json": "8fe1c4e774c2d3b6b7c1300054f25e471a57086e92fce1c883113940f7343185",
+    "spec.json": "d465b2f5371ab82accca686ab7422e0abaf0791f17c5b1f59ac08300514c5754",
+    "memory.sqlite": "c0bd84783d617001d75151febb2f2d63d250560a8b3106fa533900bd2e215a4f",
+    "private-model-trace.jsonl": "df837084edd7cd0c832e28f01dd6cce941d5cc0f6ef72978b03a4603694eef7d"
+  },
+  "packets": [
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "purpose": "verification",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "purpose": "repair",
+      "attempt": 1,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET"
+    }
+  ]
+}
