@@ -92,9 +92,9 @@
     {
       "case": "memops:D22_update:segment-11:0",
       "classification": "participant_detection_and_scope_binding",
-      "cause": "Ingredients: was interpreted as a person, and an assistant recipe step Remove from heat became an obligatory deletion. Document-heading exclusion fixes that false authority. Saved multi-target hotel updates also had differing scopes; they still require correctly split operations.",
-      "evidence": "service/tests/operation-intent.test.ts; saved original request",
-      "status": "regression_passed_full_write_pending"
+      "cause": "Ingredients: was interpreted as a person, and an assistant recipe step Remove from heat became an obligatory deletion. Document-heading exclusion fixes that false authority. Saved multi-target hotel updates also had differing scopes; they still require correctly split operations. Independent fresh HTTP write now passed in 41.6s with one revision and receipt.",
+      "evidence": "service/tests/operation-intent.test.ts; saved original request; reports/round2-fresh-failed-add-NQpNb6.json",
+      "status": "fresh_http_write_passed_full_background_pending"
     },
     {
       "case": "memops:D25_remember:segment-49:0",
@@ -106,9 +106,9 @@
     {
       "case": "memops:C27_trajectory_ops:segment-38:0",
       "classification": "inconsistent_model_erasure_plan",
-      "cause": "The erasure classifier deleted a related relief/concern fact but kept its literal original witness. The cross-plan guard correctly rejected the write atomically. Removing that guard or widening cuts mechanically would risk leakage or deleting independent neighbors.",
-      "evidence": "service/src/source-erasure.ts assertErasedWitnessProgress; saved source_erasure input/output",
-      "status": "rejection_preserved_live_full_write_pending"
+      "cause": "The erasure classifier deleted a related relief/concern fact but kept its literal original witness. The cross-plan guard correctly rejected the write atomically. Removing that guard or widening cuts mechanically would risk leakage or deleting independent neighbors. Independent fresh HTTP write completed through an identical-request continuation. Read-only logical table/FTS scan found none of three selected erased detail strings; two independent appointment/location neighbors remained active. The original rejection remains unchanged.",
+      "evidence": "service/src/source-erasure.ts assertErasedWitnessProgress; saved source_erasure input/output; reports/round2-fresh-failed-add-1OHEnD.json; reports/v1-live-erasure-readback.json",
+      "status": "fresh_http_write_and_erasure_readback_passed_full_background_pending"
     },
     {
       "case": "memops:A29_update:segment-24:0",

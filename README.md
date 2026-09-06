@@ -11,12 +11,12 @@
 ```sh
 make init
 make build
-MEMORY_MODE=offline make up
+make up-offline
 make contract
 make down
 ```
 
-离线模式镜像完成构建后不需要网络或模型；停止默认保留卷。增强模式参考 `service/.env.example` 在本地 `.env` 配置 LLM 与 embedding，凭据文件已被 Git 忽略。Ollama 的本地 embedding 模型必须预先准备，服务不会自动下载。
+离线模式镜像完成构建后不需要网络或模型；停止默认保留卷。增强模式使用 `configs/release-enhanced.env`，在本地 `.env` 配置 LLM 连接与凭据后执行 `make up`；离线模式有独立配置和数据卷，凭据文件已被 Git 忽略。Ollama 的本地 embedding 模型必须预先准备，服务不会自动下载。
 
 `make smoke` 额外调用已配置的 Answer/Judge，运行两类合成样本。公开数据先按 eval 文档下载和转换，然后使用 `make eval-locomo`、`make eval-memops`。`make report RUN_ID=...` 汇总；`make clean-run RUN_ID=...` 仅删除指定实验文件；`make down` 不删持久记忆。
 

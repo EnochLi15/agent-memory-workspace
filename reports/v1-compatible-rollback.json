@@ -1,0 +1,13 @@
+{
+  "scope": "Rollback to an earlier compatible V1 image using a restored dual-source-v10 snapshot. Does not establish compatibility with future data formats.",
+  "image_id": "sha256:1e2b1a62058146d54063631d85d1b7cafe404029cc53a2a070b7ddb1736bf3e1",
+  "snapshot_sha256": "2400d1b826b8458f8425d7d5343d8091f77b4c106bf2438966a4440491b2003d",
+  "checks": {
+    "prior_image_running": true,
+    "current_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "passed": true
+}

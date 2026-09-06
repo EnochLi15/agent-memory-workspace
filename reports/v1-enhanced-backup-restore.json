@@ -1,0 +1,16 @@
+{
+  "mode": "enhanced",
+  "scope": "Stopped source container, complete tar snapshot, restored to a fresh volume, same-user HTTP readback.",
+  "source_volume": "v1-verify-enhanced-01",
+  "restored_volume": "v1-verify-enhanced-restored-01",
+  "archive_sha256": "2400d1b826b8458f8425d7d5343d8091f77b4c106bf2438966a4440491b2003d",
+  "user_id": "contract-1788721146007",
+  "checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "passed": true
+}

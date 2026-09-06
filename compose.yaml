@@ -1,24 +1,31 @@
 name: comp-agent-memory
 services:
   memory-service:
-    image: comp-agent-memory-service:dev
+    image: ${MEMORY_SERVICE_IMAGE:-comp-agent-memory-service:v1-candidate}
     build: ./service
     init: true
     ports:
       - "127.0.0.1:${MEMORY_PORT:-8088}:8088"
     env_file:
-      - path: .env
-        required: false
+      - ${MEMORY_CONFIG_FILE:-configs/release-enhanced.env}
     environment:
       HOST: 0.0.0.0
       PORT: 8088
-      MEMORY_MODE: ${MEMORY_MODE:-offline}
       MEMORY_DATA_DIR: /data
+      MEMORY_LLM_BASE_URL: ${MEMORY_LLM_BASE_URL:-http://host.docker.internal:11434/v1}
+      MEMORY_LLM_API_KEY: ${MEMORY_LLM_API_KEY:-}
+      MEMORY_MODEL_AUDIT: /data/model-audit.jsonl
       MEMORY_EMBEDDING_BASE_URL: ${DOCKER_EMBEDDING_BASE_URL:-http://host.docker.internal:11434}
-      MEMORY_EMBEDDING_DIGEST: 0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f
     volumes:
       - memory-data:/data
     restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
     stop_grace_period: 125s
 volumes:
   memory-data:
+    name: ${MEMORY_VOLUME:-comp-agent-memory-enhanced-v1}
+    external: ${MEMORY_VOLUME_EXTERNAL:-false}

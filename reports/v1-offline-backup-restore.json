@@ -1,0 +1,15 @@
+{
+  "mode": "offline",
+  "scope": "Stopped source container, tar snapshot, restored into a fresh volume, same-user HTTP readback.",
+  "source_volume": "v1-verify-offline-01",
+  "restored_volume": "v1-verify-restored-01",
+  "archive_sha256": "14e4df3577f8d6c2b55015bc9dfaa268f67d3ea968d53bb65a418a6438adedd1",
+  "checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "passed": true
+}
