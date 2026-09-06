@@ -1,0 +1,51 @@
+{
+  "protocol": "named-participant-verification-failure-v1",
+  "service_commit": "bfec674",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-LoCoMo-bfec674-role-failure-ldmdxhcw",
+  "request_id": "round2-resilient-bfec674-dev-r1-sources:locomo:conv-44:session-2:1",
+  "request_sha256": "80e43bf4fbc83c6356e607b99c7aa87e0c2e1ab414f7ee542a2f3a2d6bf6acbb",
+  "database_sha256": "019b31f3bc557978667cdd363d99a6715874aeca11048edc5acaf081a83b6583",
+  "trace_sha256": "f0b5c5393ae3fa6aacbecdbb5dda2374779efb240ea38d1a87b3085fa0ebf47d",
+  "failed_request_committed": false,
+  "prior_receipts": 3,
+  "stages": [
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    }
+  ],
+  "findings": [
+    "Initial verification rejects unsupported pronoun expansions.",
+    "After those edits, verifier rejects named human Andrew solely because serialized role is assistant.",
+    "Second repair removes two Andrew facts; final verifier rejects three other Andrew facts on the same role basis."
+  ],
+  "scope": "Read-only SQLite backup of terminated tenant; no new model calls or modifications to active service. All failed questions retained. This does not establish that every other fact is semantically valid."
+}

@@ -1,0 +1,47 @@
+{
+  "protocol": "raw-coverage-full-regression-failure-v1",
+  "service_commit": "bfec674",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-bfec674-coverage-failure-jg7mhtvl",
+  "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:E10_reflect:segment-26:0",
+  "request_sha256": "e97cf7e7afa4c43a534c31fac8ffe34614e95aa133a43c41afc7f9777bf73390",
+  "database_sha256": "0dbc29836784dcf77571aacd1d50b293c42f90820f663bd3eba35e71e842f733",
+  "trace_sha256": "4b9c1a396a05d2e0ffaeb7309ca784f751af8acc8ae73ab49a99dcf697eadfe2",
+  "failed_request_committed": false,
+  "prior_receipts": 25,
+  "stages": [
+    {
+      "purpose": "source_operation_route",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "source_erasure",
+      "outcome": "ok"
+    }
+  ],
+  "error": "Accepted raw coverage was erased, linked to state, or not indexed",
+  "scope": "Read-only SQLite backup of terminated tenant and exact model trace. Cause still to be isolated; no guard relaxation or fresh model call. Six affected questions retained as service_error."
+}

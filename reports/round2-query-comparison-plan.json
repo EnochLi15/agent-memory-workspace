@@ -1,0 +1,21 @@
+{
+  "protocol": "explicit-query-quality-comparison-v1",
+  "campaign": "round2-resilient-bfec674-dev-r1",
+  "plan_sha256": "018c673b51e2389674ee3dca5b0481d627919c2c851ca3c94bed9f6b84b5f7ee",
+  "script_sha256": "0f8c8250cd8aa345085b0eaede2d2fa531d5538e593dd62f7e1eb274b70ae115",
+  "module_sha256": "47897695c9abe28eba220c2aac12be9c2f1905b6e8afead6c118387ec5628e78",
+  "planned_runs": 30,
+  "planned_comparisons": 44,
+  "complete": false,
+  "scope": "All planned runs and comparisons remain visible, including pending and refused. No service/model calls; no replacement of original artifacts or human calibration.",
+  "eval_candidate_commit": "073bb44",
+  "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-query-comparison-073bb44/comparison.json",
+  "artifact_sha256": "a5564c7b49beb3e3fdb7fb4998c304f6f4c5e6d8ab5206ea699f238ff8ab3635",
+  "comparison_status_counts": {
+    "pending": 44
+  },
+  "validation": {
+    "node_tests_passed": 24,
+    "python_tests_passed": 27
+  }
+}
