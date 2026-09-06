@@ -1,6 +1,6 @@
 {
   "protocol": "round2-joint-full-regression-progress-v1",
-  "observed_at": "2026-09-06T11:35:51.938485+00:00",
+  "observed_at": "2026-09-06T11:53:52.941981+00:00",
   "campaign": "round2-joint-87d67b1-dev-r1",
   "service_runtime_snapshot": "artifacts/round2-runtime-87d67b1",
   "processes": {
@@ -37,11 +37,22 @@
         },
         "dataset_sha256": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07"
       },
-      "ingest_attempts": 3,
-      "successful_requests": 3,
-      "failed_attempts": 0,
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-2:0",
-      "question_statuses": {},
+      "ingest_attempts": 23,
+      "successful_requests": 21,
+      "failed_attempts": 2,
+      "latest_failed_requests": [
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-10:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Repair modified an unavailable or unflagged fact\"}}",
+          "elapsed_ms": 82725.755
+        }
+      ],
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-48:session-4:0",
+      "question_statuses": {
+        "service_error": 27
+      },
       "judged_correct": 0
     },
     {
@@ -71,13 +82,31 @@
         },
         "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b"
       },
-      "ingest_attempts": 9,
-      "successful_requests": 9,
-      "failed_attempts": 0,
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-9:0",
-      "question_statuses": {},
+      "ingest_attempts": 57,
+      "successful_requests": 55,
+      "failed_attempts": 2,
+      "latest_failed_requests": [
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-19:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group\"}}",
+          "elapsed_ms": 5417.5404160000035
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:B05_forget:segment-19:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Source erasure removed every witness for a retained fact\"}}",
+          "elapsed_ms": 36703.939167000004
+        }
+      ],
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:F07_trajectory_ops:segment-18:0",
+      "question_statuses": {
+        "service_error": 16
+      },
       "judged_correct": 0
     }
   ],
-  "scope": "Live partial progress only. Process liveness separately checked via ps. Complete questions and all failures remain in the planned denominator; no interim overall score."
+  "scope": "Live partial progress only. Process liveness separately checked via ps. Complete questions and all failures remain in the planned denominator; no interim overall score. Separate candidate worktrees do not change this frozen runtime."
 }

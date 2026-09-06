@@ -1,0 +1,30 @@
+✔ source erasure removes old assistant paraphrases and preserves unextracted mixed-sentence neighbors (38.793334ms)
+✔ missing or uncertain source partitions cannot be committed and later echoes remain checked (22.621041ms)
+✔ source plan rejects stale raw evidence and rolls back source cuts with the transaction (14.449125ms)
+✔ exact partitions reject changed text, duplicates, missing coverage, mixed facts and split Unicode (0.290625ms)
+✔ v4 cannot silently reuse a pre-existing v3 directory (0.227583ms)
+✔ candidate capacity fails instead of truncating source coverage (15.94375ms)
+✔ source work capacity uses complete transmitted batches instead of repeated authorization copies (93.188708ms)
+✔ explicit restoration of the authorized value survives v4 source checks without reviving old raw text (12.8295ms)
+✔ source batches obey payload limits and preserve every original candidate index (28.999459ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=false (83.517042ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=true (44.775292ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=false (84.020125ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=true (46.73725ms)
+✔ verified erased facts are not rejudged, while all their original sources still undergo cleanup (13.605875ms)
+✔ source scope receives surviving fact meanings while never exempting a retired witness (9.632542ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=false (66.005917ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=true (70.528334ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=false (64.439459ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=true (64.593167ms)
+✔ a certified erased fact cannot keep every original witness intact behind a reviewed source (9.123ms)
+✔ later writes never reapply a historical erased span over a retained mixed-source neighbor (14.41675ms)
+✔ a newly erased nonlexical value still receives deterministic unreviewed source cleanup (14.230917ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1088.211875

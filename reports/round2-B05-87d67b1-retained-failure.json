@@ -1,0 +1,32 @@
+{
+  "protocol": "joint-source-retained-witness-failure-v1",
+  "service_commit": "87d67b1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-87d67b1-retained-failure-6511nn_4",
+  "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:B05_forget:segment-19:0",
+  "request_sha256": "afe32dafe5ef285b5ab44989c9d5863f056dd9689fdb06ce6088dd1b5b3d7cc8",
+  "database_sha256": "ffd404d327e4e919d81a9049af286f8057162f4b0a55b493953c203198b37b9f",
+  "generation_stages": [
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "source_erasure",
+      "outcome": "ok"
+    }
+  ],
+  "error": "Source erasure removed every witness for a retained fact",
+  "scope": "New terminal B05 segment19 failure after segment18 committed in fresh full regression. Private snapshot and model trace preserved; no runtime guard relaxed or benchmark case removed."
+}

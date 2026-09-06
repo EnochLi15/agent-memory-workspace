@@ -1,0 +1,120 @@
+{
+  "protocol": "scoped-repair-full-regression-failure-v1",
+  "service_commit": "87d67b1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-LoCoMo-87d67b1-repair-failure-elj99ij1",
+  "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-10:0",
+  "request_sha256": "cb1ceb26ad4c8eab7adb5c0383119c85bfa95df689983bf5e7289d78f6bc1f13",
+  "database_sha256": "f5b40befe65a857c0b04506ce00ea96d8ede15e302fb219a7cf3a86c9d3101c6",
+  "stages": [
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok"
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok"
+    }
+  ],
+  "repairs": [
+    {
+      "scope": {
+        "fact_indices": [
+          63
+        ],
+        "operation_indices": [],
+        "source_indices": [
+          17
+        ]
+      },
+      "edits": [
+        {
+          "index": 63,
+          "allowed": true,
+          "keys": [
+            "index",
+            "changes"
+          ],
+          "existing": true,
+          "set_fields": []
+        }
+      ],
+      "feedback": "Semantic verification rejected the proposal. Repair these specific failures while preserving supported unrelated facts. [\"fact 63: The source states a current gradual change, not uncertainty; the fact should preserve the confirmed current state that cooking is slowly becoming a favorite hobby.\"]. Return the complete corrected object.",
+      "output_keys": [
+        "fact_edits"
+      ]
+    },
+    {
+      "scope": {
+        "fact_indices": [
+          63
+        ],
+        "operation_indices": [],
+        "source_indices": [
+          17
+        ]
+      },
+      "edits": [
+        {
+          "index": 62,
+          "allowed": false,
+          "keys": [
+            "index",
+            "changes"
+          ],
+          "existing": true,
+          "set_fields": []
+        }
+      ],
+      "feedback": "Semantic verification rejected the proposal. Repair these specific failures while preserving supported unrelated facts. [\"fact 63: The source states a current gradual change, not uncertainty; the fact should preserve the confirmed current state that cooking is slowly becoming a favorite hobby.\"]. Return the complete corrected object.",
+      "output_keys": [
+        "fact_edits"
+      ]
+    }
+  ],
+  "error": "Repair modified an unavailable or unflagged fact",
+  "scope": "Actual full LoCoMo conv44 terminal write failure. Raw request, snapshot and every saved model response retained. Scope guard not relaxed;27questions remain service_error.",
+  "index_diagnostic": {
+    "verification_rejected_index": 63,
+    "reason_refers_to_index": 62,
+    "fact_62": {
+      "content": "Cooking is slowly becoming one of Andrew's favorite hobbies.",
+      "modality": "tentative"
+    },
+    "fact_63": {
+      "content": "Andrew finds cooking really relaxing.",
+      "modality": "confirmed"
+    },
+    "first_repair": {
+      "index": 63,
+      "changes": {
+        "modality": "confirmed"
+      },
+      "effect": "no change"
+    },
+    "second_repair": {
+      "index": 62,
+      "changes": {
+        "modality": "confirmed"
+      },
+      "effect": "outside declared scope63, correctly rejected"
+    },
+    "input_fact_rows_have_explicit_indices": false,
+    "interpretation": "Observed verifier number/reason mismatch. Explicit server-supplied fact IDs in verification and repair inputs are a candidate fix; do not shift model indices heuristically or relax repair scope."
+  }
+}

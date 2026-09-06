@@ -1,0 +1,26 @@
+{
+  "protocol": "extraction-shard-missing-field-diagnostic-v1",
+  "service_commit": "87d67b1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-87d67b1-failure-p7o8mm84",
+  "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-19:0",
+  "request_sha256": "822f01804d5c166ee5f6d55e2fff36e34e2336eeb7481407c73b389ff30bd5f8",
+  "database_sha256": "9682979a659ac403cb21402bb36c612bc18136a8aaa7389e2e2dd626414e63ac",
+  "successful_transport_shards": 3,
+  "finding": {
+    "shard": 2,
+    "assigned_participants": [
+      4,
+      10
+    ],
+    "actual_participants": [
+      4,
+      10
+    ],
+    "missing_field": {
+      "message_index": 4,
+      "field": "operations"
+    },
+    "misleading_error": "Extraction shard omitted or invented a participant group"
+  },
+  "scope": "Actual full-regression write failure. All participant indices present; one required operations array missing. Do not assume an empty operation array or relax authorization. Frozen run continues unchanged."
+}

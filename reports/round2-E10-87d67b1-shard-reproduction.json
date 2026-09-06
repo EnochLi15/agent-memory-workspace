@@ -1,0 +1,14 @@
+{
+  "protocol": "extraction-shard-exact-packet-reproduction-v1",
+  "parent": "artifacts/round2-E10-87d67b1-failure-p7o8mm84",
+  "source_runtime": "artifacts/round2-runtime-87d67b1",
+  "saved_packets_used": 3,
+  "planned_saved_packets": 3,
+  "fresh_model_calls": 0,
+  "reproduced": true,
+  "failure": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group"
+  },
+  "scope": "Exact system/input reproduction of the real frozen extraction protocol failure. No default empty operations, omitted participants, model resampling, database commit or benchmark substitution."
+}

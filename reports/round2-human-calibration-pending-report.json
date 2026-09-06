@@ -1,0 +1,222 @@
+{
+  "protocol": "human-calibration-comparison-v1",
+  "selected_cases": 199,
+  "review_status_counts": {
+    "pending_independent_review": 199
+  },
+  "validated_binary_human_labels": 0,
+  "reviewers_without_independence_attestation": 0,
+  "compared_independent_labels": 0,
+  "status": "incomplete_independent_review",
+  "overall": {
+    "primary": {
+      "true_positive": 0,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "compared": 0,
+      "agreement": null
+    },
+    "upstream": {
+      "true_positive": 0,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0,
+      "compared": 0,
+      "agreement": null
+    }
+  },
+  "by_question_type": {
+    "CandidateDisambiguation": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "OperationApplication": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "OperationTrace": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "StateTrajectory": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "StateTransition": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "TargetBinding": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    }
+  },
+  "by_selection": {
+    "agreement": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    },
+    "disagreement": {
+      "primary": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      },
+      "upstream": {
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "compared": 0,
+        "agreement": null
+      }
+    }
+  },
+  "coverage_by_question_type": {
+    "CandidateDisambiguation": {
+      "selected": 5,
+      "reviewed": 0,
+      "compared": 0
+    },
+    "OperationApplication": {
+      "selected": 38,
+      "reviewed": 0,
+      "compared": 0
+    },
+    "OperationTrace": {
+      "selected": 59,
+      "reviewed": 0,
+      "compared": 0
+    },
+    "StateTrajectory": {
+      "selected": 10,
+      "reviewed": 0,
+      "compared": 0
+    },
+    "StateTransition": {
+      "selected": 40,
+      "reviewed": 0,
+      "compared": 0
+    },
+    "TargetBinding": {
+      "selected": 47,
+      "reviewed": 0,
+      "compared": 0
+    }
+  },
+  "scope": [
+    "Submitted reviewer identity/independence is self-attested, not authenticated by this tool.",
+    "Only explicitly reviewed binary labels with a roster independence attestation enter confusion matrices; uncertainty, unconfirmed reviewers and missing labels remain open.",
+    "Disagreements are oversampled. Selected-packet agreement is not a population judge-accuracy estimate.",
+    "Optional criterion quotes receive literal provenance checks, not automatic semantic adjudication.",
+    "No historical benchmark score, blind packet, prior verdict or submitted label is rewritten."
+  ],
+  "input_sha256": {
+    "blind": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d",
+    "prior": "7559a59806e0374a44690016f6f9eae042508a3db400590a654fa34d5a30bb30",
+    "reviews": "9e5eea2085382c85ac837b1639f56f3c19925e7b487152867b0af1b0fbe52a20"
+  },
+  "packet_manifest_sha256": "e08701b74d1741bc3abc9e8a78f9c9fc214b3d41fe1395ba77bfe3e67483d80d"
+}

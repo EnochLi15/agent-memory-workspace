@@ -1,0 +1,96 @@
+{
+  "protocol": "retained-witness-exact-guard-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-retained-witness-diagnostic-niAyBo",
+  "parent": "artifacts/round2-B05-87d67b1-retained-failure-6511nn_4",
+  "original_runtime": "artifacts/round2-runtime-87d67b1",
+  "original_storage_sha256": "4e3af27ffcb72b09353ded813e5a3dfa3746c90e26529c2f56e88f2075414e1b",
+  "instrumented_storage_sha256": "7c82893a9f20b8d08a5dabb311018d226df211709a0b4c709eb3c0069568fb47",
+  "fresh_llm_calls": 0,
+  "scope": "Private instrumented runtime only captures the same fact and cuts at the original rejecting guard. No guard bypass, new model decision or live-service mutation. All successful saved packets must match exact system/input.",
+  "status": "rejected",
+  "error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Source erasure removed every witness for a retained fact"
+  },
+  "guard": {
+    "fact": {
+      "content": "Elara is still user and user's wife's number one baby girl name.",
+      "subject": "user and user's wife",
+      "predicate": "top_baby_first_name",
+      "value": "Elara",
+      "scope": "baby girl name",
+      "kind": "fact",
+      "modality": "confirmed",
+      "cardinality": "single",
+      "time_text": "",
+      "valid_from": null,
+      "valid_to": null,
+      "depends_on": [],
+      "supersedes": [],
+      "event_time": {
+        "expression": "",
+        "anchor": "synthetic ordering only; use dates stated by speakers",
+        "start": null,
+        "end_exclusive": null,
+        "precision": "unknown",
+        "resolution": "unresolved",
+        "reason": "No explicit event time"
+      },
+      "source_spans": [
+        {
+          "source_id": "97da4bf7b310bf31ddfc26752eb9bbbb8bc224b9c757ddf3fce3333bf8cddbbe",
+          "start": 31,
+          "end": 114
+        }
+      ],
+      "time_basis": "ordering",
+      "id": "babbc10665ca6cbfc6d505d9e3306c1fea4e4879d89c8889b267605efb7870c0",
+      "source_ids": [
+        "97da4bf7b310bf31ddfc26752eb9bbbb8bc224b9c757ddf3fce3333bf8cddbbe"
+      ],
+      "source_quotes": [
+        "Elara is still our number one."
+      ],
+      "created_at": "2025-01-10T00:00:06.000Z",
+      "observed_at": "2025-01-10T00:00:06.000Z",
+      "state": "active",
+      "vector": null,
+      "entities": [
+        "Elara"
+      ],
+      "revision": 10
+    },
+    "sources": [
+      {
+        "id": "97da4bf7b310bf31ddfc26752eb9bbbb8bc224b9c757ddf3fce3333bf8cddbbe",
+        "content": "                                                                                   Elara is still our number one.                                                                                                                                                    It's just nice to have a fallback, you know?                                                    ",
+        "cuts": [
+          {
+            "start": 0,
+            "end": 31
+          },
+          {
+            "start": 31,
+            "end": 114
+          },
+          {
+            "start": 306,
+            "end": 357
+          },
+          {
+            "start": 151,
+            "end": 261
+          },
+          {
+            "start": 114,
+            "end": 151
+          }
+        ]
+      }
+    ]
+  },
+  "rollback_verified": true,
+  "saved_packets_used": 5,
+  "saved_packets_planned": 5,
+  "original_database_unchanged": true
+}
