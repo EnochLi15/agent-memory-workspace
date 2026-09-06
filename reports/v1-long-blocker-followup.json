@@ -1,13 +1,13 @@
 {
   "protocol": "v1-long-blocker-followup-v1",
-  "updated_at": "2026-09-06T21:12:55.056127+00:00",
+  "updated_at": "2026-09-06T21:37:18.462418+00:00",
   "status": "in_progress",
   "failed_campaign": "v1-long-33a9e05-01",
   "original_service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
-  "fix_service_commit": "08f3663cccdd9491b178dd5b1dcabf98cf1cd8b2",
+  "fix_service_commit": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
   "tests": {
-    "service": 365,
-    "passed": 365
+    "service": 370,
+    "passed": true
   },
   "cases": [
     {
@@ -22,7 +22,9 @@
       "cause": "Model retained a concrete colliding value using a pronoun-only quote. Existing decoder correctly refused this unsupported independent-value witness.",
       "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged. Historical completeness fix supplies unselected related records to the existing independent message verifier and scopes certificate invalidation to that instruction. Cross-property repair guidance preserves the complete authorized scope, while unsupported targets and unrelated neighbors remain protected. Repair receives usable aliases for related history outside the initial retrieval window. Verification explicitly distinguishes independent user events and checks existing target coverage before declaring a record omitted. Both verifier and repair now receive exact proposed coverage metadata, without changing semantic authorization, deletion validation, repair counts, or time budgets.",
       "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open. A single live verifier call with the unchanged narrowed proposal now rejects message 6 for missing historical food records, with no protocol errors or other findings. Complete new HTTP diagnostic under version03 is running. All 363 tests pass. Version03 HTTP stopped after two bounded attempts with semantic rejection and unchanged storage. The omitted historical spice-difference record was absent from both repair inputs (122 visible records). Existing expansion now prioritizes the checker scope under the unchanged 32-record budget; a new prepare-level regression fails before and passes after. All 364 tests pass. Version04 isolated HTTP is running. Version04 exposed all 123 repair candidates and repaired the formerly invisible record, but terminated safely because the verifier again called three already-targeted new facts missing and raised another contrast-record omission. Version05 adds exact server-computed record-to-operation links and focused repair aliases; 365 tests pass including new:N coverage. A live partial-scope check of the unchanged final proposal no longer calls the covered new facts missing. It returned represented; this alone does not prove erasure of the remaining contrast record, which must be checked in full binding/source erasure and storage readback. New complete HTTP diagnostic is running. Version05 HTTP accepted after 25.0s + 90.1s continuation attempts and 69.8s final attempt, with one revision/receipt and unchanged parent snapshot. All 14 affected facts are erased and source passages cleared; independent user conversation, food/budget and Marcus records survive. Readback nevertheless FAILED: plain scope coordinates in erased facts, operations and markers retain vindaloo/Thai-hot details (9 field occurrences). New storage-layer blocker remains open.",
-      "status": "http_accepted_historical_payload_erased_but_metadata_leak_open"
+      "status": "http_accepted_historical_payload_erased_but_metadata_leak_open",
+      "current_status": "scope_metadata_fixed_in_regression_latest_http_safely_rejected_semantics_pending_fixed_controls",
+      "scope_format_followup": "reports/v1-scope-metadata-fix.json"
     },
     {
       "case": "memops:D22_update:segment-7:0",
@@ -56,7 +58,14 @@
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-after-test.log": "8835efc492cdfb99eac238b514fd8d1839a6f4d4a68b9dc0d567596deb133cc1",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-full-test.log": "6e2b0c61ead3ecd1ef3d1d2636f55fc61948a5576751aa6006f2ed48266fcd54",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-stage-report.json": "8b9c9c8375aa1134d2ecb399a6010782b962903ecc85d0844b3427d034c959df",
-    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-stage-response.json": "1f77f0590d520a41b43f2c026ba3b32703c9873bda8d4702f896807ca33e1a50"
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-stage-response.json": "1f77f0590d520a41b43f2c026ba3b32703c9873bda8d4702f896807ca33e1a50",
+    "artifacts/v1-erasure-metadata-before.log": "4d2c0b25bd76acf5a2de7a873d213e920078e2c63dce34abb36386ccdc578e6a",
+    "artifacts/v1-erasure-metadata-full-03.log": "1ec95c0551af0a5f9785f661cb138f703592f83c67ee6a27da86fab8d7678283",
+    "artifacts/v1-scope-format-compatibility/result.json": "cba62dac8cbe69df97c1543fc217f7008b1acf040868814472ace96377e64a1b",
+    "artifacts/v1-direct-target-links-before.log": "23a3f3605b1b24792192755901574194c2169f4a734eaa9329f055716f3b180c",
+    "artifacts/v1-direct-target-links-full.log": "124545841933816dc45e6e4cc848cc844c890b01effe3cc6d7c9be3ef2ce9ac5",
+    "artifacts/round2-fresh-failed-add-KUSoEm/report.json": "2628e7310a39ecfd5a5fde3d32acfd73405811e8f87c9356116ca962c0124b74",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/http-diagnostic-input-scope-format-fix/provenance.json": "728fa15ae8fe9b0b2d3a61013eb0015d4964ce5af71c6fa29fa951560a2895de"
   },
   "diagnostic_reports": [
     "reports/round2-fresh-failed-add-PMc5CM.json",
@@ -69,6 +78,8 @@
     "reports/round2-fresh-failed-add-eyLNNL.json",
     "reports/v1-erasure-target-links-stage.json",
     "reports/round2-fresh-failed-add-ymQroS.json",
-    "reports/v1-d25-target-links-storage.json"
+    "reports/v1-d25-target-links-storage.json",
+    "reports/round2-fresh-failed-add-KUSoEm.json",
+    "reports/v1-scope-metadata-fix.json"
   ]
 }

@@ -1,0 +1,31 @@
+{
+  "protocol": "v1-scope-metadata-fix-evidence-v1",
+  "updated_at": "2026-09-06T21:37:18.462418+00:00",
+  "service_commit": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
+  "passed_local_regression": true,
+  "service_tests": 370,
+  "full_http_erasure_gate_passed": false,
+  "changes": [
+    "Erased facts, operation logs and markers persist scope digest instead of scope text. Boundary keys retain certified neighbor exemption identity.",
+    "All newly written source formats have s1 suffix; legacy readers/data are explicitly incompatible. No automatic production migration.",
+    "Exact record IDs and forget operation indexes are adjacent to current proposal facts, including after removal/reindex. No scoring or retry policy change."
+  ],
+  "http_diagnostic": {
+    "run": "artifacts/round2-fresh-failed-add-KUSoEm",
+    "service_commit": "9db2ce9f50249529e4d162c506e38afa5f725520",
+    "status": "safe_semantic_rejection",
+    "attempts": 2,
+    "database_unchanged": true,
+    "explanation": "Final checker reported same-request facts 5,6,7 missing from deletion although exact context links showed operations 10,11,12 and all three operation checks were true. The final candidate makes these exact links visible on proposal rows; this has not yet been validated by a new model run."
+  },
+  "scope": "Local functional and compatibility evidence plus one retained failed isolated HTTP diagnostic. No successful fresh full-background erasure claim, no score changes, human labels zero. Final candidate proceeds to fixed small control before further whole-background evaluation.",
+  "evidence_sha256": {
+    "artifacts/v1-erasure-metadata-before.log": "4d2c0b25bd76acf5a2de7a873d213e920078e2c63dce34abb36386ccdc578e6a",
+    "artifacts/v1-erasure-metadata-full-03.log": "1ec95c0551af0a5f9785f661cb138f703592f83c67ee6a27da86fab8d7678283",
+    "artifacts/v1-scope-format-compatibility/result.json": "cba62dac8cbe69df97c1543fc217f7008b1acf040868814472ace96377e64a1b",
+    "artifacts/v1-direct-target-links-before.log": "23a3f3605b1b24792192755901574194c2169f4a734eaa9329f055716f3b180c",
+    "artifacts/v1-direct-target-links-full.log": "124545841933816dc45e6e4cc848cc844c890b01effe3cc6d7c9be3ef2ce9ac5",
+    "artifacts/round2-fresh-failed-add-KUSoEm/report.json": "2628e7310a39ecfd5a5fde3d32acfd73405811e8f87c9356116ca962c0124b74",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/http-diagnostic-input-scope-format-fix/provenance.json": "728fa15ae8fe9b0b2d3a61013eb0015d4964ce5af71c6fa29fa951560a2895de"
+  }
+}
