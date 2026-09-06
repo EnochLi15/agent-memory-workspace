@@ -24,7 +24,7 @@
     "No model/HTTP attempt limit, semantic verification or transaction coverage relaxation."
   ],
   "implementation": "Shared fact-level value matching distinguishes generated participant labels from evidence literals. Both erasure nomination stages and commit replay checks use the same interpretation. Underlying stored facts and raw source text are unchanged.",
-  "fresh_http_pending": true,
+  "fresh_http_pending": false,
   "full_background_pending": true,
   "scope": "Unit/transaction tests and saved proposal admission only. No fresh HTTP success, final erasure or whole V1 claim. Original failures preserved.",
   "evidence_sha256": {
@@ -33,5 +33,8 @@
     "artifacts/v1-role-label-fix-01/after-03.log": "cfe387e1ece48ee93627ed1694c8f7ec9efd939e7afea7278552efeb952863c0",
     "artifacts/v1-role-label-fix-01/replay-capacity.mjs": "2c031c45578624a0c5d152716cd950195653bb144a3ac1a89762b82731bfa88b",
     "artifacts/v1-role-label-fix-01/erasure-capacity-after.json": "5d07a0d21576b13947420196dc57afb2a8a6116f0a5108d768ff682188bd9c56"
-  }
+  },
+  "fresh_http_passed": false,
+  "fresh_http_result": "reports/v1-d25-retention-witness-blocker.json",
+  "fresh_http_capacity_passed": true
 }

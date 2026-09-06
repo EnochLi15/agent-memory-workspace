@@ -1,0 +1,88 @@
+{
+  "protocol": "v1-d25-retention-witness-blocker-v1",
+  "checked_at": "2026-09-06T22:58:06.521954+00:00",
+  "service_commit": "0516907c2d87e4b9d22221182aa8908197b96218",
+  "request_id": "v1-long-7a50d22-01-candidate:memops:D25_remember:segment-49:0:diagnostic-0516907-01",
+  "diagnostic_directory": "artifacts/round2-fresh-failed-add-9epxfi",
+  "passed": false,
+  "http_status": 503,
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Independent-value witness must include the colliding value"
+  },
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 74004.285208,
+      "request_sha256": "46691caab1a744658db0587bc1fdf704238fba5dcc3725f86e68a6f06713404b",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 90139.108125,
+      "request_sha256": "46691caab1a744658db0587bc1fdf704238fba5dcc3725f86e68a6f06713404b",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 49307.575209,
+      "request_sha256": "46691caab1a744658db0587bc1fdf704238fba5dcc3725f86e68a6f06713404b",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "generation_outcomes": {
+    "('source_operation_route', 'ok')": 1,
+    "('extraction', 'ok')": 3,
+    "('repair', 'ok')": 2,
+    "('verification', 'error')": 5,
+    "('verification', 'ok')": 2,
+    "('erasure_binding', 'error')": 1,
+    "('erasure_binding', 'ok')": 1
+  },
+  "erasure_candidates": 48,
+  "returned_decisions": 48,
+  "retention_witness_failures": 13,
+  "failure_indices": [
+    2,
+    8,
+    9,
+    10,
+    14,
+    16,
+    22,
+    24,
+    30,
+    34,
+    35,
+    37,
+    39
+  ],
+  "source_context_observation": {
+    "problem_rows_with_Koku_Kitchen_in_full_linked_source": 13,
+    "source_rows_checked": 13,
+    "examples": "Narrow quotes such as My usual order and He is obsessed omit the restaurant name while their same original message includes Koku Kitchen and the independent owner. One mixed outing message also contains Priya details, so blindly widening retained quotes would risk preserving erased neighboring information."
+  },
+  "next_action": "Reproduce narrow-quote/coreference retention using full original linked source context. Determine a source-backed witness representation that can establish independent owners/values without borrowing erased-neighbor evidence. Preserve the existing pronoun-only dependent-claim rejection and mixed-source erasure checks; do not simply delete the witness guard, accept the model verdict unconditionally or rerun the same version.",
+  "scope": "One fresh isolated diagnostic after substantive role-label fix. It reached erasure classification within the unchanged capacity guard, but rejected retention witnesses before commit. Old failures and scores unchanged; no full-history or V1 acceptance.",
+  "evidence_sha256": {
+    "artifacts/round2-fresh-failed-add-9epxfi/report.json": "59dff168f616ecc2f47a1247993914e85427c9c439a78e689fce820c3058c78e",
+    "artifacts/v1-d25-0516907-01/private-witness-problems.json": "82f5335bf76d2a5ea2e6cbd1075dcd2752bc1f9630a818b78cf15de44d5d78c7",
+    "artifacts/v1-d25-0516907-01/private-witness-source-context.json": "8687e4dd70e57e8b463e32a5da9288f21d17260a86be4f143084762c677687d6",
+    "artifacts/v1-d25-0516907-01/erasure-packet.json": "69c1d948e9d9017f9a11031cc702c5a55fda6a5939739ce51418abefdaf39728",
+    "artifacts/v1-d25-0516907-01/provenance.json": "7151d441fe9ea1e59b75f923dc07f66055a3e9c3bcdf3308b92bde297060f41e"
+  }
+}
