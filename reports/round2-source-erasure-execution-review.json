@@ -1,0 +1,49 @@
+{
+  "protocol": "round2-source-erasure-execution-review-v1",
+  "service_commit": "0aa8ba1",
+  "tests": {
+    "service": {
+      "passed": 287,
+      "report": "reports/round2-source-erasure-execution-service-tests.txt"
+    },
+    "targeted": {
+      "passed": 27,
+      "report": "reports/round2-source-erasure-execution-targeted-tests.txt"
+    },
+    "ingestion_identity": {
+      "passed": 4,
+      "report": "reports/round2-source-erasure-execution-identity-tests.txt"
+    }
+  },
+  "stage_control": {
+    "report": "reports/round2-source-erasure-parallel-0JzJ2I.json",
+    "serial_ms": 82863.844416,
+    "serial_status": "failed_uncertain_quote_repair",
+    "parallel_ms": 51249.534833,
+    "parallel_status": "classified_74_rows",
+    "scope": "Single stage-only pair with fresh90s budgets, fixed saved B05 work, real generation and all retries retained. Classification completion is not semantic correctness or a complete write."
+  },
+  "classified_commit": {
+    "report": "reports/round2-source-erasure-classified-commit-bci3B4.json",
+    "status": "rejected_and_rolled_back",
+    "saved_packets": 10,
+    "fresh_llm_calls": 0,
+    "scope": "Exact saved real prefix/source packets, real local embeddings, isolated copied-v10 DB; one erased Iris preference witness remained untouched. No production mutation or benchmark success."
+  },
+  "witness_diagnostic": "reports/round2-source-erasure-witness-diagnostic-xcPhfW.json",
+  "full_prepare": {
+    "report": "reports/round2-source-routing-replay-hkW2eF.json",
+    "status": "failed_deadline",
+    "elapsed_ms": 90013.287875,
+    "scope": "All generation stages real from the original v10 failure snapshot, no commit. Source stage had22s remaining and timed out."
+  },
+  "fresh_http": {
+    "report": "reports/round2-source-erasure-parallel-http-Cd6aOP.json",
+    "checks_passed": 7,
+    "checks_total": 7,
+    "seed_ms": 14115.241208,
+    "delete_ms": 44942.565833,
+    "scope": "73-message fresh synthetic tenant, real two-batch source erasure,70assistant echoes removed, brother same code and browser retained, search and reopening checked."
+  },
+  "next": "Resolve source-level joint erasure obligations and copying/index errors; grouped source ownership and compact stable references need controlled tests. Do not increase concurrency or promote current classification success as sufficient. FullE0-E5 and delivery gates remain open."
+}

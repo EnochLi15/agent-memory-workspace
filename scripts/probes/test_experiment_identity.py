@@ -11,7 +11,7 @@ class IngestionIdentityTests(unittest.TestCase):
     def setUp(self):
         self.config = {'dataDir': '/same', 'port': 8096, 'llmModel': 'mini',
                        'llmStageModels': {'verification': 'strong'}, 'sourceIndex': True,
-                       'embeddingDigest': 'pinned', 'maxRepairRounds': 2, 'extractionWorkers': 1,
+                       'embeddingDigest': 'pinned', 'maxRepairRounds': 2, 'extractionWorkers': 1, 'sourceErasureWorkers': 1,
                        'rawFallback': False, 'rerank': False,
                        'experimental': {'multiHop': False, 'lifecycle': True},
                        'evaluation_configuration': {'answer_model': 'mini'}}
@@ -34,7 +34,7 @@ class IngestionIdentityTests(unittest.TestCase):
 
     def test_model_representation_lifecycle_and_evaluation_changes_are_rejected(self):
         for field, value in [('llmModel', 'new'), ('sourceIndex', False),
-                             ('embeddingDigest', 'other'), ('maxRepairRounds', 1), ('extractionWorkers', 3),
+                             ('embeddingDigest', 'other'), ('maxRepairRounds', 1), ('extractionWorkers', 3), ('sourceErasureWorkers', 3),
                              ('llmStageModels', {'verification': 'other'}),
                              ('experimental', {'multiHop': False, 'lifecycle': False}),
                              ('evaluation_configuration', {'answer_model': 'other'})]:

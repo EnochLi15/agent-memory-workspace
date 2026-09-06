@@ -1,0 +1,35 @@
+✔ source batches run at bounded concurrency and merge original indices despite reversed completion (18.465375ms)
+✔ a failed classification cancels and drains running siblings without starting remaining batches (12.018042ms)
+✔ one global quotation repair covers defects in separate batches and preserves semantic classifications (3.448375ms)
+✔ later semantic uncertainty prevents any quotation repair even with a completed earlier defective batch (2.897667ms)
+✔ global repair is bounded to eight defects and rejects missing, duplicate, foreign or uncertain patches (16.790375ms)
+✔ external cancellation, empty work and invalid configuration do not publish partial plans (0.496958ms)
+✔ deadline cancellation during classification or global repair rejects late model successes (35.808084ms)
+✔ source erasure removes old assistant paraphrases and preserves unextracted mixed-sentence neighbors (36.994584ms)
+✔ missing or uncertain source partitions cannot be committed and later echoes remain checked (19.768792ms)
+✔ source plan rejects stale raw evidence and rolls back source cuts with the transaction (13.770041ms)
+✔ exact partitions reject changed text, duplicates, missing coverage, mixed facts and split Unicode (0.2555ms)
+✔ v4 cannot silently reuse a pre-existing v3 directory (0.208375ms)
+✔ candidate capacity fails instead of truncating source coverage (13.637208ms)
+✔ source work capacity uses complete transmitted batches instead of repeated authorization copies (87.705709ms)
+✔ explicit restoration of the authorized value survives v4 source checks without reviving old raw text (12.033959ms)
+✔ source batches obey payload limits and preserve every original candidate index (27.961958ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=false (84.846208ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=true (42.05125ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=false (79.355292ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=true (41.525458ms)
+✔ verified erased facts are not rejudged, while all their original sources still undergo cleanup (11.596291ms)
+✔ source scope receives surviving fact meanings while never exempting a retired witness (10.311625ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=false (64.283083ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=true (60.365166ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=false (66.643209ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=true (61.035708ms)
+✔ a certified erased fact cannot keep every original witness intact behind a reviewed source (8.876208ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 931.302833
