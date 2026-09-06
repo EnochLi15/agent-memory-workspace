@@ -1,0 +1,90 @@
+{
+  "protocol": "v1-shard-field-fix-v1",
+  "checked_at": "2026-09-06T23:20:44.473656+00:00",
+  "service_commit_prefix": "ed81688",
+  "diagnostic_failed_commit": "1d7c0ff",
+  "diagnostic": "artifacts/round2-fresh-failed-add-duqz57/report.json",
+  "original_http_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group"
+  },
+  "original_failure_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "cause": {
+    "model": "One operations field key was corrupted despite valid parsed JSON.",
+    "code": "All assigned participant indexes were present exactly once, but the shard ownership guard treated an unknown group field as a roster violation and bypassed existing bounded global schema repair.",
+    "siblings": "Two still-streaming siblings were cancelled; no malformed or partial proposal committed."
+  },
+  "change": "Preserve unknown fields when group ownership is complete. The existing strict decoder still rejects them and uses the unchanged global repair budget. No renaming, dropping fields, schema acceptance, per-shard retries or new model calls outside that budget.",
+  "tests": {
+    "new": 3,
+    "total": 391,
+    "passed": true,
+    "coverage": [
+      "preserve malformed fields, reject in strict decoder",
+      "bounded repair followed by verified atomic erasure and neighbor retention",
+      "exhaust exactly two repair rounds, no verification or embedding for malformed output",
+      "existing duplicate/foreign group and handle guards still pass"
+    ]
+  },
+  "captured_packet_replay": {
+    "protocol": "v1-shard-field-replay-v1",
+    "assigned_participants": [
+      0,
+      4,
+      12,
+      14
+    ],
+    "returned_participants": [
+      0,
+      4,
+      12,
+      14
+    ],
+    "exact_damaged_groups_preserved": true,
+    "strict_global_decoder_rejected": true,
+    "scope": "One captured corrupted shard plus explicitly empty sibling mocks. Proves ownership-safe routing to strict decoder; no accepted proposal, model repair, HTTP, storage or score claim."
+  },
+  "fresh_http_pending": false,
+  "scope": "Code regression and captured-packet routing proof, not completed D25 or release acceptance.",
+  "evidence_sha256": {
+    "artifacts/round2-fresh-failed-add-duqz57/report.json": "9914113c8e970679bd7bf6ebaa0d839f6f9e8aaf470ed6fef227b3d00ce423e7",
+    "artifacts/v1-shard-field-fix-01/before.log": "16c78646bf99c200b0726db2e0e5cbf6d612d9d48157a3f67d3978600d8da8ba",
+    "artifacts/v1-shard-field-fix-01/after.log": "03290ecc7580f376891db8c9c3db5c705448f82df37aab6c993ae4646c514377",
+    "artifacts/v1-shard-field-fix-01/replay-result.json": "d42c0edd624b1d45641fe9f289e165e0acd104a25f03ada48b5b2a0e721c8ab1",
+    "reports/v1-service-regression-16.txt": "44674854eee13449789ba403a6f0bf235c82ea7566a18553797a420dfb17da5d"
+  },
+  "service_commit": "ed81688e76a60889de89bbeaace73467b0c1aeb5",
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-tbvcXi/report.json",
+  "ci": {
+    "headSha": "ed81688e76a60889de89bbeaace73467b0c1aeb5",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34066581838"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_reached_erasure": true,
+  "fresh_http_terminal_error": {
+    "code": "VERIFICATION_UNAVAILABLE",
+    "message": "Could not bind erasure scope within the shared model budget"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-shared-budget-blocker.json"
+}
