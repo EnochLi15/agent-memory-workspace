@@ -1,0 +1,83 @@
+{
+  "protocol": "round2-joint-full-regression-progress-v1",
+  "observed_at": "2026-09-06T11:35:51.938485+00:00",
+  "campaign": "round2-joint-87d67b1-dev-r1",
+  "service_runtime_snapshot": "artifacts/round2-runtime-87d67b1",
+  "processes": {
+    "service": 48051,
+    "locomo_evaluator": 48053,
+    "memops_evaluator": 48054,
+    "runner_session": 65678
+  },
+  "runs": [
+    {
+      "run_id": "round2-joint-87d67b1-dev-r1-sources-locomo",
+      "manifest_status": "running",
+      "planned_questions": 30,
+      "source_identity": {
+        "service_commit": "87d67b18f13c2b8ccdb7c6c1dc4a4b891e6a0c48",
+        "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+        "workspace_commit": "86875d262ee39952c1e2911388884024489021f5",
+        "source_state": {
+          "service": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          },
+          "eval": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          },
+          "workspace": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          }
+        },
+        "dataset_sha256": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07"
+      },
+      "ingest_attempts": 3,
+      "successful_requests": 3,
+      "failed_attempts": 0,
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-2:0",
+      "question_statuses": {},
+      "judged_correct": 0
+    },
+    {
+      "run_id": "round2-joint-87d67b1-dev-r1-sources-memops",
+      "manifest_status": "running",
+      "planned_questions": 30,
+      "source_identity": {
+        "service_commit": "87d67b18f13c2b8ccdb7c6c1dc4a4b891e6a0c48",
+        "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+        "workspace_commit": "86875d262ee39952c1e2911388884024489021f5",
+        "source_state": {
+          "service": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          },
+          "eval": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          },
+          "workspace": {
+            "dirty": false,
+            "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "status": ""
+          }
+        },
+        "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b"
+      },
+      "ingest_attempts": 9,
+      "successful_requests": 9,
+      "failed_attempts": 0,
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-9:0",
+      "question_statuses": {},
+      "judged_correct": 0
+    }
+  ],
+  "scope": "Live partial progress only. Process liveness separately checked via ps. Complete questions and all failures remain in the planned denominator; no interim overall score."
+}
