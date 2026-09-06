@@ -1,0 +1,76 @@
+{
+  "summary": {
+    "protocol": "semantic-criteria-audit-v2",
+    "planned": 199,
+    "status_counts": {
+      "judged": 194,
+      "protocol_error": 5
+    },
+    "correct": 32,
+    "incorrect": 162,
+    "controls": 0,
+    "control_matches": 0,
+    "by_type": {
+      "OperationApplication": {
+        "planned": 38,
+        "judged": 36,
+        "control_matches": 0
+      },
+      "OperationTrace": {
+        "planned": 59,
+        "judged": 56,
+        "control_matches": 0
+      },
+      "TargetBinding": {
+        "planned": 47,
+        "judged": 47,
+        "control_matches": 0
+      },
+      "CandidateDisambiguation": {
+        "planned": 5,
+        "judged": 5,
+        "control_matches": 0
+      },
+      "StateTransition": {
+        "planned": 40,
+        "judged": 40,
+        "control_matches": 0
+      },
+      "StateTrajectory": {
+        "planned": 10,
+        "judged": 10,
+        "control_matches": 0
+      }
+    },
+    "scope": "Posthoc model criterion audit. Neither independent human ground truth nor a replacement for historical benchmark scores."
+  },
+  "manifest": {
+    "protocol": "semantic-criteria-audit-v2",
+    "input_sha256": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d",
+    "input_provenance": null,
+    "prompt_sha256": "af6614eba1901828d9b07881c0f7b675d7340c3fa50f8b70c9368f68c437a21c",
+    "source_sha256": "96afaaecebd3e3b2a85f705d4a24d2fcaa4c649e541f358cb5c6d689aac69d40",
+    "model_runtime_sha256": "16be2b4b1e760b5d7f210e2beb24604160a653fe3ef3070edab84207e44a5f01",
+    "runner_sha256": "ec27f7e5935997575bde90778bdbefa4f42ef539694b25ac9bbf01f2c295f47b",
+    "model": "gpt-5.5",
+    "base": "http://54.183.78.37:8080/v1",
+    "inference": {
+      "stream": true,
+      "max_completion_tokens": 6000,
+      "transport_attempts": 3,
+      "semantic_retries": 0
+    },
+    "planned": 199,
+    "concurrency": 2,
+    "max_consecutive_transport_failures": 4,
+    "started_at": "2026-09-06T02:59:12.199Z",
+    "status": "incomplete",
+    "scope": "Posthoc model criterion audit. Neither independent human ground truth nor a replacement for historical benchmark scores.",
+    "finished_at": "2026-09-06T03:21:35.878Z",
+    "results_sha256": "b7ef2b15a3134bd90024aac1dc02ffbbeb299c119cdf75797bb29a1b9de82970"
+  },
+  "input_hashes": {
+    "eval/artifacts/round2-judge-audit199-gpt55-v2/manifest.json": "6a4b3926c9f76b16f137c5be5af618a5f7aa958d5b43bb462c6cbd10fa4ec1cb",
+    "eval/artifacts/round2-judge-audit199-gpt55-v2/summary.json": "06a71b883741c3052d7ca9bf4b8e9230f403240769a6c7e992fd1e0629537fd3"
+  }
+}
