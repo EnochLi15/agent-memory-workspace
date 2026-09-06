@@ -1,0 +1,239 @@
+{
+  "protocol": "round2-shards-B05-arm-final-v1",
+  "run_id": "round2-extraction-shards-1d52e32-B05-r1-serial-memops",
+  "profile": "serial",
+  "manifest": {
+    "service_commit": "1d52e3238a0575e51abf09817f3e703c83512a3c",
+    "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+    "workspace_commit": "3f864c923fa1b1ced632279086cdf067be6ca5d4",
+    "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+    "started_at": "2026-09-06T10:49:37.066Z",
+    "finished_at": "2026-09-06T11:02:31.700Z",
+    "planned_questions": 10
+  },
+  "ingest": {
+    "attempts": 21,
+    "outcomes": {
+      "ok": 18,
+      "retrying": 2,
+      "failed": 1
+    },
+    "terminal_failures": [
+      {
+        "request_id": "round2-extraction-shards-1d52e32-B05-r1-serial:memops:B05_forget:segment-18:0",
+        "status": "failed",
+        "attempt": 2,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+        "elapsed_ms": 90064.45012500009
+      }
+    ]
+  },
+  "results": {
+    "planned": 10,
+    "judged": 0,
+    "correct": 0,
+    "accuracy_over_planned": 0,
+    "judged_accuracy": null,
+    "incomplete": 10
+  },
+  "snapshot": {
+    "directory": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-serial-1d52e32-failure-81pfr_nm",
+    "database_sha256": "6a3b8cc0f9fcddb25390e44bdc9b6c9a06d21323fd2e4fb232ad7c4152be5c16",
+    "request_sha256": "4c6b2fe56856e1b458a3b426dac171f6f169e5ee7c4070c2f0f012be05d34624"
+  },
+  "failed_request_stages": [
+    {
+      "purpose": "source_operation_route",
+      "outcome": "ok",
+      "elapsed_ms": 3347.4744579999824,
+      "usage": {
+        "prompt_tokens": 15690,
+        "completion_tokens": 88,
+        "total_tokens": 15778,
+        "completion_tokens_details": {
+          "reasoning_tokens": 45
+        }
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 57907.54545799998,
+      "usage": {
+        "prompt_tokens": 14998,
+        "completion_tokens": 3058,
+        "total_tokens": 18056,
+        "prompt_tokens_details": {
+          "cached_tokens": 3840
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 238
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 18027.367834000033,
+      "usage": {
+        "prompt_tokens": 20559,
+        "completion_tokens": 864,
+        "total_tokens": 21423,
+        "completion_tokens_details": {
+          "reasoning_tokens": 516
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 5400.794332999969,
+      "usage": {
+        "prompt_tokens": 20359,
+        "completion_tokens": 158,
+        "total_tokens": 20517,
+        "completion_tokens_details": {
+          "reasoning_tokens": 117
+        }
+      }
+    },
+    {
+      "purpose": "verification",
+      "outcome": "error",
+      "elapsed_ms": 5192.149958999944,
+      "error_category": "deadline",
+      "usage": null
+    },
+    {
+      "purpose": "source_operation_route",
+      "outcome": "ok",
+      "elapsed_ms": 4243.5610829999205,
+      "usage": {
+        "prompt_tokens": 15690,
+        "completion_tokens": 118,
+        "total_tokens": 15808,
+        "prompt_tokens_details": {
+          "cached_tokens": 15104
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 59
+        }
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 50731.385666999966,
+      "usage": {
+        "prompt_tokens": 14998,
+        "completion_tokens": 2695,
+        "total_tokens": 17693,
+        "prompt_tokens_details": {
+          "cached_tokens": 3840
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 348
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 12916.882792000077,
+      "usage": {
+        "prompt_tokens": 20085,
+        "completion_tokens": 579,
+        "total_tokens": 20664,
+        "completion_tokens_details": {
+          "reasoning_tokens": 226
+        }
+      }
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 19919.428541,
+      "usage": {
+        "prompt_tokens": 12220,
+        "completion_tokens": 915,
+        "total_tokens": 13135,
+        "completion_tokens_details": {
+          "reasoning_tokens": 493
+        }
+      }
+    },
+    {
+      "purpose": "erasure_binding",
+      "outcome": "error",
+      "elapsed_ms": 1963.878832999966,
+      "error_category": "deadline",
+      "usage": null
+    },
+    {
+      "purpose": "source_operation_route",
+      "outcome": "ok",
+      "elapsed_ms": 4758.182750000036,
+      "usage": {
+        "prompt_tokens": 15690,
+        "completion_tokens": 154,
+        "total_tokens": 15844,
+        "prompt_tokens_details": {
+          "cached_tokens": 15104
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 111
+        }
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 57853.08820799994,
+      "usage": {
+        "prompt_tokens": 14998,
+        "completion_tokens": 3030,
+        "total_tokens": 18028,
+        "prompt_tokens_details": {
+          "cached_tokens": 14080
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 516
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 9159.727708999999,
+      "usage": {
+        "prompt_tokens": 19775,
+        "completion_tokens": 317,
+        "total_tokens": 20092,
+        "completion_tokens_details": {
+          "reasoning_tokens": 198
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 13189.473833000055,
+      "usage": {
+        "prompt_tokens": 19650,
+        "completion_tokens": 604,
+        "total_tokens": 20254,
+        "completion_tokens_details": {
+          "reasoning_tokens": 515
+        }
+      }
+    },
+    {
+      "purpose": "verification",
+      "outcome": "error",
+      "elapsed_ms": 4898.763291000039,
+      "error_category": "deadline",
+      "usage": null
+    }
+  ],
+  "scope": "Fresh full exposedB05 at1d52e32. Three actual attempts atsegment18 exhausted90s each, all10questions service_error. No Answer/Judge outcomes. Not a newer7281a1d result or quality improvement."
+}

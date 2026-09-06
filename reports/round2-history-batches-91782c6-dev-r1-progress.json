@@ -1,8 +1,8 @@
 {
   "protocol": "round2-running-experiment-checkpoint-v1",
   "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
-  "observed_at": "2026-09-06T10:48:25.488540+00:00",
-  "status": "running",
+  "observed_at": "2026-09-06T10:59:06.997954+00:00",
+  "status": "finished",
   "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
   "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
   "workspace_commit": "6153217490a583e4425593bf38fa1d286ed37e48",
@@ -20,18 +20,18 @@
   "runner_session_id": 98822,
   "port": 8110,
   "source_snapshot": "artifacts/round2-runtime-91782c6",
-  "completed_ingest_attempts_at_observation": 181,
+  "completed_ingest_attempts_at_observation": 204,
   "latest_ingest": {
-    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-27:0",
+    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-50:0",
     "sample_id": "E10_remember",
     "status": "ok",
     "attempt": 0,
-    "elapsed_ms": 23161.198457999155,
-    "message_count": 14
+    "elapsed_ms": 7109.858000000007,
+    "message_count": 6
   },
-  "note": "Original91782c6 still running E10_remember. E10_reflect/B05/F07_trajectory have terminal ingestion failures (21 service_error questions). F07_update completed,3/4 judged correct. Not a final30-question score. Current f12b2b4 full B05 is a separate fresh v10 run.",
+  "note": "Original frozen91782c6/v8 five exposed development backgrounds, unchanged throughout. All30 questions retained. 6/30(20%) over planned; 6/9 on judged questions excludes21 service errors and is not overall accuracy. E10_reflect/B05/F07_trajectory failed; F07_update3/4 and E10_remember3/5. No newv10 result, independent test set or final improvement claim.",
   "attempt_outcomes": {
-    "ok": 173,
+    "ok": 196,
     "retrying": 5,
     "failed": 3
   },
@@ -51,14 +51,19 @@
   ],
   "judgments_at_observation": {
     "service_error": 21,
-    "judged": 4
+    "judged": 9
   },
   "finished_background_results": [
     {
       "sample_id": "F07_update",
       "judged": 4,
-      "correct": 3,
-      "scope": "Completed single exposed background at91782c6, not final overall or currentv10 result."
+      "correct": 3
+    },
+    {
+      "sample_id": "E10_remember",
+      "judged": 5,
+      "correct": 3
     }
-  ]
+  ],
+  "final_report": "reports/round2-history-batches-91782c6-dev-r1-final.json"
 }

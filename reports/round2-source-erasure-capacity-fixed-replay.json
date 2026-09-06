@@ -1,0 +1,11 @@
+{
+  "protocol": "source-erasure-capacity-fixed-replay-v1",
+  "parent": "artifacts/round2-source-routing-replay-1EfFCv",
+  "diagnostic": "artifacts/round2-source-erasure-capacity-2sDz5j",
+  "original_successful_stages": 7,
+  "replayed_stages": 7,
+  "first_source_batch_reached": true,
+  "first_batch_packet_matches_original_lossless_candidates": true,
+  "stop": "DIAGNOSTIC_STOP_BEFORE_SOURCE_MODEL",
+  "scope": "Saved successful prefix responses only, zero new model calls and no commit. Exact original pipeline now reaches source erasure instead of the stale raw-size guard. Actual full replay is separate."
+}
