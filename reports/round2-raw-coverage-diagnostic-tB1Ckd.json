@@ -1,0 +1,104 @@
+{
+  "protocol": "raw-coverage-exact-guard-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-raw-coverage-diagnostic-tB1Ckd",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-bfec674-coverage-failure-jg7mhtvl",
+  "original_runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-bfec674",
+  "original_guard_sha256": "a524c0f2e5adc9ac39323ae458cd568d631a797ac38c3857091224db561520ff",
+  "instrumented_guard_sha256": "fa70b535f0617ffc3b9c73284d2c1df154733700f51a455da20f660911c2fa56",
+  "started_at": "2026-09-06T12:51:17.099Z",
+  "fresh_llm_calls": 0,
+  "scope": "Exact system/input/purpose replay, deterministic fixture embeddings, private database and unchanged rejecting guard. No live model/service calls. Establishes a storage mismatch only, not embedding or answer quality.",
+  "degraded": [],
+  "status": "rejected",
+  "error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Accepted raw coverage was erased, linked to state, or not indexed"
+  },
+  "guard": {
+    "candidate": {
+      "slot": 5,
+      "message": 14,
+      "source_id": "c30e299718f7e0c7cf8a049b974ddb1d40a76969522fce20980acf59697b3a5b",
+      "passage_id": "source-df7243506f57abeeb35af71dfb4fc47f877a774acfe1684de747ea0119dcde3f",
+      "start": 318,
+      "end": 418,
+      "quote": "Just mentioning it for context since I originally told you the wrong date and had to correct myself."
+    },
+    "same_source": [
+      {
+        "id": "source-402da55b0ccc4aa0b0604c2ee5e9387c7a5e03bb2261564f06255a6ebb65e89a",
+        "source_id": "c30e299718f7e0c7cf8a049b974ddb1d40a76969522fce20980acf59697b3a5b",
+        "speaker": "user",
+        "fragments": [
+          {
+            "start": 0,
+            "end": 62,
+            "text": "Standard SMS or whatever texting the business offers is fine. "
+          }
+        ],
+        "content": "Standard SMS or whatever texting the business offers is fine. ",
+        "fact_ids": [
+          "e7f698707e4926096c180edb4bda0a6a3bcb595a7baeb50379907d3d5a77431c"
+        ],
+        "observed_at": "2025-01-26T00:00:14.000Z",
+        "time_basis": "ordering",
+        "revision": 26,
+        "state": "active",
+        "indexed": true
+      },
+      {
+        "id": "source-e1f1f455665390f1572b7b669e13b03fca2c0c25b34ae727fe310a0ca8a66bc9",
+        "source_id": "c30e299718f7e0c7cf8a049b974ddb1d40a76969522fce20980acf59697b3a5b",
+        "speaker": "user",
+        "fragments": [
+          {
+            "start": 62,
+            "end": 91,
+            "text": "I don't need a specific app. "
+          }
+        ],
+        "content": "I don't need a specific app. ",
+        "fact_ids": [
+          "3a93d8a6344835260d42ac64ce934c4e8a6bc2a5575ee8e223494e641136f63a"
+        ],
+        "observed_at": "2025-01-26T00:00:14.000Z",
+        "time_basis": "ordering",
+        "revision": 26,
+        "state": "active",
+        "indexed": true
+      },
+      {
+        "id": "source-fb0ba8be90b8db901370c0c19040c8fc63cc4e7bab33f014a85bf5ab7e586c74",
+        "source_id": "c30e299718f7e0c7cf8a049b974ddb1d40a76969522fce20980acf59697b3a5b",
+        "speaker": "user",
+        "fragments": [],
+        "content": "",
+        "fact_ids": [],
+        "observed_at": "2025-01-26T00:00:14.000Z",
+        "time_basis": "ordering",
+        "revision": 26,
+        "state": "erased",
+        "indexed": false
+      },
+      {
+        "id": "source-df7243506f57abeeb35af71dfb4fc47f877a774acfe1684de747ea0119dcde3f",
+        "source_id": "c30e299718f7e0c7cf8a049b974ddb1d40a76969522fce20980acf59697b3a5b",
+        "speaker": "user",
+        "fragments": [],
+        "content": "",
+        "fact_ids": [],
+        "observed_at": "2025-01-26T00:00:14.000Z",
+        "time_basis": "ordering",
+        "revision": 26,
+        "state": "erased",
+        "indexed": false
+      }
+    ]
+  },
+  "rollback_verified": true,
+  "finished_at": "2026-09-06T12:51:17.655Z",
+  "saved_packets_used": 8,
+  "saved_packets_planned": 8,
+  "fixture_embeddings": 53,
+  "original_database_unchanged": true
+}

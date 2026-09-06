@@ -1,15 +1,15 @@
 {
   "protocol": "round2-running-regression-observation-v1",
-  "observed_at": "2026-09-06T12:50:27.499061+00:00",
+  "observed_at": "2026-09-06T12:55:56.227795+00:00",
   "campaign": "round2-resilient-bfec674-dev-r1",
-  "process_observation": "  PID STAT ELAPSED COMM\n81978 S      12:38 node\n81979 S      12:38 node\n81980 S      12:38 node\n",
+  "process_observation": "  PID STAT ELAPSED COMM\n81978 S      18:07 node\n81979 S      18:07 node\n81980 S      18:07 node\n",
   "runs": [
     {
       "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
       "status": "running",
       "planned_questions": 30,
       "last_add_status_counts": {
-        "ok": 14,
+        "ok": 21,
         "failed": 1
       },
       "question_status_counts": {
@@ -29,7 +29,7 @@
       "status": "running",
       "planned_questions": 30,
       "last_add_status_counts": {
-        "ok": 34,
+        "ok": 44,
         "failed": 1
       },
       "question_status_counts": {
