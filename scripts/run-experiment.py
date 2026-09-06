@@ -5,9 +5,10 @@ Ollama. --reuse-ingestion sends every /add again with the original namespace,
 relying only on HTTP idempotent receipts; eval never reads service storage.
 """
 import argparse,json,os,pathlib,subprocess,time,urllib.request,hashlib
+from experiment_identity import validate_reuse
 root=pathlib.Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');args=p.parse_args()
-spec=json.loads((root/'configs/experiments.json').read_text());profile=spec['profiles'][args.profile]
+p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
+spec_bytes=args.spec.read_bytes();spec=json.loads(spec_bytes);profile=spec['profiles'][args.profile];evaluation=spec.get('evaluation',{})
 env=os.environ.copy()
 for line in (root/'.env').read_text().splitlines():
  if '=' in line and not line.lstrip().startswith('#'):
@@ -30,11 +31,20 @@ else:
 safe['extraction_prompt_sha256']=hashlib.sha256((root/'service/src/prompts.ts').read_bytes()).hexdigest()
 safe['baseline_transport']='SSE-to-JSON; model/messages/options unchanged' if baseline else 'native SSE'
 safe['locomo_input_override']=args.locomo_data
+safe['memops_input_override']=args.memops_data
+safe['experiment_spec_sha256']=hashlib.sha256(spec_bytes).hexdigest()
+safe['evaluation_configuration']=evaluation
 if args.reuse_ingestion:
  origins={}
+ source_identity={part:{'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root/part,text=True).strip(),'dirty':bool(subprocess.check_output(['git','status','--porcelain'],cwd=root/part,text=True).strip())} for part in ['service','eval']}
  for benchmark in (['locomo','memops'] if args.benchmark=='both' else [args.benchmark]):
   origin=root/'eval/artifacts'/(namespace+'-'+benchmark);manifest_bytes=(origin/'manifest.json').read_bytes();prior=json.loads(manifest_bytes)
   if prior['status']!='finished':raise SystemExit('Wait for the original ingestion experiment to finish')
+  override=args.locomo_data if benchmark=='locomo' else args.memops_data
+  data_path=pathlib.Path(override or f'.data/{benchmark}-{args.split}.json')
+  if not data_path.is_absolute():data_path=root/'eval'/data_path
+  try:validate_reuse(prior,safe,hashlib.sha256(data_path.read_bytes()).hexdigest(),source_identity)
+  except ValueError as error:raise SystemExit(str(error))
   last={row['request_id']:row for row in (json.loads(line) for line in (origin/'ingest.jsonl').read_text().splitlines())}
   if any(row['status']!='ok' for row in last.values()):raise SystemExit('Cannot reuse an incomplete ingestion for a paired retrieval ablation')
   origins[benchmark]={'run_id':prior['run_id'],'manifest_sha256':hashlib.sha256(manifest_bytes).hexdigest(),'service_commit':prior['service_commit'],'dataset_sha256':prior['dataset_sha256']}
@@ -56,8 +66,11 @@ try:
  for benchmark in (['locomo','memops'] if args.benchmark=='both' else [args.benchmark]):
   run_id=name+'-'+benchmark;run_env=env.copy();run_env['EVAL_PYTHON']=str(root/'eval/.venv/bin/python');run_env['MEMORY_LLM_BASE_URL']=answer_base
   run_env.pop('EVALUATOR_API_BASE',None);run_env.pop('EVALUATOR_API_KEY',None)
-  data_file=args.locomo_data if benchmark=='locomo' and args.locomo_data else f'.data/{benchmark}-{args.split}.json'
+  override=args.locomo_data if benchmark=='locomo' else args.memops_data
+  data_file=override or f'.data/{benchmark}-{args.split}.json'
   command=['node','dist/cli.js','run','--data',data_file,'--run-id',run_id,'--memory-namespace',namespace,'--base-url',f'http://127.0.0.1:{args.port}','--concurrency',str(args.concurrency),'--judge-kind','refined-python' if benchmark=='locomo' else 'rubric']
+  if 'answer_model' in evaluation:command+=['--answer-model',evaluation['answer_model']]
+  if 'judge_model' in evaluation and not (benchmark=='locomo' and args.upstream_judge):command+=['--judge-model',evaluation['judge_model']]
   if benchmark=='locomo' and args.upstream_judge:
    run_env.update(EVALUATOR_API_BASE='http://127.0.0.1:8766/v1',EVALUATOR_API_KEY='local');command+=['--judge-model','qwen3:14b','--mode','upstream-reproduction']
   out=open(campaign/(args.profile+'-'+benchmark+'.log'),'w');job=subprocess.Popen(command,cwd=root/'eval',env=run_env,stdout=out,stderr=subprocess.STDOUT);jobs.append((benchmark,job,out));print(json.dumps({'event':'started','run_id':run_id,'pid':job.pid,'service_pid':service.pid}),flush=True)

@@ -1,0 +1,497 @@
+{
+  "protocol": "source-links-original-prefix-review-v1",
+  "source_commit": "441cc48",
+  "http_prefixes_accepted": 3,
+  "prefixes_planned": 4,
+  "runs": [
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-40-36-878Z-IdlENR",
+      "results_sha256": "f3925658bf25da60f1514687ae96c9612b62249c97f1b054a684dd8b10eb615b",
+      "case": {
+        "user_id": "round2-prefix:E03_reflect",
+        "original_failure": {
+          "request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+          "elapsed_ms": 46818.26208399981
+        },
+        "planned_adds": 8,
+        "adds": [
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-1:0",
+            "status": 200,
+            "elapsed_ms": 11182.522916
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-2:0",
+            "status": 200,
+            "elapsed_ms": 25141.004167
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-3:0",
+            "status": 200,
+            "elapsed_ms": 20352.6625
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-4:0",
+            "status": 200,
+            "elapsed_ms": 13366.049333000003
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-5:0",
+            "status": 200,
+            "elapsed_ms": 8094.404542000004
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-6:0",
+            "status": 200,
+            "elapsed_ms": 28388.850082999998
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+            "status": 200,
+            "elapsed_ms": 68680.629583
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+            "status": 503,
+            "elapsed_ms": 90035.942959,
+            "error": {
+              "error": {
+                "code": "VERIFICATION_UNAVAILABLE",
+                "message": "Could not complete evidence verification within the request budget"
+              }
+            }
+          }
+        ],
+        "status": "failed",
+        "final_revision": 7,
+        "fact_states": {
+          "active": 26,
+          "conflicted": 2
+        }
+      },
+      "finished_at": "2026-09-06T04:45:02.298Z",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "model_budget_ms": 90000,
+      "verification_format": "compact",
+      "degraded_events": [],
+      "total_add_elapsed_ms": 265242.066083,
+      "generation_counts": {
+        "extraction/ok": 8,
+        "verification/ok": 11,
+        "repair/ok": 5,
+        "verification/error": 1
+      },
+      "last_six_generations": [
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 15009.518375000014,
+          "verification_scope": {
+            "facts": 9,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 5,
+            "reused": 7
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 28388.388166999997
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 4575.79458300001
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 28536.355375000014,
+          "verification_scope": {
+            "facts": 13,
+            "operations": 1,
+            "replacements": 0,
+            "messages": 8,
+            "reused": 0
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 26607.188792
+        },
+        {
+          "purpose": "verification",
+          "outcome": "error",
+          "elapsed_ms": 1859.7877500000177,
+          "verification_scope": {
+            "facts": 11,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 4,
+            "reused": 17
+          }
+        }
+      ]
+    },
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-40-38-013Z-XKPgiG",
+      "results_sha256": "dfe24d7b87430e56ec25fb46c49253b83bc4e0faf9004b677b28f5626d3e6984",
+      "case": {
+        "user_id": "round2-prefix:C30_update",
+        "original_failure": {
+          "request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+          "elapsed_ms": 37729.2247080002
+        },
+        "planned_adds": 14,
+        "adds": [
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-1:0",
+            "status": 200,
+            "elapsed_ms": 42451.145333
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-2:0",
+            "status": 200,
+            "elapsed_ms": 48752.90216600001
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-3:0",
+            "status": 200,
+            "elapsed_ms": 21656.144625
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-4:0",
+            "status": 200,
+            "elapsed_ms": 21314.133209000007
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-5:0",
+            "status": 200,
+            "elapsed_ms": 5021.266082999995
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-6:0",
+            "status": 200,
+            "elapsed_ms": 16282.885624999995
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-7:0",
+            "status": 200,
+            "elapsed_ms": 10042.78479200002
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-8:0",
+            "status": 200,
+            "elapsed_ms": 9624.782834000012
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-9:0",
+            "status": 200,
+            "elapsed_ms": 7546.705290999991
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-10:0",
+            "status": 200,
+            "elapsed_ms": 35869.861957999994
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-11:0",
+            "status": 200,
+            "elapsed_ms": 5358.260084000009
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-12:0",
+            "status": 200,
+            "elapsed_ms": 29568.642124999984
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-13:0",
+            "status": 200,
+            "elapsed_ms": 7681.998584000015
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+            "status": 200,
+            "elapsed_ms": 75858.391875
+          }
+        ],
+        "status": "prefix_accepted",
+        "final_revision": 14,
+        "fact_states": {
+          "active": 57
+        }
+      },
+      "finished_at": "2026-09-06T04:46:15.185Z",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "model_budget_ms": 90000,
+      "verification_format": "compact",
+      "degraded_events": [],
+      "total_add_elapsed_ms": 337029.904584,
+      "generation_counts": {
+        "extraction/ok": 14,
+        "verification/ok": 21,
+        "repair/ok": 8
+      },
+      "last_six_generations": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 3049.6485839999805
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 4400.649416999979,
+          "verification_scope": {
+            "facts": 0,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 5,
+            "reused": 0
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 22746.622042000003
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 24020.515625,
+          "verification_scope": {
+            "facts": 16,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 10,
+            "reused": 0
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 15309.727584000037
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 13105.83370899997,
+          "verification_scope": {
+            "facts": 4,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 4,
+            "reused": 22
+          }
+        }
+      ]
+    },
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-40-39-198Z-g9Z1aS",
+      "results_sha256": "7c52f1288fdee3320e3f009c151d12fbee17641a49f5b3c08b0c4de185f31fd2",
+      "case": {
+        "user_id": "round2-prefix:D17_remember",
+        "original_failure": {
+          "request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+          "elapsed_ms": 15851.164124999195
+        },
+        "planned_adds": 1,
+        "adds": [
+          {
+            "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+            "status": 200,
+            "elapsed_ms": 61750.368541
+          }
+        ],
+        "status": "prefix_accepted",
+        "final_revision": 1,
+        "fact_states": {
+          "active": 14,
+          "erased": 3
+        }
+      },
+      "finished_at": "2026-09-06T04:41:41.053Z",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "model_budget_ms": 90000,
+      "verification_format": "compact",
+      "degraded_events": [],
+      "total_add_elapsed_ms": 61750.368541,
+      "generation_counts": {
+        "extraction/ok": 1,
+        "repair/ok": 2,
+        "verification/ok": 1
+      },
+      "last_six_generations": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 20161.92875
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 13664.911333999997
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 9431.175624999996
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 17795.966457999995,
+          "verification_scope": {
+            "facts": 17,
+            "operations": 1,
+            "replacements": 0,
+            "messages": 10,
+            "reused": 0
+          }
+        }
+      ]
+    },
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-42-08-565Z-k61M9D",
+      "results_sha256": "14f545ee2fccbed9a08d74a737a923b2aadd622995d24184ca30534288414847",
+      "case": {
+        "user_id": "round2-prefix:D24_reflect",
+        "original_failure": {
+          "request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+          "elapsed_ms": 9280.303208000027
+        },
+        "planned_adds": 4,
+        "adds": [
+          {
+            "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-1:0",
+            "status": 200,
+            "elapsed_ms": 6087.321541
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-2:0",
+            "status": 200,
+            "elapsed_ms": 23260.915708
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-3:0",
+            "status": 200,
+            "elapsed_ms": 15897.988584000002
+          },
+          {
+            "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+            "status": 200,
+            "elapsed_ms": 42977.423500000004
+          }
+        ],
+        "status": "prefix_accepted",
+        "final_revision": 4,
+        "fact_states": {
+          "active": 7
+        }
+      },
+      "finished_at": "2026-09-06T04:43:36.925Z",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "model_budget_ms": 90000,
+      "verification_format": "compact",
+      "degraded_events": [],
+      "total_add_elapsed_ms": 88223.64933300001,
+      "generation_counts": {
+        "extraction/ok": 4,
+        "verification/ok": 6,
+        "repair/ok": 2
+      },
+      "last_six_generations": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 5385.010250000003
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 10357.776334000002,
+          "verification_scope": {
+            "facts": 1,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 4,
+            "reused": 0
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 8489.285417
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 14742.815500000004,
+          "verification_scope": {
+            "facts": 2,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 7,
+            "reused": 0
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 11632.250083000006
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 7757.328042000008,
+          "verification_scope": {
+            "facts": 2,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 2,
+            "reused": 7
+          }
+        }
+      ]
+    }
+  ],
+  "variants": {
+    "results_sha256": "2f82a1c4131ca22148e9c5374715161c3b3def5bdcfea79513bfe656f993ae81",
+    "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-lifecycle-variants/2026-09-06T04-44-13-452Z-9ldcqX",
+    "passed": 5,
+    "planned": 5,
+    "experiment_spec_sha256": "14ab43a70d038c0a9bbea417e3446b000c1ca55c8e3bdca6e7cafbf008c6d3d5"
+  },
+  "semantic_review": "reports/round2-source-links-state-answer-review.json",
+  "scope": "All four original failure prefixes attempted, no selected replacement runs. Three HTTP-complete prefixes do not equal three semantic passes. E03 still times out; D24 plan modality and C30 correction/history answer remain open. Concurrent prefix/variant/retrieval and exposed-dev workloads mean latency is observational, not an isolated causal benchmark. No new accuracy claim."
+}

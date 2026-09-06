@@ -1,0 +1,32 @@
+{
+  "protocol": "fixed-budget-config-check-v1",
+  "spec_sha256": "14ab43a70d038c0a9bbea417e3446b000c1ca55c8e3bdca6e7cafbf008c6d3d5",
+  "comparisons": [
+    {
+      "from": "facts",
+      "to": "sources",
+      "changed_fields": [
+        "MEMORY_RAW_FALLBACK"
+      ]
+    },
+    {
+      "from": "sources",
+      "to": "rerank",
+      "changed_fields": [
+        "MEMORY_RERANK"
+      ]
+    },
+    {
+      "from": "rerank",
+      "to": "coverage",
+      "changed_fields": [
+        "MEMORY_COVERAGE_PACKING"
+      ]
+    }
+  ],
+  "evaluation": {
+    "answer_model": "gpt-5.4-mini",
+    "judge_model": "gpt-5.4-mini"
+  },
+  "scope": "Configuration identity checks only; no benchmark executed by this validation."
+}

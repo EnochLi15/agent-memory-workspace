@@ -1,0 +1,9 @@
+test_changed_or_unrecorded_source_cannot_claim_a_paired_run (test_experiment_identity.IngestionIdentityTests.test_changed_or_unrecorded_source_cannot_claim_a_paired_run) ... ok
+test_dataset_and_unfinished_run_are_rejected (test_experiment_identity.IngestionIdentityTests.test_dataset_and_unfinished_run_are_rejected) ... ok
+test_model_representation_lifecycle_and_evaluation_changes_are_rejected (test_experiment_identity.IngestionIdentityTests.test_model_representation_lifecycle_and_evaluation_changes_are_rejected) ... ok
+test_pure_retrieval_changes_keep_the_same_ingestion (test_experiment_identity.IngestionIdentityTests.test_pure_retrieval_changes_keep_the_same_ingestion) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK

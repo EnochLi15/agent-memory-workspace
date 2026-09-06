@@ -1,0 +1,485 @@
+{
+  "protocol": "counterbalanced-verification-encoding-controls-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-compact-controls-wwlQwN",
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "218923cf5e65096a5d901ac7061053e061ef137e04ea170a3026b242628f1081",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "0d458a30e779ac146e92471be2f66cfeb955e600b790c7622e480380ce058eaa",
+    "service/src/models.ts": "53f14fbc4e82eb1e4c4cd52633cbe023db6a6ef0fee6303856664b979172965f",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+    "service/src/repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "1e226d8e566a84c7cc1c955b439821f4e9f35e0ae20231dbb19d81bce7958b18",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification-compact.ts": "7658b27c8e212a67c7ee7a2e38ce3bc9c0fe8714829f09f09e1c6e6995616930",
+    "service/src/verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "service/src/verification.ts": "9276bcc953bfcfeada2b629ff73f67d3d25bafdcdbd1cbf8006ac231e3731e2f"
+  },
+  "probe_sha256": "b754c64236333f1b9a1b61e86c952b8a2e7cd4246a83a715e5352ae7dbc35872",
+  "cases_sha256": "e829852dd36eda191538e28ecdaa1ce9d1617f86dff9235790bdefdf310e53fe",
+  "simple_controls": 13,
+  "fixed_long_repeats": 3,
+  "planned": 32,
+  "started_at": "2026-09-06T04:15:05.812Z",
+  "results": [
+    {
+      "id": "valid_plan",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3238.284833,
+      "generation_calls": 1
+    },
+    {
+      "id": "valid_plan",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3950.237625,
+      "generation_calls": 1
+    },
+    {
+      "id": "plan_as_current_state",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The user stated a tentative future possibility of moving to Paris next year, not that they currently live in Paris.",
+        "message 0: The user's tentative future plan to possibly move to Paris next year is memorable but is not represented with the correct uncertainty and future timing.; missing statement: I might move to Paris next year."
+      ],
+      "elapsed_ms": 4870.660583000001,
+      "generation_calls": 1
+    },
+    {
+      "id": "plan_as_current_state",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source states a tentative future move, not that the user currently lives in Paris.",
+        "message 0: The user's tentative future plan to possibly move to Paris next year is memorable but is not accurately represented by the proposal.; missing statement: I might move to Paris next year."
+      ],
+      "elapsed_ms": 4850.1027079999985,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_actor",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source says the user's friend Kevin lives in Paris, not that the user lives in Paris.",
+        "message 0: The memorable fact is that the user's friend Kevin lives in Paris, but the proposal incorrectly records the user as living in Paris.; missing statement: My friend Kevin lives in Paris."
+      ],
+      "elapsed_ms": 5804.381458,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_actor",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source says the user's friend Kevin lives in Paris, not that the user lives in Paris.",
+        "message 0: The memorable fact is that the user's friend Kevin lives in Paris; the proposed fact incorrectly assigns Paris as the user's city.; missing statement: My friend Kevin lives in Paris."
+      ],
+      "elapsed_ms": 4942.544249999999,
+      "generation_calls": 1
+    },
+    {
+      "id": "negated_preference",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source states the user does not like skiing, so the proposed positive claim that the user likes skiing is contradicted.",
+        "message 0: The user's dislike of skiing is a memorable preference, but the proposal records the opposite.; missing statement: I do not like skiing."
+      ],
+      "elapsed_ms": 5435.292541999999,
+      "generation_calls": 1
+    },
+    {
+      "id": "negated_preference",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source states the user does not like skiing, not that they like skiing.",
+        "message 0: The user's preference against skiing is memorable, but the proposal records the opposite.; missing statement: I do not like skiing."
+      ],
+      "elapsed_ms": 4784.4048330000005,
+      "generation_calls": 1
+    },
+    {
+      "id": "question_as_personal_fact",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The user asks whether Paris is good to live in; they do not state that they currently live in Paris."
+      ],
+      "elapsed_ms": 5215.0066249999945,
+      "generation_calls": 1
+    },
+    {
+      "id": "question_as_personal_fact",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The user only asked whether Paris is a good city to live in; this does not state that the user lives in Paris."
+      ],
+      "elapsed_ms": 3627.6960830000025,
+      "generation_calls": 1
+    },
+    {
+      "id": "valid_current_state",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 5086.561042000001,
+      "generation_calls": 1
+    },
+    {
+      "id": "valid_current_state",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3396.4151249999995,
+      "generation_calls": 1
+    },
+    {
+      "id": "missing_plan",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "message 0: Specific personal future plan is absent from the proposal.; missing statement: I will visit my sister next Saturday."
+      ],
+      "elapsed_ms": 3280.290332999997,
+      "generation_calls": 1
+    },
+    {
+      "id": "missing_plan",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "message 0: User states a specific personal future plan to visit their sister next Saturday, but no proposed fact or operation represents it.; missing statement: I will visit my sister next Saturday."
+      ],
+      "elapsed_ms": 2895.928083999999,
+      "generation_calls": 1
+    },
+    {
+      "id": "generic_question",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3266.1142499999987,
+      "generation_calls": 1
+    },
+    {
+      "id": "generic_question",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 2320.565582999996,
+      "generation_calls": 1
+    },
+    {
+      "id": "authorized_forget",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3374.79187500001,
+      "generation_calls": 1
+    },
+    {
+      "id": "authorized_forget",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 3473.5321250000125,
+      "generation_calls": 1
+    },
+    {
+      "id": "negated_forget",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "operation 0: The user explicitly says not to forget the default browser, which does not authorize a forget/removal operation.",
+        "message 0: This is an instruction to retain the user's default browser memory; the proposed forget operation contradicts it and does not represent the instruction.; missing statement: Do not forget my default browser."
+      ],
+      "elapsed_ms": 8467.121708000006,
+      "generation_calls": 1
+    },
+    {
+      "id": "negated_forget",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "operation 0: The user explicitly said not to forget the default browser, which does not authorize a forget/removal operation.",
+        "message 0: The message is a real memory instruction to retain the user's default browser, but the proposal only contains an unauthorized forget operation.; missing statement: Do not forget my default browser."
+      ],
+      "elapsed_ms": 7811.973125000004,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_forget_target",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "operation 0: The user authorized forgetting their default browser, but the targeted stored fact is current_city=Boston, not a default browser.",
+        "message 0: The proposal targets an unrelated current_city record rather than any default browser memory.; missing statement: Forget my default browser."
+      ],
+      "elapsed_ms": 6131.9080419999955,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_forget_target",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "operation 0: User authorized forgetting the default browser, but the target fact is current_city Boston, not a default browser record.",
+        "message 0: The forget instruction is not correctly represented because the proposed operation targets an unrelated current_city fact rather than a default_browser memory.; missing statement: Forget my default browser."
+      ],
+      "elapsed_ms": 7029.655541999993,
+      "generation_calls": 1
+    },
+    {
+      "id": "valid_replacement",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 4835.797874999989,
+      "generation_calls": 1
+    },
+    {
+      "id": "valid_replacement",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": true,
+      "accepted": true,
+      "pass": true,
+      "issues": [],
+      "elapsed_ms": 5735.547417000009,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_replacement",
+      "format": "verbose",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "replacement fact 0: The proposed fact concerns moving to Paris, but the target fact is an unrelated default browser record; the user did not authorize replacing that target.",
+        "message 0: The proposal records moving to Paris but does not preserve the stated origin, Boston.; missing statement: I moved from Boston to Paris."
+      ],
+      "elapsed_ms": 8566.294249999992,
+      "generation_calls": 1
+    },
+    {
+      "id": "wrong_replacement",
+      "format": "compact",
+      "kind": "control",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "replacement fact 0: The new fact about moving to Paris does not replace or correct the target fact about Firefox as the user's default browser."
+      ],
+      "elapsed_ms": 5090.494166999997,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_0",
+      "format": "compact",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: Declared source supports the initial $200 statement but not the claim that it was later corrected to $250; the fact also preserves the outdated $200 as its value.",
+        "message 10: proposed coverage lacks valid source-linked proposal references; add or correct evidence for this participant message, or classify it as not_memorable if it truly has no personal information"
+      ],
+      "elapsed_ms": 20246.81479100001,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_0",
+      "format": "verbose",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source supports the initially stated $200 amount, but not the content's claim that it was later corrected to $250.",
+        "fact 4: The cited source quote supports the early March start, but not the claim that it was alongside a weekly transfer from Chase to Fidelity."
+      ],
+      "elapsed_ms": 32772.526459000015,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "verbose",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source supports the initial $200 amount, but not the content's claim that it was later corrected to $250.",
+        "fact 4: The cited quote supports the early March start, but not the full claim that it started alongside a weekly transfer from Chase to Fidelity."
+      ],
+      "elapsed_ms": 43815.129292,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "compact",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The cited user message supports the initially stated $200 amount, but does not support the claim that it was later corrected to $250."
+      ],
+      "elapsed_ms": 21072.64295899999,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "compact",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The declared source supports the initial $200 amount, but not the claim that it was later corrected to $250; the fact's value also preserves the superseded $200 as its value."
+      ],
+      "elapsed_ms": 20068.311084000015,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "verbose",
+      "kind": "fixed_long_proposal",
+      "status": "judged",
+      "expected_accept": false,
+      "accepted": false,
+      "pass": true,
+      "issues": [
+        "fact 0: The source supports the initially stated $200 amount, but not the fact content's added claim that it was later corrected to $250.",
+        "fact 4: The declared source quote supports the early March start, but not the added claim that it started alongside a weekly transfer."
+      ],
+      "elapsed_ms": 47730.280958999996,
+      "generation_calls": 1
+    }
+  ],
+  "scope": "13 fixed assistant-authored controls and three checker-only repetitions of one exposed archived C30 proposal. Same model, full evidence and 90-second checker deadline; format order alternates by case. No ingestion, new benchmark score, or three full-pipeline repeats.",
+  "finished_at": "2026-09-06T04:20:19.047Z",
+  "passed": 32,
+  "model-usage.jsonl_sha256": "e341270a59e24b6b2c3fb236497903789129a9916b77b52d0861a2be16a39b10",
+  "model-proposals.jsonl_sha256": "8cfc2b32a93329814fd6767d3ce0721016f786ec83e17a8f4120d383e8ba1a99",
+  "results.jsonl_sha256": "81be8eed436d005a77ee59934422d591d46f64deee78374d373d100e7da95bfc"
+}

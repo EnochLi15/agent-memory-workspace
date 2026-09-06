@@ -1,0 +1,62 @@
+{
+  "protocol": "recorded-coverage-reference-red-green-v1",
+  "runs": [
+    {
+      "revision": "077aaf8",
+      "exit_code": 1,
+      "result": {
+        "protocol": "recorded-coverage-reference-regression-v1",
+        "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-077aaf8",
+        "parent_report_sha256": "4e1838bf1de4570ac0433b01529f7740fd5415f734a2af346bdb7078245fdad0",
+        "record_sha256": "a789a61acb0d5b98838f5a2c0375a2b0bb8a3e4f86f77bcb759c7b3841e3adbf",
+        "generation_calls": 1,
+        "expected_missing_messages": [
+          2,
+          4,
+          6
+        ],
+        "actual_missing_messages": [
+          2,
+          4,
+          6,
+          10
+        ],
+        "findings": [
+          "message 2: The user's specific one-day Mayo exploration constraint is a personal travel plan detail not represented by the proposed facts.; missing statement: I only have a day to explore Mayo",
+          "message 4: The user's trip preferences\u2014landscapes/photos over history or culture\u2014are not represented by any proposal item sourced to this message.; missing statement: I'm not really interested in history or culture. I just want to see some beautiful landscapes and take some great photos.",
+          "message 6: The user's dislike of biking for this outing and tentative choice of the Wild Atlantic Way are not represented by any proposal item sourced to this message.; missing statement: I'm not really interested in biking, so I think I'll go with the Wild Atlantic Way.",
+          "message 10: proposed coverage lacks valid source-linked proposal references; add or correct evidence for this participant message, or classify it as not_memorable if it truly has no personal information"
+        ],
+        "unchanged_rejection_preserved": true
+      }
+    },
+    {
+      "revision": "441cc48",
+      "exit_code": 0,
+      "result": {
+        "protocol": "recorded-coverage-reference-regression-v1",
+        "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-441cc48",
+        "parent_report_sha256": "4e1838bf1de4570ac0433b01529f7740fd5415f734a2af346bdb7078245fdad0",
+        "record_sha256": "a789a61acb0d5b98838f5a2c0375a2b0bb8a3e4f86f77bcb759c7b3841e3adbf",
+        "generation_calls": 1,
+        "expected_missing_messages": [
+          2,
+          4,
+          6
+        ],
+        "actual_missing_messages": [
+          2,
+          4,
+          6
+        ],
+        "findings": [
+          "message 2: The user's specific one-day Mayo exploration constraint is a personal travel plan detail not represented by the proposed facts.; missing statement: I only have a day to explore Mayo",
+          "message 4: The user's trip preferences\u2014landscapes/photos over history or culture\u2014are not represented by any proposal item sourced to this message.; missing statement: I'm not really interested in history or culture. I just want to see some beautiful landscapes and take some great photos.",
+          "message 6: The user's dislike of biking for this outing and tentative choice of the Wild Atlantic Way are not represented by any proposal item sourced to this message.; missing statement: I'm not really interested in biking, so I think I'll go with the Wild Atlantic Way."
+        ],
+        "unchanged_rejection_preserved": true
+      }
+    }
+  ],
+  "scope": "Fixed real C30 checker output at Models.verify. No API calls and no latency or accuracy claim."
+}

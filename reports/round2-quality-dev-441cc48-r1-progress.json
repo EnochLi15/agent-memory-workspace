@@ -1,0 +1,29 @@
+{
+  "protocol": "development-run-progress-snapshot-v1",
+  "observed_at": "2026-09-06T04:51:54.303225+00:00",
+  "run_dir": "eval/artifacts/round2-quality-dev-441cc48-r1-facts-memops",
+  "run_status": "running",
+  "planned_questions": 30,
+  "source_commit": "441cc485fc727b0622142950afd876cf8dbaeca3",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+  "service_config_sha256": "2b56583e24b3d5256e5f5469ad6ed277d1cd316bd0654a8edb4360f3bb677cc3",
+  "ingest_status_counts": {
+    "ok": 32,
+    "failed": 1
+  },
+  "judgment_status_counts": {
+    "service_error": 6
+  },
+  "failed_adds": [
+    {
+      "request_id": "round2-quality-dev-441cc48-r1-facts:memops:E10_reflect:segment-12:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+      "elapsed_ms": 57719.220332999976
+    }
+  ],
+  "reusable_ingestion": false,
+  "scope": "Nonterminal progress snapshot. Remaining samples continue. No accuracy or paired retrieval gain is computed; failed questions stay in the original30 denominator."
+}

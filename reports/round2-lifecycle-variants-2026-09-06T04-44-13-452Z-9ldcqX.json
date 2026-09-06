@@ -1,0 +1,166 @@
+{
+  "protocol": "real-model-lifecycle-variants-v1",
+  "model": "gpt-5.4-mini",
+  "stage_models": {
+    "extraction": "gpt-5.4-mini",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "verification_format": "compact",
+  "max_repair_rounds": 2,
+  "incremental_verification": true,
+  "model_budget_ms": 90000,
+  "experiment_spec_sha256": "14ab43a70d038c0a9bbea417e3446b000c1ca55c8e3bdca6e7cafbf008c6d3d5",
+  "started_at": "2026-09-06T04:44:13.545Z",
+  "reasoning_effort": "low",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "218923cf5e65096a5d901ac7061053e061ef137e04ea170a3026b242628f1081",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "0d458a30e779ac146e92471be2f66cfeb955e600b790c7622e480380ce058eaa",
+    "service/src/models.ts": "53f14fbc4e82eb1e4c4cd52633cbe023db6a6ef0fee6303856664b979172965f",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+    "service/src/repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "1e226d8e566a84c7cc1c955b439821f4e9f35e0ae20231dbb19d81bce7958b18",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification-compact.ts": "00840841fd21424b5b4183f46926335a9fabcdd0ff3a260ff3d5cf5ad98453e3",
+    "service/src/verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "service/src/verification.ts": "390ea80e600c32329f2903192c803d51891a80a8e24bfa4f785e8b060459f294"
+  },
+  "probe_sha256": "b7aa7a330e5b7750021a17a4786a4c241bdd4b8f00a4b9d0ff1d384f2f732924",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-lifecycle-variants/2026-09-06T04-44-13-452Z-9ldcqX",
+  "cases": [
+    {
+      "id": "direct_entity",
+      "expected_erase": true,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 9221.992959
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 8064.411624999999
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "negation",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 11750.449249999998
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 20234.685208
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "quotation",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 9245.222625000002
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 28884.132875000003
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "condition",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 8979.179415999999
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 36968.102791
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "reported_request",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 11216.154540999996
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 8533.996875000012
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    }
+  ],
+  "scope": "Five synthetic controls with fixed expected retention, not benchmark questions or overall accuracy.",
+  "finished_at": "2026-09-06T04:46:46.696Z",
+  "passed": 5,
+  "planned": 5
+}

@@ -1,0 +1,43 @@
+{
+  "protocol": "round2-fixed-budget-retrieval-ladder-v1",
+  "policy": "All profiles share ingestion, lifecycle, temporal normalization, 32-item/6000-token evidence limits and fixed Answer/Judge. Facts disables dedicated raw-source candidates; sources enables them; rerank adds candidate reranking; coverage adds diversity packing. Relation expansion and event projection are held off for this E2/E3 ladder. Reuse ingestion only when every original add succeeded; independent fresh runs and their errors remain separate. Existing development data is exposed regression data, not a fresh holdout.",
+  "evaluation": {"answer_model": "gpt-5.4-mini", "judge_model": "gpt-5.4-mini"},
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EXTRACTION_MODEL": "gpt-5.4-mini",
+    "MEMORY_VERIFICATION_MODEL": "gpt-5.5",
+    "MEMORY_REPAIR_MODEL": "gpt-5.5",
+    "MEMORY_LLM_REASONING_EFFORT": "low",
+    "MEMORY_VERIFICATION_FORMAT": "compact",
+    "MEMORY_INCREMENTAL_VERIFICATION": "true",
+    "MEMORY_MAX_REPAIR_ROUNDS": "2",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_ADD_TIMEOUT_MS": "115000",
+    "MEMORY_SEARCH_TIMEOUT_MS": "55000",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RETRIEVAL": "hybrid",
+    "MEMORY_SOURCE_INDEX": "true",
+    "MEMORY_CANDIDATE_LIMIT": "200",
+    "MEMORY_RERANK_CANDIDATES": "80",
+    "MEMORY_RAW_FALLBACK": "false",
+    "MEMORY_RERANK": "false",
+    "MEMORY_COVERAGE_PACKING": "false",
+    "MEMORY_EVENT_VIEW": "false",
+    "MEMORY_EXPERIMENT_LIFECYCLE": "true",
+    "MEMORY_EXPERIMENT_TEMPORAL": "true",
+    "MEMORY_EXPERIMENT_MULTI_HOP": "false",
+    "MEMORY_EXPERIMENT_REFLECTION": "true",
+    "MEMORY_EXPERIMENT_RAW_ONLY": "false"
+  },
+  "profiles": {
+    "facts": {"environment": {}},
+    "sources": {"environment": {"MEMORY_RAW_FALLBACK": "true"}},
+    "rerank": {"environment": {"MEMORY_RAW_FALLBACK": "true", "MEMORY_RERANK": "true"}},
+    "coverage": {"environment": {"MEMORY_RAW_FALLBACK": "true", "MEMORY_RERANK": "true", "MEMORY_COVERAGE_PACKING": "true"}}
+  }
+}
