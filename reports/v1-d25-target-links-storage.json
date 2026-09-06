@@ -1,0 +1,90 @@
+{
+  "protocol": "v1-isolated-http-storage-readback-v1",
+  "checked_at": "2026-09-06T21:12:55.056127+00:00",
+  "service_commit": "08f3663cccdd9491b178dd5b1dcabf98cf1cd8b2",
+  "passed": false,
+  "checks": {
+    "Priya_preference_facts_not_active": true,
+    "selected_food_details_absent_from_source_messages": true,
+    "erased_fact_payload_and_vectors_empty": true,
+    "erasure_metadata_does_not_retain_food_details": false,
+    "user_conversation_retained": true,
+    "Marcus_food_preference_retained": true,
+    "Marcus_frequency_retained": true,
+    "user_mild_curry_and_ginger_retained": true,
+    "user_food_budget_retained": true,
+    "user_mild_butter_chicken_retained": true
+  },
+  "metadata_leaks": [
+    {
+      "table": "facts",
+      "id": "6e4c89ad15d36db57b63ed4937873a8827e18272ff15e5bc2150b6b1466d1e5c",
+      "field": "scope",
+      "value": "lamb vindaloo at extra-hot level",
+      "state": "erased"
+    },
+    {
+      "table": "facts",
+      "id": "05aeb040af0a55854ee235c6c6a0b647b4fa7c133c5656a956377c3b19bf9752",
+      "field": "scope",
+      "value": "compared with Priya's extra-hot lamb vindaloo",
+      "state": "erased"
+    },
+    {
+      "table": "facts",
+      "id": "07090056f37c22b474af5df354a8b5d7504f72436aad651c64ed7adb816925b1",
+      "field": "scope",
+      "value": "green curry at Thai-hot level at her go-to Thai place",
+      "state": "erased"
+    },
+    {
+      "table": "operations",
+      "id": null,
+      "field": "scope",
+      "value": "lamb vindaloo at extra-hot level",
+      "state": null
+    },
+    {
+      "table": "operations",
+      "id": null,
+      "field": "scope",
+      "value": "green curry at Thai-hot level at her go-to Thai place",
+      "state": null
+    },
+    {
+      "table": "operations",
+      "id": null,
+      "field": "scope",
+      "value": "compared with Priya's extra-hot lamb vindaloo",
+      "state": null
+    },
+    {
+      "table": "markers",
+      "id": null,
+      "field": "scope",
+      "value": "lamb vindaloo at extra-hot level",
+      "state": null
+    },
+    {
+      "table": "markers",
+      "id": null,
+      "field": "scope",
+      "value": "green curry at Thai-hot level at her go-to Thai place",
+      "state": null
+    },
+    {
+      "table": "markers",
+      "id": null,
+      "field": "scope",
+      "value": "compared with Priya's extra-hot lamb vindaloo",
+      "state": null
+    }
+  ],
+  "erased_facts": 14,
+  "scope": "Read-only logical tables on one isolated post-HTTP diagnostic; no complete background/score claim. Scope coordinates remain plaintext after erasure and retain forbidden food details. Erasure metadata requires correction while preserving boundary matching and neighbor protection.",
+  "evidence_sha256": {
+    "artifacts/round2-fresh-failed-add-ymQroS/report.json": "4e0253b5a1c256c8647604e798ee2f1d787ce2ecd99a59dbd0b6310570caaae8",
+    "artifacts/round2-fresh-failed-add-ymQroS/data/f516089439cd1cc358d1d26f17968ca6bb822492ddd721ef87602c8af328e14b/memory.sqlite": "6b5ecca4481908644ab5816a01c1683aaa482a601b6f9b18f32f3e0bb409f8a0",
+    "artifacts/v1-long-33a9e05-01/storage-expectations.json": "429f2c204c95e822657cf235981ac617df437a6942f4e55ec70d3ea0d2df7f9b"
+  }
+}
