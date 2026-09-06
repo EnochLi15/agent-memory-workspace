@@ -1,0 +1,29 @@
+{
+  "protocol": "query-suite-execution-preflight-evidence-v1",
+  "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-query-suite-execute-refusal-final/suite.json",
+  "artifact_sha256": "8e24904a45da815e30063bca141c643a134a896d66828c7d0d719144d9aedbe3",
+  "controller_sha256": "35ed8ff33897d99e940a09a0f5f94065a9b25c4e3e16159bd0c0695b7c6b403e",
+  "suite_module_sha256": "d4cb0e96562d643704030a1ce39adb6c0aa058096a0a3aa4471f498def178253",
+  "comparison_module_sha256": "47897695c9abe28eba220c2aac12be9c2f1905b6e8afead6c118387ec5628e78",
+  "plan_sha256": "018c673b51e2389674ee3dca5b0481d627919c2c851ca3c94bed9f6b84b5f7ee",
+  "spec_sha256": "75f0f4480cc44d15668475721c68369435f9b9876ea1063cf7a83d4472aaa44d",
+  "planned_profiles": 15,
+  "remaining_query_jobs": 14,
+  "ready": false,
+  "launched": [],
+  "blockers": [
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
+      "reason": "[Errno 2] No such file or directory: '/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-resilient-bfec674-dev-r1-sources-locomo/http-trace-audit.json'"
+    },
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-memops",
+      "reason": "Origin is running"
+    }
+  ],
+  "tests": {
+    "query_suite": 11,
+    "ingestion_identity": 4
+  },
+  "scope": "Real --execute invocation stopped at preflight with zero launched children. Sequential execution/completion/recheck/failure behavior tested with controlled subprocess fixtures; actual full query matrix has not run."
+}
