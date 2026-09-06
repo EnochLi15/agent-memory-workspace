@@ -1,0 +1,99 @@
+{
+  "protocol": "transition-v3-and-localized-witness-review-v1",
+  "service_commits": {
+    "transition_and_trace": "9682bbf",
+    "localized_witness_repair": "7910120",
+    "source_batches": "2542f2a"
+  },
+  "evidence_sha256": {
+    "reports/round2-quality-dev-8ef8829-r1-final.json": "4731e9dbd966eaf8016a0822d92cebe72595d2e062f2313b076d9fb7da2d6bba",
+    "reports/round2-transition-controls-round2-transition-controls-rKQj0Q.json": "75f2bcbe01dc2f1279276caa7ceff0bc348597e7ae22a5b5c6da96b6c51b3791",
+    "reports/round2-transition-http-round2-transition-http-gIjv0l.json": "78d60b9e011a1ffdfae9585f0404d6282075fa039cc9a35fd20eb40e4a04be92",
+    "reports/round2-state-annotation-round2-state-annotation-lvHais.json": "334037ceed120d1ff4ab7f0425ceecd596a70e8a2b3a3bff3a39a932354f6711",
+    "reports/round2-live-checkpoint-round2-live-checkpoint-fawfE4.json": "684df01ec00d09f86f7e52c2c08619b4d7de1293a9ef2558a3996058204623eb",
+    "reports/round2-operation-witness-service-tests.txt": "ee00e94486fde73b1aed958184cdefa86f6c59f634c28f25abb4d42ade0a45ef"
+  },
+  "development": {
+    "service": "8ef8829",
+    "planned": 30,
+    "judged": 0,
+    "correct": 0,
+    "add_ok": 62,
+    "add_terminal_failed": 5,
+    "failure_causes": "Four generic v1 transition errors with no original model bodies; one B05 repair-budget failure. All 30 service errors remain in denominator."
+  },
+  "deterministic_tests": {
+    "pass": 179,
+    "fail": 0,
+    "report": "reports/round2-source-batches-service-tests.txt",
+    "red_reproductions": [
+      "reports/round2-transition-slots-red.txt",
+      "reports/round2-operation-witness-red.txt"
+    ]
+  },
+  "transition_controls": {
+    "cases": 6,
+    "matches": 6,
+    "assistant_authored": true,
+    "independent_labels": false
+  },
+  "fixed_proposal_http": {
+    "adds_ok": 3,
+    "compatible_detail_answer": "complete",
+    "changed_preference_answer": "fails: routine treated as a conflict",
+    "private_trace_mode": "0600",
+    "trace_identity_present": true,
+    "trace_contains_gateway_key": false
+  },
+  "annotation_diagnostic": {
+    "pairs": 3,
+    "scope": "Same saved input; repeated Answer only, not full paired runs",
+    "conservative_review_rule": "Explicitly select current latte with whole milk and leave sugar unknown; do not assert conflicting usual drink",
+    "baseline_clear_complete": 1,
+    "annotated_clear_complete": 1,
+    "reviewer": "assistant retrospective manual review, no independent judge",
+    "decision": "No stable benefit; do not integrate annotation"
+  },
+  "B05_fresh_diagnostic": {
+    "run": "artifacts/round2-live-checkpoint-fawfE4",
+    "status": "failed",
+    "elapsed_ms": 58436.445375,
+    "cause": "Only operation1 cites a non-command explanation. Generic unindexed feedback exposed all operations; first repair removed all4. Missing obligation feedback then elicited one operation combining different-property targets. Final binding rejected.",
+    "attribution": "This exact saved new trace, not an original8ef8829 failure reconstruction."
+  },
+  "fix": "Localize source authorization feedback and scope to invalid operations; allow exact authorizing witness repair for the same target while retaining independent target/semantic checks. Reject edits to a valid sibling deletion.",
+  "scope": "Candidate code and diagnostics. No new heldout/full-run accuracy, no ingestion reuse, no deployment gate passed.",
+  "B05_recorded_extraction_replay": {
+    "run": "artifacts/round2-live-checkpoint-4m2YZv",
+    "status": "failed_after_verified_repair",
+    "failure": "Source erasure exceeds bounded candidate capacity",
+    "elapsed_ms": 39060.191375,
+    "effect": "Only invalid operation1 witness changed; valid siblings preserved; subsequent independent verification passed."
+  },
+  "source_batch_component_replay": {
+    "run": "artifacts/round2-source-batch-replay-JJ206D",
+    "upstream_calls_replayed": 6,
+    "live_calls": 1,
+    "status": "failed",
+    "error": "Incomplete model output",
+    "diagnostic_budget_ms": 50939,
+    "first_batch_candidates": 25,
+    "first_batch_input_chars": 62040,
+    "first_batch_original_text_chars": 13596,
+    "partial_output_chars": 12435,
+    "limitation": "Batching resolves capacity rejection but does not establish latency adequacy. Exact-text partition output is large and timed out. Original extraction was replayed; not end-to-end latency."
+  },
+  "E10_fresh_checkpoint": {
+    "run": "artifacts/round2-live-checkpoint-v2G6kp",
+    "service": "7910120",
+    "status": "failed",
+    "failure": "Incomplete state_transition output at total model budget",
+    "elapsed_ms": 90015.30725,
+    "calls": {
+      "extraction": 1,
+      "verification": 3,
+      "repair": 2,
+      "state_transition": 1
+    }
+  }
+}

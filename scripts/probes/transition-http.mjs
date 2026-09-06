@@ -4,12 +4,12 @@ import {readFileSync,writeFileSync,appendFileSync,mkdtempSync,readdirSync} from 
 import {buildServer} from '../../service/dist/server.js';import {Models} from '../../service/dist/models.js';import {configFromEnv} from '../../service/dist/config.js';import {TenantStore} from '../../service/dist/storage.js';
 import {completion} from '../../eval/dist/models.js';import {ANSWER_PROMPT} from '../../eval/dist/runner.js';
 const dir=mkdtempSync(resolve('artifacts/round2-transition-http-')),sha=x=>createHash('sha256').update(x).digest('hex'),env=parseEnv(readFileSync('.env','utf8'));
-const spec=JSON.parse(readFileSync('configs/round2-quality-transitions.json')),config={...configFromEnv({...env,...spec.defaults}),port:0,dataDir:join(dir,'data')};
+const spec=JSON.parse(readFileSync('configs/round2-quality-transitions-v3.json')),config={...configFromEnv({...env,...spec.defaults}),port:0,dataDir:join(dir,'data')};
 const detail='I drink black drip coffee every morning, no milk, no sugar.',routine='I like the routine of just a plain cup of coffee.',change='I now prefer a latte with whole milk instead of black drip coffee.';
 const fact=(content,value)=>({content,value,subject:'user',predicate:'coffee_preference',scope:'',modality:'confirmed',cardinality:'single',sources:[{index:0,quote:content}]});
 const steps=[{text:detail,facts:[fact(detail,'black drip coffee')]},{text:detail+' '+routine,facts:[fact(detail,'black drip coffee'),fact(routine,'plain coffee routine')]},{text:change,facts:[fact(change,'latte with whole milk')]}];
 let step=0,injections=0;const original=Models.prototype.json;
-process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');
+process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');
 Models.prototype.json=async function(system,input,signal,context){
  const replay=context?.purpose==='extraction';if(replay)injections++;
  appendFileSync(join(dir,'model-inputs.jsonl'),JSON.stringify({step,purpose:context?.purpose,origin:replay?'fixed_grounded_extraction':'live_model',input,prompt_sha256:sha(system)})+'\n');

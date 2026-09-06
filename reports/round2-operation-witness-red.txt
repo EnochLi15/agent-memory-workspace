@@ -1,0 +1,33 @@
+✖ repairing one non-authorizing witness preserves a sibling valid forget (40.409167ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 416.678667
+
+✖ failing tests:
+
+test at service/tests/operation-intent.test.ts:1:10074
+✖ repairing one non-authorizing witness preserves a sibling valid forget (40.409167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   0,
+      1
+    ]
+  
+      at <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/operation-intent.test.ts:125:31)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/operation-intent.test.ts:24:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 0, 1 ],
+    expected: [ 1 ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

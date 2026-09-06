@@ -1,0 +1,20 @@
+// Replay exact successful upstream model outputs, then call only the previously
+// blocked source stage and subsequent stages. This is a component diagnostic.
+import {readFileSync,writeFileSync,mkdtempSync,readdirSync} from 'node:fs';import {resolve,join} from 'node:path';import {createHash} from 'node:crypto';import {parseEnv} from 'node:util';import assert from 'node:assert/strict';
+import {Extractor} from '../../service/dist/extraction.js';import {Models} from '../../service/dist/models.js';import {configFromEnv} from '../../service/dist/config.js';
+const read=p=>JSON.parse(readFileSync(p)),lines=p=>readFileSync(p,'utf8').trim().split('\n').filter(Boolean).map(JSON.parse),sha=x=>createHash('sha256').update(x).digest('hex');
+const snapshotPath=resolve(process.argv[2]),parent=resolve(process.argv[3]),saved=read(snapshotPath),previous=read(join(parent,'report.json'));
+assert.equal(previous.status,'failed');assert.equal(previous.error.message,'Source erasure exceeds bounded candidate capacity');assert.equal(previous.captured_snapshot_sha256,sha(readFileSync(snapshotPath)));
+const inputs=lines(join(parent,'model-inputs.jsonl')),outputs=lines(join(parent,'model-proposals.jsonl'));assert.equal(inputs.length,outputs.length);
+const specPath='configs/round2-quality-source-batches.json',spec=read(specPath),config=configFromEnv({...parseEnv(readFileSync('.env','utf8')),...spec.defaults});
+const dir=mkdtempSync(resolve('artifacts/round2-source-batch-replay-'));process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');
+const model=new Models(config),original=model.json.bind(model);let replayed=0,live=0;
+model.json=async(system,input,signal,context)=>{
+ if(replayed<inputs.length){const i=replayed++;assert.equal(context.purpose,inputs[i].purpose);assert.equal(sha(system),inputs[i].prompt_sha256);assert.equal(input,inputs[i].input,'A replay is valid only for the exact model input');assert.equal(sha(input),outputs[i].input_sha256);return structuredClone(outputs[i].output);}
+ live++;return original(system,input,signal,context);
+};
+const budget=Math.max(500,Math.floor(90000-previous.elapsed_ms)),report={protocol:'live-pre-failure-checkpoint-prepare-v1',run_dir:dir,sample:saved.provenance.sample,captured_snapshot_sha256:sha(readFileSync(snapshotPath)),parent_report_sha256:sha(readFileSync(join(parent,'report.json'))),source_sha256:Object.fromEntries(readdirSync('service/src').filter(p=>p.endsWith('.ts')).map(p=>[p,sha(readFileSync('service/src/'+p))])),spec_sha256:sha(readFileSync(specPath)),probe_sha256:sha(readFileSync(import.meta.filename)),snapshot_revision:saved.snapshot.revision,remaining_diagnostic_budget_ms:budget,started_at:new Date().toISOString(),scope:'Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score.'};
+writeFileSync(join(dir,'probe-source.mjs'),readFileSync(import.meta.filename));const start=performance.now();
+try{const p=await new Extractor(config,model).prepare(saved.request,saved.snapshot,AbortSignal.timeout(budget));writeFileSync(join(dir,'prepared.json'),JSON.stringify(p)+'\n');Object.assign(report,{status:'prepared',prepared_sha256:sha(readFileSync(join(dir,'prepared.json'))),fact_count:p.facts.length,operation_count:p.operations.length,source_decisions:p.sourceErasurePlan?.decisions.length});}
+catch(e){report.status='failed';report.error={code:e.code??null,message:e.message};}
+Object.assign(report,{elapsed_ms:performance.now()-start,recorded_generation_calls:replayed,live_generation_calls:live,finished_at:new Date().toISOString()});writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');writeFileSync('reports/round2-source-batch-replay-'+dir.split('/').at(-1)+'.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

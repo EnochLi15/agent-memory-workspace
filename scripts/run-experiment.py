@@ -7,7 +7,7 @@ relying only on HTTP idempotent receipts; eval never reads service storage.
 import argparse,json,os,pathlib,subprocess,time,urllib.request,hashlib
 from experiment_identity import validate_reuse
 root=pathlib.Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--trace-models',action='store_true');p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int,required=True);p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
 spec_bytes=args.spec.read_bytes();spec=json.loads(spec_bytes);profile=spec['profiles'][args.profile];evaluation=spec.get('evaluation',{})
 env=os.environ.copy()
 for line in (root/'.env').read_text().splitlines():
@@ -19,6 +19,8 @@ campaign=root/'artifacts'/args.campaign;campaign.mkdir(parents=True,exist_ok=Tru
 name=args.campaign+'-'+args.profile;namespace=args.campaign+'-'+(args.reuse_ingestion or args.profile)
 env['MEMORY_DATA_DIR']=str(root/'service/.data'/namespace)
 env['MEMORY_MODEL_AUDIT']=str(campaign/(args.profile+'-model-calls.jsonl'))
+env.pop('MEMORY_MODEL_TRACE',None)
+if args.trace_models:env['MEMORY_MODEL_TRACE']=str(campaign/(args.profile+'-model-trace.jsonl'))
 baseline=profile.get('baseline');cwd=root/'service'
 if baseline:
  if args.reuse_ingestion:raise SystemExit('Baseline variants require independent ingestion')
@@ -32,6 +34,7 @@ safe['extraction_prompt_sha256']=hashlib.sha256((root/'service/src/prompts.ts').
 safe['baseline_transport']='SSE-to-JSON; model/messages/options unchanged' if baseline else 'native SSE'
 safe['locomo_input_override']=args.locomo_data
 safe['memops_input_override']=args.memops_data
+safe['private_model_trace_enabled']=args.trace_models
 safe['experiment_spec_sha256']=hashlib.sha256(spec_bytes).hexdigest()
 safe['evaluation_configuration']=evaluation
 if args.reuse_ingestion:
