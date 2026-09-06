@@ -1,0 +1,54 @@
+{
+  "protocol": "v1-clean-clone-acceptance-v1",
+  "scope": "Fresh private recursive clone, documented make init/build/test, isolated enhanced container, HTTP write/search/update/forget/neighbor contract. Credentials supplied only via ignored .env.",
+  "commits": {
+    "workspace": "a2e605a60374368e74b561946dca756fd929308a",
+    "service": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+    "eval": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef"
+  },
+  "clean_sources": {
+    "workspace": true,
+    "service": true,
+    "eval": true
+  },
+  "service_tests": 353,
+  "eval_node_tests": 24,
+  "eval_python_tests": 17,
+  "contract": {
+    "contract": "passed",
+    "base_url": "http://127.0.0.1:8125",
+    "user_id": "contract-1788722256287",
+    "checks": [
+      "health",
+      "echo",
+      "idempotency",
+      "read-after-write",
+      "tenant-isolation",
+      "top-k",
+      "three-routes",
+      "validation",
+      "conflict",
+      "update-current-state",
+      "forget-all-paths",
+      "retained-neighbor"
+    ]
+  },
+  "image_id": "sha256:be812c0155ed3b418164b14a9466529aedfdd9dc22e938279545d41d5ea170c1",
+  "no_degraded_write": true,
+  "evidence_sha256": {
+    "clone.log": "437ea8867ae014ece0bc01c2557330870a65b5e3791847f1d77c034e11b4e75f",
+    "init.log": "947618a635797fd157fdd7464254635198efb7d75411d41318fa9f2da70d8589",
+    "build.log": "183f9d288050f6961361fd26217a6ec629ab94c534838a36b2e3a108d4a099fc",
+    "test.log": "065b86185ea9dede83c633ff1cef998c9869a0cc09eaaa53feed62944f46832a",
+    "contract.json": "37336646b8db31cd7b1bc80d33c1b0c8847c6a1b5c37045369f74f81bd3d8e18"
+  },
+  "passed": true,
+  "restart_checks": {
+    "committed_receipt_replayed": true,
+    "current_city_preserved": true,
+    "old_city_not_current": true,
+    "erasure_preserved": true,
+    "neighbor_preserved": true
+  },
+  "temporary_credentials_removed": true
+}
