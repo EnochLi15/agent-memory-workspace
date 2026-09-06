@@ -6,6 +6,7 @@ import json
 import pathlib
 import subprocess
 import tarfile
+import tempfile
 import urllib.request
 
 parser = argparse.ArgumentParser()
@@ -36,8 +37,10 @@ checksum_line = archive_path.with_suffix(archive_path.suffix + '.sha256').read_t
 expected_sha, expected_name = checksum_line.split(None, 1)
 if archive_sha != expected_sha or expected_name != archive_path.name:
     raise SystemExit('Archive checksum file mismatch')
-verified = output.parent / ('archive-verification-' + datetime.datetime.now().strftime('%Y%m%d-%H%M%S'))
-verified.mkdir(parents=True, exist_ok=False)
+output.parent.mkdir(parents=True, exist_ok=True)
+verified = pathlib.Path(tempfile.mkdtemp(
+    prefix='archive-verification-' + datetime.datetime.now().strftime('%Y%m%d-%H%M%S') + '-',
+    dir=output.parent))
 with tarfile.open(archive_path, 'r:gz') as archive:
     members = archive.getmembers()
     names = [member.name for member in members]

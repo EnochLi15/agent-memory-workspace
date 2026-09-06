@@ -1,18 +1,20 @@
 {
   "protocol": "v1-delivery-tools-preflight-v1",
-  "checked_at": "2026-09-06T19:55:11.571667+00:00",
+  "checked_at": "2026-09-06T20:55:30.548967+00:00",
   "status": "preflight_passed_final_gates_pending",
   "failure_path_tests": 9,
   "syntax_check": "passed",
   "diff_check": "passed",
-  "scope": "Ten tests cover rejection of missing/P0/changed evidence, unfinished/interrupted soak, escaping evidence, private traces/databases/environment files, symlinks and duplicate names, plus actual gzip readback/three-repository recursive clone/fsck and tampered release-identity rejection using tiny synthetic fixture repositories. No real runtime image, benchmark score, ready report or official release is claimed.",
+  "scope": "Ten tests cover rejection of missing/P0/changed evidence, unfinished/interrupted soak, escaping evidence, private traces/databases/environment files, symlinks and duplicate names, plus actual gzip readback/three-repository recursive clone/fsck and tampered release-identity rejection using tiny synthetic fixture repositories. No real runtime image, benchmark score, ready report or official release is claimed. Same-second verifier directory collision is now reproduced with a frozen clock and fixed with independently allocated scratch directories.",
   "evidence_sha256": {
     "scripts/audit-completed-runs.py": "32b307b3e065fd7988631207d15a57c8323a48913581060c1bbdff42c0ef0978",
     "scripts/audit-delivery-readiness.py": "9584f32286b236ddd300a72e04c0fa511e9a3611829da3c28dda0ddb6d03ba41",
     "scripts/package-delivery.py": "8ed44712dbd6e39c8c583d9d705efd4f8472a4bf664b5abd4b332d5443c1c2ff",
-    "scripts/verify-delivery.py": "4bd0358c432477d6e1a7bd253be177c9ce1d71647f2691c8cc97721f61baa275",
-    "scripts/probes/test_delivery_gates.py": "74f735815d30fa4e11e60c61a4e81b0223113dc38384a9fcc0daac47ab31a875",
-    "reports/v1-delivery-tools-tests.txt": "370fc55e60f2da148f922228d949d26fcf27d952600efdc81e6e241acc1a09b5"
+    "scripts/verify-delivery.py": "97a7a353c9bfd21acb77a1dddfc81babb2e18d5649a05ac60b9979c4ad86347d",
+    "scripts/probes/test_delivery_gates.py": "b243e97586ea3d8b622250be1decdf8ddd7edbc2e4975188fc9b0b16b4cbc0e9",
+    "reports/v1-delivery-tools-tests.txt": "370fc55e60f2da148f922228d949d26fcf27d952600efdc81e6e241acc1a09b5",
+    "reports/v1-delivery-tools-tests-02.txt": "1ef0e151a4d5a115552b5d269fb23ac5b9c8dee0361541d67ad2b54c667f2519",
+    "artifacts/v1-delivery-same-second-before.log": "3f86d997f281769bc04ec5e4be42ee413dfc5ddfd43c7ad8447c1262b91e95fb"
   },
   "archive_protocol_roundtrip_tests": 1
 }

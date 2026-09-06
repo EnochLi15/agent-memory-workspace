@@ -191,7 +191,16 @@ class PackagedSourceRoundtripTests(unittest.TestCase):
             package_args = [sys.executable, 'scripts/package-delivery.py', '--snapshot', str(snapshots[0]),
                             '--release', 'configs/release.json', '--readiness', 'reports/readiness.json']
             command(*package_args, '--output', 'delivery/fixture.tar.gz')
-            command(sys.executable, 'scripts/verify-delivery.py', '--archive', 'delivery/fixture.tar.gz',
+            # Freeze both verifications to the same wall-clock second. Separate
+            # output paths must never collide through the scratch directory name.
+            frozen_clock = ("import datetime,runpy,sys\n"
+                            "class FixedDateTime(datetime.datetime):\n"
+                            " @classmethod\n"
+                            " def now(cls,tz=None): return cls(2026,9,7,0,0,0,tzinfo=tz)\n"
+                            "datetime.datetime=FixedDateTime\n"
+                            "runpy.run_path(sys.argv.pop(1),run_name='__main__')\n")
+            verify_command = [sys.executable, '-c', frozen_clock, 'scripts/verify-delivery.py']
+            command(*verify_command, '--archive', 'delivery/fixture.tar.gz',
                     '--output', 'delivery/verification.json')
             result = json.loads((root / 'delivery/verification.json').read_text())
             self.assertEqual(result['recursive_clone_from_archive'], 'passed')
@@ -213,7 +222,7 @@ class PackagedSourceRoundtripTests(unittest.TestCase):
                         member.size = len(data)
                     target.addfile(member, io.BytesIO(data))
             put('delivery/changed.tar.gz.sha256', sha('delivery/changed.tar.gz') + '  changed.tar.gz\n')
-            result = subprocess.run([sys.executable, 'scripts/verify-delivery.py', '--archive', str(changed),
+            result = subprocess.run([*verify_command, '--archive', str(changed),
                                      '--output', 'delivery/must-not-exist.json'], cwd=root, capture_output=True, text=True)
             self.assertNotEqual(result.returncode, 0)
             self.assertIn('release identity differs', result.stderr)
