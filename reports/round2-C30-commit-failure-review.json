@@ -1,0 +1,32 @@
+{
+  "protocol": "exposed-prefix-commit-failure-review-v1",
+  "sample": "C30_update",
+  "parent_results_sha256": "6e0d7db1076c037a02c200a3d78e1647712f3e511d8367302639c3fa961f8333",
+  "state_sha256": "1dbc32de856602da5bf69c33258528e768890838a653afcacdcf1c2243e89de6",
+  "answers_sha256": "68c041a61ef5444e5033f5256ea26f000fe3a49fd448119aa49aff364fb43318",
+  "http_adds_accepted": 14,
+  "semantic_pass": false,
+  "amount_facts": [
+    {
+      "id": "c7cff138943c4c8c1dce156ee92c0ec07222e0d1919694ef6f20a09bdfed55d1",
+      "content": "User set up a biweekly auto-invest into VTSAX through Fidelity for $200 every two weeks.",
+      "value": "$200 every two weeks",
+      "state": "retracted",
+      "supersedes": []
+    },
+    {
+      "id": "37788eda31f33e99cfb527211f5b34d3438b8f905c3477c8a5a5ff190589ab43",
+      "content": "User's VTSAX auto-invest is actually $250 every two weeks, not $200.",
+      "value": "$250 every two weeks",
+      "state": "retracted",
+      "supersedes": [
+        "c7cff138943c4c8c1dce156ee92c0ec07222e0d1919694ef6f20a09bdfed55d1"
+      ]
+    }
+  ],
+  "answer": "Current setup: a $50 Bitcoin buy on Coinbase, scheduled for the 1st of each month.\n\nPrevious setup: a VTSAX auto-invest through Fidelity, set for the 1st and 15th of each month. The amount had been corrected from an older amount the user had been remembering, and after that correction the user confirmed everything else was accurate.",
+  "cause": "Duplicate expansion used operation.value ($250, the replacement) despite the explicit target pointing to $200. Both values became retracted; Answer omitted the current VTSAX amount.",
+  "fix": "Expand only exact values of selected target records, preserving actor/property/scope.",
+  "validation": "round2-C30-recorded-correction-replay.json plus correction-expansion.test.ts; separate fresh live prefix still pending.",
+  "scope": "HTTP200 is not semantic acceptance. Original failure is preserved."
+}

@@ -1,0 +1,107 @@
+{
+  "protocol": "exposed-prefix-answer-stage-review-v1",
+  "sample": "E03_reflect",
+  "parent_results_sha256": "2157aeff88438774e57ef264f6a9b2065d45807fb1fc3241af288c40897accd2",
+  "answers_sha256": "317653fc9d6d6a432f3df53e62d8e4bf8b5d1245a34869d8b631c4e5bcfaa3fa",
+  "evidence_presence": {
+    "Martin": [
+      {
+        "id": "401913f060139cebb1b7fbc01f45e4d4579932fb1fc56d9e64279c7239606239",
+        "snippet": "Martin and Michael both start with M, the same pattern as user's Rebecca/Rachel mix-up.\nVerbatim source context (use this to verify actor and negation):\nuser: Good question. The other incident I keep "
+      },
+      {
+        "id": "fe489d81e0f1eb8ecc9f4e7bc6667335fef2d99280c4d5a625cfa22456b9bc2c",
+        "snippet": "User does not need to worry about the Martin Chu client anymore after the account handoff.\nVerbatim source context (use this to verify actor and negation):\nuser: The Martin Chu account actually got ha"
+      },
+      {
+        "id": "1207afc0280472e05939d9f25673bc0c938cbe709241bc4d2898620e74fc8df8",
+        "snippet": "The Martin Chu account got handed off to another rep on user's team in April.\nEvent date unresolved. Original expression: in April.\n[status: confirmed; subject/speaker: user; scope: Martin Chu account"
+      }
+    ],
+    "handoff": [
+      {
+        "id": "fe489d81e0f1eb8ecc9f4e7bc6667335fef2d99280c4d5a625cfa22456b9bc2c",
+        "snippet": "User does not need to worry about the Martin Chu client anymore after the account handoff.\nVerbatim source context (use this to verify actor and negation):\nuser: The Martin Chu account actually got ha"
+      },
+      {
+        "id": "1207afc0280472e05939d9f25673bc0c938cbe709241bc4d2898620e74fc8df8",
+        "snippet": "The Martin Chu account got handed off to another rep on user's team in April.\nEvent date unresolved. Original expression: in April.\n[status: confirmed; subject/speaker: user; scope: Martin Chu account"
+      }
+    ],
+    "Rebecca": [
+      {
+        "id": "401913f060139cebb1b7fbc01f45e4d4579932fb1fc56d9e64279c7239606239",
+        "snippet": "Martin and Michael both start with M, the same pattern as user's Rebecca/Rachel mix-up.\nVerbatim source context (use this to verify actor and negation):\nuser: Good question. The other incident I keep "
+      },
+      {
+        "id": "670435faae8181b2bd9a96a71019fc098d32249f0d3e711fefce8fc564e94d67",
+        "snippet": "Rebecca Thornton was user's colleague in the Rebecca Thornton situation.\nVerbatim source context (use this to verify actor and negation):\nuser: Hey, I wanted to talk through something that's been bugg"
+      },
+      {
+        "id": "b21d926cd432d593b30dc4ad51a3b052801f94fc04e81bdd8650d287be6b4d97",
+        "snippet": "There were like six or seven people at the table during the Rebecca Thornton team lunch meeting.\n[status: confirmed; subject/speaker: user; scope: Rebecca Thornton situation; synthetic order marker, n"
+      }
+    ],
+    "group": [
+      {
+        "id": "401913f060139cebb1b7fbc01f45e4d4579932fb1fc56d9e64279c7239606239",
+        "snippet": "Martin and Michael both start with M, the same pattern as user's Rebecca/Rachel mix-up.\nVerbatim source context (use this to verify actor and negation):\nuser: Good question. The other incident I keep "
+      },
+      {
+        "id": "3f9f642d66d96d115862ed52389481acca3811f9edabf34d765c83e607f846d9",
+        "snippet": "Rebecca and Rachel both start with R, which user says led their brain to latch onto the wrong name.\nVerbatim source context (use this to verify actor and negation):\nuser: Yeah, honestly I think it's t"
+      },
+      {
+        "id": "e9b92996ca638ca535a3ac9ddb7c372af4f355a3ba35f58a24f6c864a99bdefa",
+        "snippet": "User says they really only mess up names in group settings.\n[status: confirmed; subject/speaker: user; scope: unspecified; synthetic order marker, not an event date: 2025-01-08T00:00:12.000Z; source: "
+      }
+    ]
+  },
+  "original_answer": "You said that it’s the group thing: you really only mess up names in group settings, especially bigger groups. You also said that Rebecca and Rachel both start with R, so your brain latched onto the wrong one.",
+  "original_answer_pass": false,
+  "failure_stage": "answer generation; all four requested topics were present in final evidence",
+  "fixed_evidence_repeats": {
+    "protocol": "fixed-answer-evidence-repetition-v1",
+    "source_answers_sha256": "317653fc9d6d6a432f3df53e62d8e4bf8b5d1245a34869d8b631c4e5bcfaa3fa",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "model": "gpt-5.4-mini",
+    "max_completion_tokens": 1800,
+    "planned": 3,
+    "results": [
+      {
+        "repeat": 0,
+        "origin": "original",
+        "answer": "You said that it’s the group thing: you really only mess up names in group settings, especially bigger groups. You also said that Rebecca and Rachel both start with R, so your brain latched onto the wrong one."
+      },
+      {
+        "repeat": 1,
+        "origin": "repeat",
+        "answer": "You said that with Rebecca Thornton and Martin Chu, the mix-up happened in group settings: with Rebecca it was during a team lunch with six or seven people, and with Martin it was during a video call with two other colleagues on the line. You also said the Martin Chu account was handed off to another rep in April, so you didn’t need to worry about that client anymore, but the feeling still stuck with you."
+      },
+      {
+        "repeat": 2,
+        "origin": "repeat",
+        "answer": "You said you mix up names in group settings, not one-on-one. For Rebecca, you said you called your colleague Rebecca Thornton “Rachel” during a team lunch meeting on March 3rd, there were about six or seven people at the table, and that Rebecca corrected you politely and seemed bothered. For Martin, you said you called client Martin Chu “Michael” three times on a video call around March 20th with two other colleagues on the line, that he never corrected you, and that the account was handed off to another rep on your team in April, so you didn’t need to worry about that client anymore."
+      }
+    ],
+    "scope": "Includes the original answer and two additional calls on identical saved evidence. No favorable selection, no reretrieval, no benchmark score or full-pipeline repeat claim."
+  },
+  "assistant_review": [
+    {
+      "repeat": 0,
+      "pass": false,
+      "reason": "Martin and the account handoff omitted."
+    },
+    {
+      "repeat": 1,
+      "pass": true,
+      "reason": "Both actors, group sizes and April handoff present."
+    },
+    {
+      "repeat": 2,
+      "pass": true,
+      "reason": "Both actors, incidents, group context and April handoff present."
+    }
+  ],
+  "scope": "Three answers on identical saved evidence, including the original failure. Not three full inference runs, retrieval improvement or benchmark accuracy."
+}

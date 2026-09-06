@@ -1,0 +1,24 @@
+{
+  "protocol": "assistant-audit-disagreement-review-v1",
+  "input_sha256": "d9d1310c23a317ec64781e9111d892496755f59eed34ea92a5877cfc5f290db3",
+  "selection": "Three lexically first judged disagreements observed at an earlier running snapshot; this is a diagnostic selection, not random or complete.",
+  "reviewer": "assistant, not independent human truth",
+  "reviews": [
+    {
+      "qid": "A01_reflect.json#p1_operation_trace#adjacent_operation#0",
+      "correct": null,
+      "reason": "答案列出季度报告、久候后的offer及上级认可，但情绪性自我肯定/释然只被间接表达；reference与must_include的充分性边界不一致，暂不覆盖任一模型判分。"
+    },
+    {
+      "qid": "A01_reflect.json#p2_target_binding#longitudinal_operation#3",
+      "correct": false,
+      "reason": "明确区分两种模式，却没有说出独处/独立/低刺激环境偏好；仅说conditions help you focus不能满足must_include:1。"
+    },
+    {
+      "qid": "A06_update.json#p1_operation_trace#longitudinal_operation#1",
+      "correct": null,
+      "reason": "back to wanting a Basenji可蕴含此前已偏好Basenji，且rubric列出的可接受改写允许went back；但参考答案要求逐段经历。是否必须显式写出中间阶段仍有判据歧义。"
+    }
+  ],
+  "scope": "One confirmed missing criterion and two unresolved rubric boundaries. No audit overwrite or historical score update."
+}

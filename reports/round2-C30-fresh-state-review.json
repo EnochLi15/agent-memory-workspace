@@ -1,0 +1,32 @@
+{
+  "protocol": "fresh-prefix-correction-state-review-v1",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-05-46-661Z-s55e5z",
+  "parent_results_sha256": "9654e3a9700f3f08e5f72f9820abb92766f9638f6a8adb87d2ba63e667921edc",
+  "state_sha256": "570abd2bc50b3649028feeed54f0d0b7df7ac620a28e2b8fd8b98755aa7f8a71",
+  "answers_sha256": "288e48518664d3149179dd6e7c659e2ea0eac542a26832eb2c07d434273aecff",
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "source_commit": "576706f",
+  "http_adds_accepted": 14,
+  "checks": {
+    "old_amount_retracted": true,
+    "new_amount_active": true,
+    "calendar_schedule_active": true,
+    "new_amount_in_returned_evidence": true,
+    "calendar_schedule_in_returned_evidence": true
+  },
+  "call_counts": {
+    "extraction/ok": 14,
+    "verification/ok": 15,
+    "embedding/ok": 14,
+    "repair/ok": 1
+  },
+  "answer": "Your current VTSAX auto-invest through Fidelity is $250 every two weeks.\n\nWhat changed from your previous setup: it was corrected from an older remembered amount of $200 to $250 every two weeks.",
+  "answer_review": {
+    "amount_fund_and_correction_present": true,
+    "exact_calendar_days_present": false,
+    "complete_pass": false,
+    "reason": "Returns current $250 every two weeks in VTSAX through Fidelity and its correction from $200, but omits the explicit 1st/15th calendar schedule."
+  },
+  "scope": "Fresh original 14-add prefix using per-fact verification. Commit-state regression recovered; final diagnostic answer still omits a supported schedule detail. One run, not benchmark accuracy or a complete E1 gate."
+}

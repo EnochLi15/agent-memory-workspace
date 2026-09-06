@@ -4,11 +4,15 @@ import {readFileSync,writeFileSync,mkdirSync,appendFileSync} from 'node:fs';
 import {resolve,join} from 'node:path';
 import {parseEnv} from 'node:util';
 import {createHash} from 'node:crypto';
-import {buildServer} from '../../service/dist/server.js';
-import {configFromEnv} from '../../service/dist/config.js';
+import {pathToFileURL} from 'node:url';
 import {completion} from '../../eval/dist/models.js';
 import {ANSWER_PROMPT} from '../../eval/dist/runner.js';
 const dir=resolve(process.argv[2]),sample=process.argv[3];
+const runtimeIndex=process.argv.indexOf('--runtime');
+if(runtimeIndex>=0&&!process.argv[runtimeIndex+1])throw Error('Missing --runtime path');
+const runtime=resolve(runtimeIndex>=0?process.argv[runtimeIndex+1]:'service');
+const {buildServer}=await import(pathToFileURL(join(runtime,'dist/server.js')).href);
+const {configFromEnv}=await import(pathToFileURL(join(runtime,'dist/config.js')).href);
 const questions={
  D24_reflect:['Why did I choose the Outback over the RAV4?','What plans did I mention for researching investments and consulting a financial advisor?'],
  D17_remember:['What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?','What information do you still have about my old tablet and its bookmark syncing issue?'],
@@ -20,13 +24,14 @@ const sha=x=>createHash('sha256').update(x).digest('hex');
 const manifest=JSON.parse(readFileSync(join(dir,'results.json')));
 if(!manifest.cases.some(c=>c.user_id.endsWith(':'+sample)&&c.status==='prefix_accepted'))throw Error('Prefix did not finish successfully');
 const sourceDifferences=[];
-for(const [path,hash] of Object.entries(manifest.source_sha256)){const actual=sha(readFileSync(path));if(actual!==hash){if(path!=='service/src/prompts.ts')throw Error('Service source changed since ingestion: '+path);sourceDifferences.push({path,ingest_sha256:hash,query_sha256:actual,reason:'Only the extraction prompt changed; this read-only probe never invokes extraction.'});}}
+for(const [path,hash] of Object.entries(manifest.source_sha256)){if(!path.startsWith('service/src/')||path.includes('..'))throw Error('Unexpected service source path');const actual=sha(readFileSync(join(runtime,path.slice('service/'.length))));if(actual!==hash){if(path!=='service/src/prompts.ts')throw Error('Service source changed since ingestion: '+path);sourceDifferences.push({path,ingest_sha256:hash,query_sha256:actual,reason:'Only the extraction prompt changed; this read-only probe never invokes extraction.'});}}
 const output=join(dir,'retrieval-probe-v1');mkdirSync(output);
 const e=parseEnv(readFileSync('.env','utf8'));
-const config={...configFromEnv({...e,MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),llmModel:manifest.extraction_model,dataDir:join(dir,'data'),port:0};
+const config={...configFromEnv({...e,MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),llmModel:manifest.extraction_model,...(manifest.reasoning_effort&&manifest.reasoning_effort!=='provider_default'?{llmReasoningEffort:manifest.reasoning_effort}:{}),dataDir:join(dir,'data'),port:0};
 process.env.MEMORY_MODEL_AUDIT=join(output,'retrieval-model-usage.jsonl');
 const app=await buildServer(config),base=await app.listen({host:'127.0.0.1',port:0});
-const report={protocol:'exposed-failed-prefix-retrieval-v1',parent_results_sha256:sha(readFileSync(join(dir,'results.json'))),sample,source_differences:sourceDifferences,answer_model:'gpt-5.4-mini',answer_prompt_sha256:sha(ANSWER_PROMPT),retrieval_model:config.llmModel,questions:[],scope:'Posthoc diagnostic queries, not benchmark scores. Inspect stored answers before assigning semantic pass.'};
+const report={protocol:'exposed-failed-prefix-retrieval-v1',parent_results_sha256:sha(readFileSync(join(dir,'results.json'))),sample,source_differences:sourceDifferences,answer_model:'gpt-5.4-mini',answer_prompt_sha256:sha(ANSWER_PROMPT),retrieval_model:config.llmModel,retrieval_reasoning_effort:config.llmReasoningEffort??'provider_default',questions:[],scope:'Posthoc diagnostic queries, not benchmark scores. Inspect stored answers before assigning semantic pass.'};
+report.query_runtime=runtime;
 try{
  for(const query of questions[sample]){
   const start=performance.now();const r=await fetch(base+'/search',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query,user_id:'round2-prefix:'+sample,top_k:100}),signal:AbortSignal.timeout(60000)});

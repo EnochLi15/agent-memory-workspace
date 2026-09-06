@@ -1,0 +1,62 @@
+{
+  "protocol": "D17-targeted-repair-review-v1",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T02-51-30-644Z-dTA9Gs",
+  "source_results_sha256": "d8bfb6852addfe84c8e7eb90e9e5fa42e6a7b7114b3c1879d74a6195042146c4",
+  "configuration": {
+    "extraction_model": "gpt-5.5",
+    "reasoning_effort": "low",
+    "add_timeout_ms": 115000,
+    "model_budget_ms": 90000
+  },
+  "http_status": 200,
+  "elapsed_ms": 47909.101083,
+  "checks": {
+    "laptop_firefox_preserved": true,
+    "iphone_safari_preserved": true,
+    "kevins_brave_preserved": true,
+    "tablet_target_erased": true,
+    "original_details_absent_from_active_passages": true,
+    "forget_event_present": true
+  },
+  "generation_calls": 2,
+  "generation_errors": 0,
+  "repair_calls_in_this_run": 0,
+  "retrieval_report": {
+    "protocol": "exposed-failed-prefix-retrieval-v1",
+    "parent_results_sha256": "d8bfb6852addfe84c8e7eb90e9e5fa42e6a7b7114b3c1879d74a6195042146c4",
+    "sample": "D17_remember",
+    "source_differences": [],
+    "answer_model": "gpt-5.4-mini",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "retrieval_model": "gpt-5.5",
+    "retrieval_reasoning_effort": "low",
+    "questions": [
+      {
+        "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+        "evidence_count": 32,
+        "elapsed_ms": 14449.957708
+      },
+      {
+        "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+        "evidence_count": 32,
+        "elapsed_ms": 14666.135084
+      }
+    ],
+    "scope": "Posthoc diagnostic queries, not benchmark scores. Inspect stored answers before assigning semantic pass.",
+    "answers_sha256": "7ef01758bbdd7845cdc288d0ae3619e6bee9ae2dea8a905819dc27622b9ad881"
+  },
+  "answer_review": [
+    {
+      "question": 1,
+      "pass": true,
+      "reason": "Correctly separates user laptop Firefox, iPhone Safari and Kevin Brave."
+    },
+    {
+      "question": 2,
+      "pass": true,
+      "reason": "Does not disclose old Android tablet sale, eBay/April details or removed sync problem; other browser facts remain."
+    }
+  ],
+  "reviewer_kind": "assistant_state_and_answer_inspection",
+  "scope": "One exposed original chunk, distinct model/effort and internal-budget configuration. This successful run did not invoke repair, so it does not isolate the effect of targeted patches. No benchmark accuracy update."
+}
