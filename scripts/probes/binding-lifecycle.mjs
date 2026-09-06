@@ -4,7 +4,7 @@ import {buildServer} from '../../service/dist/server.js';import {configFromEnv} 
 const dir=mkdtempSync(join(resolve('artifacts'),'round2-binding-lifecycle-'));const sha=x=>createHash('sha256').update(x).digest('hex');
 const env=parseEnv(readFileSync('.env','utf8'));const config={...configFromEnv({...env,MEMORY_MODE:'enhanced',MEMORY_LLM_MODEL:'gpt-5.5',MEMORY_LLM_REASONING_EFFORT:'low',MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),dataDir:join(dir,'data'),port:0};
 process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');const original=Models.prototype.json;
-Models.prototype.json=async function(system,user,signal){const output=await original.call(this,system,user,signal);appendFileSync(join(dir,'model-proposals.jsonl'),JSON.stringify({input:user,output})+'\n');return output;};
+Models.prototype.json=async function(system,user,signal,context){const output=await original.call(this,system,user,signal,context);appendFileSync(join(dir,'model-proposals.jsonl'),JSON.stringify({input:user,output})+'\n');return output;};
 const app=await buildServer(config),base=await app.listen({host:'127.0.0.1',port:0});
 const report={protocol:'real-model-property-versus-value-forget-v1',model:config.llmModel,reasoning_effort:config.llmReasoningEffort,source_sha256:Object.fromEntries(readdirSync('service/src').filter(p=>p.endsWith('.ts')).map(p=>['service/src/'+p,sha(readFileSync('service/src/'+p))])),probe_sha256:sha(readFileSync('scripts/probes/binding-lifecycle.mjs')),run_dir:dir,cases:[],scope:'Two fixed lifecycle controls with actual model, local embedding, HTTP writes and searches. Not benchmark accuracy.'};
 try{

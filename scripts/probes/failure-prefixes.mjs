@@ -16,6 +16,8 @@ const modelIndex=args.indexOf('--model');const modelOverride=modelIndex>=0?args[
 if(modelIndex>=0&&!modelOverride)throw Error('Missing --model value');
 const effortIndex=args.indexOf('--reasoning'),effortOverride=effortIndex>=0?args[effortIndex+1]:undefined;
 if(effortIndex>=0&&!effortOverride)throw Error('Missing --reasoning value');
+const stageEnv={};for(const stage of ['extraction','verification','repair']){const i=args.indexOf('--'+stage+'-model');if(i>=0){if(!args[i+1]||args[i+1].startsWith('--'))throw Error('Missing --'+stage+'-model value');stageEnv['MEMORY_'+stage.toUpperCase()+'_MODEL']=args[i+1];}}
+const repairsIndex=args.indexOf('--repair-rounds');if(repairsIndex>=0){if(!['1','2'].includes(args[repairsIndex+1]))throw Error('Expected --repair-rounds 1 or 2');stageEnv.MEMORY_MAX_REPAIR_ROUNDS=args[repairsIndex+1];}
 const failures=lines(join(prior,'ingest.jsonl')).filter(r=>r.status==='failed'&&(!selectedCase||r.request_id.split(':')[2]===selectedCase));
 if(!failures.length)throw Error('No matching known failed prefix');
 const requests=lines(join(prior,'requests.jsonl')).filter(r=>r.path==='/add').map(r=>r.body);
@@ -23,17 +25,17 @@ const parentDir=resolve('artifacts/round2-failure-prefixes');mkdirSync(parentDir
 // mkdtemp reserves the directory atomically: parallel starts can share a millisecond.
 const runDir=mkdtempSync(join(parentDir,new Date().toISOString().replace(/[:.]/g,'-')+'-'));
 const env=parseEnv(readFileSync('.env','utf8'));
-const config={...configFromEnv({...env,...(effortOverride?{MEMORY_LLM_REASONING_EFFORT:effortOverride}:{}),MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),...(modelOverride?{llmModel:modelOverride}:{}),dataDir:join(runDir,'data'),port:0};
+const config={...configFromEnv({...env,...stageEnv,...(effortOverride?{MEMORY_LLM_REASONING_EFFORT:effortOverride}:{}),MEMORY_INCREMENTAL_VERIFICATION:args.includes('--no-verification-reuse')?'false':'true',MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),...(modelOverride?{llmModel:modelOverride}:{}),dataDir:join(runDir,'data'),port:0};
 process.env.MEMORY_MODEL_AUDIT=join(runDir,'model-usage.jsonl');
 const originalJson=Models.prototype.json;
-Models.prototype.json=async function(system,user,signal){
- if(!system.startsWith('Rank evidence'))appendFileSync(join(runDir,'model-inputs.jsonl'),JSON.stringify({tag:'DEBUG-prefix-input',purpose:system.startsWith('Validate memory evidence')?'verification':system.includes('PATCH_SCHEMA')?'repair':'extraction',input_sha256:sha(user),input:user})+'\n');
- const raw=await originalJson.call(this,system,user,signal);
+Models.prototype.json=async function(system,user,signal,context){
+ if(!system.startsWith('Rank evidence'))appendFileSync(join(runDir,'model-inputs.jsonl'),JSON.stringify({tag:'DEBUG-prefix-input',purpose:context?.purpose??(system.startsWith('Validate memory evidence')?'verification':system.includes('PATCH_SCHEMA')?'repair':'extraction'),input_sha256:sha(user),input:user})+'\n');
+ const raw=await originalJson.call(this,system,user,signal,context);
  if(!system.startsWith('Rank evidence'))appendFileSync(join(runDir,'extraction-proposals.jsonl'),JSON.stringify({tag:'DEBUG-prefix-replay',input_sha256:sha(user),input:user,output:raw})+'\n');
  return raw;
 };
 const sourceFiles=readdirSync('service/src',{recursive:true}).filter(p=>p.endsWith('.ts')).map(p=>'service/src/'+p);
-const report={protocol:'failed-prefix-http-replay-v1',run_dir:runDir,extraction_model:config.llmModel,reasoning_effort:config.llmReasoningEffort??'provider_default',add_timeout_ms:config.addTimeout,model_budget_ms:Math.min(95000,Math.max(500,config.addTimeout-25000)),embedding_model:config.embeddingModel,source_sha256:Object.fromEntries(sourceFiles.map(p=>[p,sha(readFileSync(p))])),probe_sha256:sha(readFileSync('scripts/probes/failure-prefixes.mjs')),prior_requests_sha256:sha(readFileSync(join(prior,'requests.jsonl'))),started_at:new Date().toISOString(),scope:'Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.',cases:[]};
+const report={protocol:'failed-prefix-http-replay-v1',run_dir:runDir,extraction_model:config.llmStageModels.extraction??config.llmModel,default_model:config.llmModel,stage_models:{extraction:config.llmStageModels.extraction??config.llmModel,verification:config.llmStageModels.verification??config.llmModel,repair:config.llmStageModels.repair??config.llmModel},reasoning_effort:config.llmReasoningEffort??'provider_default',add_timeout_ms:config.addTimeout,model_budget_ms:Math.min(95000,Math.max(500,config.addTimeout-25000)),embedding_model:config.embeddingModel,incremental_verification:config.incrementalVerification,max_repair_rounds:config.maxRepairRounds,source_sha256:Object.fromEntries(sourceFiles.map(p=>[p,sha(readFileSync(p))])),probe_sha256:sha(readFileSync('scripts/probes/failure-prefixes.mjs')),prior_requests_sha256:sha(readFileSync(join(prior,'requests.jsonl'))),started_at:new Date().toISOString(),scope:'Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.',cases:[]};
 const app=await buildServer(config);const base=await app.listen({host:'127.0.0.1',port:0});
 try{
  for(const failure of failures){

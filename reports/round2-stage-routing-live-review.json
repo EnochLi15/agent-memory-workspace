@@ -1,0 +1,230 @@
+{
+  "protocol": "stage-model-routing-live-review-v1",
+  "service_commit": "3a5b2cb",
+  "model_budget_ms": 90000,
+  "max_repair_rounds": 1,
+  "scope": "One fresh exposed-prefix diagnostic per case. Different generation outputs and incomplete prefixes prevent a paired quality/cost gain claim. No benchmark score change.",
+  "runs": [
+    {
+      "case": "C30_update",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-50-39-333Z-jyRXrl",
+      "parent_results_sha256": "6a7339da581a05baeba3002b22cb354f77341874efee5a4e7a208b52c4c7626a",
+      "model_usage_sha256": "bad0ce62b8ac942a79fe83a0ddde60f142a9dffa36b07ec147833a6fdcd991f4",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "planned_adds": 14,
+      "accepted_adds": 0,
+      "final_revision": 0,
+      "status": "failed",
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:C30_update:segment-1:0",
+        "status": 503,
+        "elapsed_ms": 41063.246375,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Evidence still fails semantic verification after repair"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T03:50:50.810Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.4-mini",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 11339.830750000001,
+          "usage": {
+            "prompt_tokens": 4930,
+            "completion_tokens": 653,
+            "total_tokens": 5583,
+            "completion_tokens_details": {
+              "reasoning_tokens": 98
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:51:06.196Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "verification_scope": {
+            "facts": 6,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 7,
+            "reused": 0
+          },
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 15368.550749999999,
+          "usage": {
+            "prompt_tokens": 5167,
+            "completion_tokens": 735,
+            "total_tokens": 5902,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 316
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:51:14.516Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 8312.233500000002,
+          "usage": {
+            "prompt_tokens": 5183,
+            "completion_tokens": 314,
+            "total_tokens": 5497,
+            "completion_tokens_details": {
+              "reasoning_tokens": 40
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:51:20.498Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "verification_scope": {
+            "facts": 2,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 2,
+            "reused": 11
+          },
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 5973.496250000004,
+          "usage": {
+            "prompt_tokens": 5407,
+            "completion_tokens": 200,
+            "total_tokens": 5607,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 21
+            }
+          }
+        }
+      ],
+      "call_counts": {
+        "extraction/gpt-5.4-mini/ok": 1,
+        "verification/gpt-5.5/ok": 2,
+        "repair/gpt-5.5/ok": 1
+      },
+      "assessment": "Segment 1 rejected in 41.1 seconds. First verifier requested two missing workplace preferences/concerns. The targeted patch added both with explicit modalities; scoped recheck then required another expression of anticipation from the same message. No repair round remained. This exposes coverage-boundary and sequential-omission behavior, not a timeout."
+    },
+    {
+      "case": "E03_reflect",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-50-39-335Z-wgKl7P",
+      "parent_results_sha256": "8569c89f414c655f677a4583f7d8d99e017bd536d5b7d8fa46a2eceefdc541fc",
+      "model_usage_sha256": "41d829af85ae601f7fd593567a34ff0334d1e6764b90fc14595d0a39417724cf",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "planned_adds": 8,
+      "accepted_adds": 6,
+      "final_revision": 6,
+      "status": "failed",
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+        "status": 503,
+        "elapsed_ms": 37542.07250000001,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Partial recovery failed semantic verification"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T03:53:17.357Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.4-mini",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 13104.414458999992,
+          "usage": {
+            "prompt_tokens": 6339,
+            "completion_tokens": 742,
+            "total_tokens": 7081,
+            "prompt_tokens_details": {
+              "cached_tokens": 2304
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 252
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:53:22.051Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 4684.206999999995,
+          "usage": {
+            "prompt_tokens": 6849,
+            "completion_tokens": 158,
+            "total_tokens": 7007,
+            "completion_tokens_details": {
+              "reasoning_tokens": 134
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:53:41.772Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "verification_scope": {
+            "facts": 6,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 9,
+            "reused": 0
+          },
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 19707.501415999985,
+          "usage": {
+            "prompt_tokens": 5432,
+            "completion_tokens": 996,
+            "total_tokens": 6428,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 500
+            }
+          }
+        }
+      ],
+      "call_counts": {
+        "extraction/gpt-5.4-mini/ok": 7,
+        "verification/gpt-5.5/ok": 9,
+        "repair/gpt-5.5/ok": 3,
+        "embedding/nomic-embed-text:latest/ok": 6
+      },
+      "assessment": "Segment 7 rejected in 37.5 seconds. First repair resolved an operation spanning mismatched properties, then invalid source quotations triggered partial source recovery on the final attempt. The recovered proposal omitted four personal experience/plan messages and semantic verification rejected it. Independent scope and source failures were not reported together, consuming the only repair opportunity."
+    }
+  ]
+}
