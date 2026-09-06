@@ -104,3 +104,27 @@ MEMORY_VOLUME_EXTERNAL=true MEMORY_VOLUME="$restore_volume" docker compose up -d
 复用 `scripts/run-experiment.py --detach` 启动独立进程会话，`--status` 查询真实进程身份和退出状态。原结果不覆盖、失活记录不当作运行中，未知退出原因保留unknown。macOS的空闲睡眠防护不能保证阻止合盖或强制睡眠。完整评测应放在保持唤醒的宿主机运行。
 
 [干净递归克隆验证](../reports/v1-clean-clone-acceptance.json) 已通过构建、353项服务测试、24项Node评测器测试、17项Python测试、增强HTTP闭环及重启读回；临时凭据副本已移除。[兼容镜像回退](../reports/v1-compatible-rollback.json) 已通过。固定小集和完整评测的证据仍待完成。尚未完成的项目继续按 [V1交付计划](29-V1交付收敛计划.md) 验收，不能把本文候选命令等同于正式发布完成。
+
+## V1 发布验收与打包
+
+本版使用 [发布清单](../configs/v1-release.json) 指定源代码、验收证据、完整评测和运行归档。清单中的未来报告路径与计划运行ID不表示任务已完成。以下命令只有在对应证据真实完成后才能通过；不要用历史 `delivery-readiness-audit.json` 为本版背书。
+
+```sh
+python3 scripts/audit-delivery-readiness.py \
+  --release configs/v1-release.json --output reports/v1-delivery-readiness.json
+```
+
+提交源代码与报告后运行 `python3 scripts/bundle.py`，记录它输出的新快照目录。将该目录填入下方 `snapshot_dir`；`bundle.py` 本身也会验证相邻 bare 仓库的递归克隆。输出归档路径必须是未使用的新路径。
+
+```sh
+snapshot_dir="delivery/实际的新快照目录"
+python3 scripts/package-delivery.py --snapshot "$snapshot_dir" \
+  --release configs/v1-release.json --readiness reports/v1-delivery-readiness.json \
+  --output delivery/agent-memory-v0.1.0.tar.gz
+python3 scripts/verify-delivery.py --archive delivery/agent-memory-v0.1.0.tar.gz \
+  --output delivery/v1-archive-verification.json
+```
+
+V1打包只选择本次验收绑定的文件，保留凭据及Git可达历史扫描，排除运行数据库、私有模型原文追踪和无关实验目录。独立验证会实际读取归档、检查逐文件哈希，并从包内递归克隆三个仓库。归档验证不替代部署与功能测试：还需按包内说明加载镜像，并在独立卷启动后执行HTTP契约及旧用户恢复检查。正式交接需要这两类证据同时通过。
+
+旧版脚本不带 `--release` 的调用仅用于复核历史交付，仍保留旧实验矩阵要求，不属于本版发布路径。

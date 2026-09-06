@@ -13,6 +13,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--require-all', action='store_true')
 parser.add_argument('--run-id', action='append', help='Audit only these explicit completed runs')
 parser.add_argument('--output', type=pathlib.Path, help='Separate output required for explicit runs')
+parser.add_argument('--data', action='append', type=pathlib.Path,
+                    help='Additional explicitly selected dataset (for frozen development subsets)')
 args = parser.parse_args()
 profiles = ['U3', 'B2', 'B0', 'B1', 'U2', 'B3', 'B4', 'B5', 'B6',
             'no_lifecycle', 'no_raw', 'no_time', 'no_hop', 'no_rerank']
@@ -46,6 +48,10 @@ def distribution(values):
 
 datasets = {sha(p): p for p in sorted((ROOT / 'eval/.data').glob('*-*.json'))
             if not p.name.endswith('.manifest.json')}
+for path in args.data or []:
+    if 'round2-sealed-memops-v1' in path.resolve().parts:
+        raise SystemExit('Sealed data is not part of this delivery audit')
+    datasets[sha(path)] = path
 finished, pending = [], []
 for run_id in expected:
     directory = ROOT / 'eval/artifacts' / run_id
@@ -61,6 +67,8 @@ if args.require_all and pending:
 audits = []
 reviewed_runner = sha(ROOT / 'eval/src/runner.ts')
 for directory, manifest in finished:
+    if manifest['dataset_sha256'] not in datasets:
+        raise SystemExit('Missing exact dataset; provide --data for ' + manifest['run_id'])
     data_path = datasets[manifest['dataset_sha256']]
     subprocess.run(['node', str(ROOT / 'scripts/audit-http-trace.mjs'),
                     '--run-id', manifest['run_id'], '--data', str(data_path),
@@ -114,7 +122,8 @@ for directory, manifest in finished:
             'source_id_comparability': 'N/A for semantic comparison: unmodified mem0 does not guarantee original source-ID retention.'
                 if baseline else 'Source-ID coverage is available as an identifier diagnostic, not entailment.'},
         'input_sha256': {name: sha(directory / name) if (directory / name).exists() else None for name in
-                         ['manifest.json', 'requests.jsonl', 'ingest.jsonl', 'retrievals.jsonl', 'judgments.jsonl']}})
+                         ['manifest.json', 'requests.jsonl', 'ingest.jsonl', 'retrievals.jsonl',
+                          'predictions.jsonl', 'judgments.jsonl', 'metrics.json']}})
 
 report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
           'complete_matrix': not pending, 'expected_runs': len(expected), 'audited_runs': len(audits),

@@ -55,11 +55,22 @@ with tarfile.open(archive_path, 'r:gz') as archive:
             with archive.extractfile(member) as stream:
                 if member.size != expected['bytes'] or digest(stream) != expected['sha256']:
                     raise SystemExit('Archive entry checksum mismatch: ' + member.name)
-    readiness = json.load(archive.extractfile('reports/delivery-readiness-audit.json'))
+    readiness_path = manifest.get('readiness_audit', 'reports/delivery-readiness-audit.json')
+    readiness = json.load(archive.extractfile(readiness_path))
     if readiness['status'] != 'ready_for_packaging':
         raise SystemExit('Missing prerequisite audit')
+    if 'release_manifest' in manifest:
+        release_path = manifest['release_manifest']
+        release = json.load(archive.extractfile(release_path))
+        if (readiness.get('protocol') != 'v1-readiness-audit-v1' or
+                readiness.get('release_manifest') != release_path or
+                entries[release_path]['sha256'] != manifest['release_manifest_sha256'] or
+                entries[release_path]['sha256'] != readiness.get('release_manifest_sha256') or
+                release['version'] != manifest['version'] or
+                any(release['commits'][r] != source['commits'][r] for r in ['service', 'eval'])):
+            raise SystemExit('Packaged release identity differs from readiness or source')
     for name, checksum in readiness['evidence_sha256'].items():
-        packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/')) else name
+        packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/', 'eval/.data/', 'delivery/')) else name
         if packaged not in entries:
             continue  # Root scripts and service/eval sources live inside the Git mirrors.
         if entries[packaged]['sha256'] != checksum:
@@ -85,7 +96,7 @@ for name, commit in source['commits'].items():
     with (verified / ('git-fsck-' + name.replace('.', 'workspace') + '.log')).open('w') as log:
         subprocess.run(['git', 'fsck', '--full'], cwd=clone / name, stdout=log, stderr=subprocess.STDOUT, check=True)
 for name, checksum in readiness['evidence_sha256'].items():
-    packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/')) else name
+    packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/', 'eval/.data/', 'delivery/')) else name
     if packaged not in entries:
         with (clone / name).open('rb') as stream:
             if digest(stream) != checksum:

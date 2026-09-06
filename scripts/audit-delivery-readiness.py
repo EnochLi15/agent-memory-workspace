@@ -5,6 +5,7 @@ import json
 import pathlib
 import subprocess
 import urllib.request
+import argparse
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -38,6 +39,180 @@ evidence = set()
 def document(name):
     evidence.add(name)
     return read(name)
+
+
+def audit_v1(release_path, output):
+    """V1 gates are explicit; legacy benchmark matrices are not V1 evidence."""
+    release_name = str(release_path.resolve().relative_to(ROOT))
+    release = document(release_name)
+    require(release.get('protocol') == 'v1-release-manifest-v1', 'Unknown release protocol')
+    require(release.get('human_labels') == 0, 'This release has no independent human calibration')
+
+    def bound(name):
+        path = pathlib.PurePosixPath(name)
+        require(not path.is_absolute() and '..' not in path.parts, 'Evidence must be workspace-relative')
+        require((ROOT / path).resolve().is_relative_to(ROOT), 'Evidence escapes workspace')
+        require((ROOT / path).is_file(), 'Required completed evidence is not available yet: ' + name)
+        evidence.add(name)
+        return sha(name)
+
+    def checked(name):
+        bound(name)
+        result = document(name)
+        for path, expected in result.get('evidence_sha256', {}).items():
+            require(bound(path) == expected, 'Evidence changed: ' + path)
+        return result
+
+    for repo in ['service', 'eval']:
+        require(git(repo, 'rev-parse', 'HEAD') == release['commits'][repo], 'Release source changed: ' + repo)
+        require(not git(repo, 'status', '--porcelain'), 'Release source is dirty: ' + repo)
+    require(sha('service/contracts/contract.json') == sha('eval/contracts/contract.json'), 'Contract copies differ')
+    evidence.update(['service/contracts/contract.json', 'eval/contracts/contract.json'])
+
+    blockers = checked(release['gates']['blockers'])
+    require(blockers.get('status') == 'complete' and blockers.get('unresolved_p0') == [], 'Resolve known P0 blockers')
+    require(len(blockers.get('cases', [])) == 19, 'Retain all 19 original failure mappings')
+    require(all(c.get('cause') and c.get('evidence') and c.get('disposition') in
+                ['fixed_and_verified', 'valid_rejection_preserved', 'external_failure_bounded']
+                for c in blockers['cases']), 'Each original failure needs a verified disposition')
+    soak = checked(release['gates']['runtime'])
+    require(soak.get('passed') and soak.get('duration_seconds', 0) >= 7500, 'Complete the long runtime gate')
+    require(soak.get('runtime_sha256') == sha('scripts/experiment_runtime.py') and
+            soak.get('runner_sha256') == sha('scripts/run-experiment.py'), 'Runtime implementation changed after soak')
+    state = checked(soak['runtime_record'])
+    require(state.get('status') == 'finished' and state.get('exit_code') == 0 and
+            not state.get('monitor_gaps') and not state.get('signal'), 'Runtime did not exit cleanly')
+    worker = state.get('children', {}).get('model-free-worker', {})
+    require(worker.get('exit_code') == 0 and not worker.get('stopped_by_runner'), 'Soak child was interrupted')
+    elapsed = (datetime.datetime.fromisoformat(state['finished_at']) -
+               datetime.datetime.fromisoformat(state['started_at'])).total_seconds()
+    require(elapsed >= 7500 and all(c.get('exit_code') is not None for c in state['children'].values()),
+            'Runtime record does not cover the required interval or child exits')
+
+    deploy = document(release['gates']['deployment'])
+    require(deploy.get('passed') and deploy.get('no_degraded_write') and
+            all(deploy['clean_sources'].values()) and all(deploy['restart_checks'].values()), 'Complete deployment and restart checks')
+    require(all(deploy['commits'][r] == release['commits'][r] for r in ['service', 'eval']), 'Deployment tested another source')
+    required_contract = {'health', 'echo', 'idempotency', 'read-after-write', 'tenant-isolation', 'top-k',
+                         'three-routes', 'validation', 'conflict', 'update-current-state', 'forget-all-paths', 'retained-neighbor'}
+    require(deploy['contract'].get('contract') == 'passed' and
+            required_contract <= set(deploy['contract']['checks']), 'Incomplete HTTP delivery contract')
+    require(deploy['service_tests'] > 0 and deploy['eval_node_tests'] > 0 and deploy['eval_python_tests'] > 0,
+            'Missing service/evaluator test results')
+    for name, expected in deploy['evidence_sha256'].items():
+        path = release['deployment_log_directory'] + '/' + name
+        require(bound(path) == expected, 'Deployment log changed: ' + path)
+    for name in release['gates']['durability']:
+        result = checked(name)
+        require(result.get('passed') and result.get('checks') and all(result['checks'].values()), 'Durability check failed: ' + name)
+
+    small = checked(release['gates']['small_pair'])
+    require(small.get('passed') and small['storage']['passed'] and small['storage']['count'] == 20 and
+            all(v for group in small['storage']['checks'].values() for v in group.values()), 'Small storage gate incomplete')
+    require(small['review']['human_labels'] == 0, 'Assistant review cannot be human labels')
+    long = checked(release['gates']['long_pair'])
+    fixed = document(release['long_dataset_manifest'])
+    require(long.get('passed') and long.get('backgrounds') == 4 and
+            long.get('questions') == fixed['total_questions'] <= 40, 'Long-background gate incomplete')
+    require(long.get('operation_checks') and all(long['operation_checks'].values()), 'Long-background operation checks failed')
+    for pair in [small, long]:
+        require(all(pair['commits'][r] == release['commits'][r] for r in ['service', 'eval']), 'Pair tested another source')
+        require(set(pair['runs']) == {'raw', 'candidate'}, 'Both comparison methods are required')
+        for run in pair['runs'].values():
+            require(run['finished'] and run['all_adds_ok'] and run['http_audit_passed'] and run['clean_sources'] and
+                    run['judged'] == run['planned'] and run['max_items'] <= 32 and run['max_estimated_tokens'] <= 6000,
+                    'A paired run is incomplete or outside budget')
+        require(not pair['runs']['candidate']['erased_code_returned_qids'], 'Candidate leaked forgotten content')
+
+    completed = checked(release['gates']['full_audit'])
+    require(completed['complete_matrix'] and completed['expected_runs'] == completed['audited_runs'] == 2 and
+            not completed['pending'], 'Complete and audit both full runs')
+    require(completed['audit_script_sha256'] == sha('scripts/audit-completed-runs.py') and
+            completed['reviewed_runner_sha256'] == sha('eval/src/runner.ts'), 'Full audit implementation changed')
+    audited = {r['run_id']: r for r in completed['runs']}
+    require(set(audited) == set(release['primary_runs'].values()) and set(release['primary_runs']) == {'locomo', 'memops'},
+            'Full audit must cover exactly this release')
+    primary = {}
+    for benchmark, run_id in release['primary_runs'].items():
+        prefix = 'eval/artifacts/' + run_id + '/'
+        m = document(prefix + 'manifest.json'); metrics = document(prefix + 'metrics.json'); a = audited[run_id]
+        require(m['status'] == 'finished' and m['planned_questions'] == metrics['planned'] == 500 and
+                all(not s['dirty'] for s in m['source_state'].values()), 'Full run is incomplete or started dirty')
+        require(all(m[r + '_commit'] == release['commits'][r] for r in ['service', 'eval']), 'Full run tested another source')
+        for name in ['scripts/run-experiment.py', 'scripts/experiment_runtime.py',
+                     'configs/round2-small-pair-v1.json']:
+            frozen = subprocess.check_output(['git', 'show', m['workspace_commit'] + ':' + name], cwd=ROOT)
+            require(hashlib.sha256(frozen).hexdigest() == bound(name), 'Execution source changed after full evaluation: ' + name)
+        cfg = m['service_configuration']
+        require((cfg['maxEvidence'], cfg['tokenBudget'], cfg['addTimeout'], cfg['searchTimeout']) ==
+                (32, 6000, 115000, 55000) and not any(cfg[k] for k in ['rerank', 'coveragePacking', 'eventView']) and
+                not cfg['experimental']['multiHop'] and not cfg['experimental']['reflection'], 'Frozen V1 budget/configuration changed')
+        require(a['http_trace']['passed'] and a['terminal_qid_coverage_exact'] and
+                a['answer_runner_matches_reviewed_source'] and a['options_are_plain_strings'], 'Full run boundary audit failed')
+        for name, expected in a['input_sha256'].items():
+            if expected is None:
+                require(name in {'predictions.jsonl', 'retrievals.jsonl'} and not (ROOT / prefix / name).exists(),
+                        'Required full audit input missing or changed: ' + name)
+            else:
+                require(bound(prefix + name) == expected, 'Full audit input changed: ' + name)
+        judgments = [json.loads(line) for line in (ROOT / prefix / 'judgments.jsonl').read_text().splitlines() if line.strip()]
+        require(len(judgments) == len({r['qid'] for r in judgments}) == 500, 'Every question needs one terminal record')
+        correct = sum(r.get('correct') is True for r in judgments)
+        judged = sum(r['status'] == 'judged' for r in judgments)
+        require(all(r['status'] in {'judged', 'service_error', 'pipeline_error', 'judge_error'} for r in judgments)
+                and all(r['status'] == 'judged' for r in judgments if r.get('correct') is True),
+                'Invalid terminal status or correctness assigned to an error')
+        require((metrics['correct'], metrics['judged'], metrics['unrecorded_questions'], metrics['incomplete']) ==
+                (correct, judged, 0, 0), 'Metrics do not match terminal records')
+        primary[benchmark] = {'planned': 500, 'correct': correct, 'judged': judged,
+                              'accuracy_over_planned': correct / 500, 'statuses': a['terminal_statuses']}
+    summary = checked(release['gates']['full_report'])
+    require(summary.get('complete') and summary.get('primary_results') == primary and
+            summary.get('unresolved_p0') == [] and summary.get('human_labels') == 0,
+            'Final report must disclose current results and resolve P0 findings')
+    require(summary.get('cost_scope') and summary.get('latency') and summary.get('write_outcomes'), 'Report costs, latency and write failures')
+
+    runtime = checked(release['runtime_bundles'])
+    require(runtime.get('archive_config_digests_verified') and runtime['service_commit'] == release['commits']['service'] and
+            runtime['eval_commit'] == release['commits']['eval'] and
+            deploy['image_id'] in [i['id'] for i in runtime['images']], 'Runtime archive must contain the tested image')
+    for entry in runtime['archives']:
+        require(bound(entry['path']) == entry['sha256'] and (ROOT / entry['path']).stat().st_size == entry['bytes'], 'Runtime archive changed')
+    upstream = document('service/baseline/upstream/source-manifest.json')['files']
+    for entry in upstream:
+        require(bound('service/baseline/upstream/src/' + entry['path']) == entry['sha256'], 'Original Mem0 source changed')
+    require(len(upstream) > 0, 'Missing upstream source inventory')
+    for name in release['required_documents']:
+        bound(name)
+    for name in ['scripts/experiment_runtime.py', 'scripts/run-experiment.py', 'scripts/audit-completed-runs.py',
+                 'scripts/audit-http-trace.mjs', 'scripts/package-delivery.py', 'scripts/verify-delivery.py',
+                 'scripts/audit-delivery-readiness.py', 'scripts/bundle.py', 'eval/src/runner.ts']:
+        bound(name)
+    result = {'protocol': 'v1-readiness-audit-v1', 'status': 'ready_for_packaging',
+              'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'release_manifest': release_name, 'release_manifest_sha256': sha(release_name),
+              'version': release['version'], 'service_commit': release['commits']['service'],
+              'eval_commit': release['commits']['eval'], 'primary_results': primary,
+              'audit_script_sha256': sha('scripts/audit-delivery-readiness.py'),
+              'requirements': ['P0-1', 'P0-2', 'P0-3', 'P0-4', 'P0-5 packaging prerequisites'],
+              'scope': 'Pre-archive readiness only. Archive readback, recursive clone and packaged deployment remain required.',
+              'evidence_sha256': {name: sha(name) for name in sorted(evidence)}}
+    require(not output.exists(), 'Preserve prior readiness report; choose a new output')
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps({'status': result['status'], 'version': result['version'], 'evidence_files': len(evidence)}))
+
+
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--release', type=pathlib.Path, help='V1 release manifest; omission retains the historical audit')
+parser.add_argument('--output', type=pathlib.Path)
+args = parser.parse_args()
+if args.release:
+    require(args.output is not None, '--release requires a separate --output')
+    require(args.output.resolve() != ROOT / 'reports/delivery-readiness-audit.json', 'Preserve historical readiness')
+    audit_v1(args.release, args.output)
+    raise SystemExit(0)
+require(args.output is None, '--output requires --release')
 
 
 completed = document('reports/completed-run-audit.json')

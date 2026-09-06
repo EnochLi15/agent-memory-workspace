@@ -13,11 +13,22 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--snapshot', required=True, help='Directory created by bundle.py')
 parser.add_argument('--output', default='delivery/agent-memory-delivery.tar.gz')
 parser.add_argument('--plan', action='store_true', help='Inspect file inventory without claiming completion')
+parser.add_argument('--release', type=pathlib.Path, help='V1 release manifest with explicit evidence inventory')
+parser.add_argument('--readiness', type=pathlib.Path, help='Completed readiness audit for that release')
 args = parser.parse_args()
 snapshot = pathlib.Path(args.snapshot).resolve()
 output = pathlib.Path(args.output).resolve()
 snapshot_manifest = json.loads((snapshot / 'manifest.json').read_text())
 files = {}
+if bool(args.release) != bool(args.readiness):
+    parser.error('--release and --readiness must be supplied together')
+release = json.loads(args.release.read_text()) if args.release else None
+audit_path = args.readiness or ROOT / 'reports/delivery-readiness-audit.json'
+audit = json.loads(audit_path.read_text())
+if release and (release.get('protocol') != 'v1-release-manifest-v1' or
+                audit.get('protocol') != 'v1-readiness-audit-v1' or
+                audit.get('status') != 'ready_for_packaging'):
+    raise SystemExit('A completed V1 readiness audit is required')
 
 
 def add(path, name):
@@ -27,6 +38,9 @@ def add(path, name):
         return
     if path.name.startswith('.env') and path.name != '.env.example':
         raise ValueError('Environment files are not deliverables')
+    if release and (path.suffix in {'.sqlite', '.db'} or
+                    any(token in path.name for token in ['model-trace', '.sqlite-', '.db-'])):
+        raise ValueError('Databases and private model traces are not deliverables')
     if name in files:
         raise ValueError('Duplicate archive path: ' + name)
     files[name] = path
@@ -44,15 +58,26 @@ def tree(source, prefix, exclude_models=False):
 
 tree(snapshot / 'repositories', 'repositories')
 add(snapshot / 'manifest.json', 'source-manifest.json')
-tree(ROOT / 'reports', 'reports')
-tree(ROOT / 'docs', 'docs')
-tree(ROOT / 'artifacts', 'evidence/artifacts', exclude_models=True)
-tree(ROOT / 'eval/artifacts', 'evidence/eval/artifacts')
-for name in ['locomo-dev.json', 'locomo-test.json', 'memops-dev.json', 'memops-test.json',
-             'locomo-dev-unlabelled.json', 'locomo-dev-unlabelled.manifest.json']:
-    add(ROOT / 'eval/.data' / name, 'evidence/eval/.data/' + name)
-for name in ['runtime-images.tar', 'local-embedding.tar']:
-    add(ROOT / 'delivery' / name, name)
+if release:
+    # Exact reviewed files only. Recursive artifacts/ includes private traces,
+    # checkpoint databases and local credentials from prior diagnostics.
+    selected = set(audit['evidence_sha256']) | {str(audit_path.resolve().relative_to(ROOT))}
+    for name in sorted(selected):
+        path = ROOT / name
+        if not path.resolve().is_relative_to(ROOT) or not path.is_file():
+            raise ValueError('Missing or escaping release evidence: ' + name)
+        packaged = 'evidence/' + name if name.startswith(('artifacts/', 'eval/artifacts/', 'eval/.data/', 'delivery/')) else name
+        add(path, packaged)
+else:
+    tree(ROOT / 'reports', 'reports')
+    tree(ROOT / 'docs', 'docs')
+    tree(ROOT / 'artifacts', 'evidence/artifacts', exclude_models=True)
+    tree(ROOT / 'eval/artifacts', 'evidence/eval/artifacts')
+    for name in ['locomo-dev.json', 'locomo-test.json', 'memops-dev.json', 'memops-test.json',
+                 'locomo-dev-unlabelled.json', 'locomo-dev-unlabelled.manifest.json']:
+        add(ROOT / 'eval/.data' / name, 'evidence/eval/.data/' + name)
+    for name in ['runtime-images.tar', 'local-embedding.tar']:
+        add(ROOT / 'delivery' / name, name)
 inventory = {'created_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
              'snapshot': str(snapshot), 'source_commits': snapshot_manifest['commits'],
              'file_count': len(files), 'uncompressed_bytes': sum(p.stat().st_size for p in files.values()),
@@ -85,24 +110,24 @@ for repository in sorted((snapshot / 'repositories').glob('*.git')):
         path = repository / ref
         if not path.is_file() or path.read_text().strip() != oid:
             raise SystemExit('Create a new bundle with materialized references before packaging')
-if not json.loads((ROOT / 'reports/completed-run-audit.json').read_text())['complete_matrix']:
-    raise SystemExit('Complete all 34 runs and strict request audits first')
-usage_report = json.loads((ROOT / 'reports/model-usage-and-resources.json').read_text())
-if not usage_report['complete_evaluation_runs'] or not usage_report.get('complete_memops_posthoc_logs'):
-    raise SystemExit('Complete model usage summary first')
-workflow = json.loads((ROOT / 'artifacts/report-workflow.json').read_text())['results']
-if len(workflow) != 3 or any(r['status'] != 'complete' for r in workflow):
-    raise SystemExit('Complete posthoc reporting first')
-baseline_diagnostics = json.loads((ROOT / 'artifacts/baseline-upstream-diagnostic-workflow.json').read_text())['results']
-if len(baseline_diagnostics) != 2 or any(r['exit_code'] != 0 for r in baseline_diagnostics):
-    raise SystemExit('Complete both original-baseline lifecycle diagnostics first')
-performance_path = ROOT / 'artifacts/final-performance/summary.json'
-if not performance_path.exists():
-    raise SystemExit('Complete both final performance runs first')
-performance = json.loads(performance_path.read_text())
-if performance.get('status') != 'complete' or set(performance.get('measurements', {})) != {'primary', 'instrumented'}:
-    raise SystemExit('Both final performance results must be complete')
-audit = json.loads((ROOT / 'reports/delivery-readiness-audit.json').read_text())
+if not release:
+    if not json.loads((ROOT / 'reports/completed-run-audit.json').read_text())['complete_matrix']:
+        raise SystemExit('Complete all 34 runs and strict request audits first')
+    usage_report = json.loads((ROOT / 'reports/model-usage-and-resources.json').read_text())
+    if not usage_report['complete_evaluation_runs'] or not usage_report.get('complete_memops_posthoc_logs'):
+        raise SystemExit('Complete model usage summary first')
+    workflow = json.loads((ROOT / 'artifacts/report-workflow.json').read_text())['results']
+    if len(workflow) != 3 or any(r['status'] != 'complete' for r in workflow):
+        raise SystemExit('Complete posthoc reporting first')
+    baseline_diagnostics = json.loads((ROOT / 'artifacts/baseline-upstream-diagnostic-workflow.json').read_text())['results']
+    if len(baseline_diagnostics) != 2 or any(r['exit_code'] != 0 for r in baseline_diagnostics):
+        raise SystemExit('Complete both original-baseline lifecycle diagnostics first')
+    performance_path = ROOT / 'artifacts/final-performance/summary.json'
+    if not performance_path.exists():
+        raise SystemExit('Complete both final performance runs first')
+    performance = json.loads(performance_path.read_text())
+    if performance.get('status') != 'complete' or set(performance.get('measurements', {})) != {'primary', 'instrumented'}:
+        raise SystemExit('Both final performance results must be complete')
 if audit.get('status') != 'ready_for_packaging':
     raise SystemExit('A completed requirement-by-requirement readiness audit is required')
 if any(audit.get(name + '_commit') != snapshot_manifest['commits'][name] for name in ['service', 'eval']):
@@ -132,6 +157,10 @@ def digest(path, check_secrets=False):
 
 if audit.get('audit_script_sha256') != digest(ROOT / 'scripts/audit-delivery-readiness.py'):
     raise SystemExit('Readiness audit implementation changed; rerun it')
+if release and (audit.get('release_manifest_sha256') != digest(args.release) or
+                audit.get('release_manifest') != str(args.release.resolve().relative_to(ROOT)) or
+                audit.get('version') != release['version']):
+    raise SystemExit('Release manifest differs from the completed readiness audit')
 if not audit.get('evidence_sha256'):
     raise SystemExit('Readiness audit must bind the reviewed evidence files')
 for name, expected in audit['evidence_sha256'].items():
@@ -154,16 +183,22 @@ for repo in sorted((snapshot / 'repositories').glob('*.git')):
 entries = []
 for name, path in sorted(files.items()):
     entries.append({'path': name, 'bytes': path.stat().st_size, 'sha256': digest(path, True)})
-runtime = json.loads((ROOT / 'reports/runtime-bundles.json').read_text())
+runtime = json.loads((ROOT / (release['runtime_bundles'] if release else 'reports/runtime-bundles.json')).read_text())
 by_name = {entry['path']: entry for entry in entries}
 for entry in runtime['archives']:
-    actual = by_name[pathlib.Path(entry['path']).name]
+    actual = by_name['evidence/' + entry['path'] if release else pathlib.Path(entry['path']).name]
     if actual['sha256'] != entry['sha256'] or actual['bytes'] != entry['bytes']:
         raise ValueError('Runtime archive differs from its validated report')
 manifest = {k: v for k, v in inventory.items() if k != 'files'}
 manifest.update(files=entries, credential_scan='passed', git_history_scan=git_audits,
                 scope='Private local delivery; no external publication. Historical failed/superseded runs '
                       'are retained and are not included in current benchmark scores.')
+if release:
+    manifest.update(version=release['version'], release_manifest=audit['release_manifest'],
+                    readiness_audit=str(audit_path.resolve().relative_to(ROOT)),
+                    release_manifest_sha256=digest(args.release),
+                    scope='V1 pinned source, explicitly reviewed evidence and tested runtime archives. '
+                          'Private model traces, databases and unrelated experiments are excluded.')
 readme = '''# Agent Memory 交付包
 
 先核对外部SHA256文件，再按MANIFEST.json核对各文件。保留repositories内三个bare仓库的相邻位置：
@@ -181,6 +216,27 @@ MEMORY_MODE=offline docker compose up -d --no-build --wait --wait-timeout 90
 远程Answer与增强模型需在本地.env配置密钥。普通停止不要加-v，以保留数据卷。
 evidence包含已保存实验与所用划分；完整上游源数据仍可按固定版本用make data获取。
 历史失败产物用于审计，最终计分以报告指定的holdout-v2、dev-v6、baseline-v7为准。
+'''
+if release:
+    readme = f'''# Agent Memory {release['version']} 交付包
+
+先核对外部 SHA256 与 MANIFEST.json。保留 repositories 内三个 bare 仓库的相邻位置：
+
+```sh
+git -c protocol.file.allow=always clone --recurse-submodules repositories/agent-memory-workspace.git workspace
+cp -R evidence/. workspace/
+cd workspace
+docker load -i {runtime['archives'][0]['path']}
+cp .env.example .env
+```
+
+在本地 .env 填写模型连接信息，并设置 MEMORY_SERVICE_IMAGE={release['service_image']}。
+按照 docs/DEPLOYMENT.md 启动增强模式，或使用文档中的独立离线配置与数据卷。
+正式结果与限制见 {release['delivery_report']}，发布身份见 {audit['release_manifest']}。
+本包包含已验证的平台运行镜像与本地 embedding 归档；Docker/Ollama 程序、
+Qwen Judge 权重和联网构建依赖需另行准备。模型导入步骤见部署文档。
+停止不要删除数据卷；升级与镜像回退必须按文档配套兼容快照。
+本包不包含 API key、私有模型原文追踪、运行数据库或其他实验的完整目录。
 '''
 partial = output.with_suffix(output.suffix + '.partial')
 output.parent.mkdir(parents=True, exist_ok=True)
