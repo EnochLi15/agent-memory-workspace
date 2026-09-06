@@ -2,6 +2,8 @@
 
 三个独立仓库：本工作区负责规范、版本、编排及报告；`service/` 是 mem0 TS 源码改造服务；`eval/` 是只通过 HTTP 通信的独立评测器。两者是固定 commit 的 Git submodule，不能互相引用运行时代码。
 
+当前唯一交付主线是 [V1交付收敛计划](docs/29-V1交付收敛计划.md)：修复交付阻塞、固定发布配置、通过小集闭环与原文对照、完成一次1000题评测，随后封版。当前仅计划已落盘，尚未完成新V1验收；实际结果见 [第二轮状态](docs/ROUND2-STATUS.md)。
+
 ## 快速运行
 
 宿主机：Node 24.18.0、Python 3、Docker。使用 `nvm use`，然后：
@@ -24,6 +26,6 @@ make down
 
 离线 Git 交付：`make bundle` 创建三个 bare 镜像，并实际验证递归克隆。内部相对 submodule URL 适配三个镜像相邻的目录；上传到代码托管平台时按实际位置配置远端。
 
-详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。本机交付实例已在 `http://127.0.0.1:8088` 运行并通过增强模式 contract，实际配置见 [部署验证](reports/deployed-service.json)；1000题主评测、32组开发对照、完整诊断和两轮性能已完成，本地配置结果331/1000，含36题服务错误。最终归档与校验结果见`delivery/final-verification.json`，工程及质量边界见[实施状态](docs/IMPLEMENTATION-STATUS.md)。
+详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。历史交付实例曾在 `http://127.0.0.1:8088` 通过增强模式 contract，配置与当时验证见 [部署验证](reports/deployed-service.json)；这不代表本次候选或该端口当前状态。历史1000题主评测、32组开发对照、完整诊断和两轮性能已有归档，本地配置结果331/1000，含36题服务错误。历史归档校验见`delivery/final-verification.json`，相应边界见[实施状态](docs/IMPLEMENTATION-STATUS.md)。
 
-第二轮改进进行中：最新实验服务`9784668`有206项测试通过，但完整写入与质量门槛仍未通过，不替代上述基线成绩或8088部署。当前结果见[第二轮状态](docs/ROUND2-STATUS.md)与[写入可靠性后续设计](docs/09-写入可靠性后续设计.md)。
+第二轮服务冻结`98c12e5`、eval`11da2a6`的1000题评测已经中断：LoCoMo 83/500，MemOps尚有348题无结果，不能报告新的完整准确率。原始现场与历史331/1000保留，监控已暂停。详见[中断归档](reports/round2-full-98c12e5-interrupted.md)；后续实施按[V1交付收敛计划](docs/29-V1交付收敛计划.md)推进。
