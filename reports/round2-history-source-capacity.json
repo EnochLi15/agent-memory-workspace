@@ -1,0 +1,14 @@
+{
+  "protocol": "history-source-input-capacity-audit-v1",
+  "source": "artifacts/round2-source-operations-E10-data.json",
+  "sample": "E10_reflect",
+  "target_segment": 44,
+  "prior_sessions": 43,
+  "prior_messages": 446,
+  "prior_source_text_chars": 309661,
+  "new_messages": 16,
+  "new_source_text_chars": 6792,
+  "model_input_character_limit": 180000,
+  "scope": "Exact previously exposed source text only, excluding JSON metadata, duplicated target text and existing facts. This lower bound proves that a complete historical catalog for this request cannot fit the current one-call limit. No model call or failed benchmark score is created.",
+  "source_text_alone_exceeds_limit": true
+}
