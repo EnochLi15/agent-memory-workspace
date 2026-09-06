@@ -1,8 +1,8 @@
 {
   "protocol": "round2-running-regression-observation-v1",
-  "observed_at": "2026-09-06T13:02:48.555606+00:00",
+  "observed_at": "2026-09-06T13:22:19.935033+00:00",
   "campaign": "round2-resilient-bfec674-dev-r1",
-  "process_observation": "  PID STAT ELAPSED COMM\n81978 S      24:59 node\n81980 S      24:59 node\n",
+  "process_observation": "  PID STAT ELAPSED COMM\n81978 S      44:30 node\n81980 S      44:30 node\n",
   "runs": [
     {
       "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
@@ -33,11 +33,11 @@
       "status": "running",
       "planned_questions": 30,
       "last_add_status_counts": {
-        "ok": 60,
-        "failed": 1
+        "ok": 100,
+        "failed": 2
       },
       "question_status_counts": {
-        "service_error": 6
+        "service_error": 16
       },
       "judged": 0,
       "correct": 0,
@@ -45,6 +45,10 @@
         {
           "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:E10_reflect:segment-26:0",
           "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Accepted raw coverage was erased, linked to state, or not indexed\"}}"
+        },
+        {
+          "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}"
         }
       ]
     }

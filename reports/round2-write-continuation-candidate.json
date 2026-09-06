@@ -1,0 +1,50 @@
+{
+  "protocol": "bounded-write-continuation-candidate-v1",
+  "service_commit": "98c12e5dcf4c5a3a2a7427825e0e6f984f303394",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-98c12e5",
+  "source_sha256": {
+    "write-continuation.ts": "90a9f581b065734ce67d7b69825afdce62a9daeb1fd8585040d2b5ff9bd14eca",
+    "preparation-ledger.ts": "6c428d828177f4de8263cd04a1b4b99ad3fc5fcb8befe6b125c6f2c4a02baf59",
+    "engine.ts": "ef973bf3d6e9e4e8f1d451659e932dc33dc8934d9863f414ea58f705e1061ca6",
+    "models.ts": "97b2c6c5a925df021b947d2d2f2ebcde87284d0b36e10596fea67031226700d9",
+    "storage.ts": "16846e6a2765f0a8a6eb0fbab9b5651dc0da3f7cea6d8d719da1971e5c10e0cb",
+    "db-worker.ts": "87928f58ba2fd6e227c2c6eb60a247c8a42945c17e2835c1b03b42881304c28c",
+    "config.ts": "3ebe095bcd77655ffd9ca22be04c3f9379d75ce773b86f24972394b2286514d2"
+  },
+  "test_sha256": {
+    "write-continuation-http.test.ts": "4eed66b74424b09c4b83205fc152a5d7e85a5bda7f1b64fc7b72c4443b10996a",
+    "write-continuation-engine.test.ts": "9735473518c44a47151e0448638f1a59f48f5e8998e0ed518d63a6466e7a94f2",
+    "write-continuation.test.ts": "c717059856da33a79bc90591156d74638facba9ecd82f1cfe9c9e6045738fbfb"
+  },
+  "test_results": {
+    "service_passed": 338,
+    "new_continuation_tests": 20,
+    "root_ingestion_identity_passed": 4
+  },
+  "http_fault_fixture": {
+    "first_http_status": 503,
+    "first_code": "WRITE_CONTINUATION_PENDING",
+    "counts_after_first": {
+      "extraction": 1,
+      "verification": 1,
+      "repair": 3
+    },
+    "second_http_status": 200,
+    "counts_after_second": {
+      "extraction": 1,
+      "verification": 2,
+      "repair": 4
+    },
+    "duplicate_http_status": 200,
+    "duplicate_adds_no_generation": true
+  },
+  "limits": {
+    "enabled_by_default": false,
+    "http_preparation_attempts": 3,
+    "cache_ttl_ms": 300000,
+    "max_requests": 32,
+    "max_entry_bytes": 8388608,
+    "max_total_bytes": 67108864
+  },
+  "scope": "Synthetic tests use a local OpenAI-compatible HTTP/SSE fixture with real SDK connection failures and a real service/SQLite worker. No fresh gateway/model call or full-background ingestion with this candidate. Source/eval main trees and running MemOps remain frozen. New feature has durable metadata, not durable response recovery across restart."
+}

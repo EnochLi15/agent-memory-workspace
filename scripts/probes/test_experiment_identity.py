@@ -9,7 +9,7 @@ from experiment_identity import validate_reuse
 
 class IngestionIdentityTests(unittest.TestCase):
     def setUp(self):
-        self.config = {'dataDir': '/same', 'port': 8096, 'llmModel': 'mini',
+        self.config = {'writeContinuation': False, 'dataDir': '/same', 'port': 8096, 'llmModel': 'mini',
                        'llmStageModels': {'verification': 'strong'}, 'sourceIndex': True,
                        'embeddingDigest': 'pinned', 'maxRepairRounds': 2, 'extractionWorkers': 1, 'sourceErasureWorkers': 1, 'sourceErasureGrouped': False,
                        'rawFallback': False, 'rerank': False,
@@ -33,7 +33,7 @@ class IngestionIdentityTests(unittest.TestCase):
         self.assertFalse(self.config['experimental']['multiHop'])
 
     def test_model_representation_lifecycle_and_evaluation_changes_are_rejected(self):
-        for field, value in [('llmModel', 'new'), ('sourceIndex', False),
+        for field, value in [('writeContinuation', True), ('llmModel', 'new'), ('sourceIndex', False),
                              ('embeddingDigest', 'other'), ('maxRepairRounds', 1), ('extractionWorkers', 3), ('sourceErasureWorkers', 3), ('sourceErasureGrouped', True),
                              ('llmStageModels', {'verification': 'other'}),
                              ('experimental', {'multiHop': False, 'lifecycle': False}),
