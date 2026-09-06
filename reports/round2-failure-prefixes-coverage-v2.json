@@ -1,0 +1,244 @@
+{
+  "protocol": "failed-prefix-http-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T01-45-49-321Z",
+  "source_sha256": {
+    "service/src/config.ts": "d21e6178653e55cc7d5e2865bf09f514568b4794d4d9d054a2bb43790228db61",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "7c093375d74fccc6742609d3ac07025a0a5bb6b3094625dafdc9eda8e74f447f",
+    "service/src/models.ts": "e3830f995d4aa8477f8bae5d7f37db59ab91b4ab7da85347d67e6ba75b5918d9",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "45f168008536bb458665e094fc93489c88caa3c27e871c67fc47852895b3b913",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "2cddc453adbd64a2352870c31bb9bc2aa6de1668be53355c70e8be3f2e463953",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "probe_sha256": "38513f67389b8e80ae1439523b8e6fd7685825395965530798a613543fe2aa57",
+  "prior_requests_sha256": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+  "started_at": "2026-09-06T01:45:49.339Z",
+  "scope": "Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.",
+  "cases": [
+    {
+      "user_id": "round2-prefix:D24_reflect",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+        "elapsed_ms": 9280.303208000027
+      },
+      "planned_adds": 4,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 2842.257708
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-2:0",
+          "status": 200,
+          "elapsed_ms": 3046.2360000000003
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-3:0",
+          "status": 200,
+          "elapsed_ms": 2875.5470419999992
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+          "status": 200,
+          "elapsed_ms": 5589.446958
+        }
+      ],
+      "status": "prefix_accepted",
+      "final_revision": 4,
+      "fact_states": {
+        "active": 3,
+        "retracted": 1
+      }
+    },
+    {
+      "user_id": "round2-prefix:E03_reflect",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+        "elapsed_ms": 46818.26208399981
+      },
+      "planned_adds": 8,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 1599.6087079999998
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-2:0",
+          "status": 200,
+          "elapsed_ms": 5498.256583
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-3:0",
+          "status": 200,
+          "elapsed_ms": 1440.6049590000002
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-4:0",
+          "status": 200,
+          "elapsed_ms": 3398.5388330000023
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-5:0",
+          "status": 200,
+          "elapsed_ms": 1761.4132089999985
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-6:0",
+          "status": 200,
+          "elapsed_ms": 7090.818958
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+          "status": 503,
+          "elapsed_ms": 19717.065334,
+          "error": {
+            "error": {
+              "code": "OPERATION_TARGET",
+              "message": "Unresolved operation subject, property or scope after repair"
+            }
+          }
+        }
+      ],
+      "status": "failed",
+      "final_revision": 6,
+      "fact_states": {
+        "active": 9,
+        "retracted": 1
+      }
+    },
+    {
+      "user_id": "round2-prefix:C30_update",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+        "elapsed_ms": 37729.2247080002
+      },
+      "planned_adds": 14,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 6878.665457999996
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-2:0",
+          "status": 200,
+          "elapsed_ms": 1854.9594169999982
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-3:0",
+          "status": 200,
+          "elapsed_ms": 3610.769625000008
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-4:0",
+          "status": 200,
+          "elapsed_ms": 4905.796915999992
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-5:0",
+          "status": 200,
+          "elapsed_ms": 1917.7871670000022
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-6:0",
+          "status": 200,
+          "elapsed_ms": 7553.448957999994
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-7:0",
+          "status": 200,
+          "elapsed_ms": 3940.147834000003
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-8:0",
+          "status": 200,
+          "elapsed_ms": 2030.0252080000064
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-9:0",
+          "status": 200,
+          "elapsed_ms": 2117.022916999995
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-10:0",
+          "status": 200,
+          "elapsed_ms": 2100.112500000003
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-11:0",
+          "status": 200,
+          "elapsed_ms": 3674.2974160000012
+        },
+        {
+          "original_request_id": "holdout-v2-U3:memops:C30_update:segment-12:0",
+          "status": 503,
+          "elapsed_ms": 5261.917249999999,
+          "error": {
+            "error": {
+              "code": "OPERATION_INTENT",
+              "message": "Personal evidence or correction still missing after repair"
+            }
+          }
+        }
+      ],
+      "status": "failed",
+      "final_revision": 11,
+      "fact_states": {
+        "active": 12,
+        "superseded": 6
+      }
+    },
+    {
+      "user_id": "round2-prefix:D17_remember",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+        "elapsed_ms": 15851.164124999195
+      },
+      "planned_adds": 1,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+          "status": 503,
+          "elapsed_ms": 26370.06525,
+          "error": {
+            "error": {
+              "code": "OPERATION_TARGET",
+              "message": "Unknown memory operation target after repair"
+            }
+          }
+        }
+      ],
+      "status": "failed",
+      "final_revision": 0,
+      "fact_states": {}
+    }
+  ],
+  "finished_at": "2026-09-06T01:47:56.649Z",
+  "prefixes_accepted": 1,
+  "planned": 4
+}

@@ -1,0 +1,35 @@
+{
+  "scope": "Assistant inspection of exposed failure-prefix replay artifacts, not accuracy or a complete-sample recovery claim.",
+  "cases": [
+    {
+      "sample": "D24_reflect",
+      "run": "2026-09-05T12-40-12-551Z",
+      "assessment": "Fails segment 4 with OPERATION_SCOPE. Proposed car correction selects an unrelated investment-planning fact. First structural guard did not reach model repair."
+    },
+    {
+      "sample": "D24_reflect",
+      "run": "2026-09-05T12-43-52-950Z",
+      "assessment": "All four adds return 200, but an unrelated financial-advisor preference becomes retracted and the car facts have only assistant sources and are excluded. Same empty scope bypasses scope-only validation. This is a semantic failure, not recovered ingestion."
+    },
+    {
+      "sample": "D24_reflect",
+      "run": "2026-09-05T12-45-52-733Z",
+      "assessment": "HTTP succeeds with an extraction_offline fallback during gateway failure. Grounded window/open-feel text is retained, but this run cannot prove the remote property repair succeeded or preservation of an unrelated preexisting record when the prefix extraction differed."
+    },
+    {
+      "sample": "E03_reflect",
+      "run": "2026-09-05T12-40-12-551Z",
+      "assessment": "All eight prefix adds return 200, with extraction_offline and source_span_partial degradation. Martin/Rebecca incidents, handoff and group-setting details are present. Full semantic and retrieval validation remains pending."
+    },
+    {
+      "sample": "C30_update",
+      "run": "2026-09-05T12-40-12-551Z",
+      "assessment": "All 14 prefix adds return 200, but last extraction emits only the final travel plan and omits the entire investment setup. No VTSAX, transfer or Bitcoin fact is stored. Source passages alone do not prove correct update/correction semantics."
+    },
+    {
+      "sample": "D17_remember",
+      "run": "2026-09-05T12-40-12-551Z",
+      "assessment": "The add returns 200 but the old tablet and sync issue remain active, and no forget event is recorded. The direct No need to track anything about the tablet instruction was missed. Laptop/phone browser and Kevin facts are retained."
+    }
+  ]
+}

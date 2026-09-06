@@ -1,0 +1,11 @@
+{
+  "protocol": "probe-artifact-collision-record-v1",
+  "affected_cases": [
+    "E03_reflect",
+    "C30_update"
+  ],
+  "shared_directory": "artifacts/round2-failure-prefixes/2026-09-06T02-08-39-030Z",
+  "impact": "Timestamp-only directory names collided. Case-specific tenant databases and state files remain separate, but results.json was overwritten and generation logs interleaved. Do not use shared logs for per-case cost or isolated paired measurements.",
+  "preserved_E03_report": "reports/round2-shared-directory-report-snapshot.json",
+  "fix": "Use mkdtemp to reserve a fresh per-process directory atomically."
+}

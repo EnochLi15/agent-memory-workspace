@@ -1,0 +1,31 @@
+{
+  "protocol": "single-prefix-model-comparison-v1",
+  "same_service_sources": true,
+  "runs": [
+    {
+      "model": "gpt-5.4-mini",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T02-00-52-453Z",
+      "prefix_accepted": 0,
+      "http_adds": 4,
+      "add_total_ms": 36196.624251,
+      "add_max_ms": 13478.978167000001,
+      "generation_calls": 10,
+      "generation_errors": 0,
+      "recorded_prompt_tokens": 34167,
+      "recorded_completion_tokens": 1436
+    },
+    {
+      "model": "gpt-5.5",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T02-06-45-031Z",
+      "prefix_accepted": 1,
+      "http_adds": 4,
+      "add_total_ms": 81072.01370699999,
+      "add_max_ms": 39931.87229099999,
+      "generation_calls": 8,
+      "generation_errors": 0,
+      "recorded_prompt_tokens": 27982,
+      "recorded_completion_tokens": 3512
+    }
+  ],
+  "scope": "One exposed D24 prefix per model, same source code and original requests. Extraction and verification model both changed. Not a three-repeat paired benchmark or a measured global accuracy improvement; token totals reflect recorded successful API usage only."
+}

@@ -1,0 +1,25 @@
+{
+  "protocol": "D24-posthoc-state-review-v1",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T02-06-45-031Z",
+  "extraction_model": "gpt-5.5",
+  "http_adds": 4,
+  "http_success": 4,
+  "generation_calls": 8,
+  "generation_errors": 0,
+  "findings": [
+    {
+      "check": "Investment plans are active tentative facts still at revision 2 after revision 4 car correction",
+      "pass": true
+    },
+    {
+      "check": "Open feel/windows and RAV4 claustrophobia are current facts with actual user quotations",
+      "pass": true
+    },
+    {
+      "check": "No car correction operation targeted any existing investment record",
+      "pass": true
+    }
+  ],
+  "reviewer_kind": "assistant_state_inspection",
+  "scope": "One exposed prefix on a different extraction/verification model; not a benchmark score or isolated code improvement. Retrieval/Answer checks are separate."
+}

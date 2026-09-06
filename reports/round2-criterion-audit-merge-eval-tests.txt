@@ -1,0 +1,31 @@
+
+> agent-memory-eval@0.1.0 test
+> node --import tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p 'test_*.py'
+
+✔ calibration audit stops scheduling after a transport outage and retains unattempted cases in the denominator (18147.518542ms)
+✔ criterion aggregation cannot pass with a missing fact even if model supplies an overall pass (0.973458ms)
+✔ larger audit budget does not change the ordinary Answer default (12.022583ms)
+✔ incomplete, duplicated and reference-only quotations are not accepted as successful audits (0.40775ms)
+✔ uncertain rubric needs review and literal diagnostic does not silently decide semantics (0.156125ms)
+✔ chunk limits preserve order, role and session marker without injecting answer fields (0.897125ms)
+✔ canonical contract checksum validates distributed schema (0.585792ms)
+✔ HTTP client rejects wrong receipt echo and unsorted results (24.136125ms)
+✔ report keeps infrastructure failures in denominator and de-duplicates resumed judgments (2.398125ms)
+✔ streamed model completion survives UTF-8 and event boundary splits (14.115667ms)
+✔ MemOps pair IDs distinguish evaluation settings and individual question instances (0.889167ms)
+✔ resume refuses a changed service commit before making another HTTP request (261.132542ms)
+{"event":"sample_complete","sample":"s","judged":1,"planned":1}
+✔ transient add failure retries the identical request and records each attempt (1202.610708ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18296.9195
+........
+----------------------------------------------------------------------
+Ran 8 tests in 0.137s
+
+OK

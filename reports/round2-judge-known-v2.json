@@ -1,0 +1,54 @@
+{
+  "manifest": {
+    "protocol": "semantic-criteria-audit-v2",
+    "input_sha256": "b80aa73aa17351b60f8318be0c92d1338772794bc6e65e63bc7aee051f24ef59",
+    "prompt_sha256": "af6614eba1901828d9b07881c0f7b675d7340c3fa50f8b70c9368f68c437a21c",
+    "source_sha256": "96afaaecebd3e3b2a85f705d4a24d2fcaa4c649e541f358cb5c6d689aac69d40",
+    "model_runtime_sha256": "16be2b4b1e760b5d7f210e2beb24604160a653fe3ef3070edab84207e44a5f01",
+    "runner_sha256": "95724d6e2009e0a6cc305ceabbf682abd91f5386bf01d41dde0de1a95ede4eb3",
+    "model": "gpt-5.4-mini",
+    "base": "http://54.183.78.37:8080/v1",
+    "inference": {
+      "stream": true,
+      "max_completion_tokens": 6000,
+      "transport_attempts": 3,
+      "semantic_retries": 0
+    },
+    "planned": 3,
+    "concurrency": 2,
+    "started_at": "2026-09-05T12:40:57.216Z",
+    "status": "finished",
+    "scope": "Posthoc model criterion audit. Neither independent human ground truth nor a replacement for historical benchmark scores.",
+    "finished_at": "2026-09-05T12:41:09.140Z",
+    "results_sha256": "0c8b18d7396bea70bf8af4cc0c0a9a08ccf232e13cef98b74af10a18b2390f4a"
+  },
+  "summary": {
+    "protocol": "semantic-criteria-audit-v2",
+    "planned": 3,
+    "status_counts": {
+      "judged": 3
+    },
+    "correct": 1,
+    "incorrect": 2,
+    "controls": 3,
+    "control_matches": 3,
+    "by_type": {
+      "CandidateDisambiguation": {
+        "planned": 1,
+        "judged": 1,
+        "control_matches": 1
+      },
+      "OperationApplication": {
+        "planned": 1,
+        "judged": 1,
+        "control_matches": 1
+      },
+      "StateTransition": {
+        "planned": 1,
+        "judged": 1,
+        "control_matches": 1
+      }
+    },
+    "scope": "Posthoc model criterion audit. Neither independent human ground truth nor a replacement for historical benchmark scores."
+  }
+}
