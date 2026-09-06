@@ -17,6 +17,8 @@ build:
 test:
 	cd service && npm run build && npm test
 	cd eval && npm run build && npm test
+	python3 -m unittest discover -s scripts/probes -p 'test_experiment_*.py'
+	python3 -m unittest discover -s scripts/probes -p 'test_delivery_gates.py'
 eval-init:
 	python3 -m venv eval/.venv
 	eval/.venv/bin/python -m pip install -r eval/python/requirements.lock

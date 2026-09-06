@@ -47,7 +47,8 @@
     "service/upstream/mem0/source-package.json",
     "eval/python/upstream/LICENSE.txt",
     "eval/python/upstream/NOTICE",
-    "eval/python/upstream/memops/LICENSE"
+    "eval/python/upstream/memops/LICENSE",
+    "reports/v1-ci-verification.json"
   ],
   "scope": "Formal packaging requires all explicit evidence gates. Draft manifest and planned run IDs do not assert completion. Original failed runs and historical release artifacts remain unchanged."
 }

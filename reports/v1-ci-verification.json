@@ -1,0 +1,120 @@
+{
+  "checked_at": "2026-09-06T19:52:26.546469+00:00",
+  "scope": "GitHub CI on the exact frozen service/eval commits. Workspace runtime and delivery tests additionally executed locally; CI is not a real-model or archive acceptance.",
+  "repositories": {
+    "service": {
+      "commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+      "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34054187402",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "verify",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm run build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm test",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run docker build -t memory-service:test .",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    },
+    "eval": {
+      "commit": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef",
+      "url": "https://github.com/EnochLi15/agent-memory-eval/actions/runs/34053384605",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        {
+          "name": "verify",
+          "conclusion": "success",
+          "steps": [
+            {
+              "name": "Set up job",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm ci",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm run build",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run npm test",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run python3 -m py_compile python/judge_bridge.py python/upstream/llm_judge.py python/upstream/llm_judge_runtime.py",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/setup-node@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "workspace_tests": {
+    "runtime_identity": 12,
+    "delivery_gates": 9,
+    "passed": true
+  },
+  "passed": true
+}
