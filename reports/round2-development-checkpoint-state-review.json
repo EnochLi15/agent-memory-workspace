@@ -1,0 +1,76 @@
+{
+  "protocol": "development-checkpoint-state-review-v1",
+  "service_commit": "4bca000",
+  "cases": [
+    {
+      "sample": "E10_reflect",
+      "prepare_dir": "artifacts/round2-live-checkpoint-sUUQ5H",
+      "commit_dir": "artifacts/round2-checkpoint-transaction-7UvZWo",
+      "hashes": {
+        "prepare_report": "f9f3d30ce333752f2886efd668b6bf7a3036d613b970cbf0efd0352d76a2e104",
+        "commit_report": "630887b81abda4d60f81d2759a85d1a156fb322dc87ed0a3b7db90e22d257b4e",
+        "state": "f1f63732ffa5eda623db0c14abed3f425ed6f5383da691a54ba16b7f231071c6",
+        "lexical_queries": "0719d403cb8995c97f3cc30476b965676b22ed989cb24555f442bfc73cf1402a"
+      },
+      "prepare_status": "prepared",
+      "elapsed_ms": 35293.54175,
+      "fact_count": 9,
+      "operation_count": 0,
+      "degraded": [],
+      "commit_status": "committed",
+      "original_revision": 11,
+      "committed_revision": 12,
+      "all_prior_fact_semantics_preserved": true,
+      "review": "Nine budgeting preferences/experiences added; one missing budgeting-effort statement repaired and then verified. No remote retrieval/Answer and no full-sample rerun.",
+      "full_sample_pass": null
+    },
+    {
+      "sample": "B05_forget",
+      "prepare_dir": "artifacts/round2-live-checkpoint-5zhr5F",
+      "commit_dir": "artifacts/round2-checkpoint-transaction-sNi7Wy",
+      "hashes": {
+        "prepare_report": "a7f02ca48f5e0863990c50904db51fbce0e1f978d62f1703758e3b278dcd9dcf",
+        "commit_report": "d7952bf9c4e723d60bb59af68295307bdc05ca89b78da6e56299a3a4c928e16b",
+        "state": "f0b20891fd5bd6d54e9237341e5c74d8a013ed205ad3f92940d7968765234585",
+        "lexical_queries": "77a304d3fe6282623ac92dc52163691e0873feea1478a34821cda7cb53a06418"
+      },
+      "prepare_status": "prepared",
+      "elapsed_ms": 77608.06108300001,
+      "fact_count": 28,
+      "operation_count": 2,
+      "degraded": [],
+      "commit_status": "committed",
+      "original_revision": 18,
+      "committed_revision": 19,
+      "lifecycle_semantic_pass": false,
+      "active_deleted_value_restatements": [
+        {
+          "content": "I want to remove Iris from the list entirely.",
+          "subject": "user",
+          "predicate": "remove_name_from_list",
+          "scope": "baby name list",
+          "state": "active"
+        },
+        {
+          "content": "It felt like keeping Iris on there was hedging for no reason.",
+          "subject": "user",
+          "predicate": "reason_for_removal",
+          "scope": "Iris",
+          "state": "active"
+        }
+      ],
+      "leaking_passages": [
+        "It just felt like keeping Iris on there was hedging for no reason, and we want to commit fully."
+      ],
+      "leaking_retrieval": [
+        "I want to remove Iris from the list entirely.\nVerbatim support: remove Iris from the list entirely\n[status: confirmed; subject/speaker: user; scope: baby name list; synthetic order marker, not an event date: 2025-01-18T00:00:12.000Z; source: 2e5df72f47b0]",
+        "It felt like keeping Iris on there was hedging for no reason.\n[status: confirmed; subject/speaker: user; scope: Iris; synthetic order marker, not an event date: 2025-01-18T00:00:12.000Z; source: 2e5df72f47b0]",
+        "It just felt like keeping Iris on there was hedging for no reason, and we want to commit fully.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; synthetic order marker, not an event date: 2025-01-18T00:00:12.000Z; source: 2e5df72f47b0]",
+        "I want to remove Iris from the list entirely.\n[status: confirmed; subject/speaker: user; scope: baby name list; synthetic order marker, not an event date: 2025-01-18T00:00:12.000Z; source: 2e5df72f47b0]"
+      ],
+      "cause": "markerConcerns treats any different nonempty scope as a distinct context. New user facts scoped to the baby-name list or Iris bypass the unscoped short-value marker; the joint-user-and-wife marker has a different subject and a long value. Those linked facts then exempt their raw passage. No explicit restore occurred.",
+      "remaining": "Bind semantic deletion boundaries and restatements to source/entity identity; do not globally suppress the same literal across unrelated subjects or legitimate contexts."
+    }
+  ],
+  "scope": "Saved pre-failure snapshots, fresh extraction/verification/local embeddings and real transactions on private backups. Assistant state/lexical inspection, not full HTTP/background reruns, independent human labels or replacement scores. Original four failed samples remain failed in the 30-question campaign."
+}

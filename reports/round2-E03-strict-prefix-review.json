@@ -1,0 +1,182 @@
+{
+  "protocol": "strict-envelope-full-prefix-review-v1",
+  "source_commit": "ef8d236",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-19-17-682Z-Z0u4Il",
+  "hashes": {
+    "results.json": "06d4e9d10d1094bcc99a9468b37a30a90299a522c8850fdba62df5f0ff053229",
+    "extraction-proposals.jsonl": "497c3a1c8b49647d7ef50bd1de0b4f1049c429633b916cfcfa093c0bbc6e4f54",
+    "model-usage.jsonl": "978d5e15c0fd51362cd3fde434260c92abd6967a31c43fcbbbcb82126f033c58"
+  },
+  "result": {
+    "user_id": "round2-prefix:E03_reflect",
+    "original_failure": {
+      "request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unknown memory operation target after repair\"}}",
+      "elapsed_ms": 46818.26208399981
+    },
+    "planned_adds": 8,
+    "adds": [
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-1:0",
+        "status": 200,
+        "elapsed_ms": 21455.945292
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-2:0",
+        "status": 200,
+        "elapsed_ms": 34857.038375000004
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-3:0",
+        "status": 200,
+        "elapsed_ms": 27802.552125000002
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-4:0",
+        "status": 200,
+        "elapsed_ms": 15176.881624999995
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-5:0",
+        "status": 200,
+        "elapsed_ms": 13389.969291999994
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-6:0",
+        "status": 200,
+        "elapsed_ms": 17766.219500000007
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+        "status": 200,
+        "elapsed_ms": 49905.140083000006
+      },
+      {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+        "status": 503,
+        "elapsed_ms": 80164.297375,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Evidence still fails semantic verification after repair"
+          }
+        }
+      }
+    ],
+    "status": "failed",
+    "final_revision": 7,
+    "fact_states": {
+      "active": 41,
+      "superseded": 1
+    }
+  },
+  "final_chunk_checks": [
+    {
+      "input_sha256": "3b87702789407a56dbaede2f800ca87bf0e5f278be592ed545fd5d1d19feebf7",
+      "scope": {
+        "fact_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31
+        ],
+        "operation_indices": [],
+        "replacements": [],
+        "message_indices": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12,
+          14
+        ]
+      },
+      "array_names": [
+        "fact_checks",
+        "message_checks",
+        "operation_checks",
+        "replacement_checks"
+      ],
+      "negative_checks": {
+        "fact_checks": [
+          [
+            4,
+            false,
+            false,
+            0,
+            "The user stated their perception that they could tell it bothered Rebecca; the proposed fact presents Rebecca's internal reaction as confirmed."
+          ]
+        ],
+        "message_checks": [],
+        "operation_checks": [],
+        "replacement_checks": []
+      }
+    },
+    {
+      "input_sha256": "8703d8aaa8791b68ac75c0fd87f3aa60291989f38728c77d508e031077c3b0ae",
+      "scope": {
+        "fact_indices": [
+          4
+        ],
+        "operation_indices": [],
+        "replacements": [],
+        "message_indices": [
+          6
+        ]
+      },
+      "array_names": [
+        "fact_checks",
+        "message_checks",
+        "operation_checks",
+        "replacement_checks"
+      ],
+      "negative_checks": {
+        "fact_checks": [],
+        "message_checks": [
+          [
+            6,
+            "missing",
+            "It was mortifying — there were like six or seven people at the table and I just blanked on her actual name.",
+            "The proposal covers the core incident, group size, relationship duration, correction, and perceived effect on Rebecca, but omits the user's memorable emotional reaction that it was mortifying and the detail that they blanked on her actual name."
+          ]
+        ],
+        "operation_checks": [],
+        "replacement_checks": []
+      }
+    }
+  ],
+  "conclusion": "7/8 adds accepted. Final chunk rejected after 80.16 seconds with EVIDENCE_VALIDATION. Both completed final-chunk verification responses contain all four arrays. A source repair and a perceived-reaction repair consume two proposal repairs; the second verifier then identifies additional emotional/blanked-name coverage in message 6. JSON schema did not solve semantic coverage stability or the full-prefix failure.",
+  "scope": "One complete fresh original-prefix attempt, with all failures retained. Not a schema reliability estimate or end-to-end recovery."
+}

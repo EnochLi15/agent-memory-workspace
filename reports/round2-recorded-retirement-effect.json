@@ -1,0 +1,28 @@
+{
+  "protocol": "recorded-retirement-effect-guard-v1",
+  "parent_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T05-04-39-239Z-Qf4JfS",
+  "parent_records_sha256": "66468a54b21566f45bd44d0fc50b8bfb2dbe18fbf61558922eaeb78f41927fea",
+  "verification_input_sha256": "35c283fddd791981f35273e5a6343d199defa74827acd4b907d1e3c3399fab6b",
+  "proposal_sha256": "a2a34402121b444ffcd72f67b95715511728bc5a31b433d803b9bc254db1e5f5",
+  "probe_sha256": "e13396dfaffcdecf06dbe4cd7f9ac5e79d4720b9166d1931cbc4b1ce6528e2bd",
+  "results": [
+    {
+      "commit": "ef8d236",
+      "missing_count": 0,
+      "missing": [],
+      "source_sha256": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded"
+    },
+    {
+      "commit": "4bca000",
+      "missing_count": 1,
+      "missing": [
+        {
+          "index": 16,
+          "quote": "No need to track anything about the tablet."
+        }
+      ],
+      "source_sha256": "3c5c09d302b7eba4aed7828972c27570129f3b3c81f84620651f8f2177af1036"
+    }
+  ],
+  "scope": "Exact already accepted D17 proposal at the obligation guard: old code treats retract as satisfying erasure, new code reports the missing effect. No new extraction, semantic verdict, HTTP write or benchmark score."
+}

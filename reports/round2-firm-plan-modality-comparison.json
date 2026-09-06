@@ -1,0 +1,62 @@
+{
+  "protocol": "firm-plan-modality-comparison-v1",
+  "old_source_commit": "441cc48",
+  "new_source_commit": "c8cbcae",
+  "old_report_sha256": "da87b3a32d4a03487370dfabaa88dc889345f3bf6e98390c60b591be3bb3a466",
+  "new_report_sha256": "087ec04dac653f0d97ea49250f5a57a7e7a464b612aee32d7aac55f41afb118a",
+  "cases_sha256": "b8919166860f63338cd45ccbb16ce1633103f573b46090498bab7d7b78364700",
+  "old_passed": 4,
+  "new_passed": 6,
+  "planned": 6,
+  "comparisons": [
+    {
+      "id": "archived_firm_plan_confirmed",
+      "old_pass": false,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": [
+        "fact 0: Unfulfilled future investment actions must remain tentative even though the user says they will definitely do them.",
+        "message 4: The user's future plan is memorable, but the proposed fact represents it with confirmed modality rather than tentative.; missing statement: I'll definitely do my research and consult with a financial advisor before making any decisions."
+      ]
+    },
+    {
+      "id": "archived_firm_plan_tentative",
+      "old_pass": true,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": []
+    },
+    {
+      "id": "firm_plan_confirmed",
+      "old_pass": false,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": [
+        "fact 0: Future intended action must be stored as tentative/unfulfilled rather than confirmed, even with \u201cdefinitely.\u201d",
+        "message 0: The user stated a specific future plan; the proposed fact captures the wording but uses confirmed modality instead of tentative future-plan modality.; missing statement: I will definitely consult a financial advisor before making a decision."
+      ]
+    },
+    {
+      "id": "firm_plan_tentative",
+      "old_pass": true,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": []
+    },
+    {
+      "id": "completed_consultation",
+      "old_pass": true,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": []
+    },
+    {
+      "id": "current_preference",
+      "old_pass": true,
+      "new_pass": true,
+      "old_issues": [],
+      "new_issues": []
+    }
+  ],
+  "scope": "Same six frozen controls, same gpt5.5/low/compact checker. One fresh call per case and version; old then new order, not counterbalanced and not a latency comparison. No benchmark score or full-prefix gain is implied."
+}

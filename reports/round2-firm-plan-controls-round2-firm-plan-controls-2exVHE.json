@@ -1,0 +1,98 @@
+{
+  "protocol": "firm-plan-modality-controls-v1",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-441cc48",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-firm-plan-controls-2exVHE",
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "cases_sha256": "b8919166860f63338cd45ccbb16ce1633103f573b46090498bab7d7b78364700",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "218923cf5e65096a5d901ac7061053e061ef137e04ea170a3026b242628f1081",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "0d458a30e779ac146e92471be2f66cfeb955e600b790c7622e480380ce058eaa",
+    "models.ts": "53f14fbc4e82eb1e4c4cd52633cbe023db6a6ef0fee6303856664b979172965f",
+    "operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+    "repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "storage.ts": "1e226d8e566a84c7cc1c955b439821f4e9f35e0ae20231dbb19d81bce7958b18",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "verification-compact.ts": "00840841fd21424b5b4183f46926335a9fabcdd0ff3a260ff3d5cf5ad98453e3",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "390ea80e600c32329f2903192c803d51891a80a8e24bfa4f785e8b060459f294"
+  },
+  "probe_sha256": "49d14b66688a2514621788621184baa92008968039a5ea0d273e4ace0d3f7666",
+  "planned": 6,
+  "started_at": "2026-09-06T04:56:43.307Z",
+  "results": [
+    {
+      "id": "archived_firm_plan_confirmed",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": false,
+      "issues": [],
+      "pass": false,
+      "elapsed_ms": 17596.304708,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_firm_plan_tentative",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": true,
+      "issues": [],
+      "pass": true,
+      "elapsed_ms": 5805.243915999999,
+      "generation_calls": 1
+    },
+    {
+      "id": "firm_plan_confirmed",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": false,
+      "issues": [],
+      "pass": false,
+      "elapsed_ms": 4363.921167,
+      "generation_calls": 1
+    },
+    {
+      "id": "firm_plan_tentative",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": true,
+      "issues": [],
+      "pass": true,
+      "elapsed_ms": 3629.2241250000006,
+      "generation_calls": 1
+    },
+    {
+      "id": "completed_consultation",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": true,
+      "issues": [],
+      "pass": true,
+      "elapsed_ms": 3007.1479999999974,
+      "generation_calls": 1
+    },
+    {
+      "id": "current_preference",
+      "status": "judged",
+      "accepted": true,
+      "expected_accept": true,
+      "issues": [],
+      "pass": true,
+      "elapsed_ms": 2530.7206250000017,
+      "generation_calls": 1
+    }
+  ],
+  "scope": "Six exposed development controls. An unfulfilled firm intention remains tentative under the memory ontology; completed actions and current preferences remain confirmed. Each case uses a fresh checker session. Not benchmark accuracy or a fresh full prefix.",
+  "finished_at": "2026-09-06T04:57:20.248Z",
+  "passed": 4
+}

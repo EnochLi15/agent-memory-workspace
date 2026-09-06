@@ -1,0 +1,38 @@
+{
+  "protocol": "recorded-source-copy-red-green-v1",
+  "runs": [
+    {
+      "version": "old",
+      "exit_code": 1,
+      "output": {
+        "protocol": "recorded-source-copy-regression-v1",
+        "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-441cc48",
+        "parent_results_sha256": "f3925658bf25da60f1514687ae96c9612b62249c97f1b054a684dd8b10eb615b",
+        "proposal_sha256": "4ef26964bff0193422001931b1a2242fdb583749f4a4a64da05efd768ef1195a",
+        "generations": 2,
+        "verifications": 0,
+        "recovered_source": null,
+        "error_code": "EVIDENCE_VALIDATION",
+        "scope": "Fixed full-context extraction output; model stubs stop before semantic judgment. No write, live model latency or pipeline acceptance claim."
+      }
+    },
+    {
+      "version": "new",
+      "exit_code": 0,
+      "output": {
+        "protocol": "recorded-source-copy-regression-v1",
+        "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/service",
+        "parent_results_sha256": "f3925658bf25da60f1514687ae96c9612b62249c97f1b054a684dd8b10eb615b",
+        "proposal_sha256": "4ef26964bff0193422001931b1a2242fdb583749f4a4a64da05efd768ef1195a",
+        "generations": 1,
+        "verifications": 1,
+        "recovered_source": "he doesn't even notice",
+        "error_code": "EVIDENCE_VALIDATION",
+        "scope": "Fixed full-context extraction output; model stubs stop before semantic judgment. No write, live model latency or pipeline acceptance claim."
+      }
+    }
+  ],
+  "old_source_commit": "441cc48",
+  "new_source_commit": "407abc3",
+  "new_extraction_source_sha256": "fe5b4a0085249bae6cb43567b68dc717009d36436b3f54523835fe362b85d39c"
+}

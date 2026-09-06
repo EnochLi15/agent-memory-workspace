@@ -1,0 +1,77 @@
+{
+  "protocol": "failed-prefix-http-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T05-28-32-111Z-zRped7",
+  "extraction_model": "gpt-5.4-mini",
+  "default_model": "gpt-5.4-mini",
+  "stage_models": {
+    "extraction": "gpt-5.4-mini",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "reasoning_effort": "low",
+  "add_timeout_ms": 115000,
+  "model_budget_ms": 90000,
+  "embedding_model": "nomic-embed-text:latest",
+  "incremental_verification": true,
+  "max_repair_rounds": 2,
+  "verification_format": "compact",
+  "verification_response_format": "json_schema",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "6624e8b83ef20762fc25c996bd003b1037ab857400e7a405951530773cedbbe8",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "4f676357968838d3be542321440dd27bab4d6899bc20570215f815d0f0c1a92c",
+    "service/src/models.ts": "6d0192204e1da5eaccf166207ae5f38a9a6d7c7f373f4807d2ee2db941324240",
+    "service/src/operation-intent.ts": "3c5c09d302b7eba4aed7828972c27570129f3b3c81f84620651f8f2177af1036",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "service/src/repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "c010345c2c3db550b633d8848e98095c86049568d0c41508088be74074686f96",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "service/src/verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "service/src/verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "probe_sha256": "41c1c359ff3f53214b1ff931cc5d5c93cf2107ea902cec4aefda6a2992310081",
+  "prior_requests_sha256": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+  "started_at": "2026-09-06T05:28:32.128Z",
+  "scope": "Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.",
+  "cases": [
+    {
+      "user_id": "round2-prefix:D17_remember",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+        "elapsed_ms": 15851.164124999195
+      },
+      "planned_adds": 1,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 73236.17066700001
+        }
+      ],
+      "status": "prefix_accepted",
+      "final_revision": 1,
+      "fact_states": {
+        "active": 19,
+        "erased": 3
+      }
+    }
+  ],
+  "finished_at": "2026-09-06T05:29:45.473Z",
+  "prefixes_accepted": 1,
+  "planned": 1
+}

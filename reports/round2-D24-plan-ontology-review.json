@@ -1,0 +1,47 @@
+{
+  "protocol": "plan-ontology-D24-state-answer-review-v1",
+  "source_commit": "c8cbcae",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-58-21-592Z-EdQYjT",
+  "parent_results_sha256": "7158945847afaab8fcff21282e150044ea5c1fbf4b451054677a5726370673ce",
+  "state_sha256": "2fb8cf90c7908ec09ef96bbfb4c874c805e77a0518de8ca2fe21a68de31b11bf",
+  "answers_sha256": "d36c39b0364363b4bd1b82e0baf642f284c8103682e698608da9e6c827847c65",
+  "checks": {
+    "both_investment_plans_tentative": true,
+    "investment_plans_still_revision_two": true,
+    "car_open_feel_windows": true,
+    "rav4_claustrophobic": true,
+    "awd_not_primary": true
+  },
+  "state_pass": true,
+  "plan_facts": [
+    {
+      "content": "I'll definitely do my research and consult with a financial advisor before making any decisions.",
+      "predicate": "investment_plan",
+      "modality": "tentative",
+      "cardinality": "single",
+      "revision": 2
+    },
+    {
+      "content": "I think I'll start by looking into some index funds for diversification across different sectors.",
+      "predicate": "investment_plan",
+      "modality": "tentative",
+      "cardinality": "single",
+      "revision": 2
+    }
+  ],
+  "answers": [
+    {
+      "query": "Why did I choose the Outback over the RAV4?",
+      "answer": "You said the main reason was the open feel and the windows. You also said the AWD was nice, but not the main reason, and that the RAV4 felt claustrophobic.",
+      "pass": true,
+      "reason": "Correct Outback open feel/windows, RAV4 contrast and AWD qualification."
+    },
+    {
+      "query": "What plans did I mention for researching investments and consulting a financial advisor?",
+      "answer": "You said you would do your research and consult with a financial advisor before making any decisions. You also mentioned starting by looking into index funds for diversification across different sectors.",
+      "pass": true,
+      "reason": "Research, advisor and index fund details are explicitly described as future plans."
+    }
+  ],
+  "scope": "One complete fresh four-add prefix plus two fixed mini Answer calls. Assistant semantic inspection, not overall benchmark accuracy, independent human truth or three full repeats."
+}

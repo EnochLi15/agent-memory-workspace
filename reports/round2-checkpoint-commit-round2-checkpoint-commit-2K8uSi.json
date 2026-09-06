@@ -1,0 +1,82 @@
+{
+  "protocol": "cloned-checkpoint-commit-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-checkpoint-commit-2K8uSi",
+  "sample": "F07_trajectory_ops",
+  "snapshot_sha256": "88787de72966fd5e520936684938e0a5233c722408375e0b5877bae7a8d26d2e",
+  "prepared_sha256": "d5a8f2c3d62b74e5fc4476262a81e0be3c41d489950f0ef09298843bf0246f12",
+  "original_revision": 21,
+  "committed_revision": 22,
+  "receipt": {
+    "success": true,
+    "request_id": "round2-quality-dev-441cc48-r1-facts:memops:F07_trajectory_ops:segment-22:0",
+    "user_id": "round2-quality-dev-441cc48-r1-facts:memops:F07_trajectory_ops",
+    "session_id": "segment-22"
+  },
+  "original_own_therapy_fact_count": 0,
+  "own_therapy_facts_unchanged": true,
+  "own_therapy_facts_after": 0,
+  "all_prior_fact_count": 55,
+  "all_prior_facts_unchanged": true,
+  "review_correction": "The initial probe incorrectly assumed own therapy facts existed. The captured snapshot contains none; verify no assistant-only own therapy claim is invented, and all prior facts remain unchanged.",
+  "initial_probe_log_sha256": "1bbeb25222be7ee8c2c2a54fa38c2e5be2180e30426c37646f045f17602d3542",
+  "new_facts": [
+    {
+      "subject": "user's new teammate",
+      "predicate": "therapy_frequency",
+      "value": "every other week",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user's new teammate",
+      "predicate": "reason_for_counseling",
+      "value": "work stress",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user's new teammate",
+      "predicate": "counseling_sufficiency",
+      "value": "every other week has been enough",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user",
+      "predicate": "reflection",
+      "value": "everyone's needs are different",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user",
+      "predicate": "plan",
+      "value": "try out eco-friendly cleaning alternatives",
+      "modality": "tentative",
+      "state": "active"
+    },
+    {
+      "subject": "user",
+      "predicate": "preference",
+      "value": "buying locally sourced goods",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user",
+      "predicate": "interest",
+      "value": "trying out local produce",
+      "modality": "confirmed",
+      "state": "active"
+    },
+    {
+      "subject": "user",
+      "predicate": "plan",
+      "value": "try cooking with some in-season produce from the farmers market",
+      "modality": "tentative",
+      "state": "active"
+    }
+  ],
+  "state_sha256": "63f13c0cd596ed7b257ead6413b5df6403a17e4fe7d432f91865b7db000a882e",
+  "scope": "Commit on a read-only SQLite backup copied to a new private directory. Original campaign data and its failed score remain unchanged. Own-therapy preservation is a case-specific check, not broad lifecycle certification."
+}

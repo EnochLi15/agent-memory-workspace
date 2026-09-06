@@ -1,0 +1,125 @@
+{
+  "protocol": "completed-exposed-development-review-v1",
+  "run_dir": "eval/artifacts/round2-quality-dev-441cc48-r1-facts-memops",
+  "service_commit": "441cc485fc727b0622142950afd876cf8dbaeca3",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "started_at": "2026-09-06T04:45:50.639Z",
+  "finished_at": "2026-09-06T05:21:37.847Z",
+  "input_artifact_sha256": {
+    "manifest.json": "a5c303a2f4f99c8bc9ec9a225ce70764711eedeb5c715625077f463a9ab41751",
+    "metrics.json": "d12ee482331c4b224ab5e57cd4c7311eca1ac3daddb85f4e2e8cad1a56b5b1a6",
+    "ingest.jsonl": "a550a71b5f42b7e2060fafdd4697292116c5fb382c3e70242cda51f32bd06726",
+    "judgments.jsonl": "0055cbbacde05ed8a4865f8f94db779be7e91c2bc87311a0c75387cf7a7533f3",
+    "requests.jsonl": "97dd811fe0ce07e00fcb5d9c5e0588c1d34d4f8baa0391f9bdcd8c9c1d8a2237"
+  },
+  "planned_questions": 30,
+  "judged": 5,
+  "correct": 2,
+  "service_error_questions": 25,
+  "accuracy_over_planned": 0.06666666666666667,
+  "judged_accuracy": 0.4,
+  "add_status": {
+    "ok": 150,
+    "failed": 4
+  },
+  "samples": [
+    {
+      "sample": "E10_reflect",
+      "adds": {
+        "ok": 11,
+        "failed": 1
+      },
+      "questions": 6,
+      "question_status": {
+        "service_error": 6
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-441cc48-r1-facts:memops:E10_reflect:segment-12:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 57719.220332999976
+        }
+      ]
+    },
+    {
+      "sample": "B05_forget",
+      "adds": {
+        "ok": 18,
+        "failed": 1
+      },
+      "questions": 10,
+      "question_status": {
+        "service_error": 10
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-18:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 84325.81679200003
+        }
+      ]
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "adds": {
+        "ok": 21,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-441cc48-r1-facts:memops:F07_trajectory_ops:segment-22:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}",
+          "elapsed_ms": 26009.883750000037
+        }
+      ]
+    },
+    {
+      "sample": "F07_update",
+      "adds": {
+        "ok": 49,
+        "failed": 1
+      },
+      "questions": 4,
+      "question_status": {
+        "service_error": 4
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-441cc48-r1-facts:memops:F07_update:segment-45:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 80071.90745800012
+        }
+      ]
+    },
+    {
+      "sample": "E10_remember",
+      "adds": {
+        "ok": 51
+      },
+      "questions": 5,
+      "question_status": {
+        "judged": 5
+      },
+      "correct": 2,
+      "failed_adds": []
+    }
+  ],
+  "paired_retrieval_reuse_eligible": false,
+  "scope": "One completed 30-question run on five exposed development samples with proxy Judge. The four failed background ingestions retain all 25 affected questions in the planned denominator. Not a replacement for historical 331/1000, not a score for the new code, not a heldout or paired retrieval experiment."
+}
