@@ -1,0 +1,30 @@
+{
+  "protocol": "round2-running-experiment-checkpoint-v1",
+  "run_id": "round2-source-first-f12b2b4-B05-r1-source_first-memops",
+  "observed_at": "2026-09-06T10:38:55.870058+00:00",
+  "status": "running",
+  "service_commit": "f12b2b403b69bc8f4fc24145162918569364af3a",
+  "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+  "workspace_commit": "714ef03965e67dd9f1c0bc0ccff8b1ed5d1f0c16",
+  "started_at": "2026-09-06T10:37:44.772Z",
+  "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+  "planned_questions": 10,
+  "service_pid": 19846,
+  "eval_pid": 19847,
+  "runner_session_id": 11295,
+  "port": 8112,
+  "source_snapshot": "artifacts/round2-runtime-f12b2b4",
+  "completed_ingest_attempts_at_observation": 3,
+  "latest_ingest": {
+    "request_id": "round2-source-first-f12b2b4-B05-r1-source_first:memops:B05_forget:segment-3:0",
+    "sample_id": "B05_forget",
+    "status": "ok",
+    "attempt": 0,
+    "elapsed_ms": 32999.924833,
+    "message_count": 12
+  },
+  "attempt_outcomes": {
+    "ok": 3
+  },
+  "note": "Fresh v10 full B05 ingestion; all sessions and ten original questions retained. In progress, not a completed benchmark or improvement claim. Earlier snapshot replays are separate; original91782c6 five-background run remains independent."
+}
