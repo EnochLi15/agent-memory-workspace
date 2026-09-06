@@ -25,3 +25,5 @@ make down
 离线 Git 交付：`make bundle` 创建三个 bare 镜像，并实际验证递归克隆。内部相对 submodule URL 适配三个镜像相邻的目录；上传到代码托管平台时按实际位置配置远端。
 
 详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。本机交付实例已在 `http://127.0.0.1:8088` 运行并通过增强模式 contract，实际配置见 [部署验证](reports/deployed-service.json)；1000题主评测、32组开发对照、完整诊断和两轮性能已完成，本地配置结果331/1000，含36题服务错误。最终归档与校验结果见`delivery/final-verification.json`，工程及质量边界见[实施状态](docs/IMPLEMENTATION-STATUS.md)。
+
+第二轮改进进行中：最新实验服务`96f40bd`有198项测试通过，但完整写入与质量门槛仍未通过，不替代上述基线成绩或8088部署。当前结果见[第二轮状态](docs/ROUND2-STATUS.md)与[写入可靠性后续设计](docs/09-写入可靠性后续设计.md)。

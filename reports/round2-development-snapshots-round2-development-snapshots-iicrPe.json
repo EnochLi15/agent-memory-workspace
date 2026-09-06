@@ -1,0 +1,57 @@
+{
+  "protocol": "failed-development-snapshots-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe",
+  "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-2542f2a-r1-facts-memops",
+  "parent_manifest_sha256": "cf9fbb99bff53dfa44ce8b6f63984427b27d940d71d680158ad54b951b172bb6",
+  "source_commit": "2542f2ab29050623ed4936679e99ed21c4e01542",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "captured_at": "2026-09-06T08:17:44.116Z",
+  "cases": [
+    {
+      "sample": "B05_forget",
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-18:0",
+      "snapshot_revision": 18,
+      "fact_count": 100,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe/B05_forget.json",
+      "sha256": "11dafb35ab8372d6bad7bf39cffb1f733c6b5db4726d9897b72976819a196863",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-19:0",
+      "snapshot_revision": 18,
+      "fact_count": 67,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe/F07_trajectory_ops.json",
+      "sha256": "352a455653af0e9140522ad6ef0390365cf31542efe32d2b9de7274bec77e6a1",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid implicit transition witness index for candidate 11\"}}"
+    },
+    {
+      "sample": "F07_update",
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-6:0",
+      "snapshot_revision": 5,
+      "fact_count": 9,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe/F07_update.json",
+      "sha256": "af0eb87c879580a4170346406891761430429d70a973c72b46497e46e79a864e",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "sample": "E10_reflect",
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-44:0",
+      "snapshot_revision": 43,
+      "fact_count": 189,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe/E10_reflect.json",
+      "sha256": "0bf9869d83001da2556e0fb95773e1c9bbb6b837798cf9cac776eb4131c0f247",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "sample": "E10_remember",
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-35:0",
+      "snapshot_revision": 35,
+      "fact_count": 220,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-iicrPe/E10_remember.json",
+      "sha256": "1d76201b16465a8420f6038b845fcf9c2d093f934804920dedc3cd2e599bb602",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired within the request budget\"}}"
+    }
+  ],
+  "scope": "Logical SQLite snapshots using read-only connections and a read transaction, after failed sample judgment rows exist. Other campaign samples may still run. No repair, commit or replacement of original evaluation results."
+}
