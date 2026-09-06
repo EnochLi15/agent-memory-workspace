@@ -1,0 +1,79 @@
+{
+  "checked_at": "2026-09-06T22:28:52.007556+00:00",
+  "passed": true,
+  "judge_controls": [
+    {
+      "answer": "Oslo",
+      "expected_score": 1.0,
+      "exit_code": 0,
+      "elapsed_s": 11.723553959047422,
+      "result": {
+        "score": 1.0,
+        "reason": "llm_judge_refined",
+        "name": "refined"
+      }
+    },
+    {
+      "answer": "Paris",
+      "expected_score": 0.0,
+      "exit_code": 0,
+      "elapsed_s": 3.0799393750494346,
+      "result": {
+        "score": 0.0,
+        "reason": "llm_judge_refined",
+        "name": "refined"
+      }
+    }
+  ],
+  "embedding_dimensions": 768,
+  "models": {
+    "models": [
+      {
+        "name": "qwen3:14b",
+        "model": "qwen3:14b",
+        "size": 10311151123,
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3",
+          "families": [
+            "qwen3"
+          ],
+          "parameter_size": "14.8B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2318-12-18T06:16:08.305157807+08:00",
+        "size_vram": 10311151123,
+        "context_length": 8192
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "model": "nomic-embed-text:latest",
+        "size": 370031984,
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "nomic-bert",
+          "families": [
+            "nomic-bert"
+          ],
+          "parameter_size": "137M",
+          "quantization_level": "F16"
+        },
+        "expires_at": "2026-09-07T06:58:51.998472+08:00",
+        "size_vram": 370031984,
+        "context_length": 2048
+      }
+    ]
+  },
+  "adapter_sha256": "37e0a9783b4dc8b95d6a379661587e728aedede9dd5b6cb46b2203a676c9d4d2",
+  "scope": "Both real judge bridge verdicts and local embedding request succeed; both models resident. No benchmark rescore. Qwen keep_alive=-1 changes residency only.",
+  "eval_commit": "b8ae27a16f1eba948eeb366b49687180282f3678",
+  "evidence_sha256": {
+    "artifacts/v1-local-judge-02/readiness.json": "0f97497bcdba3a37eeb9df9c5d166a77122fde2517b84c23703d825a5db2e6e2",
+    "artifacts/v1-local-judge-02/bridge-controls.json": "0af2d6557e9716e6334fea486d8ca48589b84f7a3f232fd22e0222ba5c1d474c",
+    "artifacts/v1-long-7a50d22-01/judge-runtime-recovery.jsonl": "8bf1bfa0640df0c5b2b5ef4279f4d058e4cce4958f8c1970bb4b9fb1f18100a5"
+  }
+}

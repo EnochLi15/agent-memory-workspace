@@ -103,7 +103,7 @@ MEMORY_VOLUME_EXTERNAL=true MEMORY_VOLUME="$restore_volume" docker compose up -d
 
 复用 `scripts/run-experiment.py --detach` 启动独立进程会话，`--status` 查询真实进程身份和退出状态。原结果不覆盖、失活记录不当作运行中，未知退出原因保留unknown。macOS的空闲睡眠防护不能保证阻止合盖或强制睡眠。完整评测应放在保持唤醒的宿主机运行。
 
-旧候选 `33a9e05` 的[干净递归克隆验证](../reports/v1-clean-clone-acceptance.json) 已通过构建、353项服务测试、24项Node评测器测试、17项Python测试、增强HTTP闭环及重启读回；临时凭据副本已移除。其[兼容镜像回退](../reports/v1-compatible-rollback.json) 也已通过。这些证据仅适用于旧候选。当前 `7a50d22` 的370项服务回归通过，但新格式的容器部署、备份恢复和固定集须重新验证。尚未完成的项目继续按 [V1交付计划](29-V1交付收敛计划.md) 验收，不能把本文候选命令等同于正式发布完成。
+旧候选 `33a9e05` 的[干净递归克隆验证](../reports/v1-clean-clone-acceptance.json) 已通过构建、353项服务测试、24项Node评测器测试、17项Python测试、增强HTTP闭环及重启读回；临时凭据副本已移除。其[兼容镜像回退](../reports/v1-compatible-rollback.json) 也已通过。这些证据仅适用于旧候选。当前 `12b0d4f` 的375项服务回归通过。`7a50d22` 已补充干净克隆、离线部署、备份恢复和s1兼容回退验证，但增强容器与最终新候选仍须验收；旧镜像证据不能为新提交背书。尚未完成的项目继续按 [V1交付计划](29-V1交付收敛计划.md) 验收，不能把本文候选命令等同于正式发布完成。
 
 ## V1 发布验收与打包
 

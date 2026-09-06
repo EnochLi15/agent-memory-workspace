@@ -1,0 +1,98 @@
+{
+  "protocol": "v1-repair-feedback-fix-v1",
+  "checked_at": "2026-09-06T22:29:44.499420+00:00",
+  "service_commit": "12b0d4fbd00882477f957ad0849403f4cdb78896",
+  "eval_commit": "b8ae27a16f1eba948eeb366b49687180282f3678",
+  "service_tests": 375,
+  "eval_node_tests": 24,
+  "eval_python_tests": 17,
+  "merged": true,
+  "fresh_http_pending": true,
+  "full_background_pending": true,
+  "changes": [
+    {
+      "case": "conv30-session8-failure",
+      "evidence_path": "artifacts/v1-long-7a50d22-01/conv30-session8-failure/fix-stage.json",
+      "evidence_sha256": "520850340997a9fb2af9ca8c691ced76a2264f5715edbd0f4d829d77815be472",
+      "stage": {
+        "protocol": "v1-verification-reindex-fix-stage-v1",
+        "frozen_service_commit": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
+        "fix_commit": "115d11a764deea15d840abe989351f60e530cd53",
+        "isolation": "artifacts/v1-verification-reindex-fix",
+        "merged_into_running_candidate": false,
+        "tests": {
+          "service": 373,
+          "passed": true
+        },
+        "causal_replay": {
+          "new_model_calls": 0,
+          "network_disabled": true,
+          "frozen_rechecks": 44,
+          "fixed_rechecks": 1,
+          "changed_fact_still_checked": true,
+          "frozen_final_findings": 1,
+          "fixed_final_findings": 0
+        },
+        "preserved_boundaries": [
+          "Unchanged rejected facts cannot be resampled after index movement.",
+          "Transitive source changes invalidate dependent fact certificates.",
+          "Contradictory duplicate facts cannot replace negative certificates with positive ones.",
+          "Request, tenant, source and model identity still bind certificate reuse.",
+          "Operation, replacement and message completeness checks retain their existing conservative invalidation."
+        ],
+        "scope": "Isolated candidate fix and exact saved-packet replay only. No fresh model write or complete background success claim; original long evaluation continues frozen and retains failures.",
+        "evidence_sha256": {
+          "provenance.json": "5c13fb9d18edc580c5bf34adb72753aad97767522a54368eaa6d3a951b6bfc95",
+          "reindex-before.log": "ffb76c6d8dfc5c32480b7658c3064acad635bee6d80d33717f0daad05b2a84c8",
+          "reindex-after.log": "c4695c5a518d6805678f5d2f778aa1669777d89d173632553928410950799d8a",
+          "replay-result.json": "ad103664abd57d2c6560d267b8132c51fa79bf40e287f63befa09794e2549093",
+          "replay-verification.mjs": "a77132fe93fd94a1586323d23f07f46b3f78c5bb93cf81d24879af79723d2b55"
+        }
+      }
+    },
+    {
+      "case": "d25-segment49-failure",
+      "evidence_path": "artifacts/v1-long-7a50d22-01/d25-segment49-failure/fix-stage.json",
+      "evidence_sha256": "16f87b03fa8fd8f06e8372848a51a30e65f302c431fabcfaf4eb70981c818eb5",
+      "stage": {
+        "protocol": "v1-combined-binding-fix-stage-v1",
+        "frozen_service_commit": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
+        "fix_commit": "12b0d4fbd00882477f957ad0849403f4cdb78896",
+        "merged_into_running_candidate": false,
+        "tests": {
+          "service": 375,
+          "passed": true,
+          "initial_fixture_correction": "Moved feedback assertions outside mocked model callback so extractor fallback cannot mask the expected missing operation index."
+        },
+        "causal_replay": {
+          "new_model_calls": 0,
+          "read_only_snapshot": true,
+          "frozen_operation_indices": [
+            0
+          ],
+          "fixed_operation_indices": [
+            0,
+            1
+          ],
+          "unrelated_fact_indices": []
+        },
+        "preserved_boundaries": [
+          "No added model or HTTP attempts",
+          "Dry-run selector binding cannot mutate the failed proposal",
+          "Valid sibling operation cannot be edited by this patch",
+          "Authorization, source, chronology, semantic verification and atomic commit remain required"
+        ],
+        "scope": "Isolated fix and captured first repair feedback only. Fresh full background, erasure and HTTP success remain unverified. Original failures retained.",
+        "evidence_sha256": {
+          "binding-before.log": "821d7245378975859b4b8701c256f90f08a67b93063419863bcdd6125fc8b726",
+          "binding-before-corrected.log": "da2d811d16dd2ff6dfb50d4ab08074944e3f578aa7f248ac705b1bcc62820182",
+          "binding-after.log": "33f697212b03b121493119caa11c41f93203ecbd14a4b4e913ee7ec384b3892f",
+          "binding-after-02.log": "e535a292ab82b1be56707accd4ca5087f8bc384089fc370186b6d96031176d48",
+          "replay-binding.mjs": "75599fb346695592335d0e45c3e0373e942e16956bc501820fad0a0adeca9b9a",
+          "binding-replay-result.json": "f2030ac06980c201dccb98c348cf7b4b3d41f6f86e8165de18ca8b441b668a9c"
+        }
+      }
+    }
+  ],
+  "scope": "Code and local recorded-cause evidence, not successful fresh full ingestion or formal V1 acceptance. Original failures and all scores retained."
+}
