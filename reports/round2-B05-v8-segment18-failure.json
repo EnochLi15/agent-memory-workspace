@@ -1,0 +1,173 @@
+{
+  "protocol": "frozen-v8-B05-segment18-failure-v1",
+  "status": "terminal_background_ingestion_failure",
+  "scope": "B05 has stopped; other backgrounds continue. No new benchmark score claimed.",
+  "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
+  "snapshot_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+  "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+  "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+  "revision": 18,
+  "source_format": "dual-source-v8",
+  "fact_count": 136,
+  "message_count": 174,
+  "attempts": [
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:B05_forget:segment-18:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}",
+      "elapsed_ms": 90150.80087499996
+    }
+  ],
+  "model_calls": [
+    {
+      "at": "2026-09-06T09:47:57.296Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "c50f745e-0241-4554-b44a-cde8074a8aa3",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 9495.11491600005,
+      "usage": {
+        "prompt_tokens": 21752,
+        "completion_tokens": 433,
+        "total_tokens": 22185,
+        "completion_tokens_details": {
+          "reasoning_tokens": 46
+        }
+      },
+      "output_chars": 1168
+    },
+    {
+      "at": "2026-09-06T09:47:58.054Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "d4ee877c-20b2-4aea-8549-8e77d3ebe951",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10252.56799999997,
+      "usage": {
+        "prompt_tokens": 24115,
+        "completion_tokens": 432,
+        "total_tokens": 24547,
+        "completion_tokens_details": {
+          "reasoning_tokens": 47
+        }
+      },
+      "output_chars": 1188
+    },
+    {
+      "at": "2026-09-06T09:47:59.780Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "c9f72615-1942-4b17-a7e8-055f420c25e6",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11979.644208000042,
+      "usage": {
+        "prompt_tokens": 22527,
+        "completion_tokens": 543,
+        "total_tokens": 23070,
+        "completion_tokens_details": {
+          "reasoning_tokens": 154
+        }
+      },
+      "output_chars": 1134
+    },
+    {
+      "at": "2026-09-06T09:48:02.479Z",
+      "kind": "generation",
+      "purpose": "source_operation",
+      "trace_id": "e360ecf4-b246-4e41-9bc1-d2fe0d20dae4",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 2695.151249999879,
+      "usage": {
+        "prompt_tokens": 18046,
+        "completion_tokens": 86,
+        "total_tokens": 18132,
+        "completion_tokens_details": {
+          "reasoning_tokens": 56
+        }
+      },
+      "output_chars": 81
+    },
+    {
+      "at": "2026-09-06T09:48:58.631Z",
+      "kind": "generation",
+      "purpose": "extraction",
+      "trace_id": "fa476faa-9558-4181-8e5f-6edaf849596c",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 56026.97745900019,
+      "usage": {
+        "prompt_tokens": 12237,
+        "completion_tokens": 3033,
+        "total_tokens": 15270,
+        "prompt_tokens_details": {
+          "cached_tokens": 2816
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 507
+        }
+      },
+      "output_chars": 11090
+    },
+    {
+      "at": "2026-09-06T09:49:11.472Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "c917b6c9-8b10-45b0-92b7-8e1636c3fd4a",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 12831.599083000096,
+      "usage": {
+        "prompt_tokens": 19236,
+        "completion_tokens": 597,
+        "total_tokens": 19833,
+        "completion_tokens_details": {
+          "reasoning_tokens": 371
+        }
+      },
+      "output_chars": 936
+    },
+    {
+      "at": "2026-09-06T09:49:17.752Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "250482a1-0a57-4f13-9599-1df331861ef2",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 6270.055707999971,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "deadline",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": true,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    }
+  ],
+  "source_decisions": [
+    {
+      "decisions": [
+        {
+          "instruction": 0,
+          "action": "ordinary",
+          "target_slots": [],
+          "cuts": []
+        }
+      ]
+    }
+  ],
+  "diagnosis_status": "Exact private responses and terminal database saved for next repair; stage-level evidence below does not by itself distinguish all semantic causes."
+}

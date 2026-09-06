@@ -1,0 +1,83 @@
+{
+  "protocol": "round2-fixed-budget-query-policy-v2",
+  "policy": "E5 retrieval-only candidate over fresh v8 ingestion. Compare relation expansion off, legacy entity co-occurrence and conditional typed subject/relation/value traversal, then always versus selective reranking. Conditional expansion uses at most two directed edges plus terminal-property evidence, 24 visited nodes, 8 facts per node and 40 evidence records; only visible confirmed grounded facts with overlapping known validity intervals can bridge. It returns original facts, never inferred answers. Selective reranking uses query shape, lexical coverage and candidate budget heuristics; these are not semantic confidence scores. All variants retain the same 32-evidence/6000-token limit, mini Answer/Judge, extraction/verification/repair models and write-time behavior. No quality or cost benefit is assumed before paired tests. Reuse requires complete original ingestion and matching frozen code, data and write configuration. These experimental controls are disabled in production. Full repeats, new data and lifecycle gates remain required. All main arms use integer-slot reranking to avoid copying persistent IDs; conditional_ids preserves the legacy ID wire format as a separate control. Slots resolve against exactly the offered candidate array and are discarded after a storage revision change. The 12-second rerank call budget is unchanged.",
+  "evaluation": {
+    "answer_model": "gpt-5.4-mini",
+    "judge_model": "gpt-5.4-mini"
+  },
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EXTRACTION_MODEL": "gpt-5.5",
+    "MEMORY_VERIFICATION_MODEL": "gpt-5.5",
+    "MEMORY_REPAIR_MODEL": "gpt-5.5",
+    "MEMORY_LLM_REASONING_EFFORT": "low",
+    "MEMORY_VERIFICATION_FORMAT": "compact",
+    "MEMORY_INCREMENTAL_VERIFICATION": "true",
+    "MEMORY_MAX_REPAIR_ROUNDS": "2",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_ADD_TIMEOUT_MS": "115000",
+    "MEMORY_SEARCH_TIMEOUT_MS": "55000",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RETRIEVAL": "hybrid",
+    "MEMORY_SOURCE_INDEX": "true",
+    "MEMORY_CANDIDATE_LIMIT": "200",
+    "MEMORY_RERANK_CANDIDATES": "80",
+    "MEMORY_RAW_FALLBACK": "true",
+    "MEMORY_RERANK": "true",
+    "MEMORY_COVERAGE_PACKING": "true",
+    "MEMORY_EVENT_VIEW": "false",
+    "MEMORY_EXPERIMENT_LIFECYCLE": "true",
+    "MEMORY_EXPERIMENT_TEMPORAL": "true",
+    "MEMORY_EXPERIMENT_MULTI_HOP": "true",
+    "MEMORY_EXPERIMENT_REFLECTION": "true",
+    "MEMORY_EXPERIMENT_RAW_ONLY": "false",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_schema",
+    "MEMORY_ERASURE_BINDING": "true",
+    "MEMORY_SOURCE_ERASURE": "true",
+    "MEMORY_SEMANTIC_TRANSITIONS": "true",
+    "MEMORY_EXTRACTION_FORMAT": "flat",
+    "MEMORY_SOURCE_OPERATIONS": "true",
+    "MEMORY_SOURCE_OPERATION_HISTORY": "true",
+    "MEMORY_SOURCE_OPERATION_BATCHES": "true",
+    "MEMORY_RELATION_MODE": "off",
+    "MEMORY_RERANK_POLICY": "always",
+    "MEMORY_RERANK_FORMAT": "indices"
+  },
+  "profiles": {
+    "no_relation": {
+      "environment": {}
+    },
+    "cooccurrence": {
+      "environment": {
+        "MEMORY_RELATION_MODE": "cooccurrence"
+      }
+    },
+    "conditional": {
+      "environment": {
+        "MEMORY_RELATION_MODE": "conditional"
+      }
+    },
+    "selective": {
+      "environment": {
+        "MEMORY_RELATION_MODE": "conditional",
+        "MEMORY_RERANK_POLICY": "selective"
+      }
+    },
+    "selective_no_relation": {
+      "environment": {
+        "MEMORY_RERANK_POLICY": "selective"
+      }
+    },
+    "conditional_ids": {
+      "environment": {
+        "MEMORY_RELATION_MODE": "conditional",
+        "MEMORY_RERANK_FORMAT": "ids"
+      }
+    }
+  }
+}

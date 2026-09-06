@@ -26,7 +26,8 @@ class IngestionIdentityTests(unittest.TestCase):
 
     def test_pure_retrieval_changes_keep_the_same_ingestion(self):
         changed = copy.deepcopy(self.config)
-        changed.update(port=8097, rawFallback=True, rerank=True)
+        changed.update(port=8097, rawFallback=True, rerank=True,
+                       relationMode='conditional', rerankPolicy='selective', rerankFormat='indices')
         changed['experimental']['multiHop'] = True
         self.check(changed)
         self.assertFalse(self.config['experimental']['multiHop'])

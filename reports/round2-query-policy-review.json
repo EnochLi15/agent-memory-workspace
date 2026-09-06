@@ -1,0 +1,301 @@
+{
+  "protocol": "round2-query-policy-review-v1",
+  "scope": "E5 engineering and synthetic controls. Neither model token accounting nor literal answer checks establishes benchmark quality, statistical significance or general cost savings.",
+  "service_tests": 247,
+  "targeted_tests": 11,
+  "identity_tests": 4,
+  "http_controls": [
+    {
+      "artifact": "reports/round2-query-policy-live-jLYVpl.json",
+      "report_sha256": "4ea7b465dac4e9d823db364c7161b3e3b7bd8520fb7ec40a5d800d52eccb4fd5",
+      "matches_current_sources": false,
+      "profiles": [
+        {
+          "profile": "conditional",
+          "planned_queries": 6,
+          "keyword_checks_passed": 6,
+          "storage_unchanged": true,
+          "rerank_requested": 6,
+          "model_attempts": 6,
+          "model_outcomes": {
+            "ok": 2,
+            "error": 4
+          },
+          "model_error_categories": {
+            "deadline": 4
+          },
+          "reported_rerank_tokens": 5480,
+          "rerank_usage_missing": 4,
+          "search_median_ms": 12082.800729499997,
+          "search_max_ms": 12114.379084,
+          "decisions": [
+            "always",
+            "always",
+            "always",
+            "always",
+            "always",
+            "always"
+          ],
+          "answers": [
+            {
+              "id": "browser",
+              "answer": "Firefox",
+              "tokens": 160
+            },
+            {
+              "id": "color",
+              "answer": "Blue.",
+              "tokens": 795
+            },
+            {
+              "id": "coffee",
+              "answer": "Black drip coffee.",
+              "tokens": 795
+            },
+            {
+              "id": "friend_hobby",
+              "answer": "Bob enjoys kayaking.",
+              "tokens": 795
+            },
+            {
+              "id": "employer_location",
+              "answer": "Oslo.",
+              "tokens": 305
+            },
+            {
+              "id": "hobby_list",
+              "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+              "tokens": 795
+            }
+          ]
+        },
+        {
+          "profile": "selective",
+          "planned_queries": 6,
+          "keyword_checks_passed": 6,
+          "storage_unchanged": true,
+          "rerank_requested": 2,
+          "model_attempts": 2,
+          "model_outcomes": {
+            "error": 2
+          },
+          "model_error_categories": {
+            "deadline": 2
+          },
+          "reported_rerank_tokens": 0,
+          "rerank_usage_missing": 2,
+          "search_median_ms": 101.10452100000111,
+          "search_max_ms": 12119.387667000003,
+          "decisions": [
+            "fits_budget",
+            "fits_budget",
+            "fits_budget",
+            "fits_budget",
+            "ambiguous_candidates",
+            "complex_query"
+          ],
+          "answers": [
+            {
+              "id": "browser",
+              "answer": "Firefox",
+              "tokens": 795
+            },
+            {
+              "id": "color",
+              "answer": "Blue.",
+              "tokens": 795
+            },
+            {
+              "id": "coffee",
+              "answer": "Black drip coffee.",
+              "tokens": 795
+            },
+            {
+              "id": "friend_hobby",
+              "answer": "Bob enjoys kayaking.",
+              "tokens": 795
+            },
+            {
+              "id": "employer_location",
+              "answer": "Oslo",
+              "tokens": 795
+            },
+            {
+              "id": "hobby_list",
+              "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+              "tokens": 795
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "artifact": "reports/round2-query-policy-live-ARlTbm.json",
+      "report_sha256": "6332ce24e5bbd945615311985c4575457ec4d151764052155a12932386f2c751",
+      "matches_current_sources": true,
+      "profiles": [
+        {
+          "profile": "conditional",
+          "planned_queries": 6,
+          "keyword_checks_passed": 6,
+          "storage_unchanged": true,
+          "rerank_requested": 6,
+          "model_attempts": 6,
+          "model_outcomes": {
+            "ok": 6
+          },
+          "model_error_categories": {},
+          "reported_rerank_tokens": 11668,
+          "rerank_usage_missing": 0,
+          "search_median_ms": 3623.5939160000007,
+          "search_max_ms": 4426.882417,
+          "decisions": [
+            "always",
+            "always",
+            "always",
+            "always",
+            "always",
+            "always"
+          ],
+          "answers": [
+            {
+              "id": "browser",
+              "answer": "Firefox",
+              "tokens": 795
+            },
+            {
+              "id": "color",
+              "answer": "Blue.",
+              "tokens": 795
+            },
+            {
+              "id": "coffee",
+              "answer": "Black drip coffee.",
+              "tokens": 250
+            },
+            {
+              "id": "friend_hobby",
+              "answer": "Bob enjoys kayaking.",
+              "tokens": 795
+            },
+            {
+              "id": "employer_location",
+              "answer": "Oslo.",
+              "tokens": 383
+            },
+            {
+              "id": "hobby_list",
+              "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+              "tokens": 795
+            }
+          ]
+        },
+        {
+          "profile": "selective",
+          "planned_queries": 6,
+          "keyword_checks_passed": 6,
+          "storage_unchanged": true,
+          "rerank_requested": 2,
+          "model_attempts": 2,
+          "model_outcomes": {
+            "ok": 2
+          },
+          "model_error_categories": {},
+          "reported_rerank_tokens": 3851,
+          "rerank_usage_missing": 0,
+          "search_median_ms": 107.17643750000207,
+          "search_max_ms": 3108.7424580000006,
+          "decisions": [
+            "fits_budget",
+            "fits_budget",
+            "fits_budget",
+            "fits_budget",
+            "ambiguous_candidates",
+            "complex_query"
+          ],
+          "answers": [
+            {
+              "id": "browser",
+              "answer": "Firefox",
+              "tokens": 795
+            },
+            {
+              "id": "color",
+              "answer": "Blue.",
+              "tokens": 795
+            },
+            {
+              "id": "coffee",
+              "answer": "Black drip coffee.",
+              "tokens": 795
+            },
+            {
+              "id": "friend_hobby",
+              "answer": "Bob enjoys kayaking.",
+              "tokens": 795
+            },
+            {
+              "id": "employer_location",
+              "answer": "Oslo.",
+              "tokens": 305
+            },
+            {
+              "id": "hobby_list",
+              "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+              "tokens": 477
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format_stage_control": {
+    "artifact": "reports/round2-rerank-format-kdm8iE.json",
+    "scope": "Two fixed synthetic packets, three stage-only paired repeats, alternating format order. Not three full ingestion/search/Answer repeats.",
+    "results": {
+      "ids": {
+        "planned": 6,
+        "complete": 2,
+        "median_ms": 12005.591729500004,
+        "input_chars": [
+          6373,
+          6390
+        ],
+        "complete_output_chars": [
+          631,
+          456
+        ]
+      },
+      "indices": {
+        "planned": 6,
+        "complete": 6,
+        "median_ms": 3793.6252085000015,
+        "input_chars": [
+          5184,
+          5201
+        ],
+        "complete_output_chars": [
+          149,
+          179,
+          149,
+          178,
+          178,
+          178
+        ]
+      }
+    },
+    "failures": "ID format had4 deadline failures after partial streamed output; compact format had1 connection retry and all6 logical calls completed."
+  },
+  "answer_review": "All12 answers in each HTTP control were inspected: own browserFirefox, blue, black drip coffee, Bob kayaking, employer locationOslo, Alice painting and Bob kayaking. No ownership swaps were observed in these controls. This is assistant inspection, not an independent human or benchmark judge.",
+  "limits": [
+    "Nine seeded synthetic facts fit well within the final evidence budget. Hard crowded retrieval cases and unseen data remain untested.",
+    "Declared typed relation families and query-shape heuristics are limited; weak lexical coverage is not calibrated confidence.",
+    "Normal lifecycle visibility, known validity-window intersections and confirmed provenance remain required for expansion.",
+    "Only original grounded facts are returned; no graph path is asserted as a derived fact.",
+    "Default production settings remain legacy co-occurrence/ID output and no rerank unless enabled.",
+    "The running frozen91782c6 full five-background run does not include these E5 changes and has already failed E10 segment26.",
+    "Complete E0, E1, fixed-budget full paired repeats, unseen data and deployment gates remain open.",
+    "The fits_budget gate estimates compact candidate tokens; final provenance expansion can consume more. Crowded-budget retention still needs paired validation."
+  ],
+  "accounting_note": "All transport attempts, fallback outcomes and missing usage are retained. Answer and embedding cost are not included in rerank token totals; no dollar estimates or zero-cost assumptions."
+}

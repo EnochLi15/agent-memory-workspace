@@ -6,6 +6,7 @@ RETRIEVAL_FIELDS = {
     'host', 'port', 'rawFallback', 'rerank', 'coveragePacking', 'candidateLimit',
     'rerankCandidates', 'retrieval', 'eventView', 'maxEvidence', 'tokenBudget',
     'searchTimeout', 'ingestion_origin',
+    'relationMode', 'rerankPolicy', 'rerankFormat',
 }
 
 

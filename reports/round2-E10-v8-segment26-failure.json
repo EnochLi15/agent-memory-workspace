@@ -1,0 +1,501 @@
+{
+  "protocol": "frozen-v8-E10-segment26-failure-v1",
+  "status": "terminal_background_ingestion_failure",
+  "scope": "E10 background failed; the other four backgrounds continue in the existing runner. This is not a final five-background score.",
+  "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
+  "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
+  "snapshot_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-v8-failure-8nr_ipub",
+  "database_sha256": "effa0d25dbd849161ae3ec6ac5bd89e806dd6bffa5ee754af27fc033a5679b3f",
+  "revision": 25,
+  "source_format": "dual-source-v8",
+  "fact_count": 171,
+  "fact_states": {
+    "active": 171
+  },
+  "message_count": 254,
+  "source_chars": 170037,
+  "failed_request_sha256": "b79fa59a6a96c18f7f652b517a86225cbf1dc6a42da1034a513218488390f6f1",
+  "attempts": [
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_reflect:segment-26:0",
+      "status": "retrying",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"MODEL_OUTPUT\",\"message\":\"Incomplete model output\"}}",
+      "elapsed_ms": 90031.01604200003
+    },
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_reflect:segment-26:0",
+      "status": "retrying",
+      "attempt": 1,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Source operation source_operation_screen model stage unavailable\"}}",
+      "elapsed_ms": 11223.21100000001
+    },
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_reflect:segment-26:0",
+      "status": "failed",
+      "attempt": 2,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Source operation source_operation_screen model stage unavailable\"}}",
+      "elapsed_ms": 11247.134042000049
+    }
+  ],
+  "first_global_source_decision": {
+    "decisions": [
+      {
+        "instruction": 0,
+        "action": "ordinary",
+        "target_slots": [],
+        "cuts": []
+      }
+    ]
+  },
+  "model_calls": [
+    {
+      "at": "2026-09-06T09:39:07.246Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "7132baa5-81ec-4c7e-83c6-659ca4a34bcc",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10886.92724999995,
+      "usage": {
+        "prompt_tokens": 25437,
+        "completion_tokens": 452,
+        "total_tokens": 25889,
+        "completion_tokens_details": {
+          "reasoning_tokens": 55
+        }
+      },
+      "output_chars": 1190
+    },
+    {
+      "at": "2026-09-06T09:39:07.297Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "7055787f-8634-4154-b2e5-c48e1d09ce68",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10938.10929199995,
+      "usage": {
+        "prompt_tokens": 25719,
+        "completion_tokens": 444,
+        "total_tokens": 26163,
+        "completion_tokens_details": {
+          "reasoning_tokens": 47
+        }
+      },
+      "output_chars": 1226
+    },
+    {
+      "at": "2026-09-06T09:39:07.403Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "cf5aef95-9afa-4c1b-9900-db74d8bc1bdb",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11044.441541000037,
+      "usage": {
+        "prompt_tokens": 24896,
+        "completion_tokens": 494,
+        "total_tokens": 25390,
+        "completion_tokens_details": {
+          "reasoning_tokens": 101
+        }
+      },
+      "output_chars": 1144
+    },
+    {
+      "at": "2026-09-06T09:39:11.471Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "b64e71a2-d0bd-4058-9e14-804735de0b65",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 4172.492749999976,
+      "usage": {
+        "prompt_tokens": 18142,
+        "completion_tokens": 137,
+        "total_tokens": 18279,
+        "completion_tokens_details": {
+          "reasoning_tokens": 40
+        }
+      },
+      "output_chars": 276
+    },
+    {
+      "at": "2026-09-06T09:39:18.828Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "56358605-001d-4566-84c3-6d6bed16e2e1",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11579.443917000084,
+      "usage": {
+        "prompt_tokens": 28453,
+        "completion_tokens": 474,
+        "total_tokens": 28927,
+        "completion_tokens_details": {
+          "reasoning_tokens": 77
+        }
+      },
+      "output_chars": 1226
+    },
+    {
+      "at": "2026-09-06T09:39:22.662Z",
+      "kind": "generation",
+      "purpose": "source_operation",
+      "trace_id": "6ba011e8-40ff-4c0e-b26e-97689750ee68",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 3829.01324999996,
+      "usage": {
+        "prompt_tokens": 18849,
+        "completion_tokens": 85,
+        "total_tokens": 18934,
+        "completion_tokens_details": {
+          "reasoning_tokens": 55
+        }
+      },
+      "output_chars": 81
+    },
+    {
+      "at": "2026-09-06T09:39:58.809Z",
+      "kind": "generation",
+      "purpose": "extraction",
+      "trace_id": "acff4bbe-a717-4aea-b277-4548871599b4",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 35981.18958300003,
+      "usage": {
+        "prompt_tokens": 12264,
+        "completion_tokens": 1878,
+        "total_tokens": 14142,
+        "prompt_tokens_details": {
+          "cached_tokens": 2816
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 263
+        }
+      },
+      "output_chars": 7323
+    },
+    {
+      "at": "2026-09-06T09:40:05.068Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "f2d94344-68dd-4a2d-9c91-cbf13c26e022",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 6252.293333000038,
+      "usage": {
+        "prompt_tokens": 17272,
+        "completion_tokens": 233,
+        "total_tokens": 17505,
+        "completion_tokens_details": {
+          "reasoning_tokens": 174
+        }
+      },
+      "output_chars": 181
+    },
+    {
+      "at": "2026-09-06T09:40:12.485Z",
+      "kind": "generation",
+      "purpose": "verification",
+      "verification_format": "source-reference-tuples-v1",
+      "verification_scope": {
+        "facts": 22,
+        "operations": 1,
+        "replacements": 0,
+        "messages": 8,
+        "reused": 0
+      },
+      "verification_response_format": "json_schema",
+      "trace_id": "580d82b2-4857-4a18-9134-b3a4628991a5",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 7404.689541000058,
+      "usage": {
+        "prompt_tokens": 7650,
+        "completion_tokens": 296,
+        "total_tokens": 7946,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 31
+        }
+      },
+      "output_chars": 697
+    },
+    {
+      "at": "2026-09-06T09:40:26.284Z",
+      "kind": "generation",
+      "purpose": "source_erasure",
+      "verification_response_format": "json_schema",
+      "trace_id": "d5aee172-66bf-4281-953b-f7983e7ae588",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 13586.337708999985,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "deadline",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": true,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T09:40:32.987Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "29275112-4302-4792-aede-303a87ff2241",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 5576.934790999978,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T09:40:38.171Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "a4ac0043-3001-43f6-bc4d-e58cf812b7e7",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10760.119791999925,
+      "usage": {
+        "prompt_tokens": 25719,
+        "completion_tokens": 438,
+        "total_tokens": 26157,
+        "prompt_tokens_details": {
+          "cached_tokens": 25344
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 41
+        }
+      },
+      "output_chars": 1226
+    },
+    {
+      "at": "2026-09-06T09:40:38.370Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "f7f45f26-2531-46a9-94a7-9750c2ca59d3",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10959.951583000016,
+      "usage": {
+        "prompt_tokens": 25437,
+        "completion_tokens": 457,
+        "total_tokens": 25894,
+        "prompt_tokens_details": {
+          "cached_tokens": 24320
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 60
+        }
+      },
+      "output_chars": 1190
+    },
+    {
+      "at": "2026-09-06T09:40:38.508Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "29275112-4302-4792-aede-303a87ff2241",
+      "model": "gpt-5.5",
+      "attempt": 1,
+      "outcome": "error",
+      "elapsed_ms": 5520.339957999997,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T09:40:38.511Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "2a45b69e-59a2-47c0-bc07-c6e49cd58532",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 338.30783399997745,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T09:40:38.512Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "a1bd13a3-1ad9-45ab-938f-5a57b3c380e5",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 140.64804200001527,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T09:40:46.186Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "e767df85-4f68-4d9d-9662-27f854f5d59e",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 5541.15304200002,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T09:40:50.708Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "842dd2d4-d194-477c-bd81-29f2d288f2f4",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10062.792665999965,
+      "usage": {
+        "prompt_tokens": 25437,
+        "completion_tokens": 459,
+        "total_tokens": 25896,
+        "prompt_tokens_details": {
+          "cached_tokens": 24320
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        }
+      },
+      "output_chars": 1190
+    },
+    {
+      "at": "2026-09-06T09:40:51.454Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "1204e4c7-68f7-4520-bb78-6c3f26b5236e",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 10808.900957999984,
+      "usage": {
+        "prompt_tokens": 25719,
+        "completion_tokens": 451,
+        "total_tokens": 26170,
+        "prompt_tokens_details": {
+          "cached_tokens": 25344
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 54
+        }
+      },
+      "output_chars": 1226
+    },
+    {
+      "at": "2026-09-06T09:40:51.757Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "e767df85-4f68-4d9d-9662-27f854f5d59e",
+      "model": "gpt-5.5",
+      "attempt": 1,
+      "outcome": "error",
+      "elapsed_ms": 5570.768792000017,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T09:40:51.761Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "49b49cc0-e686-419b-8d5f-b188acaf92e8",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 1050.7668330000015,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T09:40:51.762Z",
+      "kind": "generation",
+      "purpose": "source_operation_screen",
+      "trace_id": "93708b99-a319-4e10-aa5d-8803f52a0932",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 307.06220799998846,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "signal_aborted": true,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": null
+    }
+  ],
+  "diagnosis": "The actual retirement instruction is about the user's completed dentist appointment. Initial historical screening and global adjudication ultimately select ordinary, yet consume about26 seconds before36-second extraction, repair and verification. Source erasure then has only13.6 seconds left in the shared90-second model budget. Later HTTP retries fail on socket connections during source screening. These are distinct failures, not permission or SQLite errors.",
+  "next_design": "Introduce an independently verified ordinary-vs-source-review routing decision before whole-history review. Ordinary routing does not authorize a no-op or deletion: normal target binding and fact/source erasure checks must still complete. Uncertain or rejected-assistant references require complete source review. Bind route proof to original request/facts, validate it at commit, and test false routing plus mixed ordinary/source instructions. No keyword-only exemption or deadline extension."
+}
