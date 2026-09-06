@@ -1,7 +1,12 @@
 // Real-model, exposed synthetic controls; no benchmark gold enters service inputs.
 import {readFileSync,writeFileSync,appendFileSync,mkdirSync,mkdtempSync,readdirSync} from 'node:fs';
 import {join,resolve} from 'node:path';import {parseEnv} from 'node:util';import {createHash} from 'node:crypto';
-import {buildServer} from '../../service/dist/server.js';import {configFromEnv} from '../../service/dist/config.js';import {TenantStore} from '../../service/dist/storage.js';import {Models} from '../../service/dist/models.js';
+import {pathToFileURL} from 'node:url';
+const runtime=resolve(process.argv.find(x=>x.startsWith('--runtime='))?.slice('--runtime='.length)??'service');
+const {buildServer}=await import(pathToFileURL(join(runtime,'dist/server.js')));
+const {configFromEnv}=await import(pathToFileURL(join(runtime,'dist/config.js')));
+const {TenantStore}=await import(pathToFileURL(join(runtime,'dist/storage.js')));
+const {Models}=await import(pathToFileURL(join(runtime,'dist/models.js')));
 const variants=[
  {id:'direct_entity',message:'No need to track anything about my old Android tablet.',erase:true},
  {id:'negation',message:'Do not stop tracking my old Android tablet.',erase:false},
@@ -16,7 +21,7 @@ if(specIndex>=0){if(!args[specIndex+1]||profileIndex<0||!args[profileIndex+1])th
 const e=parseEnv(readFileSync('.env','utf8'));const config={...configFromEnv({...e,MEMORY_LLM_MODEL:'gpt-5.5',MEMORY_LLM_REASONING_EFFORT:'low',...experimentEnv,MEMORY_EMBEDDING_DIGEST:'0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f'}),port:0,dataDir:join(output,'data')};
 process.env.MEMORY_MODEL_AUDIT=join(output,'model-usage.jsonl');const app=await buildServer(config),base=await app.listen({host:'127.0.0.1',port:0});let currentCase='';
 const originalJson=Models.prototype.json;Models.prototype.json=async function(system,user,signal,context){const raw=await originalJson.call(this,system,user,signal,context);appendFileSync(join(output,'model-proposals.jsonl'),JSON.stringify({tag:'DEBUG-variant-probe',case:currentCase,input:user,output:raw})+'\n');return raw;};
-const sourceFiles=readdirSync('service/src').filter(p=>p.endsWith('.ts')).map(p=>'service/src/'+p);const report={protocol:'real-model-lifecycle-variants-v1',model:config.llmModel,stage_models:config.llmStageModels,verification_format:config.verificationFormat,max_repair_rounds:config.maxRepairRounds,incremental_verification:config.incrementalVerification,model_budget_ms:Math.min(95000,Math.max(500,config.addTimeout-25000)),experiment_spec_sha256:specHash,started_at:new Date().toISOString(),reasoning_effort:config.llmReasoningEffort,source_sha256:Object.fromEntries(sourceFiles.map(p=>[p,sha(readFileSync(p))])),probe_sha256:sha(readFileSync('scripts/probes/lifecycle-variants.mjs')),run_dir:output,cases:[],scope:'Five synthetic controls with fixed expected retention, not benchmark questions or overall accuracy.'};
+const sourceFiles=readdirSync(join(runtime,'src')).filter(p=>p.endsWith('.ts')).map(p=>join(runtime,'src',p));const report={protocol:'real-model-lifecycle-variants-v1',runtime,model:config.llmModel,stage_models:config.llmStageModels,verification_format:config.verificationFormat,max_repair_rounds:config.maxRepairRounds,incremental_verification:config.incrementalVerification,model_budget_ms:Math.min(95000,Math.max(500,config.addTimeout-25000)),experiment_spec_sha256:specHash,started_at:new Date().toISOString(),reasoning_effort:config.llmReasoningEffort,source_sha256:Object.fromEntries(sourceFiles.map(p=>[p,sha(readFileSync(p))])),probe_sha256:sha(readFileSync('scripts/probes/lifecycle-variants.mjs')),run_dir:output,cases:[],scope:'Five synthetic controls with fixed expected retention, not benchmark questions or overall accuracy.'};
 writeFileSync(join(output,'probe-source.mjs'),readFileSync(import.meta.filename));writeFileSync(join(output,'results.json'),JSON.stringify(report,null,2)+'\n');
 try{
  for(const variant of variants){

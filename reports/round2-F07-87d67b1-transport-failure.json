@@ -1,0 +1,62 @@
+{
+  "protocol": "frozen-f07-transport-failure-v1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-F07-87d67b1-transport-failure-z9n32fmh",
+  "observed_at": "2026-09-06T12:10:04.292653+00:00",
+  "failure": {
+    "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:F07_trajectory_ops:segment-48:0",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Connection error.\"}}",
+    "elapsed_ms": 11868.543459000066
+  },
+  "hashes": {
+    "request.json": "a22ccdcb3cf46915f413b7f9d17edb5485976f6eaaef86e9223a4d57290d16f6",
+    "spec.json": "d465b2f5371ab82accca686ab7422e0abaf0791f17c5b1f59ac08300514c5754",
+    "memory.sqlite": "41056519569075da9e13e15b5280fb99643305667ea62efb516870c26f5fb39a",
+    "private-model-trace.jsonl": "cfdb1efd7cc9b0983e81c0198acc244c5ff4f8351faa76cd7e5a0faf51948682"
+  },
+  "packets": [
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 1,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": true
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "cancelled",
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": true
+    }
+  ],
+  "scope": "Original terminal failure retained in planned denominator. Failure occurred during overlapping shared-gateway controls; transport cause is observed, contention as cause is unproven.",
+  "trace_times": {
+    "first": "2026-09-06T12:05:02.386Z",
+    "last": "2026-09-06T12:05:08.013Z"
+  },
+  "overlap_start": "2026-09-06T12:04:57.444147+00:00"
+}

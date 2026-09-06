@@ -1,0 +1,48 @@
+{
+  "protocol": "round2-live-controls-and-transport-review-v1",
+  "service_live_controls": "8cb099f",
+  "service_transport_candidate": "97dcd51",
+  "repeat_counts": {
+    "original": {
+      "planned": 3,
+      "completed": 3,
+      "protocol_valid": 3,
+      "no_findings": 1,
+      "fact_63_rejected_as_tentative_despite_confirmed_input": 2
+    },
+    "labeled": {
+      "planned": 3,
+      "completed": 3,
+      "protocol_valid": 3,
+      "no_findings": 3,
+      "fact_63_rejected_as_tentative_despite_confirmed_input": 0
+    }
+  },
+  "controls": {
+    "LoCoMo": "reports/round2-proposal-index-control-l7HHVQ.json",
+    "E10": "reports/round2-shard-array-repair-n8Djmq.json",
+    "B05": "reports/round2-retained-witness-diagnostic-JNyF0d.json",
+    "paired_verification": "reports/round2-verification-index-repeat-VPgUcP.json",
+    "lifecycle_variants": "reports/round2-lifecycle-variants-2026-09-06T12-11-53-491Z-BrMZPH.json"
+  },
+  "tests": {
+    "service_passed": 309,
+    "transport_targeted_passed": 19,
+    "red_tests_failed_as_expected": 2
+  },
+  "limitations": [
+    "Three repeats on one fixed exposed proposal do not establish a general accuracy gain.",
+    "All candidate live controls replay original extraction and give subsequent stages a fresh budget; full fresh ingestion still required.",
+    "E10 contains topical curiosity/interest observations already present in original extraction; accepted storage is not evidence of useful long-term memory.",
+    "New F07 transport classification allows existing bounded request retry without offline fallback. It does not relax the rejection lock when later repair transport fails.",
+    "Full frozen LoCoMo finished with 30 service errors; MemOps still running.",
+    "Shared gateway overlap is recorded; contended timings are not uncontended performance evidence."
+  ],
+  "lifecycle_control": {
+    "passed": 5,
+    "planned": 5,
+    "http_adds": 10,
+    "scope": "Five exposed synthetic scenarios, storage/retention/event assertions. Does not cover the complete lifecycle acceptance matrix."
+  },
+  "gateway_overlap": "reports/round2-shared-gateway-overlap.json"
+}

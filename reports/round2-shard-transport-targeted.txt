@@ -1,0 +1,27 @@
+✔ typed connection, timeout, rate limit and server failures remain unavailable after shard cancellation (5.432083ms)
+✔ schema, semantic and permanent provider failures cannot become retryable by their wording (1.484416ms)
+✔ unavailable shard preparation cannot fall back to offline success or proceed to embedding (3.129416ms)
+✔ HTTP connection failure has no receipt; retrying the same request commits exactly once (321.148208ms)
+✔ bounded source balancing covers participants once without omitting shared context (2.861791ms)
+✔ foreign handles, omitted groups and duplicate ownership cannot become a partial merged result (1.756875ms)
+✔ first failure cancels siblings and waits for their cleanup before rejection (6.771458ms)
+✔ external cancellation and pre-aborted requests cannot publish late successes (0.443334ms)
+✔ cross-shard selector targets the earlier fact globally, preserves another actor, and commits atomically (34.785833ms)
+✔ parallel extraction failures reject preparation rather than falling back to offline partial facts (0.450625ms)
+✔ merged source references still reject future support and retain earlier cross-shard context (1.139791ms)
+✔ semantic repair sees the complete merged proposal and rechecks it globally (1.167375ms)
+✔ small chunks keep a single extraction call without shard ownership metadata (0.376917ms)
+✔ an operation cannot use selector resolution to delete a future cross-shard fact (0.986667ms)
+✔ missing array fields survive merge unchanged and still fail the strict grouped decoder (0.325917ms)
+✔ a missing operations field reaches bounded repair and still executes the real cross-shard operation atomically (7.079542ms)
+✔ a still-malformed global repair cannot publish defaults, skip verification, or exceed the existing repair limit (0.529959ms)
+✔ failure audit distinguishes HTTP rejection, truncated output and filtered completion without echoing credentials (44.055542ms)
+✔ deadline, caller cancellation and connection errors have distinct bounded metadata (0.383667ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 705.167042

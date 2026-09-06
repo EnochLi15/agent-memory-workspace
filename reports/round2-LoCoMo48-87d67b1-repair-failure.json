@@ -1,0 +1,74 @@
+{
+  "protocol": "frozen-locomo48-repair-failure-v1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-LoCoMo48-87d67b1-repair-failure-h2wliz24",
+  "observed_at": "2026-09-06T12:12:56.860163+00:00",
+  "failure": {
+    "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-48:session-15:1",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+    "elapsed_ms": 59175.99916699994
+  },
+  "hashes": {
+    "request.json": "60019f49eb7bcfcb5529d1330f89ca506c8f550d9f393d5d19ee52c066f7cbb7",
+    "spec.json": "d465b2f5371ab82accca686ab7422e0abaf0791f17c5b1f59ac08300514c5754",
+    "memory.sqlite": "ebdd5d11f7c0b9e836216a51eeb786ff8b91d640f6ed7c8af3604b1610ee37d6",
+    "private-model-trace.jsonl": "e3faa6bc97f3076427ad545294d81ee661a9174ef3bb945c71fb5c30a60c235f"
+  },
+  "packets": [
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": null
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": null
+    },
+    {
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": null
+    },
+    {
+      "purpose": "verification",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null,
+      "stream_started": null
+    },
+    {
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false
+    },
+    {
+      "purpose": "repair",
+      "attempt": 1,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false
+    }
+  ]
+}

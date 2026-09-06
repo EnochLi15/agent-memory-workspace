@@ -1,0 +1,28 @@
+{
+  "protocol": "shared-gateway-overlap-v1",
+  "campaign": "round2-joint-87d67b1-dev-r1",
+  "events": [
+    {
+      "at": "2026-09-06T12:04:57.444147+00:00",
+      "event": "candidate_controls_start",
+      "service_candidate": "8cb099f",
+      "controls": [
+        "proposal-index-control",
+        "shard-array-repair"
+      ],
+      "reason": "Full regression already has terminal failures; run remains diagnostic. Exclude overlapping shared-gateway timings from uncontended performance claims."
+    },
+    {
+      "at": "2026-09-06T12:14:40.611967+00:00",
+      "event": "candidate_controls_end",
+      "completed": [
+        "proposal-index-control",
+        "shard-array-repair",
+        "verification-index-repeat",
+        "retained-witness-diagnostic",
+        "lifecycle-variants"
+      ]
+    }
+  ],
+  "scope": "Exclude overlapping durations from uncontended performance comparisons. Does not establish cause of transport failures."
+}

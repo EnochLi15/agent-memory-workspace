@@ -1,0 +1,64 @@
+✖ typed connection, timeout, rate limit and server failures remain unavailable after shard cancellation (14.146208ms)
+✔ schema, semantic and permanent provider failures cannot become retryable by their wording (1.948167ms)
+✖ unavailable shard preparation cannot fall back to offline success or proceed to embedding (2.898708ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 307.155667
+
+✖ failing tests:
+
+test at tests/extraction-shard-transport.test.ts:1:852
+✖ typed connection, timeout, rate limit and server failures remain unavailable after shard cancellation (14.146208ms)
+  AssertionError [ERR_ASSERTION]: The validation function is expected to return "true". Received false
+  
+  Caught error:
+  
+  Error: Parallel extraction did not complete all participant groups: private-provider-detail
+      at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/extraction-shard-transport.test.ts:9:3)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Parallel extraction did not complete all participant groups: private-provider-detail
+        at prepareExtractionShards (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/extraction-shards.ts:48:18)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/extraction-shard-transport.test.ts:9:3)
+        at async Test.run (node:internal/test_runner/test:1332:7)
+        at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3),
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/extraction-shard-transport.test.ts:1:2302
+✖ unavailable shard preparation cannot fall back to offline success or proceed to embedding (2.898708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    Comparison {
+  +   code: 'EVIDENCE_VALIDATION'
+  -   code: 'EXTRACTION_UNAVAILABLE'
+    }
+  
+      at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/extraction-shard-transport.test.ts:23:2)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:911:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Parallel extraction did not complete all participant groups: Connection error.
+        at prepareExtractionShards (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/extraction-shards.ts:48:18)
+        at async Extractor.prepare (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/extraction.ts:240:14)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/extraction-shard-transport.test.ts:23:2)
+        at async Test.run (node:internal/test_runner/test:1332:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:911:7),
+    expected: { code: 'EXTRACTION_UNAVAILABLE' },
+    operator: 'rejects',
+    diff: 'simple'
+  }
