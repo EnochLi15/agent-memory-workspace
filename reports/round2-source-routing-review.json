@@ -1,0 +1,236 @@
+{
+  "protocol": "source-routing-review-v1",
+  "observed_at": "2026-09-06T10:07:17.369444+00:00",
+  "service_commit": "6771326c3a68a0145a534e41fdaf554ee07c7b30",
+  "service_tests": 255,
+  "targeted_tests": 8,
+  "scope": "v9 ordinary routing, staged replay diagnostics and fresh synthetic HTTP/long-history controls; no full benchmark quality or deployment claim. Failed runs retained. Earlier intermediate source hashes explicitly identified.",
+  "experiments": [
+    {
+      "report": "reports/round2-source-routing-controls-BkwZ38.json",
+      "report_sha256": "c38030801fc01611f38317b262035966ea94d02a0740eea8ef7dc12b043e6ff3",
+      "scope": "Eight authored semantic routing controls with real verifier model. Routing only, no extraction/commit, not benchmark accuracy or independent human calibration.",
+      "matches_final_service_sources": true,
+      "status": null,
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "report": "reports/round2-source-routing-controls-w2DZde.json",
+      "report_sha256": "e751c14a8e81da2067e35d440345129cb3ac9349e2b3f40b07de2a6e1fc1387b",
+      "scope": "Eight authored semantic routing controls with real verifier model. Routing only, no extraction/commit, not benchmark accuracy or independent human calibration.",
+      "matches_final_service_sources": false,
+      "status": null,
+      "passed": 8,
+      "total": 8
+    },
+    {
+      "report": "reports/round2-source-routing-history-Fz7J5r.json",
+      "report_sha256": "a825891b5766a602021547a25b01cbd482c815047ea3998c95d5550ab4545e09",
+      "scope": "Deterministic synthetic 160-message seed; real model-backed rejection prepare and atomic commit. No HTTP ingestion baseline, benchmark answers or accuracy claim.",
+      "matches_final_service_sources": false,
+      "status": "failed",
+      "passed": null,
+      "total": null,
+      "checks": [],
+      "prepare_ms": 15218.71275,
+      "error": {
+        "code": "VERIFICATION_UNAVAILABLE",
+        "message": "Source operation source_operation_screen model stage unavailable"
+      },
+      "failure_left_state_unchanged": true
+    },
+    {
+      "report": "reports/round2-source-routing-history-bmceVF.json",
+      "report_sha256": "7050580994f5542d098d06c22aa87c9eae0a2468ced0f05fbd6374fb1bb1854b",
+      "scope": "Deterministic synthetic 160-message seed; real model-backed rejection prepare and atomic commit. No HTTP ingestion baseline, benchmark answers or accuracy claim.",
+      "matches_final_service_sources": true,
+      "status": "passed",
+      "passed": null,
+      "total": null,
+      "checks": [
+        {
+          "name": "actual_multibatch_review",
+          "pass": true
+        },
+        {
+          "name": "target_and_echo_removed",
+          "pass": true
+        },
+        {
+          "name": "brother_same_name_preserved",
+          "pass": true
+        },
+        {
+          "name": "browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "independent_neighbors_preserved",
+          "pass": true
+        },
+        {
+          "name": "single_commit_persists_after_reopen",
+          "pass": true
+        }
+      ],
+      "prepare_ms": 60013.027291
+    },
+    {
+      "report": "reports/round2-source-routing-http-9cYOAU.json",
+      "report_sha256": "b8cd03201cff7af74276561e2b76e462511d5967938201db8b0fcf11d66ea02e",
+      "scope": "Fresh v9 synthetic tenant: all HTTP adds, routing, extraction, verification and embeddings are real. Checks ordinary erasure, source-only rejection, actor separation, search and reopen. No original full background or benchmark accuracy.",
+      "matches_final_service_sources": false,
+      "status": "failed",
+      "passed": null,
+      "total": null,
+      "checks": [],
+      "error": {
+        "message": "Add failed: source-review"
+      }
+    },
+    {
+      "report": "reports/round2-source-routing-http-Eedfgp.json",
+      "report_sha256": "ed2f4599368e8968e780aabe971887d7b4c0ae3cd1302904e2b9f57ad073a7ad",
+      "scope": "Fresh v9 synthetic tenant: all HTTP adds, routing, extraction, verification and embeddings are real. Checks ordinary erasure, source-only rejection, actor separation, search and reopen. No original full background or benchmark accuracy.",
+      "matches_final_service_sources": true,
+      "status": "passed",
+      "passed": null,
+      "total": null,
+      "checks": [
+        {
+          "name": "fresh_v9_three_atomic_commits",
+          "pass": true
+        },
+        {
+          "name": "ordinary_erasure_removes_code",
+          "pass": true
+        },
+        {
+          "name": "browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "brother_same_name_preserved",
+          "pass": true
+        },
+        {
+          "name": "false_gym_and_echo_removed",
+          "pass": true
+        },
+        {
+          "name": "correct_routes",
+          "pass": true
+        },
+        {
+          "name": "search_browser_and_brother",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "report": "reports/round2-source-routing-replay-Ks3Yhn.json",
+      "report_sha256": "f6851136ed57541aa7b5c48ea048b9225ef5972b2a730477bec34bbddde48114",
+      "scope": "Real model prepare-only replay of two exposed failed requests against exact copied v8 snapshots. No migration, commit, full HTTP ingestion, benchmark accuracy or independent full repeat.",
+      "matches_final_service_sources": false,
+      "status": "failures_retained",
+      "passed": null,
+      "total": null,
+      "cases": [
+        {
+          "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-v8-failure-8nr_ipub",
+          "request_sha256": "b79fa59a6a96c18f7f652b517a86225cbf1dc6a42da1034a513218488390f6f1",
+          "database_sha256": "effa0d25dbd849161ae3ec6ac5bd89e806dd6bffa5ee754af27fc033a5679b3f",
+          "revision": 25,
+          "source_format": "dual-source-v8",
+          "status": "prepared",
+          "prepared_format": "dual-source-v9",
+          "route_rows": [
+            {
+              "instruction": 0,
+              "route": "ordinary"
+            }
+          ],
+          "used_history_batches": false,
+          "fact_count": 24,
+          "operation_count": 1,
+          "degraded": [],
+          "prepare_ms": 86267.529959,
+          "database_unchanged": true,
+          "source_format_unchanged": true
+        },
+        {
+          "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+          "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+          "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+          "revision": 18,
+          "source_format": "dual-source-v8",
+          "status": "failed",
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Erasure scope requires semantic binding; offline recovery cannot certify independence"
+          },
+          "prepare_ms": 77261.475958,
+          "database_unchanged": true,
+          "source_format_unchanged": true
+        }
+      ]
+    },
+    {
+      "report": "reports/round2-source-routing-replay-fDxfcC.json",
+      "report_sha256": "574ee898301b2a2f6a15fb3e6fc88467d8687cc6e52391974bbb70e793abd080",
+      "scope": "Real model prepare-only replay of two exposed failed requests against exact copied v8 snapshots. No migration, commit, full HTTP ingestion, benchmark accuracy or independent full repeat.",
+      "matches_final_service_sources": false,
+      "status": "failures_retained",
+      "passed": null,
+      "total": null,
+      "cases": [
+        {
+          "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-v8-failure-8nr_ipub",
+          "request_sha256": "b79fa59a6a96c18f7f652b517a86225cbf1dc6a42da1034a513218488390f6f1",
+          "database_sha256": "effa0d25dbd849161ae3ec6ac5bd89e806dd6bffa5ee754af27fc033a5679b3f",
+          "revision": 25,
+          "source_format": "dual-source-v8",
+          "status": "prepared",
+          "prepared_format": "dual-source-v9",
+          "route_rows": [
+            {
+              "instruction": 0,
+              "route": "ordinary"
+            }
+          ],
+          "used_history_batches": false,
+          "fact_count": 19,
+          "operation_count": 1,
+          "degraded": [],
+          "prepare_ms": 64069.371666,
+          "database_unchanged": true,
+          "source_format_unchanged": true
+        },
+        {
+          "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+          "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+          "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+          "revision": 18,
+          "source_format": "dual-source-v8",
+          "status": "failed",
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Ordinary routing witness follows its instruction"
+          },
+          "prepare_ms": 4049.035999999993,
+          "database_unchanged": true,
+          "source_format_unchanged": true
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "B05 replacement fact matching and repair transport failures",
+    "Full fresh v9 ingestion",
+    "E0 independent score calibration",
+    "E2-E5 full fixed-budget quality comparisons",
+    "New backgrounds and three complete paired repeats",
+    "Deployment and independent archive"
+  ]
+}

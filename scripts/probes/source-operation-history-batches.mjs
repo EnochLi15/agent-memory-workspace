@@ -6,9 +6,10 @@ import {configFromEnv} from '../../service/dist/config.js';import {Extractor,has
 import {Models} from '../../service/dist/models.js';import {TenantStore} from '../../service/dist/storage.js';
 import {sourceOperationWork} from '../../service/dist/source-operations.js';
 import {sourceOperationBatches,sourceOperationNeedsBatches} from '../../service/dist/source-operation-batches.js';
-const sha=x=>createHash('sha256').update(x).digest('hex'),dir=mkdtempSync(resolve('artifacts/round2-history-batches-live-'));
+const routing=process.argv.includes('--routing');
+const sha=x=>createHash('sha256').update(x).digest('hex'),dir=mkdtempSync(resolve(routing?'artifacts/round2-source-routing-history-':'artifacts/round2-history-batches-live-'));
 const resume=process.argv.find(a=>a.startsWith('--resume-error='))?.slice('--resume-error='.length);
-const specPath='configs/round2-quality-source-operation-batches.json',spec=JSON.parse(readFileSync(specPath));
+const specPath=routing?'configs/round2-source-routing.json':'configs/round2-quality-source-operation-batches.json',spec=JSON.parse(readFileSync(specPath));
 const config={...configFromEnv({...parseEnv(readFileSync('.env','utf8')),...spec.defaults}),dataDir:join(dir,'data')};
 process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');
 mkdirSync(join(dir,'source-snapshot'));const files=readdirSync('service/src').filter(f=>f.endsWith('.ts'));for(const f of files)copyFileSync('service/src/'+f,join(dir,'source-snapshot',f));copyFileSync(import.meta.filename,join(dir,'probe-source.mjs'));

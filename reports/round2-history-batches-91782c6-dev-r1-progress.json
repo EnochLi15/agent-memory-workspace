@@ -1,7 +1,7 @@
 {
   "protocol": "round2-running-experiment-checkpoint-v1",
   "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
-  "observed_at": "2026-09-06T09:52:10.909863+00:00",
+  "observed_at": "2026-09-06T10:07:17.393427+00:00",
   "status": "running",
   "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
   "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
@@ -20,18 +20,18 @@
   "runner_session_id": 98822,
   "port": 8110,
   "source_snapshot": "artifacts/round2-runtime-91782c6",
-  "completed_ingest_attempts_at_observation": 57,
+  "completed_ingest_attempts_at_observation": 94,
   "latest_ingest": {
-    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-10:0",
+    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-47:0",
     "sample_id": "F07_trajectory_ops",
     "status": "ok",
     "attempt": 0,
-    "elapsed_ms": 23609.961750000017,
-    "message_count": 12
+    "elapsed_ms": 42255.54575000005,
+    "message_count": 14
   },
-  "note": "Still running frozen91782c6. E10 terminated at segment26; remaining backgrounds continue. Do not reuse its successful prefix as full paired ingestion. Current E5 code is separate and not running in this experiment. Production8088 and historical331/1000 unchanged.",
+  "note": "Still running frozen91782c6. E10 and B05 terminated; remaining backgrounds continue. No full paired reuse or final score. Current6771326 routing code is separate; production8088 and historical331/1000 unchanged.",
   "attempt_outcomes": {
-    "ok": 53,
+    "ok": 90,
     "retrying": 2,
     "failed": 2
   },
