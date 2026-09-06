@@ -1,0 +1,58 @@
+{
+  "protocol": "fixed-proposal-live-transition-http-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-transition-http-OYZhh0",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "d9dd95b46743198a4e7629c6d15bf87f109f4b25bc24e9b5864e0e93aa87b474",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "f6411c2ec503fe43918fc556e4bda78cb3221b3a6e9ce97500a86985ca827569",
+    "models.ts": "46bad5bc7f825263ddfefaf84779763069310afe04f7936f15e5c88b70c4e375",
+    "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "52ffc822ee11d0e1fb3394363c3cb3b344b36fb826dc3924dd74c994fb22cd7d",
+    "storage.ts": "b4bd6c645d66d075057ff3b39e34050e92b210c1fe66494aa721bec8f23aadaa",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "transitions.ts": "94832500498067cfd2f72392838b81dc14ad8c97bf1abe1b706890bd10e7ba49",
+    "types.ts": "3313f841d0ccd6a42bb22ea6c01707fc14d827339b022af593c0293c87f65595",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "probe_sha256": "bdcf3638ab34346ab94fc81c6ebc6b2e249f7ffffce2a8e1785a0a1a50102339",
+  "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+  "answer_model": "gpt-5.4-mini",
+  "started_at": "2026-09-06T07:03:02.438Z",
+  "steps": [
+    {
+      "step": 0,
+      "status": 200,
+      "elapsed_ms": 3703.804667
+    },
+    {
+      "step": 1,
+      "status": 200,
+      "elapsed_ms": 9721.126041,
+      "detail_state": "active"
+    },
+    {
+      "step": 2,
+      "status": 200,
+      "elapsed_ms": 8662.137584000002,
+      "detail_state": "superseded",
+      "latte_state": "active"
+    }
+  ],
+  "scope": "Three fresh HTTP writes with predetermined grounded extraction facts to isolate implicit transitions. Real independent verification, transition model, local embedding and fixed Answer. Not a fresh-extraction benchmark or paired full-run score.",
+  "finished_at": "2026-09-06T07:03:29.132Z",
+  "fixed_extraction_injections": 3,
+  "completed_adds": 3,
+  "answers_sha256": "cc4e80d9310c1c2a70dd37421141ae5de1d20414585fb931da32f1d2e9c5d6ad"
+}

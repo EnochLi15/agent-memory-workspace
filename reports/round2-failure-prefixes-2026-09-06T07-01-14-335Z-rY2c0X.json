@@ -1,0 +1,103 @@
+{
+  "protocol": "failed-prefix-http-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T07-01-14-335Z-rY2c0X",
+  "parent_run": "eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "erasure_binding": true,
+  "source_erasure": true,
+  "semantic_transitions": true,
+  "extraction_model": "gpt-5.4-mini",
+  "default_model": "gpt-5.4-mini",
+  "stage_models": {
+    "extraction": "gpt-5.4-mini",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "reasoning_effort": "low",
+  "add_timeout_ms": 115000,
+  "model_budget_ms": 90000,
+  "embedding_model": "nomic-embed-text:latest",
+  "incremental_verification": true,
+  "max_repair_rounds": 2,
+  "verification_format": "compact",
+  "verification_response_format": "json_schema",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "d9dd95b46743198a4e7629c6d15bf87f109f4b25bc24e9b5864e0e93aa87b474",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "f6411c2ec503fe43918fc556e4bda78cb3221b3a6e9ce97500a86985ca827569",
+    "service/src/models.ts": "46bad5bc7f825263ddfefaf84779763069310afe04f7936f15e5c88b70c4e375",
+    "service/src/operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "service/src/repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/source-erasure.ts": "52ffc822ee11d0e1fb3394363c3cb3b344b36fb826dc3924dd74c994fb22cd7d",
+    "service/src/storage.ts": "b4bd6c645d66d075057ff3b39e34050e92b210c1fe66494aa721bec8f23aadaa",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/transitions.ts": "94832500498067cfd2f72392838b81dc14ad8c97bf1abe1b706890bd10e7ba49",
+    "service/src/types.ts": "3313f841d0ccd6a42bb22ea6c01707fc14d827339b022af593c0293c87f65595",
+    "service/src/verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "service/src/verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "service/src/verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "probe_sha256": "b8291bfb817ac15487e8fc1d63b9a94b8a065e59e5b23de15cdddd60ad783dd5",
+  "prior_requests_sha256": "bafd8445aa1916aabb4c08b7630f0f2fe4ea8c858f7efb9e76d7c7a5efeb997a",
+  "started_at": "2026-09-06T07:01:14.342Z",
+  "scope": "Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.",
+  "cases": [
+    {
+      "user_id": "round2-prefix:E10_remember",
+      "original_failure": {
+        "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-5:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Invalid target/scope repair patch\"}}",
+        "elapsed_ms": 64843.94762500003
+      },
+      "planned_adds": 5,
+      "adds": [
+        {
+          "original_request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 12318.899791
+        },
+        {
+          "original_request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-2:0",
+          "status": 200,
+          "elapsed_ms": 26500.754166000002
+        },
+        {
+          "original_request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-3:0",
+          "status": 200,
+          "elapsed_ms": 61906.647959
+        },
+        {
+          "original_request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-4:0",
+          "status": 200,
+          "elapsed_ms": 45434.11475000001
+        },
+        {
+          "original_request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-5:0",
+          "status": 200,
+          "elapsed_ms": 60960.641917
+        }
+      ],
+      "status": "prefix_accepted",
+      "final_revision": 5,
+      "fact_states": {
+        "active": 80
+      }
+    }
+  ],
+  "finished_at": "2026-09-06T07:04:41.615Z",
+  "prefixes_accepted": 1,
+  "planned": 1
+}

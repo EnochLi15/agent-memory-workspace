@@ -1,0 +1,20 @@
+{
+  "protocol": "live-full-development-progress-v1",
+  "at": "2026-09-06T07:08:35.710253+00:00",
+  "run_id": "round2-quality-dev-8ef8829-r1-facts-memops",
+  "status": "running",
+  "manifest_sha256": "a2ab027a23e55cc0fc868ee00471ffeea3f3756c33b395840cb55ec069fb4470",
+  "dataset_matches_completed_d8_development": true,
+  "planned_questions": 30,
+  "backgrounds": 5,
+  "sessions_per_background": 50,
+  "service_commit": "8ef8829b3c4ac1dcafc93b2056ded04bdf836315",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "service_configuration_sha256": "30027d66c49ee9a5842c748e739cd6532f809f148f656952946488550ef48286",
+  "process_snapshot": "  PID  PPID ELAPSED STAT ARGS\n21359 21338   02:52 S    node dist/server.js\n21361 21338   02:51 S    node dist/cli.js run --data .data/memops-dev.json --run-id round2-quality-dev-8ef8829-r1-facts-memops --memory-namespace round2-quality-dev-8ef8829-r1-facts --base-url http://127.0.0.1:8096 --concurrency 2 --judge-kind rubric --answer-model gpt-5.4-mini --judge-model gpt-5.4-mini\n",
+  "ingest_records_by_status": {
+    "ok": 16
+  },
+  "terminal_failures": [],
+  "limitation": "Live progress snapshot only, not final metrics or proof of full ingestion. Poll the recorded exec session / actual process before deciding whether the run stopped."
+}
