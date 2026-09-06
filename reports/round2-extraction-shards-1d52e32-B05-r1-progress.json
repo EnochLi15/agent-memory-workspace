@@ -1,0 +1,70 @@
+{
+  "protocol": "round2-paired-running-checkpoint-v1",
+  "observed_at": "2026-09-06T10:50:19.826608+00:00",
+  "status": "running",
+  "campaign": "round2-extraction-shards-1d52e32-B05-r1",
+  "spec": "configs/round2-source-first-parallel.json",
+  "source_snapshot": "artifacts/round2-runtime-1d52e32",
+  "effective_configuration_differences": [
+    "extractionWorkers",
+    "dataDir",
+    "port"
+  ],
+  "runs": [
+    {
+      "profile": "serial",
+      "run_id": "round2-extraction-shards-1d52e32-B05-r1-serial-memops",
+      "status": "running",
+      "started_at": "2026-09-06T10:49:37.066Z",
+      "service_pid": 26146,
+      "eval_pid": 26147,
+      "runner_session_id": 82997,
+      "port": 8113,
+      "planned_questions": 10,
+      "attempt_outcomes": {
+        "ok": 1
+      },
+      "latest_ingest": {
+        "request_id": "round2-extraction-shards-1d52e32-B05-r1-serial:memops:B05_forget:segment-1:0",
+        "sample_id": "B05_forget",
+        "status": "ok",
+        "attempt": 0,
+        "elapsed_ms": 39426.589417,
+        "message_count": 6
+      },
+      "service_commit": "1d52e3238a0575e51abf09817f3e703c83512a3c",
+      "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+      "workspace_commit": "3f864c923fa1b1ced632279086cdf067be6ca5d4",
+      "clean_launch": true,
+      "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708"
+    },
+    {
+      "profile": "parallel",
+      "run_id": "round2-extraction-shards-1d52e32-B05-r1-parallel-memops",
+      "status": "running",
+      "started_at": "2026-09-06T10:49:38.190Z",
+      "service_pid": 26238,
+      "eval_pid": 26239,
+      "runner_session_id": 96195,
+      "port": 8114,
+      "planned_questions": 10,
+      "attempt_outcomes": {
+        "ok": 2
+      },
+      "latest_ingest": {
+        "request_id": "round2-extraction-shards-1d52e32-B05-r1-parallel:memops:B05_forget:segment-2:0",
+        "sample_id": "B05_forget",
+        "status": "ok",
+        "attempt": 0,
+        "elapsed_ms": 13496.340666,
+        "message_count": 8
+      },
+      "service_commit": "1d52e3238a0575e51abf09817f3e703c83512a3c",
+      "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+      "workspace_commit": "3f864c923fa1b1ced632279086cdf067be6ca5d4",
+      "clean_launch": true,
+      "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708"
+    }
+  ],
+  "interpretation": "Fresh same-commit full B05 serial/parallel comparison, all original sessions and10 questions per arm. Only worker count and isolated listener/storage differ. Runs share the gateway with each other and the original91782c6 final background, so isolated latency causality is not established. All outcomes retained. No completed quality or throughput result yet."
+}
