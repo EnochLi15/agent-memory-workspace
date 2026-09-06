@@ -4,7 +4,7 @@
   "status": "draft_pending_gates",
   "human_labels": 0,
   "commits": {
-    "service": "12b0d4fbd00882477f957ad0849403f4cdb78896",
+    "service": "0516907c2d87e4b9d22221182aa8908197b96218",
     "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
   },
   "gates": {
@@ -16,7 +16,7 @@
       "reports/v1-enhanced-backup-restore.json",
       "reports/v1-compatible-rollback.json"
     ],
-    "small_pair": "reports/v1-small-12b0d4f-results.json",
+    "small_pair": "reports/v1-small-0516907-results.json",
     "long_pair": "reports/v1-long-closed-loop.json",
     "full_audit": "reports/v1-full-completed-run-audit.json",
     "full_report": "reports/v1-full-results.json"
@@ -24,8 +24,8 @@
   "deployment_log_directory": "artifacts/v1-clean-clone-01",
   "long_dataset_manifest": "configs/v1-fixed-long-regression.json",
   "primary_runs": {
-    "locomo": "v1-full-12b0d4f-01-candidate-locomo",
-    "memops": "v1-full-12b0d4f-01-candidate-memops"
+    "locomo": "v1-full-0516907-01-candidate-locomo",
+    "memops": "v1-full-0516907-01-candidate-memops"
   },
   "runtime_bundles": "reports/v1-runtime-bundles.json",
   "service_image": "comp-agent-memory-service:v0.1.0",
