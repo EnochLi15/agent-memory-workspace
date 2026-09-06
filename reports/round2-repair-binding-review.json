@@ -1,0 +1,112 @@
+{
+  "protocol": "repair-binding-and-implicit-transition-review-v1",
+  "service_commit": "9726881d137d14c38c1f4e688a916855f822ee92",
+  "input_sha256": {
+    "artifacts/round2-failure-prefixes/2026-09-06T06-48-45-186Z-YOoaJI/results.json": "5af37c70712abaefe10070bfd443915f2cc874799bfcaf008b803ac3f51eb12a",
+    "artifacts/round2-failure-prefixes/2026-09-06T06-48-45-186Z-YOoaJI/model-usage.jsonl": "116be0dccf364994a1eb4c74f2afd07519556388ee4e9b4120dfebe7ded6e68d",
+    "artifacts/round2-failure-prefixes/2026-09-06T06-48-45-186Z-YOoaJI/retrieval-probe-v1/answers.jsonl": "563acd11cba0d64e6ea2495ab64f451debd36cb16382fa94d5edc63cdc6ed915",
+    "artifacts/round2-live-checkpoint-i9eo2f/report.json": "0603184d2b345de2973e931e22ebdffc103aeb6dafa20d2b1a7c41f818f48bda",
+    "artifacts/round2-live-checkpoint-ffb2bA/report.json": "2c62bd4382156a11b507dea23fe124cb58141844e7a44944c9f45f633fbd3bfc",
+    "artifacts/round2-live-checkpoint-dEGx3B/report.json": "72135a75ba220fa75a382649ef09dc6634c196ffcb3b3efe6aba90dfd77453ff",
+    "artifacts/round2-recorded-replacement-YK4Ill/report.json": "5281e022c086b80606e4d7152e5feefc5618e4e6a10f7366f4528a7411bb72aa",
+    "artifacts/round2-checkpoint-transaction-IHMYoG/report.json": "b62bf7653f32f664d272704d949c29d148397877f075186db4a029c618e46c78",
+    "artifacts/round2-checkpoint-transaction-IHMYoG/state.json": "d87c160e0ae965a7ebd2ee273427fc7bc79c9b61f120cf9129799bea02b20543",
+    "reports/round2-repair-scope-red.txt": "10f6e46afe452ac178033de94b23ee521709844e53acb06a5a31b7c12e15dd1a",
+    "reports/round2-repair-binding-service-tests.txt": "5273a3229b33c83ebadbbcd4d3f5a8c3fbe7efe97013bc43429a41a3e06e3b4f",
+    "reports/round2-implicit-replacement-reproduction.json": "da4384dcbca2279d1e2b41bdc73f7bb3e467575d650b0920ca546cad1f4938ea"
+  },
+  "unit_tests": {
+    "red_reproduction": "Invalid target/scope repair patch on newly appended fact",
+    "passed": 159,
+    "new_cases": 4
+  },
+  "implemented": [
+    "Consume repair scope once; recompute binding scope from the latest proposal, including newly appended facts/operations and concurrent source errors. Unflagged changes still reject.",
+    "Supply structural replacement target groups and distinguish additive coverage from authorized same-property replacement. Semantic verification and transaction guards remain mandatory."
+  ],
+  "E10_remember_before_change": {
+    "run": "artifacts/round2-live-checkpoint-i9eo2f",
+    "service": "862399d",
+    "prepared": true,
+    "elapsed_ms": 61997.54625,
+    "facts": 18,
+    "operations": 0,
+    "original_failure_reproduced": false,
+    "limitation": "Fresh draw on exact saved revision 4; no original failed model proposal was logged. Cannot prove the historical failure was caused by stale scope."
+  },
+  "B05_recorded_patch": {
+    "run": "artifacts/round2-recorded-replacement-YK4Ill",
+    "archived_wrong_replacement": {
+      "fact_index": 22,
+      "target": "m23"
+    },
+    "fresh_patch_compatible": true,
+    "new_fact_supersedes": [],
+    "elapsed_ms": 6924.655291,
+    "target_groups_chars": 11229,
+    "limitation": "One new patch on the same archived rejected input, with changed system prompt and added target groups. No general success-rate or latency-gain claim."
+  },
+  "B05_recorded_patched_prepare": {
+    "run": "artifacts/round2-live-checkpoint-dEGx3B",
+    "recorded_extraction_injections": 1,
+    "fresh_generation_calls": 1,
+    "fresh_semantic_findings": [],
+    "prepared": true,
+    "facts": 23,
+    "operations": 3,
+    "degraded": [],
+    "elapsed_ms": 18494.698667,
+    "private_clone": "artifacts/round2-checkpoint-transaction-IHMYoG",
+    "revision_before": 18,
+    "revision_after": 19,
+    "erased_prior_facts": 4,
+    "unchanged_prior_facts": 94,
+    "prior_unrelated_facts_changed": 0,
+    "iris_content_occurrences": {
+      "facts": 0,
+      "passages": 0,
+      "raw": 0
+    },
+    "scope_correction": "The generic clone report says fresh preparation. Its initial proposal was actually the recorded patched proposal; only semantic verification and embedding were newly executed. This v3 diagnostic is not a fresh complete v4 prefix or original request total latency."
+  },
+  "B05_fresh_prepare_failed": {
+    "run": "artifacts/round2-live-checkpoint-ffb2bA",
+    "elapsed_ms": 78602.917708,
+    "error": {
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Erasure scope requires semantic binding; offline recovery cannot certify independence"
+    },
+    "observation": "One repair response returned; next repair had two Error outcomes with no returned proposal. Offline recovery was refused by erasure scope. Generic error telemetry does not distinguish network, gateway or other causes. This failure remains a failure."
+  },
+  "E10_remember_fresh_prefix": {
+    "run": "artifacts/round2-failure-prefixes/2026-09-06T06-48-45-186Z-YOoaJI",
+    "source_format": "v4",
+    "passed_adds": 5,
+    "planned_adds": 5,
+    "last_add_ms": 48366.70333299998,
+    "generation_counts": {
+      "extraction": 5,
+      "verification": 7,
+      "repair": 2
+    },
+    "generation_error_records": 1,
+    "embedding_calls": 5,
+    "scope": "Fresh original five-add prefix through failed segment, not all 50 sessions or the five benchmark questions. One run, no paired stability claim."
+  },
+  "actual_answers": {
+    "fixed_answer_model": "gpt-5.4-mini",
+    "reviewer": "assistant",
+    "gym_policy": "Correct: two weeks notice, otherwise next quarter.",
+    "coffee_and_booking": "Partial: texting/online booking correct, coffee answer omitted black drip and no milk/no sugar. Not a complete pass.",
+    "diagnosis": "Detailed coffee fact became superseded with no explicit supersedes edge. Exact duplicate merges new source into old record while keeping old observation time; later same-slot single-valued routine triggers automatic temporal supersession. Current retrieval hides the detail and linked original fragment. Not an Answer uptake failure.",
+    "minimal_reproduction": "reports/round2-implicit-replacement-reproduction.json",
+    "unresolved": true
+  },
+  "next_design": "Make implicit same-slot single-value transition candidates visible to semantic verification before state mutation; distinguish equivalent/restated detail, compatible elaboration, genuine replacement and conflict. Tie accepted transitions to source/revision and recheck in commit; preserve real updates, historical views, forget and restore. Simply making all facts multiple or exposing superseded facts would break lifecycle semantics.",
+  "accuracy": {
+    "historical": 0.331,
+    "old_development": 0.2,
+    "new_full_benchmark": null
+  },
+  "deployment": "Production 8088 unchanged. E0-E5 full quality gates, new backgrounds and three complete paired repeats remain open."
+}

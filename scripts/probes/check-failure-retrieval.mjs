@@ -14,6 +14,7 @@ const runtime=resolve(runtimeIndex>=0?process.argv[runtimeIndex+1]:'service');
 const {buildServer}=await import(pathToFileURL(join(runtime,'dist/server.js')).href);
 const {configFromEnv}=await import(pathToFileURL(join(runtime,'dist/config.js')).href);
 const questions={
+ E10_remember:['What notice must I give Iron & Oak to reschedule my fitness assessment, and what happens if I miss the window?','What is my usual morning coffee, and how should I make appointments or reservations?'],
  E10_reflect:['What information do you still have about my dentist appointment?','What is my current morning coffee order, what birthday gift do I want for Kevin, and how do I prefer to contact businesses?'],
  B05_forget:['What information do you still have about our backup first name?','What are our current first-name and middle-name choices, and what name did Priya choose?'],
  D24_reflect:['Why did I choose the Outback over the RAV4?','What plans did I mention for researching investments and consulting a financial advisor?'],

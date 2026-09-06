@@ -1,0 +1,66 @@
+{
+  "protocol": "live-pre-failure-checkpoint-prepare-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-live-checkpoint-ffb2bA",
+  "sample": "B05_forget",
+  "captured_snapshot_sha256": "8966505c53df5e24d785400765f89a8ac1e5163a42efb223aa1ee3eb11f30e59",
+  "capture_report_sha256": "f5a356b476aff182f4eff7df34a32f1bfb002e5a6c25be1c558e388ebe1d6169",
+  "parent_provenance": {
+    "sample": "B05_forget",
+    "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+    "parent_manifest_sha256": "f6eab5ef24f8f5ec32b5870d8061b90b61f86abba24b5b32122a46bb0e349633",
+    "source_commit": "d8e264b210debfaf31a4aeaa587986c6e01af301",
+    "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+    "service_config_sha256": "2c9b1f9d89c6e0f15b1add7a376393fc5d5c9574534c0711e71504853f844190",
+    "failed_add": {
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}",
+      "elapsed_ms": 88045.95887499995
+    }
+  },
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "5e404d4e7049875ac3b802b9f09af8eddb76e1f9cea41dd3fc07bd7910b66c2d",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "47571bb8462647b0ffb5385e983dfa70d07893c8627e6bbc3ea055593d0a5430",
+    "models.ts": "cf98c42858db100b97477b6e0434d363bf58d5c87d547cbeb158d9119e37ced2",
+    "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "52ffc822ee11d0e1fb3394363c3cb3b344b36fb826dc3924dd74c994fb22cd7d",
+    "storage.ts": "846106d2c33d1a1911252adb901c71129840fec6fa32f9ed6f523820d20800f2",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "types.ts": "fb447d1f4bf6ac1aac73277aa9bd46efcf8687c42ea8aba305c9e98a71d64789",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "probe_sha256": "a686300feb02e1add0bb2cbd8c0d2b8c63049fa355153e3483abc2100617638d",
+  "spec_sha256": "5cecfe15ab81d78ba0f038c821486b3f9696842ba7c5da2bbb28a238bc16f753",
+  "verification_response_format": "json_schema",
+  "snapshot_revision": 18,
+  "stage_models": {
+    "extraction": "gpt-5.4-mini",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "model_budget_ms": 90000,
+  "started_at": "2026-09-06T06:48:18.224Z",
+  "status": "failed",
+  "scope": "Fresh extraction, repair, verification and local embedding for the single failed chunk on the exact saved preceding snapshot. No HTTP add or commit; not a fresh full-prefix run or benchmark score.",
+  "error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Erasure scope requires semantic binding; offline recovery cannot certify independence"
+  },
+  "generation_calls": 3,
+  "elapsed_ms": 78602.917708,
+  "finished_at": "2026-09-06T06:49:36.828Z"
+}

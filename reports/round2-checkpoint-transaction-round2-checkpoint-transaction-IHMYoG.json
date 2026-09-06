@@ -1,0 +1,148 @@
+{
+  "protocol": "cloned-checkpoint-transaction-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-checkpoint-transaction-IHMYoG",
+  "sample": "B05_forget",
+  "snapshot_sha256": "8966505c53df5e24d785400765f89a8ac1e5163a42efb223aa1ee3eb11f30e59",
+  "preparation_report_sha256": "72135a75ba220fa75a382649ef09dc6634c196ffcb3b3efe6aba90dfd77453ff",
+  "prepared_sha256": "a7eb364f6947e9b2786a2b9b595deb25c67d218ed7417796d2c955cb59a3a928",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "5e404d4e7049875ac3b802b9f09af8eddb76e1f9cea41dd3fc07bd7910b66c2d",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "47571bb8462647b0ffb5385e983dfa70d07893c8627e6bbc3ea055593d0a5430",
+    "models.ts": "cf98c42858db100b97477b6e0434d363bf58d5c87d547cbeb158d9119e37ced2",
+    "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "52ffc822ee11d0e1fb3394363c3cb3b344b36fb826dc3924dd74c994fb22cd7d",
+    "storage.ts": "846106d2c33d1a1911252adb901c71129840fec6fa32f9ed6f523820d20800f2",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "types.ts": "fb447d1f4bf6ac1aac73277aa9bd46efcf8687c42ea8aba305c9e98a71d64789",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "probe_sha256": "86966e2fa31975b276c2b01e20356e8f3843095b0a181e8f53d7020b18b0f4b7",
+  "original_revision": 18,
+  "status": "committed",
+  "scope": "One exact saved failed chunk prepared by fresh models, committed only on a private backup. Deterministic lexical queries and stored state are diagnostics, not a fresh complete sample, an Answer/Judge run or a replacement for the original failed benchmark.",
+  "receipt": {
+    "success": true,
+    "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+    "user_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget",
+    "session_id": "segment-18"
+  },
+  "committed_revision": 19,
+  "state_sha256": "d87c160e0ae965a7ebd2ee273427fc7bc79c9b61f120cf9129799bea02b20543",
+  "changed_prior_facts": [
+    {
+      "id": "27dcd22c7c313f78d1f3736af9bb9e544099ae6cbcfedb77b90496747fc9caf6",
+      "before": {
+        "content": "Our backup first name is Iris.",
+        "subject": "user",
+        "predicate": "backup_first_name",
+        "value": "Iris",
+        "scope": "daughter name",
+        "kind": "fact",
+        "modality": "confirmed",
+        "cardinality": "single",
+        "state": "active"
+      },
+      "after": {
+        "content": "",
+        "subject": "user",
+        "predicate": "backup_first_name",
+        "value": "",
+        "scope": "daughter name",
+        "kind": "fact",
+        "modality": "confirmed",
+        "cardinality": "single",
+        "state": "erased"
+      }
+    },
+    {
+      "id": "555f43b318c21c6f0aa1410b7fa39176aaeefcfe25b0d717c9c3a6ef6ec59f62",
+      "before": {
+        "content": "We both like it—simple, natural, quiet elegance.",
+        "subject": "user",
+        "predicate": "name_preference_reasons",
+        "value": "simple, natural, quiet elegance",
+        "scope": "Iris",
+        "kind": "preference",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "active"
+      },
+      "after": {
+        "content": "",
+        "subject": "user",
+        "predicate": "name_preference_reasons",
+        "value": "",
+        "scope": "Iris",
+        "kind": "preference",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "erased"
+      }
+    },
+    {
+      "id": "53671699e73059b39210e04b806f60f91708b1645a1820f4ac693e8ca0fd9532",
+      "before": {
+        "content": "Iris is there in case something changes.",
+        "subject": "user",
+        "predicate": "backup_name_reason",
+        "value": "in case something changes",
+        "scope": "Iris",
+        "kind": "fact",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "active"
+      },
+      "after": {
+        "content": "",
+        "subject": "user",
+        "predicate": "backup_name_reason",
+        "value": "",
+        "scope": "Iris",
+        "kind": "fact",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "erased"
+      }
+    },
+    {
+      "id": "5f48a02ff6d4ac03d746a3d5428ac06448063827707cae6b414593f92493a5d9",
+      "before": {
+        "content": "Iris has that same understated feel we're drawn to.",
+        "subject": "user",
+        "predicate": "name_preference_reasons",
+        "value": "same understated feel",
+        "scope": "Iris",
+        "kind": "preference",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "active"
+      },
+      "after": {
+        "content": "",
+        "subject": "user",
+        "predicate": "name_preference_reasons",
+        "value": "",
+        "scope": "Iris",
+        "kind": "preference",
+        "modality": "confirmed",
+        "cardinality": "multiple",
+        "state": "erased"
+      }
+    }
+  ],
+  "new_fact_count": 21,
+  "lexical_queries_sha256": "a048f7b6d8793fd3ceebb0f5976f8d9f0702111a863d64bfb07fd6d53a43948a"
+}

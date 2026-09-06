@@ -1,6 +1,7 @@
 // Fresh model preparation on an immutable pre-failure snapshot. Not a new full prefix.
 import {readFileSync,writeFileSync,appendFileSync,mkdtempSync,readdirSync,mkdirSync,copyFileSync} from 'node:fs';import {resolve,join,dirname} from 'node:path';import {parseEnv} from 'node:util';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
 import {Extractor} from '../../service/dist/extraction.js';import {Models} from '../../service/dist/models.js';import {configFromEnv} from '../../service/dist/config.js';
+import {applyRepair} from '../../service/dist/repair.js';import {extractionSchema} from '../../service/dist/types.js';
 const sha=x=>createHash('sha256').update(x).digest('hex'),read=p=>JSON.parse(readFileSync(p,'utf8')),lines=p=>readFileSync(p,'utf8').trim().split('\n').map(JSON.parse);
 let req,snapshot,sample,provenance;
 if(process.argv[2]==='--snapshot'){
@@ -20,12 +21,25 @@ if(process.argv[2]==='--snapshot'){
 const specIndex=process.argv.indexOf('--spec'),specPath=specIndex>=0?process.argv[specIndex+1]:'configs/round2-quality.json';if(!specPath)throw Error('Missing --spec path');
 const dir=mkdtempSync(resolve('artifacts/round2-live-checkpoint-')),env=parseEnv(readFileSync('.env','utf8')),spec=read(specPath);
 const config={...configFromEnv({...env,...spec.defaults,...spec.profiles.facts.environment}),dataDir:join(dir,'unused')};process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');
+const proposalIndex=process.argv.indexOf('--proposal-run');let injected,archivedInput,proposalProvenance;
+if(proposalIndex>=0){
+ const parent=resolve(process.argv[proposalIndex+1]),r=read(join(parent,'report.json'));assert.equal(r.protocol,'archived-replacement-repair-v1');assert.equal(r.status,'returned');assert.equal(r.live_patch.compatible,true);
+ archivedInput=read(join(parent,'input.json'));const output=read(join(parent,'output.json'));assert.equal(sha(JSON.stringify(archivedInput)),r.input_sha256);assert.equal(sha(JSON.stringify(output)),r.output_sha256);
+ assert.deepEqual(req.messages,archivedInput.NEW_MESSAGES.map(({index,...m})=>m));injected=applyRepair(extractionSchema.parse(archivedInput.FAILED_PROPOSAL),output,archivedInput.REPAIR_SCOPE);
+ proposalProvenance={run:parent,report_sha256:sha(readFileSync(join(parent,'report.json'))),proposal_sha256:sha(JSON.stringify(injected))};
+}
 mkdirSync(join(dir,'source-snapshot'));const sources=readdirSync('service/src').filter(p=>p.endsWith('.ts'));for(const p of sources)copyFileSync('service/src/'+p,join(dir,'source-snapshot',p));copyFileSync(import.meta.filename,join(dir,'probe-source.mjs'));
-const model=new Models(config),json=model.json.bind(model),verify=model.verify.bind(model);let calls=0;
-model.json=async(system,input,signal,context)=>{calls++;appendFileSync(join(dir,'model-inputs.jsonl'),JSON.stringify({purpose:context?.purpose,prompt_sha256:sha(system),input})+'\n');const output=await json(system,input,signal,context);appendFileSync(join(dir,'model-proposals.jsonl'),JSON.stringify({purpose:context?.purpose,input_sha256:sha(input),output})+'\n');return output;};
+const model=new Models(config),json=model.json.bind(model),verify=model.verify.bind(model);let calls=0,injections=0;
+model.json=async(system,input,signal,context)=>{
+ const replay=!!injected&&context?.purpose==='extraction'&&injections===0;
+ if(replay){assert.deepEqual(JSON.parse(input).EXISTING_FACTS,archivedInput.EXISTING_FACTS,'Archived aliases must identify exactly the same preceding facts');injections++;}else calls++;
+ const origin=replay?'recorded_patched_proposal':'live_model';appendFileSync(join(dir,'model-inputs.jsonl'),JSON.stringify({purpose:context?.purpose,origin,prompt_sha256:sha(system),input})+'\n');
+ const output=replay?structuredClone(injected):await json(system,input,signal,context);appendFileSync(join(dir,'model-proposals.jsonl'),JSON.stringify({purpose:context?.purpose,origin,input_sha256:sha(input),output})+'\n');return output;
+};
 model.verify=async(...args)=>{const findings=await verify(...args);appendFileSync(join(dir,'verification-findings.jsonl'),JSON.stringify({findings})+'\n');return findings;};
 const report={protocol:'live-pre-failure-checkpoint-prepare-v1',run_dir:dir,sample,...provenance,source_sha256:Object.fromEntries(sources.map(p=>[p,sha(readFileSync('service/src/'+p))])),probe_sha256:sha(readFileSync(import.meta.filename)),spec_sha256:sha(readFileSync(specPath)),verification_response_format:config.verificationResponseFormat??'json_object',snapshot_revision:snapshot.revision,stage_models:config.llmStageModels,model_budget_ms:Math.min(95000,Math.max(500,config.addTimeout-25000)),started_at:new Date().toISOString(),status:'running',scope:'Fresh extraction, repair, verification and local embedding for the single failed chunk on the exact saved preceding snapshot. No HTTP add or commit; not a fresh full-prefix run or benchmark score.'};writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');
+if(proposalProvenance){report.recorded_proposal=proposalProvenance;report.scope='One previously generated patched proposal on an immutable failed snapshot. Initial extraction is replayed without a model; all subsequent verification, any repair, erasure binding and local embedding are fresh. No commit, full-prefix run, end-to-end original request latency or benchmark score.';writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');}
 const start=performance.now();try{
  const prepared=await new Extractor(config,model).prepare(req,snapshot,AbortSignal.timeout(config.addTimeout));writeFileSync(join(dir,'prepared.json'),JSON.stringify(prepared)+'\n');Object.assign(report,{status:'prepared',fact_count:prepared.facts.length,operation_count:prepared.operations.length,degraded:prepared.degraded,prepared_sha256:sha(readFileSync(join(dir,'prepared.json')))});
 }catch(error){Object.assign(report,{status:'failed',error:{code:error.code??null,message:error.message}});}
-Object.assign(report,{generation_calls:calls,elapsed_ms:performance.now()-start,finished_at:new Date().toISOString()});writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');writeFileSync('reports/round2-live-checkpoint-'+dir.split('/').at(-1)+'.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
+Object.assign(report,{generation_calls:calls,recorded_proposal_injections:injections,elapsed_ms:performance.now()-start,finished_at:new Date().toISOString()});writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');writeFileSync('reports/round2-live-checkpoint-'+dir.split('/').at(-1)+'.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
