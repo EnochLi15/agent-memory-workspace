@@ -1,0 +1,45 @@
+{
+  "protocol": "source-erasure-full-prefix-review-v1",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T06-26-23-955Z-WD8xGj",
+  "loaded_service_commit": "1f77f5a",
+  "current_service_commit": "862399d",
+  "runtime_note": "The full prefix loaded 1f77f5a before the later owner-prompt clarification; retrieval used the matching frozen runtime. Do not count it as a full latest-commit run.",
+  "input_hashes": {
+    "artifacts/round2-failure-prefixes/2026-09-06T06-26-23-955Z-WD8xGj/results.json": "c4c9270e45aeaaca2a2b7e486236491cc3492ce5c0a2327041e9dd1d6f499592",
+    "artifacts/round2-failure-prefixes/2026-09-06T06-26-23-955Z-WD8xGj/E10_reflect-state.json": "fb9476ce98406b452fbe0f969440c475ed6a6da4bfc86b6cd8555c7332548266",
+    "artifacts/round2-failure-prefixes/2026-09-06T06-26-23-955Z-WD8xGj/retrieval-probe-v1/report.json": "4faeccf42c0d07ed2bb7db77431deeaa4c83a5f6427f67cbdc38acb780b16812",
+    "artifacts/round2-failure-prefixes/2026-09-06T06-26-23-955Z-WD8xGj/retrieval-probe-v1/answers.jsonl": "b61a24775dfd5f41ac5f164aa6930f11f7f8c1d54d178c8d642cf006c9540eb2"
+  },
+  "planned_adds": 26,
+  "successful_adds": 26,
+  "last_add_elapsed_ms": 72990.60829200002,
+  "revision": 26,
+  "state_counts": {
+    "facts": 110,
+    "messages": 270,
+    "passages": 294
+  },
+  "residue_counts": {
+    "facts": 0,
+    "messages": 0,
+    "passages": 0
+  },
+  "answers": [
+    {
+      "question": "What information do you still have about my dentist appointment?",
+      "answer": "I only have that you prefer texting or online booking over phone calls for appointments, and that phone calls drain you. I don’t have any specific details about a dentist appointment."
+    },
+    {
+      "question": "What is my current morning coffee order, what birthday gift do I want for Kevin, and how do I prefer to contact businesses?",
+      "answer": "Your current morning coffee order is black drip coffee. For Kevin’s birthday, you want to get him a vinyl record of John Coltrane’s A Love Supreme. You prefer to contact businesses by texting rather than phone calls, and if possible you want SMS or online booking options."
+    }
+  ],
+  "assistant_review": {
+    "appointment_unavailable_stated": true,
+    "appointment_details_absent": true,
+    "coffee_black_drip": true,
+    "gift_kevin_coltrane_vinyl": true,
+    "contact_text_sms_online": true
+  },
+  "scope": "All 26 original nonempty adds through the newly failed E10_reflect segment26, fresh v4 directory; not all 50 sessions or the six original benchmark questions. Two diagnostic mini Answers reviewed by assistant, not benchmark or independent human score. The old d8e264b campaign retains its six failed E10_reflect questions."
+}

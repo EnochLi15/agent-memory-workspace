@@ -1,0 +1,25 @@
+// Isolate source-scope classification on a saved verified proposal and private DB clone.
+import {readFileSync,writeFileSync,mkdtempSync,mkdirSync,copyFileSync,readdirSync} from 'node:fs';import {resolve,join} from 'node:path';import {parseEnv} from 'node:util';import {createHash} from 'node:crypto';import {createRequire} from 'node:module';import assert from 'node:assert/strict';
+import {Models} from '../../service/dist/models.js';import {configFromEnv} from '../../service/dist/config.js';import {TenantStore} from '../../service/dist/storage.js';
+import {sourceErasureWork,decodeSourceErasure,SOURCE_ERASURE_PROMPT} from '../../service/dist/source-erasure.js';
+const require=createRequire(new URL('../../service/package.json',import.meta.url)),Database=require('better-sqlite3'),sha=x=>createHash('sha256').update(x).digest('hex'),read=p=>JSON.parse(readFileSync(p,'utf8'));
+const snapshotPath=resolve(process.argv[2]),preparedPath=resolve(process.argv[3]),saved=read(snapshotPath),preparation=read(join(preparedPath,'report.json')),prepared=read(join(preparedPath,'prepared.json'));
+assert.equal(preparation.status,'prepared');assert.equal(preparation.captured_snapshot_sha256,sha(readFileSync(snapshotPath)));assert.equal(preparation.prepared_sha256,sha(readFileSync(join(preparedPath,'prepared.json'))));
+const parent=read(join(saved.provenance.parent_run,'manifest.json')),dir=mkdtempSync(resolve('artifacts/round2-recorded-source-erasure-'));mkdirSync(join(dir,'data',sha(saved.request.user_id)),{recursive:true});copyFileSync(import.meta.filename,join(dir,'probe-source.mjs'));
+const original=new Database(join(parent.service_configuration.dataDir,sha(saved.request.user_id),'memory.sqlite'),{readonly:true,fileMustExist:true});try{await original.backup(join(dir,'data',sha(saved.request.user_id),'memory.sqlite'));}finally{original.close();}
+const store=new TenantStore(join(dir,'data'),saved.request.user_id),report={protocol:'recorded-source-erasure-clone-v1',run_dir:dir,prepared_input_sha256:preparation.prepared_sha256,snapshot_sha256:sha(readFileSync(snapshotPath)),source_sha256:Object.fromEntries(readdirSync('service/src').filter(p=>p.endsWith('.ts')).map(p=>[p,sha(readFileSync('service/src/'+p))])),scope:'Reuses a saved previously verified proposal; one independent real source-scope model call, no new extraction or fact verification. Only a private clone with zero deletion markers is switched from v3 to v4 for diagnosis. Not a supported migration, fresh full-prefix recovery or benchmark score.',started_at:new Date().toISOString(),status:'running'};
+const config=configFromEnv({...parseEnv(readFileSync('.env','utf8')),...read('configs/round2-quality-erasure.json').defaults,MEMORY_SOURCE_ERASURE:'true'});process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');
+try{
+ assert.deepEqual(store.snapshot(saved.request.session_id),saved.snapshot);assert.equal(store.db.prepare('SELECT count(*) AS n FROM markers').get().n,0,'No migration of existing erasure metadata is supported');
+ const oldSources=store.db.prepare('SELECT body FROM messages').all().map(r=>JSON.parse(r.body));
+ const work=sourceErasureWork(saved.request,saved.snapshot.facts,prepared.facts,prepared.operations,[],oldSources,prepared.messages);
+ report.candidates=work.candidates.length;report.candidate_chars=JSON.stringify(work.candidates).length;writeFileSync(join(dir,'work.json'),JSON.stringify(work)+'\n');
+ const start=performance.now();const raw=work.candidates.length?await new Models(config).json(SOURCE_ERASURE_PROMPT,JSON.stringify({CANDIDATES:work.candidates.map((c,index)=>({index,...c}))}),AbortSignal.timeout(90000),{purpose:'source_erasure'}):{decisions:[]};
+ report.classifier_elapsed_ms=performance.now()-start;report.new_model_calls=work.candidates.length?1:0;writeFileSync(join(dir,'model-output.json'),JSON.stringify(raw)+'\n');
+ prepared.sourceErasurePlan=decodeSourceErasure(raw,work);prepared.sourceFormat=prepared.sourceFormat.replace('-v3','-v4');
+ store.db.prepare('UPDATE meta SET value=? WHERE key=?').run(prepared.sourceFormat,'source_format');
+ report.receipt=store.commit(saved.request,sha(JSON.stringify(saved.request)),prepared,saved.snapshot.revision);
+ const state={revision:store.revision(),facts:store.facts(),passages:store.passages(),events:store.events(),messages:store.db.prepare('SELECT body FROM messages').all().map(r=>JSON.parse(r.body)),raw:store.raw(),tail:store.snapshot(saved.request.session_id).tail};writeFileSync(join(dir,'state.json'),JSON.stringify(state)+'\n');
+ report.status='committed';report.state_sha256=sha(readFileSync(join(dir,'state.json')));
+}catch(e){report.status='failed';report.error={code:e.code??null,message:e.message};}finally{store.close();}
+report.finished_at=new Date().toISOString();writeFileSync(join(dir,'report.json'),JSON.stringify(report,null,2)+'\n');writeFileSync('reports/round2-source-erasure-'+dir.split('/').at(-1)+'.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

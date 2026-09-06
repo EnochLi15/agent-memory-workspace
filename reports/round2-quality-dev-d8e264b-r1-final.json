@@ -1,0 +1,131 @@
+{
+  "protocol": "completed-exposed-development-review-v1",
+  "run_dir": "eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "service_commit": "d8e264b210debfaf31a4aeaa587986c6e01af301",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "started_at": "2026-09-06T05:58:28.301Z",
+  "finished_at": "2026-09-06T06:36:14.508Z",
+  "input_artifact_sha256": {
+    "manifest.json": "f6eab5ef24f8f5ec32b5870d8061b90b61f86abba24b5b32122a46bb0e349633",
+    "metrics.json": "caf73195b3714906296999e4e5e34bb90d955708fc2ddb42198f02a9c028d780",
+    "ingest.jsonl": "555a6dcb723a2c1afb2f50c99c1eaca9c1f94dbfe3d27442a1762e0864d90a4e",
+    "judgments.jsonl": "7c176db408a1fc0cece288c6c05d7b953b6c21cab424efccf7bb0e02d6f929d1",
+    "requests.jsonl": "bafd8445aa1916aabb4c08b7630f0f2fe4ea8c858f7efb9e76d7c7a5efeb997a"
+  },
+  "planned_questions": 30,
+  "judged": 9,
+  "correct": 6,
+  "service_error_questions": 21,
+  "accuracy_over_planned": 0.2,
+  "judged_accuracy": 0.6666666666666666,
+  "add_status": {
+    "ok": 152,
+    "failed": 3,
+    "retrying": 1
+  },
+  "samples": [
+    {
+      "sample": "E10_reflect",
+      "adds": {
+        "ok": 25,
+        "failed": 1
+      },
+      "questions": 6,
+      "question_status": {
+        "service_error": 6
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_reflect:segment-26:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 51344.249625
+        }
+      ],
+      "retry_records": []
+    },
+    {
+      "sample": "B05_forget",
+      "adds": {
+        "ok": 18,
+        "failed": 1
+      },
+      "questions": 10,
+      "question_status": {
+        "service_error": 10
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}",
+          "elapsed_ms": 88045.95887499995
+        }
+      ],
+      "retry_records": []
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "adds": {
+        "ok": 50,
+        "retrying": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "judged": 5
+      },
+      "correct": 3,
+      "failed_adds": [],
+      "retry_records": [
+        {
+          "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:F07_trajectory_ops:segment-49:0",
+          "status": "retrying",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+          "elapsed_ms": 90040.35100000002
+        }
+      ]
+    },
+    {
+      "sample": "F07_update",
+      "adds": {
+        "ok": 55
+      },
+      "questions": 4,
+      "question_status": {
+        "judged": 4
+      },
+      "correct": 3,
+      "failed_adds": [],
+      "retry_records": []
+    },
+    {
+      "sample": "E10_remember",
+      "adds": {
+        "ok": 4,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "correct": 0,
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-5:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Invalid target/scope repair patch\"}}",
+          "elapsed_ms": 64843.94762500003
+        }
+      ],
+      "retry_records": []
+    }
+  ],
+  "paired_retrieval_reuse_eligible": false,
+  "scope": "One completed 30-question run on five exposed development samples with proxy Judge. Service d8e264b and eval94d58f6 were loaded throughout; later source/build changes were not hot-reloaded. Three failed background ingestions retain all 21 affected questions. One verification-unavailable add retry is retained in attempt costs. Not historical331/1000 replacement, not the latest v4 score, not heldout or paired retrieval quality."
+}

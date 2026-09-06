@@ -1,0 +1,94 @@
+{
+  "protocol": "source-erasure-implementation-review-v1",
+  "service_core_commit": "1f77f5a",
+  "service_current_commit": "862399d",
+  "service_tests_passed": 155,
+  "input_hashes": {
+    "reports/round2-tracking-retirement-checkpoint-review.json": "d99738a41f68ec1c45b724ef8edd48e65dd1c9b0762eecdae479b28b7a211944",
+    "reports/round2-source-erasure-service-tests.txt": "cba00314e82d7491933a555e7c92bcc74cea845602b2c527e0726da29946e139",
+    "artifacts/round2-source-lifecycle-CDcU2w/report.json": "b7d833f29ee11d03aeeac5e758b95f3deddd94d51c707ae94016a9ed30238de9",
+    "artifacts/round2-source-lifecycle-S7P3an/report.json": "5cbbefeba0d9761d8181d5a68b3ffeec73771eedab307836754947547be90584",
+    "artifacts/round2-source-owner-controls-cL3qa4/report.json": "1adfbaea93d648c441ca8ac98bd1796b9b9d48eb8f8961e2c683f36d615b0b0c",
+    "reports/round2-source-owner-control-label-review.json": "0cf6c4e42910cb093ed43902eb5c7cfdf0189445499b8c7ef3b56c55cc68f557",
+    "artifacts/round2-lifecycle-variants/2026-09-06T06-26-11-242Z-FR6W4h/results.json": "845fc6643a73604574e49f8a250d125ecc70cf914ac96d5b8a22f5ed8394c3ed"
+  },
+  "recorded_proposal_diagnostics": [
+    {
+      "run": "artifacts/round2-recorded-source-erasure-UmYlya",
+      "report_sha256": "8f065a92338f0681d181238c6b4042735acd4a04260a4efa290a4ee159d860d7",
+      "state_sha256": "6598c3c8f74d06fb625037f79f2e2375a79f970d8b7c6775fda903635c3e4d38",
+      "input_prepared_sha256": "f8a2609c4458a8acf8bd31ddd3c17527b76abee7577b3d0d77f789d170c0c834",
+      "scope": "sentence candidates, superseded by whole-message nomination",
+      "classifier_calls": 1,
+      "classifier_elapsed_ms": 6398.605374999999,
+      "candidates": 2,
+      "residue_counts": {
+        "facts": 0,
+        "passages": 0,
+        "messages": 0,
+        "raw": 0,
+        "tail": 0
+      },
+      "neighbor_checks": {
+        "standard SMS": true,
+        "black drip coffee": true,
+        "Coltrane": true
+      }
+    },
+    {
+      "run": "artifacts/round2-recorded-source-erasure-NbsotU",
+      "report_sha256": "3b2fa123d86b1e9ccce41de45c6649dec475fcc04743163b6560caeb65b33f86",
+      "state_sha256": "b88347774c6da0f796f013a652ff2b39b66adf39c55b835c876d82bddddded27",
+      "input_prepared_sha256": "f8a2609c4458a8acf8bd31ddd3c17527b76abee7577b3d0d77f789d170c0c834",
+      "scope": "whole-message candidates on core 1f77f5a",
+      "classifier_calls": 1,
+      "classifier_elapsed_ms": 8591.589291,
+      "candidates": 2,
+      "residue_counts": {
+        "facts": 0,
+        "passages": 0,
+        "messages": 0,
+        "raw": 0,
+        "tail": 0
+      },
+      "neighbor_checks": {
+        "standard SMS": true,
+        "black drip coffee": true,
+        "Coltrane": true
+      }
+    }
+  ],
+  "fresh_http_lifecycle": {
+    "original_core": {
+      "run": "artifacts/round2-source-lifecycle-CDcU2w",
+      "completed_successfully": 3,
+      "planned": 4,
+      "failure": "Different-person step rejected by source classifier uncertainty despite explicit colleague/not-mine evidence."
+    },
+    "owner_clarification": {
+      "run": "artifacts/round2-source-lifecycle-S7P3an",
+      "completed_successfully": 4,
+      "planned": 4,
+      "checks": "Delete own appointment, prevent assistant reintroduction, preserve SMS and explicitly different colleague appointment. New four-step ingestion; previous failure remains."
+    }
+  },
+  "other_lifecycle_variants": {
+    "run": "artifacts/round2-lifecycle-variants/2026-09-06T06-26-11-242Z-FR6W4h",
+    "passed": 5,
+    "planned": 5
+  },
+  "owner_controls": {
+    "fixed_previous_five_candidates": "All five previously uncertain candidates returned retain under owner clarification on exactly the same input. One new draw; not a causal/general accuracy estimate.",
+    "initial_automated_result": "4/6; two expectation problems separately reviewed with no new model calls or overwritten outputs.",
+    "review": "reports/round2-source-owner-control-label-review.json"
+  },
+  "limits": [
+    "Source candidate discovery depends on exact values or word-anchor overlap; zero-overlap paraphrases and cross-message references remain incomplete.",
+    "An erasure still requires a resolved fact/transient fact target; raw-only target resolution is not implemented.",
+    "64-candidate/64000-character bound rejects large work rather than silently truncating it; group verification remains pending.",
+    "Private zero-marker v3-to-v4 clone changes are diagnostic only, not production migration.",
+    "A preserved raw neighbor is not automatically a user fact: ordinary speaker/evidence verification still applies.",
+    "Whole E0–E5, new backgrounds, three complete paired repeats and deployment/archive remain pending."
+  ],
+  "scope": "Mechanism and synthetic lifecycle evidence. No replacement for the running old d8e264b/94d58f6 30-question development run, no new overall accuracy, no deployment."
+}
