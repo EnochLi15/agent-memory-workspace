@@ -1,0 +1,16 @@
+{
+  "protocol": "v1-runtime-soak-acceptance-v1",
+  "passed": true,
+  "duration_seconds": 7502.273899,
+  "runtime_sha256": "b3811a34c6cb4a4534c94d27c2670e9bfb0bac96b7b58484721bc5b5d28dda5b",
+  "runner_sha256": "567435648fee4d027fc7c7582a576224f5adc0e3e2d4ebdcdeefe52ad7dc16ed",
+  "fixture_sha256": "727738c6d2af0528c05806a5fe0c4a73962acc3b9d21be057ffbd5631dcef6f0",
+  "runtime_record": "reports/v1-runtime-soak-record.json",
+  "scope": "7500-second model-free detached worker; exact runtime helper and runner hashes, clean parent/worker exits, no monitor gaps, all owned children terminal. Does not prove model availability or memory accuracy.",
+  "evidence_sha256": {
+    "artifacts/v1-runtime-soak-02/runtime.json": "9d58f8fb7eff8ce3b7919ea7f77ca517e5fef83e0bf567e5413bb6bfa457ef1b",
+    "artifacts/v1-runtime-soak-02/spec.json": "b20ee9b17fe3f92fb76102455e2fc7d8db0ab8e3c48501fd7f391917666ec87d",
+    "artifacts/v1-runtime-soak-02/worker.py": "727738c6d2af0528c05806a5fe0c4a73962acc3b9d21be057ffbd5631dcef6f0",
+    "artifacts/v1-runtime-soak-02/runtime.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
