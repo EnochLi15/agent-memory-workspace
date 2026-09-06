@@ -1,6 +1,6 @@
 {
   "protocol": "round2-joint-full-regression-progress-v1",
-  "observed_at": "2026-09-06T12:29:10.707583+00:00",
+  "observed_at": "2026-09-06T12:36:46.789211+00:00",
   "campaign": "round2-joint-87d67b1-dev-r1",
   "service_runtime_snapshot": "artifacts/round2-runtime-87d67b1",
   "processes": {
@@ -8,7 +8,8 @@
     "locomo_evaluator": 48053,
     "memops_evaluator": 48054,
     "runner_session": 65678,
-    "locomo_evaluator_status": "finished; process absent, manifest finished"
+    "locomo_evaluator_status": "finished; process absent, manifest finished",
+    "terminal_verified": true
   },
   "runs": [
     {
@@ -65,7 +66,7 @@
     },
     {
       "run_id": "round2-joint-87d67b1-dev-r1-sources-memops",
-      "manifest_status": "running",
+      "manifest_status": "finished",
       "planned_questions": 30,
       "source_identity": {
         "service_commit": "87d67b18f13c2b8ccdb7c6c1dc4a4b891e6a0c48",
@@ -90,9 +91,9 @@
         },
         "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b"
       },
-      "ingest_attempts": 154,
-      "successful_requests": 150,
-      "failed_attempts": 4,
+      "ingest_attempts": 165,
+      "successful_requests": 160,
+      "failed_attempts": 5,
       "latest_failed_requests": [
         {
           "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-19:0",
@@ -121,15 +122,23 @@
           "attempt": 0,
           "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
           "elapsed_ms": 46204.18208299996
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-38:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 53264.9709999999
         }
       ],
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-27:0",
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-38:0",
       "question_statuses": {
-        "service_error": 25
+        "service_error": 30
       },
       "judged_correct": 0
     }
   ],
-  "scope": "Live partial progress only. Process liveness separately checked via ps. Complete questions and all failures remain in the planned denominator; no interim overall score. Separate candidate worktrees do not change this frozen runtime.",
-  "shared_gateway_overlap_log": "artifacts/round2-joint-87d67b1-dev-r1/shared-gateway-overlap.jsonl"
+  "scope": "Final terminal state. Both evaluator exits were zero and their service/evaluator processes are absent. Exit zero indicates completed execution, not quality acceptance. See final report; all 60 questions are service_error.",
+  "shared_gateway_overlap_log": "artifacts/round2-joint-87d67b1-dev-r1/shared-gateway-overlap.jsonl",
+  "final_report": "reports/round2-joint-87d67b1-final.json"
 }

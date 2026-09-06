@@ -11,12 +11,20 @@ import subprocess
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument('--require-all', action='store_true')
+parser.add_argument('--run-id', action='append', help='Audit only these explicit completed runs')
+parser.add_argument('--output', type=pathlib.Path, help='Separate output required for explicit runs')
 args = parser.parse_args()
 profiles = ['U3', 'B2', 'B0', 'B1', 'U2', 'B3', 'B4', 'B5', 'B6',
             'no_lifecycle', 'no_raw', 'no_time', 'no_hop', 'no_rerank']
 expected = [f'dev-v6-{p}-{b}' for p in profiles for b in ['locomo', 'memops']]
 expected += [f'baseline-v7-{p}-{b}' for p in ['U0', 'U1'] for b in ['locomo', 'memops']]
 expected += [f'holdout-v2-U3-{b}' for b in ['locomo', 'memops']]
+if args.run_id:
+    if not args.output:
+        parser.error('--run-id requires --output to preserve historical audits')
+    if len(set(args.run_id)) != len(args.run_id) or any(not r or '/' in r or '\\' in r or r in ('.', '..') for r in args.run_id):
+        parser.error('Expected unique run directory names')
+    expected = args.run_id
 
 
 def sha(path):
@@ -24,7 +32,7 @@ def sha(path):
 
 
 def rows(path):
-    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()]
+    return [json.loads(line) for line in path.read_text().splitlines() if line.strip()] if path.exists() else []
 
 
 def distribution(values):
@@ -71,6 +79,7 @@ for directory, manifest in finished:
     option_elements = [v for q in questions for v in q.get('options', [])]
     assert all(isinstance(v, str) for v in option_elements)
     retrievals = rows(directory / 'retrievals.jsonl')
+    assert {j['qid'] for j in judgments if j['status'] == 'judged'} <= {r['qid'] for r in retrievals}
     ingest = rows(directory / 'ingest.jsonl')
     contents = [[m['content'] for m in row['memories']] for row in retrievals]
     total = sum(map(len, contents))
@@ -104,7 +113,7 @@ for directory, manifest in finished:
             'deduplication_scope': 'Residual exact duplicate output text only; no claim about unseen candidate removal.',
             'source_id_comparability': 'N/A for semantic comparison: unmodified mem0 does not guarantee original source-ID retention.'
                 if baseline else 'Source-ID coverage is available as an identifier diagnostic, not entailment.'},
-        'input_sha256': {name: sha(directory / name) for name in
+        'input_sha256': {name: sha(directory / name) if (directory / name).exists() else None for name in
                          ['manifest.json', 'requests.jsonl', 'ingest.jsonl', 'retrievals.jsonl', 'judgments.jsonl']}})
 
 report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -114,6 +123,9 @@ report = {'checked_at': datetime.datetime.now(datetime.timezone.utc).isoformat()
           'audit_script_sha256': sha(pathlib.Path(__file__)), 'runs': audits,
           'scope': 'Saved service-bound requests and source boundary audit. Errors remain terminal attempts; '
                    'no partial scores read, no model calls, no claim that source review is network capture.'}
-output = ROOT / 'reports/completed-run-audit.json'
+output = args.output or ROOT / 'reports/completed-run-audit.json'
+if args.run_id and output.resolve() == (ROOT / 'reports/completed-run-audit.json').resolve():
+    raise SystemExit('Explicit runs must not overwrite the historical matrix audit')
+output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps({'audited_runs': len(audits), 'expected_runs': len(expected), 'pending': pending}))

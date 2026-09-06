@@ -1,0 +1,83 @@
+{
+  "protocol": "frozen-e10-remember-repair-failure-v1",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-remember-87d67b1-repair-failure-kh5oa1hb",
+  "observed_at": "2026-09-06T12:34:38.552341+00:00",
+  "failure": {
+    "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-38:0",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+    "elapsed_ms": 53264.9709999999
+  },
+  "hashes": {
+    "request.json": "9cba455533eeed987e7979fdc320a08bfb7576873cdd86c520b9cbe5556ed648",
+    "spec.json": "d465b2f5371ab82accca686ab7422e0abaf0791f17c5b1f59ac08300514c5754",
+    "memory.sqlite": "ffc6ce3f2320b818df5f31314d33c99693035f7b6c7f98e2c04e4cc4f436b683",
+    "private-model-trace.jsonl": "129268f1296ea29c40b36e4815c6d2ca6efd6f1ad9e5e59bef5adc417c63b571"
+  },
+  "packets": [
+    {
+      "at": "2026-09-06T12:32:15.860Z",
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T12:32:19.343Z",
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T12:32:22.328Z",
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T12:32:41.817Z",
+      "purpose": "verification",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T12:32:52.153Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "ok",
+      "error_category": null,
+      "http_status": null,
+      "transport_code": null
+    },
+    {
+      "at": "2026-09-06T12:32:57.678Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T12:33:03.226Z",
+      "purpose": "repair",
+      "attempt": 1,
+      "outcome": "error",
+      "error_category": "connection",
+      "http_status": null,
+      "transport_code": "UND_ERR_SOCKET"
+    }
+  ]
+}
