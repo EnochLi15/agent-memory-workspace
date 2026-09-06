@@ -1,13 +1,13 @@
 {
   "protocol": "v1-long-blocker-followup-v1",
-  "updated_at": "2026-09-06T20:38:44.534947+00:00",
+  "updated_at": "2026-09-06T20:47:46.376313+00:00",
   "status": "in_progress",
   "failed_campaign": "v1-long-33a9e05-01",
   "original_service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
-  "fix_service_commit": "57d8e65b89ccec41d0fa29d261a6512f2cb1864f",
+  "fix_service_commit": "b9c2a60e72a75c0819fb055d0da5d39f88e6017b",
   "tests": {
-    "service": 361,
-    "passed": 361
+    "service": 363,
+    "passed": 363
   },
   "cases": [
     {
@@ -20,9 +20,9 @@
     {
       "case": "memops:D25_remember:segment-49:0",
       "cause": "Model retained a concrete colliding value using a pronoun-only quote. Existing decoder correctly refused this unsupported independent-value witness.",
-      "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged.",
-      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open.",
-      "status": "http_accepted_but_frozen_erasure_scope_failed"
+      "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged. Historical completeness fix supplies unselected related records to the existing independent message verifier and scopes certificate invalidation to that instruction. Cross-property repair guidance preserves the complete authorized scope, while unsupported targets and unrelated neighbors remain protected.",
+      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open. A single live verifier call with the unchanged narrowed proposal now rejects message 6 for missing historical food records, with no protocol errors or other findings. Complete new HTTP diagnostic under version03 is running. All 363 tests pass.",
+      "status": "historical_scope_fix_tests_and_live_rejection_passed_full_http_pending"
     },
     {
       "case": "memops:D22_update:segment-7:0",
@@ -43,7 +43,12 @@
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-fixed-work-check.json": "aae1e44de0f0fe4d1fe8b8eaeb2582d76026f0c77fcb29041a45487c211ba762",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-before-test.log": "03ffa5f6b6eae932dc2411cd34ced9834bb748e331905594fa3cc59816092b61",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-after-test.log": "d428c66a768b913b7055718b3c5f01a7dd9b98ba2555a3d465c1a1ce42c1e0fb",
-    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-full-test.log": "44d73a70651c8c5f598b3ffb606e4a83ca709ce911cb1a210aaaaef647f063e6"
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-full-test.log": "44d73a70651c8c5f598b3ffb606e4a83ca709ce911cb1a210aaaaef647f063e6",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-before-test.log": "01e07d320ecae914d996bb07dc0079ee2a1467666bd41fbb4819fd3864727613",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-after-test.log": "4ec7277d4b48e7b8a77667cbd05d51fd977179c172b4ac63e67576ca6208a38a",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-full-test.log": "13c6ac423a1c3ad1cf737a7235ec8d654b59bb7759ac2de193e950618d3455f3",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-stage-report.json": "718f3536a9067e566510031ebf765c282f306f70bf9b4c5b2e323c4fa81116a5",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-stage-response.json": "f987d7969488abc52631fe60a64b7fe9132b307ec49f5ac70db133ce46154386"
   },
   "diagnostic_reports": [
     "reports/round2-fresh-failed-add-PMc5CM.json",

@@ -1,0 +1,24 @@
+{
+  "protocol": "v1-historical-erasure-scope-stage-v1",
+  "status": "completed",
+  "started_at": "2026-09-06T20:45:15.314Z",
+  "scope": "One fresh verification of the unchanged previously accepted narrowed proposal, adding historical scope context and generic completeness guidance. Not a new HTTP write, complete background, or score replacement.",
+  "context_records": [
+    {
+      "message": 6,
+      "count": 13
+    }
+  ],
+  "input_sha256": "390ab0b4bab1955a30f9b70c3172cff821809e73d8f88b5825db2712c70f3b14",
+  "protocol_errors": [],
+  "findings": [
+    "message 6: The broad request not to track Priya's stuff is only executed for three current Priya facts; it omits historical Priya records including Koku Kitchen visit/order/return/reaction, shared user-and-Priya spice/order contrast facts, Carolina Reaper hot sauces, lamb vindaloo preference/reason, and the user's contrast involving Priya.; missing statement: No, don't track Priya's stuff—that's her business."
+  ],
+  "instruction_check": {
+    "index": 6,
+    "disposition": "missing",
+    "quote": "No, don't track Priya's stuff—that's her business.",
+    "reason": "The broad request not to track Priya's stuff is only executed for three current Priya facts; it omits historical Priya records including Koku Kitchen visit/order/return/reaction, shared user-and-Priya spice/order contrast facts, Carolina Reaper hot sauces, lamb vindaloo preference/reason, and the user's contrast involving Priya."
+  },
+  "finished_at": "2026-09-06T20:45:40.349Z"
+}
