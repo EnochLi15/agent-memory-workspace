@@ -1,0 +1,287 @@
+{
+  "protocol": "fixed-small-closed-loop-result-v1",
+  "at": "2026-09-06T13:33:19.308125+00:00",
+  "campaign": "round2-small-98c12e5-v1",
+  "scope": "Exposed synthetic functional gate, two groups and one repetition; not official or generalization accuracy.",
+  "frozen_dataset_sha256": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+  "frozen_spec_sha256": "8c9c9fb4febcf78d0c26ee71d40023212a309b06f81b0138de8660d89e306e28",
+  "fixed_equal_manifest_fields": [
+    "dataset_sha256",
+    "workspace_commit",
+    "service_commit",
+    "eval_commit",
+    "answer_model",
+    "judge_model",
+    "judge_kind",
+    "answer_prompt_sha256",
+    "rubric_prompt_sha256",
+    "answer_inference",
+    "answer_base",
+    "judge_base",
+    "top_k",
+    "chunk_messages",
+    "chunk_words",
+    "add_transport_attempts"
+  ],
+  "fixed_equal_service_fields": [
+    "maxEvidence",
+    "tokenBudget",
+    "embeddingSpace",
+    "retrieval",
+    "candidateLimit",
+    "llmModel",
+    "llmReasoningEffort",
+    "llmStageModels",
+    "addTimeout",
+    "searchTimeout",
+    "modelTransportAttempts",
+    "rerank",
+    "coveragePacking",
+    "eventView",
+    "relationMode"
+  ],
+  "budget_interpretation": "Same final evidence caps, Answer/Judge models/prompts/inference and local embeddings. Actual evidence usage differs. Service generation cost is additional; total compute is not equalized, and Answer/Judge usage tokens are unavailable from this runner. Sequential runs are observations, not randomized latency estimates.",
+  "runs": {
+    "raw": {
+      "run_id": "round2-small-98c12e5-v1-raw-memops",
+      "checks": {
+        "finished": true,
+        "complete_adds": true,
+        "all_ten_judged": true,
+        "all_ten_correct": true,
+        "http_whitelist_passed": true,
+        "all_planned_searches": true,
+        "budget_caps_observed": true,
+        "no_degraded_write": true,
+        "clean_sources": true
+      },
+      "planned_questions": 10,
+      "correct": 10,
+      "judged": 10,
+      "logical_adds": 5,
+      "add_http_attempts": 5,
+      "wall_seconds": 33.046,
+      "add_ms": {
+        "p50": 51.90508300000147,
+        "p95": 152.96079199999997,
+        "max": 152.96079199999997
+      },
+      "search_ms": {
+        "p50": 80.29120799999873,
+        "p95": 92.88358299999982,
+        "max": 92.88358299999982
+      },
+      "actual_evidence_items": {
+        "min": 3,
+        "max": 3
+      },
+      "actual_estimated_evidence_tokens": {
+        "mean": 478.0,
+        "max": 500
+      },
+      "service_generation_attempts": 0,
+      "service_generation_by_purpose": {},
+      "service_generation_errors": 0,
+      "service_generation_usage_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "actual_continuations": 0,
+      "replayed_model_packets": 0,
+      "erased_code_returned_qids": [
+        "small-city",
+        "small-manager",
+        "small-work-browser",
+        "small-friend-browser",
+        "small-forgotten-code"
+      ],
+      "storage": {
+        "bounded-lifecycle": {
+          "receipt_count": 3,
+          "revision": "3",
+          "forgotten_code_present_in_readable_fields": [
+            "facts",
+            "messages",
+            "evidence_fts"
+          ],
+          "scope": "Read-only logical tables and FTS, excluding numeric vectors and opaque IDs/hashes. Not physical disk or private experiment traces."
+        },
+        "bounded-retention": {
+          "receipt_count": 2,
+          "revision": "2",
+          "forgotten_code_present_in_readable_fields": [],
+          "scope": "Read-only logical tables and FTS, excluding numeric vectors and opaque IDs/hashes. Not physical disk or private experiment traces."
+        }
+      },
+      "artifact_sha256": {
+        "manifest.json": "39f2cccbb413f0f603c3c9b180682d9a67f5a2476bfdc1cef056bbe9fba9efcc",
+        "ingest.jsonl": "456f7e8133846b7d2506c46d979b8d37e49bd92c22ed6793e7535ab963146347",
+        "requests.jsonl": "f7342ca6778595ac996f62be556032dca1dd6515250fe2a0db72e0cf03ff8f26",
+        "retrievals.jsonl": "16732125b526d8eca6d19b58fc46fb376276f5f569ba8a6e760a5e10ba5ab180",
+        "predictions.jsonl": "14d5656e045d650e4e5e5f9eedaa69f044e52bf2aa17f59619c2975e9f4dee99",
+        "judgments.jsonl": "8aae50f2bf76645a0f438f4e421b4e2a67021a4ab1edcd6c42710223ecb97b99",
+        "metrics.json": "8a1f424fa89202ad2956b887be48b980ffd13384ad2f56ff7f8d34ecb86f5a31",
+        "http-trace-audit.json": "08dc139994b4ce2489847646ee0f436c5c7740c505bc8b376bca1d113dcc7258"
+      },
+      "model_audit_sha256": "d73b883f05733acd2b4ecbb6d2d033b38abf8c17dd63756ad2de725a243c4d5e"
+    },
+    "candidate": {
+      "run_id": "round2-small-98c12e5-v1-candidate-memops",
+      "checks": {
+        "finished": true,
+        "complete_adds": true,
+        "all_ten_judged": true,
+        "all_ten_correct": true,
+        "http_whitelist_passed": true,
+        "all_planned_searches": true,
+        "budget_caps_observed": true,
+        "no_degraded_write": true,
+        "clean_sources": true
+      },
+      "planned_questions": 10,
+      "correct": 10,
+      "judged": 10,
+      "logical_adds": 5,
+      "add_http_attempts": 5,
+      "wall_seconds": 107.078,
+      "add_ms": {
+        "p50": 12325.047792,
+        "p95": 20652.275958,
+        "max": 20652.275958
+      },
+      "search_ms": {
+        "p50": 103.12099999999919,
+        "p95": 121.46983300000284,
+        "max": 121.46983300000284
+      },
+      "actual_evidence_items": {
+        "min": 8,
+        "max": 12
+      },
+      "actual_estimated_evidence_tokens": {
+        "mean": 732.5,
+        "max": 927
+      },
+      "service_generation_attempts": 11,
+      "service_generation_by_purpose": {
+        "extraction": 5,
+        "verification": 5,
+        "source_erasure": 1
+      },
+      "service_generation_errors": 0,
+      "service_generation_usage_tokens": {
+        "prompt_tokens": 51553,
+        "completion_tokens": 2437,
+        "total_tokens": 53990
+      },
+      "actual_continuations": 0,
+      "replayed_model_packets": 0,
+      "erased_code_returned_qids": [],
+      "storage": {
+        "bounded-lifecycle": {
+          "checks": {
+            "code_absent_from_readable_tables_and_fts": true,
+            "code_erased_without_vector_or_quotes": true,
+            "current_city_Portland": true,
+            "current_browser_Safari": true,
+            "old_city_superseded": true,
+            "old_browser_superseded": true,
+            "Clara_neighbor_retained": true,
+            "Kevin_Brave_retained": true,
+            "forget_event_present": true,
+            "two_update_events_present": true,
+            "receipts_match_logical_adds": true,
+            "no_pending_preparation": true
+          },
+          "pass": true,
+          "receipt_count": 3,
+          "revision": "3",
+          "forgotten_code_present_in_readable_fields": [],
+          "scope": "Read-only logical tables and FTS; not physical disk or private diagnostic traces."
+        },
+        "bounded-retention": {
+          "checks": {
+            "Maya_Chrome_retained": true,
+            "Olivia_Edge_retained": true,
+            "Andrew_Boston_retained": true,
+            "Andrew_painting_retained": true,
+            "no_unauthorized_forget_event": true,
+            "no_erased_facts": true,
+            "receipts_match_logical_adds": true,
+            "no_pending_preparation": true
+          },
+          "pass": true,
+          "receipt_count": 2,
+          "revision": "2",
+          "forgotten_code_present_in_readable_fields": [],
+          "scope": "Read-only logical tables and FTS; not physical disk or private diagnostic traces."
+        }
+      },
+      "artifact_sha256": {
+        "manifest.json": "bb600d61e5acd0d139cc28e0b7c4f4a4f80ff2d469ef1e5bb56c435b03bd70c9",
+        "ingest.jsonl": "0d5969757e137c5a8a650a1dcfcd7652598a676285c072ce620c22ea4b4df366",
+        "requests.jsonl": "574237be5bb81464f6e0af2bd8b071afe8527f15d8e0007370f595ac98be9049",
+        "retrievals.jsonl": "17f15b74e43ab09ade02bbfa94ce6be028e23c288f9382ba7670ca8f22057dd4",
+        "predictions.jsonl": "e05b0c1febc8afe6ec00f2b03ff9daaafdee370e27e6d3107cee3d44087b3366",
+        "judgments.jsonl": "4c3f0b01112d8152b9a21391e5ddd01ffb3e664d9fb5875c2d12ce2585e6d47e",
+        "metrics.json": "e5fefaf52a8efcaeb02c8769def71abdb2320168c0b33616a906da099e56ad75",
+        "http-trace-audit.json": "f8114cff42ae0a5007ae3502e712bd7e91cf30a8738746ba69004843f18ea4a1"
+      },
+      "model_audit_sha256": "6cbec37a8cff52cdcffb701ce4b4df0ae46b3c3ff3020a935f473121555b3036"
+    }
+  },
+  "paired_answers": {
+    "both_correct": 10,
+    "candidate_only_correct": 0,
+    "raw_only_correct": 0,
+    "both_wrong": 0,
+    "accuracy_delta_percentage_points": 0,
+    "stable_gain_established": false
+  },
+  "review": {
+    "protocol": "assistant-small-set-review-v1",
+    "reviewed_at": "2026-09-06T13:31:58.248747+00:00",
+    "items": 20,
+    "independent_human_labels": 0,
+    "review_kind": "model review, not human calibration",
+    "labels_hidden_before_review": true,
+    "limitations": [
+      "Current assistant authored the synthetic fixture and implementation; not an external independent rater.",
+      "Configuration names and judge verdicts hidden; evidence presentation can reveal the retrieval design.",
+      "Simple exposed functional cases; no estimates of general judge accuracy."
+    ],
+    "packet_sha256": "116d8af08bc7aa2443d2017c3d37798c6208dded97f0f53719eef7db321b8504",
+    "reviews_sha256": "023dac096e91fbb53a91f0600014e41c35deb9f65abbe931bcd70f6a86d8e167",
+    "automated_agreement": 20,
+    "automated_disagreements": [],
+    "public_report": "reports/round2-small-model-review-v1.json",
+    "public_report_sha256": "3fa2721ae4aa668d514ae41ebbf790632548fc890329855fb2e6c299c5330484"
+  },
+  "recovery_boundary": {
+    "local_controlled_test_evidence": "reports/round2-write-continuation-candidate.json: 338 passing tests, including real local HTTP/SDK socket failures, preserved negative prefix and bounded terminal states. No service code edits in this small-set run.",
+    "fixed_small_functional_gate_passed": true,
+    "live_gateway_fault_observed": false,
+    "live_gateway_recovery_validated": false,
+    "long_history_quality_validated": false,
+    "independent_human_calibration_completed": false
+  },
+  "decision": {
+    "keep_disabled": [
+      "rerank",
+      "coveragePacking",
+      "eventView",
+      "multiHop",
+      "reflection"
+    ],
+    "keep_for_memory_contract": [
+      "scoped forget with source erasure",
+      "explicit current-state updates",
+      "neighbor/actor retention",
+      "bounded exact-decision continuation"
+    ],
+    "do_not_expand_yet": true,
+    "next_boundary": "Before enlarging QA experiments, validate a previously saved real interrupted request with frozen candidate and exact original request semantics. Human review remains pending; assistant review is not substituted into human labels. No new tool/feature work authorized by this gate."
+  },
+  "historical_accuracy_unchanged": "331/1000 retained; this 10-question functional gate must not replace it."
+}
