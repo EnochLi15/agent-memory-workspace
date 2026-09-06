@@ -1,0 +1,25 @@
+{
+  "protocol": "running-development-progress-v1",
+  "captured_at": "2026-09-06T07:38:46.138529+00:00",
+  "run_dir": "eval/artifacts/round2-quality-dev-2542f2a-r1-facts-memops",
+  "manifest_sha256": "48724c807e4225ef1d4663c5dda904a4820e0cdbc1aee7280df7ca2120fe5725",
+  "status": "running",
+  "service_commit": "2542f2ab29050623ed4936679e99ed21c4e01542",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "workspace_commit": "b9865b54153568c590259b0d79cc8731b71ee12f",
+  "source_dirty": {
+    "service": false,
+    "eval": false,
+    "workspace": false
+  },
+  "planned_questions": 30,
+  "add_status": {
+    "ok": 2
+  },
+  "private_trace_mode": "0o600",
+  "process_ids_at_launch": {
+    "service": 36573,
+    "evaluator": 36574
+  },
+  "scope": "Live snapshot only; no final quality score. Fixed runtime2542f2a and clean source at launch. Original failed8ef8829 run is unchanged."
+}
