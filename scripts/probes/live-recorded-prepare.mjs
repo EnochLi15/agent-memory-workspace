@@ -20,7 +20,9 @@ if(process.argv[2]==='--snapshot'){
 }
 const specIndex=process.argv.indexOf('--spec'),specPath=specIndex>=0?process.argv[specIndex+1]:'configs/round2-quality.json';if(!specPath)throw Error('Missing --spec path');
 const dir=mkdtempSync(resolve('artifacts/round2-live-checkpoint-')),env=parseEnv(readFileSync('.env','utf8')),spec=read(specPath);
-const config={...configFromEnv({...env,...spec.defaults,...spec.profiles.facts.environment}),dataDir:join(dir,'unused')};process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');
+const profileIndex=process.argv.indexOf('--profile'),profile=profileIndex>=0?process.argv[profileIndex+1]:'facts';
+assert.ok(spec.profiles[profile],`Unknown profile: ${profile}`);
+const config={...configFromEnv({...env,...spec.defaults,...spec.profiles[profile].environment}),dataDir:join(dir,'unused')};process.env.MEMORY_MODEL_AUDIT=join(dir,'model-usage.jsonl');process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');
 const proposalIndex=process.argv.indexOf('--proposal-run');let injected,archivedInput,proposalProvenance;
 if(proposalIndex>=0){
  const parent=resolve(process.argv[proposalIndex+1]),r=read(join(parent,'report.json'));assert.equal(r.protocol,'archived-replacement-repair-v1');assert.equal(r.status,'returned');assert.equal(r.live_patch.compatible,true);

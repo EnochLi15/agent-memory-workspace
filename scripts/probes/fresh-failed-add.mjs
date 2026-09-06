@@ -8,7 +8,10 @@ const runtime=resolve(arg('runtime')),parent=resolve(arg('snapshot')),specFile=r
 const {buildServer}=await import(pathToFileURL(join(runtime,'dist/server.js'))),{configFromEnv}=await import(pathToFileURL(join(runtime,'dist/config.js'))),{TenantStore}=await import(pathToFileURL(join(runtime,'dist/storage.js'))),{addSchema}=await import(pathToFileURL(join(runtime,'dist/types.js')));
 const sha=x=>createHash('sha256').update(x).digest('hex'),dir=mkdtempSync(resolve('artifacts/round2-fresh-failed-add-'));
 const req=JSON.parse(readFileSync(join(parent,'request.json'),'utf8')),spec=JSON.parse(readFileSync(specFile,'utf8'));
-const config={...configFromEnv({...parseEnv(readFileSync('.env','utf8')),...spec.defaults,...spec.profiles?.sources?.environment}),port:0,dataDir:join(dir,'data')};
+const profile=arg('profile')??'sources',attempts=Number(arg('attempts')??1);
+if(!Number.isInteger(attempts)||attempts<1||attempts>3)throw Error('Attempts must be between 1 and 3');
+if(arg('profile')&&!spec.profiles?.[profile])throw Error('Unknown profile');
+const config={...configFromEnv({...parseEnv(readFileSync('.env','utf8')),...spec.defaults,...spec.profiles?.[profile]?.environment}),port:0,dataDir:join(dir,'data')};
 mkdirSync(join(config.dataDir,sha(req.user_id)),{recursive:true});copyFileSync(join(parent,'memory.sqlite'),join(config.dataDir,sha(req.user_id),'memory.sqlite'));
 process.env.MEMORY_MODEL_TRACE=join(dir,'private-model-trace.jsonl');process.env.MEMORY_MODEL_AUDIT=join(dir,'model-calls.jsonl');
 const {llmKey,...safeConfig}=config,sourceFiles=readdirSync(join(runtime,'src')).filter(f=>f.endsWith('.ts'));
@@ -18,8 +21,13 @@ const originalHash=sha(readFileSync(join(parent,'memory.sqlite'))),payloadHash=s
 let store=new TenantStore(config.dataDir,req.user_id);const before=store.snapshot(req.session_id);if(store.receipt(req.request_id,payloadHash))throw Error('Snapshot already has a receipt');store.close();
 const app=await buildServer(config),base=await app.listen({host:'127.0.0.1',port:0});
 try{
- const started=performance.now(),response=await fetch(base+'/add',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(req),signal:AbortSignal.timeout(config.addTimeout+1000)});
- report.http_status=response.status;report.http_elapsed_ms=performance.now()-started;report.response=await response.json();report.status=response.ok?'http_accepted':'http_rejected';
+ report.attempts=[];report.max_attempts=attempts;
+ for(let attempt=0;attempt<attempts;attempt++){
+  const started=performance.now(),response=await fetch(base+'/add',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(req),signal:AbortSignal.timeout(config.addTimeout+1000)});
+  report.http_status=response.status;report.http_elapsed_ms=performance.now()-started;report.response=await response.json();report.status=response.ok?'http_accepted':'http_rejected';
+  report.attempts.push({attempt,http_status:response.status,elapsed_ms:report.http_elapsed_ms,request_sha256:report.request_sha256,code:report.response?.error?.code??null});save();
+  if(response.status!==503||report.response?.error?.code!=='WRITE_CONTINUATION_PENDING')break;
+ }
 }catch(error){report.status='failed';report.error={code:error.code??null,message:error.message};}
 finally{
  await app.close();store=new TenantStore(config.dataDir,req.user_id);
