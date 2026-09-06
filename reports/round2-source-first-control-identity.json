@@ -1,0 +1,127 @@
+{
+  "protocol": "source-first-control-packet-identity-v1",
+  "scope": "Current service rebuilds packets for prior twelve real verifier calls; original responses replayed. No new calls, independent repeats or benchmark quality claim.",
+  "parent": "artifacts/round2-source-first-controls-MUmodR",
+  "checked": 12,
+  "identical": 12,
+  "results": [
+    {
+      "request_id": "incidental_reaction",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "b8ba3fb4abc4ae974fd07829590feb54d732d898a1320191ada5106ddad332ed",
+      "current_input_sha256": "b8ba3fb4abc4ae974fd07829590feb54d732d898a1320191ada5106ddad332ed",
+      "findings": []
+    },
+    {
+      "request_id": "mixed_preference_and_context",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "cf0142db6d9158cf14876bc1d74870fe9c455b6909e558597f6299c889304d83",
+      "current_input_sha256": "cf0142db6d9158cf14876bc1d74870fe9c455b6909e558597f6299c889304d83",
+      "findings": []
+    },
+    {
+      "request_id": "missing_durable_preference",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "dd932f5809eae5b5ae6b23aa35d44c2dfe021514249d449a5a7cd2db0f32f974",
+      "current_input_sha256": "dd932f5809eae5b5ae6b23aa35d44c2dfe021514249d449a5a7cd2db0f32f974",
+      "findings": [
+        "message 0: Durable browser preference requires a structured fact; no proposed fact or operation represents it.; missing statement: My favorite browser is Firefox."
+      ]
+    },
+    {
+      "request_id": "missing_future_plan",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "b587c784033cf540170dd03bbd0b7b3fb95efb4c115dba54f28459f4f6062b11",
+      "current_input_sha256": "b587c784033cf540170dd03bbd0b7b3fb95efb4c115dba54f28459f4f6062b11",
+      "findings": [
+        "message 0: Specific personal future plan to move to Oslo next June requires a structured tentative fact; raw source coverage alone is insufficient.; missing statement: I will definitely move to Oslo next June."
+      ]
+    },
+    {
+      "request_id": "missing_dated_personal_event",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "1194e576f0bcd4e95a3bb4bc1d92810818061fe3222c20c0c79243978ae217f7",
+      "current_input_sha256": "1194e576f0bcd4e95a3bb4bc1d92810818061fe3222c20c0c79243978ae217f7",
+      "findings": [
+        "message 0: User stated a specific personal employment event (started working at Northwind yesterday) that requires a structured fact; raw source coverage alone is insufficient.; missing statement: Yesterday I started working at Northwind."
+      ]
+    },
+    {
+      "request_id": "missing_relationship",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "0f2a885516723415ba677285b9117ecf36d45bae8b705fe6c6be4fe7fdaf737b",
+      "current_input_sha256": "0f2a885516723415ba677285b9117ecf36d45bae8b705fe6c6be4fe7fdaf737b",
+      "findings": [
+        "message 0: Missing structured fact that Maya is the user's new manager; this relationship/current state cannot be represented solely by raw source text.; missing statement: Maya is my new manager."
+      ]
+    },
+    {
+      "request_id": "unexecuted_forget",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "3c1e81b992284ae0e4627c2b74f762bdc7711f7d5df9dbf1ac7611c3d683aaf0",
+      "current_input_sha256": "3c1e81b992284ae0e4627c2b74f762bdc7711f7d5df9dbf1ac7611c3d683aaf0",
+      "findings": [
+        "message 0: Direct forget request requires a removal operation for the old door access code, but no operation is proposed.; missing statement: Forget my old door access code 9182."
+      ]
+    },
+    {
+      "request_id": "unsupported_medication_identity",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "b638453bb50bf0d00a9389821eba3b1f0dc2a4b194516ac5bc96671e64985280",
+      "current_input_sha256": "b638453bb50bf0d00a9389821eba3b1f0dc2a4b194516ac5bc96671e64985280",
+      "findings": [
+        "fact 0: The user stated the dose is still 50mg, but did not identify the medication as sertraline.",
+        "message 0: The current unchanged 50mg dosage is memorable, but the proposed fact adds an unsupported medication name rather than accurately storing the stated dose information.; missing statement: No dosage change yet, still 50mg."
+      ]
+    },
+    {
+      "request_id": "unsupported_person_identity",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "bbc7218c334e9f825ca5d19554e7b96a6d5ed739702deaf2150fe79ea9972ef8",
+      "current_input_sha256": "bbc7218c334e9f825ca5d19554e7b96a6d5ed739702deaf2150fe79ea9972ef8",
+      "findings": [
+        "fact 0: Source says the user's manager approved the vacation, but does not identify the manager as Maya.",
+        "message 0: Needs a supported fact that the user's manager approved the vacation without adding the unsupported name Maya.; missing statement: My manager approved my vacation."
+      ]
+    },
+    {
+      "request_id": "unsupported_company_identity",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "c8bb1e1fe60d0ed7aba9e052a9e6bb3c315cb91dbcaf794c827bf0c18ad740a5",
+      "current_input_sha256": "c8bb1e1fe60d0ed7aba9e052a9e6bb3c315cb91dbcaf794c827bf0c18ad740a5",
+      "findings": [
+        "fact 0: Source says the user started a new job yesterday but does not identify the employer as Northwind.",
+        "message 0: The memorable event that the user started a new job yesterday is not accurately represented; the proposed fact invents the employer Northwind.; missing statement: I started a new job yesterday."
+      ]
+    },
+    {
+      "request_id": "unsupported_product_identity",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "f7a6c7e3a60d1afcc359987211710810b11327bb11324c2586844ec1de5d8461",
+      "current_input_sha256": "f7a6c7e3a60d1afcc359987211710810b11327bb11324c2586844ec1de5d8461",
+      "findings": [
+        "fact 0: The user only said they bought a new laptop; they did not identify it as a MacBook Pro.",
+        "message 0: The purchase of a new laptop is memorable, but the proposed fact changes the laptop to an unsupported MacBook Pro.; missing statement: I bought a new laptop."
+      ]
+    },
+    {
+      "request_id": "explicit_medication_identity",
+      "system_identical": true,
+      "input_identical": true,
+      "original_input_sha256": "4640b3b05d200747e4e837819c39a7165934c4a253f8927c0a411951b61c0082",
+      "current_input_sha256": "4640b3b05d200747e4e837819c39a7165934c4a253f8927c0a411951b61c0082",
+      "findings": []
+    }
+  ]
+}

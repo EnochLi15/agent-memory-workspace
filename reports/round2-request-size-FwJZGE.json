@@ -1,0 +1,47 @@
+{
+  "protocol": "model-request-size-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-request-size-FwJZGE",
+  "scope": "Synthetic inert padding, fixed tiny JSON output, actual configured model transport. Not a benchmark or quality test.",
+  "started_at": "2026-09-06T10:11:25.826Z",
+  "service_source_sha256": "85ba87dd9e14c4ab0c9630e9c4e83ca28ce9ca41ea099e0eb90ba928c3bfd112",
+  "spec_sha256": "a070e42abff228a0d07e23dc3a99e241b5dd14c5233607a2a98b64d91fd5dede",
+  "cases": [
+    {
+      "padding_chars": 70000,
+      "wire_bytes": 70407,
+      "output": {
+        "ok": true
+      },
+      "status": "ok",
+      "elapsed_ms": 2737.724458
+    },
+    {
+      "padding_chars": 85000,
+      "wire_bytes": 85407,
+      "output": {
+        "ok": true
+      },
+      "status": "ok",
+      "elapsed_ms": 2437.150959
+    },
+    {
+      "padding_chars": 100000,
+      "wire_bytes": 100407,
+      "output": {
+        "ok": true
+      },
+      "status": "ok",
+      "elapsed_ms": 1829.9070419999998
+    },
+    {
+      "padding_chars": 115000,
+      "wire_bytes": 115407,
+      "output": {
+        "ok": true
+      },
+      "status": "ok",
+      "elapsed_ms": 2019.3454160000001
+    }
+  ],
+  "finished_at": "2026-09-06T10:11:34.858Z"
+}

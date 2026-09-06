@@ -1,7 +1,7 @@
 {
   "protocol": "round2-running-experiment-checkpoint-v1",
   "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
-  "observed_at": "2026-09-06T10:07:17.393427+00:00",
+  "observed_at": "2026-09-06T10:36:26.720238+00:00",
   "status": "running",
   "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
   "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
@@ -20,20 +20,20 @@
   "runner_session_id": 98822,
   "port": 8110,
   "source_snapshot": "artifacts/round2-runtime-91782c6",
-  "completed_ingest_attempts_at_observation": 94,
+  "completed_ingest_attempts_at_observation": 154,
   "latest_ingest": {
-    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-47:0",
-    "sample_id": "F07_trajectory_ops",
+    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-1:0",
+    "sample_id": "E10_remember",
     "status": "ok",
     "attempt": 0,
-    "elapsed_ms": 42255.54575000005,
-    "message_count": 14
+    "elapsed_ms": 18511.501999999862,
+    "message_count": 8
   },
-  "note": "Still running frozen91782c6. E10 and B05 terminated; remaining backgrounds continue. No full paired reuse or final score. Current6771326 routing code is separate; production8088 and historical331/1000 unchanged.",
+  "note": "Original frozen91782c6 run continues. E10, B05 and F07 trajectory have terminal write failures. Current f12b2b4 source-first changes are not in this service. Preserve full30 denominator; no partial reuse or new overall score.",
   "attempt_outcomes": {
-    "ok": 90,
-    "retrying": 2,
-    "failed": 2
+    "ok": 146,
+    "retrying": 5,
+    "failed": 3
   },
   "terminal_failed_requests": [
     {
@@ -43,6 +43,10 @@
     {
       "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:B05_forget:segment-18:0",
       "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}"
+    },
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-48:0",
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}"
     }
   ]
 }

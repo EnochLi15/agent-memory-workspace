@@ -1,0 +1,18 @@
+{
+  "protocol": "exposed-background-selection-v1",
+  "scope": "Unmodified complete B05 background selected from already exposed five-background development input. Not a new holdout and no question/answer edits.",
+  "parent": "eval/.data/memops-dev.json",
+  "parent_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+  "output": "eval/.data/memops-B05-source-first.json",
+  "output_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+  "sample_id": "B05_forget",
+  "question_count": 10,
+  "record_keys": [
+    "sample_id",
+    "group_id",
+    "benchmark",
+    "sessions",
+    "questions"
+  ],
+  "observed_at": "2026-09-06T10:34:42.731827+00:00"
+}
