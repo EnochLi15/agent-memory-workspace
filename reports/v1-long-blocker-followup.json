@@ -1,0 +1,52 @@
+{
+  "protocol": "v1-long-blocker-followup-v1",
+  "updated_at": "2026-09-06T20:34:32.997104+00:00",
+  "status": "in_progress",
+  "failed_campaign": "v1-long-33a9e05-01",
+  "original_service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+  "fix_service_commit": "57d8e65b89ccec41d0fa29d261a6512f2cb1864f",
+  "tests": {
+    "service": 361,
+    "passed": 361
+  },
+  "cases": [
+    {
+      "case": "locomo:conv-30:session-13:0",
+      "cause": "Global raw-catalog fingerprint reset all positive certificates and rejection locks after a local repair. Unchanged messages were repeatedly judged, introducing new missing items until the fixed repair budget was exhausted.",
+      "change": "Per-message exact raw-witness identity and checked slot remapping; changed source/request/model/target evidence still invalidates checks; unchanged failures stay locked.",
+      "evidence": "Before regression fails, after regression passes; saved first two verdicts produce a complete scoped certificate with zero new model calls. Fresh HTTP diagnostic accepted once at 82.7 seconds with a single revision/receipt.",
+      "status": "fix_and_isolated_http_passed_fresh_full_background_pending"
+    },
+    {
+      "case": "memops:D25_remember:segment-49:0",
+      "cause": "Model retained a concrete colliding value using a pronoun-only quote. Existing decoder correctly refused this unsupported independent-value witness.",
+      "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged.",
+      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running.",
+      "status": "capacity_fixed_regressions_passed_fresh_http_pending"
+    },
+    {
+      "case": "memops:D22_update:segment-7:0",
+      "cause": "Model returned false support booleans with reasons claiming the facts were actually supported; both repair responses were empty.",
+      "change": "Clarified executable boolean/reason consistency. Decoder still honors false and does not allow a favorable resample or reinterpret prose as approval.",
+      "evidence": "Regression verifies contradictory prose cannot clear an unchanged semantic rejection; full HTTP diagnostic pending.",
+      "status": "rejection_preserved_http_pending"
+    }
+  ],
+  "scope": "Original long pair remains frozen and incomplete; no scores replaced. Fixes are in an independent service worktree. Must pass the complete fixed backgrounds and updated deployment checks before formal release.",
+  "evidence_sha256": {
+    "artifacts/v1-long-33a9e05-01/conv30-session13-failure/fix-before-test.log": "8b8918f757fa0b29df5850806cf3e949743ee59a3fe1610c80cce14c24a8079c",
+    "artifacts/v1-long-33a9e05-01/conv30-session13-failure/fix-after-test.log": "d39b0ad3923a12d64447bb42cf4f8bf98d8c45308384aba927c1e471aa750735",
+    "artifacts/v1-long-33a9e05-01/conv30-session13-failure/saved-scope-replay.json": "3e6b67723c563679fed75c54073152bdc6eab4a1193a1891ae29c44e3ee40da1",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/binding-policy-check.json": "52c069a9b6fe571d69cd37537ab09f482fb4e59885e0a20135592e9dfab6e04d",
+    "artifacts/v1-long-33a9e05-01/d22-segment7-failure/fix-full-test.log": "6815927b911fad9f689357da0f749fe6f36ab3dd7433d7bd178e85e91ab151dd",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-diagnosis.json": "a2d86c6ce8821100fda89b3ea49a7b75a38a170ecf28c177b7ca12dd03798a4f",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-fixed-work-check.json": "aae1e44de0f0fe4d1fe8b8eaeb2582d76026f0c77fcb29041a45487c211ba762",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-before-test.log": "03ffa5f6b6eae932dc2411cd34ced9834bb748e331905594fa3cc59816092b61",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-after-test.log": "d428c66a768b913b7055718b3c5f01a7dd9b98ba2555a3d465c1a1ce42c1e0fb",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/capacity-full-test.log": "44d73a70651c8c5f598b3ffb606e4a83ca709ce911cb1a210aaaaef647f063e6"
+  },
+  "diagnostic_reports": [
+    "reports/round2-fresh-failed-add-PMc5CM.json",
+    "reports/round2-fresh-failed-add-UsG115.json"
+  ]
+}
