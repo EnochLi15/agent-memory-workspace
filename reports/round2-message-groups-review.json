@@ -1,0 +1,352 @@
+{
+  "protocol": "grouped-extraction-development-review-v1",
+  "runs": [
+    {
+      "run": "artifacts/round2-live-checkpoint-aTCuQu",
+      "report_sha256": "eeb8e1747a47ab1aedbd4bf8eeeea1836beb3127ac32b6239595a144f081a267",
+      "sample": "F07_update",
+      "snapshot_sha256": "af0eb87c879580a4170346406891761430429d70a973c72b46497e46e79a864e",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "status": "prepared",
+      "error": null,
+      "elapsed_ms": 65471.691375,
+      "fact_count": 7,
+      "generation_calls": 6,
+      "recorded_proposal_injections": 0,
+      "generation_stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 8395.589667,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 17078.71475,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 5829.029291999999,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 8008.388250000004,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 15358.124000000003,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 10336.090292,
+          "error_category": null
+        }
+      ],
+      "source_sha256": {
+        "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+        "config.ts": "2fd7a6af261648fef7a04d58238121c9fa77281d3c69eed6899a2f5fd2bd88f7",
+        "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+        "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+        "extraction.ts": "f2153008296292d682d1b8630d5593cc46b6151e6bf405f824e09796b690cd4f",
+        "models.ts": "1ef400ab2e577adf32fd7ea901ecb1e843a7a9339023680085ec8dae8ab226e0",
+        "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+        "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+        "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+        "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+        "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+        "storage.ts": "70d390822e485b0fd7107d62937bcefc6d4e57db998de7e2e616f5324bdf461b",
+        "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+        "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+        "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+        "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+        "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+      }
+    },
+    {
+      "run": "artifacts/round2-live-checkpoint-6hL00I",
+      "report_sha256": "6b97da6fe1dcd8531eb3e6a29e9a34c2c99e94392688d893e27b943173004b69",
+      "sample": "B05_forget",
+      "snapshot_sha256": "11dafb35ab8372d6bad7bf39cffb1f733c6b5db4726d9897b72976819a196863",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "status": "failed",
+      "error": {
+        "code": "OPERATION_TARGET",
+        "message": "Unresolved operation subject, property or scope after repair"
+      },
+      "elapsed_ms": 65195.366166,
+      "fact_count": null,
+      "generation_calls": 4,
+      "recorded_proposal_injections": 0,
+      "generation_stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 28362.805792,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 9476.560834000004,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 8972.713750000003,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "error",
+          "elapsed_ms": 5538.035458999999,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 12729.540833,
+          "error_category": null
+        }
+      ],
+      "source_sha256": {
+        "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+        "config.ts": "2fd7a6af261648fef7a04d58238121c9fa77281d3c69eed6899a2f5fd2bd88f7",
+        "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+        "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+        "extraction.ts": "f2153008296292d682d1b8630d5593cc46b6151e6bf405f824e09796b690cd4f",
+        "models.ts": "1ef400ab2e577adf32fd7ea901ecb1e843a7a9339023680085ec8dae8ab226e0",
+        "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+        "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+        "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+        "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+        "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+        "storage.ts": "70d390822e485b0fd7107d62937bcefc6d4e57db998de7e2e616f5324bdf461b",
+        "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+        "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+        "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+        "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+        "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+      }
+    },
+    {
+      "run": "artifacts/round2-live-checkpoint-wMyByE",
+      "report_sha256": "dd8ef36748a6272bf45d1ae5da5f68c71d29ce840d421bf7ad7bad7dcd0c30a1",
+      "sample": "F07_update",
+      "snapshot_sha256": "af0eb87c879580a4170346406891761430429d70a973c72b46497e46e79a864e",
+      "stage_models": {
+        "extraction": "gpt-5.5",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "status": "prepared",
+      "error": null,
+      "elapsed_ms": 35014.923667,
+      "fact_count": 13,
+      "generation_calls": 2,
+      "recorded_proposal_injections": 0,
+      "generation_stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 23961.226292,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 10555.905833999997,
+          "error_category": null
+        }
+      ],
+      "source_sha256": {
+        "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+        "config.ts": "2fd7a6af261648fef7a04d58238121c9fa77281d3c69eed6899a2f5fd2bd88f7",
+        "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+        "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+        "extraction.ts": "9d249cb42d08f83c1ebe48df584fe5f1f28f0ba4b4d03c49b8bb07345faed67a",
+        "model-failure.ts": "5206dfa527f36d1f2863607a8a66403d8ec4e4532c7ad06ab1970f43a6987437",
+        "models.ts": "0ebfb6ea661518d5d19b2a99cdb58f81083550d0d952ab2a835ce6d0e1e7122c",
+        "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+        "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+        "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+        "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+        "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+        "storage.ts": "70d390822e485b0fd7107d62937bcefc6d4e57db998de7e2e616f5324bdf461b",
+        "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+        "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+        "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+        "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+        "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+      }
+    },
+    {
+      "run": "artifacts/round2-live-checkpoint-iZt2uZ",
+      "report_sha256": "81190b3631e2e2a8a4cba7b10b40e3248c1335d1a93517a5ddd93f673280f083",
+      "sample": "B05_forget",
+      "snapshot_sha256": "11dafb35ab8372d6bad7bf39cffb1f733c6b5db4726d9897b72976819a196863",
+      "stage_models": {
+        "extraction": "gpt-5.5",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "status": "failed",
+      "error": {
+        "code": "VERIFICATION_UNAVAILABLE",
+        "message": "Could not complete evidence verification within the request budget"
+      },
+      "elapsed_ms": 90008.87879199999,
+      "fact_count": null,
+      "generation_calls": 3,
+      "recorded_proposal_injections": 0,
+      "generation_stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 64341.056583,
+          "error_category": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 9025.062667000006,
+          "error_category": null
+        },
+        {
+          "purpose": "verification",
+          "outcome": "error",
+          "elapsed_ms": 16540.51625,
+          "error_category": "incomplete_output"
+        }
+      ],
+      "source_sha256": {
+        "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+        "config.ts": "2fd7a6af261648fef7a04d58238121c9fa77281d3c69eed6899a2f5fd2bd88f7",
+        "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+        "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+        "extraction.ts": "9d249cb42d08f83c1ebe48df584fe5f1f28f0ba4b4d03c49b8bb07345faed67a",
+        "model-failure.ts": "5206dfa527f36d1f2863607a8a66403d8ec4e4532c7ad06ab1970f43a6987437",
+        "models.ts": "0ebfb6ea661518d5d19b2a99cdb58f81083550d0d952ab2a835ce6d0e1e7122c",
+        "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+        "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+        "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+        "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+        "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+        "storage.ts": "70d390822e485b0fd7107d62937bcefc6d4e57db998de7e2e616f5324bdf461b",
+        "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+        "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+        "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+        "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+        "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+      }
+    },
+    {
+      "run": "artifacts/round2-live-checkpoint-WJRaIq",
+      "report_sha256": "e0879a0a6b72ea15c4603ca5da7d6ae28d370e532e93add9abeba8622c852421",
+      "sample": "E10_remember",
+      "snapshot_sha256": "1d76201b16465a8420f6038b845fcf9c2d093f934804920dedc3cd2e599bb602",
+      "stage_models": {
+        "extraction": "gpt-5.5",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "status": "prepared",
+      "elapsed_ms": 21708.014041,
+      "fact_count": 6,
+      "generation_calls": 2,
+      "recorded_proposal_injections": 0,
+      "scope": "Fresh extraction, repair, verification and local embedding for the single failed chunk on the exact saved preceding snapshot. No HTTP add or commit; not a fresh full-prefix run or benchmark score."
+    }
+  ],
+  "literal_source_review": {
+    "prepared_sha256": "e257488724d1619b069c9afc801fcb70f5387804bb3db8c5c86fe60434ca6058",
+    "fact_index": 5,
+    "content": "User wants to offer users relevant promotions based on previous purchases and interests.",
+    "source_quotes": [
+      "offer them relevant promotions"
+    ],
+    "pass": false,
+    "finding": "The stored claim includes previous purchases and interests, but its sole declared quote only says offer them relevant promotions. The full original message supports the extra qualifiers; the selected short witness alone does not. Verifier accepted it, so structural traversal and successful verification are not proof of complete claim-to-quote grounding."
+  },
+  "transaction_probes": [
+    {
+      "run": "artifacts/round2-checkpoint-transaction-z0QopA",
+      "report_sha256": "3ce363e872a26dae5743463884cf287578b23333e1fbf5ae2bd207d57b9d5034"
+    },
+    {
+      "run": "artifacts/round2-checkpoint-transaction-bGp7bG",
+      "report_sha256": "acfaad9eb51908bb6675f5e1bf88440ac3eeace74d820cb42de56fedf75cfdf3"
+    },
+    {
+      "run": "artifacts/round2-checkpoint-transaction-UQB5xs",
+      "report_sha256": "caae976577ae011128b1b696a45bb85f68404d254ad68677d70128191ed3152a"
+    }
+  ],
+  "limits": [
+    "All examples were previously exposed failed chunks; preceding histories were captured from the old runtime rather than freshly re-ingested.",
+    "Only one attempt per format/model/case at this stage. There is no heldout, three-repeat or complete benchmark result.",
+    "The mini and55 runs also differ in error telemetry and error wording source files; semantic prompts/decoders match. Concurrent diagnostic load and model variation prevent attributing latency changes solely to model routing.",
+    "Mini grouped F07 needed two repairs and still omitted the explicit test-before-rollout detail from its facts.55 included it, but its promotion witness omitted qualifiers.",
+    "B05 remains failed in both grouped variants: mini unresolved replacement binding;55 exhausted the model deadline during verification after64.3s extraction and9.0s repair.",
+    "The initial error classifier recorded incomplete_output for the final B05 deadline-ending stream; a subsequent regression and priority fix now distinguish signal abortion before stream completion classification. Original recorded rows are preserved."
+  ],
+  "original_empty_output_replay": {
+    "run": "artifacts/round2-failed-generation-0xF37e",
+    "report_sha256": "e20cd7633655c547d8ff29043a393edb83585fa4d9022ff0fdae5332c13bb194",
+    "status": "returned",
+    "elapsed_ms": 6050.772875,
+    "scope": "Exact original failed repair input returned on one new call. This does not establish the old error cause or recover an original benchmark result."
+  },
+  "service_commit": "9784668",
+  "tests": {
+    "report": "reports/round2-message-groups-audit-service-tests.txt",
+    "sha256": "75e67415ec43db1d97d40a7d1884fee3b269d8b6d7e065152d2fff5e5f3836bc",
+    "passed": 206,
+    "total": 206
+  }
+}

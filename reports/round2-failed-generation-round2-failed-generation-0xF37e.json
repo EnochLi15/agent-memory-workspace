@@ -1,0 +1,68 @@
+{
+  "protocol": "failed-generation-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failed-generation-0xF37e",
+  "original_trace_id": "7c13de3c-319f-4f01-8607-0efdc64f7a1b",
+  "parent_trace_sha256": "8900d9f13f547290be228da3b0d279aba14f404982743dc86e08292187ae9883",
+  "input_sha256": "614b2e39fcf0f4d5072f14c7f2b438d0e5f0d5ec8f4852c0fd96292534938d68",
+  "system_sha256": "ca66fb889a2ba843962ec8fec868d8f4c8dcfe3b503c73e0dfea06bbe79822df",
+  "purpose": "repair",
+  "model": "gpt-5.5",
+  "spec_sha256": "9af02b34307eca11d7e5277ac2bd90b69fe916841488ddd21d06d88ba290aa33",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "2fd7a6af261648fef7a04d58238121c9fa77281d3c69eed6899a2f5fd2bd88f7",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "9d249cb42d08f83c1ebe48df584fe5f1f28f0ba4b4d03c49b8bb07345faed67a",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "0ebfb6ea661518d5d19b2a99cdb58f81083550d0d952ab2a835ce6d0e1e7122c",
+    "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "storage.ts": "70d390822e485b0fd7107d62937bcefc6d4e57db998de7e2e616f5324bdf461b",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "started_at": "2026-09-06T08:27:07.737Z",
+  "scope": "One exact original model input/system replay after original attempts returned no semantic output. At most two provider attempts within30seconds; no extraction, verification, commit or benchmark result is replaced. New telemetry cannot retroactively establish the original failure cause.",
+  "status": "returned",
+  "output_sha256": "07b7f4a5aa21e711b36da6e20ef277a4807e4a43fa666bd7d38f6e46d0e06538",
+  "elapsed_ms": 6050.772875000001,
+  "attempts": [
+    {
+      "at": "2026-09-06T08:27:13.788Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "56247aab-e695-4c72-8bfb-d58547797d5d",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 6049.104083,
+      "usage": {
+        "prompt_tokens": 13563,
+        "completion_tokens": 228,
+        "total_tokens": 13791,
+        "prompt_tokens_details": {
+          "cached_tokens": 13056
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 91
+        }
+      },
+      "output_chars": 581
+    }
+  ],
+  "finished_at": "2026-09-06T08:27:13.789Z"
+}
