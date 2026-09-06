@@ -650,3 +650,11 @@ E0的199条独立人工盲审材料已整理为可读Markdown和待填JSONL，�
 - 最后E10 remember第38段的二次修复断连现场已保存。原分数、全部失败和数据目录保留。
 - 原进程退出后主service快进bfec674，主eval快进11da2a6并构建。评测候选24项Node/17项Python测试通过，补足状态覆盖及按背景重采样；独立人工标签仍为0。
 - 准备全新resilient配置/namespace重新灌入，禁止复用旧失败灌入。详见[归档及合入](23-冻结回归归档与候选合入.md)。
+
+
+## 新冻结回归 round2-resilient-bfec674-dev-r1
+
+- 已从新目录启动sources配置，port8116。service bfec674、eval 11da2a6、workspace 48f12f0启动时均干净。LoCoMo30题/2对话、MemOps30题/5变体/3背景，modelTransportAttempts显式为3。
+- runner会话87195；service81978、LoCoMo81979、MemOps81980。须通过实际进程或句柄重新确认运行状态，不凭此静态记录判断。
+- 服务、评测源码及构建产物在运行期间冻结，本轮不并行新增真实模型诊断。只在独立副本做不会改动这次运行身份的工作。
+- [启动证据](../reports/round2-resilient-bfec674-launch.json)。新回归尚未完成，旧60题失败不被替换；所有完整验收门槛继续开放。
