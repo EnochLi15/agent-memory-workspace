@@ -1,0 +1,12 @@
+{
+  "protocol": "exposed-development-background-selection-v1",
+  "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.data/memops-dev.json",
+  "source_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+  "output": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-operations-E10-data.json",
+  "output_sha256": "5f31377c0def4df67517c11c89c532fdd040fb7bc6fe0b21427c7d333058eb46",
+  "sample_ids": [
+    "E10_reflect"
+  ],
+  "sessions": 50,
+  "scope": "One entire previously exposed development background with original sessions/questions unchanged. Not a new holdout or the full five-background development set."
+}

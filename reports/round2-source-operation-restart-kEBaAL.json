@@ -1,0 +1,43 @@
+{
+  "protocol": "source-operation-restart-idempotence-v1",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-operation-http-iBSBPj",
+  "parent_report_sha256": "805dea83983d7f36e0880914f455facbb3babd892c0d01cecfac1bb6be34ae48",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "bafb756a7ee12a6c02ca7170d4f2f64326ecc4f3f67c1de42b4ee12520c3d59e",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "9df0a7cdbab055a05289020115db8825721a26c1391f470329d30539cd946a94",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "c8c2f974d8954329370e805d04c1d56219a021b78d5d0bff254cb935c885ae57",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operations.ts": "36eeb70eb6c1da69da7b713835ed03fd625789ffbfa8f8e70ac26575c613fe1d",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "37de7c1738e98518ba22a809fe06f75a176b5b821a715f6d2d3978cdac831f28",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "ca2301f0243177522559063216a3567a6c5053ddc1dc115c2b7892a8a3796ce3",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "scope": "New real HTTP server on the successful v6 lifecycle database. Exact retry must return the original receipt without mutation; fresh local-embedding search must preserve true facts and omit rejected details. Not a benchmark or independent ingestion repeat.",
+  "checks": [
+    "identical_receipt",
+    "database_unchanged",
+    "true_routine_and_browser_retrieved",
+    "rejected_details_absent"
+  ],
+  "status": "passed",
+  "retry_elapsed_ms": 24.775333999999987
+}
