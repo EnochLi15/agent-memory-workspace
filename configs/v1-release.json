@@ -4,7 +4,7 @@
   "status": "draft_pending_gates",
   "human_labels": 0,
   "commits": {
-    "service": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+    "service": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
     "eval": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef"
   },
   "gates": {
@@ -16,7 +16,7 @@
       "reports/v1-enhanced-backup-restore.json",
       "reports/v1-compatible-rollback.json"
     ],
-    "small_pair": "reports/v1-small-closed-loop.json",
+    "small_pair": "reports/v1-small-7a50d22-results.json",
     "long_pair": "reports/v1-long-closed-loop.json",
     "full_audit": "reports/v1-full-completed-run-audit.json",
     "full_report": "reports/v1-full-results.json"
@@ -24,8 +24,8 @@
   "deployment_log_directory": "artifacts/v1-clean-clone-01",
   "long_dataset_manifest": "configs/v1-fixed-long-regression.json",
   "primary_runs": {
-    "locomo": "v1-full-33a9e05-01-candidate-locomo",
-    "memops": "v1-full-33a9e05-01-candidate-memops"
+    "locomo": "v1-full-7a50d22-01-candidate-locomo",
+    "memops": "v1-full-7a50d22-01-candidate-memops"
   },
   "runtime_bundles": "reports/v1-runtime-bundles.json",
   "service_image": "comp-agent-memory-service:v0.1.0",
@@ -33,7 +33,7 @@
   "required_documents": [
     "README.md",
     "docs/DEPLOYMENT.md",
-    "docs/29-V1交付收敛计划.md",
+    "docs/29-V1\u4ea4\u4ed8\u6536\u655b\u8ba1\u5212.md",
     "reports/V1-DELIVERY-REPORT.md",
     "service/README.md",
     "service/UPSTREAM.md",
