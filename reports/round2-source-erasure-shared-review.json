@@ -1,0 +1,30 @@
+{
+  "protocol": "joint-source-shared-review-v2",
+  "service_commit": "87d67b1",
+  "tests": {
+    "service": 297,
+    "targeted": 28
+  },
+  "capacity": "reports/round2-source-erasure-shared-capacity.json",
+  "real_commit": {
+    "report": "reports/round2-source-erasure-grouped-commit-1SiBZ4.json",
+    "checks_passed": 5,
+    "saved_exact_prefix_packets": 7,
+    "successful_source_calls": 2,
+    "failed_source_attempts": 1,
+    "source_input_tokens": 26447,
+    "source_output_tokens": 2424,
+    "total_wall_ms": 39622,
+    "scope": "Fresh source-stage calls with saved exact prefix; private copied-v10 commit. Not whole-request latency or benchmark quality."
+  },
+  "http": {
+    "report": "reports/round2-source-erasure-grouped-http-HLF4mn.json",
+    "checks_passed": 7,
+    "seed_ms": 11123.684125,
+    "delete_ms": 41902.492959
+  },
+  "limitations": [
+    "Single controls do not establish stable latency improvement; grouped-v1 control was faster with larger input.",
+    "E0 human calibration, complete quality comparisons, new-background validation and deployment remain open."
+  ]
+}

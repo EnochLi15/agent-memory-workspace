@@ -1,0 +1,19 @@
+{
+  "protocol": "joint-source-shared-capacity-v2",
+  "original_candidates": 74,
+  "groups": 51,
+  "batches": [
+    {
+      "groups": 42,
+      "chars": 62311
+    },
+    {
+      "groups": 9,
+      "chars": 26830
+    }
+  ],
+  "complete_original_membership": true,
+  "old_total_chars": 252341,
+  "new_total_chars": 89141,
+  "scope": "Lossless reference tables only. No model correctness or stable latency claim."
+}

@@ -1,0 +1,125 @@
+{
+  "protocol": "round2-joint-source-quality-ladder-v1",
+  "profiles": [
+    {
+      "name": "sources",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "rerank",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "coverage",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "events",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "conditional",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "sources-r2",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "rerank-r2",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "coverage-r2",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "events-r2",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "conditional-r2",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "sources-r3",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "rerank-r3",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "coverage-r3",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "events-r3",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    },
+    {
+      "name": "conditional-r3",
+      "valid": true,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "sourceFirst": true,
+      "sourceErasureGrouped": true
+    }
+  ]
+}
