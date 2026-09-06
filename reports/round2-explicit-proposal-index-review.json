@@ -1,0 +1,23 @@
+{
+  "protocol": "round2-explicit-proposal-index-review-v1",
+  "candidate_service_commit": "8cb099f",
+  "candidate_branch": "improvement/write-continuation",
+  "frozen_service_commit": "87d67b1",
+  "tests": {
+    "targeted_passed": 54,
+    "service_passed": 305
+  },
+  "saved_packet_control": "reports/round2-proposal-index-control-Uh4Bb7.json",
+  "model_calls_new": 0,
+  "status": "candidate_implemented_real_model_confirmation_pending",
+  "limitations": [
+    "Input labels reduce counting ambiguity; do not mechanically validate semantic index/reason agreement.",
+    "Original saved verifier rejection was not reinterpreted or remapped.",
+    "Default saved-prefix control intentionally stops before a new verifier call; its VERIFICATION_UNAVAILABLE is a wrapper of this intentional stop, not a gateway outage.",
+    "Fresh model repair, whole-request ingestion and full benchmark gates remain required."
+  ],
+  "next_controls": [
+    "node scripts/probes/proposal-index-control.mjs --live",
+    "node scripts/probes/shard-array-repair.mjs --live"
+  ]
+}

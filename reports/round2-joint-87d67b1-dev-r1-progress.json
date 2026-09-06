@@ -1,6 +1,6 @@
 {
   "protocol": "round2-joint-full-regression-progress-v1",
-  "observed_at": "2026-09-06T11:53:52.941981+00:00",
+  "observed_at": "2026-09-06T12:03:34.477505+00:00",
   "campaign": "round2-joint-87d67b1-dev-r1",
   "service_runtime_snapshot": "artifacts/round2-runtime-87d67b1",
   "processes": {
@@ -37,9 +37,9 @@
         },
         "dataset_sha256": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07"
       },
-      "ingest_attempts": 23,
-      "successful_requests": 21,
-      "failed_attempts": 2,
+      "ingest_attempts": 34,
+      "successful_requests": 31,
+      "failed_attempts": 3,
       "latest_failed_requests": [
         {
           "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-10:0",
@@ -49,7 +49,7 @@
           "elapsed_ms": 82725.755
         }
       ],
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-48:session-4:0",
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-48:session-10:0",
       "question_statuses": {
         "service_error": 27
       },
@@ -82,8 +82,8 @@
         },
         "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b"
       },
-      "ingest_attempts": 57,
-      "successful_requests": 55,
+      "ingest_attempts": 82,
+      "successful_requests": 80,
       "failed_attempts": 2,
       "latest_failed_requests": [
         {
@@ -101,7 +101,7 @@
           "elapsed_ms": 36703.939167000004
         }
       ],
-      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:F07_trajectory_ops:segment-18:0",
+      "last_observed_request": "round2-joint-87d67b1-dev-r1-sources:memops:F07_trajectory_ops:segment-43:0",
       "question_statuses": {
         "service_error": 16
       },
