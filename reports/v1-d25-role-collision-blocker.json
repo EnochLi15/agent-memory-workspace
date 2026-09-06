@@ -1,0 +1,96 @@
+{
+  "protocol": "v1-d25-role-collision-blocker-v1",
+  "checked_at": "2026-09-06T22:38:37.885335+00:00",
+  "service_commit": "12b0d4fbd00882477f957ad0849403f4cdb78896",
+  "request_id": "v1-long-7a50d22-01-candidate:memops:D25_remember:segment-49:0:diagnostic-12b0d4f-01",
+  "diagnostic_directory": "artifacts/round2-fresh-failed-add-rvHxgx",
+  "http_status": 503,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 25497.378667,
+      "request_sha256": "ee8c188c2695fe34f8756571078590387f9a5e8ae0e81a5496b1b7e1a6f2cbae",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 89403.594125,
+      "request_sha256": "ee8c188c2695fe34f8756571078590387f9a5e8ae0e81a5496b1b7e1a6f2cbae",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 40765.04220899999,
+      "request_sha256": "ee8c188c2695fe34f8756571078590387f9a5e8ae0e81a5496b1b7e1a6f2cbae",
+      "code": "OPERATION_TARGET"
+    }
+  ],
+  "terminal_error": {
+    "code": "OPERATION_TARGET",
+    "message": "Erasure scope exceeds 64 ambiguous evidence pairs"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "passed": false,
+  "fresh_extraction_and_semantic_verification_completed": true,
+  "erasure_scope_model_not_invoked": true,
+  "capacity_inspection": {
+    "protocol": "v1-erasure-capacity-inspection-v1",
+    "source_commit": "12b0d4fbd00882477f957ad0849403f4cdb78896",
+    "candidate_pairs": 393,
+    "unique_facts": 367,
+    "unique_boundaries": 7,
+    "automatic": 0,
+    "content_collision_pairs": 386,
+    "quote_only_collision_pairs": 7,
+    "pairs_by_boundary": {
+      "[\"Priya\",\"restaurant_visit_companion\",\"Koku Kitchen\",\"user\"]": 363,
+      "[\"Priya\",\"plan_to_return\",\"\",\"Koku Kitchen\"]": 22,
+      "[\"Priya\",\"restaurant_visit_frequency\",\"go-to Thai place\",\"three times a week\"]": 3,
+      "[\"Priya\",\"ordered_food\",\"Koku Kitchen\",\"spicy chicken katsu curry with extra fukujinzuke\"]": 2,
+      "[\"Priya\",\"relationship_to_user\",\"\",\"coworker\"]": 1,
+      "[\"Priya\",\"food_preference\",\"now\",\"Carolina Reaper hot sauces\"]": 1,
+      "[\"Priya\",\"subscription\",\"\",\"new hot sauce subscription\"]": 1
+    },
+    "pairs_by_fact_subject": {
+      "user": 388,
+      "Marcus": 5
+    },
+    "approx_candidate_json_characters": 756155,
+    "scope": "Non-writing diagnostic of exact approved proposal content and source quotes plus read-only pre-failure facts. Only copied guard disabled to count rejected work. No production limit change, model call, HTTP write, acceptance or score claim.",
+    "input_sha256": {
+      "trace": "aeb741d9b377499b50515d30572412adf2c45601112c36f1df17b665861766cd",
+      "snapshot": "5fa95ec8eb1126bbb3a6f0ba1db34c18dcb5922a156e31acdf502b6085a7208f",
+      "script": "32bef09593c40869e0f180abeba73f1e92ca1d8ad9453d6e51e594ad1d26608b"
+    }
+  },
+  "role_label_inspection": {
+    "role_value_pairs": 363,
+    "groups": {
+      "('other', 'no_entity_or_scope_overlap')": 37,
+      "('synthetic_prefix_only', 'no_entity_or_scope_overlap')": 317,
+      "('synthetic_prefix_only', 'same_entity_or_scope')": 9
+    },
+    "scope": "Descriptive counting only; no automatic retention rule, deletion behavior or production guard changed."
+  },
+  "next_action": "Minimize role-label collision between erased relationship value user and normalized User/The user subject in unrelated fact content. Preserve genuine same-value aliases, inverse relations, shared-source and dependency erasure; prove those boundaries before changing candidate discovery. Do not simply increase the 64-pair guard or retry this same version.",
+  "scope": "One explicitly isolated pre-failure-snapshot HTTP diagnostic after substantive code fixes, under the unchanged three-attempt protocol. Not full history ingestion or a score. Production guard remains intact; no state committed.",
+  "evidence_sha256": {
+    "artifacts/round2-fresh-failed-add-rvHxgx/report.json": "298a16532073b24c728926ee669cfb181bdeb748aa90ac1b6abfd7d2046024e0",
+    "artifacts/v1-d25-12b0d4f-01/erasure-capacity-inspection.json": "6dc29276a88d1fcebc25a5294bc0224755aa8495c3003c810c147c55484343d1",
+    "artifacts/v1-d25-12b0d4f-01/role-label-collision-inspection.json": "1c02418761da6f8739712ffd4f9bd52c2722e29c540cd583ac59adbbdc6adec4",
+    "artifacts/v1-d25-12b0d4f-01/provenance.json": "283e90a6b65dcb608b4a668e555c716a0e1610556758af9b2b7984ff0c770676"
+  }
+}

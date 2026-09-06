@@ -7,7 +7,7 @@
   "eval_node_tests": 24,
   "eval_python_tests": 17,
   "merged": true,
-  "fresh_http_pending": true,
+  "fresh_http_pending": false,
   "full_background_pending": true,
   "changes": [
     {
@@ -94,5 +94,7 @@
       }
     }
   ],
-  "scope": "Code and local recorded-cause evidence, not successful fresh full ingestion or formal V1 acceptance. Original failures and all scores retained."
+  "scope": "Code and local recorded-cause evidence, not successful fresh full ingestion or formal V1 acceptance. Original failures and all scores retained.",
+  "fresh_http_passed": false,
+  "fresh_http_result": "reports/v1-d25-role-collision-blocker.json"
 }
