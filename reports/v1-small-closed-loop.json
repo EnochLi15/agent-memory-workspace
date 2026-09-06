@@ -1,0 +1,238 @@
+{
+  "protocol": "v1-small-closed-loop-v1",
+  "checked_at": "2026-09-06T19:34:20.437902+00:00",
+  "campaign": "v1-small-33a9e05-01",
+  "passed": true,
+  "scope": "One exposed synthetic two-group ten-question pair; not full accuracy or stable gain. Same final evidence cap/Answer/Judge/embedding, not equal total compute. Independent assistant review, human labels zero.",
+  "commits": {
+    "workspace": "e3ece2c56db57990bb19a8bf565cd3ed8ee62865",
+    "service": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+    "eval": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef"
+  },
+  "runs": {
+    "raw": {
+      "planned": 10,
+      "correct": 9,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 3,
+      "max_estimated_tokens": 500,
+      "mean_estimated_tokens": 478,
+      "add_mean_ms": 115.71644179999946,
+      "search_mean_ms": 91.1949416000004,
+      "service_generation_attempts": 0,
+      "generation_purposes": {},
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "erased_code_returned_qids": [
+        "small-city",
+        "small-manager",
+        "small-work-browser",
+        "small-friend-browser",
+        "small-forgotten-code"
+      ],
+      "artifact_sha256": {
+        "metrics.json": "77df50980c498de2a01971742d830cd0d8cf77cdc1e8678a51971898785cf7e5",
+        "predictions.jsonl": "015d5d234cc58eb37c64d8a9d9f75cb0c682cfa6a440a5f912ffc78d2110f7cf",
+        "judgments.jsonl": "18e81f054c87dd47c80cbd67558e4b3eb70fae787a918b2afd358d81d593e905",
+        "report.md": "b0f4918157d9985d92e298ff3bbe76fc272270f64597332e4af0abe387ea5ade",
+        "ingest.jsonl": "52219505cf38394f39938e9b1ed1be36554112dc24b5708414a6dad06767c9f8",
+        "requests.jsonl": "cff05a22ffb0dc635e321a68f1c2c342029d6795e64c22be7a28a9042f984bfe",
+        "manifest.json": "ba50125e08b5960008dd017e3391437e82137c1818981245fbf7ecef3c577772",
+        "retrievals.jsonl": "a9d06e86b2ea95ef4c6caec7f22c3be4bf357e2e72d72ad1661e93cd3d33c324"
+      },
+      "no_degraded_write": true
+    },
+    "candidate": {
+      "planned": 10,
+      "correct": 10,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 13,
+      "max_estimated_tokens": 978,
+      "mean_estimated_tokens": 758.2,
+      "add_mean_ms": 17744.588200000002,
+      "search_mean_ms": 87.14722499999989,
+      "service_generation_attempts": 13,
+      "generation_purposes": {
+        "extraction": 5,
+        "verification": 6,
+        "source_erasure": 1,
+        "repair": 1
+      },
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 65370,
+        "completion_tokens": 3065,
+        "total_tokens": 68435
+      },
+      "erased_code_returned_qids": [],
+      "artifact_sha256": {
+        "metrics.json": "c560fe1a197b0280dc9302bc7e28186e0dd3a2209df77102521a96dfc96afd18",
+        "predictions.jsonl": "5bde2982bd48db068fd025ffe520710d149594aa8ffbf050029b4adc4b9d0f1b",
+        "judgments.jsonl": "75de2e62b54008d741f6529587693f2faa6c1dc79d370f95829bb64592ae7aa8",
+        "report.md": "ca5006cfeacda05357948f6402f554f67d73d45374e5a224734fcd52a8f9a2f5",
+        "ingest.jsonl": "501be97b8138e6d77c8654bba5c197d88fa81584c8a5a92b59e32e342e903073",
+        "requests.jsonl": "188521352809adb6d4e6a20156baf0a243c3e48319eada2160853e84b3601435",
+        "manifest.json": "6151b26ac85e5ef0278a3c2436c6614e4b19e1daf03898d7f50dad79ebf2a089",
+        "retrievals.jsonl": "7103125446027692530e572d2ab1c4793ece0073758d0e1c2712c807fbed0903"
+      },
+      "no_degraded_write": true
+    }
+  },
+  "storage": {
+    "checks": {
+      "bounded-retention": {
+        "Maya_Chrome_retained": true,
+        "Olivia_Edge_retained": true,
+        "Andrew_Boston_retained": true,
+        "Andrew_painting_retained": true,
+        "no_unauthorized_forget_event": true,
+        "no_erased_facts": true,
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true
+      },
+      "bounded-lifecycle": {
+        "code_absent_from_readable_tables_and_fts": true,
+        "code_erased_without_vector_or_quotes": true,
+        "current_city_Portland": true,
+        "current_browser_Safari": true,
+        "old_city_superseded": true,
+        "old_browser_superseded": true,
+        "Clara_neighbor_retained": true,
+        "Kevin_Brave_retained": true,
+        "forget_event_present": true,
+        "two_update_events_present": true,
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true
+      }
+    },
+    "passed": true,
+    "count": 20,
+    "scope": "Read-only logical SQLite tables and FTS; no physical-disk or private-trace erasure claim. No pending meta markers; unique receipts and terminal ingestion additionally checked.",
+    "storage": {
+      "raw": {
+        "bounded-lifecycle": {
+          "leak_tables": [
+            "evidence_fts",
+            "facts",
+            "messages"
+          ],
+          "revision": "3",
+          "receipt_count": 3
+        },
+        "bounded-retention": {
+          "leak_tables": [],
+          "revision": "2",
+          "receipt_count": 2
+        }
+      },
+      "candidate": {
+        "bounded-retention": {
+          "leak_tables": [],
+          "revision": "2",
+          "receipt_count": 2
+        },
+        "bounded-lifecycle": {
+          "leak_tables": [],
+          "revision": "3",
+          "receipt_count": 3
+        }
+      }
+    },
+    "scan_correction": "Original untyped scan falsely matched decimal embedding coordinates. Original report retained. This scan inspects semantic strings, excludes vectors/opaque identifiers and uses token boundaries for the code fragment. No service change or data mutation."
+  },
+  "equal_manifest_fields": [
+    "dataset_sha256",
+    "workspace_commit",
+    "service_commit",
+    "eval_commit",
+    "answer_model",
+    "judge_model",
+    "judge_kind",
+    "answer_prompt_sha256",
+    "rubric_prompt_sha256",
+    "answer_inference",
+    "answer_base",
+    "judge_base",
+    "top_k",
+    "chunk_messages",
+    "chunk_words",
+    "add_transport_attempts"
+  ],
+  "equal_service_fields": [
+    "maxEvidence",
+    "tokenBudget",
+    "embeddingSpace",
+    "retrieval",
+    "candidateLimit",
+    "llmModel",
+    "llmReasoningEffort",
+    "llmStageModels",
+    "addTimeout",
+    "searchTimeout",
+    "modelTransportAttempts",
+    "rerank",
+    "coveragePacking",
+    "eventView",
+    "relationMode"
+  ],
+  "review": {
+    "assistant_correct": 20,
+    "automated_correct": 19,
+    "disagreement": "Raw small-manager answer Clara judged false because rubric required explicitly stating manager. Assistant accepts the direct answer in question context. Original 9/10 remains unchanged; no demonstrated semantic advantage on this pair.",
+    "human_labels": 0
+  },
+  "evidence_sha256": {
+    "artifacts/v1-small-33a9e05-01/assistant-review.json": "2c2e849f92a935097d41baae4f56eee065bb519db08a9e0957d9abe8af2a91ff",
+    "artifacts/v1-small-33a9e05-01/review-packet.json": "ae878eb313fbec50b52cde22b75fa68782408f753b39976534b4fbc79cedb6e0",
+    "artifacts/v1-small-33a9e05-01/candidate-storage-check.json": "54cbd9377ac8a68bf895f5642c50050825685cb3a6886179db33e3483b332480",
+    "artifacts/v1-small-33a9e05-01/raw-http-audit.json": "313a4d737e3de2de6a34d2e7593392d3779fe03fc9fa9c9e9180c4cf034fe4b5",
+    "artifacts/v1-small-33a9e05-01/candidate-http-audit.json": "f150952ccbc7deef4e9567b1484fd0ca04546e20aac2b15241c1e7e41a89e481",
+    "configs/round2-small-closed-loop-v1.json": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "configs/round2-small-pair-v1.json": "8c9c9fb4febcf78d0c26ee71d40023212a309b06f81b0138de8660d89e306e28",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/metrics.json": "77df50980c498de2a01971742d830cd0d8cf77cdc1e8678a51971898785cf7e5",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/predictions.jsonl": "015d5d234cc58eb37c64d8a9d9f75cb0c682cfa6a440a5f912ffc78d2110f7cf",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/judgments.jsonl": "18e81f054c87dd47c80cbd67558e4b3eb70fae787a918b2afd358d81d593e905",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/report.md": "b0f4918157d9985d92e298ff3bbe76fc272270f64597332e4af0abe387ea5ade",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/ingest.jsonl": "52219505cf38394f39938e9b1ed1be36554112dc24b5708414a6dad06767c9f8",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/requests.jsonl": "cff05a22ffb0dc635e321a68f1c2c342029d6795e64c22be7a28a9042f984bfe",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/manifest.json": "ba50125e08b5960008dd017e3391437e82137c1818981245fbf7ecef3c577772",
+    "eval/artifacts/v1-small-33a9e05-01-raw-memops/retrievals.jsonl": "a9d06e86b2ea95ef4c6caec7f22c3be4bf357e2e72d72ad1661e93cd3d33c324",
+    "artifacts/v1-small-33a9e05-01/raw-model-calls.jsonl": "2f519f24e3601392d9a22e494d8e28ae6951bad2ec201f6c133529c4d02d4445",
+    "artifacts/v1-small-33a9e05-01/raw-service.log": "b75cad2294055db827d815916f82ae67a2578f321dd68be1fe886c4025dbf2af",
+    "artifacts/v1-small-33a9e05-01/raw-runtime.json": "23f74457ab500e8f31b41b3c92020adf1b5fef016c5d689f6848ef6a12bc53a4",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/metrics.json": "c560fe1a197b0280dc9302bc7e28186e0dd3a2209df77102521a96dfc96afd18",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/predictions.jsonl": "5bde2982bd48db068fd025ffe520710d149594aa8ffbf050029b4adc4b9d0f1b",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/judgments.jsonl": "75de2e62b54008d741f6529587693f2faa6c1dc79d370f95829bb64592ae7aa8",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/report.md": "ca5006cfeacda05357948f6402f554f67d73d45374e5a224734fcd52a8f9a2f5",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/ingest.jsonl": "501be97b8138e6d77c8654bba5c197d88fa81584c8a5a92b59e32e342e903073",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/requests.jsonl": "188521352809adb6d4e6a20156baf0a243c3e48319eada2160853e84b3601435",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/manifest.json": "6151b26ac85e5ef0278a3c2436c6614e4b19e1daf03898d7f50dad79ebf2a089",
+    "eval/artifacts/v1-small-33a9e05-01-candidate-memops/retrievals.jsonl": "7103125446027692530e572d2ab1c4793ece0073758d0e1c2712c807fbed0903",
+    "artifacts/v1-small-33a9e05-01/candidate-model-calls.jsonl": "f392f3f7100f9b26800783ff644062c52a0bd38686f1ecbdf9c12b3b6ebe7786",
+    "artifacts/v1-small-33a9e05-01/candidate-service.log": "538b8265cce1e8f9500c6b8cf357af3c8739cbfee6d7bab06ab6a823950847dd",
+    "artifacts/v1-small-33a9e05-01/candidate-runtime.json": "a18ba33311d1282a668b2e71f6b77fb96b781857b2c22ffd8f28c1d81a2be8ee",
+    "artifacts/v1-small-33a9e05-01/review-mapping.json": "02c81aaeaf79dd6848a0aeba4946ac6ac4e141f2ffc48918a4c32de7e95b7ecc"
+  }
+}
