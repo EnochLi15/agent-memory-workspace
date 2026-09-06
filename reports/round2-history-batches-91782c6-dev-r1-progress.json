@@ -1,7 +1,7 @@
 {
   "protocol": "round2-running-experiment-checkpoint-v1",
   "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
-  "observed_at": "2026-09-06T10:38:55.870058+00:00",
+  "observed_at": "2026-09-06T10:48:25.488540+00:00",
   "status": "running",
   "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
   "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
@@ -20,18 +20,18 @@
   "runner_session_id": 98822,
   "port": 8110,
   "source_snapshot": "artifacts/round2-runtime-91782c6",
-  "completed_ingest_attempts_at_observation": 157,
+  "completed_ingest_attempts_at_observation": 181,
   "latest_ingest": {
-    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-4:0",
+    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-27:0",
     "sample_id": "E10_remember",
     "status": "ok",
     "attempt": 0,
-    "elapsed_ms": 43950.21079199994,
+    "elapsed_ms": 23161.198457999155,
     "message_count": 14
   },
   "note": "Original91782c6 still running E10_remember. E10_reflect/B05/F07_trajectory have terminal ingestion failures (21 service_error questions). F07_update completed,3/4 judged correct. Not a final30-question score. Current f12b2b4 full B05 is a separate fresh v10 run.",
   "attempt_outcomes": {
-    "ok": 149,
+    "ok": 173,
     "retrying": 5,
     "failed": 3
   },

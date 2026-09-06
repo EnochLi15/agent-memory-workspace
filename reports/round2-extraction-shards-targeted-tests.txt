@@ -1,0 +1,18 @@
+✔ bounded source balancing covers participants once without omitting shared context (2.648125ms)
+✔ foreign handles, omitted groups and duplicate ownership cannot become a partial merged result (1.142375ms)
+✔ first failure cancels siblings and waits for their cleanup before rejection (2.881208ms)
+✔ external cancellation and pre-aborted requests cannot publish late successes (0.347916ms)
+✔ cross-shard selector targets the earlier fact globally, preserves another actor, and commits atomically (34.116584ms)
+✔ parallel extraction failures reject preparation rather than falling back to offline partial facts (0.437042ms)
+✔ merged source references still reject future support and retain earlier cross-shard context (1.103ms)
+✔ semantic repair sees the complete merged proposal and rechecks it globally (1.128125ms)
+✔ small chunks keep a single extraction call without shard ownership metadata (0.341792ms)
+✔ an operation cannot use selector resolution to delete a future cross-shard fact (0.94925ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 238.800041

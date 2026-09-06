@@ -1,0 +1,206 @@
+{
+  "protocol": "round2-source-first-B05-final-v1",
+  "run_id": "round2-source-first-f12b2b4-B05-r1-source_first-memops",
+  "status": "finished_with_ingestion_failure",
+  "manifest": {
+    "service_commit": "f12b2b403b69bc8f4fc24145162918569364af3a",
+    "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+    "workspace_commit": "714ef03965e67dd9f1c0bc0ccff8b1ed5d1f0c16",
+    "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+    "started_at": "2026-09-06T10:37:44.772Z",
+    "finished_at": "2026-09-06T10:48:15.311Z",
+    "planned_questions": 10
+  },
+  "ingest": {
+    "attempts": 20,
+    "outcomes": {
+      "ok": 18,
+      "retrying": 1,
+      "failed": 1
+    },
+    "terminal_attempts": [
+      {
+        "request_id": "round2-source-first-f12b2b4-B05-r1-source_first:memops:B05_forget:segment-18:0",
+        "status": "retrying",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+        "elapsed_ms": 90016.97220900003
+      },
+      {
+        "request_id": "round2-source-first-f12b2b4-B05-r1-source_first:memops:B05_forget:segment-18:0",
+        "status": "failed",
+        "attempt": 1,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}",
+        "elapsed_ms": 90123.86937500001
+      }
+    ]
+  },
+  "results": {
+    "planned": 10,
+    "judged": 0,
+    "correct": 0,
+    "service_error": 10,
+    "judged_accuracy": null,
+    "accuracy_over_planned": 0
+  },
+  "snapshot": {
+    "directory": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v10-failure-bi9td2ur",
+    "database_sha256": "535eea071f0f994ab8dba02384d7cbc6f63fc88c35975233db41b97e98553445",
+    "request_sha256": "263822601c4f7b895b3bfd95c340591eec97a2c0f92192ca7e658b60b6db8ebe"
+  },
+  "failed_request_stages": [
+    {
+      "at": "2026-09-06T10:45:18.336Z",
+      "purpose": "source_operation_route",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 4146.420457999979,
+      "usage": {
+        "prompt_tokens": 15504,
+        "completion_tokens": 121,
+        "total_tokens": 15625,
+        "completion_tokens_details": {
+          "reasoning_tokens": 62
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:46:11.047Z",
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 52636.687041,
+      "usage": {
+        "prompt_tokens": 15246,
+        "completion_tokens": 2805,
+        "total_tokens": 18051,
+        "prompt_tokens_details": {
+          "cached_tokens": 3840
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 412
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:46:28.708Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 17652.329750000034,
+      "usage": {
+        "prompt_tokens": 20714,
+        "completion_tokens": 837,
+        "total_tokens": 21551,
+        "completion_tokens_details": {
+          "reasoning_tokens": 468
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:46:34.308Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 5595.706792000099,
+      "usage": null
+    },
+    {
+      "at": "2026-09-06T10:46:42.302Z",
+      "purpose": "repair",
+      "attempt": 1,
+      "outcome": "ok",
+      "elapsed_ms": 7993.586833000067,
+      "usage": {
+        "prompt_tokens": 20332,
+        "completion_tokens": 317,
+        "total_tokens": 20649,
+        "prompt_tokens_details": {
+          "cached_tokens": 20224
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 287
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:46:44.177Z",
+      "purpose": "verification",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 1860.4257920000236,
+      "usage": null
+    },
+    {
+      "at": "2026-09-06T10:46:48.774Z",
+      "purpose": "source_operation_route",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 3530.26554199995,
+      "usage": {
+        "prompt_tokens": 15504,
+        "completion_tokens": 114,
+        "total_tokens": 15618,
+        "prompt_tokens_details": {
+          "cached_tokens": 15104
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 55
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:47:47.221Z",
+      "purpose": "extraction",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 58361.03824999998,
+      "usage": {
+        "prompt_tokens": 15246,
+        "completion_tokens": 3109,
+        "total_tokens": 18355,
+        "prompt_tokens_details": {
+          "cached_tokens": 15104
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 237
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:47:52.774Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 5540.279500000062,
+      "usage": null
+    },
+    {
+      "at": "2026-09-06T10:48:04.915Z",
+      "purpose": "repair",
+      "attempt": 1,
+      "outcome": "ok",
+      "elapsed_ms": 12140.681541000027,
+      "usage": {
+        "prompt_tokens": 20715,
+        "completion_tokens": 555,
+        "total_tokens": 21270,
+        "prompt_tokens_details": {
+          "cached_tokens": 20224
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 516
+        }
+      }
+    },
+    {
+      "at": "2026-09-06T10:48:15.231Z",
+      "purpose": "repair",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 10304.826084000058,
+      "usage": null
+    }
+  ],
+  "interpretation": "Fresh fullB05 v10 baseline atf12b2b4. 18 successful writes; segment18 failed on two actual attempts (maximum configured3). First verification timed out; second ended in rejected erasure/offline recovery. All ten questions retain service_error, no Answer/Judge runs. 0/10 over planned is availability failure, not measured answer accuracy. No claim of improvement; no single-sample bootstrap interval reported."
+}
