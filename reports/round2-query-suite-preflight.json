@@ -25,5 +25,20 @@
     "query_suite": 11,
     "ingestion_identity": 4
   },
-  "scope": "Real --execute invocation stopped at preflight with zero launched children. Sequential execution/completion/recheck/failure behavior tested with controlled subprocess fixtures; actual full query matrix has not run."
+  "scope": "Real --execute invocation stopped at preflight with zero launched children. Sequential execution/completion/recheck/failure behavior tested with controlled subprocess fixtures; actual full query matrix has not run.",
+  "finished_origin_recheck": {
+    "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-query-suite-after-locomo/suite.json",
+    "sha256": "717b2f1a7dae02ced1a2eb84853caf1cc771a5b23449f07c83155ba38d5191ee",
+    "blockers": [
+      {
+        "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
+        "reason": "Ingestion does not contain every successful planned add"
+      },
+      {
+        "run_id": "round2-resilient-bfec674-dev-r1-sources-memops",
+        "reason": "Origin is running"
+      }
+    ],
+    "launched": []
+  }
 }
