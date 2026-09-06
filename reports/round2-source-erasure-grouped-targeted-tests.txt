@@ -1,0 +1,34 @@
+✔ uniform compact decisions resolve the untouched original text, including Unicode and whitespace (1.363125ms)
+✔ mixed compact decisions erase all selected spans and retain independent same-name neighbors (0.340583ms)
+✔ missing, repeated, overlapping, rewritten and Unicode-splitting erasure quotes reject (0.438625ms)
+✔ compact uncertainty and mixed facts cannot produce a deletion plan (0.127417ms)
+✔ compact protocol requires every candidate exactly once and rejects extra decision fields (0.169333ms)
+✔ total transmitted capacity counts repeated tables across batches and rejects before any model call (13.220458ms)
+✔ reference tables reconstruct every candidate including different boundaries on the same source (0.19175ms)
+✔ packed batch capacity is checked on transmitted JSON and never drops repeated source-boundary pairs (25.883541ms)
+✔ quote repair preserves verdicts, valid siblings and the original response (0.436083ms)
+✔ all semantic decisions must be resolved before any quote defect is repairable (0.171833ms)
+✔ quote patches reject omitted, duplicate, uncertain, nonliteral and overlapping repairs (0.322917ms)
+✔ source batches run at bounded concurrency and merge original indices despite reversed completion (19.356792ms)
+✔ a failed classification cancels and drains running siblings without starting remaining batches (12.415708ms)
+✔ one global quotation repair covers defects in separate batches and preserves semantic classifications (3.570167ms)
+✔ later semantic uncertainty prevents any quotation repair even with a completed earlier defective batch (3.13425ms)
+✔ global repair is bounded to eight defects and rejects missing, duplicate, foreign or uncertain patches (16.879791ms)
+✔ external cancellation, empty work and invalid configuration do not publish partial plans (0.557833ms)
+✔ deadline cancellation during classification or global repair rejects late model successes (35.275042ms)
+✔ joint review includes every authorization and fixed erased obligation exactly once per source (1.472625ms)
+✔ one joint partition maps back to complete original coverage and preserves independent neighbors (1.206916ms)
+✔ joint review rejects the observed omitted style witness without another semantic sampling (0.460833ms)
+✔ identical words belonging to different sources, kinds or contexts are never merged (0.25125ms)
+✔ groups stay indivisible across batches and out of order responses preserve original indices (37.740042ms)
+✔ missing, duplicated, uncertain and nonliteral grouped rows cannot publish a partial plan (0.845333ms)
+✔ joint literal repair receives all boundaries and retains fixed decisions and original identity (0.354875ms)
+✔ joint mode is opt in, configuration constrained, and cancellation and original capacity remain enforced (0.488833ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 242.972708
