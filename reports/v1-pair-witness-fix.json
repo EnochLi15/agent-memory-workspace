@@ -1,0 +1,218 @@
+{
+  "protocol": "v1-pair-witness-fix-v1",
+  "checked_at": "2026-09-06T23:37:19.500371+00:00",
+  "service_commit": "7278559b0b9931a78d420c127dcaae9c91010d0a",
+  "cause": "The erasure input made the model infer pair-specific literal requirements from boundary metadata and hashes, while generated role labels used an internal exception. Saved responses omitted required context or copied another pair’s context.",
+  "change": "Expose value_witness.required_for_retain using the exact production factContainsValue predicate, plus literal spans already present in the fact content. Explain per-pair primary quote/context obligations in the prompt. Input hints are not exemptions, independent ownership verdicts or deletion authorization.",
+  "tests": {
+    "new": 3,
+    "total_service_tests": 397,
+    "passed": true,
+    "coverage": [
+      "same fact different boundaries receive different literal requirements",
+      "protected historical boundaries expose current matching literal without reconstructing erased source",
+      "real user values remain checked while generated participant labels are excluded",
+      "tampering a wire hint does not bypass runtime witness validation"
+    ]
+  },
+  "saved_packet_replay": {
+    "protocol": "v1-pair-witness-requirements-replay-v1",
+    "pairs": 48,
+    "old_input_characters": 48159,
+    "new_input_characters": 51748,
+    "lossless_evidence_round_trip": true,
+    "unchanged_rejected_decisions": [
+      {
+        "index": 0,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 2,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 8,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 11,
+        "requirement": {
+          "required_for_retain": false,
+          "matched_literals": []
+        },
+        "provided_context": true,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 14,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 17,
+        "requirement": {
+          "required_for_retain": false,
+          "matched_literals": []
+        },
+        "provided_context": true,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 22,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 24,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 30,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 34,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 35,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 37,
+        "requirement": {
+          "required_for_retain": true,
+          "matched_literals": [
+            "Koku Kitchen"
+          ]
+        },
+        "provided_context": false,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 40,
+        "requirement": {
+          "required_for_retain": false,
+          "matched_literals": []
+        },
+        "provided_context": true,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 41,
+        "requirement": {
+          "required_for_retain": false,
+          "matched_literals": []
+        },
+        "provided_context": true,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      },
+      {
+        "index": 42,
+        "requirement": {
+          "required_for_retain": false,
+          "matched_literals": []
+        },
+        "provided_context": true,
+        "error": "Independent-value witness must include the colliding value or valid linked context"
+      }
+    ],
+    "missing_context_cases_now_explicitly_require_value": 10,
+    "unnecessary_context_cases_now_explicitly_disable_requirement": 5,
+    "scope": "Deterministic requirements from the production decoder predicate. No model decisions altered or accepted; all 15 saved failures still reject. Future model compliance and independent source survival remain unverified.",
+    "packet_sha256": "7f99f10bf3eecade72acfdd24742fdb5ad06472b51e58a9013d6d5bc84a7d574"
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-CUAlTd/report.json",
+  "scope": "Input clarification and regression evidence only. All old invalid decisions still reject; no relaxed quote/context checks, changed budgets, real-model success or benchmark improvement asserted.",
+  "sha256": {
+    "artifacts/v1-pair-witness-fix-01/before.log": "0e85f45d8316321e905ebe56c963aa98385b5831a6d06bdbcd9df30e7657bf7f",
+    "artifacts/v1-pair-witness-fix-01/after.log": "48c086a959a65ee54bbb16141ccd1475d9e11e97de5e291cf7bbde0189c4e81a",
+    "artifacts/v1-pair-witness-fix-01/requirements-replay.json": "f3dbba5729f64b6945c8e101220bbadb6107f40eff81ed642b4de707ab0b95f9",
+    "reports/v1-service-regression-18.txt": "44dd0e012b15773100b3be9bcb075ae7b0b57afbeef6fd3e15a75e88f5b58228"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_scope_binding_passed": true,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Uncertain or invalid compact source erasure effect"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-mixed-fact-blocker.json",
+  "ci": {
+    "headSha": "7278559b0b9931a78d420c127dcaae9c91010d0a",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34067356267"
+  }
+}

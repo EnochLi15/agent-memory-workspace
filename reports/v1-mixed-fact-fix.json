@@ -1,0 +1,49 @@
+{
+  "protocol": "v1-mixed-fact-retirement-fix-v1",
+  "checked_at": "2026-09-06T23:47:36.588571+00:00",
+  "service_commit": "d9f9ec6981fea727f3f0479042f9cefb9cbc3371",
+  "cause": "Scope review used an independent narrow quote to retain an entire derived summary whose content also carried the erased neighboring claim. The subsequent source reviewer refused the mixed summary.",
+  "change": "Expose source-partition capability in existing erasure input and clarify that an affected derived summary must be retired, while independently supported raw clauses are preserved by the existing separate source partition. Legacy modes do not receive this permission. No replacement facts, new model stages, storage formats or limits.",
+  "tests": {
+    "new": 3,
+    "total": 400,
+    "passed": true,
+    "coverage": [
+      "atomic retirement of mixed summary with independently searchable raw neighbor and retained browser fact",
+      "rollback and restart of that transaction",
+      "refuse partitions that preserve affected original evidence",
+      "legacy input does not offer mixed-summary retirement"
+    ]
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-1B8ZIn/report.json",
+  "scope": "Regression fixtures validate existing transaction behavior with explicit model verdicts; actual model compliance and complete D25/long/background release acceptance still required.",
+  "sha256": {
+    "artifacts/v1-mixed-fact-fix-01/before.log": "f6d3a51b0dcc941c6a66455d21e4f17f40db52709d08bb99e908d8297c1228ab",
+    "artifacts/v1-mixed-fact-fix-01/after.log": "cbf0efc3a8fe42a0c5d19eff4865dd4ce880535863276e5f7add1403a79e960c",
+    "reports/v1-service-regression-19.txt": "c1d3f3a64d2fb834cc55fe06e4693e3691bd779762e358c1b333e46841ffc90e"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_reached_erasure": false,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Evidence still fails semantic verification after repair"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-forget-coverage-blocker.json",
+  "ci": {
+    "headSha": "d9f9ec6981fea727f3f0479042f9cefb9cbc3371",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34067793153"
+  }
+}

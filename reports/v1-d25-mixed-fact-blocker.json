@@ -1,0 +1,67 @@
+{
+  "protocol": "v1-d25-mixed-fact-diagnostic-v1",
+  "checked_at": "2026-09-06T23:47:36.588571+00:00",
+  "service_commit": "7278559b0b9931a78d420c127dcaae9c91010d0a",
+  "diagnostic": "artifacts/round2-fresh-failed-add-CUAlTd/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 90110.942167,
+      "request_sha256": "5e422a95b952408438a1a5ba55131670d5d97df9d8c3a1a5e1d144158bde2035",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 90121.641208,
+      "request_sha256": "5e422a95b952408438a1a5ba55131670d5d97df9d8c3a1a5e1d144158bde2035",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 86017.221834,
+      "request_sha256": "5e422a95b952408438a1a5ba55131670d5d97df9d8c3a1a5e1d144158bde2035",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Uncertain or invalid compact source erasure effect"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "scope_binding": {
+    "protocol": "v1-pair-witness-accepted-replay-v1",
+    "saved_decisions": 48,
+    "validated_value_contexts": 13,
+    "accepted_by_scope_decoder": true,
+    "scope": "Exact saved erasure decision packet passes binding validation. It is not a complete plan for commit: automatic decisions and original fingerprint are omitted in this read-only stage replay. Subsequent mixed-fact source erasure was rejected; no HTTP or release acceptance."
+  },
+  "source_failure": {
+    "packet": "artifacts/v1-d25-7278559-01/source-erasure-20.json",
+    "index": 18,
+    "effect": "uncertain",
+    "reason": "mixed_fact",
+    "fact_id": "5882653b06469925f63a2cf4713d6a06428d77bba0cdd0fbd2cc613ba6bf40e7",
+    "description": "The derived summary combines the user’s own usual order with the forgotten coworker’s different order. Scope binding retained it using only the independent narrow clause, while the next full-content source check correctly refused the mixed fact."
+  },
+  "next_action": "Clarify retirement of contaminated derived summaries only when independent raw-source partitioning is enabled. Preserve raw independent clauses and unrelated facts, require affected original evidence to be erased, keep atomicity and avoid generating replacement facts.",
+  "scope": "Pair-specific witnesses passed; complete write did not. No additional attempts after semantic rejection, no scores replaced.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-CUAlTd/report.json": "652440c7e49109c3156bef998ebff0bdd596c2b213b63370d98f7827710677ed",
+    "artifacts/v1-d25-7278559-01/erasure-packet.json": "6be0c681d92040ba82104ed14b6e7134c76ee59d7b6f2257a8e53bc54d9566f2",
+    "artifacts/v1-d25-7278559-01/source-erasure-20.json": "9997326825bd2dea9f3ba9988025f253cdd91e14cd020772ed4d89f8ae7aa7e4"
+  }
+}
