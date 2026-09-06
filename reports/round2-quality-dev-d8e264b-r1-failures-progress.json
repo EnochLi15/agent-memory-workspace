@@ -1,0 +1,32 @@
+{
+  "protocol": "running-development-failure-snapshot-v1",
+  "observed_at": "2026-09-06T06:15:05.319038+00:00",
+  "run_dir": "eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "loaded_service_commit": "d8e264b",
+  "loaded_eval_commit": "94d58f6",
+  "planned_questions": 30,
+  "add_counts": {
+    "ok": 79,
+    "failed": 2
+  },
+  "failures": [
+    {
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}",
+      "elapsed_ms": 88045.95887499995
+    },
+    {
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_reflect:segment-26:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+      "elapsed_ms": 51344.249625
+    }
+  ],
+  "full_run_status": "running",
+  "reuse_ingestion_allowed": false,
+  "snapshot_capture": "artifacts/round2-development-snapshots-TgVQie/report.json",
+  "scope": "Partial running snapshot. All 30 questions remain planned. Updated source/build does not change already-loaded processes. No final accuracy; failed ingestion must not be reused for pure retrieval quality comparison."
+}

@@ -1,0 +1,39 @@
+
+> agent-memory-eval@0.1.0 test
+> node --import tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p 'test_*.py'
+
+✔ calibration audit stops scheduling after a transport outage and retains unattempted cases in the denominator (18165.743334ms)
+✔ omission-type harmful extras fail without requiring a quote of absent information (1.639292ms)
+✔ span references restore exact case and Markdown from the saved answer (0.208917ms)
+✔ a prohibited assertion cannot be reclassified as an omission to avoid evidence (0.313333ms)
+✔ missing, duplicate and invalid span references are protocol errors, not passes (0.283ms)
+✔ long Unicode spans preserve original UTF-16 positions and conflicting rubrics remain reviewable (0.198959ms)
+✔ live audit input excludes control labels and preserves the exact saved answer (19.222167ms)
+✔ criterion aggregation cannot pass with a missing fact even if model supplies an overall pass (1.018042ms)
+✔ larger audit budget does not change the ordinary Answer default (12.137375ms)
+✔ incomplete, duplicated and reference-only quotations are not accepted as successful audits (0.379333ms)
+✔ uncertain rubric needs review and literal diagnostic does not silently decide semantics (0.140583ms)
+✔ chunk limits preserve order, role and session marker without injecting answer fields (0.910291ms)
+✔ canonical contract checksum validates distributed schema (0.790208ms)
+✔ HTTP client rejects wrong receipt echo and unsorted results (23.840292ms)
+✔ report keeps infrastructure failures in denominator and de-duplicates resumed judgments (2.61625ms)
+✔ streamed model completion survives UTF-8 and event boundary splits (11.220708ms)
+✔ MemOps pair IDs distinguish evaluation settings and individual question instances (1.106041ms)
+✔ resume refuses a changed service commit before making another HTTP request (216.709625ms)
+{"event":"sample_complete","sample":"s","judged":1,"planned":1}
+✔ transient add failure retries the identical request and records each attempt (1202.786666ms)
+{"event":"sample_complete","sample":"s","judged":0,"planned":2}
+✔ semantic verification rejection is not retried and keeps every affected question in the denominator (189.239584ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18328.811334
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.119s
+
+OK

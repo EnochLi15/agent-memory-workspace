@@ -1,0 +1,501 @@
+{
+  "protocol": "v3-calibration-control-review-v1",
+  "input_hashes": {
+    "eval/configs/calibration-controls-v3.json": "644e3d7c1f585a2d65d61450db1c2ce42754ff255612fa26acfaf6b0a0adf1ae",
+    "eval/artifacts/round2-judge-controls48-gpt55-v3/manifest.json": "a39e3c74b17888048b60f1402b3eac3f501526b34e998343a4bfb09ff8bc5da1",
+    "eval/artifacts/round2-judge-controls48-gpt55-v3/results.jsonl": "0d8d1615dba7268439601b0b3123defb1a745ed7d5ba9853bbb40c667f278d1b"
+  },
+  "source_sha256": "b148229f4bfe9f628043b072f6549ff22f44fc24e7f1c741237b4b001af8edb1",
+  "model": "gpt-5.5",
+  "planned": 48,
+  "status_counts": {
+    "judged": 48
+  },
+  "passed": 47,
+  "gate_pass": false,
+  "checks": [
+    {
+      "qid": "control-v1/CandidateDisambiguation/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/CandidateDisambiguation/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/CandidateDisambiguation/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/CandidateDisambiguation/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/CandidateDisambiguation/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/CandidateDisambiguation/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationTrace/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTransition/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/TargetBinding/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTrajectory/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTrajectory/paraphrase",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": false,
+      "label_match": false,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": false
+    },
+    {
+      "qid": "control-v1/StateTrajectory/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTrajectory/harmless",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTrajectory/harmful",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/StateTrajectory/disclosure",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v1/OperationApplication/permitted-history",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "E15_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "D19_update.json#p5_operation_application#longitudinal_operation#7",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "C01_forget.json#p3_state_transition#adjacent_operation#4",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/omission/omission",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/omission/complete",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/omission/contradiction",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/omission/markdown",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/omission/empty",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/prohibition/clean",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/prohibition/leak",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/prohibition/negated-leak",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    }
+  ],
+  "independent_human_labels": 0,
+  "scope": "Assistant-labeled 40 inherited controls/counterexamples and 8 new synthetic omission/prohibition cases. Checks label agreement, omission/prohibition polarity and exact answer citation reconstruction. Not a benchmark accuracy or proof that all semantic judgments are correct.",
+  "metadata_note": "Input-set description corrected after generation; case checks, original manifests and model verdicts unchanged."
+}

@@ -1,0 +1,56 @@
+{
+  "protocol": "tracking-retirement-checkpoint-review-v1",
+  "input_hashes": {
+    "artifacts/round2-live-checkpoint-oRgGOA/report.json": "90f467e09510ce21dff3bda073fb35524a98788b38f33c4c17ce6dfbea39931c",
+    "artifacts/round2-live-checkpoint-0Su0CB/report.json": "f377562edd29ab41c2614e26a47bdfdc8734db301d0f1424548c96eb7fb87fb0",
+    "artifacts/round2-live-checkpoint-1p3LPr/report.json": "0583ea3e3292b7e18f95de409c159135b65ff3a95b09fb9ec488be105e2e5ccf",
+    "artifacts/round2-checkpoint-transaction-Jjj7Pq/report.json": "b51c1f08261ed9c39a4dec4e8867efc6c46d0df3e55773aece822021b465b940",
+    "artifacts/round2-checkpoint-transaction-Jjj7Pq/state.json": "f24eee50a434e0dca55ea681a6b7913bc656e207e397883b98e071eb137cc643",
+    "artifacts/round2-checkpoint-transaction-Jjj7Pq/lexical-queries.json": "384a219637a9acb93311ead8c4e8f2ed9bcf9490d92b9e72f724297c00e49812",
+    "reports/round2-recorded-tracking-retirement.json": "333c1e01651c59e1c0216b70b8a02dd9c8ad6d808fabae9ccac972befeaa2f16"
+  },
+  "old_runtime": "d8e264b",
+  "old_checkpoint_diagnostics": [
+    {
+      "sample": "B05_forget",
+      "run": "artifacts/round2-live-checkpoint-0Su0CB",
+      "status": "failed",
+      "elapsed_ms": 63108.467834,
+      "error": "OPERATION_TARGET",
+      "finding": "After valid initial forget targets and source repair, missing commitment repair appended Elara name_commitment with supersedes pointing at the Iris backup_first_name record. Different-property replacement rejected."
+    },
+    {
+      "sample": "E10_reflect",
+      "run": "artifacts/round2-live-checkpoint-oRgGOA",
+      "status": "failed",
+      "elapsed_ms": 63314.262,
+      "error": "OPERATION_TARGET",
+      "finding": "The deterministic guard incorrectly told the model to remove a direct tracking-retirement request. Later semantic repair restored the operation but widened the transient fact quote across its own forget source; chronology rejected it."
+    }
+  ],
+  "fixed_checkpoint": {
+    "run": "artifacts/round2-live-checkpoint-1p3LPr",
+    "status": "prepared",
+    "elapsed_ms": 60231.259291999995,
+    "generation_calls": 4,
+    "facts": 11,
+    "operations": 1,
+    "degraded": []
+  },
+  "clone_commit": {
+    "run": "artifacts/round2-checkpoint-transaction-Jjj7Pq",
+    "original_revision": 25,
+    "committed_revision": 26,
+    "unchanged_prior_facts": 113,
+    "changed_prior_count": 0,
+    "erased_fact_count": 1,
+    "active_related_facts": 0,
+    "related_passages": 0,
+    "related_raw_messages": 1,
+    "lexical_queries_with_related_evidence": 0
+  },
+  "semantic_erasure_pass": false,
+  "remaining_failure": "One searchable assistant raw message restates the dentist appointment with a paraphrased value (omits office). The literal-value erasure fingerprint does not match it. Current facts/passages/these lexical results contain no appointment, but raw/tail safety is incomplete. Do not globally delete the mixed paragraph: it also contains SMS, coffee and gift context.",
+  "next_design": "Bind original-source/assistant paraphrase spans independently to the authorized erasure entity, with exact protected-neighbor evidence and transaction fingerprint coverage; test later recall/reintroduction. Avoid global name or paragraph deletion.",
+  "scope": "Old diagnostics and the fixed diagnostic used fresh model draws on the same saved pre-failure state. Only the separate exact-proposal guard comparison isolates the rule change. One prepare and cloned commit are not complete E10/background recovery; no new Answer/Judge was run, original full campaign failure is unchanged."
+}

@@ -1,0 +1,38 @@
+{
+  "protocol": "recorded-tracking-retirement-guard-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-recorded-tracking-retirement-Y3E056",
+  "source_sha256": "1a2d4a201743a79b091603ce6d342b83722bf42ed973cc0bd231855ed456eac3",
+  "input_hashes": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-TgVQie/E10_reflect.json": "5a6200bd73dc58557b761afd4fef8f1c706ede0ea3faed4afdab635fa7b7210c",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-live-checkpoint-oRgGOA/model-proposals.jsonl": "2c145f7b25d3471bb57b746ac478e65bc483ae15749115e9a8b8bbcf63f1e26f",
+    "artifacts/round2-runtime-d8e264b/src/operation-intent.ts": "3c5c09d302b7eba4aed7828972c27570129f3b3c81f84620651f8f2177af1036",
+    "service/src/operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb"
+  },
+  "before": {
+    "obligations": [],
+    "operations": [
+      {
+        "type": "forget",
+        "quote": "you don't need to keep track of that anymore",
+        "authorized": false
+      }
+    ]
+  },
+  "after": {
+    "obligations": [
+      {
+        "index": 14,
+        "quote": "Pham's office on Elm Street, but that already happened on April 9th, so you don't need to keep track of that anymore."
+      }
+    ],
+    "operations": [
+      {
+        "type": "forget",
+        "quote": "you don't need to keep track of that anymore",
+        "authorized": true
+      }
+    ]
+  },
+  "new_model_calls": 0,
+  "scope": "Deterministic authorization/omission guard comparison on the exact first proposal of a saved failed checkpoint diagnostic. No fresh model output, HTTP, commit, full-prefix recovery or benchmark score. The original full-run proposal was not logged."
+}
