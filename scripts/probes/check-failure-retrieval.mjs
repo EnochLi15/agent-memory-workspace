@@ -14,6 +14,7 @@ const runtime=resolve(runtimeIndex>=0?process.argv[runtimeIndex+1]:'service');
 const {buildServer}=await import(pathToFileURL(join(runtime,'dist/server.js')).href);
 const {configFromEnv}=await import(pathToFileURL(join(runtime,'dist/config.js')).href);
 const questions={
+ B05_forget:['What information do you still have about our backup first name?','What are our current first-name and middle-name choices, and what name did Priya choose?'],
  D24_reflect:['Why did I choose the Outback over the RAV4?','What plans did I mention for researching investments and consulting a financial advisor?'],
  D17_remember:['What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?','What information do you still have about my old tablet and its bookmark syncing issue?'],
  E03_reflect:['What did I say about Martin and Rebecca, the handoff, and the group context?'],

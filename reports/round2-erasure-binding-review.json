@@ -1,0 +1,172 @@
+{
+  "protocol": "semantic-erasure-binding-evidence-review-v1",
+  "service_commit": "d8e264b",
+  "fixed_and_fresh_checkpoint_transactions": [
+    {
+      "run_dir": "artifacts/round2-recorded-erasure-rpdixy",
+      "report_sha256": "96667ffafb6c076868e948cb146a1a70bcc1f27e057bdb1e56fe0e3d080c37c3",
+      "state_sha256": "805a3c0c916b33f3cedbae839d948feb250ed060b8836a5ccfc1f12469ee3dde",
+      "queries_sha256": "f8530adb141273e479af555c392593f7e8a68a6623979b1b3fcf40186f9ac522",
+      "candidate_pairs": 2,
+      "new_generation_calls": 1,
+      "binding_elapsed_ms": 5792.5464999999995,
+      "remaining_erased_name_counts": {
+        "active_facts": 0,
+        "active_passages": 0,
+        "searchable_raw": 3,
+        "returned_memories": 0
+      },
+      "no_residue": false,
+      "middle_options_retained": true,
+      "primary_name_retained": true,
+      "diagnostic_transplant": {
+        "from": "dual-source-v2",
+        "to": "dual-source-v3",
+        "erased_records": 0,
+        "markers": 0
+      }
+    },
+    {
+      "run_dir": "artifacts/round2-recorded-erasure-FMIYTt",
+      "report_sha256": "31e03562d4488eb3a981d0ee2e1f63dc67c4f6529d4aa15c865a7fa59250c797",
+      "state_sha256": "e0b0df11a37b3510c7c520dc065a247b04a8ab18b80e9afb05b7494bac4da0b2",
+      "queries_sha256": "c887b3e14e7e8f922b5f2692b62c7177d7b838b44faf4ef8f1378dcad679d274",
+      "candidate_pairs": 2,
+      "new_generation_calls": 0,
+      "binding_elapsed_ms": 0.9363330000000047,
+      "remaining_erased_name_counts": {
+        "active_facts": 0,
+        "active_passages": 0,
+        "searchable_raw": 0,
+        "returned_memories": 0
+      },
+      "no_residue": true,
+      "middle_options_retained": true,
+      "primary_name_retained": true,
+      "diagnostic_transplant": {
+        "from": "dual-source-v2",
+        "to": "dual-source-v3",
+        "erased_records": 0,
+        "markers": 0
+      }
+    },
+    {
+      "run_dir": "artifacts/round2-recorded-erasure-CqvTwj",
+      "report_sha256": "de7d1abbdba772d71a868519ab8eafebe31cb6a1ee455797044d8757e69558ce",
+      "state_sha256": "846f4438e3c7022fbf2a675cb081cb99c812a046ddc28384f4c43774ef7a0078",
+      "queries_sha256": "2a144e48d9c4318fbaf1013b48a00373be4238d09d4854401c702a313a8d1a1c",
+      "candidate_pairs": 1,
+      "new_generation_calls": 0,
+      "binding_elapsed_ms": 0.11708299999999383,
+      "remaining_erased_name_counts": {
+        "active_facts": 0,
+        "active_passages": 0,
+        "searchable_raw": 0,
+        "returned_memories": 0
+      },
+      "no_residue": true,
+      "middle_options_retained": true,
+      "primary_name_retained": true,
+      "diagnostic_transplant": {
+        "from": "dual-source-v2",
+        "to": "dual-source-v3",
+        "erased_records": 0,
+        "markers": 0
+      }
+    }
+  ],
+  "fresh_checkpoint": {
+    "run_dir": "artifacts/round2-live-checkpoint-3kwWyg",
+    "report_sha256": "bd1b0923c9c78bc27f28209099d2d7b6a6f7c69f9c4a5b6aa68d445b70a8e5b1",
+    "status": "prepared",
+    "elapsed_ms": 75083.85637499999,
+    "fact_count": 28,
+    "operation_count": 2,
+    "generation_calls": 6,
+    "degraded": [],
+    "stages": [
+      {
+        "purpose": "extraction",
+        "model": "gpt-5.4-mini",
+        "elapsed_ms": 34993.059,
+        "outcome": "ok"
+      },
+      {
+        "purpose": "repair",
+        "model": "gpt-5.5",
+        "elapsed_ms": 8863.906667000003,
+        "outcome": "ok"
+      },
+      {
+        "purpose": "verification",
+        "model": "gpt-5.5",
+        "elapsed_ms": 9315.852625,
+        "outcome": "ok"
+      },
+      {
+        "purpose": "repair",
+        "model": "gpt-5.5",
+        "elapsed_ms": 9613.684833,
+        "outcome": "ok"
+      },
+      {
+        "purpose": "verification",
+        "model": "gpt-5.5",
+        "elapsed_ms": 8050.286125000006,
+        "outcome": "ok"
+      },
+      {
+        "purpose": "erasure_binding",
+        "model": "gpt-5.5",
+        "elapsed_ms": 3343.6722499999887,
+        "outcome": "ok"
+      },
+      {
+        "purpose": null,
+        "model": "nomic-embed-text:latest",
+        "elapsed_ms": 739.5193750000035,
+        "outcome": "ok"
+      }
+    ]
+  },
+  "D17": {
+    "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-47-04-952Z-ZyMsaW",
+    "results_sha256": "537471b7773e6fa57bd521663a76225a029d529eb5a05f8242497c8e8796cf06",
+    "state_sha256": "7583507d8cf4aade62d97a86c43f5032747628654810378279d3df837a4a829d",
+    "answers_sha256": "c3dc4abcb22e66d64a611b6b972c3405f30fcd200be78f01cc35b56f0adebbce",
+    "adds": [
+      {
+        "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+        "status": 200,
+        "elapsed_ms": 49799.003000000004
+      }
+    ],
+    "erased_fact_count": 2,
+    "no_active_tablet_details": true,
+    "answers": [
+      {
+        "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+        "answer": "Firefox on your work laptop and Safari on your iPhone. Kevin uses Brave."
+      },
+      {
+        "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+        "answer": "I don’t know about an old tablet or a bookmark syncing issue from the memories provided. The only relevant memory is that having different defaults across devices “can be a little inconvenient, especially for things like bookmark syncing,” with Firefox on the work laptop and Safari on the iPhone."
+      }
+    ],
+    "answer_review": "Browser identities are correct. The second answer disclaims knowledge of the tablet/sync issue and does not disclose the tablet history; it adds an unnecessary generic remark about cross-device bookmark syncing.",
+    "erasure_binding_calls": 0
+  },
+  "scope_controls": {
+    "run_dir": "artifacts/round2-erasure-controls-jfKzNB",
+    "report_sha256": "3e0bbcb7f850a149d19e0ed8804baf57d849256712b6e77a8c449f445fa67c4d",
+    "passed": 5,
+    "planned": 5
+  },
+  "lifecycle_variants": {
+    "run_dir": "artifacts/round2-lifecycle-variants/2026-09-06T05-48-47-532Z-DfKJjl",
+    "results_sha256": "d917f2d0ad353b0834da6ac81f669657467791b2276a99374a32b89feb817748",
+    "passed": 5,
+    "planned": 5
+  },
+  "scope": "Assistant inspection of original/derived artifacts. B05 clones explicitly transplant an unerased v2 checkpoint to a private v3 diagnostic DB; no production migration. Initial raw-history failure is retained. The fresh checkpoint used an earlier storage revision; replay preserves its inference/plan and only tests the final transaction. These are not full B05 background recovery, independent human truth, benchmark accuracy or three full repeats. Full fresh B05 prefix is recorded separately."
+}

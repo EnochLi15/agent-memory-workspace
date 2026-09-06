@@ -1,0 +1,40 @@
+{
+  "protocol": "B05-v3-complete-original-prefix-review-v1",
+  "service_commit": "d8e264b",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-47-03-788Z-GcjQwI",
+  "hashes": {
+    "results.json": "059786f096338eee5fb0cd38c9d7100d0b9e1ba04605fe84c217f3fcfaed4ee5",
+    "B05_forget-state.json": "951135e3e6561002095547200d5975ed105651fe0f2e6a090e547a4ec027bc68",
+    "model-usage.jsonl": "0101978592bde712cac4cba7453632e473b86d8566bc0443fa6c1c5585401dd9",
+    "retrieval-probe-v1/answers.jsonl": "a00965ae47250ab16eae528417888f06a30e4b5d2fe1b762ddf07292ffc38cdf",
+    "retrieval-probe-v1/report.json": "4595c16b4be2532540681d804620b804f324c598dda6fd0ab64d33be2820842d"
+  },
+  "planned_adds": 19,
+  "successful_adds": 19,
+  "message_count": 190,
+  "last_add_ms": 71516.35629099997,
+  "checks": {
+    "all_19_adds_succeeded": true,
+    "no_deleted_name_in_active_facts": true,
+    "no_deleted_name_in_active_passages": true,
+    "no_deleted_name_in_message_bodies": true,
+    "no_deleted_name_in_answer_evidence": true,
+    "no_deleted_name_in_answers": true,
+    "current_first_and_middle_choices": true,
+    "third_party_name_identity": true,
+    "no_backup_decision_retained": true
+  },
+  "review_pass": true,
+  "answers": [
+    {
+      "query": "What information do you still have about our backup first name?",
+      "answer": "I still have that you and your wife decided you don’t need a backup and there’s no scenario where you’d switch at this point. The confirmed first name is Elara."
+    },
+    {
+      "query": "What are our current first-name and middle-name choices, and what name did Priya choose?",
+      "answer": "Our current first-name choice is Elara, and our current middle-name choices are June and Mae. Priya chose Violet Mae."
+    }
+  ],
+  "erasure_binding_calls": 0,
+  "scope": "A genuinely fresh v3 directory with every original add through the previously failed B05 segment, followed by two fixed-mini posthoc answers. No transplant or cached inference in this run. No ambiguous scope candidates occurred, so it does not itself prove classifier causality. Remaining sessions of the 50-session background and its full ten-question evaluation are not included. Not a new benchmark score, full background recovery or three repetitions."
+}

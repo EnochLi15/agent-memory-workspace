@@ -1,0 +1,172 @@
+{
+  "protocol": "failed-prefix-http-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T05-47-03-788Z-GcjQwI",
+  "parent_run": "eval/artifacts/round2-quality-dev-441cc48-r1-facts-memops",
+  "erasure_binding": true,
+  "extraction_model": "gpt-5.4-mini",
+  "default_model": "gpt-5.4-mini",
+  "stage_models": {
+    "extraction": "gpt-5.4-mini",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "reasoning_effort": "low",
+  "add_timeout_ms": 115000,
+  "model_budget_ms": 90000,
+  "embedding_model": "nomic-embed-text:latest",
+  "incremental_verification": true,
+  "max_repair_rounds": 2,
+  "verification_format": "compact",
+  "verification_response_format": "json_schema",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "ab9c72161db72756cd3d0b3406d83f9db51e1f1fa667465f53bac80370668050",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "c4b73837371f699a045e924ccc677c3f5ecc36b3ef4f0a6f6603d8c7c5f9cb1f",
+    "service/src/models.ts": "8c7de47b7f30d54f568d19ab5c15b07caea6b405a89d6ef0f2395fd90b435936",
+    "service/src/operation-intent.ts": "3c5c09d302b7eba4aed7828972c27570129f3b3c81f84620651f8f2177af1036",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "service/src/repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "fa9d1d0d06478530bdef4b84110677ed12b6785d6c8454198bb320d954bcc277",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "a8412b1b40911e3dea78d674dfa6244ee0b6420e6d1628836e868fd8e24a14f1",
+    "service/src/verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "service/src/verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "service/src/verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "probe_sha256": "879db30e894405e96e45c02aea70051638365ba2adfe629e0ea4afde22483d73",
+  "prior_requests_sha256": "97dd811fe0ce07e00fcb5d9c5e0588c1d34d4f8baa0391f9bdcd8c9c1d8a2237",
+  "started_at": "2026-09-06T05:47:03.796Z",
+  "scope": "Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.",
+  "cases": [
+    {
+      "user_id": "round2-prefix:B05_forget",
+      "original_failure": {
+        "request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-18:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+        "elapsed_ms": 84325.81679200003
+      },
+      "planned_adds": 19,
+      "adds": [
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-1:0",
+          "status": 200,
+          "elapsed_ms": 7840.1744579999995
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-2:0",
+          "status": 200,
+          "elapsed_ms": 20124.695875
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-3:0",
+          "status": 200,
+          "elapsed_ms": 25030.924959
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-4:0",
+          "status": 200,
+          "elapsed_ms": 24955.020749999996
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-5:0",
+          "status": 200,
+          "elapsed_ms": 16893.242
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-6:0",
+          "status": 200,
+          "elapsed_ms": 39076.269042
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-7:0",
+          "status": 200,
+          "elapsed_ms": 8685.765500000009
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-8:0",
+          "status": 200,
+          "elapsed_ms": 9194.482833999995
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-9:0",
+          "status": 200,
+          "elapsed_ms": 43496.058625000005
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-10:0",
+          "status": 200,
+          "elapsed_ms": 66886.6795
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-11:0",
+          "status": 200,
+          "elapsed_ms": 24639.074083000014
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-12:0",
+          "status": 200,
+          "elapsed_ms": 17647.044042000023
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-13:0",
+          "status": 200,
+          "elapsed_ms": 16643.86079200002
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-14:0",
+          "status": 200,
+          "elapsed_ms": 7303.6189580000355
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-15:0",
+          "status": 200,
+          "elapsed_ms": 5619.011750000005
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-16:0",
+          "status": 200,
+          "elapsed_ms": 28749.873166000005
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-17:0",
+          "status": 200,
+          "elapsed_ms": 21358.83379200002
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-17:1",
+          "status": 200,
+          "elapsed_ms": 3272.195041000028
+        },
+        {
+          "original_request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-18:0",
+          "status": 200,
+          "elapsed_ms": 71516.35629099997
+        }
+      ],
+      "status": "prefix_accepted",
+      "final_revision": 19,
+      "fact_states": {
+        "erased": 2,
+        "active": 84,
+        "superseded": 31,
+        "conflicted": 2
+      }
+    }
+  ],
+  "finished_at": "2026-09-06T05:54:42.947Z",
+  "prefixes_accepted": 1,
+  "planned": 1
+}

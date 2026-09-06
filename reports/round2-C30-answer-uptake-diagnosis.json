@@ -1,0 +1,21 @@
+{
+  "protocol": "saved-evidence-answer-uptake-v1",
+  "artifact": "artifacts/round2-failure-prefixes/2026-09-06T05-00-29-092Z-0mVJ5Z/retrieval-probe-v1/answers.jsonl",
+  "artifact_sha256": "4586004c2cdc1439ba76ed5de58f3c6b7da7c1433bc4bbd53ec52daccce7b489",
+  "evidence_count": 32,
+  "schedule_evidence": [
+    {
+      "index": 5,
+      "id": "event-82b491fe2ed977ff542661aae89ff756460d67684e3a2ba5d6494c4515440f27",
+      "content": "Memory operation remember schedule. Source order 1260000169. Before: [none]. After: User's VTSAX auto-invest is timed to execute on the 1st and 15th of each month. (confirmed; active).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; synthetic order marker, not an event date: 2025-01-14T00:00:10.000Z; source: 03c04494dc53]"
+    },
+    {
+      "index": 6,
+      "id": "47f77d8087eccd88d78fec4b74cf5b2589ef3f6933eeb3d625b74170687bf250",
+      "content": "User's VTSAX auto-invest is timed to execute on the 1st and 15th of each month.\n[status: confirmed; subject/speaker: user; scope: recurring investment setup; synthetic order marker, not an event date: 2025-01-14T00:00:10.000Z; source: 03c04494dc53]"
+    }
+  ],
+  "answer": "Your current VTSAX auto-invest is $250 every two weeks into VTSAX.\n\nWhat changed from your previous setup: it was previously remembered as $200, but you corrected it to $250; everything else in the recurring investment setup was said to be correct.",
+  "conclusion": "The explicit 1st/15th schedule reached the Answer input twice, in event and fact representations. The Answer omitted it and used every two weeks. This observation contradicts recall-miss attribution for this detail; evidence packing/readout remains a hypothesis, not proven causal explanation.",
+  "scope": "Inspection only; no new model call or score change."
+}
