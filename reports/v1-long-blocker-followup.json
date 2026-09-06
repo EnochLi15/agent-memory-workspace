@@ -1,13 +1,13 @@
 {
   "protocol": "v1-long-blocker-followup-v1",
-  "updated_at": "2026-09-06T20:55:30.548967+00:00",
+  "updated_at": "2026-09-06T21:06:32.762562+00:00",
   "status": "in_progress",
   "failed_campaign": "v1-long-33a9e05-01",
   "original_service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
-  "fix_service_commit": "6d4652d6db727b82c2dabb56cf63b7d4857c0eb3",
+  "fix_service_commit": "08f3663cccdd9491b178dd5b1dcabf98cf1cd8b2",
   "tests": {
-    "service": 364,
-    "passed": 364
+    "service": 365,
+    "passed": 365
   },
   "cases": [
     {
@@ -20,9 +20,9 @@
     {
       "case": "memops:D25_remember:segment-49:0",
       "cause": "Model retained a concrete colliding value using a pronoun-only quote. Existing decoder correctly refused this unsupported independent-value witness.",
-      "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged. Historical completeness fix supplies unselected related records to the existing independent message verifier and scopes certificate invalidation to that instruction. Cross-property repair guidance preserves the complete authorized scope, while unsupported targets and unrelated neighbors remain protected. Repair receives usable aliases for related history outside the initial retrieval window. Verification explicitly distinguishes independent user events and checks existing target coverage before declaring a record omitted.",
-      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open. A single live verifier call with the unchanged narrowed proposal now rejects message 6 for missing historical food records, with no protocol errors or other findings. Complete new HTTP diagnostic under version03 is running. All 363 tests pass. Version03 HTTP stopped after two bounded attempts with semantic rejection and unchanged storage. The omitted historical spice-difference record was absent from both repair inputs (122 visible records). Existing expansion now prioritizes the checker scope under the unchanged 32-record budget; a new prepare-level regression fails before and passes after. All 364 tests pass. Version04 isolated HTTP is running.",
-      "status": "repair_visibility_fixed_new_isolated_http_pending"
+      "change": "Prompt now explicitly states the existing witness constraint, dependencies and independent-neighbor preservation. Validator unchanged. Capacity admission now applies to the selected actual transport; original full pair coverage is still reconstructed and validated at commit. Existing per-review/batch/total wire limits unchanged. Historical completeness fix supplies unselected related records to the existing independent message verifier and scopes certificate invalidation to that instruction. Cross-property repair guidance preserves the complete authorized scope, while unsupported targets and unrelated neighbors remain protected. Repair receives usable aliases for related history outside the initial retrieval window. Verification explicitly distinguishes independent user events and checks existing target coverage before declaring a record omitted. Both verifier and repair now receive exact proposed coverage metadata, without changing semantic authorization, deletion validation, repair counts, or time budgets.",
+      "evidence": "Original invalid binding decision still rejects. First whole-HTTP diagnostic reached a new capacity failure on 297 source-boundary pairs, safely committing nothing. Exact saved-call replay reproduces the failure; the complete grouped wire has 61 sources in 3 batches / 148821 characters. Production fix passes all 361 tests including grouped prepare/commit, partial-plan rejection, rollback and neighbors. Fresh whole-HTTP diagnostic under new explicit identity is running. New isolated HTTP diagnostic accepted after 90.3s continuation + 38.0s, one receipt/revision. Readback FAILED the frozen historical erasure scope; only three new Priya facts were erased and historical food preferences remained. See reports/v1-d25-diagnostic-storage.json. Capacity fix is verified, overall erasure blocker remains open. A single live verifier call with the unchanged narrowed proposal now rejects message 6 for missing historical food records, with no protocol errors or other findings. Complete new HTTP diagnostic under version03 is running. All 363 tests pass. Version03 HTTP stopped after two bounded attempts with semantic rejection and unchanged storage. The omitted historical spice-difference record was absent from both repair inputs (122 visible records). Existing expansion now prioritizes the checker scope under the unchanged 32-record budget; a new prepare-level regression fails before and passes after. All 364 tests pass. Version04 isolated HTTP is running. Version04 exposed all 123 repair candidates and repaired the formerly invisible record, but terminated safely because the verifier again called three already-targeted new facts missing and raised another contrast-record omission. Version05 adds exact server-computed record-to-operation links and focused repair aliases; 365 tests pass including new:N coverage. A live partial-scope check of the unchanged final proposal no longer calls the covered new facts missing. It returned represented; this alone does not prove erasure of the remaining contrast record, which must be checked in full binding/source erasure and storage readback. New complete HTTP diagnostic is running.",
+      "status": "target_coverage_links_verified_complete_http_and_storage_pending"
     },
     {
       "case": "memops:D22_update:segment-7:0",
@@ -51,7 +51,12 @@
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-stage-response.json": "f987d7969488abc52631fe60a64b7fe9132b307ec49f5ac70db133ce46154386",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-alias-before-test.log": "d03310f41bc890f1de56edf85c30e7a95ff2acd1fabcd808269ed40e0c64d010",
     "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-alias-after-test.log": "17eaf16562d5a6c00a549da124f913a489aa3cf3b5a088e53dc3dd7bf447d813",
-    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-alias-full-test.log": "2a13cbe91a082586e3819cbbd6d22fc01731a515fffa639ff3ad04096ffd5217"
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-alias-full-test.log": "2a13cbe91a082586e3819cbbd6d22fc01731a515fffa639ff3ad04096ffd5217",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-before-test.log": "c07187315fe3d801d70008a2a63b7f709c109c7db2bd62d4d2b784879cdbff5c",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-after-test.log": "8835efc492cdfb99eac238b514fd8d1839a6f4d4a68b9dc0d567596deb133cc1",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-full-test.log": "6e2b0c61ead3ecd1ef3d1d2636f55fc61948a5576751aa6006f2ed48266fcd54",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-stage-report.json": "8b9c9c8375aa1134d2ecb399a6010782b962903ecc85d0844b3427d034c959df",
+    "artifacts/v1-long-33a9e05-01/d25-segment49-failure/scope-links-stage-response.json": "1f77f0590d520a41b43f2c026ba3b32703c9873bda8d4702f896807ca33e1a50"
   },
   "diagnostic_reports": [
     "reports/round2-fresh-failed-add-PMc5CM.json",
@@ -60,6 +65,8 @@
     "reports/round2-fresh-failed-add-Okcxvr.json",
     "reports/v1-d25-diagnostic-storage.json",
     "reports/v1-d22-diagnostic-storage.json",
-    "reports/round2-fresh-failed-add-84rMbq.json"
+    "reports/round2-fresh-failed-add-84rMbq.json",
+    "reports/round2-fresh-failed-add-eyLNNL.json",
+    "reports/v1-erasure-target-links-stage.json"
   ]
 }
