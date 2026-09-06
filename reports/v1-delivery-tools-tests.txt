@@ -1,3 +1,4 @@
+test_v1_archive_roundtrip_and_changed_manifest_rejection (test_delivery_gates.PackagedSourceRoundtripTests.test_v1_archive_roundtrip_and_changed_manifest_rejection) ... ok
 test_evidence_symlink_is_rejected (test_delivery_gates.PackagingInventoryTests.test_evidence_symlink_is_rejected) ... ok
 test_private_trace_database_and_env_are_rejected (test_delivery_gates.PackagingInventoryTests.test_private_trace_database_and_env_are_rejected) ... ok
 test_selected_report_preserves_exact_path_and_rejects_duplicate (test_delivery_gates.PackagingInventoryTests.test_selected_report_preserves_exact_path_and_rejects_duplicate) ... ok
@@ -9,6 +10,6 @@ test_running_soak_is_not_completion (test_delivery_gates.ReadinessFailureTests.t
 test_unresolved_p0_cannot_mark_ready (test_delivery_gates.ReadinessFailureTests.test_unresolved_p0_cannot_mark_ready) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.083s
+Ran 10 tests in 2.110s
 
 OK

@@ -1,17 +1,18 @@
 {
   "protocol": "v1-delivery-tools-preflight-v1",
-  "checked_at": "2026-09-06T19:43:45.015056+00:00",
+  "checked_at": "2026-09-06T19:55:11.571667+00:00",
   "status": "preflight_passed_final_gates_pending",
   "failure_path_tests": 9,
   "syntax_check": "passed",
   "diff_check": "passed",
-  "scope": "Tests cover rejection of missing/P0/changed evidence, unfinished or interrupted soak, escaping evidence, private traces/databases/environment files, symlinks and duplicate archive names. Not an actual ready report, package, archive readback or release acceptance. Changes developed in an isolated worktree while paired evaluations remain frozen.",
+  "scope": "Ten tests cover rejection of missing/P0/changed evidence, unfinished/interrupted soak, escaping evidence, private traces/databases/environment files, symlinks and duplicate names, plus actual gzip readback/three-repository recursive clone/fsck and tampered release-identity rejection using tiny synthetic fixture repositories. No real runtime image, benchmark score, ready report or official release is claimed.",
   "evidence_sha256": {
     "scripts/audit-completed-runs.py": "32b307b3e065fd7988631207d15a57c8323a48913581060c1bbdff42c0ef0978",
     "scripts/audit-delivery-readiness.py": "9584f32286b236ddd300a72e04c0fa511e9a3611829da3c28dda0ddb6d03ba41",
     "scripts/package-delivery.py": "8ed44712dbd6e39c8c583d9d705efd4f8472a4bf664b5abd4b332d5443c1c2ff",
     "scripts/verify-delivery.py": "4bd0358c432477d6e1a7bd253be177c9ce1d71647f2691c8cc97721f61baa275",
-    "scripts/probes/test_delivery_gates.py": "9abc7e6b03c94372e5475c46c0e3429a28a8e00fd11c4f7485166a1afb792c85",
-    "reports/v1-delivery-tools-tests.txt": "6db39d07558d7885646fd8ac74e26d4f17142a25e01767fa3ecb7567b311bd61"
-  }
+    "scripts/probes/test_delivery_gates.py": "74f735815d30fa4e11e60c61a4e81b0223113dc38384a9fcc0daac47ab31a875",
+    "reports/v1-delivery-tools-tests.txt": "370fc55e60f2da148f922228d949d26fcf27d952600efdc81e6e241acc1a09b5"
+  },
+  "archive_protocol_roundtrip_tests": 1
 }

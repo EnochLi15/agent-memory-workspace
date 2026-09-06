@@ -113,8 +113,9 @@
   },
   "workspace_tests": {
     "runtime_identity": 12,
-    "delivery_gates": 9,
-    "passed": true
+    "delivery_gates": 10,
+    "passed": true,
+    "verified_at": "2026-09-06T19:55:11.572649+00:00"
   },
   "passed": true
 }
