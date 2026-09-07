@@ -1,0 +1,122 @@
+{
+  "protocol": "public-100-glm52-results-v1",
+  "checked_at": "2026-09-07T04:48:52.891163+00:00",
+  "campaign": "v1-public-100-glm52-01",
+  "planned_questions": 100,
+  "formal_release": false,
+  "passed": false,
+  "human_labels": 0,
+  "model": "glm-5.2",
+  "benchmarks": {
+    "locomo": {
+      "planned": 50,
+      "terminal_questions": 50,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 50
+      },
+      "planned_adds": 73,
+      "attempted_logical_adds": 4,
+      "committed_adds": 2,
+      "unattempted_adds": 69,
+      "http_attempts": 7,
+      "terminal_write_failures": [
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:locomo:conv-50:session-1:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:locomo:conv-49:session-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        }
+      ],
+      "http_audit_passed": true
+    },
+    "memops": {
+      "planned": 50,
+      "terminal_questions": 50,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 50
+      },
+      "planned_adds": 258,
+      "attempted_logical_adds": 8,
+      "committed_adds": 3,
+      "unattempted_adds": 250,
+      "http_attempts": 14,
+      "terminal_write_failures": [
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:memops:D25_remember:segment-1:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EXTRACTION_UNAVAILABLE\",\"message\":\"Parallel extraction could not reach the model provider\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:memops:A28_forget:segment-1:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EXTRACTION_UNAVAILABLE\",\"message\":\"Parallel extraction could not reach the model provider\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:memops:A06_reflect:segment-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:memops:C30_update:segment-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-01-candidate:memops:C28_trajectory_ops:segment-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Incomplete verification coverage\"}}"
+        }
+      ],
+      "http_audit_passed": true
+    }
+  },
+  "runtime_exit_code": 0,
+  "all_owned_children_stopped": true,
+  "source_state": {
+    "commits": {
+      ".": "0c534a79e21593e93ebc8c517abbb1b63ae95a2f",
+      "service": "f85b58aba0c8a2b309d8cfe1f733dd917960547c",
+      "eval": "c1bca67468d338eebcaa1eafd39c28227ad11fbe"
+    },
+    "clean": true,
+    "empty_candidate_database": true,
+    "planned_questions": 100,
+    "all_remote_models": "glm-5.2",
+    "local_embedding": "nomic-embed-text:latest",
+    "selection_manifest_sha256": "f3ed0c45203bf52838871a5c374a15eeb9b7fb91597d5b3b02ff1daf7c0bd5dc",
+    "run_spec_sha256": "2a27297e0a381232a5df93d4839f28e5d6a4370f975a4723bdad6322981a14e8"
+  },
+  "interpretation": "All 100 questions reached genuine service_error terminal records because selected backgrounds could not be fully ingested. This is end-to-end failure, not a measurement of answer accuracy. No automatic repeat, score repair, or 1000-question run.",
+  "evidence_sha256": {
+    "eval/artifacts/v1-public-100-glm52-01-candidate-locomo/manifest.json": "8b344a0f737b83a143f8a08090ca4552651fa219c40d14e5edcfbb4202ac1928",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-locomo/judgments.jsonl": "874fe6e1bd08e2023c145101285c33e01950078e47f37714b0ee8433e2799c0d",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-locomo/ingest.jsonl": "73d2a15ae325c92a80ba4f00666ae842913dad6c74a7194e61f0b00bcc18dcb0",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-locomo/http-trace-audit.json": "6076ac59f26c6aff7d57a8c3e063bb662111ff87599ef35259b54131ba9f7d03",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-memops/manifest.json": "57f99c10de1727ae02e3c172ed40ddae9337540f71b547669c9a7ddd377df50a",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-memops/judgments.jsonl": "4a26f91c14944052ca7cc99c2b7c33bde2eb259c8f69f0d76fe08ae0943ca3d1",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-memops/ingest.jsonl": "1123514bbc712575b2b54b4dcce9767a07a0085120960e2eef503b152eeee0f9",
+    "eval/artifacts/v1-public-100-glm52-01-candidate-memops/http-trace-audit.json": "8b0b4fd3dd8bb1e7f7e0ea28d6df74258232c4d452ae0a9bcde8f436e362d209",
+    "artifacts/v1-public-100-glm52-01/candidate-runtime.json": "b94e6cdedb5c02b61681232e7a3b87b3e59dae21fac7ba44072bc7a86a136eef",
+    "artifacts/v1-public-100-glm52-01/completed-audit.json": "0f494cabf6862a051724c995edabc78e01c68753d8373ee4a23b9edc25520f3c",
+    "configs/v1-public-100-glm52.json": "f3ed0c45203bf52838871a5c374a15eeb9b7fb91597d5b3b02ff1daf7c0bd5dc",
+    "configs/v1-public-100-glm52-run.json": "2a27297e0a381232a5df93d4839f28e5d6a4370f975a4723bdad6322981a14e8"
+  },
+  "generation": {
+    "attempts": 119,
+    "errors": 72,
+    "error_categories": {
+      "429": 50,
+      "cancelled": 22
+    },
+    "reported_tokens": {
+      "prompt_tokens": 256553,
+      "completion_tokens": 23239,
+      "total_tokens": 279792
+    }
+  },
+  "correct": 0,
+  "terminal_questions": 100,
+  "end_to_end_score": 0.0,
+  "conditional_answer_accuracy": null
+}

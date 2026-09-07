@@ -6,6 +6,8 @@
 
 下一项必须关闭的是判分JSON错误；完整小集、长背景、1000题评测与正式封版仍按[V1交付收敛计划](docs/29-V1交付收敛计划.md)验收。最新评测范围缩减为100题（50 LoCoMo + 50 MemOps），数据及模型配置见[本轮冻结清单](configs/v1-public-100-glm52.json)；旧1000题计划不再执行。此前GPT配置的[小集](reports/v1-small-b398a63-results.md)、[长背景](reports/v1-long-b398a63-results.md)、部署和恢复证据独立保留，不能作为新模型配置已经通过的证据。
 
+最新100题评测已结束：[结果报告](reports/v1-public-100-glm52-results.md)。100题全部因背景写入失败成为service_error，端到端0/100、无已判分答案；已记录429限流及分组/核验覆盖问题，未自动重跑。
+
 ## 快速运行
 
 宿主机：Node 24.18.0、Python 3、Docker。使用 `nvm use`，然后：
