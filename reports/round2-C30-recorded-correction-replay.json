@@ -1,0 +1,38 @@
+{
+  "protocol": "recorded-correction-transaction-replay-v1",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T02-54-06-897Z-1SOH1t",
+  "recorded_proposals_sha256": "38a80420d7623a4e9fc142dd1aba6a3f2c7f8af72aaa0cff2c1887f407d8b4db",
+  "source_sha256": {
+    "service/src/config.ts": "4a4aa0360e313f115fc7c23a37365c2cbad7ee14ca9e7727bef5b0c31050905c",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "016fd9f252623654d6d120a6540c5dbee78aa3a23d93a856b5f0fc3e3c931de8",
+    "service/src/models.ts": "efbc00b517759bdcc68a4d82bd4a7837fbd2ac469f5eac5f84539a2af17173ff",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "63e094771abb6df19ec69a087c86e1ae64f491581837223e9d4022756a40b294",
+    "service/src/repair.ts": "940d77fd4ebc3c05845d2c7eff9b0ecd2eb64bf6e40f7704dee0c7e200949a59",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "f1840c3bb7dcfaeb7be22edeaf59e7ae203be3ebe5a3d81151c78e497afc6b94",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification.ts": "057179fdbd5fe7d9dd473133fbfadffb0e3f0c2d9882ae537c1db1b6c27ae800"
+  },
+  "probe_sha256": "c8d71e75e42adce9eb02d52aed1294398f8ca0f38a5363cf2707c5823382a90d",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-recorded-correction-rYN9Gb",
+  "state_sha256": "c9cd886aec9ab7d4d88eb23d3fa366ea00f8424e51b876daea1c20f327f3b115",
+  "checks": {
+    "old_amount_retracted": true,
+    "new_amount_active": true,
+    "event_targets_old_only": true,
+    "new_amount_retrievable": true
+  },
+  "pass": true,
+  "degraded": [
+    "embedding_lexical"
+  ],
+  "scope": "The original recorded C30 extraction and participant messages are replayed without new LLM inference or semantic revalidation. This isolates the preparation/commit correction bug; it is not a new full-prefix or benchmark pass."
+}

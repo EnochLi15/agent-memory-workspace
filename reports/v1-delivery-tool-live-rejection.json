@@ -1,0 +1,7 @@
+{
+  "checked_at": "2026-09-06T19:46:10.913402+00:00",
+  "scope": "Actual current service/eval source and release draft; isolated readiness implementation, root redirected read-only to main workspace. Does not claim release readiness.",
+  "expected_rejection": "Required completed evidence is not available yet: reports/v1-blocker-closure.json",
+  "ready_file_created": false,
+  "passed": true
+}

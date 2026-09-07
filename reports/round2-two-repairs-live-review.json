@@ -1,0 +1,558 @@
+{
+  "protocol": "two-repair-rounds-live-review-v1",
+  "service_commit": "32cca16",
+  "model_budget_ms": 90000,
+  "max_repair_rounds": 2,
+  "scope": "One complete attempted original prefix per case, including final failures. Fresh ingestion; no score, measured causal gain, or three-repeat claim.",
+  "runs": [
+    {
+      "case": "E03_reflect",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-57-34-090Z-uktM54",
+      "parent_results_sha256": "a008cd8d146890d0ab6ec8badd51af7c5e711b114b58c97f813629d978f7fbee",
+      "model_usage_sha256": "80251d0562b57f5d223d67387df6804eb456d0e1b4b966e5eaa2b22620e08e8e",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "planned_adds": 8,
+      "accepted_adds": 7,
+      "final_revision": 7,
+      "status": "failed",
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+        "status": 503,
+        "elapsed_ms": 90028.38675,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "A rejected proposal could not be repaired within the request budget"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T04:03:11.949Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.4-mini",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 38447.670459000045,
+          "usage": {
+            "prompt_tokens": 7634,
+            "completion_tokens": 2564,
+            "total_tokens": 10198,
+            "completion_tokens_details": {
+              "reasoning_tokens": 747
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:03:17.433Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 5473.619292000018,
+          "usage": {
+            "prompt_tokens": 9729,
+            "completion_tokens": 184,
+            "total_tokens": 9913,
+            "completion_tokens_details": {
+              "reasoning_tokens": 112
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:03:58.761Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "verification_scope": {
+            "facts": 23,
+            "operations": 0,
+            "replacements": 1,
+            "messages": 8,
+            "reused": 0
+          },
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 41315.68383300002,
+          "usage": {
+            "prompt_tokens": 7522,
+            "completion_tokens": 2118,
+            "total_tokens": 9640,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 475
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:04:03.503Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "error",
+          "elapsed_ms": 4734.675374999992,
+          "usage": null,
+          "error_type": "Error"
+        }
+      ],
+      "two_repair_segments": [
+        {
+          "segment": 7,
+          "add": {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+            "status": 200,
+            "elapsed_ms": 81394.36283299999
+          },
+          "calls": [
+            {
+              "at": "2026-09-06T04:01:24.312Z",
+              "kind": "generation",
+              "purpose": "extraction",
+              "model": "gpt-5.4-mini",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 12208.17841600001,
+              "usage": {
+                "prompt_tokens": 6915,
+                "completion_tokens": 736,
+                "total_tokens": 7651,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 312
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:01:45.339Z",
+              "kind": "generation",
+              "purpose": "verification",
+              "verification_scope": {
+                "facts": 3,
+                "operations": 1,
+                "replacements": 0,
+                "messages": 9,
+                "reused": 0
+              },
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 21015.062791000004,
+              "usage": {
+                "prompt_tokens": 5447,
+                "completion_tokens": 1039,
+                "total_tokens": 6486,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1792
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 516
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:00.699Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 15355.130334000016,
+              "usage": {
+                "prompt_tokens": 7157,
+                "completion_tokens": 711,
+                "total_tokens": 7868,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 60
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:18.153Z",
+              "kind": "generation",
+              "purpose": "verification",
+              "verification_scope": {
+                "facts": 6,
+                "operations": 0,
+                "replacements": 0,
+                "messages": 5,
+                "reused": 7
+              },
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 17447.85387499997,
+              "usage": {
+                "prompt_tokens": 5786,
+                "completion_tokens": 851,
+                "total_tokens": 6637,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 326
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:24.060Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 5901.809999999998,
+              "usage": {
+                "prompt_tokens": 7445,
+                "completion_tokens": 221,
+                "total_tokens": 7666,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 82
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:32.958Z",
+              "kind": "generation",
+              "purpose": "verification",
+              "verification_scope": {
+                "facts": 1,
+                "operations": 0,
+                "replacements": 0,
+                "messages": 1,
+                "reused": 17
+              },
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 8888.636749999947,
+              "usage": {
+                "prompt_tokens": 5891,
+                "completion_tokens": 187,
+                "total_tokens": 6078,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1792
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 109
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:33.428Z",
+              "kind": "embedding",
+              "action": "add",
+              "model": "nomic-embed-text:latest",
+              "count": 33,
+              "elapsed_ms": 461.1792499999865,
+              "prompt_eval_count": 691,
+              "outcome": "ok"
+            }
+          ]
+        },
+        {
+          "segment": 8,
+          "add": {
+            "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+            "status": 503,
+            "elapsed_ms": 90028.38675,
+            "error": {
+              "error": {
+                "code": "EVIDENCE_VALIDATION",
+                "message": "A rejected proposal could not be repaired within the request budget"
+              }
+            }
+          },
+          "calls": [
+            {
+              "at": "2026-09-06T04:03:11.949Z",
+              "kind": "generation",
+              "purpose": "extraction",
+              "model": "gpt-5.4-mini",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 38447.670459000045,
+              "usage": {
+                "prompt_tokens": 7634,
+                "completion_tokens": 2564,
+                "total_tokens": 10198,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 747
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:03:17.433Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 5473.619292000018,
+              "usage": {
+                "prompt_tokens": 9729,
+                "completion_tokens": 184,
+                "total_tokens": 9913,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 112
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:03:58.761Z",
+              "kind": "generation",
+              "purpose": "verification",
+              "verification_scope": {
+                "facts": 23,
+                "operations": 0,
+                "replacements": 1,
+                "messages": 8,
+                "reused": 0
+              },
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 41315.68383300002,
+              "usage": {
+                "prompt_tokens": 7522,
+                "completion_tokens": 2118,
+                "total_tokens": 9640,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1792
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 475
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:04:03.503Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "error",
+              "elapsed_ms": 4734.675374999992,
+              "usage": null,
+              "error_type": "Error"
+            }
+          ]
+        }
+      ],
+      "call_counts": {
+        "extraction/ok": 8,
+        "verification/ok": 14,
+        "repair/ok": 7,
+        "embedding/ok": 7,
+        "repair/error": 1
+      },
+      "reported_generation_tokens": 175381,
+      "generation_calls_missing_usage": 1,
+      "assessment": "Segment 7 accepted after two actual targeted repairs; final scoped verification checked one fact and one message and reused 17 checks. Segment 8 spent 38.4 seconds extracting, 5.5 seconds on structural repair and 41.3 seconds on first verification; the second repair was cancelled after 4.7 seconds. The checker found a modality issue and missing meaningful emotional/professional context."
+    },
+    {
+      "case": "C30_update",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-57-34-092Z-gWmzBM",
+      "parent_results_sha256": "78eb02226b42f75381c665ffb63ea53e2d07845d1ae6d8b5eea76ad3c5ddade1",
+      "model_usage_sha256": "7f21cae7030f9099ab0be8d7a0d0a6c975cbe61f86361ef8a0bce174b01f0aee",
+      "stage_models": {
+        "extraction": "gpt-5.4-mini",
+        "verification": "gpt-5.5",
+        "repair": "gpt-5.5"
+      },
+      "planned_adds": 14,
+      "accepted_adds": 13,
+      "final_revision": 13,
+      "status": "failed",
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+        "status": 503,
+        "elapsed_ms": 90027.79858300003,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "A rejected proposal could not be repaired within the request budget"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T04:02:38.073Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.4-mini",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 30159.921124999993,
+          "usage": {
+            "prompt_tokens": 7208,
+            "completion_tokens": 2026,
+            "total_tokens": 9234,
+            "completion_tokens_details": {
+              "reasoning_tokens": 268
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:02:43.052Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 4966.054958000022,
+          "usage": {
+            "prompt_tokens": 8923,
+            "completion_tokens": 153,
+            "total_tokens": 9076,
+            "completion_tokens_details": {
+              "reasoning_tokens": 112
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:03:25.573Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "verification_scope": {
+            "facts": 16,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 10,
+            "reused": 0
+          },
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 42506.99920800002,
+          "usage": {
+            "prompt_tokens": 6962,
+            "completion_tokens": 2252,
+            "total_tokens": 9214,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 867
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T04:03:37.918Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "error",
+          "elapsed_ms": 12335.66508299997,
+          "usage": null,
+          "error_type": "Error"
+        }
+      ],
+      "two_repair_segments": [
+        {
+          "segment": 14,
+          "add": {
+            "original_request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+            "status": 503,
+            "elapsed_ms": 90027.79858300003,
+            "error": {
+              "error": {
+                "code": "EVIDENCE_VALIDATION",
+                "message": "A rejected proposal could not be repaired within the request budget"
+              }
+            }
+          },
+          "calls": [
+            {
+              "at": "2026-09-06T04:02:38.073Z",
+              "kind": "generation",
+              "purpose": "extraction",
+              "model": "gpt-5.4-mini",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 30159.921124999993,
+              "usage": {
+                "prompt_tokens": 7208,
+                "completion_tokens": 2026,
+                "total_tokens": 9234,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 268
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:02:43.052Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 4966.054958000022,
+              "usage": {
+                "prompt_tokens": 8923,
+                "completion_tokens": 153,
+                "total_tokens": 9076,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 112
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:03:25.573Z",
+              "kind": "generation",
+              "purpose": "verification",
+              "verification_scope": {
+                "facts": 16,
+                "operations": 0,
+                "replacements": 0,
+                "messages": 10,
+                "reused": 0
+              },
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "ok",
+              "elapsed_ms": 42506.99920800002,
+              "usage": {
+                "prompt_tokens": 6962,
+                "completion_tokens": 2252,
+                "total_tokens": 9214,
+                "prompt_tokens_details": {
+                  "cached_tokens": 1792
+                },
+                "completion_tokens_details": {
+                  "reasoning_tokens": 867
+                }
+              }
+            },
+            {
+              "at": "2026-09-06T04:03:37.918Z",
+              "kind": "generation",
+              "purpose": "repair",
+              "model": "gpt-5.5",
+              "attempt": 0,
+              "outcome": "error",
+              "elapsed_ms": 12335.66508299997,
+              "usage": null,
+              "error_type": "Error"
+            }
+          ]
+        }
+      ],
+      "call_counts": {
+        "extraction/ok": 14,
+        "verification/ok": 21,
+        "repair/ok": 8,
+        "embedding/ok": 13,
+        "repair/error": 1
+      },
+      "reported_generation_tokens": 211366,
+      "generation_calls_missing_usage": 1,
+      "assessment": "Segments 1-13 accepted, but segment 14 exhausted 90 seconds. Extraction took 30.2 seconds, structural repair 5.0 seconds and first verification 42.5 seconds, leaving about 12.3 seconds for the second repair. The checker found unsupported source qualifiers and omitted concrete travel/transfer facts. More repair opportunities cannot guarantee enough time for initial verification and repairs."
+    }
+  ]
+}

@@ -1,0 +1,281 @@
+{
+  "protocol": "round2-five-background-final-v1",
+  "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
+  "status": "finished_with_ingestion_failures",
+  "manifest": {
+    "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
+    "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+    "workspace_commit": "6153217490a583e4425593bf38fa1d286ed37e48",
+    "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+    "started_at": "2026-09-06T09:29:21.559Z",
+    "finished_at": "2026-09-06T10:57:41.666Z",
+    "planned_questions": 30
+  },
+  "results": {
+    "planned": 30,
+    "judged": 9,
+    "correct": 6,
+    "accuracy_over_planned": 0.2,
+    "judged_accuracy": 0.6666666666666666,
+    "incomplete": 21
+  },
+  "ingest": {
+    "attempts": 204,
+    "outcomes": {
+      "ok": 196,
+      "retrying": 5,
+      "failed": 3
+    },
+    "terminal_failures": [
+      {
+        "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_reflect:segment-26:0",
+        "status": "failed",
+        "attempt": 2,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Source operation source_operation_screen model stage unavailable\"}}",
+        "elapsed_ms": 11247.134042000049
+      },
+      {
+        "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:B05_forget:segment-18:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}",
+        "elapsed_ms": 90150.80087499996
+      },
+      {
+        "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-48:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+        "elapsed_ms": 81343.46779099992
+      }
+    ]
+  },
+  "backgrounds": [
+    {
+      "sample": "E10_reflect",
+      "planned": 6,
+      "judged": 0,
+      "correct": 0,
+      "service_error": 6,
+      "questions": [
+        {
+          "qid": "E10_reflect.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "category": "Reflect/CandidateDisambiguation",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "E10_reflect.json#p5_operation_application#adjacent_operation#8",
+          "category": "Reflect/OperationApplication",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "E10_reflect.json#p1_operation_trace#longitudinal_operation#1",
+          "category": "Reflect/OperationTrace",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "E10_reflect.json#p3_state_transition#longitudinal_operation#5",
+          "category": "Reflect/StateTransition",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "E10_reflect.json#p2_target_binding#adjacent_operation#2",
+          "category": "Reflect/TargetBinding",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "E10_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "category": "Reflect/CandidateDisambiguation",
+          "status": "service_error",
+          "correct": null
+        }
+      ]
+    },
+    {
+      "sample": "B05_forget",
+      "planned": 10,
+      "judged": 0,
+      "correct": 0,
+      "service_error": 10,
+      "questions": [
+        {
+          "qid": "B05_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "category": "Forget/CandidateDisambiguation",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p5_operation_application#longitudinal_operation#9",
+          "category": "Forget/OperationApplication",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p1_operation_trace#longitudinal_operation#1",
+          "category": "Forget/OperationTrace",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p3_state_transition#longitudinal_operation#5",
+          "category": "Forget/StateTransition",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p2_target_binding#longitudinal_operation#3",
+          "category": "Forget/TargetBinding",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p4_candidate_disambiguation#adjacent_operation#6",
+          "category": "Forget/CandidateDisambiguation",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p5_operation_application#adjacent_operation#8",
+          "category": "Forget/OperationApplication",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p1_operation_trace#adjacent_operation#0",
+          "category": "Forget/OperationTrace",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p3_state_transition#adjacent_operation#4",
+          "category": "Forget/StateTransition",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "B05_forget.json#p2_target_binding#adjacent_operation#2",
+          "category": "Forget/TargetBinding",
+          "status": "service_error",
+          "correct": null
+        }
+      ]
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "planned": 5,
+      "judged": 0,
+      "correct": 0,
+      "service_error": 5,
+      "questions": [
+        {
+          "qid": "F07_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+          "category": "TrajectoryOps/OperationApplication",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "F07_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+          "category": "TrajectoryOps/OperationTrace",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "F07_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+          "category": "TrajectoryOps/StateTrajectory",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "F07_trajectory_ops.json#p3_state_transition#adjacent_operation#4",
+          "category": "TrajectoryOps/StateTransition",
+          "status": "service_error",
+          "correct": null
+        },
+        {
+          "qid": "F07_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+          "category": "TrajectoryOps/TargetBinding",
+          "status": "service_error",
+          "correct": null
+        }
+      ]
+    },
+    {
+      "sample": "F07_update",
+      "planned": 4,
+      "judged": 4,
+      "correct": 3,
+      "service_error": 0,
+      "questions": [
+        {
+          "qid": "F07_update.json#p4_candidate_disambiguation#adjacent_operation#4",
+          "category": "Update/CandidateDisambiguation",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "F07_update.json#p5_operation_application#adjacent_operation#6",
+          "category": "Update/OperationApplication",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "F07_update.json#p1_operation_trace#longitudinal_operation#1",
+          "category": "Update/OperationTrace",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "F07_update.json#p2_target_binding#longitudinal_operation#3",
+          "category": "Update/TargetBinding",
+          "status": "judged",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "sample": "E10_remember",
+      "planned": 5,
+      "judged": 5,
+      "correct": 3,
+      "service_error": 0,
+      "questions": [
+        {
+          "qid": "E10_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+          "category": "Remember/CandidateDisambiguation",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "E10_remember.json#p5_operation_application#adjacent_operation#8",
+          "category": "Remember/OperationApplication",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "E10_remember.json#p1_operation_trace#adjacent_operation#0",
+          "category": "Remember/OperationTrace",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "E10_remember.json#p6_remember_negative#longitudinal_operation#11",
+          "category": "Remember/StateTransition",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "E10_remember.json#p2_target_binding#adjacent_operation#2",
+          "category": "Remember/TargetBinding",
+          "status": "judged",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "scope": "Original frozen91782c6/v8 five exposed development backgrounds, unchanged throughout. All30 questions retained. 6/30(20%) over planned; 6/9 on judged questions excludes21 service errors and is not overall accuracy. E10_reflect/B05/F07_trajectory failed; F07_update3/4 and E10_remember3/5. No newv10 result, independent test set or final improvement claim."
+}

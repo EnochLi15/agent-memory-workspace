@@ -1,0 +1,28 @@
+{
+  "protocol": "experiment-runtime-v1",
+  "status": "finished",
+  "pid": 23680,
+  "process_identity": "Mon Sep  7 02:32:35 2026",
+  "started_at": "2026-09-06T18:32:35.990704+00:00",
+  "updated_at": "2026-09-06T20:37:38.262901+00:00",
+  "children": {
+    "sleep-prevention": {
+      "pid": 23686,
+      "process_identity": "Mon Sep  7 02:32:35 2026",
+      "started_at": "2026-09-06T18:32:36.013883+00:00",
+      "exit_code": -15,
+      "stopped_by_runner": true,
+      "finished_at": "2026-09-06T20:37:38.262847+00:00"
+    },
+    "model-free-worker": {
+      "pid": 23688,
+      "process_identity": "Mon Sep  7 02:32:36 2026",
+      "started_at": "2026-09-06T18:32:36.033279+00:00",
+      "exit_code": 0,
+      "finished_at": "2026-09-06T20:37:38.262891+00:00"
+    }
+  },
+  "monitor_gaps": [],
+  "finished_at": "2026-09-06T20:37:38.264603+00:00",
+  "exit_code": 0
+}

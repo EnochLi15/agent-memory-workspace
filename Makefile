@@ -1,8 +1,9 @@
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
 BASE_URL ?= http://127.0.0.1:8088
+MEMORY_SERVICE_IMAGE ?= comp-agent-memory-service:v1-candidate
 RUN_ID ?=
-.PHONY: init build test up contract smoke eval-init baseline-init data eval-locomo eval-memops report down clean-run bundle experiment
+.PHONY: init build test up up-offline contract smoke eval-init baseline-init data eval-locomo eval-memops report down clean-run bundle experiment
 init:
 	git submodule update --init --recursive
 	node -e 'if(Number(process.versions.node.split(".")[0])!==24)throw Error("Use Node 24.18.0: nvm use")'
@@ -11,11 +12,13 @@ init:
 build:
 	cd service && npm run build
 	cd eval && npm run build
-	docker build -t comp-agent-memory-service:dev service
+	docker build -t "$(MEMORY_SERVICE_IMAGE)" service
 	docker build -t comp-agent-memory-eval:dev eval
 test:
 	cd service && npm run build && npm test
 	cd eval && npm run build && npm test
+	python3 -m unittest discover -s scripts/probes -p 'test_experiment_*.py'
+	python3 -m unittest discover -s scripts/probes -p 'test_delivery_gates.py'
 eval-init:
 	python3 -m venv eval/.venv
 	eval/.venv/bin/python -m pip install -r eval/python/requirements.lock
@@ -29,6 +32,8 @@ experiment:
 	python3 scripts/run-experiment.py --campaign "$(CAMPAIGN)" --profile "$(PROFILE)" --port "$(PORT)" $(EXPERIMENT_ARGS)
 up:
 	docker compose up -d --wait --wait-timeout 90
+up-offline:
+	MEMORY_CONFIG_FILE=configs/release-offline.env MEMORY_VOLUME=comp-agent-memory-offline-v1 docker compose up -d --wait --wait-timeout 90
 contract:
 	cd eval && node dist/cli.js contract --base-url "$(BASE_URL)"
 smoke: contract

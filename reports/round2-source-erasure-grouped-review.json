@@ -1,0 +1,72 @@
+{
+  "protocol": "joint-source-execution-review-v1",
+  "service_commit": "5b0eb42",
+  "tests": {
+    "service": 295,
+    "targeted": 26,
+    "ingestion_identity": 4
+  },
+  "commit": {
+    "report": "reports/round2-source-erasure-grouped-commit-BQW3Ra.json",
+    "status": "committed_controls_passed",
+    "saved_exact_prefix_packets": 7,
+    "real_source_calls": 5,
+    "source_prompt_tokens": 92616,
+    "source_completion_tokens": 1756,
+    "checks": [
+      {
+        "name": "single_atomic_revision",
+        "pass": true
+      },
+      {
+        "name": "receipt_persisted",
+        "pass": true
+      },
+      {
+        "name": "retained_selected_name",
+        "pass": true
+      },
+      {
+        "name": "retained_independent_full_name",
+        "pass": true
+      },
+      {
+        "name": "no_active_Iris_fact",
+        "pass": true
+      }
+    ],
+    "scope": "Seven saved real prefix responses replayed only on exact system/input match; joint source classification, quote repair and remaining stages use fresh real calls. The prefix consumes no original wall time, so the source stage can use the fresh model budget. Commit targets a private copy of the original v10 DB. Not a fresh complete request, latency result, HTTP ingestion or benchmark score."
+  },
+  "witness_audit": "reports/round2-source-erasure-grouped-witness-audit.json",
+  "capacity": "reports/round2-source-erasure-grouped-capacity.json",
+  "full_prepare": "reports/round2-source-routing-replay-pF5B5c.json",
+  "limitations": [
+    "Same exposed B05 failure snapshot; no new-background or paired full benchmark claim.",
+    "Current grouped wire repeats boundary authorizations and increases transmitted input; compact boundary tables require separate validation.",
+    "Original workload limits, uncertainty rejection, one global quote repair and atomic guards retained.",
+    "Human calibration, complete quality repeats and deployment remain open."
+  ],
+  "fresh_prepare": {
+    "report": "reports/round2-source-routing-replay-pF5B5c.json",
+    "status": "prepared",
+    "elapsed_ms": 87669.272083,
+    "source_groups": 11,
+    "scope": "Every generation stage fresh, exact exposed v10 failure snapshot; includes one verification transport retry. Prepare-only; candidate proposal differs from fixed74 control."
+  },
+  "fresh_prepare_saved_commit": {
+    "report": "reports/round2-source-erasure-grouped-replayed-commit-nNae48.json",
+    "status": "committed_controls_passed",
+    "exact_saved_packets": 8,
+    "fresh_llm_calls": 0,
+    "checks_passed": 5
+  },
+  "fresh_http": {
+    "report": "reports/round2-source-erasure-grouped-http-XBymBv.json",
+    "status": "passed",
+    "checks_passed": 7,
+    "checks_total": 7,
+    "seed_ms": 11675.881792,
+    "delete_ms": 31818.829083999997,
+    "scope": "Fresh synthetic v10 HTTP tenant, all models/local embeddings real, two source batches,70assistant echoes removed, independent same-code owner/browser preserved and search/reopening checked."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "protocol": "v1-d25-pair-witness-diagnostic-v1",
+  "checked_at": "2026-09-06T23:33:53.794324+00:00",
+  "service_commit": "32a14245d070eabe6150a1e4ce9b61c6d00373e1",
+  "diagnostic": "artifacts/round2-fresh-failed-add-1JB6bA/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 90116.30412500001,
+      "request_sha256": "0894a4c92ec41fcf0e603150c0bb62e28237a7e51ad19f7de17fe0822fff4df9",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 72789.188667,
+      "request_sha256": "0894a4c92ec41fcf0e603150c0bb62e28237a7e51ad19f7de17fe0822fff4df9",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Independent-value witness must include the colliding value or valid linked context"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "erasure_binding": {
+    "outcome": "ok",
+    "elapsed_ms": 61746.434791999985,
+    "output_chars": 10764,
+    "usage": {
+      "prompt_tokens": 15912,
+      "completion_tokens": 3182,
+      "total_tokens": 19094,
+      "completion_tokens_details": {
+        "reasoning_tokens": 785
+      }
+    }
+  },
+  "returned_decisions": 48,
+  "missing_required_value_context_indices": [
+    0,
+    2,
+    8,
+    14,
+    22,
+    24,
+    30,
+    34,
+    35,
+    37
+  ],
+  "supplied_context_for_other_value_indices": [
+    11,
+    17,
+    40,
+    41,
+    42
+  ],
+  "findings": [
+    "The model returned all 48 scope decisions in 61.7 seconds; the request terminated on evidence validation in attempt two, with no third attempt after a permanent failure.",
+    "Ten retain quotes omit the colliding boundary value and provide no value_context despite a linked same-message source being available.",
+    "Five non-null contexts refer to a restaurant or hot sauce when that pair concerns a relationship value such as user/coworker. Current decoder checks supplied contexts against the exact pair and rejects them.",
+    "No raw-source partition or commit was accepted. Original snapshot is unchanged."
+  ],
+  "next_action": "Make pair-specific witness requirements explicit in the existing erasure wire input, derived from the same canonical predicate used by the decoder. Distinguish genuine content-value matches from generated role labels and expose matched literals rather than requiring hash interpretation. Preserve exact same-source and post-erasure survival checks; do not ignore invalid supplied evidence or automatically invent a retention verdict. Validate against this saved packet before another version-specific diagnostic.",
+  "scope": "No benchmark result, stable latency comparison or P0 closure. This one run produced a complete erasure response after lossless input deduplication, but had fewer transport failures and a different generated proposal; do not attribute all runtime differences to compression.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-1JB6bA/report.json": "e0e2f2462f19ebfaa696a20b038a50dc91f0e4af0dd2b1f4a54c3fb9283012d0",
+    "artifacts/round2-fresh-failed-add-1JB6bA/private-model-trace.jsonl": "ae00008562828f9441fb52693ab94d6584e1991fcce5b48895a3d5f5760ef22a",
+    "artifacts/v1-d25-32a1424-01/private-witness-failures.json": "d2a3a9989f175d0ac019e30714b03455c68b1fe71f592517181a5ea084f2f66c",
+    "artifacts/v1-d25-32a1424-01/erasure-packet.json": "7f99f10bf3eecade72acfdd24742fdb5ad06472b51e58a9013d6d5bc84a7d574"
+  }
+}

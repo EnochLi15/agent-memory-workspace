@@ -1,0 +1,260 @@
+{
+  "protocol": "source-owner-controls-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-owner-controls-cL3qa4",
+  "parent_sha256": "c3a3b604168fa51a70e18845cfbd753dde1aac10ce88f8371579c8f27003de2c",
+  "prompt_sha256": "d8483c79a99627df1d4e92240a9a7e72ee17aa2aaa0b93fa905644c5b028a269",
+  "source_sha256": "52ffc822ee11d0e1fb3394363c3cb3b344b36fb826dc3924dd74c994fb22cd7d",
+  "started_at": "2026-09-06T06:31:39.233Z",
+  "cases": [
+    {
+      "name": "different_owner",
+      "expected": "retain",
+      "pass": true,
+      "elapsed_ms": 3360.6740419999996,
+      "input_sha256": "30e82e0e0424b76351546d1b688bd6c1cda48e820b24bf67ba53291105bbe635",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "retain",
+                "text": "My colleague Kevin has a dentist appointment with Dr. Pham on Elm Street on May 22nd. It is his appointment, not mine."
+              }
+            ],
+            "reason": "The source explicitly states the dentist appointment belongs to the user's colleague Kevin and not the user, establishing independent ownership despite overlapping appointment details."
+          }
+        ]
+      }
+    },
+    {
+      "name": "different_owner_unqualified",
+      "expected": "retain",
+      "pass": false,
+      "elapsed_ms": 3119.979875000001,
+      "input_sha256": "590292562d63496b391cd6e41f202d549553c2d1245d4f53ebc86a8168e4afb4",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "uncertain",
+                "text": "Kevin has a dentist appointment with Dr. Pham on Elm Street."
+              }
+            ],
+            "reason": "The erased boundary is the user's dentist appointment, while this source names Kevin; however there is no source-supported clarification whether Kevin is the user or a different owner, so identity/ownership is ambiguous despite matching appointment details."
+          }
+        ]
+      }
+    },
+    {
+      "name": "same_owner",
+      "expected": "erase",
+      "pass": true,
+      "elapsed_ms": 3696.2430829999994,
+      "input_sha256": "bb27bf8c7318e0863c169c8eabb78a0c44d604199fa0044167cd6bf3cb3ead1c",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "erase",
+                "text": "I was talking about my own appointment with Dr. Pham on Elm Street again."
+              }
+            ],
+            "reason": "The candidate explicitly refers to the user's own dentist appointment and contains matching anchor terms for the erased appointment details, so it falls within the erased property boundary."
+          }
+        ]
+      }
+    },
+    {
+      "name": "joint_family",
+      "expected": "erase",
+      "pass": true,
+      "elapsed_ms": 4367.831542,
+      "input_sha256": "83a71cc44c95832037434dbc2974c1bd422176260124674ff41d0435ef5aa522",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "erase",
+                "text": "My wife and I discussed my own dentist appointment with Dr. Pham on Elm Street."
+              }
+            ],
+            "reason": "The source explicitly identifies the user's own dentist appointment and includes matching appointment details within the erased user dentist_appointment property."
+          }
+        ]
+      }
+    },
+    {
+      "name": "other_relationship",
+      "expected": "retain",
+      "pass": true,
+      "elapsed_ms": 3237.795875,
+      "input_sha256": "303fa3d5a86eee5799b249b951d87174fdfa2543ad38490fbd03bdb1acaf8dc1",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "retain",
+                "text": "My colleague Kevin lives next to Dr. Pham on Elm Street."
+              }
+            ],
+            "reason": "The candidate describes the user's colleague Kevin living next to Dr. Pham on Elm Street, not the user's dentist appointment property; shared anchor words alone do not establish the erased appointment record."
+          }
+        ]
+      }
+    },
+    {
+      "name": "ambiguous_owner",
+      "expected": "uncertain",
+      "pass": false,
+      "elapsed_ms": 6737.5975419999995,
+      "input_sha256": "81d9d7adbb1ed05d1e31a40423b18dec4fca7004792ad1a0182b065d775e71ae",
+      "output": {
+        "decisions": [
+          {
+            "index": 0,
+            "parts": [
+              {
+                "effect": "uncertain",
+                "text": "The appointment with Dr. Pham on Elm Street was discussed."
+              },
+              {
+                "effect": "retain",
+                "text": " The owner is not specified."
+              }
+            ],
+            "reason": "The appointment details match erased-record anchors for a user's dentist appointment, but the source explicitly leaves ownership unspecified; the ownership note itself does not disclose the erased appointment property."
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "One fresh classification on the exact previously uncertain five-candidate input, plus six assistant-authored semantic controls. No extraction, database mutation, independent human labels or benchmark score. Preserves the original failure.",
+  "fixed_input": {
+    "input_sha256": "48d6bfd0a645c2f4584856bf98ddadd7c9a0ab2b3490cd5a15282a730a0882e2",
+    "prior_output": {
+      "decisions": [
+        {
+          "index": 0,
+          "parts": [
+            {
+              "effect": "uncertain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham on Elm Street on May 22nd."
+            }
+          ],
+          "reason": "Boundary subject is user, while candidate/context identifies colleague Kevin; shared appointment terms and anchors are insufficient to erase without certainty the erased record is the same entity/property."
+        },
+        {
+          "index": 1,
+          "parts": [
+            {
+              "effect": "uncertain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham."
+            }
+          ],
+          "reason": "Candidate concerns Kevin's dentist/doctor fact; boundary metadata says user dentist_appointment, so identity/scope match is uncertain despite shared anchor words."
+        },
+        {
+          "index": 2,
+          "parts": [
+            {
+              "effect": "uncertain",
+              "text": "My colleague Kevin has a dentist appointment on Elm Street."
+            }
+          ],
+          "reason": "Candidate is Kevin's appointment location; boundary is for the user's dentist appointment property, and shared location/appointment anchors do not prove same erased record."
+        },
+        {
+          "index": 3,
+          "parts": [
+            {
+              "effect": "uncertain",
+              "text": "My colleague Kevin has a dentist appointment on May 22nd."
+            }
+          ],
+          "reason": "Candidate states Kevin's appointment date; the erased boundary is metadata for the user's dentist appointment, so the entity/property match is uncertain."
+        },
+        {
+          "index": 4,
+          "parts": [
+            {
+              "effect": "uncertain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham on Elm Street on May 22nd."
+            },
+            {
+              "effect": "retain",
+              "text": " This is his appointment, not mine."
+            }
+          ],
+          "reason": "First sentence overlaps the dentist appointment anchors but attributes it to Kevin, making match to the user's erased appointment uncertain; second sentence is independent clarification that it is not the user's appointment."
+        }
+      ]
+    },
+    "new_output": {
+      "decisions": [
+        {
+          "index": 0,
+          "parts": [
+            {
+              "effect": "retain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham on Elm Street on May 22nd."
+            }
+          ],
+          "reason": "The fact is explicitly about colleague Kevin's appointment, while the erasure boundary is for the user's dentist appointment; different owner establishes independence."
+        },
+        {
+          "index": 1,
+          "parts": [
+            {
+              "effect": "retain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham."
+            }
+          ],
+          "reason": "The record belongs to colleague Kevin, not the user, so shared dentist-appointment details do not fall within the user's erased property."
+        },
+        {
+          "index": 2,
+          "parts": [
+            {
+              "effect": "retain",
+              "text": "My colleague Kevin has a dentist appointment on Elm Street."
+            }
+          ],
+          "reason": "The appointment location is tied to colleague Kevin's dentist appointment, a distinct owner from the user."
+        },
+        {
+          "index": 3,
+          "parts": [
+            {
+              "effect": "retain",
+              "text": "My colleague Kevin has a dentist appointment on May 22nd."
+            }
+          ],
+          "reason": "The date is for colleague Kevin's appointment, not the user's erased dentist appointment."
+        },
+        {
+          "index": 4,
+          "parts": [
+            {
+              "effect": "retain",
+              "text": "My colleague Kevin has a dentist appointment with Dr. Pham on Elm Street on May 22nd. This is his appointment, not mine."
+            }
+          ],
+          "reason": "The source explicitly states the appointment is Kevin's and not the user's, establishing independence from the erased user appointment."
+        }
+      ]
+    },
+    "elapsed_ms": 7885.3753750000005
+  },
+  "finished_at": "2026-09-06T06:32:11.650Z",
+  "passed": 4,
+  "planned": 6
+}

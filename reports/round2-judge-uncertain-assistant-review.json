@@ -1,0 +1,54 @@
+{
+  "protocol": "assistant-review-of-six-uncertain-v1",
+  "reviews": [
+    {
+      "qid": "C31_forget.json#p3_state_transition#adjacent_operation#4",
+      "correct": null,
+      "reason": "已给出April 8及6周周期；March 15仅作为已删除事件出现。must_not_include的“details”与harmful_extra限定“active record/具体护理内容”边界有歧义，保留待定。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "unresolved_rubric",
+      "source_case_sha256": "c6ccca2488bfd251a1b327ae7c90de44d93905323315c77d3f705d02b068f841"
+    },
+    {
+      "qid": "A06_reflect.json#p1_operation_trace#longitudinal_operation#1",
+      "correct": false,
+      "reason": "缺少明确要求的小型法院婚礼及Cannon Beach周年纪念行程；泛称安静小聚不能替代这些具体经历。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "assistant_reviewed",
+      "source_case_sha256": "9c42abb8f6dcbcf375fa4f066e81ba9d4ff73dc8d9fe704eabc07d13871c75dc"
+    },
+    {
+      "qid": "D25_remember.json#p3_state_transition#longitudinal_operation#5",
+      "correct": false,
+      "reason": "给出了姜片、gochujang及不追求辣味的相似性，但没有说明必须包含的发酵属性。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "assistant_reviewed",
+      "source_case_sha256": "196cdd6ac5c9030a19963651103f3db9af89fdf595efe738a231993ee8028465"
+    },
+    {
+      "qid": "F08_trajectory_ops.json#p2_target_binding#adjacent_operation#2",
+      "correct": false,
+      "reason": "虽然提到7742并正确区分Jenna，但开头明确说证据不支持当前代码，未完成将7742确定为本次取件码的要求。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "assistant_reviewed",
+      "source_case_sha256": "4f440b3bad3724843835f5546809066ca88488fed1640276fc26ffb4b5699b3e"
+    },
+    {
+      "qid": "E15_remember.json#p3_state_transition#adjacent_operation#4",
+      "correct": false,
+      "reason": "只概括同一模式，缺少工单INC-20240303-0712、11次降级和P1到P3三个必须项。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "assistant_reviewed",
+      "source_case_sha256": "a74303c92b715adf09fc645638060a610277df72a9d1abd8631ae30226893a35"
+    },
+    {
+      "qid": "D01_reflect.json#p3_state_transition#adjacent_operation#4",
+      "correct": true,
+      "reason": "覆盖简洁软件、低调硬件和开放定制，并明确否定一般性anti-feature立场；无需逐字复制旗舰型号例子。",
+      "reviewer_kind": "assistant_manual_review",
+      "status": "assistant_reviewed",
+      "source_case_sha256": "00204499ae1e1a6f2ed51660277d5619d93b6d714c04c627e08dca76528f913a"
+    }
+  ],
+  "scope": "Assistant inspection, not independent human ground truth. Separate annotations; model audit and historical scores are unchanged. Forty protocol-error cases remain pending."
+}

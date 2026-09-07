@@ -1,0 +1,26 @@
+{
+  "protocol": "v1-durability-v1",
+  "mode": "enhanced",
+  "commits": {
+    "workspace": "a1b5b8723dd8f91cc3d471225596fe0994654475",
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "image_id": "sha256:dacb496eafa3eebe54e61a028261db602e52f7e99734b65b06040f09b8cd4389",
+  "release_config_sha256": "4680a1d70294aedf0b0da8a6c7b53025139f2e0bb932e5c1586cd16c8749f576",
+  "scope": "Stopped current candidate, complete tar snapshot including WAL if present, restored to fresh volume; same-user HTTP receipt/state readback.",
+  "source_volume": "v1-verify-enhanced-03",
+  "restored_volume": "v1-verify-enhanced-restored-03",
+  "archive_sha256": "262537981fde7cd9c610b11b6e333ea62ad9bdcd628d8418b00270f8bddb44ae",
+  "user_id": "contract-1788745117109",
+  "checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true,
+    "logical_storage_check": true
+  },
+  "passed": true,
+  "readback_sha256": "53339b9f09420f008c73b169b3582d60a5afc420fdc2cfd9ce5c6194a00fc0ae"
+}

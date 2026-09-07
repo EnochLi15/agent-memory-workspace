@@ -1,0 +1,82 @@
+{
+  "protocol": "recorded-schema-format-comparison-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-schema-recorded-SRoi63",
+  "parent_results_sha256": "968598220269ca639164cd69a7f1ffc47e942994338c1f58a256297ddf79f40d",
+  "fixed_input_sha256": "7320d931e4e51131445f418d1f6de694e51e14324c333b8afc7d6c8a70f8107f",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "6624e8b83ef20762fc25c996bd003b1037ab857400e7a405951530773cedbbe8",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "fe5b4a0085249bae6cb43567b68dc717009d36436b3f54523835fe362b85d39c",
+    "models.ts": "6d0192204e1da5eaccf166207ae5f38a9a6d7c7f373f4807d2ee2db941324240",
+    "operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "ef36b56751f7741e49e20e3f36a400451f0a4d04c22bfb6c830b06e0487aa837",
+    "repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "storage.ts": "1e226d8e566a84c7cc1c955b439821f4e9f35e0ae20231dbb19d81bce7958b18",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "fa850f41f98f657b53c5ab1b8d3a40a3600f5e085b3a3e19c216e5772440b399"
+  },
+  "probe_sha256": "2017be5abfb7f83cec4f0783e7a7939c7b5a143d23ce1d2428acf203023dc379",
+  "planned": 4,
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "started_at": "2026-09-06T05:12:09.293Z",
+  "results": [
+    {
+      "repeat": 0,
+      "format": "json_object",
+      "status": "judged",
+      "findings": [
+        "message 6: The proposed facts cover the Rebecca/Rachel incident details, but omit the user's mortification and that they blanked on Rebecca's actual name.; missing statement: It was mortifying — there were like six or seven people at the table and I just blanked on her actual name.",
+        "message 10: The proposal covers the Martin/Michael incident and embarrassment generally, but omits the specific Martin/Michael first-letter pattern and the physical 'low-grade cringe in my stomach' description.; missing statement: Both start with M, same pattern. And it was a group call with two other colleagues on the line. He never corrected me, which was almost worse — I only realized after I hung up and checked the email thread. I felt this awful lingering embarrassment the rest of the day, like a low-grade cringe in my stomach."
+      ],
+      "elapsed_ms": 28342.941709,
+      "generation_calls": 1,
+      "complete_array_responses": 1
+    },
+    {
+      "repeat": 0,
+      "format": "json_schema",
+      "status": "judged",
+      "findings": [],
+      "elapsed_ms": 16140.588333,
+      "generation_calls": 1,
+      "complete_array_responses": 1
+    },
+    {
+      "repeat": 1,
+      "format": "json_schema",
+      "status": "judged",
+      "findings": [
+        "message 10: The message's memorable detail that Martin/Michael fit the same first-letter name-swap pattern is not represented by the linked facts or operation.; missing statement: Both start with M, same pattern.",
+        "message 12: The ongoing emotional impact of the Martin Chu incident is not represented, though other details from the message are covered.; missing statement: But the feeling sticks with me."
+      ],
+      "elapsed_ms": 17356.454124999997,
+      "generation_calls": 1,
+      "complete_array_responses": 1
+    },
+    {
+      "repeat": 1,
+      "format": "json_object",
+      "status": "judged",
+      "findings": [
+        "message 6: The proposed facts cover the wrong-name incident, group size, working duration, correction, and inferred effect on Rebecca, but omit the user's own emotional reaction that it was mortifying.; missing statement: It was mortifying",
+        "message 10: The proposed facts cover the Martin Chu incident, call context, lack of correction, realization timing, and embarrassment, but omit the stated M/M first-letter similarity as part of the recurring pattern.; missing statement: Both start with M, same pattern."
+      ],
+      "elapsed_ms": 21252.418124999997,
+      "generation_calls": 1,
+      "complete_array_responses": 1
+    }
+  ],
+  "scope": "Two alternating-order pairs of checker-only calls on the same saved post-repair E03 proposal. Input equality is asserted before each first call. This measures protocol behavior, not full pipeline acceptance or three full repeats.",
+  "finished_at": "2026-09-06T05:13:32.393Z"
+}

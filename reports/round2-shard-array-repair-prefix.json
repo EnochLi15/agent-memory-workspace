@@ -1,0 +1,25 @@
+{
+  "protocol": "missing-shard-field-repair-entry-v1",
+  "parent": "artifacts/round2-E10-87d67b1-failure-p7o8mm84",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-shard-array-repair-prefix-EVNedu",
+  "saved_packets_used": 3,
+  "planned_saved_packets": 3,
+  "fresh_model_calls": 0,
+  "repair_reached": true,
+  "original_missing_field_preserved": true,
+  "complete_participants": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10
+  ],
+  "other_stages": 0,
+  "database_unchanged": true,
+  "failure": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Control stopped at required schema repair"
+  },
+  "scope": "Exact saved real extraction packets reach the existing global repair in isolated candidate runtime. Stops before any repair model call; not successful preparation, commit or benchmark recovery."
+}

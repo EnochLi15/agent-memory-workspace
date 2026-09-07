@@ -1,0 +1,30 @@
+{
+  "protocol": "failed-development-snapshots-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-TgVQie",
+  "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "parent_manifest_sha256": "47d227e1612cc046147752204a50e1e75e0c3189626c6cd16a3f6dde7412ed5a",
+  "source_commit": "d8e264b210debfaf31a4aeaa587986c6e01af301",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "captured_at": "2026-09-06T06:09:00.912Z",
+  "cases": [
+    {
+      "sample": "B05_forget",
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+      "snapshot_revision": 18,
+      "fact_count": 98,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-TgVQie/B05_forget.json",
+      "sha256": "1e398ca4919768c748179daa3bc9a27f02a2189ea6b9e43129c34eee85e08c8a",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}"
+    },
+    {
+      "sample": "E10_reflect",
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_reflect:segment-26:0",
+      "snapshot_revision": 25,
+      "fact_count": 113,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-TgVQie/E10_reflect.json",
+      "sha256": "5a6200bd73dc58557b761afd4fef8f1c706ede0ea3faed4afdab635fa7b7210c",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    }
+  ],
+  "scope": "Logical SQLite snapshots using read-only connections and a read transaction, after failed sample judgment rows exist. Other campaign samples may still run. No repair, commit or replacement of original evaluation results."
+}

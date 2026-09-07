@@ -1,0 +1,63 @@
+{
+  "protocol": "private-trace-failure-analysis-v1",
+  "trace_path": "artifacts/round2-quality-dev-2542f2a-r1/facts-model-trace.jsonl",
+  "trace_snapshot_sha256": "4d3079895dbac9f82a41866705f7d4e3ca415394d292f59fea69c39117aceb95",
+  "cases": [
+    {
+      "case": "F07_update:segment-6:0",
+      "trace_ids": [
+        "7e3ece9d-3181-4bf7-821f-1a8106e39c7e",
+        "fb14a514-83d9-415d-b590-5f8c28850b68",
+        "a2568f90-986f-45b3-a864-42f03faba161",
+        "d6977cc4-d53d-43de-94a6-57a309a5e898",
+        "b953b5c7-ba27-45f5-aef9-5fdca37ae2e1",
+        "9640c2c9-1f4e-410c-9930-a0f8255e0ade"
+      ],
+      "stage_sequence": [
+        "extraction",
+        "verification",
+        "repair",
+        "verification",
+        "repair",
+        "verification"
+      ],
+      "finding": "Initial extraction covered the final message only (four facts). First verifier found omitted earlier plans and preferences, with a nonliteral missing-quote on message6. Repairs added earlier content, but later checks exposed additional omitted goals in messages8 and6; the final message6 goal remained missing after two repairs. Do not label a protocol-valid source map as exhaustive semantic coverage.",
+      "fixed": false
+    },
+    {
+      "case": "E10_reflect:segment-44:0",
+      "trace_ids": [
+        "f8136ff3-7e2c-4561-bf5d-2e27d9f7b717",
+        "96b39b5f-0f3e-40da-8a9d-59c08681edf5",
+        "02c9d869-7904-48ee-84a6-c684e6cbeed5",
+        "d518e388-44a5-4449-b885-766fac280a91"
+      ],
+      "stage_sequence": [
+        "extraction",
+        "verification",
+        "repair",
+        "repair"
+      ],
+      "finding": "The verifier required handling a rejected assistant gym claim. Repair appended a property-wide forget with no stored target. Authorization/binding guards did not validate that operation; the next patch removed it. The original missing-coverage verdict remained unresolved, causing rejection. A raw assistant claim and an existing user memory need distinct mutation targets; bypassing the operation guard would risk deleting the actual gym routine.",
+      "fixed": false
+    },
+    {
+      "case": "E10_remember:segment-35:0",
+      "trace_ids": [
+        "d17e1826-99fe-4d6a-a2d1-931c6497285a",
+        "ce4bd8c5-8199-4bf2-b708-eb7dec51b33d",
+        "7c13de3c-319f-4f01-8607-0efdc64f7a1b"
+      ],
+      "stage_sequence": [
+        "extraction",
+        "verification",
+        "repair_attempt0",
+        "repair_attempt1"
+      ],
+      "finding": "Verifier found missing earlier personal child context. The first repair call failed twice with empty output and generic Error, taking approximately5.54s each. Entire add26.729s: the generic budget wording is not evidence of a90s timeout. Original logs cannot establish provider/network cause. No repair output exists to inspect or certify.",
+      "fixed": false
+    }
+  ],
+  "scope": "Observed original failure chains from the now-finished exposed campaign. No repaired outcome replaces original failures; provider/network cause of generic repair errors remains unknown.",
+  "trace_final_sha256": "8900d9f13f547290be228da3b0d279aba14f404982743dc86e08292187ae9883"
+}

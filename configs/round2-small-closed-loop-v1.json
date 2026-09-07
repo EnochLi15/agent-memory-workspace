@@ -1,0 +1,240 @@
+[
+  {
+    "sample_id": "bounded-lifecycle",
+    "group_id": "bounded-lifecycle",
+    "benchmark": "memops",
+    "sessions": [
+      {
+        "session_id": "s1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "My manager is Clara. My access code is QC-9182. I live in Seattle. My default browser on my work laptop is Firefox. My friend Kevin uses Brave on his laptop.",
+            "timestamp": "2026-01-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "session_id": "s2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "I now live in Portland. My default browser on my work laptop is now Safari instead of Firefox.",
+            "timestamp": "2026-02-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "session_id": "s3",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Forget my access code. Keep my other records.",
+            "timestamp": "2026-03-01T00:00:00Z"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "qid": "small-city",
+        "question": "What is my current city?",
+        "gold_answer": "Portland",
+        "category": "update",
+        "gold_rubric": {
+          "must_include": [
+            "Portland is the current city."
+          ],
+          "must_not_include": [
+            "Seattle presented as current."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-manager",
+        "question": "Who is my manager?",
+        "gold_answer": "Clara",
+        "category": "same-message-neighbor",
+        "gold_rubric": {
+          "must_include": [
+            "Clara is the manager."
+          ],
+          "must_not_include": [],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-work-browser",
+        "question": "What is the current default browser on my work laptop?",
+        "gold_answer": "Safari",
+        "category": "update",
+        "gold_rubric": {
+          "must_include": [
+            "Safari is the current work-laptop browser."
+          ],
+          "must_not_include": [
+            "Firefox presented as current.",
+            "Brave attributed to the user."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-friend-browser",
+        "question": "Which browser does my friend Kevin use on his laptop?",
+        "gold_answer": "Brave",
+        "category": "owner-neighbor",
+        "gold_rubric": {
+          "must_include": [
+            "Kevin uses Brave."
+          ],
+          "must_not_include": [
+            "Safari or Firefox attributed to Kevin."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-forgotten-code",
+        "question": "What is my access code?",
+        "gold_answer": "I do not know; the access code was forgotten.",
+        "category": "forget",
+        "gold_rubric": {
+          "must_include": [
+            "Does not supply a code; states lack of retained information or that it was forgotten."
+          ],
+          "must_not_include": [
+            "QC-9182 or a meaningful fragment of the code."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "sample_id": "bounded-retention",
+    "group_id": "bounded-retention",
+    "benchmark": "memops",
+    "sessions": [
+      {
+        "session_id": "s1",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Maya: My old Android tablet uses Chrome. My friend Olivia uses Edge on her laptop.",
+            "timestamp": "2026-01-01T00:00:00Z"
+          },
+          {
+            "role": "assistant",
+            "content": "Andrew: I live in Boston. My hobby is painting.",
+            "timestamp": "2026-01-01T00:00:00Z"
+          }
+        ]
+      },
+      {
+        "session_id": "s2",
+        "messages": [
+          {
+            "role": "user",
+            "content": "Maya: In a fictional example, Kevin says \"forget my laptop\". Keep my own records. If I sell my old Android tablet in the future, then forget everything about it. I have not sold it. Do not stop tracking my old Android tablet.",
+            "timestamp": "2026-02-01T00:00:00Z"
+          }
+        ]
+      }
+    ],
+    "questions": [
+      {
+        "qid": "small-tablet-browser",
+        "question": "Which browser does Maya use on her old Android tablet?",
+        "gold_answer": "Chrome",
+        "category": "conditional-negation-retention",
+        "gold_rubric": {
+          "must_include": [
+            "Chrome is retained for Maya's tablet."
+          ],
+          "must_not_include": [],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-olivia-browser",
+        "question": "Which browser does Maya's friend Olivia use on her laptop?",
+        "gold_answer": "Edge",
+        "category": "quoted-instruction-neighbor",
+        "gold_rubric": {
+          "must_include": [
+            "Olivia uses Edge."
+          ],
+          "must_not_include": [
+            "Olivia's browser said to have been forgotten."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-andrew-hobby",
+        "question": "What is Andrew's hobby?",
+        "gold_answer": "Painting",
+        "category": "named-human-assistant-role",
+        "gold_rubric": {
+          "must_include": [
+            "Painting is Andrew's hobby."
+          ],
+          "must_not_include": [],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-andrew-city",
+        "question": "Where does Andrew live?",
+        "gold_answer": "Boston",
+        "category": "named-human-assistant-role",
+        "gold_rubric": {
+          "must_include": [
+            "Andrew lives in Boston."
+          ],
+          "must_not_include": [
+            "Maya attributed as living in Boston."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      },
+      {
+        "qid": "small-tablet-sale",
+        "question": "Has Maya sold her old Android tablet?",
+        "gold_answer": "No, she has not sold it.",
+        "category": "conditional-state",
+        "gold_rubric": {
+          "must_include": [
+            "She has not sold it."
+          ],
+          "must_not_include": [
+            "She has already sold it."
+          ],
+          "harmful_extra": [
+            "Unsupported personal information or incorrect attribution."
+          ]
+        }
+      }
+    ]
+  }
+]

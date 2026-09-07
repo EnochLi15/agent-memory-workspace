@@ -1,0 +1,183 @@
+{
+  "protocol": "real-model-lifecycle-variants-v1",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f",
+  "model": "gpt-5.4-mini",
+  "stage_models": {
+    "extraction": "gpt-5.5",
+    "verification": "gpt-5.5",
+    "repair": "gpt-5.5"
+  },
+  "verification_format": "compact",
+  "max_repair_rounds": 2,
+  "incremental_verification": true,
+  "model_budget_ms": 90000,
+  "experiment_spec_sha256": "d465b2f5371ab82accca686ab7422e0abaf0791f17c5b1f59ac08300514c5754",
+  "started_at": "2026-09-06T12:11:53.599Z",
+  "reasoning_effort": "low",
+  "source_sha256": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/config.ts": "55fa51f0a9c6c70ef8bc4452c663e1d64bf2fee11d88e8dd58faf1bcbbb3668a",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/db-worker.ts": "05097317fd42ebfbfed24917c3b99fc60c85cede517abef0789cd1d9bc46ef8d",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/engine.ts": "f9a3ebcb287ee6485f320a8e684f9bb1a44b61d1b2f5eaf113ef1a208d6b2100",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/extraction-shards.ts": "3bbb6d38f69bd97f75abd6e937536f73dadaa0319f2bd69e4b02fd4db7d51142",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/extraction.ts": "40b58a5935fe84307ee1f1b775a1c990c64f98d5eb8748dd359beedf02dee9f2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/models.ts": "3a7de669eca5cc9c5d0d2a3527c0ba6709032f19544bafd1d206a3d9f2055789",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/proposal-input.ts": "ac53e04b0006484d053889ec8a7e67dae66dd7de187b3f5887e5028e8cd5adb4",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/repair.ts": "b964f96e308c5ddff6229f8225ef26b08c5e36b66f9c499d05a3783d13eb6573",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/reranking.ts": "7750e78cbd212b33414d77be9bfde9a0344ea52818f51c17e2fec24432e67d3e",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/retrieval-policy.ts": "8e621c40985923792dfddbf1abaff771c2bedef782b7dace7792b0923b0952ef",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/retrieval.ts": "ff0bfc41947ed492f16636a09d3f4b907b39c8de7f0525fc49c0ebb52c27c41f",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-coverage.ts": "835ebc18e3296c32ac4673886ab5ee520b32dc4903025ab85cc9af2101051cd3",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-erasure-execution.ts": "665c0636ccb9485e672241e8e69dec55617f5a752bd03b64358ba1a961dfef2b",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-erasure-grouped.ts": "dcba549ef0096446a055c20c29b723412cb3d57a9c306901e853811d12db4368",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-erasure.ts": "317db520d58755c641cc00bbbc087c6c74fe24799f534c23e92b4c413cb48cdd",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-operation-batches.ts": "41e90a82dcd03688c3ded797dedce7b31c3043c8ebc99b0d589c2527a30f6480",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-operation-routing.ts": "2ee20860568e8b6b0c5d63905c7421081563f4132d0ed1ff1dca76c5924915b2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-operations.ts": "7bfaf9b65536cfec28b2c5cd018b00ba5065d6f80d116d16f003d3916ba036c3",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/storage.ts": "7370dd3543a0122833110388558a19a70a2db345cf757d55bf6309a216940b26",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/text.ts": "a2cfddd00834bf3b0917cb61f96df857e89a7959bb30a7a3d3ae696355693393",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/types.ts": "d692a1896091de5e2e41d1a2add396dac1adf7c54a7072eb6deac753c57ed0ff",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/verification-compact.ts": "d02f97c52978495985a201d515b6a870547979d5dd066954e1b135287b8525a5",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/verification-session.ts": "2a28b34861818e95067abfc8545ef105f81614756a5592810980b8d44db703ec",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-8cb099f/src/verification.ts": "583c8dca820182ec1920f593b668cf5e55905897b2113dcef68d1da567e974f3"
+  },
+  "probe_sha256": "4fdd78088dedf2b4d687c63a55dfb211d2d9c562eeafc2c7c5f70389bae6dd0a",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-lifecycle-variants/2026-09-06T12-11-53-491Z-BrMZPH",
+  "cases": [
+    {
+      "id": "direct_entity",
+      "expected_erase": true,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 10452.554333
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 17367.255125
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "negation",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 10453.905042000002
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 10587.260125
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "quotation",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 8677.576834
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 9885.563999999998
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "condition",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 10010.474457999997
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 11736.484457999992
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    },
+    {
+      "id": "reported_request",
+      "expected_erase": false,
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 9699.573457999999
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 7000.1289160000015
+        }
+      ],
+      "checks": {
+        "two_adds_ok": true,
+        "firefox_preserved": true,
+        "brave_preserved": true,
+        "brave_identity_preserved": true,
+        "chrome_retention_matches": true,
+        "forget_event_matches": true,
+        "forgotten_source_absent": true
+      },
+      "pass": true
+    }
+  ],
+  "scope": "Five synthetic controls with fixed expected retention, not benchmark questions or overall accuracy.",
+  "finished_at": "2026-09-06T12:13:39.530Z",
+  "passed": 5,
+  "planned": 5
+}

@@ -1,0 +1,102 @@
+{
+  "protocol": "semantic-implicit-transition-review-v1",
+  "service_commit": "8ef8829b3c4ac1dcafc93b2056ded04bdf836315",
+  "input_sha256": {
+    "artifacts/round2-failure-prefixes/2026-09-06T07-01-14-335Z-rY2c0X/results.json": "7d7e5aefab70f9cd1ffd9a45bd17d8e11f4f9989ea24444550ea2e3a374fa1fb",
+    "artifacts/round2-failure-prefixes/2026-09-06T07-01-14-335Z-rY2c0X/model-usage.jsonl": "2ee93f501128dcac38d8fe1160f9f7e49d64cb1101ae0e8152de1ae367d52d65",
+    "artifacts/round2-failure-prefixes/2026-09-06T07-01-14-335Z-rY2c0X/retrieval-probe-v1/answers.jsonl": "77c0fcfa22423b9e30ad2fc2f94a365bf5df517f97b4e2094593909188634c36",
+    "artifacts/round2-transition-controls-OYYNkL/report.json": "d82fcd5518b0636a1bc6e71400dc31c32aaa4a410afa350daa73a2024ca3e7b1",
+    "artifacts/round2-transition-controls-OYYNkL/output.json": "42462295a7c1101cf8e53d2dc61b227ece2d353e9f987121a29c910c95da9397",
+    "artifacts/round2-transition-http-OYZhh0/report.json": "955d3e2b4327e0ede04210fad1464cb26df817a2fa2c0fd3b66055d315c5972d",
+    "artifacts/round2-transition-http-OYZhh0/model-outputs.jsonl": "47449b0530e1cba11e24818fdf19c96e9ab1e505ee25f09591444b07bcaf4283",
+    "artifacts/round2-transition-http-OYZhh0/answers.jsonl": "cc4e80d9310c1c2a70dd37421141ae5de1d20414585fb931da32f1d2e9c5d6ad",
+    "artifacts/round2-transition-http-OYZhh0/state-1.json": "aa9bfe1b04e3024019ad670ad0ffab19975a33dfebfa0fb3da50d22a751d8db3",
+    "artifacts/round2-transition-http-OYZhh0/state-2.json": "d4df1cef9b48f777c4884e2daa7041ffeaac7416490baa8cbfe3043ddde362a7",
+    "reports/round2-transitions-service-tests.txt": "5fa67f793a831b8ed4c64f72269b16a077bc61f8f032db08847ab643e9120116",
+    "reports/round2-transitions-identity-tests.txt": "feabb4add9e2ca3374e538560634d1ec97dc4f4ce89aab12f3d726e36ea9b2f6"
+  },
+  "implemented": {
+    "flag": "MEMORY_SEMANTIC_TRANSITIONS",
+    "representation": "v5; fresh directory required",
+    "semantics": "Compatible single-slot facts coexist. Exclusive pairs use existing effective-time supersession/conflict behavior. Explicit operations and supersedes remain separately verified. Uncertain/invalid/incomplete decisions reject.",
+    "transaction": "Plan fingerprint binds request, prior facts without embeddings, ordered incoming facts and operations. Recomputed before mutations; any encountered implicit comparison must have a decision. Facts, sources, indexes, events and receipt roll back together.",
+    "models": "Verification-stage model, strict JSON schema when configured, same shared 90-second model budget. One extra batch only when candidate pairs exist; capacity 64 pairs / 64000 candidate characters."
+  },
+  "tests": {
+    "service_passed": 170,
+    "added": 11,
+    "identity_passed": 4,
+    "coverage": [
+      "Duplicate-source merge followed by compatible detail",
+      "Exclusive later/backdated state and same-time conflict",
+      "Unknown relation rejects without mutation",
+      "Missing/stale plan and index-stage transaction rollback",
+      "Fresh v5 format requirement",
+      "Grounded witnesses and complete bounded decisions",
+      "Explicit correction, tentative state, forget and restore"
+    ]
+  },
+  "controls": {
+    "run": "artifacts/round2-transition-controls-OYYNkL",
+    "matched": 6,
+    "planned": 6,
+    "labels": "Assistant-authored and withheld from model; not independent ground truth or quality score"
+  },
+  "fixed_proposal_http": {
+    "run": "artifacts/round2-transition-http-OYZhh0",
+    "adds": 3,
+    "passed_adds": 3,
+    "fixed_extraction_injections": 3,
+    "fresh_stages": [
+      "verification",
+      "state_transition",
+      "local embedding",
+      "HTTP transaction",
+      "fixed mini Answer"
+    ],
+    "observed_after_compatible": "Both facts active; Answer says black drip coffee every morning, no milk and no sugar.",
+    "observed_after_real_change": "Old black drip fact superseded, latte with whole milk active; generic routine remains active.",
+    "answer_after_real_change": "Partial: mentions the latte correctly but says the usual order is unknown due to the retained plain-cup routine; sugar for the new order is not specified. Do not mark the second answer as a complete pass.",
+    "remaining_issue": "Compatible background/routine and latest concrete preference can still be presented as conflicting by Answer. Need evidence organization/relationship context with fixed Answer, not global exposure of old superseded values."
+  },
+  "fresh_E10_prefix": {
+    "run": "artifacts/round2-failure-prefixes/2026-09-06T07-01-14-335Z-rY2c0X",
+    "adds": 5,
+    "passed_adds": 5,
+    "last_add_ms": 60960.641917,
+    "generation_counts": {
+      "extraction": 5,
+      "verification": 7,
+      "repair": 3
+    },
+    "transition_calls": 0,
+    "answers_assistant_review": "Both targeted answers complete: two-week reschedule notice/next quarter and black drip/no milk/no sugar/text or online booking.",
+    "causal_limit": "This extraction used multiple-valued coffee facts and a separate routine predicate, so no implicit transition model call occurred. Its success cannot be attributed to the new classifier; only the fixed-proposal HTTP probe isolates that mechanism.",
+    "scope": "Five-add failed prefix only, not all 50 sessions, all benchmark questions or repeated stability."
+  },
+  "full_development_run": {
+    "run_id": "round2-quality-dev-8ef8829-r1-facts-memops",
+    "spec": "configs/round2-quality-transitions.json",
+    "status_at_review": "running",
+    "service_commit": "8ef8829",
+    "eval_commit": "b6c8125",
+    "port": 8096,
+    "planned_questions": 30,
+    "backgrounds": 5,
+    "sessions_per_background": 50,
+    "rule": "Keep all failures in denominator; no incomplete ingestion reuse. Loaded runtime stays fixed despite subsequent source changes. No final score yet."
+  },
+  "open_gates": [
+    "E0 semantic calibration",
+    "Raw-only operation target binding and remaining real write failures",
+    "Fixed-budget retrieval/temporal/conditional expansion quality and cost",
+    "Three full paired repeats and new-background evaluation",
+    "Deployment and clean delivery archive"
+  ],
+  "accuracy": {
+    "historical_unchanged": "331/1000",
+    "old_d8_development": "6/30",
+    "new_full_score": null
+  },
+  "production": "8088 baseline unchanged"
+}

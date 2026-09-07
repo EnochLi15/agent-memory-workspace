@@ -1,0 +1,26 @@
+✖ a certified erased fact cannot keep every original witness intact behind a reviewed source (35.075583ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 241.09075
+
+✖ failing tests:
+
+test at service/tests/source-erasure.test.ts:1:17276
+✖ a certified erased fact cannot keep every original witness intact behind a reviewed source (35.075583ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/source-erasure.test.ts:159:9)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/source-erasure.test.ts:25:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /every original witness intact/,
+    operator: 'throws',
+    diff: 'simple'
+  }

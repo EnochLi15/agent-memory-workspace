@@ -1,0 +1,158 @@
+{
+  "protocol": "isolated-transition-witness-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-transition-witness-C4zPAd",
+  "sample": "F07_trajectory_ops",
+  "original_request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-19:0",
+  "snapshot_sha256": "3118010147956f458922b3e2c89c616dbcf3cd433764e65e849b181e6f412b86",
+  "original_trace_sha256": "fa85580965caa0832076d23a3a8922a10cb86b889fd29360293c7e9e2980b709",
+  "input_sha256": "182525378987c60b11074e77c5599f748006b7af53dfd5513724f4006067f3ea",
+  "prompt_sha256": "f538bc5a21cb08c21ea883047f374e78c9557615bb8005d79851908801d17f04",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "d9dd95b46743198a4e7629c6d15bf87f109f4b25bc24e9b5864e0e93aa87b474",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "217a5fc532024d6b1bdbafc15a4324863a2b50b3e52d6f2d626781e42b291832",
+    "models.ts": "39bca23d49db1e50aec60723946330f6c58eb3f8ad4d9e9e7cc2945446b43c32",
+    "operation-intent.ts": "c9ff9d293664ecc074f8c678df267a81f6253ac4de60adda686c99a2225d39cb",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "5b496506d3095019a12e6f50d311bd017a9317d8ee694cac95ad8233d3ada80b",
+    "storage.ts": "aab7ee597dd95bc81a45a478876b74ee0f8cda75e8f475019cfd1046bb552b77",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "18a5c329a8a5569b8481b3eded76ec977e26d90e0abcd0f0b819b319056d3cb2",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "candidates": 19,
+  "started_at": "2026-09-06T07:58:28.751Z",
+  "scope": "Same complete fact evidence and original messages, with explicit per-quote slot labels. One fresh isolated classification; not an unchanged model input, full HTTP write, semantic truth score or original failure replacement.",
+  "status": "valid",
+  "decisions": [
+    {
+      "index": 0,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 1,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 2,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 3,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 4,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 5,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 6,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 7,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 8,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 9,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 10,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 11,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 12,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 13,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 14,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 15,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 16,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 17,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    },
+    {
+      "index": 18,
+      "relation": "compatible",
+      "old_source_slot": 0,
+      "new_source_slot": 0
+    }
+  ],
+  "output_sha256": "7e1eb7917aeb6672f20e402efe4ea4163c32097dc48e6b05c13cd4394fb4b805",
+  "elapsed_ms": 30350.890875,
+  "finished_at": "2026-09-06T07:58:59.103Z"
+}

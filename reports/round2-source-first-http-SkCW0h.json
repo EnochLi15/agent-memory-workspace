@@ -1,0 +1,139 @@
+{
+  "protocol": "source-first-http-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-first-http-SkCW0h",
+  "scope": "Fresh v10 source-first synthetic tenant: all HTTP adds, routing, extraction, verification and embeddings are real. Checks ordinary erasure, source-only rejection, actor separation, search and reopen. No original full background or benchmark accuracy.",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "4c3b788597d8afe5c1ce2cdb31482e682689ace122be7dc48ebd8e73e68fd082",
+    "db-worker.ts": "05097317fd42ebfbfed24917c3b99fc60c85cede517abef0789cd1d9bc46ef8d",
+    "engine.ts": "f9a3ebcb287ee6485f320a8e684f9bb1a44b61d1b2f5eaf113ef1a208d6b2100",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "a96e9a506d1b17e65795acb220893df53ef257549a85336b6eb3e2a7a1d32497",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "52bdea0df6d21ed7db356b72bddffaaf18b2ad3d3f217d3a907625f6d0865e67",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "reranking.ts": "7750e78cbd212b33414d77be9bfde9a0344ea52818f51c17e2fec24432e67d3e",
+    "retrieval-policy.ts": "8e621c40985923792dfddbf1abaff771c2bedef782b7dace7792b0923b0952ef",
+    "retrieval.ts": "ff0bfc41947ed492f16636a09d3f4b907b39c8de7f0525fc49c0ebb52c27c41f",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-coverage.ts": "835ebc18e3296c32ac4673886ab5ee520b32dc4903025ab85cc9af2101051cd3",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operation-batches.ts": "41e90a82dcd03688c3ded797dedce7b31c3043c8ebc99b0d589c2527a30f6480",
+    "source-operation-routing.ts": "2ee20860568e8b6b0c5d63905c7421081563f4132d0ed1ff1dca76c5924915b2",
+    "source-operations.ts": "7bfaf9b65536cfec28b2c5cd018b00ba5065d6f80d116d16f003d3916ba036c3",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "16b73d655d7290e9e4238901073550b3336ca71afb60d3c480f803a4aca448b5",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "a2cfddd00834bf3b0917cb61f96df857e89a7959bb30a7a3d3ae696355693393",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "d692a1896091de5e2e41d1a2add396dac1adf7c54a7072eb6deac753c57ed0ff",
+    "verification-compact.ts": "d02f97c52978495985a201d515b6a870547979d5dd066954e1b135287b8525a5",
+    "verification-session.ts": "2a28b34861818e95067abfc8545ef105f81614756a5592810980b8d44db703ec",
+    "verification.ts": "3d88de968deb3e949fb95fa304c65c05dd093658f2d2f15a25fd7de82ded6dfe"
+  },
+  "spec_sha256": "76e29bb81f27e5802dc95d335556a45e00de37b17746247cd438f734f858c0d7",
+  "requests_sha256": "b64dc9ff665b4265413bdc0d181cab64c4621ea64944154c7c32bf33a6b5e842",
+  "started_at": "2026-09-06T10:31:48.286Z",
+  "status": "passed",
+  "adds": [
+    {
+      "request_id": "seed",
+      "status": 200,
+      "elapsed_ms": 13921.512084,
+      "body": {
+        "success": true,
+        "request_id": "seed",
+        "user_id": "routing-http",
+        "session_id": "s"
+      }
+    },
+    {
+      "request_id": "ordinary",
+      "status": 200,
+      "elapsed_ms": 23528.785125000002,
+      "body": {
+        "success": true,
+        "request_id": "ordinary",
+        "user_id": "routing-http",
+        "session_id": "s"
+      }
+    },
+    {
+      "request_id": "source-review",
+      "status": 200,
+      "elapsed_ms": 31347.088166,
+      "body": {
+        "success": true,
+        "request_id": "source-review",
+        "user_id": "routing-http",
+        "session_id": "s"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh_format_three_atomic_commits",
+      "pass": true
+    },
+    {
+      "name": "ordinary_erasure_removes_code",
+      "pass": true
+    },
+    {
+      "name": "browser_preserved",
+      "pass": true
+    },
+    {
+      "name": "brother_same_name_preserved",
+      "pass": true
+    },
+    {
+      "name": "false_gym_and_echo_removed",
+      "pass": true
+    },
+    {
+      "name": "correct_routes",
+      "pass": true
+    },
+    {
+      "name": "search_browser_and_brother",
+      "pass": true
+    },
+    {
+      "name": "independent_raw_coverage_exercised",
+      "pass": true
+    },
+    {
+      "name": "incidental_original_preserved_and_indexed",
+      "pass": true
+    }
+  ],
+  "routes": [
+    {
+      "request_id": "ordinary",
+      "rows": [
+        {
+          "instruction": 0,
+          "route": "ordinary"
+        }
+      ]
+    },
+    {
+      "request_id": "source-review",
+      "rows": [
+        {
+          "instruction": 0,
+          "route": "source_review"
+        }
+      ]
+    }
+  ],
+  "model_call_count": 14,
+  "raw_coverage_rows": 1,
+  "finished_at": "2026-09-06T10:32:57.257Z"
+}

@@ -1,0 +1,45 @@
+{
+  "protocol": "fact-verified-prefix-state-and-answer-review-v1",
+  "case": "D17_remember",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-12-41-746Z-ZNBKPB",
+  "source_commit": "92ae3bd",
+  "parent_results_sha256": "407eae9b27bca1354acc56ef4b61e567bb3e06fa999314a6517bbf908bd8d12b",
+  "state_sha256": "b3ddb26505b2488b394c7246677ec9b3beab91c5c9f283f9fb0f9a4986ea26c6",
+  "answers_sha256": "17e116b286639c8dc0126268441e27234fb2c3164e8e070686c01a1a7fab0d70",
+  "checks": {
+    "work_laptop_firefox": true,
+    "iphone_safari": true,
+    "kevin_brave": true,
+    "two_tablet_targets_erased": true,
+    "no_tablet_sync_active_passage": true
+  },
+  "state_pass": true,
+  "call_counts": {
+    "extraction/ok": 1,
+    "repair/ok": 1,
+    "verification/ok": 1,
+    "embedding/ok": 1
+  },
+  "adds": [
+    {
+      "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+      "status": 200,
+      "elapsed_ms": 77105.989708
+    }
+  ],
+  "answer_review": [
+    {
+      "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+      "answer": "Your default browser on your work laptop is Firefox, your default browser on your iPhone is Safari, and Kevin uses Brave as his default browser.",
+      "pass": true,
+      "reason": "Correctly separates the user laptop Firefox, iPhone Safari and Kevin Brave."
+    },
+    {
+      "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+      "answer": "I don’t have any memory about an old tablet or a bookmark syncing issue. The only browser-related notes I still have are that your work laptop uses Firefox, your iPhone uses Safari, and you tried Firefox on mobile but switched to Safari because the gesture navigation felt janky.",
+      "pass": true,
+      "reason": "No old tablet sale or syncing details returned; retained phone browser experience is independent."
+    }
+  ],
+  "scope": "One fresh original prefix with per-fact verification and fixed mini Answer; assistant inspection, not human ground truth, benchmark accuracy or three full repeats."
+}

@@ -1,0 +1,17 @@
+{
+  "observed_date": "2026-09-06",
+  "checks": [
+    {
+      "model": "gpt-5.4",
+      "http_status": 400,
+      "error_type": "invalid_request_error",
+      "message": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+    },
+    {
+      "model": "gpt-5.5",
+      "http_status": 200,
+      "stream_has_content": true
+    }
+  ],
+  "scope": "Small generation capability probes. The /models catalog alone does not establish request support or end-to-end extraction correctness. No production model change."
+}

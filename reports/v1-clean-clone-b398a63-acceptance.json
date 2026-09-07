@@ -1,0 +1,116 @@
+{
+  "protocol": "v1-clean-clone-acceptance-v1",
+  "scope": "Fresh private recursive clone of current candidate; documented install/build; both offline and real-model enhanced HTTP contract, restart, complete backup/restore, and compatible s1 rollback. Excludes long-background, fixed paired and full benchmark acceptance.",
+  "commits": {
+    "workspace": "a1b5b8723dd8f91cc3d471225596fe0994654475",
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "clean_sources": {
+    "workspace": true,
+    "service": true,
+    "eval": true
+  },
+  "service_tests": 407,
+  "eval_node_tests": 24,
+  "eval_python_tests": 17,
+  "runtime_tests": 12,
+  "delivery_tool_tests": 10,
+  "test_execution": {
+    "initial_make_test_exit_code": 2,
+    "initial_failure_preserved": true,
+    "initial_failure": "Evaluator local circuit test timed out during a recorded 262-second clamshell sleep. Service 407 passed; evaluator 23 passed, 1 cancelled.",
+    "followup": "Unchanged evaluator suite under temporary caffeinate -i: 24 Node and 17 Python pass. Runtime 12 and delivery 10 pass. No production/test timeout edits.",
+    "sleep_limitation": "caffeinate -i inhibits idle sleep; it does not prevent clamshell or forced sleep."
+  },
+  "contract": {
+    "contract": "passed",
+    "base_url": "http://127.0.0.1:8129",
+    "user_id": "contract-1788745117109",
+    "checks": [
+      "health",
+      "echo",
+      "idempotency",
+      "read-after-write",
+      "tenant-isolation",
+      "top-k",
+      "three-routes",
+      "validation",
+      "conflict",
+      "update-current-state",
+      "forget-all-paths",
+      "retained-neighbor"
+    ]
+  },
+  "offline_contract": {
+    "contract": "passed",
+    "base_url": "http://127.0.0.1:8128",
+    "user_id": "contract-1788741379694",
+    "checks": [
+      "health",
+      "echo",
+      "idempotency",
+      "read-after-write",
+      "tenant-isolation",
+      "top-k",
+      "three-routes",
+      "validation",
+      "conflict",
+      "update-current-state",
+      "forget-all-paths",
+      "retained-neighbor"
+    ]
+  },
+  "image_id": "sha256:dacb496eafa3eebe54e61a028261db602e52f7e99734b65b06040f09b8cd4389",
+  "platform": "linux/arm64",
+  "release_config_sha256": {
+    "offline": "120f61fbd8d49317aab70a7ab31651b8bce16275b84ea44815b456239ec3e73e",
+    "enhanced": "4680a1d70294aedf0b0da8a6c7b53025139f2e0bb932e5c1586cd16c8749f576"
+  },
+  "no_degraded_write": true,
+  "restart_checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "offline_restart_checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "evidence_sha256": {
+    "clone.log": "91c36def11acb9e2f28a8852bdf4bf86ee2b8c2b9d31257dba40fe2cee4d4d0d",
+    "source-identity.json": "935f4ff00585c876aecf1e61e6d006787c250412c921f4b8f920d3ae441fce73",
+    "init.log": "4fb3d7c743e6ba933f76dbe0bac9426dc7b7fadcf9b8658eef5a6ad49fc7a581",
+    "build.log": "3f88ad4637952272042f1514a58022ebd6dcfd681b9a562d8e2a4ccdebfbd5e9",
+    "test.log": "dd6b793a6a784b53d493a1f6b88b234eb77ace106d9606424fa48a1aa2e6b410",
+    "initial-test-status.json": "470a42cf6a7cd58010328e20b16c90bb026dc6a3dd3ff675217b4b5d2dbee643",
+    "sleep-events.txt": "1a210a6d26a29933958d96cba7adda263e57545ea7388b1932059e29c55733be",
+    "eval-test-awake.log": "77044d6aaa71e52a648710fb81b1c68dcc0977dc81da8b58fbd8379dc60ac3a5",
+    "runtime-test.log": "4096eca938c5dc39c23d15183601f3e44dd154879eb4a0cd5243ca7b58f3d8d4",
+    "delivery-test.log": "5ed2d1571d04fcf576376f521a35c4a8c65b7aaf964c8d679605dbe197385283",
+    "offline-contract.json": "194cb2ed3f9f577c04ee3356041cf4b824b31d62b0787c9ce49f6ea38ad47e4a",
+    "enhanced-contract.json": "1d8c2160b4bc33f315b137bd2c9aceb5425e54533f1459822deb531222bc8bf1",
+    "offline-http.jsonl": "941d5dfa411d0ea3d2cb90f109916b9c2fa415f911c7812b7a94b1497e7c11e4",
+    "enhanced-http.jsonl": "3d1619c61950053cdebff0166060e8544d0396f95c10e38aaddd7fa07e2de8d6",
+    "offline-restart-readback.json": "4eff8460d5c2d7c4fb13d4f4c39315065aa7e06f1d1a9eb09277eafea4358cc9",
+    "enhanced-restart-readback.json": "e69e7d716ca01c1ddc234790d060c4683ec3afe88b3e3c4d3e26fe6f0f4c2817",
+    "offline-restore-readback.json": "54bcfb158c2e2abea2a80436f73ce2bc81beea4cf63dc4d2495b998a1dae85aa",
+    "enhanced-restore-readback.json": "53339b9f09420f008c73b169b3582d60a5afc420fdc2cfd9ce5c6194a00fc0ae",
+    "offline-rollback-readback.json": "21e4c3d18b50d35fac1e4384889ab52f2282d4fdfebe21ba81b5ef43020ac7f5",
+    "enhanced-rollback-readback.json": "8f5d0b4e9cae961e70a41b4893704dbff21434936fd70b0237894db21e9aa473",
+    "offline-backup-restore.json": "644d549dccd8467fe4ebfa0ac7e11e58a1b9e2ff65b54674a64df6965c63e054",
+    "enhanced-backup-restore.json": "050679a2c6dcb7a1f756328dcd00ad5a899150329560ac55926d23a85dfc0029",
+    "compatible-rollback.json": "66ab9d7f53445d25c63ef63d8ea1b0e9e3a01fc90febdc1d37b39e5ae7f1ff54",
+    "storage-readonly.json": "c095add275fb99b5a7953a14e24f1d95a721eeadec69178a47b0c8e9437384a4",
+    "model-audit-summary.json": "f48c8194b7ef8cdba48cb09df3e37cad431a504f5e593b891fc1641581e8b05f",
+    "readback.mjs": "5f295f782adeebe28e54cba6be26919b0c3cc944d0e670f4317f98f45779432a"
+  },
+  "temporary_credentials_removed": true,
+  "passed": true,
+  "whole_v1_gate_passed": false
+}

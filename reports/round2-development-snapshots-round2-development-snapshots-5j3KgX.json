@@ -1,0 +1,39 @@
+{
+  "protocol": "failed-development-snapshots-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-5j3KgX",
+  "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "parent_manifest_sha256": "f6eab5ef24f8f5ec32b5870d8061b90b61f86abba24b5b32122a46bb0e349633",
+  "source_commit": "d8e264b210debfaf31a4aeaa587986c6e01af301",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "captured_at": "2026-09-06T06:38:20.884Z",
+  "cases": [
+    {
+      "sample": "B05_forget",
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:B05_forget:segment-18:0",
+      "snapshot_revision": 18,
+      "fact_count": 98,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-5j3KgX/B05_forget.json",
+      "sha256": "8966505c53df5e24d785400765f89a8ac1e5163a42efb223aa1ee3eb11f30e59",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}"
+    },
+    {
+      "sample": "E10_reflect",
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_reflect:segment-26:0",
+      "snapshot_revision": 25,
+      "fact_count": 113,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-5j3KgX/E10_reflect.json",
+      "sha256": "6ce39e677906234d75701a78c16931ad4add72c90c9be8dcc74a4c616214ac39",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "sample": "E10_remember",
+      "request_id": "round2-quality-dev-d8e264b-r1-facts:memops:E10_remember:segment-5:0",
+      "snapshot_revision": 4,
+      "fact_count": 47,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-5j3KgX/E10_remember.json",
+      "sha256": "6b4503d19e710f451e4c56cff4e9b2f65ba79fc27674094e5c109ca8263c0c29",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Invalid target/scope repair patch\"}}"
+    }
+  ],
+  "scope": "Logical SQLite snapshots using read-only connections and a read transaction, after failed sample judgment rows exist. Other campaign samples may still run. No repair, commit or replacement of original evaluation results."
+}

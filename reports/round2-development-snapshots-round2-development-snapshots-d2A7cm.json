@@ -1,0 +1,21 @@
+{
+  "protocol": "failed-development-snapshots-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-d2A7cm",
+  "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-8ef8829-r1-facts-memops",
+  "parent_manifest_sha256": "a2ab027a23e55cc0fc868ee00471ffeea3f3756c33b395840cb55ec069fb4470",
+  "source_commit": "8ef8829b3c4ac1dcafc93b2056ded04bdf836315",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "captured_at": "2026-09-06T07:09:54.777Z",
+  "cases": [
+    {
+      "sample": "E10_reflect",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:E10_reflect:segment-10:0",
+      "snapshot_revision": 9,
+      "fact_count": 26,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-d2A7cm/E10_reflect.json",
+      "sha256": "0947f8cd2e07ba3c95bc5093eba67b0503e6244090347cf2783524272ecf7736",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}"
+    }
+  ],
+  "scope": "Logical SQLite snapshots using read-only connections and a read transaction, after failed sample judgment rows exist. Other campaign samples may still run. No repair, commit or replacement of original evaluation results."
+}

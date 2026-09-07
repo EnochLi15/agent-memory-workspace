@@ -1,0 +1,179 @@
+{
+  "protocol": "source-operation-implementation-review-v1",
+  "service_commit": "ee661539023bae83f166b2f8bd154e2012b0ae76",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-ee66153",
+  "tests": {
+    "passed": 224,
+    "failed": 0,
+    "report": "reports/round2-source-operations-service-tests.txt",
+    "sha256": "e8bf0f2454b0124d365198396a17a9d2905b3e8d822596f2f6c6f00e2599c718"
+  },
+  "runs": [
+    {
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-operation-http-VLkr8g",
+      "report_sha256": "4f925dffee9cf80d5dfaaa2bad58e6893d396d02c3b6ec6862a3f5ab1ff46795",
+      "status": "failed",
+      "adds": [
+        {
+          "request_id": "true-routine",
+          "status": 200,
+          "elapsed_ms": 9887.705415999999,
+          "body": {
+            "success": true,
+            "request_id": "true-routine",
+            "user_id": "source-operation-control",
+            "session_id": "s"
+          }
+        },
+        {
+          "request_id": "reject-current-assistant",
+          "status": 503,
+          "elapsed_ms": 2099.2218329999996,
+          "body": {
+            "error": {
+              "code": "VERIFICATION_UNAVAILABLE",
+              "message": "Source operation review unavailable within shared budget"
+            }
+          }
+        }
+      ],
+      "checks": [],
+      "scope": "Fresh HTTP add/search with real stage models and local embeddings in a new v6 tenant. Uses a synthetic true-routine seed and the original E10 failed chunk, not the original complete background or benchmark score."
+    },
+    {
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-operation-http-5LV9qJ",
+      "report_sha256": "8b0e5c7014b9220b850c6c0dc8ef2de910fe5ca615d302479fabcadbe3ea7937",
+      "status": "failed_checks",
+      "adds": [
+        {
+          "request_id": "true-routine",
+          "status": 200,
+          "elapsed_ms": 9865.747125,
+          "body": {
+            "success": true,
+            "request_id": "true-routine",
+            "user_id": "source-operation-control",
+            "session_id": "s"
+          }
+        },
+        {
+          "request_id": "reject-current-assistant",
+          "status": 200,
+          "elapsed_ms": 42647.889833,
+          "body": {
+            "success": true,
+            "request_id": "reject-current-assistant",
+            "user_id": "source-operation-control",
+            "session_id": "s"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "false_assertion_and_echo_removed",
+          "pass": false
+        },
+        {
+          "name": "actual_routine_preserved",
+          "pass": true
+        },
+        {
+          "name": "unrelated_browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "search_true_routine",
+          "pass": true
+        },
+        {
+          "name": "search_no_false_gym",
+          "pass": false
+        },
+        {
+          "name": "source_forget_event",
+          "pass": true
+        }
+      ],
+      "scope": "Fresh HTTP add/search with real stage models and local embeddings in a new v6 tenant. Uses a synthetic true-routine seed and the original E10 failed chunk, not the original complete background or benchmark score."
+    },
+    {
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-operation-http-iBSBPj",
+      "report_sha256": "805dea83983d7f36e0880914f455facbb3babd892c0d01cecfac1bb6be34ae48",
+      "status": "passed",
+      "adds": [
+        {
+          "request_id": "true-routine",
+          "status": 200,
+          "elapsed_ms": 9251.255874999999,
+          "body": {
+            "success": true,
+            "request_id": "true-routine",
+            "user_id": "source-operation-control",
+            "session_id": "s"
+          }
+        },
+        {
+          "request_id": "reject-current-assistant",
+          "status": 200,
+          "elapsed_ms": 47783.416542000006,
+          "body": {
+            "success": true,
+            "request_id": "reject-current-assistant",
+            "user_id": "source-operation-control",
+            "session_id": "s"
+          }
+        }
+      ],
+      "checks": [
+        {
+          "name": "false_assertion_and_echo_removed",
+          "pass": true
+        },
+        {
+          "name": "actual_routine_preserved",
+          "pass": true
+        },
+        {
+          "name": "unrelated_browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "search_true_routine",
+          "pass": true
+        },
+        {
+          "name": "search_no_false_gym",
+          "pass": true
+        },
+        {
+          "name": "source_forget_event",
+          "pass": true
+        }
+      ],
+      "scope": "Fresh HTTP add/search with real stage models and local embeddings in a new v6 tenant. Uses a synthetic true-routine seed and the original E10 failed chunk, not the original complete background or benchmark score."
+    }
+  ],
+  "initial_400_diagnosis": {
+    "same_input_returned_400": true,
+    "provider_message_confirmed_json_word_requirement": true,
+    "credential_or_freeform_error_not_logged": true
+  },
+  "recorded_leak_guard": {
+    "report": "reports/round2-source-reintroduction-regression.json",
+    "sha256": "bfb53f9e3c0affa536dd776f2217c463eaaab9e08f9af24f30b1fb6c5d69a7f4",
+    "blocked_recorded_negative_facts": 2
+  },
+  "restart": {
+    "report": "reports/round2-source-operation-restart-kEBaAL.json",
+    "sha256": "f4b14158300f09eeb9813b828513a6bd190a895203464b17cf1c53c16180d85e",
+    "checks_passed": 4,
+    "retry_ms": 24.775334
+  },
+  "limits": [
+    "Only current-add unrecorded assistant assertions and their within-add echoes are supported by the new source-only plan. Historical source targets, joint fact erasure and persistent future-echo boundaries remain incomplete.",
+    "The lexical anti-reintroduction guard is a necessary check; shared human words and paraphrases still need semantic judgment.",
+    "First successful real lifecycle uses a synthetic true-routine seed and an exposed E10 chunk. It is not the original full E10 background, a paired benchmark, new holdout, or new accuracy.",
+    "Source operation pre-review adds a serial model call and currently also examines ordinary forget requests when prior assistant messages exist. Routing/cost improvement remains open.",
+    "No production default/deployment changes. E0-E5 completion and new backgrounds/three full paired repeats remain open."
+  ]
+}

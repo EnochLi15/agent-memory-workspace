@@ -1,0 +1,116 @@
+{
+  "protocol": "frozen-v8-F07-segment48-failure-v1",
+  "observed_at": "2026-09-06T10:09:49.852599+00:00",
+  "status": "terminal_background_ingestion_failure",
+  "scope": "F07 trajectory background failed after 47 successful adds; original five-background runner continues. Not a final score.",
+  "service_commit": "91782c6",
+  "snapshot_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-F07-v8-failure-6t9kogt5",
+  "database_sha256": "6826ed3fb5429a6b1e69bffac82454fd83a3bfb41e61ebb2fcdda8c6123c9694",
+  "request_sha256": "dd46aef842747755f8e000d84e1aa093d3ab6927925d42bd2d50dd5a85150db0",
+  "revision": "47",
+  "source_format": "dual-source-v8",
+  "fact_count": 300,
+  "message_count": 518,
+  "attempts": [
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-48:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+      "elapsed_ms": 81343.46779099992
+    }
+  ],
+  "model_calls": [
+    {
+      "at": "2026-09-06T10:07:31.616Z",
+      "kind": "generation",
+      "purpose": "extraction",
+      "trace_id": "fec4916a-7e2d-44a8-88b3-6a03c17702b8",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 49630.75137499999,
+      "usage": {
+        "prompt_tokens": 13443,
+        "completion_tokens": 2653,
+        "total_tokens": 16096,
+        "prompt_tokens_details": {
+          "cached_tokens": 2816
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 87
+        }
+      },
+      "output_chars": 11171
+    },
+    {
+      "at": "2026-09-06T10:07:51.986Z",
+      "kind": "generation",
+      "purpose": "verification",
+      "verification_format": "source-reference-tuples-v1",
+      "verification_scope": {
+        "facts": 32,
+        "operations": 2,
+        "replacements": 3,
+        "messages": 10,
+        "reused": 0
+      },
+      "verification_response_format": "json_schema",
+      "trace_id": "16834523-a38f-4e7f-a9a2-dfa922b587e8",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 20357.368749999907,
+      "usage": {
+        "prompt_tokens": 10401,
+        "completion_tokens": 923,
+        "total_tokens": 11324,
+        "prompt_tokens_details": {
+          "cached_tokens": 1792
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 516
+        }
+      },
+      "output_chars": 1204
+    },
+    {
+      "at": "2026-09-06T10:07:57.540Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "00af761e-2b7c-4977-a909-25c487fb4b78",
+      "model": "gpt-5.5",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 5548.453875000123,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    },
+    {
+      "at": "2026-09-06T10:08:03.108Z",
+      "kind": "generation",
+      "purpose": "repair",
+      "trace_id": "00af761e-2b7c-4977-a909-25c487fb4b78",
+      "model": "gpt-5.5",
+      "attempt": 1,
+      "outcome": "error",
+      "elapsed_ms": 5567.69150000019,
+      "usage": null,
+      "error_type": "Error",
+      "error_category": "connection",
+      "http_status": null,
+      "signal_aborted": false,
+      "stream_started": false,
+      "finish_reason": null,
+      "refusal_detected": false,
+      "transport_code": "UND_ERR_SOCKET"
+    }
+  ]
+}

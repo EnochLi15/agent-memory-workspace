@@ -1,0 +1,1659 @@
+{
+  "protocol": "model-stage-usage-review-v1",
+  "captured_at": "2026-09-06T08:16:47.260930+00:00",
+  "run_id": "round2-quality-dev-2542f2a-r1-facts-memops",
+  "run_status": "finished",
+  "service_commit": "2542f2ab29050623ed4936679e99ed21c4e01542",
+  "input_sha256": {
+    "eval/artifacts/round2-quality-dev-2542f2a-r1-facts-memops/manifest.json": "cf9fbb99bff53dfa44ce8b6f63984427b27d940d71d680158ad54b951b172bb6",
+    "eval/artifacts/round2-quality-dev-2542f2a-r1-facts-memops/ingest.jsonl": "5ea8e776c9a1b7a8bb0adb6b8074380f9a9f3e7b4b57dcda8fe84c28cd2ac3ac",
+    "artifacts/round2-quality-dev-2542f2a-r1/facts-model-calls.jsonl": "18982a0026cc3bfc55b1d8a7bf171c1587475941ab1218b20c59f5e5b63b7da2",
+    "artifacts/round2-quality-dev-2542f2a-r1/facts-model-trace.jsonl": "8900d9f13f547290be228da3b0d279aba14f404982743dc86e08292187ae9883"
+  },
+  "ingest_status": {
+    "ok": 119,
+    "failed": 5,
+    "retrying": 1
+  },
+  "stages": {
+    "extraction": {
+      "attempts": 125,
+      "outcomes": {
+        "ok": 125
+      },
+      "models": {
+        "gpt-5.4-mini": 125
+      },
+      "elapsed_ms": {
+        "total": 1126883.1743729995,
+        "p50": 7571.59145800001,
+        "p95": 22160.70583300013
+      },
+      "reported_total_tokens": 1160638,
+      "attempts_without_reported_usage": 0
+    },
+    "verification": {
+      "attempts": 178,
+      "outcomes": {
+        "ok": 177,
+        "error": 1
+      },
+      "models": {
+        "gpt-5.5": 178
+      },
+      "elapsed_ms": {
+        "total": 1504589.5153350008,
+        "p50": 7768.746582999942,
+        "p95": 16477.479208999997
+      },
+      "reported_total_tokens": 988416,
+      "attempts_without_reported_usage": 1
+    },
+    "repair": {
+      "attempts": 70,
+      "outcomes": {
+        "ok": 67,
+        "error": 3
+      },
+      "models": {
+        "gpt-5.5": 70
+      },
+      "elapsed_ms": {
+        "total": 508645.3829519997,
+        "p50": 6167.46695799999,
+        "p95": 14741.643333000015
+      },
+      "reported_total_tokens": 764833,
+      "attempts_without_reported_usage": 3
+    },
+    "state_transition": {
+      "attempts": 9,
+      "outcomes": {
+        "ok": 9
+      },
+      "models": {
+        "gpt-5.5": 9
+      },
+      "elapsed_ms": {
+        "total": 76103.23025099997,
+        "p50": 5728.863041999983,
+        "p95": 18207.547207999974
+      },
+      "reported_total_tokens": 69789,
+      "attempts_without_reported_usage": 0
+    },
+    "source_erasure": {
+      "attempts": 1,
+      "outcomes": {
+        "ok": 1
+      },
+      "models": {
+        "gpt-5.5": 1
+      },
+      "elapsed_ms": {
+        "total": 9875.44308300002,
+        "p50": 9875.44308300002,
+        "p95": 9875.44308300002
+      },
+      "reported_total_tokens": 3423,
+      "attempts_without_reported_usage": 0
+    }
+  },
+  "unlinked_generation_attempts": 0,
+  "completed_adds": [
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-1:0",
+      "status": "ok",
+      "add_ms": 10505.408083999999,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 10071.746,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-1:0",
+      "status": "ok",
+      "add_ms": 26098.634958000002,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 25761.192833999998,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-2:0",
+      "status": "ok",
+      "add_ms": 35897.743583,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 35654.582834,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-2:0",
+      "status": "ok",
+      "add_ms": 29124.967709,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 28867.780457999997,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-3:0",
+      "status": "ok",
+      "add_ms": 25337.376833000002,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 25068.68466699998,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-3:0",
+      "status": "ok",
+      "add_ms": 40593.44008300001,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 40188.880332999994,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-4:0",
+      "status": "ok",
+      "add_ms": 14622.711167000001,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 14424.42300000001,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-5:0",
+      "status": "ok",
+      "add_ms": 9081.430208000005,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 8890.609373999992,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-6:0",
+      "status": "ok",
+      "add_ms": 5666.700916000002,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5511.549500000008,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-4:0",
+      "status": "ok",
+      "add_ms": 33113.752333,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 32747.502124000006,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-7:0",
+      "status": "ok",
+      "add_ms": 17568.264083000002,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 17248.422374999995,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-5:0",
+      "status": "ok",
+      "add_ms": 20904.139916999993,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 20571.19595900002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-8:0",
+      "status": "ok",
+      "add_ms": 17895.186665999994,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 17674.027998999998,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-9:0",
+      "status": "ok",
+      "add_ms": 14272.251334,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 13840.887458000012,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-6:0",
+      "status": "ok",
+      "add_ms": 40598.732166,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 40215.37712400002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-7:0",
+      "status": "ok",
+      "add_ms": 11006.210041999992,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 10791.891082999995,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-8:0",
+      "status": "ok",
+      "add_ms": 9362.025500000018,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 9177.098916999996,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-10:0",
+      "status": "ok",
+      "add_ms": 43090.78658300001,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 42710.81054200002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-9:0",
+      "status": "ok",
+      "add_ms": 22979.769249999983,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 22424.738040999975,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-11:0",
+      "status": "ok",
+      "add_ms": 29488.26029200002,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 1,
+        "verification": 1
+      },
+      "generation_ms": 29090.572000000015,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-10:0",
+      "status": "ok",
+      "add_ms": 65027.03095800002,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 2
+      },
+      "generation_ms": 64232.00154100006,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-12:0",
+      "status": "ok",
+      "add_ms": 62107.50925,
+      "generation_attempts": 7,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 3,
+        "repair": 2,
+        "state_transition": 1
+      },
+      "generation_ms": 61573.30954299995,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-13:0",
+      "status": "ok",
+      "add_ms": 16043.752083000029,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 15739.310250000039,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-14:0",
+      "status": "ok",
+      "add_ms": 5376.344709000026,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5136.808458000014,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-11:0",
+      "status": "ok",
+      "add_ms": 37552.74979199999,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 37133.917457,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-12:0",
+      "status": "ok",
+      "add_ms": 9000.949916999962,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 8701.375292000012,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-15:0",
+      "status": "ok",
+      "add_ms": 36308.68116700003,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 35871.59820900002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-13:0",
+      "status": "ok",
+      "add_ms": 19904.257333000016,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 19511.51687500009,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-14:0",
+      "status": "ok",
+      "add_ms": 7286.901208000025,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 7017.90304200002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-15:0",
+      "status": "ok",
+      "add_ms": 6131.510499999975,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5849.776207999967,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-16:0",
+      "status": "ok",
+      "add_ms": 28356.564542000007,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 27762.849457999982,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-16:0",
+      "status": "ok",
+      "add_ms": 47624.85720799997,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 46965.04200100002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-17:0",
+      "status": "ok",
+      "add_ms": 11844.040792000014,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 11528.609208000067,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-17:0",
+      "status": "ok",
+      "add_ms": 18484.393291999993,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 18048.23591799999,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-17:1",
+      "status": "ok",
+      "add_ms": 3488.2861250000424,
+      "generation_attempts": 1,
+      "stage_attempts": {
+        "extraction": 1
+      },
+      "generation_ms": 3356.0535829999717,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-18:0",
+      "status": "ok",
+      "add_ms": 13415.125666999957,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 13013.658791999973,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-19:0",
+      "status": "ok",
+      "add_ms": 24997.416833999974,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 24453.689124999975,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-18:0",
+      "status": "failed",
+      "add_ms": 50169.984459,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 1
+      },
+      "generation_ms": 50100.96154199989,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-20:0",
+      "status": "ok",
+      "add_ms": 22205.825624999998,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 21692.061916999985,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-21:0",
+      "status": "ok",
+      "add_ms": 16959.555333999975,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 16414.860750999942,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-22:0",
+      "status": "ok",
+      "add_ms": 6778.5987089999835,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 6473.334291999985,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-1:0",
+      "status": "ok",
+      "add_ms": 42932.03149999998,
+      "generation_attempts": 6,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 2,
+        "state_transition": 1
+      },
+      "generation_ms": 42348.433793000004,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-23:0",
+      "status": "ok",
+      "add_ms": 20337.04029199999,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 19877.854208000004,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-2:0",
+      "status": "ok",
+      "add_ms": 16822.499375000072,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 16644.052208000096,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-3:0",
+      "status": "ok",
+      "add_ms": 8019.5485000000335,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 7806.404958000057,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-4:0",
+      "status": "ok",
+      "add_ms": 6211.852916000062,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5998.365626000101,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-24:0",
+      "status": "ok",
+      "add_ms": 32723.012708000024,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 32227.476624999894,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-5:0",
+      "status": "ok",
+      "add_ms": 5866.565167000052,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5666.50866599998,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-6:0",
+      "status": "ok",
+      "add_ms": 7677.053124999977,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 7471.604290999938,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-25:0",
+      "status": "ok",
+      "add_ms": 12009.346374999965,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 11681.282957999967,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-7:0",
+      "status": "ok",
+      "add_ms": 6177.157125000027,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5928.433125999989,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-8:0",
+      "status": "ok",
+      "add_ms": 28054.39391699992,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "state_transition": 1
+      },
+      "generation_ms": 27647.214874999947,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-9:0",
+      "status": "ok",
+      "add_ms": 22642.760207999963,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 21998.68620799994,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-26:0",
+      "status": "ok",
+      "add_ms": 71437.34229199996,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1,
+        "source_erasure": 1
+      },
+      "generation_ms": 70495.01370900008,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-10:0",
+      "status": "ok",
+      "add_ms": 28292.172332999995,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 27903.156624999945,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-27:0",
+      "status": "ok",
+      "add_ms": 22437.05766599998,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 21712.43941699993,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-11:0",
+      "status": "ok",
+      "add_ms": 44002.20625000005,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 43485.92558399995,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-28:0",
+      "status": "ok",
+      "add_ms": 49604.296416,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 48927.72925000021,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-12:0",
+      "status": "ok",
+      "add_ms": 26199.03129199997,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 25784.881834000116,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-13:0",
+      "status": "ok",
+      "add_ms": 30032.407375000068,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 29414.05999900005,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-29:0",
+      "status": "ok",
+      "add_ms": 43218.687292000046,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 42589.61191700015,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-30:0",
+      "status": "ok",
+      "add_ms": 24621.27808399999,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 23607.694666999858,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-14:0",
+      "status": "ok",
+      "add_ms": 29545.456166000105,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 29118.399875000003,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-15:0",
+      "status": "ok",
+      "add_ms": 16213.78341699997,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 15803.831083000056,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-16:0",
+      "status": "ok",
+      "add_ms": 15950.662708000047,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 15445.393457999919,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-31:0",
+      "status": "ok",
+      "add_ms": 42418.584207999986,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 41741.03987500002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-32:0",
+      "status": "ok",
+      "add_ms": 4966.409458999988,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 4522.3410430001095,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-33:0",
+      "status": "ok",
+      "add_ms": 17271.638750000042,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 16755.85179100011,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-17:0",
+      "status": "ok",
+      "add_ms": 42940.810415999964,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1,
+        "state_transition": 1
+      },
+      "generation_ms": 42397.84254100011,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-34:0",
+      "status": "ok",
+      "add_ms": 11376.734375,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 10996.216540999943,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-35:0",
+      "status": "ok",
+      "add_ms": 5241.880166999996,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 4867.836498999968,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-18:0",
+      "status": "ok",
+      "add_ms": 8792.110208000056,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 8538.825375000131,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-36:0",
+      "status": "ok",
+      "add_ms": 5787.253040999989,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5363.607000999968,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-37:0",
+      "status": "ok",
+      "add_ms": 21660.369874999975,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 21128.064790999983,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-19:0",
+      "status": "failed",
+      "add_ms": 37780.08095799992,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "state_transition": 1
+      },
+      "generation_ms": 37733.83450000011,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid implicit transition witness index for candidate 11\"}}"
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-38:0",
+      "status": "ok",
+      "add_ms": 14278.716125000035,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 13832.376832999871,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-1:0",
+      "status": "ok",
+      "add_ms": 4532.78674999997,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 4386.889124999871,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-2:0",
+      "status": "ok",
+      "add_ms": 3541.751624999917,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 3361.8829160000896,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-39:0",
+      "status": "ok",
+      "add_ms": 8329.62416700006,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 7848.595874999999,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-3:0",
+      "status": "ok",
+      "add_ms": 9563.140542000066,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 8613.008957999991,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-40:0",
+      "status": "ok",
+      "add_ms": 36664.059499999974,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 36030.699208999984,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-4:0",
+      "status": "ok",
+      "add_ms": 34266.020416999934,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 33942.86399999983,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-41:0",
+      "status": "ok",
+      "add_ms": 6608.976750000031,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 6144.557623999892,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-5:0",
+      "status": "ok",
+      "add_ms": 5888.059249999933,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5671.037041999865,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-42:0",
+      "status": "ok",
+      "add_ms": 23161.87141699996,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 22505.85691699991,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-43:0",
+      "status": "ok",
+      "add_ms": 31498.617749999976,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "state_transition": 1
+      },
+      "generation_ms": 30734.066957999836,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-6:0",
+      "status": "failed",
+      "add_ms": 68248.73462500004,
+      "generation_attempts": 6,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 3,
+        "repair": 2
+      },
+      "generation_ms": 68220.87279299996,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-1:0",
+      "status": "ok",
+      "add_ms": 23258.420041000005,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 22935.630665999954,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-44:0",
+      "status": "failed",
+      "add_ms": 46173.69104199996,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "repair": 2
+      },
+      "generation_ms": 46090.402914999635,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-2:0",
+      "status": "ok",
+      "add_ms": 22713.456291000126,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 22321.813916999963,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-3:0",
+      "status": "ok",
+      "add_ms": 37129.162957999855,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 36623.97741699987,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-4:0",
+      "status": "ok",
+      "add_ms": 37924.224457999924,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 37024.81945800013,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-5:0",
+      "status": "ok",
+      "add_ms": 82807.00175000005,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 2
+      },
+      "generation_ms": 81665.89470899967,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-6:0",
+      "status": "ok",
+      "add_ms": 26603.986166000133,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 26057.96470800019,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-7:0",
+      "status": "ok",
+      "add_ms": 71004.11995800002,
+      "generation_attempts": 12,
+      "stage_attempts": {
+        "extraction": 2,
+        "verification": 5,
+        "repair": 4,
+        "state_transition": 1
+      },
+      "generation_ms": 159786.14775,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-7:1",
+      "status": "ok",
+      "add_ms": 6998.337708000094,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 6730.1403340001125,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-8:0",
+      "status": "ok",
+      "add_ms": 32205.443458999973,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 31655.63720700005,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-9:0",
+      "status": "ok",
+      "add_ms": 40969.41445900011,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 40413.52616699971,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-10:0",
+      "status": "ok",
+      "add_ms": 34105.935749999946,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 33652.08433500002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-11:0",
+      "status": "ok",
+      "add_ms": 25305.709416999947,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 24739.29679299961,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-12:0",
+      "status": "ok",
+      "add_ms": 13642.644917000085,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 13192.289042000193,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-13:0",
+      "status": "ok",
+      "add_ms": 49558.23079099995,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 2
+      },
+      "generation_ms": 48891.19454200007,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-14:0",
+      "status": "ok",
+      "add_ms": 65621.38554199995,
+      "generation_attempts": 6,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 2,
+        "verification": 2,
+        "state_transition": 1
+      },
+      "generation_ms": 64968.88724900037,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-15:0",
+      "status": "ok",
+      "add_ms": 7001.229166999925,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 6664.103917000117,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-16:0",
+      "status": "ok",
+      "add_ms": 5358.329875000054,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5025.425208000001,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-17:0",
+      "status": "ok",
+      "add_ms": 6814.962208000012,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 6423.601374999853,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-18:0",
+      "status": "ok",
+      "add_ms": 35952.453666999936,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 35388.72579099983,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-19:0",
+      "status": "ok",
+      "add_ms": 5706.308124999981,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 5315.967166000046,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-20:0",
+      "status": "ok",
+      "add_ms": 15606.50925000012,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 15106.4253740001,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-21:0",
+      "status": "ok",
+      "add_ms": 40766.90754200006,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 40175.117291000206,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-22:0",
+      "status": "ok",
+      "add_ms": 44787.081125000026,
+      "generation_attempts": 5,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 2
+      },
+      "generation_ms": 44184.84270799998,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-23:0",
+      "status": "ok",
+      "add_ms": 20805.292625000002,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 20271.669665999943,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-24:0",
+      "status": "ok",
+      "add_ms": 8316.898375000106,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 7804.350709000137,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-25:0",
+      "status": "ok",
+      "add_ms": 12450.444124999922,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 12016.830625000177,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-26:0",
+      "status": "ok",
+      "add_ms": 33497.52049999987,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 33007.68154000002,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-27:0",
+      "status": "ok",
+      "add_ms": 57841.230082999915,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 57254.85495800013,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-28:0",
+      "status": "ok",
+      "add_ms": 37163.56258299993,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "state_transition": 1
+      },
+      "generation_ms": 36504.543083,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-29:0",
+      "status": "ok",
+      "add_ms": 49603.60995900002,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 48964.18224900006,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-30:0",
+      "status": "ok",
+      "add_ms": 28949.91995800007,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 28287.974707999965,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-31:0",
+      "status": "ok",
+      "add_ms": 36047.33058299986,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 1,
+        "verification": 1
+      },
+      "generation_ms": 35506.75479100016,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-32:0",
+      "status": "ok",
+      "add_ms": 8797.22579200007,
+      "generation_attempts": 2,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1
+      },
+      "generation_ms": 8355.29995799996,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-33:0",
+      "status": "ok",
+      "add_ms": 35712.21895899996,
+      "generation_attempts": 3,
+      "stage_attempts": {
+        "extraction": 1,
+        "repair": 1,
+        "verification": 1
+      },
+      "generation_ms": 35006.54016699968,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-34:0",
+      "status": "ok",
+      "add_ms": 35676.7205409999,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 2,
+        "repair": 1
+      },
+      "generation_ms": 34991.77604100015,
+      "error": null
+    },
+    {
+      "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-35:0",
+      "status": "failed",
+      "add_ms": 26728.98004100006,
+      "generation_attempts": 4,
+      "stage_attempts": {
+        "extraction": 1,
+        "verification": 1,
+        "repair": 2
+      },
+      "generation_ms": 26658.902209000196,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired within the request budget\"}}"
+    }
+  ],
+  "scope": "Descriptive snapshot of recorded attempts; completed adds join private request identities without exporting inputs, outputs or credentials. Running audit and trace files are read sequentially; a newly completed call may be temporarily unlinked. Token totals include only reported usage, and errors with missing usage are not zero-cost. Concurrent diagnostic workload may affect observed latency; this is not an isolated performance comparison."
+}

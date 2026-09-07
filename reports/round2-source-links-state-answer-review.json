@@ -1,0 +1,116 @@
+{
+  "protocol": "source-links-state-answer-review-v1",
+  "cases": [
+    {
+      "protocol": "source-links-prefix-state-and-answer-review-v1",
+      "case": "D17_remember",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-40-39-198Z-g9Z1aS",
+      "source_commit": "441cc48",
+      "parent_results_sha256": "7c52f1288fdee3320e3f009c151d12fbee17641a49f5b3c08b0c4de185f31fd2",
+      "state_sha256": "589b4ae6b04eef985bb8de848d7f3a2aefd5398703a42814533e2b583d28edb2",
+      "answers_sha256": "d5f8403f8d5a16822bb89a45302d78ded13d7a74f5cca38045d98457909c4ae5",
+      "checks": {
+        "work_laptop_firefox": true,
+        "iphone_safari": true,
+        "kevin_brave": true,
+        "three_tablet_targets_erased": true,
+        "no_active_sync_detail": true
+      },
+      "state_pass": true,
+      "answer_review": [
+        {
+          "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+          "answer": "Firefox on your work laptop, Safari on your iPhone, and Kevin uses Brave.",
+          "pass": true,
+          "reason": "Correct user work laptop Firefox, iPhone Safari and Kevin Brave."
+        },
+        {
+          "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+          "answer": "I only have notes about your browser defaults, not about an old tablet or a bookmark syncing issue. The stored details are:\n\n- Your work laptop\u2019s default browser is Firefox.\n- Your phone/iPhone\u2019s default browser is Safari.\n- You said you have two different defaults: Firefox on the laptop, Safari on the phone.\n- You set Safari as the default browser on your iPhone around mid-March.",
+          "pass": true,
+          "reason": "Does not return old tablet sale or bookmark syncing details; browser defaults are independent retained evidence."
+        }
+      ],
+      "caveat": null,
+      "scope": "One fresh original prefix per case plus fixed mini Answer. Assistant inspection only, not independent human labels, overall accuracy or three full repeats."
+    },
+    {
+      "protocol": "source-links-prefix-state-and-answer-review-v1",
+      "case": "D24_reflect",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-42-08-565Z-k61M9D",
+      "source_commit": "441cc48",
+      "parent_results_sha256": "14f545ee2fccbed9a08d74a737a923b2aadd622995d24184ca30534288414847",
+      "state_sha256": "81240cd4165abedaf307862d3f0ce0d9aebe0fe4b9a3b357c72993572ef9d06a",
+      "answers_sha256": "38d9f371a192be57ffec00223699d23e31e098125d4e3e6bf9228d2b0b7dd7e9",
+      "checks": {
+        "investment_plans_retained_at_revision_two": true,
+        "all_investment_plans_tentative": false,
+        "open_feel_windows_present": true,
+        "rav4_claustrophobic_present": true,
+        "awd_not_primary": true
+      },
+      "state_pass": false,
+      "answer_review": [
+        {
+          "query": "Why did I choose the Outback over the RAV4?",
+          "answer": "You said the main reason was the Outback\u2019s open, airy feel and bigger windows; the RAV4 felt claustrophobic. You also said the AWD is nice, but not the main reason.",
+          "pass": true,
+          "reason": "Correct Outback cabin/window reason, RAV4 contrast and AWD qualification."
+        },
+        {
+          "query": "What plans did I mention for researching investments and consulting a financial advisor?",
+          "answer": "You mentioned that you would do your research and consult with a financial advisor before making any decisions, and you also mentioned starting by looking into index funds for diversification across different sectors.",
+          "pass": true,
+          "reason": "Research, advisor consultation and index fund plans remain future plans in the answer."
+        }
+      ],
+      "caveat": {
+        "finding": "investment_plan is stored as confirmed/single although its source is an unfulfilled future intention; violates the current tentative-plan convention. The observed Answer still describes a future plan. HTTP and Answer success do not certify internal modality correctness.",
+        "facts": [
+          {
+            "content": "I'll definitely do my research and consult with a financial advisor before making any decisions.",
+            "predicate": "investment_plan",
+            "modality": "confirmed",
+            "cardinality": "single",
+            "revision": 2
+          },
+          {
+            "content": "I think I'll start by looking into some index funds for diversification across different sectors.",
+            "predicate": "investment_plan",
+            "modality": "tentative",
+            "cardinality": "single",
+            "revision": 2
+          }
+        ]
+      },
+      "scope": "One fresh original prefix per case plus fixed mini Answer. Assistant inspection only, not independent human labels, overall accuracy or three full repeats."
+    },
+    {
+      "case": "C30_update",
+      "source_commit": "441cc48",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T04-40-38-013Z-XKPgiG",
+      "parent_results_sha256": "dfe24d7b87430e56ec25fb46c49253b83bc4e0faf9004b677b28f5626d3e6984",
+      "state_sha256": "6565f36586955d71f2444a23f49e4dbdf2f46a4013a752ba414014537ff4a1ef",
+      "answers_sha256": "2425d11f905ff6cb401e8c6d0ff62161bec818d2e615399a221e3eb59e0b3879",
+      "checks": {
+        "current_amount_250": true,
+        "incorrect_200_not_active_in_investment_facts": true,
+        "fund_vtsax_fidelity": true,
+        "first_and_fifteenth": true,
+        "weekly_150_monday_transfer_preserved": true
+      },
+      "current_state_pass": true,
+      "state_pass": null,
+      "answer_review": [
+        {
+          "query": "What are my current automatic investment amount, schedule and fund, and what changed from my previous setup?",
+          "answer": "Your current VTSAX automatic investment is $250 every two weeks through Fidelity, timed to execute on the 1st and 15th of each month.\n\nCompared with your previous setup, the amount changed from $200 to $250; the schedule and fund stayed the same.",
+          "pass": false,
+          "reason": "Current amount, fund, provider and calendar schedule are correct. The answer describes an actual $200-to-$250 setup change; the source corrects a remembered amount and does not establish an earlier executed $200 configuration. Correction versus real history remains ambiguous in the answer."
+        }
+      ],
+      "caveat": "Full semantic acceptance remains open: factual current state passes, but correction/history distinction is not established by this single diagnostic. No rerun selected to replace this answer.",
+      "scope": "One original fresh prefix and one fixed mini Answer. Assistant review, not benchmark scoring or independent human truth."
+    }
+  ]
+}

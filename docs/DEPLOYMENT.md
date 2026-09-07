@@ -1,84 +1,148 @@
-# 部署与离线交付
+# V1 候选部署与交接
 
-本机已验证 Node 24.18.0、macOS arm64 / Docker Linux arm64。源码支持重新构建；当前导出的镜像为 arm64，未将 amd64 标为已验证平台。
+当前仍为候选版本。service `b398a63`、eval `b8ae27a` 已通过干净递归克隆、两种模式部署、重启、备份恢复和兼容镜像回退；7502秒托管运行已有验证。当前候选10题小集及20项存储检查也已通过；37题长背景验收失败，完整评测及最终归档仍需完成。历史归档与旧镜像说明见 [历史部署记录](DEPLOYMENT-HISTORICAL.md)，不能用旧报告证明当前版本已完成。
 
-## 镜像离线启动
+## 配置与启动
 
-交付包中的 `runtime-images.tar` 包含 service 与 eval 镜像及共同基础层。导入后在递归克隆的总控仓库执行：
+增强配置只有一份：`configs/release-enhanced.env`。离线配置为 `configs/release-offline.env`。Compose 从所选文件读取行为开关，只从本地 `.env` 读取连接地址、凭据和部署参数；旧实验开关不会覆盖发布配置。`service/.env.example` 是增强配置的独立服务模板。
+
+宿主机构建需要 Node 24.18.0、Python 3 和 Docker；运行 service 镜像不依赖 eval。当前容器实测平台为 Docker Linux arm64，宿主机 macOS arm64。没有将 amd64 标为已验证。
 
 ```sh
-docker load -i /path/to/runtime-images.tar
-MEMORY_MODE=offline docker compose up -d --no-build --wait --wait-timeout 90
-curl -f http://127.0.0.1:8088/health
+nvm use
+make init
+make build
+# 已有 .env 时保留原文件；首次部署才复制：
+cp -n .env.example .env
+# 在 .env 填写可从容器访问的 MEMORY_LLM_BASE_URL 和 MEMORY_LLM_API_KEY。
+make up
+make contract
+make down
 ```
 
-必须等 `--wait` 成功再运行 `make contract` 或评测。`docker compose down` 保留具名数据卷；不要使用 `down -v` 作为正常停止命令。离线服务不调用外部模型，使用规则提取、来源证据和词法检索，其质量范围与增强模式不同。
+默认构建标签为 `comp-agent-memory-service:v1-candidate`，不是正式版本。增强模式默认使用独立卷 `comp-agent-memory-enhanced-v1`，不会接管历史卷。`MEMORY_PORT` 默认8088；`MEMORY_SERVICE_IMAGE` 和 `MEMORY_VOLUME` 可以指定镜像及已有兼容快照。不要将增强与离线配置指向同一卷。
 
-镜像构建仍需预先准备基础镜像和依赖；“运行时离线”不表示可以在没有任何镜像、包缓存和模型的空机器上断网构建。
+运行无模型的离线模式：
 
-## 本地 embedding
+```sh
+make up-offline
+make contract
+make down
+```
 
-当前已部署 Ollama `nomic-embed-text:latest`，维度 768，模型 manifest digest：
+离线模式使用独立卷 `comp-agent-memory-offline-v1`、规则提取与词法检索。它支持已验证的简单明确事实、更新和遗忘；复杂语义不等价于增强模式。不能安全绑定的操作应返回错误。不要用离线成绩代表增强模式。`make down` 保留数据，不使用 `down -v` 作为正常停止命令。
+
+## 本地 embedding 与模型
+
+增强写入固定使用 gpt-5.5，默认辅助模型为 gpt-5.4-mini；全部模型阶段共用有界预算。embedding 使用宿主机 Ollama 的 `nomic-embed-text:latest`，768维，固定 digest：
 
 `0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f`
 
-`local-embedding.tar` 只打包该模型 manifest 和所引用的内容寻址 blob，逐个 hash 已核验。Ollama 程序需预装。可以导入专用模型目录，使用独立端口，避免与现有模型服务冲突：
+先在宿主机安装或导入该模型，再启动增强服务。服务不会在请求中下载模型。Docker Desktop 默认使用 `http://host.docker.internal:11434`；其它环境需设置可达的 `DOCKER_EMBEDDING_BASE_URL`。本地 LLM 也必须使用容器可达地址；容器内的127.0.0.1指向容器自身。已有模型、固定归档导入和相关冷启动限制见 [模型配置](MODEL-SETUP.md) 与历史部署记录。
+
+当前增强格式为 `dual-source-v10-s1`，离线为 `dual-source-v2-s1`。`s1` 将擦除事实、操作记录和遗忘标记的范围正文投影为规范化摘要，活动事实的合法范围保留。无 `s1` 的旧库不能由当前版本打开；旧版本也拒绝新格式。摘要用于匹配，不表示加密或磁盘安全擦除。更换 embedding 模型或来源格式需要新数据目录和完整合法操作历史重新灌入（含遗忘指令），不在旧向量空间上混写。模型可用性不由 `/health` 证明：该接口验证进程和存储工作线程，实际模型连通性由完整写入演示验证。
+
+## 可执行闭环演示
+
+`make contract` 是现有独立 HTTP 演示与验收入口：创建独立演示用户，写入经理/门禁码/城市，验证立即检索与幂等，更新城市并验证旧值不再作为当前值，遗忘门禁码并验证经理仍保留，同时检查用户隔离、错误请求、路由白名单和证据条数。
+
+该命令不产生最终问答或判分，也不读取服务数据库。完整写入→检索→回答→判分使用固定小集和独立 eval；存储层遗忘另有只读检查。不要把 HTTP 演示当作全量准确率。
+
+## 日志与故障定位
 
 ```sh
-mkdir -p .models
-tar -xf /path/to/local-embedding.tar -C .models
-OLLAMA_MODELS="$PWD/.models" OLLAMA_HOST=127.0.0.1:11435 ollama serve
+docker compose logs --tail 100 memory-service
 ```
 
-本机独立冷启动时遇到过 Metal 着色器编译等待：模型列表正常，但推理子进程在加载模型之前超时。已用相同归档在第二个新目录验证 CPU 回退，三条768维向量成功生成，相关文本相似度高于无关文本。对本机 Ollama 0.31.2，可以只在新实例启动命令中加入：
+普通 HTTP 日志含 `id`、`request_id`（写入）、哈希租户标识、阶段、模式、状态、耗时和错误码；不记录消息正文、查询、请求头和凭据。健康轮询成功不反复刷日志。Docker日志按10MB、3份轮转。
+
+模型阶段、传输错误、用量与恢复记录位于卷内 `/data/model-audit.jsonl`。仅在明确诊断时开启私有 `MEMORY_MODEL_TRACE`，其中会含模型输入输出，不能放进常规交付包。业务日志不能替代物理磁盘擦除证明。
+
+| 错误 | 处理边界 |
+| --- | --- |
+| WRITE_CONTINUATION_PENDING | 同进程内使用完全相同ID和载荷有界重试，最多3次；不换ID补成功 |
+| EXTRACTION_UNAVAILABLE / VERIFICATION_UNAVAILABLE | 检查模型审计中的连接、超时、输出协议原因；不将失败写入当作完成 |
+| EVIDENCE_VALIDATION / OPERATION_* | 来源、语义或操作目标未通过；检查隔离诊断，不能放宽遗忘及邻居检查 |
+| SOURCE_FORMAT | 当前配置与数据不兼容；恢复匹配配置/镜像/快照，或使用新卷重新灌入 |
+| STORAGE / WORKER_EXIT | 检查卷权限、空间和工作线程；失败事务不能作为已提交记录 |
+| DEADLINE | 请求超过截止时间；通过原请求身份核对回执，不盲目换ID |
+
+服务进程重启会失去未提交准备的内存模型响应缓存；这类请求明确终止，不宣称支持跨进程继续。已提交请求的回执和记忆会持久保留。未知数据版本及无版本非空数据在打开租户数据库时拒绝；不会自动迁移或假装兼容。
+
+## 备份、恢复和升级
+
+先正常停止服务，再备份完整数据目录，包括尚未检查点落盘的WAL文件。不要只复制某个正在写入的 `memory.sqlite`。下面以默认增强卷为例，备份目录保存在宿主机；同时记录镜像ID、配置和备份SHA256。
 
 ```sh
-GGML_METAL_DEVICES=0 OLLAMA_MODELS="$PWD/.models" \
-  OLLAMA_HOST=127.0.0.1:11435 ollama serve
+mkdir -p backups
+backup_name="memory-$(date +%Y%m%d-%H%M%S).tar.gz"
+docker compose stop
+docker run --rm --network none --user 0:0 --entrypoint tar \
+  -v comp-agent-memory-enhanced-v1:/data:ro -v "$PWD/backups:/backup" \
+  comp-agent-memory-service:v1-candidate -czf "/backup/$backup_name" -C /data .
+shasum -a 256 "backups/$backup_name"
+docker compose start
 ```
 
-这是实测的版本相关回退开关，不保证其它 Ollama 版本具有同样行为；[上游 Metal 后端源码](https://github.com/ggml-org/llama.cpp/blob/master/ggml/src/ggml-metal/ggml-metal.cpp)说明了该环境变量的读取方式。无需修改全局系统环境或重启已有正常模型服务。失败采样和完整回归分别见 `reports/embedding-startup-diagnostic.json`、`reports/embedding-import-verification.json`。CPU 回退用于新部署验证，本次公开评测的模型配置没有随之改变。
-
-宿主机服务将 `MEMORY_EMBEDDING_BASE_URL` 指向 `http://127.0.0.1:11435`。Docker Desktop 场景使用 `DOCKER_EMBEDDING_BASE_URL=http://host.docker.internal:11435`；Linux 上需按实际网络配置可达地址。已有本机模型服务使用 11434，不必再起第二个。
-
-增强模式在本地 `.env` 设置 `MEMORY_LLM_BASE_URL`、`MEMORY_LLM_API_KEY` 和明确的 `MEMORY_LLM_MODEL`；配置文件不要加入 Git。本文与交付包均不包含真实密钥。服务不会在请求过程中自动下载模型。向量空间不匹配会拒绝混写；更换模型后应创建新的数据目录并重新灌入。
-
-启用完整候选的重排时，在 `.env` 中设置 `MEMORY_RERANK=true`，再执行：
+恢复到新卷，保留原卷作为回退点。为避免覆盖已有数据，先确认目标卷不存在；不要将未检查的归档解压到在线卷。
 
 ```sh
-MEMORY_MODE=enhanced docker compose up -d --no-build --wait --wait-timeout 90
+restore_volume="memory-restored-$(date +%Y%m%d-%H%M%S)"
+docker volume create "$restore_volume"
+docker run --rm --network none --user 0:0 --entrypoint tar \
+  -v "$restore_volume:/data" -v "$PWD/backups:/backup:ro" \
+  comp-agent-memory-service:v1-candidate -xzf "/backup/$backup_name" -C /data .
+MEMORY_VOLUME_EXTERNAL=true MEMORY_VOLUME="$restore_volume" docker compose up -d --wait
 ```
 
-## 评测及三仓库源码
+使用与快照相匹配的配置及镜像。离线恢复同时指定 `MEMORY_CONFIG_FILE=configs/release-offline.env`。检查原用户的当前状态、被遗忘值和旧请求回执，再切换正式流量。`make contract` 会创建新演示用户，不能单独证明旧用户恢复正确。
 
-三个 bare Git 仓库应保留在同一 `repositories/` 目录，然后：
+升级前保留旧镜像ID、配置和停机快照；先用新镜像在快照副本上验证，再更换部署。回退时同时恢复旧镜像与兼容快照，不能只换镜像后让旧代码读取未知的新格式。当前版本没有通用自动迁移器，格式变更需要新卷重新灌入。已执行的两种模式备份读回证据分别见 [离线](../reports/v1-offline-backup-restore-b398a63.json) 和 [增强](../reports/v1-enhanced-backup-restore-b398a63.json)。
+
+## 长评测运行
+
+复用 `scripts/run-experiment.py --detach` 启动独立进程会话，`--status` 查询真实进程身份和退出状态。原结果不覆盖、失活记录不当作运行中，未知退出原因保留unknown。macOS的空闲睡眠防护不能保证阻止合盖或强制睡眠。完整评测应放在保持唤醒的宿主机运行。
+
+当前候选的[干净递归克隆验证](../reports/v1-clean-clone-b398a63-acceptance.json) 使用 service `b398a63`、eval `b8ae27a`，镜像为 `comp-agent-memory-service:v1-b398a63`（Linux arm64）。407项服务测试、24项Node评测器测试、17项Python测试、12项运行管理和10项交付工具测试通过。初次评测器测试遇到合盖休眠超时，原始失败日志保留；源码及测试时限未改，在临时防空闲休眠下复核通过。`caffeinate -i` 不能阻止合盖或强制休眠，长评测需要保持宿主机唤醒。
+
+两种模式各12项HTTP契约检查通过，并以同一原用户完成重启、备份恢复及[兼容镜像回退](../reports/v1-compatible-rollback-b398a63.json)。增强模式三次合法写入无需HTTP续跑，未出现降级，分别耗时12.9秒、11.5秒和12.6秒；此结果只覆盖简单部署演示，不能替代长背景验收。临时凭据副本和验证容器已移除，数据卷及停机快照保留。当前发布清单仍为 `draft_pending_gates`，后续按 [V1交付计划](29-V1交付收敛计划.md) 验收。
+
+## V1 发布验收与打包
+
+本版使用 [发布清单](../configs/v1-release.json) 指定源代码、验收证据、完整评测和运行归档。清单中的未来报告路径与计划运行ID不表示任务已完成。以下命令只有在对应证据真实完成后才能通过；不要用历史 `delivery-readiness-audit.json` 为本版背书。
 
 ```sh
-git -c protocol.file.allow=always clone --recurse-submodules /path/to/repositories/agent-memory-workspace.git workspace
-cd workspace
-nvm use
-make init test baseline-init eval-init
+python3 scripts/audit-delivery-readiness.py \
+  --release configs/v1-release.json --output reports/v1-delivery-readiness.json
 ```
 
-只有本地 Git bundle 使用上述一次性的 file 协议开关；无需修改全局 Git 配置。`make data` 从固定版本准备公开集并校验来源文件，联网数据准备与服务运行分离。
-
-LoCoMo 上游复现另外需要已安装的 Qwen3:14b Q4_K_M 和 eval 的 `ollama-judge-server.py`。其 manifest digest 已保存于 `reports/holdout-v2-local-models.json`；9GB 级 Judge 权重没有混入 embedding 包。服务本身不依赖 Judge。正式平台提供资源后，应按正式模型与评分配置另建运行目录。
-
-已验证的冷启动、断网恢复、干净克隆和 4/4 合成端到端结果见 `reports/clean-clone-final-functional.json` 与 `reports/container-offline.json`。补充许可与署名后的评测镜像运行文件等价记录见`reports/license-image-supplement.json`。完整公共基准结果与诊断仍由独立实验目录记录。
-
-## 最终归档
-
-完整评测、后处理、双阶段性能与报告结束后，先执行逐项证据核查，再提交文档并生成最新三仓库快照：
+提交源代码与报告后运行 `python3 scripts/bundle.py`，记录它输出的新快照目录。将该目录填入下方 `snapshot_dir`；`bundle.py` 本身也会验证相邻 bare 仓库的递归克隆。输出归档路径必须是未使用的新路径。
 
 ```sh
-python3 scripts/audit-delivery-readiness.py
-# 提交全部源代码、报告及审计记录后执行：
-make bundle
-python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录> --plan
-python3 scripts/package-delivery.py --snapshot delivery/<最新快照目录>
-python3 scripts/verify-delivery.py --archive delivery/agent-memory-delivery.tar.gz --health-url http://127.0.0.1:8088/health
+snapshot_dir="delivery/实际的新快照目录"
+python3 scripts/package-delivery.py --snapshot "$snapshot_dir" \
+  --release configs/v1-release.json --readiness reports/v1-delivery-readiness.json \
+  --output delivery/agent-memory-v0.1.0.tar.gz
+python3 scripts/verify-delivery.py --archive delivery/agent-memory-v0.1.0.tar.gz \
+  --output delivery/v1-archive-verification.json
 ```
 
-`delivery-readiness-audit.json`只证明已具备打包条件，不能证明尚未生成的压缩包有效。`--plan`只列清单，不代表交付完成。正式打包要求所有完成门槛、干净Git状态和快照版本一致，检查所选文件与Git可达历史是否包含配置中的真实密钥，并在打包后逐文件读回验证SHA256。包内保留历史失败结果，排除真实环境文件、运行数据库、依赖缓存和重复模型导入目录。外部`.sha256`用于验证压缩包本身；`MANIFEST.json`用于验证包内每个源文件。
+V1打包只选择本次验收绑定的文件，保留凭据及Git可达历史扫描，排除运行数据库、私有模型原文追踪和无关实验目录。独立验证会实际读取归档、检查逐文件哈希，并从包内递归克隆三个仓库。归档验证不替代部署与功能测试：还需按包内说明加载镜像，并在独立卷启动后执行HTTP契约及旧用户恢复检查。正式交接需要这两类证据同时通过。
 
-独立的`verify-delivery.py`再次核对归档清单，并从实际包内提取bare仓库进行递归克隆、提交一致性与Git对象完整性检查，结果写入包外`delivery/final-verification.json`。`--health-url`可选，仅在已有部署时提供。它验证归档及源码可恢复性，不重复宣称功能测试或公开评测已经重跑。
+旧版脚本不带 `--release` 的调用仅用于复核历史交付，仍保留旧实验矩阵要求，不属于本版发布路径。
+
+
+## 当前可接手的候选源码快照
+
+`delivery/v1-b398a63/candidate-source-832ec2d.tar.gz` 是非正式V1的源码交接快照，固定根仓库`832ec2d`、service `b398a63`及eval `b8ae27a`。外部同名`.sha256`文件用于核对归档，包内`SOURCE-INVENTORY.json`逐文件绑定内容。已实际读回3381个文件、从归档递归克隆并检查三个仓库Git完整性；配置凭据与可达源码历史扫描通过。详见[源码交接验证](../reports/v1-candidate-source-handoff.json)。该验证报告是在归档完成后生成，因此不包含在上述固定快照中。
+
+解压后按包内`CANDIDATE-README.md`操作。快照包含三个bare仓库；运行镜像和本地embedding归档单独提供，身份见[运行归档清单](../reports/v1-runtime-bundles.json)。源码离线克隆不等于依赖离线安装，运行镜像平台仍仅Linux arm64。该快照不替代正式打包/readiness门槛，也不证明长背景、全量或最终包部署通过。
+
+
+## BigModel 候选接入（2026-09-07）
+
+用户提供的新接口已完成最小连通性检查。当前本地`.env`选择`configs/v1-bigmodel-enhanced.env`，base为`https://open.bigmodel.cn/api/coding/paas/v4`；写入/核验/修复使用`glm-5.3`，辅助及独立评测Answer/Judge使用`glm-5.3-flash`，本地nomic embedding保持原digest。新机器需自行填写密钥并显式设置`MEMORY_CONFIG_FILE=configs/v1-bigmodel-enhanced.env`。Responses接口测试通过，服务仍沿用Chat Completion。此前正在运行的服务未自动重启或切换。
+
+采用官方文档中的`json_object`模式，保留本地严格结构与语义校验。首次`json_schema`小集因非法JSON导致一次遗忘写入失败，结果独立保留。配置调整后的第二轮两边各5次写入、10次检索均成功，候选20项存储检查通过；机器计分候选8/10（9题已判、1题judge_error），原文5/10。判分解析失败的原始响应未被现有评测器保留，不能确定其具体尾随字符或把它直接归因于流式解析实现。没有补判或覆盖旧分数。助手复核不是人工校准，短参考造成的判分争议不计入修正成绩。
+
+对应[兼容性结果](../reports/v1-bigmodel-compatibility.json)、[首轮失败](../reports/v1-small-bigmodel-01-results.json)、[第二轮结果](../reports/v1-small-bigmodel-02-results.json)。这些是新的候选证据，不替代旧发布清单中的提交/模型身份；完整小集判分、长背景、全量与正式发布仍未通过。按用户要求收敛，本轮后未启动长背景或全量测试。

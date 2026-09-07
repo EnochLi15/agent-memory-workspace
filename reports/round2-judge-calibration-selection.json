@@ -1,0 +1,115 @@
+{
+  "protocol": "memops-judge-audit-selection-v1",
+  "compared_same_answers": 464,
+  "primary_planned": 500,
+  "primary_without_saved_answer": 36,
+  "selected": 199,
+  "selection_counts": {
+    "disagreement": 175,
+    "agreement": 24
+  },
+  "question_type_counts": {
+    "OperationApplication": 38,
+    "OperationTrace": 59,
+    "TargetBinding": 47,
+    "CandidateDisambiguation": 5,
+    "StateTransition": 40,
+    "StateTrajectory": 10
+  },
+  "agreements_per_type_and_verdict": 2,
+  "agreement_strata": [
+    {
+      "evaluation_type": "CandidateDisambiguation",
+      "verdict": false,
+      "available": 16,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "CandidateDisambiguation",
+      "verdict": true,
+      "available": 58,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "OperationApplication",
+      "verdict": false,
+      "available": 23,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "OperationApplication",
+      "verdict": true,
+      "available": 39,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "OperationTrace",
+      "verdict": false,
+      "available": 33,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "OperationTrace",
+      "verdict": true,
+      "available": 8,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "StateTransition",
+      "verdict": false,
+      "available": 21,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "StateTransition",
+      "verdict": true,
+      "available": 23,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "TargetBinding",
+      "verdict": false,
+      "available": 10,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "TargetBinding",
+      "verdict": true,
+      "available": 43,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "StateTrajectory",
+      "verdict": false,
+      "available": 12,
+      "selected": 2
+    },
+    {
+      "evaluation_type": "StateTrajectory",
+      "verdict": true,
+      "available": 3,
+      "selected": 2
+    }
+  ],
+  "review_completed": 0,
+  "scope": "Already exposed regression answers; selection only, no calibration verdicts or new score. Agreement is not a reference label.",
+  "inputs": {
+    "primary": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/holdout-v2-U3-memops/judgments.jsonl",
+      "sha256": "6f071d54e11706efbcc57476f2ecff394f3cbf3d730178c65278bf46e61eb9b4"
+    },
+    "predictions": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/holdout-v2-U3-memops/predictions.jsonl",
+      "sha256": "d6ae209ab4224e1ad1466d303df20bd86ceac46cf1afed1fd0af540c71ee43a7"
+    },
+    "upstream": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/holdout-v2-U3-memops/upstream-memops-diagnostics/results.jsonl",
+      "sha256": "a70826b1676925d2d8051457801c5721a58ad9023bd137d870980ea60e4d8772"
+    }
+  },
+  "outputs_sha256": {
+    "blind.jsonl": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d",
+    "prior-verdicts.jsonl": "7559a59806e0374a44690016f6f9eae042508a3db400590a654fa34d5a30bb30",
+    "reviews-pending.jsonl": "9e5eea2085382c85ac837b1639f56f3c19925e7b487152867b0af1b0fbe52a20"
+  }
+}

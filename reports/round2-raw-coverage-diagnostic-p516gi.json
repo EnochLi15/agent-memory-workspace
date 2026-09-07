@@ -1,0 +1,51 @@
+{
+  "protocol": "raw-coverage-exact-guard-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-raw-coverage-diagnostic-p516gi",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-E10-bfec674-coverage-failure-jg7mhtvl",
+  "original_runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-bfec674",
+  "commit_runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair",
+  "commit_storage_sha256": "c1bf02dfb19d78aeb8b076a8590fa73881579313740b6d577ee313d01f52938a",
+  "commit_coverage_sha256": "23bf577f9bb35c4a8d91ae1acff20e7e1e84595660b2f3c838facf3d8c50ce18",
+  "original_guard_sha256": "a524c0f2e5adc9ac39323ae458cd568d631a797ac38c3857091224db561520ff",
+  "instrumented_guard_sha256": "fa70b535f0617ffc3b9c73284d2c1df154733700f51a455da20f660911c2fa56",
+  "started_at": "2026-09-06T12:55:00.469Z",
+  "fresh_llm_calls": 0,
+  "scope": "Exact frozen-runtime system/input/purpose replay and deterministic fixture embeddings prepare the original decision. Candidate storage commits it privately under its changed coverage guard. No fresh model/service calls, embedding quality or complete-background quality claim.",
+  "degraded": [],
+  "precommit_checks": {
+    "forged_erasure_rejected": true,
+    "injected_index_failure_rolled_back": true
+  },
+  "status": "committed",
+  "checks": [
+    {
+      "name": "single_revision",
+      "pass": true
+    },
+    {
+      "name": "receipt_persisted",
+      "pass": true
+    },
+    {
+      "name": "no_degradation",
+      "pass": true
+    },
+    {
+      "name": "erased_appointment_context_absent",
+      "pass": true
+    },
+    {
+      "name": "sms_context_preserved",
+      "pass": true
+    },
+    {
+      "name": "surviving_source_passages_indexed",
+      "pass": true
+    }
+  ],
+  "finished_at": "2026-09-06T12:55:01.404Z",
+  "saved_packets_used": 8,
+  "saved_packets_planned": 8,
+  "fixture_embeddings": 53,
+  "original_database_unchanged": true
+}

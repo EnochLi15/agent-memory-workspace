@@ -1,0 +1,108 @@
+{
+  "protocol": "source-order-state-answer-review-v1",
+  "source_commit": "c8cbcae",
+  "cases": [
+    {
+      "sample": "C30_update",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-00-29-092Z-0mVJ5Z",
+      "hashes": {
+        "results.json": "b0ef0a56000781e9366bd8b0f85dc6f461d9fbd0e4eebb253f540359f8b1adcc",
+        "C30_update-state.json": "7a01611ba9df7347a58e77c085a877cd037bf6729cb107877ee0c47a81ed24fc",
+        "retrieval-probe-v1/answers.jsonl": "4586004c2cdc1439ba76ed5de58f3c6b7da7c1433bc4bbd53ec52daccce7b489"
+      },
+      "checks": {
+        "wrong_200_retracted": true,
+        "correct_250_active": true,
+        "exact_schedule_in_state": true,
+        "answer_distinguishes_memory_correction": true,
+        "answer_exact_calendar_schedule": false
+      },
+      "answers": [
+        {
+          "query": "What are my current automatic investment amount, schedule and fund, and what changed from my previous setup?",
+          "answer": "Your current VTSAX auto-invest is $250 every two weeks into VTSAX.\n\nWhat changed from your previous setup: it was previously remembered as $200, but you corrected it to $250; everything else in the recurring investment setup was said to be correct.",
+          "pass": false,
+          "reason": "Distinguishes the erroneous remembered amount from correction, but omits the explicit 1st/15th schedule retained in state, instead saying every two weeks."
+        }
+      ],
+      "state_relevant_facts": [
+        {
+          "content": "User set up a biweekly auto-invest into VTSAX through Fidelity for $200 every two weeks.",
+          "state": "retracted",
+          "predicate": "investment_auto_invest",
+          "scope": "recurring investment setup"
+        },
+        {
+          "content": "User's VTSAX auto-invest is timed to execute on the 1st and 15th of each month.",
+          "state": "active",
+          "predicate": "investment_schedule",
+          "scope": "recurring investment setup"
+        },
+        {
+          "content": "User's weekly transfer is $150 every Monday from Chase checking to Fidelity brokerage.",
+          "state": "active",
+          "predicate": "investment_transfer",
+          "scope": "recurring investment setup"
+        },
+        {
+          "content": "User updated the VTSAX auto-invest to $250 every two weeks, not $200.",
+          "state": "active",
+          "predicate": "investment_auto_invest",
+          "scope": "recurring investment setup"
+        }
+      ],
+      "full_semantic_pass": false
+    },
+    {
+      "sample": "D17_remember",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-04-39-239Z-Qf4JfS",
+      "hashes": {
+        "results.json": "45e4100a07bd057b433c95a80c242f67e0cf65edae28505376ca62ad1488c6d3",
+        "D17_remember-state.json": "e940e706e7dc0557694fa8e1332190c60af4faecb1302367c0467116de532154",
+        "retrieval-probe-v1/answers.jsonl": "af1848810484768124f0b0cae66286f50557ea1653c42a47698f4072a87b39b0"
+      },
+      "http_pass": true,
+      "full_semantic_pass": false,
+      "tablet_facts": [
+        {
+          "content": "I had a bookmark sync issue between Firefox on my laptop and Firefox on my old Android tablet.",
+          "state": "active",
+          "predicate": "bookmark_sync_issue",
+          "scope": ""
+        },
+        {
+          "content": "I sold my old Android tablet on eBay in April.",
+          "state": "active",
+          "predicate": "sold_device",
+          "scope": "eBay"
+        },
+        {
+          "content": "The bookmark sync problem with my old Android tablet is completely done and doesn't matter anymore.",
+          "state": "superseded",
+          "predicate": "issue_resolved",
+          "scope": ""
+        },
+        {
+          "content": "I don't need anything about the tablet tracked.",
+          "state": "active",
+          "predicate": "tracking_preference",
+          "scope": ""
+        }
+      ],
+      "answers": [
+        {
+          "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+          "answer": "Your default browser on your work laptop is Firefox, and on your iPhone it is Safari. Kevin uses Brave.",
+          "pass": true
+        },
+        {
+          "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+          "answer": "I still have that you had a bookmark sync issue between Firefox on your laptop and Firefox on your old Android tablet, and that you sold the old Android tablet on eBay in April.",
+          "pass": false
+        }
+      ],
+      "cause": "A source-linked retract of issue_resolved satisfied the old omission guard. It superseded one status while leaving the sync history, sale fact and original source retrievable. The checker also approved this operation."
+    }
+  ],
+  "scope": "Assistant review of one fresh prefix per case and fixed mini Answers. HTTP acceptance is not semantic acceptance; these results preserve regressions and do not change any benchmark score."
+}

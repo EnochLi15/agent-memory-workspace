@@ -1,0 +1,96 @@
+{
+  "protocol": "real-bounded-retry-observation-v1",
+  "observed_at": "2026-09-06T13:01:12.074852+00:00",
+  "service_commit": "bfec674",
+  "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-18:0",
+  "http_outcomes": [
+    {
+      "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-18:0",
+      "status": "retrying",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"MODEL_OUTPUT\",\"message\":\"Incomplete model output\"}}",
+      "elapsed_ms": 90023.11829199991
+    },
+    {
+      "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-18:0",
+      "sample_id": "B05_forget",
+      "status": "ok",
+      "attempt": 1,
+      "elapsed_ms": 84170.36149999988,
+      "message_count": 16
+    }
+  ],
+  "model_retry_groups": [
+    {
+      "trace_id": "77e6d967-0c00-4172-9193-e03dcb6085b5",
+      "purpose": "repair",
+      "same_input": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "outcome": "error",
+          "error_category": "connection",
+          "transport_code": "UND_ERR_SOCKET",
+          "signal_aborted": false,
+          "at": "2026-09-06T12:53:32.848Z"
+        },
+        {
+          "attempt": 1,
+          "outcome": "error",
+          "error_category": "connection",
+          "transport_code": "UND_ERR_SOCKET",
+          "signal_aborted": false,
+          "at": "2026-09-06T12:53:38.908Z"
+        },
+        {
+          "attempt": 2,
+          "outcome": "ok",
+          "error_category": null,
+          "transport_code": null,
+          "signal_aborted": null,
+          "at": "2026-09-06T12:53:53.441Z"
+        }
+      ]
+    },
+    {
+      "trace_id": "5cf85d86-4730-4471-a82f-49843ffde3e1",
+      "purpose": "repair",
+      "same_input": true,
+      "attempts": [
+        {
+          "attempt": 0,
+          "outcome": "error",
+          "error_category": "connection",
+          "transport_code": "UND_ERR_SOCKET",
+          "signal_aborted": false,
+          "at": "2026-09-06T12:55:05.550Z"
+        },
+        {
+          "attempt": 1,
+          "outcome": "error",
+          "error_category": "connection",
+          "transport_code": "UND_ERR_SOCKET",
+          "signal_aborted": false,
+          "at": "2026-09-06T12:55:11.651Z"
+        },
+        {
+          "attempt": 2,
+          "outcome": "ok",
+          "error_category": null,
+          "transport_code": null,
+          "signal_aborted": null,
+          "at": "2026-09-06T12:55:17.198Z"
+        }
+      ]
+    }
+  ],
+  "checks": {
+    "same_http_body": true,
+    "eventual_http_success": true,
+    "one_current_receipt": true,
+    "receipt_request_echo": true
+  },
+  "trace_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-bfec674-retry-observation/private-model-trace.jsonl",
+  "trace_sha256": "8de00e971c16498043700173309b669a2d8eaddeb5056e51867759b2c75ad733",
+  "scope": "Two actual full HTTP attempts on the same request. In each attempt a repair generation had two connection failures then succeeded on the third identical-input attempt. First HTTP attempt still exhausted its model deadline during source erasure; second HTTP attempt succeeded. This proves observed stage recovery and eventual request success, not aggregate latency improvement, generalized retry benefit or query accuracy. No extra provider call was made for this observation."
+}

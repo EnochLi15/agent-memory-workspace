@@ -1,0 +1,58 @@
+{
+  "protocol": "fact-verified-prefix-state-and-answer-review-v1",
+  "case": "D24_reflect",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-12-41-748Z-pCPJWX",
+  "source_commit": "92ae3bd",
+  "parent_results_sha256": "69874e930a5dcc15b0d17b38cf573d1e3bda6a92cd804de53c2118f80859277c",
+  "state_sha256": "fa2fb72b7945d5352e9d93ff6d5e890c8d62e210794194365adffa924740e9af",
+  "answers_sha256": "4cee78ceb06cae318b48789f3ca82c6aa4ad33623b92d16c2f5efdcc3614539d",
+  "checks": {
+    "investment_plans_unchanged_revision_two": true,
+    "open_feel_windows_present": true,
+    "rav4_claustrophobic_present": true,
+    "awd_not_primary": true
+  },
+  "state_pass": true,
+  "call_counts": {
+    "extraction/ok": 4,
+    "verification/ok": 4,
+    "embedding/ok": 4
+  },
+  "adds": [
+    {
+      "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-1:0",
+      "status": 200,
+      "elapsed_ms": 8319.682333
+    },
+    {
+      "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-2:0",
+      "status": 200,
+      "elapsed_ms": 15189.419625000002
+    },
+    {
+      "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-3:0",
+      "status": 200,
+      "elapsed_ms": 19763.788667
+    },
+    {
+      "original_request_id": "holdout-v2-U3:memops:D24_reflect:segment-4:0",
+      "status": 200,
+      "elapsed_ms": 24919.780709
+    }
+  ],
+  "answer_review": [
+    {
+      "query": "Why did I choose the Outback over the RAV4?",
+      "answer": "You chose the Outback mainly for the open feel and the windows. You said the AWD was nice, but not the main reason, and that the RAV4 felt claustrophobic.",
+      "pass": true,
+      "reason": "Correct primary car choice reason and explicit AWD qualification."
+    },
+    {
+      "query": "What plans did I mention for researching investments and consulting a financial advisor?",
+      "answer": "You said you’d start by doing your research, including looking into some index funds for diversification across different sectors, and that you’d definitely consult with a financial advisor before making any decisions.",
+      "pass": true,
+      "reason": "Research/index funds/advisor plans preserved as plans before decisions."
+    }
+  ],
+  "scope": "One fresh original prefix with per-fact verification and fixed mini Answer; assistant inspection, not human ground truth, benchmark accuracy or three full repeats."
+}

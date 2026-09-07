@@ -1,0 +1,259 @@
+{
+  "protocol": "round2-extraction-shards-review-v1",
+  "service_commit": "1d52e32",
+  "source_identity": "Both replays and the real HTTP control used the exact current service/src hashes. Documentation/test edits followed; runtime source was unchanged.",
+  "tests": {
+    "service": {
+      "passed": 272,
+      "report": "reports/round2-extraction-shards-service-tests.txt"
+    },
+    "targeted": {
+      "passed": 10,
+      "report": "reports/round2-extraction-shards-targeted-tests.txt"
+    },
+    "ingestion_identity": {
+      "passed": 4,
+      "report": "reports/round2-extraction-shards-identity-tests.txt"
+    }
+  },
+  "replays": [
+    {
+      "profile": "parallel",
+      "report": "reports/round2-source-routing-replay-a5cRWP.json",
+      "case": {
+        "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+        "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+        "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+        "revision": 18,
+        "source_format": "dual-source-v8",
+        "status": "failed",
+        "error": {
+          "code": "EVIDENCE_VALIDATION",
+          "message": "Erasure scope requires semantic binding; offline recovery cannot certify independence"
+        },
+        "prepare_ms": 52105.997,
+        "database_unchanged": true,
+        "source_format_unchanged": true
+      },
+      "stages": [
+        {
+          "purpose": "source_operation_route",
+          "outcome": "ok",
+          "elapsed_ms": 4355.052667,
+          "usage": {
+            "prompt_tokens": 15334,
+            "completion_tokens": 111,
+            "total_tokens": 15445,
+            "prompt_tokens_details": {
+              "cached_tokens": 15104
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 52
+            }
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 18488.649167,
+          "extraction_shard": {
+            "index": 1,
+            "count": 3,
+            "participants": [
+              2,
+              4,
+              10
+            ]
+          },
+          "usage": {
+            "prompt_tokens": 15496,
+            "completion_tokens": 899,
+            "total_tokens": 16395,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 122
+            }
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 21258.116625,
+          "extraction_shard": {
+            "index": 2,
+            "count": 3,
+            "participants": [
+              6,
+              14
+            ]
+          },
+          "usage": {
+            "prompt_tokens": 15492,
+            "completion_tokens": 1060,
+            "total_tokens": 16552,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 316
+            }
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 26188.089084,
+          "extraction_shard": {
+            "index": 0,
+            "count": 3,
+            "participants": [
+              0,
+              8,
+              12
+            ]
+          },
+          "usage": {
+            "prompt_tokens": 15496,
+            "completion_tokens": 1329,
+            "total_tokens": 16825,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 426
+            }
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 10132.302875000001,
+          "usage": {
+            "prompt_tokens": 19987,
+            "completion_tokens": 434,
+            "total_tokens": 20421,
+            "completion_tokens_details": {
+              "reasoning_tokens": 300
+            }
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "error",
+          "elapsed_ms": 5626.758083000001,
+          "usage": null
+        },
+        {
+          "purpose": "repair",
+          "outcome": "error",
+          "elapsed_ms": 5555.099167,
+          "usage": null
+        }
+      ],
+      "extraction_max_ms": 26188.089084,
+      "extraction_input_tokens": 46484,
+      "initial_fact_count": 37,
+      "initial_operation_count": 2
+    },
+    {
+      "profile": "serial",
+      "report": "reports/round2-source-routing-replay-eAYkhm.json",
+      "case": {
+        "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+        "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+        "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+        "revision": 18,
+        "source_format": "dual-source-v8",
+        "status": "failed",
+        "error": {
+          "code": "MODEL_OUTPUT",
+          "message": "Incomplete model output"
+        },
+        "prepare_ms": 90011.203125,
+        "database_unchanged": true,
+        "source_format_unchanged": true
+      },
+      "stages": [
+        {
+          "purpose": "source_operation_route",
+          "outcome": "ok",
+          "elapsed_ms": 4314.073166,
+          "usage": {
+            "prompt_tokens": 15334,
+            "completion_tokens": 116,
+            "total_tokens": 15450,
+            "prompt_tokens_details": {
+              "cached_tokens": 15104
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 57
+            }
+          }
+        },
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 51684.939708,
+          "usage": {
+            "prompt_tokens": 14972,
+            "completion_tokens": 2725,
+            "total_tokens": 17697,
+            "prompt_tokens_details": {
+              "cached_tokens": 14080
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 503
+            }
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 12454.422542,
+          "usage": {
+            "prompt_tokens": 20048,
+            "completion_tokens": 562,
+            "total_tokens": 20610,
+            "completion_tokens_details": {
+              "reasoning_tokens": 220
+            }
+          }
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 18283.501791999995,
+          "usage": {
+            "prompt_tokens": 12228,
+            "completion_tokens": 898,
+            "total_tokens": 13126,
+            "completion_tokens_details": {
+              "reasoning_tokens": 493
+            }
+          }
+        },
+        {
+          "purpose": "erasure_binding",
+          "outcome": "error",
+          "elapsed_ms": 2977.139832999994,
+          "usage": null
+        }
+      ],
+      "extraction_max_ms": 51684.939708,
+      "extraction_input_tokens": 14972,
+      "initial_fact_count": 36,
+      "initial_operation_count": 1
+    }
+  ],
+  "http_control": {
+    "report": "reports/round2-extraction-shards-http-0wJHvk.json",
+    "checks_passed": 10,
+    "checks_total": 10,
+    "add_ms": 19115.16675
+  },
+  "interpretation": "Two single prepare-only replays of the same exposed B05 request and copied v8 database, never committed or relabelled. Parallel max extraction 26.188s vs serial51.685s; input46484 vs14972 tokens. Both overall preparations failed. Parallel repaired target scope but retained incompatible replacements and then hit two repair connection failures; serial passed independent verification, then exhausted its90s budget in erasure_binding. No successful write-throughput or accuracy gain is established. Other ongoing gateway workloads and sample size preclude a causal latency claim. No response reuse; all failures retained.",
+  "production": "Experimental opt-in only. Production8088 and historical331/1000 unchanged.",
+  "next": "Fresh same-commit serial/parallel full B05 runs, then diagnose remaining target replacement failures without loosening scope validation. E0, fullE1–E5 quality gates, new backgrounds, three full paired repeats and deployment/archive remain open."
+}

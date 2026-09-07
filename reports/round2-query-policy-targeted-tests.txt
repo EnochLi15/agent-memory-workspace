@@ -1,0 +1,19 @@
+✔ compact reranking preserves original evidence and resolves only supplied slots (1.940417ms)
+✔ compact reranker rejects omitted structure, foreign or duplicate slots and unbounded scores (0.310709ms)
+✔ conditional expansion follows declared direction and requested relation, not co-occurrence (11.898625ms)
+✔ relation gates respect master switch, direct evidence and bounded fallback (0.856083ms)
+✔ time-incompatible, hypothetical and erased bridges cannot extend the relation path (0.400291ms)
+✔ relation traversal stays within node and evidence limits on a branching graph (3.312584ms)
+✔ selective rerank skips complete direct evidence but keeps ambiguous and complex cases (0.433125ms)
+✔ conditional retrieval uses only visible grounded paths and returns evidence without invented conclusions (10.758458ms)
+✔ engine skips model rerank for direct evidence, reranks complex evidence and audits both decisions (80.79825ms)
+✔ unsupported query policy configurations fail at startup (0.292791ms)
+✔ selective rerank malformed output falls back without exposing a foreign or erased ID (73.036959ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 442.524083

@@ -1,0 +1,348 @@
+{
+  "protocol": "history-batches-review-v1",
+  "scope": "Lossless full-history batched source review engineering controls, with deterministic synthetic seed and real model-backed rejection. Not full HTTP ingestion, benchmark accuracy, holdout or three full repeats.",
+  "limits": {
+    "serialized_input_chars": 180000,
+    "unit_utf16_chars": 16000,
+    "batch_source_chars": 64000,
+    "batch_units": 64,
+    "max_batches": 16,
+    "max_workers": 3,
+    "shared_model_budget_ms": 90000,
+    "add_budget_ms": 115000
+  },
+  "runs": [
+    {
+      "report": "reports/round2-history-batches-live-d90DC9.json",
+      "report_sha256": "fdb5b82e019c26e4d3f51110eac323663b5a9143c7d25935d6b1badf4279a4ef",
+      "status": "failed",
+      "prepare_ms": 11140.256374999999,
+      "requires_batches": true,
+      "source_count": 161,
+      "source_chars": 314015,
+      "batches": 6,
+      "error": {
+        "code": "VERIFICATION_UNAVAILABLE",
+        "message": "Source operation source_operation_screen model stage unavailable"
+      },
+      "checks": [],
+      "transport_resume": null,
+      "unchanged_on_failure": true,
+      "max_actual_source_input_chars": 66794,
+      "stages": {
+        "source_operation_screen": {
+          "attempts": 6,
+          "outcomes": {
+            "error": 5,
+            "ok": 1
+          },
+          "reported_total_tokens": 17346,
+          "usage_missing": 5,
+          "summed_attempt_ms": 33376.099915
+        }
+      },
+      "matches_current_service_source": false
+    },
+    {
+      "report": "reports/round2-history-batches-live-dlKzfX.json",
+      "report_sha256": "feb585b0faf11689be37911de6f047a3f44269bd0665794ed8f4c1e92c33e846",
+      "status": "failed",
+      "prepare_ms": 63323.08375,
+      "requires_batches": true,
+      "source_count": 161,
+      "source_chars": 314015,
+      "batches": 6,
+      "error": {
+        "code": "RESTORE",
+        "message": "Explicit reauthorization required"
+      },
+      "checks": [],
+      "transport_resume": {
+        "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-history-batches-live-d90DC9",
+        "parent_report_sha256": "fdb5b82e019c26e4d3f51110eac323663b5a9143c7d25935d6b1badf4279a4ef",
+        "cached_successes": 1,
+        "reused": 1,
+        "scope": "Exact successful stage responses replayed; only unfinished/transport-failed calls are sent again. New preparation timing excludes parent cost; this is not an independent full repeat."
+      },
+      "unchanged_on_failure": true,
+      "max_actual_source_input_chars": 67285,
+      "stages": {
+        "extraction": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 8872,
+          "usage_missing": 0,
+          "summed_attempt_ms": 4413.580125
+        },
+        "repair": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 8583,
+          "usage_missing": 0,
+          "summed_attempt_ms": 9560.925583999997
+        },
+        "source_operation": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 4603,
+          "usage_missing": 0,
+          "summed_attempt_ms": 7930.799417000002
+        },
+        "source_operation_closure": {
+          "attempts": 6,
+          "outcomes": {
+            "ok": 6
+          },
+          "reported_total_tokens": 91056,
+          "usage_missing": 0,
+          "summed_attempt_ms": 44127.778751000005
+        },
+        "source_operation_screen": {
+          "attempts": 5,
+          "outcomes": {
+            "ok": 5
+          },
+          "reported_total_tokens": 71021,
+          "usage_missing": 0,
+          "summed_attempt_ms": 35980.294208
+        },
+        "verification": {
+          "attempts": 2,
+          "outcomes": {
+            "ok": 2
+          },
+          "reported_total_tokens": 7273,
+          "usage_missing": 0,
+          "summed_attempt_ms": 10838.702458
+        }
+      },
+      "matches_current_service_source": false
+    },
+    {
+      "report": "reports/round2-history-batches-live-8UHOwd.json",
+      "report_sha256": "53f15d985fcbd00ec9bad20d5c88153dc2a052390052457abef46198468184b7",
+      "status": "passed",
+      "prepare_ms": 71393.89041600001,
+      "requires_batches": true,
+      "source_count": 161,
+      "source_chars": 314015,
+      "batches": 6,
+      "error": null,
+      "checks": [
+        {
+          "name": "actual_multibatch_review",
+          "pass": true
+        },
+        {
+          "name": "target_and_echo_removed",
+          "pass": true
+        },
+        {
+          "name": "brother_same_name_preserved",
+          "pass": true
+        },
+        {
+          "name": "browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "independent_neighbors_preserved",
+          "pass": true
+        },
+        {
+          "name": "single_commit_persists_after_reopen",
+          "pass": true
+        }
+      ],
+      "transport_resume": null,
+      "unchanged_on_failure": null,
+      "max_actual_source_input_chars": 67285,
+      "stages": {
+        "embedding": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 0,
+          "usage_missing": 1,
+          "summed_attempt_ms": 209.98770799998601
+        },
+        "extraction": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 8857,
+          "usage_missing": 0,
+          "summed_attempt_ms": 4326.174790999998
+        },
+        "repair": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 8751,
+          "usage_missing": 0,
+          "summed_attempt_ms": 12444.403624999999
+        },
+        "source_operation": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 4666,
+          "usage_missing": 0,
+          "summed_attempt_ms": 8738.559166
+        },
+        "source_operation_closure": {
+          "attempts": 6,
+          "outcomes": {
+            "ok": 6
+          },
+          "reported_total_tokens": 91111,
+          "usage_missing": 0,
+          "summed_attempt_ms": 49495.728541000004
+        },
+        "source_operation_screen": {
+          "attempts": 6,
+          "outcomes": {
+            "ok": 6
+          },
+          "reported_total_tokens": 88286,
+          "usage_missing": 0,
+          "summed_attempt_ms": 39568.232458
+        },
+        "verification": {
+          "attempts": 2,
+          "outcomes": {
+            "ok": 2
+          },
+          "reported_total_tokens": 7799,
+          "usage_missing": 0,
+          "summed_attempt_ms": 12083.407457000001
+        }
+      },
+      "matches_current_service_source": false
+    },
+    {
+      "report": "reports/round2-history-batches-live-zHu8RC.json",
+      "report_sha256": "7731729c6ea39888b57212adf689143594da70a891ee1534f8ca586c26d6ee9f",
+      "status": "passed",
+      "prepare_ms": 55948.200625,
+      "requires_batches": true,
+      "source_count": 161,
+      "source_chars": 314015,
+      "batches": 6,
+      "error": null,
+      "checks": [
+        {
+          "name": "actual_multibatch_review",
+          "pass": true
+        },
+        {
+          "name": "target_and_echo_removed",
+          "pass": true
+        },
+        {
+          "name": "brother_same_name_preserved",
+          "pass": true
+        },
+        {
+          "name": "browser_preserved",
+          "pass": true
+        },
+        {
+          "name": "independent_neighbors_preserved",
+          "pass": true
+        },
+        {
+          "name": "single_commit_persists_after_reopen",
+          "pass": true
+        }
+      ],
+      "transport_resume": null,
+      "unchanged_on_failure": null,
+      "max_actual_source_input_chars": 67285,
+      "stages": {
+        "embedding": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 0,
+          "usage_missing": 1,
+          "summed_attempt_ms": 109.95179199999984
+        },
+        "extraction": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 8904,
+          "usage_missing": 0,
+          "summed_attempt_ms": 4198.291792000004
+        },
+        "source_operation": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 4717,
+          "usage_missing": 0,
+          "summed_attempt_ms": 9631.487291
+        },
+        "source_operation_closure": {
+          "attempts": 7,
+          "outcomes": {
+            "error": 1,
+            "ok": 6
+          },
+          "reported_total_tokens": 91073,
+          "usage_missing": 1,
+          "summed_attempt_ms": 50628.994085
+        },
+        "source_operation_screen": {
+          "attempts": 6,
+          "outcomes": {
+            "ok": 6
+          },
+          "reported_total_tokens": 88356,
+          "usage_missing": 0,
+          "summed_attempt_ms": 40248.794999
+        },
+        "verification": {
+          "attempts": 1,
+          "outcomes": {
+            "ok": 1
+          },
+          "reported_total_tokens": 3809,
+          "usage_missing": 0,
+          "summed_attempt_ms": 7586.146124999999
+        }
+      },
+      "matches_current_service_source": true
+    }
+  ],
+  "retention_controls": [
+    "reports/round2-retention-controls-CINJl6.json",
+    "reports/round2-retention-controls-FhqF66.json"
+  ],
+  "tests": {
+    "service_pass": 236,
+    "log": "reports/round2-history-batches-service-tests.txt"
+  },
+  "limitations": [
+    "No dynamically repartitioned oversized global/closure context.",
+    "No joint removal of fact-linked source assertions.",
+    "No persistent future-echo boundary.",
+    "Large synthetic raw seed uses deterministic extraction and placeholder vectors; only rejection models and its necessary local embeddings are real.",
+    "Earlier errors and incomplete-context success are retained; only final zHu8RC matches current source.",
+    "Complete five-background, new holdout and three full paired repeat gates remain open."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "protocol": "v1-event-boundary-fix-v1",
+  "checked_at": "2026-09-07T00:04:21.694566+00:00",
+  "service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+  "change": "Move the existing verifier rule preserving independent user-owned talking/visiting events into EVIDENCE_BOUNDARIES shared by extraction, repair FACT_RULES and verification. Related records and coverage findings do not confer deletion authorization. Remove the duplicated verifier-only sentence.",
+  "tests": {
+    "new": 1,
+    "total_service_tests": 407,
+    "passed": true,
+    "coverage": [
+      "actual initial extraction and bounded repair both receive the shared ownership boundary",
+      "repair can exclude an independent user event and still reach global verification",
+      "all existing source/target authorization and erasure tests remain passing"
+    ]
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-392pAh/report.json",
+  "scope": "Prompt-policy parity and regression evidence, not proof of model compliance, complete D25 ingestion or release acceptance. No new semantic permission, model stage, budget or storage change.",
+  "sha256": {
+    "artifacts/v1-event-boundary-fix-01/before.log": "42d858c17d22a0cc1482cba37780ff471851dbc6515c3d03ea39f3599b593629",
+    "artifacts/v1-event-boundary-fix-01/after.log": "61254fb5e0338477fb8fdba35ba8200a583be2c0a2b7c210159de6f76a73177d",
+    "reports/v1-service-regression-21.txt": "d53804db32f99f6d20d798c12c75a7f9e4a32e4f308139b48bc56a77e075a029"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_second_repair_completed": false,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "A rejected proposal could not be repaired after a model or protocol failure"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-repair-transport-blocker.json",
+  "ci": {
+    "headSha": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34068565580"
+  }
+}

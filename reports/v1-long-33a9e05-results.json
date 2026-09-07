@@ -1,0 +1,114 @@
+{
+  "protocol": "v1-fixed-long-result-v1",
+  "checked_at": "2026-09-06T20:41:30.117627+00:00",
+  "campaign": "v1-long-33a9e05-01",
+  "service_commit": "33a9e05bdb73f25d703ba2f315768e811f42b604",
+  "eval_commit": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef",
+  "complete": true,
+  "passed": false,
+  "runs": {
+    "raw": {
+      "benchmarks": {
+        "locomo": {
+          "planned": 19,
+          "correct": 8,
+          "judged": 19,
+          "terminal": 19,
+          "question_status_counts": {
+            "judged": 19
+          },
+          "successful_adds": 70,
+          "failed_adds": 0,
+          "continuation_records": 0,
+          "finished": true
+        },
+        "memops": {
+          "planned": 18,
+          "correct": 11,
+          "judged": 18,
+          "terminal": 18,
+          "question_status_counts": {
+            "judged": 18
+          },
+          "successful_adds": 104,
+          "failed_adds": 0,
+          "continuation_records": 0,
+          "finished": true
+        }
+      },
+      "planned": 37,
+      "terminal": 37,
+      "correct": 19,
+      "judged": 37,
+      "overall_accuracy": 0.5135135135135135,
+      "conditional_accuracy": 0.5135135135135135
+    },
+    "candidate": {
+      "benchmarks": {
+        "locomo": {
+          "planned": 19,
+          "correct": 5,
+          "judged": 9,
+          "terminal": 19,
+          "question_status_counts": {
+            "service_error": 10,
+            "judged": 9
+          },
+          "successful_adds": 59,
+          "failed_adds": 1,
+          "continuation_records": 3,
+          "finished": true
+        },
+        "memops": {
+          "planned": 18,
+          "correct": 0,
+          "judged": 0,
+          "terminal": 18,
+          "question_status_counts": {
+            "service_error": 18
+          },
+          "successful_adds": 56,
+          "failed_adds": 2,
+          "continuation_records": 0,
+          "finished": true
+        }
+      },
+      "planned": 37,
+      "terminal": 37,
+      "correct": 5,
+      "judged": 9,
+      "overall_accuracy": 0.13513513513513514,
+      "conditional_accuracy": 0.5555555555555556
+    }
+  },
+  "failure_reason": "Three terminal legal-input write failures caused 28 service-error questions. The fixed long-background gate failed even though all 37 questions have honest terminal records and the audit passes.",
+  "human_labels": 0,
+  "scope": "Four pre-frozen exposed full histories / 37 questions. Same evidence cap, embedding, Answer/Judge and prompts; not equal total model compute. No full1000 accuracy or independent hidden-set claim. Subsequent isolated diagnoses do not change this round.",
+  "evidence_sha256": {
+    "eval/artifacts/v1-long-33a9e05-01-raw-locomo/manifest.json": "022d2bb45f3c847ed3d3bf84ed6f084b142c3b2fbdd6e13189130cf56b01d212",
+    "eval/artifacts/v1-long-33a9e05-01-raw-locomo/metrics.json": "b4933796d7a065ee0cfe71ee1f524c2e86ee1baa851a0177a886c1591374efbe",
+    "eval/artifacts/v1-long-33a9e05-01-raw-locomo/judgments.jsonl": "6c2b37d977f54d18676ed4af2688bb524c646dfe81a20c943ebfbbcad8e3e2d5",
+    "eval/artifacts/v1-long-33a9e05-01-raw-locomo/ingest.jsonl": "83ea62d88c9e90d54b2ae93b0a4f6d2737a57c53b7bb34312bc8d52f49d2a9cd",
+    "eval/artifacts/v1-long-33a9e05-01-raw-locomo/requests.jsonl": "a379ebabdd1a1bffd8e7771f46d9454724c43ffea41180ff6f0831e9cffdbb1a",
+    "eval/artifacts/v1-long-33a9e05-01-raw-memops/manifest.json": "8db1b20640ae99617d4aa64f14ab7fd982ce729fc4f92915dfee6073c3d78fcd",
+    "eval/artifacts/v1-long-33a9e05-01-raw-memops/metrics.json": "76605fe04dcbf190c7ff1b7eff0a024b3db77562d880b999ec8ccf7d322d1833",
+    "eval/artifacts/v1-long-33a9e05-01-raw-memops/judgments.jsonl": "8f59be4bb2c9934366cbcb3939b04fa995ba9bdb0ac78593f424b0f3dd6416ac",
+    "eval/artifacts/v1-long-33a9e05-01-raw-memops/ingest.jsonl": "6f68e5025e8430979f8315206927eb94e9adc10ae88eec6484b3bf0fb9e31104",
+    "eval/artifacts/v1-long-33a9e05-01-raw-memops/requests.jsonl": "0ce2a1448b53977058ebe9d377cee6e80cd4edfd5ec75b6aa236805d850b9ee9",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-locomo/manifest.json": "6f0e75a4cc6be9418dc1ab305a0d080cf13af96e36c17703288b821055d3c9d7",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-locomo/metrics.json": "5dfbd9d987618fcecec1a13b20b4fd282dce36304a53b73625f492052ac7d4af",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-locomo/judgments.jsonl": "2c5d60f71dc06537be5579ab2e76c552e3e37c3457825b49276adea2623feb0e",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-locomo/ingest.jsonl": "1a3839bc2a2928a2d42e989b7559857af258ae9d27828b7b57cb3882451dfbd0",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-locomo/requests.jsonl": "3b5734078c35ca7d6f92df300247d6042ff07899ffa0a2e569fcf57bc421997c",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-memops/manifest.json": "4543bc0b18e1bc00b9c12a15714a644e155ce2210baa5e2544350d9374b135fe",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-memops/metrics.json": "de0dcb58e9d184919d779af86f52ecd7d88c7e963749c7eabedd48a86b6256c4",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-memops/judgments.jsonl": "4a0088cec58a67a4b8efc891d6c636c48f25947aa57619b23ff77c4df93f085f",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-memops/ingest.jsonl": "2f46ae246db7479fd34a3fc7de41a4c93501f0da8b243e3475c625aaa10f31eb",
+    "eval/artifacts/v1-long-33a9e05-01-candidate-memops/requests.jsonl": "bcdca70bc1998139bfccc86f72d5fe589a76eb01a1643e0da2f1c6d6bd86482c",
+    "reports/v1-long-33a9e05-completed-audit.json": "a79e1974a895868e77506662bd2f52cd2f6a8310c27ed359b84e1dedfa01e014",
+    "configs/v1-fixed-long-regression.json": "0abf0f7adc65e9348d48e4aa3a4a8580099ef38a02de73522d2c4248c97e757c",
+    "configs/round2-small-pair-v1.json": "8c9c9fb4febcf78d0c26ee71d40023212a309b06f81b0138de8660d89e306e28",
+    "artifacts/v1-long-33a9e05-01/candidate-runtime.json": "4ca2d5461cda59e06abeaabd7255dcbf7007b9f49bdbe071de38259279c0865e",
+    "artifacts/v1-long-33a9e05-01/raw-runtime.json": "6e6989cfc44f27f3077a02a79ddde9b3f90c9d1d071ce86395251878aff497c3"
+  }
+}

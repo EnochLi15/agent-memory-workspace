@@ -1,0 +1,192 @@
+{
+  "protocol": "real-model-property-versus-value-forget-v1",
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "source_sha256": {
+    "service/src/binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "service/src/config.ts": "4a4aa0360e313f115fc7c23a37365c2cbad7ee14ca9e7727bef5b0c31050905c",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "f3f525c9cdc1421c7dc2f2aa9a9b2bebea10e0fefa4ea0072b47b37d3db4f5e5",
+    "service/src/models.ts": "ac0b6330ca4c3b9544a239cc03b03d149c55bc66fd6dc36427b9ab645d83bebb",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+    "service/src/repair.ts": "2bcf3c5cf3a71e6c8c9e594ebc9abb6e0ee0ec6b494a37175bc093c61e2c6f84",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "1e226d8e566a84c7cc1c955b439821f4e9f35e0ae20231dbb19d81bce7958b18",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification.ts": "b398104d8f88d6c19abd759ee2e01d6ef95d940a2406fe17ea9f62a5f65c8e54"
+  },
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-binding-lifecycle-ocSLmD",
+  "cases": [
+    {
+      "boundary": "property",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 8753.229
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 15598.105375000001
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 9101.818584
+        }
+      ],
+      "searches": [
+        {
+          "query": "What is my current city?",
+          "status": 200,
+          "response": {
+            "data": []
+          }
+        },
+        {
+          "query": "What cities did I live in previously?",
+          "status": 200,
+          "response": {
+            "data": []
+          }
+        },
+        {
+          "query": "What did I ask you to forget about my city records?",
+          "status": 200,
+          "response": {
+            "data": [
+              {
+                "id": "event-de3dadd41b2a554771352b26ebd108bd115072b90eed5dd320b40576593f5e26",
+                "content": "The user explicitly asked the memory service to forget the current city. Memory operation current city entry was explicitly removed from memory (forgotten). Source order 20000000. Before: [forgotten value not retained]. After: [absent].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-03T00:00:00Z; source: de3dadd41b2a]",
+                "score": 1,
+                "created_at": "2026-01-03T00:00:00Z"
+              },
+              {
+                "id": "event-46e4524359d665cc21090e6cbe9e82a5da6aeb45bb593825586e6a1d54d75841",
+                "content": "Memory operation update current city. Source order 10000000. Before: [value unavailable: removed, withdrawn, or dependent evidence no longer visible]. After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-02T00:00:00Z; source: 46e4524359d6]",
+                "score": 0.35,
+                "created_at": "2026-01-02T00:00:00Z"
+              },
+              {
+                "id": "event-1ca7d14c5a1bfc18d6393662fb323cecd2cce9d3e009853f11f61d212e85f8c5",
+                "content": "Memory operation remember current city. Source order 0. Before: [none]. After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 1ca7d14c5a1b]",
+                "score": 0.3,
+                "created_at": "2026-01-01T00:00:00Z"
+              }
+            ]
+          }
+        }
+      ],
+      "checks": {
+        "all_adds_ok": true,
+        "all_searches_ok": true,
+        "boston_not_returned": true,
+        "seattle_boundary": true,
+        "no_erased_value_in_raw": true
+      },
+      "pass": true,
+      "state_sha256": "27e88611d0374e9d15f4f5d2d902f5adb91812d6e5f61f9a032e1837d4302041"
+    },
+    {
+      "boundary": "value",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 7188.091291999997
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 13253.529416999998
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 8389.854666000007
+        }
+      ],
+      "searches": [
+        {
+          "query": "What is my current city?",
+          "status": 200,
+          "response": {
+            "data": []
+          }
+        },
+        {
+          "query": "What cities did I live in previously?",
+          "status": 200,
+          "response": {
+            "data": [
+              {
+                "id": "c40d21c87a94ad87a0d4c29b735cfd540e4b916b98d37dab774d3d9ba3f284af",
+                "content": "User lives in Seattle.\nVerbatim source context (use this to verify actor and negation):\nuser: I live in Seattle.\n[status: historical; valid until 2026-01-02T00:00:00Z; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; valid until: 2026-01-02T00:00:00Z; source: c1510ee910e3]",
+                "score": 0.92,
+                "created_at": "2026-01-01T00:00:00Z"
+              },
+              {
+                "id": "event-8ce0b868e4c3596a49853d53f3bf941fc9a0f01856f6f5eeda8bd668dd615b7b",
+                "content": "Memory operation update current city. Source order 10000000. Before: User lives in Seattle. (confirmed; superseded). After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-02T00:00:00Z; source: 8ce0b868e4c3]",
+                "score": 0.78,
+                "created_at": "2026-01-02T00:00:00Z"
+              },
+              {
+                "id": "event-c1510ee910e3ebc730ea72715e5fae8d83c565884d420d8273644124b6a6d8aa",
+                "content": "Memory operation remember current city. Source order 0. Before: [none]. After: User lives in Seattle. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: c1510ee910e3]",
+                "score": 0.7,
+                "created_at": "2026-01-01T00:00:00Z"
+              },
+              {
+                "id": "source-e727b1b7406f36ebc0b45e557870acf0e4d554b34ac6cf5d1306c094ed7487ac",
+                "content": "I live in Seattle.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: c1510ee910e3]",
+                "score": 0.48,
+                "created_at": "2026-01-01T00:00:00Z"
+              }
+            ]
+          }
+        },
+        {
+          "query": "What did I ask you to forget about my city records?",
+          "status": 200,
+          "response": {
+            "data": [
+              {
+                "id": "event-f9f095c71f5c0a65a8a5d196caaf6021c5590b0ce2a4f8476b3b6ff64a898554",
+                "content": "The user explicitly asked the memory service to forget the current city. Memory operation current city entry was explicitly removed from memory (forgotten). Source order 20000000. Before: [forgotten value not retained]. After: [absent].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-03T00:00:00Z; source: f9f095c71f5c]",
+                "score": 1,
+                "created_at": "2026-01-03T00:00:00Z"
+              },
+              {
+                "id": "event-8ce0b868e4c3596a49853d53f3bf941fc9a0f01856f6f5eeda8bd668dd615b7b",
+                "content": "Memory operation update current city. Source order 10000000. Before: User lives in Seattle. (confirmed; superseded). After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-02T00:00:00Z; source: 8ce0b868e4c3]",
+                "score": 0.45,
+                "created_at": "2026-01-02T00:00:00Z"
+              },
+              {
+                "id": "event-c1510ee910e3ebc730ea72715e5fae8d83c565884d420d8273644124b6a6d8aa",
+                "content": "Memory operation remember current city. Source order 0. Before: [none]. After: User lives in Seattle. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: c1510ee910e3]",
+                "score": 0.35,
+                "created_at": "2026-01-01T00:00:00Z"
+              }
+            ]
+          }
+        }
+      ],
+      "checks": {
+        "all_adds_ok": true,
+        "all_searches_ok": true,
+        "boston_not_returned": true,
+        "seattle_boundary": true,
+        "no_erased_value_in_raw": true
+      },
+      "pass": true,
+      "state_sha256": "25d0f27e0eeb6078b3553036d168d5e302e81516a18d01d8095de55f9fc5422c"
+    }
+  ],
+  "scope": "Two fixed lifecycle controls with actual model, local embedding, HTTP writes and searches. Not benchmark accuracy.",
+  "passed": 2,
+  "planned": 2
+}

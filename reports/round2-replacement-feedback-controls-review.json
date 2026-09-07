@@ -1,0 +1,47 @@
+{
+  "protocol": "replacement-feedback-controls-review-v1",
+  "source": "artifacts/round2-replacement-feedback-4xacYG/report.json",
+  "checks": [
+    {
+      "name": "backup-selection",
+      "arm": "old",
+      "unknown_ids": [],
+      "original_fact_count": 37,
+      "patched_fact_count": 37,
+      "mismatched_before": 2,
+      "mismatched_after": 2,
+      "original_facts_preserved_except_supersedes": true
+    },
+    {
+      "name": "backup-selection",
+      "arm": "enriched",
+      "unknown_ids": [],
+      "original_fact_count": 37,
+      "patched_fact_count": 37,
+      "mismatched_before": 2,
+      "mismatched_after": 0,
+      "original_facts_preserved_except_supersedes": true
+    },
+    {
+      "name": "selection-child-name",
+      "arm": "old",
+      "unknown_ids": [],
+      "original_fact_count": 37,
+      "patched_fact_count": 37,
+      "mismatched_before": 3,
+      "mismatched_after": 1,
+      "original_facts_preserved_except_supersedes": true
+    },
+    {
+      "name": "selection-child-name",
+      "arm": "enriched",
+      "unknown_ids": [],
+      "original_fact_count": 37,
+      "patched_fact_count": 37,
+      "mismatched_before": 3,
+      "mismatched_after": 0,
+      "original_facts_preserved_except_supersedes": true
+    }
+  ],
+  "interpretation": "Enriched2/2 resolve structural replacement mismatches, old0/2. All fact contents, owners, property labels, scopes and sources remain unchanged. Validating semantic deletion scope and all lifecycle behavior still requires independent full verification and commit; these stage controls alone do not establish correctness or throughput."
+}

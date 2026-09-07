@@ -1,0 +1,253 @@
+{
+  "protocol": "incremental-verification-live-review-v1",
+  "service_commit": "5355177",
+  "scope": "Two fresh original exposed prefixes, one run each; not accuracy or a paired three-repeat gate. Both failed final adds remained uncommitted.",
+  "runs": [
+    {
+      "case": "E03_reflect",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-42-39-214Z-VV62NO",
+      "parent_results_sha256": "7d43eb51d1c070f5dc46f95edd09026402f136b17b300e100e919af6d9a2cf50",
+      "model_usage_sha256": "46796b28c64351ba8567f840b6449345ec4b7bd2b7e905ed49a87501085d34c2",
+      "state_sha256": "487b07978cd61020a25e7d125c6f17d73576a8f3dfa68433851944333f8e4171",
+      "model": "gpt-5.5",
+      "reasoning_effort": "low",
+      "model_budget_ms": 90000,
+      "planned_adds": 8,
+      "accepted_adds": 7,
+      "status": "failed",
+      "final_revision": 7,
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-8:0",
+        "status": 503,
+        "elapsed_ms": 90038.564167,
+        "error": {
+          "error": {
+            "code": "VERIFICATION_UNAVAILABLE",
+            "message": "Could not complete evidence verification within the request budget"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T03:46:59.899Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 67846.25533400002,
+          "usage": {
+            "prompt_tokens": 7703,
+            "completion_tokens": 3634,
+            "total_tokens": 11337,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 257
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:47:08.775Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 8855.685708999983,
+          "usage": {
+            "prompt_tokens": 12335,
+            "completion_tokens": 340,
+            "total_tokens": 12675,
+            "completion_tokens_details": {
+              "reasoning_tokens": 281
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:47:22.060Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "error",
+          "elapsed_ms": 13263.582874999964,
+          "usage": null,
+          "error_type": "Error",
+          "verification_scope": {
+            "facts": 41,
+            "operations": 5,
+            "replacements": 5,
+            "messages": 8,
+            "reused": 0
+          }
+        }
+      ],
+      "reused_calls": [
+        {
+          "at": "2026-09-06T03:45:51.509Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 9897.291958999995,
+          "usage": {
+            "prompt_tokens": 6210,
+            "completion_tokens": 362,
+            "total_tokens": 6572,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 287
+            }
+          },
+          "verification_scope": {
+            "facts": 1,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 1,
+            "reused": 21
+          }
+        }
+      ],
+      "call_counts": {
+        "extraction/ok": 8,
+        "verification/ok": 8,
+        "embedding/ok": 7,
+        "repair/ok": 2,
+        "verification/error": 1
+      },
+      "assessment": "Previously failing segment 7 accepted; one fact and one message rechecked in 9.9 seconds with 21 checks reused. The repair concerned uncertainty in mind-wandering, not the previous missing future-plan patch. Segment 8 extracted 41 facts in 67.8 seconds, repaired target property in 8.9 seconds, then the first semantic verification timed out after 13.3 seconds. Incremental reuse cannot remove first-pass cost.",
+      "stored_plan_evidence": [
+        {
+          "id": "98dd0a6a72d9ecbb224de76731b433207416e573aaf84638797b6d8949380984",
+          "content": "User plans to use attentive-listening tips the next time they are in a conversation.",
+          "modality": "tentative",
+          "state": "active"
+        }
+      ]
+    },
+    {
+      "case": "C30_update",
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-42-39-218Z-Pj3UF1",
+      "parent_results_sha256": "ecfcedb297c1ca897dc064464192a2e225a2442bf15983ca281c2be9c6999093",
+      "model_usage_sha256": "4a6bfcfe056e0b15b45c23b9c396e010552e7f7c0faccf28c0624a0df2f87f56",
+      "state_sha256": "82ebbaedcc06cd7e463bc0100d3c9c200e4d4cc801d53a66a6ba24c183b74ce1",
+      "model": "gpt-5.5",
+      "reasoning_effort": "low",
+      "model_budget_ms": 90000,
+      "planned_adds": 14,
+      "accepted_adds": 13,
+      "status": "failed",
+      "final_revision": 13,
+      "failed_add": {
+        "original_request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+        "status": 503,
+        "elapsed_ms": 90030.072125,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "A rejected proposal could not be repaired within the request budget"
+          }
+        }
+      },
+      "last_add_model_calls": [
+        {
+          "at": "2026-09-06T03:47:03.619Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 43273.96308399999,
+          "usage": {
+            "prompt_tokens": 7683,
+            "completion_tokens": 2298,
+            "total_tokens": 9981,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 157
+            }
+          }
+        },
+        {
+          "at": "2026-09-06T03:47:48.643Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 45011.11070900003,
+          "usage": {
+            "prompt_tokens": 8375,
+            "completion_tokens": 2391,
+            "total_tokens": 10766,
+            "completion_tokens_details": {
+              "reasoning_tokens": 387
+            }
+          },
+          "verification_scope": {
+            "facts": 28,
+            "operations": 1,
+            "replacements": 1,
+            "messages": 10,
+            "reused": 0
+          }
+        },
+        {
+          "at": "2026-09-06T03:47:50.349Z",
+          "kind": "generation",
+          "purpose": "repair",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "error",
+          "elapsed_ms": 1696.7133340000291,
+          "usage": null,
+          "error_type": "Error"
+        }
+      ],
+      "reused_calls": [
+        {
+          "at": "2026-09-06T03:45:33.561Z",
+          "kind": "generation",
+          "purpose": "verification",
+          "model": "gpt-5.5",
+          "attempt": 0,
+          "outcome": "ok",
+          "elapsed_ms": 4949.090083999996,
+          "usage": {
+            "prompt_tokens": 3740,
+            "completion_tokens": 169,
+            "total_tokens": 3909,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 49
+            }
+          },
+          "verification_scope": {
+            "facts": 1,
+            "operations": 0,
+            "replacements": 0,
+            "messages": 1,
+            "reused": 8
+          }
+        }
+      ],
+      "call_counts": {
+        "extraction/ok": 14,
+        "verification/ok": 15,
+        "embedding/ok": 13,
+        "repair/ok": 1,
+        "repair/error": 1
+      },
+      "assessment": "Segment 14 extraction 43.3 seconds plus first verification 45.0 seconds left about 1.7 seconds for repair. The checker rejected an early-March qualifier not present in the declared source. Repair timed out before a second scoped verification could run."
+    }
+  ]
+}

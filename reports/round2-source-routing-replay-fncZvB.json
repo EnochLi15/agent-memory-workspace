@@ -1,0 +1,62 @@
+{
+  "protocol": "source-routing-replay-v2",
+  "selected_cases": "B05",
+  "spec_path": "configs/round2-source-routing-refs.json",
+  "extraction_format": "source_refs",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-routing-replay-fncZvB",
+  "scope": "Real model prepare-only replay of selected exposed failed requests against exact copied v8 snapshots. No migration, commit, full HTTP ingestion, benchmark accuracy or independent full repeat.",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "79a69aaa0357c54886da2f47253a16fc82dde67bfa1d752cc3adf6e4fb254e4f",
+    "db-worker.ts": "05097317fd42ebfbfed24917c3b99fc60c85cede517abef0789cd1d9bc46ef8d",
+    "engine.ts": "f9a3ebcb287ee6485f320a8e684f9bb1a44b61d1b2f5eaf113ef1a208d6b2100",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "18792f422f39408deced415a33b29ca69ed81cf6f182c6410fb91d4ac6577611",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "85ba87dd9e14c4ab0c9630e9c4e83ca28ce9ca41ea099e0eb90ba928c3bfd112",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "reranking.ts": "7750e78cbd212b33414d77be9bfde9a0344ea52818f51c17e2fec24432e67d3e",
+    "retrieval-policy.ts": "8e621c40985923792dfddbf1abaff771c2bedef782b7dace7792b0923b0952ef",
+    "retrieval.ts": "ff0bfc41947ed492f16636a09d3f4b907b39c8de7f0525fc49c0ebb52c27c41f",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operation-batches.ts": "41e90a82dcd03688c3ded797dedce7b31c3043c8ebc99b0d589c2527a30f6480",
+    "source-operation-routing.ts": "2ee20860568e8b6b0c5d63905c7421081563f4132d0ed1ff1dca76c5924915b2",
+    "source-operations.ts": "7bfaf9b65536cfec28b2c5cd018b00ba5065d6f80d116d16f003d3916ba036c3",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "e8a6993e43432b9fd696e1fb0b50a4ccb7d5fcf5333856bf2df8fffc6ee978d7",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "a2cfddd00834bf3b0917cb61f96df857e89a7959bb30a7a3d3ae696355693393",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "4eab18378c6078fe78e8589357d823ae5dbbf96a9f4dd3765bcc3759862e139f",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "spec_sha256": "5c5ee5acbe4fcef060c5a3da391c65c3c6e8bd12a4c8c4046c42b2dd1e916a4e",
+  "started_at": "2026-09-06T10:08:54.045Z",
+  "status": "failures_retained",
+  "cases": [
+    {
+      "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-v8-failure-6arzpegx",
+      "request_sha256": "69d1bafe6cd361ae36d4a7e9c510fde41996f22fcafd6466149cea154aee0dd1",
+      "database_sha256": "054ab0b23161dad445d51a0f884cc7d44f7c511a41ee75c77aa14e678e94b5a5",
+      "revision": 18,
+      "source_format": "dual-source-v8",
+      "status": "failed",
+      "error": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Erasure scope requires semantic binding; offline recovery cannot certify independence"
+      },
+      "prepare_ms": 67711.061458,
+      "database_unchanged": true,
+      "source_format_unchanged": true
+    }
+  ],
+  "finished_at": "2026-09-06T10:10:01.827Z"
+}

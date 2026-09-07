@@ -1,0 +1,96 @@
+{
+  "protocol": "v1-fixed-long-regression-v1",
+  "scope": "Exposed development regression, four full backgrounds and at most 40 fixed questions, one candidate/raw pair. Not a hidden holdout. Human labels: 0.",
+  "selection": "Keep complete sessions. Select at most ten questions per background by ascending SHA256(qid), independent of answers.",
+  "expected": "All legal writes complete; no service errors; mandatory update, forget, isolation and neighbor invariants retained. Failed model proposals are never accepted to meet the gate.",
+  "benchmarks": {
+    "locomo": {
+      "source": "eval/.data/locomo-test.json",
+      "source_sha256": "111784f360e5f428304ce3f156f0afe1fce0e9e2b9cc7f988878ab68de0e162d",
+      "input": "artifacts/v1-fixed-long-regression-01/locomo.json",
+      "sha256": "65cfcc588b712d6ce1ef3ceb254bbefc23e9782ed218caf2bfbe5fd78418d4f5",
+      "samples": [
+        {
+          "sample_id": "conv-30",
+          "group_id": "conv-30",
+          "sessions": 19,
+          "session_sha256": "6edb7d569f0eca1df79bd944e88c9b7740ede1987918e5e00f58f2c5e3d51494",
+          "qids": [
+            "conv-30#q0010",
+            "conv-30#q0028",
+            "conv-30#q0031",
+            "conv-30#q0019",
+            "conv-30#q0026",
+            "conv-30#q0020",
+            "conv-30#q0022",
+            "conv-30#q0005",
+            "conv-30#q0000",
+            "conv-30#q0024"
+          ]
+        },
+        {
+          "sample_id": "conv-43",
+          "group_id": "conv-43",
+          "sessions": 29,
+          "session_sha256": "d90f6637348195694b8aa0da044e86af250f8183e7b3c7abf1af47e0cd11d8ea",
+          "qids": [
+            "conv-43#q0002",
+            "conv-43#q0156",
+            "conv-43#q0154",
+            "conv-43#q0018",
+            "conv-43#q0020",
+            "conv-43#q0159",
+            "conv-43#q0158",
+            "conv-43#q0157",
+            "conv-43#q0160"
+          ]
+        }
+      ],
+      "questions": 19
+    },
+    "memops": {
+      "source": "eval/.data/memops-test.json",
+      "source_sha256": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+      "input": "artifacts/v1-fixed-long-regression-01/memops.json",
+      "sha256": "5e81e1b9e105062167376010e470730e56894b40d86cb2b7f0d0ec23312c7fc9",
+      "samples": [
+        {
+          "sample_id": "D25_remember",
+          "group_id": "D25",
+          "sessions": 50,
+          "session_sha256": "d9a3b4d23b37d231ee23a78adea9ef57e55c1c8342760090be43b7a10a367328",
+          "qids": [
+            "D25_remember.json#p5_operation_application#adjacent_operation#8",
+            "D25_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+            "D25_remember.json#p6_remember_negative#adjacent_operation#10",
+            "D25_remember.json#p2_target_binding#longitudinal_operation#3",
+            "D25_remember.json#p4_candidate_disambiguation#adjacent_operation#6",
+            "D25_remember.json#p1_operation_trace#adjacent_operation#0",
+            "D25_remember.json#p5_operation_application#longitudinal_operation#9",
+            "D25_remember.json#p3_state_transition#adjacent_operation#4",
+            "D25_remember.json#p6_remember_negative#longitudinal_operation#11",
+            "D25_remember.json#p2_target_binding#adjacent_operation#2"
+          ]
+        },
+        {
+          "sample_id": "D22_update",
+          "group_id": "D22",
+          "sessions": 50,
+          "session_sha256": "74ee5e85df64d0a2034534d6585cbe3ff64896dbe661f96a78ef8dbb42d29620",
+          "qids": [
+            "D22_update.json#p2_target_binding#longitudinal_operation#3",
+            "D22_update.json#p4_candidate_disambiguation#longitudinal_operation#5",
+            "D22_update.json#p1_operation_trace#longitudinal_operation#1",
+            "D22_update.json#p2_target_binding#adjacent_operation#2",
+            "D22_update.json#p5_operation_application#longitudinal_operation#7",
+            "D22_update.json#p4_candidate_disambiguation#adjacent_operation#4",
+            "D22_update.json#p1_operation_trace#adjacent_operation#0",
+            "D22_update.json#p5_operation_application#adjacent_operation#6"
+          ]
+        }
+      ],
+      "questions": 18
+    }
+  },
+  "total_questions": 37
+}

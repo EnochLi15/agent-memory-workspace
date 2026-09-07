@@ -1,0 +1,67 @@
+{
+  "protocol": "round2-fixed-budget-source-packed-v3",
+  "policy": "All profiles share fresh v5 ingestion, verified lifecycle operations, source erasure, semantic implicit transitions, temporal normalization, a 32-item/6000-token evidence limit and fixed Answer/Judge. Facts disables dedicated raw-source candidates; sources enables them; rerank adds candidate reranking; coverage adds diversity packing. Relation expansion and event projection remain off for this E2/E3 ladder. The verification model judges erasure scope and compatible/exclusive/uncertain implicit transitions using source witness indexes; uncertain relationships preserve both grounded statements as unresolved while erasure authorization remains strict inside the same total 90-second model budget. Reuse ingestion only after every original add succeeds and all source/configuration identity checks pass. No migration or ingestion reuse from older source formats. Exposed development data is regression data, not a new holdout. All failures stay in the planned question denominator; three independent full paired repeats and a new dataset are still required. Source erasure covers at most 256 candidates/256000 candidate characters, partitioned into batches of at most 64 candidates/64000 JSON input characters. All batches share the original deadline and one atomic commit plan; missing or uncertain partitions reject the whole write. The source_erasure_v3 model protocol returns whole-source effects or unique nonoverlapping erase quotes for mixed sources. The server reconstructs and validates the complete original-text partition; uncertain ownership or mixed facts still reject. Exact repeated source and boundary payloads are transmitted once in reference tables; all original fields and candidate relationships remain represented. Batch limits measure actual packed input JSON.",
+  "evaluation": {
+    "answer_model": "gpt-5.4-mini",
+    "judge_model": "gpt-5.4-mini"
+  },
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EXTRACTION_MODEL": "gpt-5.4-mini",
+    "MEMORY_VERIFICATION_MODEL": "gpt-5.5",
+    "MEMORY_REPAIR_MODEL": "gpt-5.5",
+    "MEMORY_LLM_REASONING_EFFORT": "low",
+    "MEMORY_VERIFICATION_FORMAT": "compact",
+    "MEMORY_INCREMENTAL_VERIFICATION": "true",
+    "MEMORY_MAX_REPAIR_ROUNDS": "2",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_ADD_TIMEOUT_MS": "115000",
+    "MEMORY_SEARCH_TIMEOUT_MS": "55000",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RETRIEVAL": "hybrid",
+    "MEMORY_SOURCE_INDEX": "true",
+    "MEMORY_CANDIDATE_LIMIT": "200",
+    "MEMORY_RERANK_CANDIDATES": "80",
+    "MEMORY_RAW_FALLBACK": "false",
+    "MEMORY_RERANK": "false",
+    "MEMORY_COVERAGE_PACKING": "false",
+    "MEMORY_EVENT_VIEW": "false",
+    "MEMORY_EXPERIMENT_LIFECYCLE": "true",
+    "MEMORY_EXPERIMENT_TEMPORAL": "true",
+    "MEMORY_EXPERIMENT_MULTI_HOP": "false",
+    "MEMORY_EXPERIMENT_REFLECTION": "true",
+    "MEMORY_EXPERIMENT_RAW_ONLY": "false",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_schema",
+    "MEMORY_ERASURE_BINDING": "true",
+    "MEMORY_SOURCE_ERASURE": "true",
+    "MEMORY_SEMANTIC_TRANSITIONS": "true"
+  },
+  "profiles": {
+    "facts": {
+      "environment": {}
+    },
+    "sources": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true"
+      }
+    },
+    "rerank": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true",
+        "MEMORY_RERANK": "true"
+      }
+    },
+    "coverage": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true",
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true"
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "protocol": "locked-repair-full-regression-failure-v1",
+  "service_commit": "bfec674",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-LoCoMo48-bfec674-repair-failure-isvwt80i",
+  "request_id": "round2-resilient-bfec674-dev-r1-sources:locomo:conv-48:session-16:0",
+  "request_sha256": "d2266e182a87bcd42d78ecc8b079219bb2a11d1bb0688f50c67234a50b634ef4",
+  "database_sha256": "8b49cdb2b4765c2b991a11eb3e3dda6e817d2197cef69185d142c1a637364a7b",
+  "trace_sha256": "dacd8788576d0129fb2ad779b77eafc654262b65488c22a762131ad29a87a4fe",
+  "failed_request_committed": false,
+  "prior_receipts": 24,
+  "stages": [
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "attempt": 1,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "attempt": 2,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    }
+  ],
+  "error": "A rejected proposal could not be repaired after a model or protocol failure",
+  "scope": "Read-only snapshot of terminated LoCoMo tenant and exact model trace; new failure remains in original denominator. No new model call or running-service mutation."
+}

@@ -1,0 +1,38 @@
+{
+  "scope": "Single synthetic generation control per existing model after public HTTPS recovered. No business retry or benchmark score.",
+  "github_https_status": 200,
+  "checked_at": "2026-09-07T03:14:17.939Z",
+  "results": [
+    {
+      "at": "2026-09-07T03:14:17.154Z",
+      "model": "gpt-5.5",
+      "max_retries": 0,
+      "timeout_ms": 60000,
+      "completed": false,
+      "error_type": "Error",
+      "http_status": 503,
+      "transport_code": null,
+      "elapsed_ms": 756
+    },
+    {
+      "at": "2026-09-07T03:14:17.158Z",
+      "model": "gpt-5.4-mini",
+      "max_retries": 0,
+      "timeout_ms": 60000,
+      "completed": false,
+      "error_type": "Error",
+      "http_status": 503,
+      "transport_code": null,
+      "elapsed_ms": 781
+    }
+  ],
+  "formal_release": false,
+  "git_push": {
+    "completed": true,
+    "branch": "improvement/round2",
+    "through_commit": "de878ae",
+    "previous_remote_commit": "763f219"
+  },
+  "conclusion": "Public HTTPS and Git push recovered. Both existing model generation controls returned status 503. Generation availability still blocks real acceptance; internal gateway/provider cause not established.",
+  "probe_script_sha256": "8712f77d9d1abd910c3d907500ea4b6f0c97df3be348a69e845dd54e16848dc0"
+}

@@ -1,0 +1,160 @@
+{
+  "protocol": "source-first-controls-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-first-controls-3fmJZL",
+  "scope": "Authored real independent verifier controls: incidental source coverage and mandatory structured facts/operations. No complete ingestion, benchmark quality or independent human calibration.",
+  "started_at": "2026-09-06T10:25:41.623Z",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "4c3b788597d8afe5c1ce2cdb31482e682689ace122be7dc48ebd8e73e68fd082",
+    "db-worker.ts": "05097317fd42ebfbfed24917c3b99fc60c85cede517abef0789cd1d9bc46ef8d",
+    "engine.ts": "f9a3ebcb287ee6485f320a8e684f9bb1a44b61d1b2f5eaf113ef1a208d6b2100",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "a96e9a506d1b17e65795acb220893df53ef257549a85336b6eb3e2a7a1d32497",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "52bdea0df6d21ed7db356b72bddffaaf18b2ad3d3f217d3a907625f6d0865e67",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "reranking.ts": "7750e78cbd212b33414d77be9bfde9a0344ea52818f51c17e2fec24432e67d3e",
+    "retrieval-policy.ts": "8e621c40985923792dfddbf1abaff771c2bedef782b7dace7792b0923b0952ef",
+    "retrieval.ts": "ff0bfc41947ed492f16636a09d3f4b907b39c8de7f0525fc49c0ebb52c27c41f",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-coverage.ts": "b892666d213a39875cccc3f6ec6666303b273df4497b4f0ef58c0a44f8008ec7",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operation-batches.ts": "41e90a82dcd03688c3ded797dedce7b31c3043c8ebc99b0d589c2527a30f6480",
+    "source-operation-routing.ts": "2ee20860568e8b6b0c5d63905c7421081563f4132d0ed1ff1dca76c5924915b2",
+    "source-operations.ts": "7bfaf9b65536cfec28b2c5cd018b00ba5065d6f80d116d16f003d3916ba036c3",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "16b73d655d7290e9e4238901073550b3336ca71afb60d3c480f803a4aca448b5",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "a2cfddd00834bf3b0917cb61f96df857e89a7959bb30a7a3d3ae696355693393",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "d692a1896091de5e2e41d1a2add396dac1adf7c54a7072eb6deac753c57ed0ff",
+    "verification-compact.ts": "d02f97c52978495985a201d515b6a870547979d5dd066954e1b135287b8525a5",
+    "verification-session.ts": "2a28b34861818e95067abfc8545ef105f81614756a5592810980b8d44db703ec",
+    "verification.ts": "11fbd8e6335f7b55067f6172a264aee2b3680b360f242b7ee29cde89f480cb9d"
+  },
+  "cases_sha256": "17baa1f8d4bcd3b9d88b2626ca7418d0a9bf6806382c92a276607314f33f7448",
+  "spec_sha256": "76e29bb81f27e5802dc95d335556a45e00de37b17746247cd438f734f858c0d7",
+  "results": [
+    {
+      "name": "incidental_reaction",
+      "expected": "accepted",
+      "actual": "accepted",
+      "findings": [],
+      "pass": true,
+      "coverage": [
+        {
+          "index": 0,
+          "disposition": "represented",
+          "fact_indices": [],
+          "operation_indices": [],
+          "raw_slots": [
+            0,
+            1
+          ],
+          "reason": "The message only gives an immediate reaction to an explanation; it introduces no durable personal fact, preference, plan, relationship, or memory instruction requiring structured storage."
+        }
+      ],
+      "raw_slots": 2,
+      "elapsed_ms": 4304.5894579999995
+    },
+    {
+      "name": "mixed_preference_and_context",
+      "expected": "accepted",
+      "actual": "accepted",
+      "findings": [],
+      "pass": true,
+      "coverage": [
+        {
+          "index": 0,
+          "disposition": "represented",
+          "fact_indices": [
+            0
+          ],
+          "operation_indices": [],
+          "raw_slots": [
+            0
+          ]
+        }
+      ],
+      "raw_slots": 1,
+      "elapsed_ms": 3579.897041
+    },
+    {
+      "name": "missing_durable_preference",
+      "expected": "rejected",
+      "actual": "rejected",
+      "findings": [
+        "message 0: Durable browser preference requires a structured fact; no proposed fact or operation represents it.; missing statement: My favorite browser is Firefox."
+      ],
+      "pass": true,
+      "elapsed_ms": 3886.715833
+    },
+    {
+      "name": "missing_future_plan",
+      "expected": "rejected",
+      "actual": "rejected",
+      "findings": [
+        "message 0: Specific personal future plan to move to Oslo next June is memorable and requires a structured tentative plan fact; raw source coverage alone is insufficient.; missing statement: I will definitely move to Oslo next June."
+      ],
+      "pass": true,
+      "elapsed_ms": 3553.3500000000004
+    },
+    {
+      "name": "missing_dated_personal_event",
+      "expected": "rejected",
+      "actual": "rejected",
+      "findings": [
+        "message 0: Specific time-qualified employment event is a durable personal fact and cannot be represented solely by raw source coverage.; missing statement: Yesterday I started working at Northwind."
+      ],
+      "pass": true,
+      "elapsed_ms": 3393.7118329999994
+    },
+    {
+      "name": "missing_relationship",
+      "expected": "rejected",
+      "actual": "rejected",
+      "findings": [
+        "message 0: Missing structured fact for the user's current manager relationship; this durable relationship cannot be represented solely by raw source coverage.; missing statement: Maya is my new manager."
+      ],
+      "pass": true,
+      "elapsed_ms": 3303.507125
+    },
+    {
+      "name": "unexecuted_forget",
+      "expected": "rejected",
+      "actual": "rejected",
+      "findings": [
+        "message 0: Memory instruction to forget the old door access code is not represented by any operation.; missing statement: Forget my old door access code 9182."
+      ],
+      "pass": true,
+      "elapsed_ms": 2964.0257090000014
+    },
+    {
+      "name": "unsupported_medication_identity",
+      "expected": "rejected",
+      "actual": "accepted",
+      "findings": [],
+      "pass": false,
+      "coverage": [
+        {
+          "index": 0,
+          "disposition": "represented",
+          "fact_indices": [
+            0
+          ],
+          "operation_indices": []
+        }
+      ],
+      "raw_slots": 0,
+      "elapsed_ms": 2834.0515830000004
+    }
+  ],
+  "finished_at": "2026-09-06T10:26:09.454Z",
+  "passed": 7,
+  "total": 8
+}

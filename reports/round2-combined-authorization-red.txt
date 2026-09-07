@@ -1,0 +1,36 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+Error: Transform failed with 2 errors:
+/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-71b9789/dist/server.js:30:16: ERROR: Top-level await is currently not supported with the "cjs" output format
+/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-71b9789/dist/server.js:31:4: ERROR: Top-level await is currently not supported with the "cjs" output format
+    at failureErrorWithLog (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/esbuild/lib/main.js:1748:15)
+    at /Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/esbuild/lib/main.js:1017:50
+    at responseCallbacks.<computed> (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/esbuild/lib/main.js:884:9)
+    at handleIncomingPacket (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/esbuild/lib/main.js:939:12)
+    at Socket.readFromStdout (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/esbuild/lib/main.js:862:7)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23) {
+  name: 'TransformError'
+}
+
+Node.js v24.18.0
+✖ artifacts/round2-combined-authorization-old-test.ts (289.643042ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 294.058834
+
+✖ failing tests:
+
+test at artifacts/round2-combined-authorization-old-test.ts:1:1
+✖ artifacts/round2-combined-authorization-old-test.ts (289.643042ms)
+  'test failed'

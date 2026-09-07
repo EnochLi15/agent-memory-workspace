@@ -1,0 +1,157 @@
+{
+  "protocol": "round2-shards-B05-arm-final-v1",
+  "run_id": "round2-extraction-shards-1d52e32-B05-r1-parallel-memops",
+  "profile": "parallel",
+  "manifest": {
+    "service_commit": "1d52e3238a0575e51abf09817f3e703c83512a3c",
+    "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+    "workspace_commit": "3f864c923fa1b1ced632279086cdf067be6ca5d4",
+    "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+    "started_at": "2026-09-06T10:49:38.190Z",
+    "finished_at": "2026-09-06T10:57:00.870Z",
+    "planned_questions": 10
+  },
+  "ingest": {
+    "attempts": 19,
+    "outcomes": {
+      "ok": 18,
+      "failed": 1
+    },
+    "terminal_failures": [
+      {
+        "request_id": "round2-extraction-shards-1d52e32-B05-r1-parallel:memops:B05_forget:segment-18:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}",
+        "elapsed_ms": 56229.471666999976
+      }
+    ]
+  },
+  "results": {
+    "planned": 10,
+    "judged": 0,
+    "correct": 0,
+    "accuracy_over_planned": 0,
+    "judged_accuracy": null,
+    "incomplete": 10
+  },
+  "scope": "Fresh whole exposedB05 at frozen1d52e32. All10 questions retained. Writing or judged subset results cannot imply newer7281a1d quality or full paired success.",
+  "snapshot": {
+    "directory": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-parallel-1d52e32-failure-54sz42jr",
+    "database_sha256": "b581082736ccdffccdbf2606695dccfcde579d8fb1c954d088722708c16e75ed",
+    "request_sha256": "ae7477103dd6bcb78a8b9e0462194ec1f35a9dd8841b56fa3f07032912e31671"
+  },
+  "failed_request_stages": [
+    {
+      "purpose": "source_operation_route",
+      "outcome": "ok",
+      "elapsed_ms": 2683.3772910000407,
+      "usage": {
+        "prompt_tokens": 15466,
+        "completion_tokens": 67,
+        "total_tokens": 15533
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 17435.983750000014,
+      "extraction_shard": {
+        "index": 1,
+        "count": 3,
+        "participants": [
+          2,
+          4,
+          10
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 15739,
+        "completion_tokens": 859,
+        "total_tokens": 16598,
+        "prompt_tokens_details": {
+          "cached_tokens": 4864
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 18
+        }
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 20516.259416999994,
+      "extraction_shard": {
+        "index": 2,
+        "count": 3,
+        "participants": [
+          6,
+          14
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 15735,
+        "completion_tokens": 1017,
+        "total_tokens": 16752,
+        "prompt_tokens_details": {
+          "cached_tokens": 4864
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 328
+        }
+      }
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 23547.603166999994,
+      "extraction_shard": {
+        "index": 0,
+        "count": 3,
+        "participants": [
+          0,
+          8,
+          12
+        ]
+      },
+      "usage": {
+        "prompt_tokens": 15739,
+        "completion_tokens": 1179,
+        "total_tokens": 16918,
+        "prompt_tokens_details": {
+          "cached_tokens": 4864
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 400
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 18689.558458000014,
+      "usage": {
+        "prompt_tokens": 20205,
+        "completion_tokens": 879,
+        "total_tokens": 21084,
+        "completion_tokens_details": {
+          "reasoning_tokens": 516
+        }
+      }
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "elapsed_ms": 5573.64179199998,
+      "error_category": "connection",
+      "usage": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "elapsed_ms": 5534.354667000007,
+      "error_category": "connection",
+      "usage": null
+    }
+  ]
+}

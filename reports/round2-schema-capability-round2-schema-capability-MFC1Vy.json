@@ -1,0 +1,15 @@
+{
+  "status": "responded",
+  "finish": "stop",
+  "output": "{\"fact_checks\":[],\"message_checks\":[],\"operation_checks\":[],\"replacement_checks\":[]}",
+  "usage": {
+    "prompt_tokens": 279,
+    "completion_tokens": 30,
+    "total_tokens": 309
+  },
+  "all_arrays_present": true,
+  "no_extra_keys": true,
+  "elapsed_ms": 2746.376042,
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-schema-capability-MFC1Vy",
+  "scope": "One synthetic strict-schema gateway capability probe. A conforming response alone does not prove the gateway enforces all schema constraints."
+}

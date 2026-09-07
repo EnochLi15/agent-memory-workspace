@@ -1,0 +1,40 @@
+{
+  "protocol": "v1-role-label-fix-stage-v1",
+  "checked_at": "2026-09-06T22:49:54.935736+00:00",
+  "service_commit": "0516907c2d87e4b9d22221182aa8908197b96218",
+  "service_tests": 381,
+  "tests_passed": true,
+  "previous_guard_reproduction": "70 independent sourced facts exhausted 64 erasure-pair limit solely through generated User/The user labels. Non-prefix role mentions also reproduced before final fix.",
+  "actual_saved_work": {
+    "before_pairs": 393,
+    "after_pairs": 50,
+    "fact_capacity_unchanged": 64,
+    "source_original_pairs": 366,
+    "source_grouped_units": 70,
+    "source_batches": 3,
+    "source_wire_characters": 178601,
+    "source_limits_unchanged": true
+  },
+  "preserved_boundaries": [
+    "Source-authored user literals and actual user values still match.",
+    "Inverse relation/entity context, matching scope, source links and dependencies still require semantic decisions.",
+    "Protected historical boundaries remain active.",
+    "Code user deletion survives commit/restart; unrelated user city survives and deleted code replay remains blocked.",
+    "Raw human messages and quotes are not role-normalized or rewritten.",
+    "No model/HTTP attempt limit, semantic verification or transaction coverage relaxation."
+  ],
+  "implementation": "Shared fact-level value matching distinguishes generated participant labels from evidence literals. Both erasure nomination stages and commit replay checks use the same interpretation. Underlying stored facts and raw source text are unchanged.",
+  "fresh_http_pending": false,
+  "full_background_pending": true,
+  "scope": "Unit/transaction tests and saved proposal admission only. No fresh HTTP success, final erasure or whole V1 claim. Original failures preserved.",
+  "evidence_sha256": {
+    "artifacts/v1-role-label-fix-01/before-03.log": "7caa6bc1f9563f12b1bd2811a015cbf6170487245c849dcb2eb2608d35c821b7",
+    "artifacts/v1-role-label-fix-01/nonprefix-before.log": "0595d1ef2b4c0edb166e3d5e004dc9014c26c0bfe3f6a0519a4ef3362388bef1",
+    "artifacts/v1-role-label-fix-01/after-03.log": "cfe387e1ece48ee93627ed1694c8f7ec9efd939e7afea7278552efeb952863c0",
+    "artifacts/v1-role-label-fix-01/replay-capacity.mjs": "2c031c45578624a0c5d152716cd950195653bb144a3ac1a89762b82731bfa88b",
+    "artifacts/v1-role-label-fix-01/erasure-capacity-after.json": "5d07a0d21576b13947420196dc57afb2a8a6116f0a5108d768ff682188bd9c56"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_result": "reports/v1-d25-retention-witness-blocker.json",
+  "fresh_http_capacity_passed": true
+}

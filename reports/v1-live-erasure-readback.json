@@ -1,0 +1,15 @@
+[
+  {
+    "case": "C27_trajectory_ops",
+    "scope": "Read-only logical facts/messages/passages/FTS scan after successful isolated HTTP write; not physical disk or private model trace erasure.",
+    "erased_detail_hits": {
+      "Dr. Huang": [],
+      "mole was benign": [],
+      "mole involved": []
+    },
+    "neighbor_present": {
+      "April 17": true,
+      "Elm Street": true
+    }
+  }
+]

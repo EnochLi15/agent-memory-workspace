@@ -1,0 +1,131 @@
+{
+  "protocol": "v3-calibration-control-review-v1",
+  "input_hashes": {
+    "eval/configs/calibration-actor-error-controls-v3.json": "9972b1ea238dc7526cf35b3081ad70871fa74aecffaf75e9b3de2c70a5cfc80c",
+    "eval/artifacts/round2-judge-actor-errors11-gpt55-v3/manifest.json": "66bed67226cb9b4b273d51a842ce29e6e2a6522fee49ee70a101df518dfbc4a6",
+    "eval/artifacts/round2-judge-actor-errors11-gpt55-v3/results.jsonl": "94acebe95c451e67cea49d1dcdbdbde0500806238ba63b17618c8882f4f69701"
+  },
+  "source_sha256": "b148229f4bfe9f628043b072f6549ff22f44fc24e7f1c741237b4b001af8edb1",
+  "model": "gpt-5.5",
+  "planned": 11,
+  "status_counts": {
+    "judged": 11
+  },
+  "passed": 10,
+  "gate_pass": false,
+  "checks": [
+    {
+      "qid": "control-v3/actor/direct-you",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/actor/direct-I",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": true,
+      "label_match": false,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": false
+    },
+    {
+      "qid": "control-v3/actor/draft-I",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/actor/quoted-user",
+      "status": "judged",
+      "expected_correct": true,
+      "actual_correct": true,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/actor/assistant-self",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "control-v3/actor/other-person",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "D20_forget.json#p1_operation_trace#adjacent_operation#0",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "A13_reflect.json#p5_operation_application#longitudinal_operation#9",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "D01_reflect.json#p5_operation_application#adjacent_operation#8",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "C27_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    },
+    {
+      "qid": "C27_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+      "status": "judged",
+      "expected_correct": false,
+      "actual_correct": false,
+      "label_match": true,
+      "requirement_match": true,
+      "citations_match": true,
+      "pass": true
+    }
+  ],
+  "independent_human_labels": 0,
+  "scope": "Assistant-labeled 6 synthetic actor contrast cases and all 5 former v2 protocol errors. Checks label agreement, omission/prohibition polarity and exact answer citation reconstruction. Not a benchmark accuracy or proof that all semantic judgments are correct.",
+  "metadata_note": "Input-set description corrected after generation; case checks, original manifests and model verdicts unchanged."
+}

@@ -1,0 +1,56 @@
+{
+  "protocol": "saved-state-change-annotation-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-state-annotation-lvHais",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-transition-http-OYZhh0",
+  "parent_report_sha256": "955d3e2b4327e0ede04210fad1464cb26df817a2fa2c0fd3b66055d315c5972d",
+  "saved_answers_sha256": "cc4e80d9310c1c2a70dd37421141ae5de1d20414585fb931da32f1d2e9c5d6ad",
+  "input_sha256": "731364636d7d2378aadc0215c7010eaace4d4cd35dfab2688bccd8243500418d",
+  "events_sha256": "c692b494cd75ca80a33196b71cfe0087a7828cc358f49e7600c3fac0fe837021",
+  "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+  "probe_sha256": "27a28693bdad62df1d16bc17234008d511d789e24d0a1de2f13fe0046f9167d1",
+  "model": "gpt-5.4-mini",
+  "annotations": [
+    {
+      "fact_id": "e4f9f7eecd33b1e144c9e1779029349fd357f6c96f832f5adc7cbd15d83edf3f",
+      "event_id": "event-abbc78d386d5d454570bc6430b4b7a86d71b543d5a7cc095a83ef6250295d82b",
+      "note": "[recorded state change: update; observed: 2026-01-03T00:00:00Z; this fact is the current target of that change]"
+    }
+  ],
+  "planned": 6,
+  "started_at": "2026-09-06T07:14:09.632Z",
+  "results": [
+    {
+      "repeat": 0,
+      "variant": "baseline",
+      "status": "answered"
+    },
+    {
+      "repeat": 0,
+      "variant": "annotated",
+      "status": "answered"
+    },
+    {
+      "repeat": 1,
+      "variant": "annotated",
+      "status": "answered"
+    },
+    {
+      "repeat": 1,
+      "variant": "baseline",
+      "status": "answered"
+    },
+    {
+      "repeat": 2,
+      "variant": "baseline",
+      "status": "answered"
+    },
+    {
+      "repeat": 2,
+      "variant": "annotated",
+      "status": "answered"
+    }
+  ],
+  "scope": "Three repeated Answer pairs over one fixed saved input. Same question, facts, order and fixed Answer prompt; annotation is derived from actual committed event metadata only. Not three full ingestion/retrieval runs, a held-out evaluation or a benchmark score.",
+  "finished_at": "2026-09-06T07:14:22.908Z",
+  "answers_sha256": "d6bead3e5015e4a32f51f0c8282dbf304f1eb821ff7bca2774ec7e509a0f12a2"
+}

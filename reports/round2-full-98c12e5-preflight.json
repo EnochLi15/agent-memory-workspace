@@ -1,0 +1,42 @@
+{
+  "protocol": "full-1000-preflight-v1",
+  "at": "2026-09-06T15:13:22.431191+00:00",
+  "campaign": "round2-full-98c12e5-v1",
+  "profile": "candidate",
+  "service_commit": "98c12e5dcf4c5a3a2a7427825e0e6f984f303394",
+  "eval_commit": "11da2a67f60d56be8f3298e4198827a2a5283aa5",
+  "datasets": {
+    "locomo": {
+      "path": "eval/.data/locomo-test.json",
+      "sha256": "111784f360e5f428304ce3f156f0afe1fce0e9e2b9cc7f988878ab68de0e162d",
+      "questions": 500,
+      "samples": 8,
+      "groups": 8,
+      "sessions": 214,
+      "messages": 4526
+    },
+    "memops": {
+      "path": "eval/.data/memops-test.json",
+      "sha256": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+      "questions": 500,
+      "samples": 54,
+      "groups": 43,
+      "sessions": 2700,
+      "messages": 29308
+    }
+  },
+  "expected_denominator": 1000,
+  "per_benchmark_concurrency": 2,
+  "maximum_active_samples": 4,
+  "port": 8118,
+  "judge_models": {
+    "locomo": "qwen3:14b",
+    "memops": "gpt-5.4-mini"
+  },
+  "local_judge_digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+  "embedding_digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "judge_adapter_sha256": "2b706c6be868147e6daaf7ced2e7860db880596c82275fed2de10bc2c8e143d7",
+  "spec_sha256": "9af437de245d86d4779c6af42b6785a7c77a54efef2745541e55b5499b6caf2c",
+  "human_calibration": "pending; user requested agent review in lieu of current human availability, reported as model review only",
+  "sealed_memops_used": false
+}

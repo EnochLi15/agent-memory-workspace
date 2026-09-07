@@ -1,0 +1,104 @@
+{
+  "protocol": "historical-source-operation-http-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-history-source-http-M1qKcf",
+  "scope": "Three real HTTP adds in a fresh v7 database; deliberately erroneous assistant assertions span two earlier requests/sessions. Real models and local embeddings; not benchmark accuracy.",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "ebe0a0ae00878ca72e44523a59f532c2ad3b18503b917d393836a26a95784b5f",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "abf8eee1238f82d23d79e32a784fb12416486ea944bfe495523c2451cec393a5",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "c8c2f974d8954329370e805d04c1d56219a021b78d5d0bff254cb935c885ae57",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "retrieval.ts": "119a905161b53da7d5a15cf23ac823b11f47c5e0b9f16564ba4d3f8b5fe814e1",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operations.ts": "83b62b85bc1b4747300d68044ba1e29912651df73894f946570f724453d0c51e",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "5c01fc209a20d39c8c5bdb12c960c29c7251fad09854558b70fddd36a0a4c065",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "64d8e244c960e8510ab561f399cf1c2a280c70712989bff04f2bbd0b933be54f",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "spec_sha256": "fbf838daa885a8d93e9e4c76fedf786fa90176e54a6e090a8f7a0d53b838cab1",
+  "requests_sha256": "a4b82771ff2b07004c49fcd241d177ba2974a3bf694b02f629f5e1266f562b71",
+  "started_at": "2026-09-06T09:00:57.489Z",
+  "status": "passed",
+  "adds": [
+    {
+      "request_id": "seed",
+      "status": 200,
+      "elapsed_ms": 9458.961792,
+      "body": {
+        "success": true,
+        "request_id": "seed",
+        "user_id": "history-source-control",
+        "session_id": "original"
+      }
+    },
+    {
+      "request_id": "echo",
+      "status": 200,
+      "elapsed_ms": 6910.715833,
+      "body": {
+        "success": true,
+        "request_id": "echo",
+        "user_id": "history-source-control",
+        "session_id": "another-session"
+      }
+    },
+    {
+      "request_id": "reject",
+      "status": 200,
+      "elapsed_ms": 38735.223291,
+      "body": {
+        "success": true,
+        "request_id": "reject",
+        "user_id": "history-source-control",
+        "session_id": "original"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "historical_assertion_and_cross_session_echo_removed",
+      "pass": true
+    },
+    {
+      "name": "actual_routine_preserved",
+      "pass": true
+    },
+    {
+      "name": "browser_preserved",
+      "pass": true
+    },
+    {
+      "name": "independent_assistant_neighbors_preserved",
+      "pass": true
+    },
+    {
+      "name": "post_restart_search_true_facts",
+      "pass": true
+    },
+    {
+      "name": "post_restart_search_no_rejected_value",
+      "pass": true
+    },
+    {
+      "name": "source_forget_event",
+      "pass": true
+    }
+  ],
+  "finished_at": "2026-09-06T09:01:52.855Z"
+}

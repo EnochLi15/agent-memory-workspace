@@ -1,0 +1,57 @@
+{
+  "protocol": "failed-development-snapshots-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv",
+  "parent_run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-quality-dev-8ef8829-r1-facts-memops",
+  "parent_manifest_sha256": "939c3259dc501c426a3a8b941e34b9e492546b72ae3dc59875f1299bd7f731e1",
+  "source_commit": "8ef8829b3c4ac1dcafc93b2056ded04bdf836315",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "captured_at": "2026-09-06T07:29:28.542Z",
+  "cases": [
+    {
+      "sample": "E10_reflect",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:E10_reflect:segment-10:0",
+      "snapshot_revision": 9,
+      "fact_count": 26,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv/E10_reflect.json",
+      "sha256": "3b2f236f57a05d75454e7663124ff94f7d2c51396ed438ddd07ac97a12a3f4da",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}"
+    },
+    {
+      "sample": "B05_forget",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:B05_forget:segment-18:0",
+      "snapshot_revision": 18,
+      "fact_count": 93,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv/B05_forget.json",
+      "sha256": "4d8d7da1a46363d4ce22abbae6575ef547602e27f049846e3f3b63f9a212996a",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired within the request budget\"}}"
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:F07_trajectory_ops:segment-18:0",
+      "snapshot_revision": 17,
+      "fact_count": 78,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv/F07_trajectory_ops.json",
+      "sha256": "73738de8f600cca30db52f65ed715d7fd6bd4b03fb27301fb0ac12bcae122aaa",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}"
+    },
+    {
+      "sample": "F07_update",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:F07_update:segment-14:0",
+      "snapshot_revision": 14,
+      "fact_count": 81,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv/F07_update.json",
+      "sha256": "50de94d32ac113073a2557d843a5d2242275e947a1805cba42a196c3fc260d70",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}"
+    },
+    {
+      "sample": "E10_remember",
+      "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:E10_remember:segment-5:0",
+      "snapshot_revision": 4,
+      "fact_count": 57,
+      "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-development-snapshots-ZhmzTv/E10_remember.json",
+      "sha256": "07916ddabb301f8e9b717c8006fda1981b5b0efc7542bf4dbb92dd798b02ea52",
+      "original_error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}"
+    }
+  ],
+  "scope": "Logical SQLite snapshots using read-only connections and a read transaction, after failed sample judgment rows exist. Other campaign samples may still run. No repair, commit or replacement of original evaluation results."
+}

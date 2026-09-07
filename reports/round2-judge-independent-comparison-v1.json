@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "planned": 199,
+    "joint_verdicts": {
+      "false / false": 115,
+      "protocol_error / false": 32,
+      "false / true": 14,
+      "needs_review / false": 5,
+      "protocol_error / true": 6,
+      "true / true": 11,
+      "true / false": 10,
+      "false / protocol_error": 3,
+      "needs_review / true": 1,
+      "protocol_error / protocol_error": 2
+    },
+    "by_type": {
+      "OperationApplication": {
+        "false / false": 27,
+        "protocol_error / false": 7,
+        "false / protocol_error": 2,
+        "false / true": 1,
+        "true / true": 1
+      },
+      "OperationTrace": {
+        "protocol_error / false": 15,
+        "protocol_error / true": 4,
+        "false / false": 29,
+        "false / true": 3,
+        "needs_review / false": 1,
+        "false / protocol_error": 1,
+        "true / false": 4,
+        "protocol_error / protocol_error": 2
+      },
+      "TargetBinding": {
+        "false / false": 26,
+        "false / true": 5,
+        "protocol_error / false": 7,
+        "true / true": 3,
+        "true / false": 4,
+        "protocol_error / true": 1,
+        "needs_review / false": 1
+      },
+      "CandidateDisambiguation": {
+        "false / false": 2,
+        "true / true": 3
+      },
+      "StateTransition": {
+        "false / true": 4,
+        "needs_review / false": 3,
+        "protocol_error / false": 1,
+        "true / false": 2,
+        "false / false": 25,
+        "true / true": 3,
+        "protocol_error / true": 1,
+        "needs_review / true": 1
+      },
+      "StateTrajectory": {
+        "false / false": 6,
+        "true / true": 1,
+        "protocol_error / false": 2,
+        "false / true": 1
+      }
+    },
+    "pending_review": 73,
+    "independent_human_reviews": 0,
+    "protocol": "independent-criterion-audit-comparison-v1",
+    "left_model": "gpt-5.4-mini",
+    "right_model": "gpt-5.5",
+    "scope": "Paired audits of selected exposed saved answers. Disagreements and unresolved cases remain pending; neither judge is treated as ground truth. No historical score replacement."
+  },
+  "manifest": {
+    "source_sha256": "92937fc778cecfc8e329a101e0a5fc03b3cc151fa36bab34c33dafc9e64abefd",
+    "input_hashes": {
+      "eval/artifacts/round2-judge-audit199-v2-merged/results.jsonl": "eea3885ae89e8f750d28cd4b7ae33ab59b7024d2173ea89aaa1a618b395eebfc",
+      "eval/artifacts/round2-judge-audit199-gpt55-v2/results.jsonl": "b7ef2b15a3134bd90024aac1dc02ffbbeb299c119cdf75797bb29a1b9de82970",
+      "eval/artifacts/round2-judge-audit199-v2-merged/manifest.json": "9f8ffa98fe9675b79be47cbfa21f3ad32322ca49d6bc2cb1586022997b9b1cda",
+      "eval/artifacts/round2-judge-audit199-gpt55-v2/manifest.json": "6a4b3926c9f76b16f137c5be5af618a5f7aa958d5b43bb462c6cbd10fa4ec1cb",
+      "eval/artifacts/round2-judge-calibration-v1/blind.jsonl": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d"
+    }
+  },
+  "input_hashes": {
+    "eval/artifacts/round2-judge-independent-comparison-v1/manifest.json": "aea6d1fe9d6c9bcf7cbf10f1ec242257d0bcddff92adcb41381361f7dfb54ebe",
+    "eval/artifacts/round2-judge-independent-comparison-v1/summary.json": "1a8c2f684e30cc5e064d77a4ceac4d845ad18d29c024518503deaf2985ba1af6"
+  }
+}

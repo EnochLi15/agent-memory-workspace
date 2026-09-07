@@ -1,0 +1,209 @@
+{
+  "protocol": "long-prefix-verification-failure-v1",
+  "cases": [
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-14-50-771Z-By59bT",
+      "results_sha256": "bb31004bae94b2011935b93c40612e30b7ec60b6577665b5308820f1353e28dc",
+      "proposals_sha256": "33c68e1be85623b97a1627d3050d4d8d8519ce18c9a6cd347fd308b327899363",
+      "usage_sha256": "f926c096f86142807ab276d81dca94d14b112c3d7c2c4d47a50e94ade2606b56",
+      "source_sha256": {
+        "service/src/config.ts": "4a4aa0360e313f115fc7c23a37365c2cbad7ee14ca9e7727bef5b0c31050905c",
+        "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "service/src/extraction.ts": "016fd9f252623654d6d120a6540c5dbee78aa3a23d93a856b5f0fc3e3c931de8",
+        "service/src/models.ts": "ac0b6330ca4c3b9544a239cc03b03d149c55bc66fd6dc36427b9ab645d83bebb",
+        "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+        "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "service/src/prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+        "service/src/repair.ts": "2bcf3c5cf3a71e6c8c9e594ebc9abb6e0ee0ec6b494a37175bc093c61e2c6f84",
+        "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+        "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "service/src/storage.ts": "f1840c3bb7dcfaeb7be22edeaf59e7ae203be3ebe5a3d81151c78e497afc6b94",
+        "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+        "service/src/verification.ts": "b398104d8f88d6c19abd759ee2e01d6ef95d940a2406fe17ea9f62a5f65c8e54",
+        "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+        "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+        "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+      },
+      "case": "round2-prefix:E03_reflect",
+      "planned_adds": 8,
+      "accepted_adds": 6,
+      "last_add": {
+        "original_request_id": "holdout-v2-U3:memops:E03_reflect:segment-7:0",
+        "status": 503,
+        "elapsed_ms": 70642.622917,
+        "error": {
+          "error": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Evidence still fails semantic verification after repair"
+          }
+        }
+      },
+      "final_revision": 6,
+      "last_model_calls": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 17671.12379100002,
+          "usage": {
+            "prompt_tokens": 6866,
+            "completion_tokens": 856,
+            "total_tokens": 7722,
+            "completion_tokens_details": {
+              "reasoning_tokens": 68
+            }
+          }
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 19125.055374999996,
+          "usage": {
+            "prompt_tokens": 5775,
+            "completion_tokens": 945,
+            "total_tokens": 6720,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 376
+            }
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 6799.593083999993,
+          "usage": {
+            "prompt_tokens": 7358,
+            "completion_tokens": 175,
+            "total_tokens": 7533,
+            "completion_tokens_details": {
+              "reasoning_tokens": 80
+            }
+          }
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 26978.30470899999,
+          "usage": {
+            "prompt_tokens": 5883,
+            "completion_tokens": 1343,
+            "total_tokens": 7226,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 353
+            }
+          }
+        }
+      ]
+    },
+    {
+      "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T03-14-50-774Z-tZoQwl",
+      "results_sha256": "6e605677a0ae8f520e8c61ae6157a2635b58270ab4f2db5b70b708df707daa99",
+      "proposals_sha256": "4bb05d9642d57ebb7966dc487908d7fea582c78fb2c9f174783caee2d1cd1f35",
+      "usage_sha256": "32d311e3a6d343ac771ffc6d515197e9538b09893add0498d131ecf86c7b878b",
+      "source_sha256": {
+        "service/src/config.ts": "4a4aa0360e313f115fc7c23a37365c2cbad7ee14ca9e7727bef5b0c31050905c",
+        "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+        "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+        "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+        "service/src/extraction.ts": "016fd9f252623654d6d120a6540c5dbee78aa3a23d93a856b5f0fc3e3c931de8",
+        "service/src/models.ts": "ac0b6330ca4c3b9544a239cc03b03d149c55bc66fd6dc36427b9ab645d83bebb",
+        "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+        "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+        "service/src/prompts.ts": "bd2adc3c6b26709ba5c2733e09608a56f63b11cd7daff68a3a87cd0bba05f9a3",
+        "service/src/repair.ts": "2bcf3c5cf3a71e6c8c9e594ebc9abb6e0ee0ec6b494a37175bc093c61e2c6f84",
+        "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+        "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+        "service/src/storage.ts": "f1840c3bb7dcfaeb7be22edeaf59e7ae203be3ebe5a3d81151c78e497afc6b94",
+        "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+        "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+        "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+        "service/src/verification.ts": "b398104d8f88d6c19abd759ee2e01d6ef95d940a2406fe17ea9f62a5f65c8e54",
+        "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+        "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+        "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+      },
+      "case": "round2-prefix:C30_update",
+      "planned_adds": 14,
+      "accepted_adds": 13,
+      "last_add": {
+        "original_request_id": "holdout-v2-U3:memops:C30_update:segment-14:0",
+        "status": 503,
+        "elapsed_ms": 90035.84712500003,
+        "error": {
+          "error": {
+            "code": "VERIFICATION_UNAVAILABLE",
+            "message": "Could not complete evidence verification within the request budget"
+          }
+        }
+      },
+      "final_revision": 13,
+      "last_model_calls": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 38523.755000000005,
+          "usage": {
+            "prompt_tokens": 7659,
+            "completion_tokens": 1971,
+            "total_tokens": 9630,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 146
+            }
+          }
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 34409.91508299997,
+          "usage": {
+            "prompt_tokens": 7654,
+            "completion_tokens": 1699,
+            "total_tokens": 9353,
+            "prompt_tokens_details": {
+              "cached_tokens": 1792
+            },
+            "completion_tokens_details": {
+              "reasoning_tokens": 534
+            }
+          }
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 4366.214124999999,
+          "usage": {
+            "prompt_tokens": 9579,
+            "completion_tokens": 107,
+            "total_tokens": 9686,
+            "completion_tokens_details": {
+              "reasoning_tokens": 61
+            }
+          }
+        },
+        {
+          "purpose": null,
+          "outcome": "error",
+          "elapsed_ms": 12676.239750000008,
+          "usage": null
+        }
+      ]
+    }
+  ],
+  "findings": {
+    "E03": "Missing future listening-tip plan was appended without tentative modality; the final checker rejected it.",
+    "C30": "A fact cited the original $200 statement but added the later $250 correction. The repair removed only that unsupported qualifier; the full second verification exceeded the shared 90-second model budget."
+  },
+  "scope": "Original prefixes, same 92ae3bd source and gpt-5.5/low. Failures remain in denominator; no partial final chunk committed. The newer target resolver does not itself prove either failure repaired."
+}

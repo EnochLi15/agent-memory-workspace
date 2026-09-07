@@ -1,0 +1,39 @@
+{
+  "protocol": "write-continuation-and-calibration-review-v1",
+  "frozen_service": "87d67b1",
+  "frozen_eval": "ddfab86",
+  "service_candidate": {
+    "commit": "f642616",
+    "branch": "improvement/write-continuation",
+    "worktree": "artifacts/round2-service-shard-repair",
+    "includes_shard_fix": "1f57577",
+    "tests": 302,
+    "targeted_source_erasure_tests": 22,
+    "targeted_shard_tests": 13,
+    "E10": {
+      "failure": "reports/round2-E10-87d67b1-shard-failure.json",
+      "exact_reproduction": "reports/round2-E10-87d67b1-shard-reproduction.json",
+      "repair_entry": "reports/round2-shard-array-repair-KY4Aom.json",
+      "scope": "Same3 saved model packets reach bounded global schema repair, with omission preserved. Real repair and new whole HTTP request remain untested."
+    },
+    "B05": {
+      "failure": "reports/round2-B05-87d67b1-retained-failure.json",
+      "guard_diagnostic": "reports/round2-retained-witness-diagnostic-niAyBo.json",
+      "fixed_commit": "reports/round2-retained-witness-diagnostic-eVCdfN.json",
+      "checks_passed": 4,
+      "saved_packets": 5,
+      "fresh_llm_calls": 0,
+      "scope": "Historical broad source span reapplied after prior partial erasure; guard correctly protected active Elara. Fix limits fallback to newly erased facts while retaining historical dependency IDs. Same saved packets commit on private copy; no new semantic erasure decision or whole regression claim."
+    }
+  },
+  "eval_candidate": {
+    "commit": "07dc65f",
+    "branch": "improvement/human-calibration",
+    "worktree": "artifacts/round2-eval-human-calibration",
+    "python_tests": 17,
+    "human_labels": 0,
+    "pending": 199,
+    "report": "reports/round2-human-calibration-pending-report.json"
+  },
+  "state": "Candidates pushed separately; frozen service/eval remain clean and unchanged during current full regression."
+}

@@ -1,0 +1,32 @@
+{
+  "protocol": "round2-running-experiment-checkpoint-v1",
+  "run_id": "round2-source-first-f12b2b4-B05-r1-source_first-memops",
+  "observed_at": "2026-09-06T10:48:25.487266+00:00",
+  "status": "finished",
+  "service_commit": "f12b2b403b69bc8f4fc24145162918569364af3a",
+  "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+  "workspace_commit": "714ef03965e67dd9f1c0bc0ccff8b1ed5d1f0c16",
+  "started_at": "2026-09-06T10:37:44.772Z",
+  "dataset_sha256": "6a29574de88fa853d402c226c45b7dde9e98e0f902fefd4cd331ed12ff140708",
+  "planned_questions": 10,
+  "service_pid": 19846,
+  "eval_pid": 19847,
+  "runner_session_id": 11295,
+  "port": 8112,
+  "source_snapshot": "artifacts/round2-runtime-f12b2b4",
+  "completed_ingest_attempts_at_observation": 20,
+  "latest_ingest": {
+    "request_id": "round2-source-first-f12b2b4-B05-r1-source_first:memops:B05_forget:segment-18:0",
+    "status": "failed",
+    "attempt": 1,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}",
+    "elapsed_ms": 90123.86937500001
+  },
+  "attempt_outcomes": {
+    "ok": 18,
+    "retrying": 1,
+    "failed": 1
+  },
+  "note": "Finished. 18 successful writes; segment18 had two failed attempts and terminated. All10 questions are service_error; see final report. No measured answer accuracy or improvement.",
+  "final_report": "reports/round2-source-first-f12b2b4-B05-r1-final.json"
+}

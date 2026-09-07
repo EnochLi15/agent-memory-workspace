@@ -1,0 +1,131 @@
+{
+  "protocol": "completed-exposed-development-review-v1",
+  "run_dir": "eval/artifacts/round2-quality-dev-2542f2a-r1-facts-memops",
+  "service_commit": "2542f2ab29050623ed4936679e99ed21c4e01542",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "started_at": "2026-09-06T07:38:07.128Z",
+  "finished_at": "2026-09-06T08:15:22.479Z",
+  "input_artifact_sha256": {
+    "manifest.json": "cf9fbb99bff53dfa44ce8b6f63984427b27d940d71d680158ad54b951b172bb6",
+    "metrics.json": "b44f4f8dcd20a4015ee94ccb60ef6ba2ae069de8c4198c56a6de20522b5c99f5",
+    "ingest.jsonl": "5ea8e776c9a1b7a8bb0adb6b8074380f9a9f3e7b4b57dcda8fe84c28cd2ac3ac",
+    "judgments.jsonl": "2c25e64bab43537cd116fb062905fb6c8e0aa2f17424e0ad9041ed8dd00df562",
+    "requests.jsonl": "b2f92f5cd93856b3429702ddec04cbdcef20c282952176d290db3ceeaf1943c5"
+  },
+  "planned_questions": 30,
+  "judged": 0,
+  "correct": 0,
+  "service_error_questions": 30,
+  "accuracy_over_planned": 0,
+  "judged_accuracy": null,
+  "add_status": {
+    "ok": 119,
+    "failed": 5,
+    "retrying": 1
+  },
+  "samples": [
+    {
+      "sample": "E10_reflect",
+      "adds": {
+        "ok": 43,
+        "failed": 1
+      },
+      "questions": 6,
+      "question_status": {
+        "service_error": 6
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_reflect:segment-44:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 46173.69104199996
+        }
+      ]
+    },
+    {
+      "sample": "B05_forget",
+      "adds": {
+        "ok": 18,
+        "failed": 1
+      },
+      "questions": 10,
+      "question_status": {
+        "service_error": 10
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:B05_forget:segment-18:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 50169.984459
+        }
+      ]
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "adds": {
+        "ok": 18,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_trajectory_ops:segment-19:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid implicit transition witness index for candidate 11\"}}",
+          "elapsed_ms": 37780.08095799992
+        }
+      ]
+    },
+    {
+      "sample": "F07_update",
+      "adds": {
+        "ok": 5,
+        "failed": 1
+      },
+      "questions": 4,
+      "question_status": {
+        "service_error": 4
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:F07_update:segment-6:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+          "elapsed_ms": 68248.73462500004
+        }
+      ]
+    },
+    {
+      "sample": "E10_remember",
+      "adds": {
+        "ok": 35,
+        "retrying": 1,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-2542f2a-r1-facts:memops:E10_remember:segment-35:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired within the request budget\"}}",
+          "elapsed_ms": 26728.98004100006
+        }
+      ]
+    }
+  ],
+  "paired_retrieval_reuse_eligible": false,
+  "scope": "One complete run on five exposed development backgrounds. Every background terminated during ingestion; all 30 questions retain service_error. Later source changes did not hot reload into service2542f2a. Stage traces support failure attribution, but the two final repair errors contain only generic Error metadata, so their provider/network cause is unknown. Not heldout quality or a replacement for historical331/1000."
+}

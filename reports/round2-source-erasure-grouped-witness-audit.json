@@ -1,0 +1,19 @@
+{
+  "protocol": "joint-source-witness-audit-v1",
+  "parent": "reports/round2-source-erasure-grouped-commit-BQW3Ra.json",
+  "scope": "Read-only audit of committed copied-v10 snapshot; fixed prefix reused, not a full fresh request.",
+  "checks": [
+    {
+      "name": "erased_Iris_style_witness_absent",
+      "pass": true
+    },
+    {
+      "name": "selected_Elara_source_retained",
+      "pass": true
+    },
+    {
+      "name": "independent_Priya_Violet_Mae_source_retained",
+      "pass": true
+    }
+  ]
+}

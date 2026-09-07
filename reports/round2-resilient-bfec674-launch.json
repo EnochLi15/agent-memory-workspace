@@ -1,0 +1,112 @@
+{
+  "protocol": "round2-resilient-regression-launch-v1",
+  "campaign": "round2-resilient-bfec674-dev-r1",
+  "observed_at": "2026-09-06T12:38:21.914307+00:00",
+  "runner_session": 87195,
+  "processes": {
+    "service": 81978,
+    "locomo": 81979,
+    "memops": 81980
+  },
+  "port": 8116,
+  "runs": [
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
+      "status": "running",
+      "service_commit": "bfec67490af9df5ab5deb74c45f23c7be1c27a14",
+      "eval_commit": "11da2a67f60d56be8f3298e4198827a2a5283aa5",
+      "workspace_commit": "48f12f07d19f64c89231f0a4b1de07a4d7908ec0",
+      "dataset_sha256": "58e28860b96283af9050e34629c40cc0545501f26d2b73518622ee573a544f07",
+      "planned_questions": 30,
+      "samples": [
+        "conv-44",
+        "conv-48"
+      ],
+      "sample_groups": {
+        "conv-44": {
+          "benchmark": "locomo",
+          "group_id": "conv-44"
+        },
+        "conv-48": {
+          "benchmark": "locomo",
+          "group_id": "conv-48"
+        }
+      },
+      "started_at": "2026-09-06T12:37:50.055Z",
+      "source_state": {
+        "service": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        },
+        "eval": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        },
+        "workspace": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        }
+      }
+    },
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-memops",
+      "status": "running",
+      "service_commit": "bfec67490af9df5ab5deb74c45f23c7be1c27a14",
+      "eval_commit": "11da2a67f60d56be8f3298e4198827a2a5283aa5",
+      "workspace_commit": "48f12f07d19f64c89231f0a4b1de07a4d7908ec0",
+      "dataset_sha256": "bce457e2695c72b6f0379d88d29a1a9773bb271b59b7ae0ceb2c5ea0ba16fe7b",
+      "planned_questions": 30,
+      "samples": [
+        "E10_reflect",
+        "B05_forget",
+        "F07_trajectory_ops",
+        "F07_update",
+        "E10_remember"
+      ],
+      "sample_groups": {
+        "E10_reflect": {
+          "benchmark": "memops",
+          "group_id": "E10"
+        },
+        "B05_forget": {
+          "benchmark": "memops",
+          "group_id": "B05"
+        },
+        "F07_trajectory_ops": {
+          "benchmark": "memops",
+          "group_id": "F07"
+        },
+        "F07_update": {
+          "benchmark": "memops",
+          "group_id": "F07"
+        },
+        "E10_remember": {
+          "benchmark": "memops",
+          "group_id": "E10"
+        }
+      },
+      "started_at": "2026-09-06T12:37:50.058Z",
+      "source_state": {
+        "service": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        },
+        "eval": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        },
+        "workspace": {
+          "dirty": false,
+          "patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "status": ""
+        }
+      }
+    }
+  ],
+  "scope": "Fresh isolated ingestion. Service/eval source and build outputs frozen during this run; no extra live-model diagnostics alongside it. Planned failures remain in denominator. Full acceptance still requires further gates."
+}

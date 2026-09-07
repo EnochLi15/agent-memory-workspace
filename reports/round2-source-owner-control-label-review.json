@@ -1,0 +1,64 @@
+{
+  "protocol": "source-owner-control-label-review-v1",
+  "original_sha256": "1adfbaea93d648c441ca8ac98bd1796b9b9d48eb8f8961e2c683f36d615b0b0c",
+  "original_passed": 4,
+  "reviewed_matches": 6,
+  "planned": 6,
+  "reviews": [
+    {
+      "name": "different_owner",
+      "original_expected": "retain",
+      "original_pass": true,
+      "reviewed_expected": "retain",
+      "validator_rejected": false,
+      "reviewed_match": true,
+      "reason": "Original expected outcome unchanged."
+    },
+    {
+      "name": "different_owner_unqualified",
+      "original_expected": "retain",
+      "original_pass": false,
+      "reviewed_expected": "uncertain",
+      "validator_rejected": true,
+      "reviewed_match": true,
+      "reason": "The isolated name Kevin is not proven different from the anonymous user; the original positive-retention label assumed identity evidence not supplied."
+    },
+    {
+      "name": "same_owner",
+      "original_expected": "erase",
+      "original_pass": true,
+      "reviewed_expected": "erase",
+      "validator_rejected": false,
+      "reviewed_match": true,
+      "reason": "Original expected outcome unchanged."
+    },
+    {
+      "name": "joint_family",
+      "original_expected": "erase",
+      "original_pass": true,
+      "reviewed_expected": "erase",
+      "validator_rejected": false,
+      "reviewed_match": true,
+      "reason": "Original expected outcome unchanged."
+    },
+    {
+      "name": "other_relationship",
+      "original_expected": "retain",
+      "original_pass": true,
+      "reviewed_expected": "retain",
+      "validator_rejected": false,
+      "reviewed_match": true,
+      "reason": "Original expected outcome unchanged."
+    },
+    {
+      "name": "ambiguous_owner",
+      "original_expected": "uncertain",
+      "original_pass": false,
+      "reviewed_expected": "uncertain",
+      "validator_rejected": true,
+      "reviewed_match": true,
+      "reason": "Any uncertain segment rejects the entire plan. Harmless clarification can be retained; requiring every segment to be uncertain was too strict."
+    }
+  ],
+  "scope": "Assistant review of control construction and fail-closed partition semantics; no new model calls or rewriting of original outputs/labels. Original automated result remains 4/6; reviewed interpretation is not independent ground truth or a new six-case live success run."
+}

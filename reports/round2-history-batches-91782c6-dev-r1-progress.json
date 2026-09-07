@@ -1,0 +1,69 @@
+{
+  "protocol": "round2-running-experiment-checkpoint-v1",
+  "run_id": "round2-history-batches-91782c6-dev-r1-facts-memops",
+  "observed_at": "2026-09-06T10:59:06.997954+00:00",
+  "status": "finished",
+  "service_commit": "91782c6d356b8b9d5a1f3e7ff7091c0864f3c89f",
+  "eval_commit": "ddfab86df2c4d7aa937f8f943567937ab0924083",
+  "workspace_commit": "6153217490a583e4425593bf38fa1d286ed37e48",
+  "started_at": "2026-09-06T09:29:21.559Z",
+  "samples": [
+    "E10_reflect",
+    "B05_forget",
+    "F07_trajectory_ops",
+    "F07_update",
+    "E10_remember"
+  ],
+  "planned_questions": 30,
+  "service_pid": 88665,
+  "eval_pid": 88666,
+  "runner_session_id": 98822,
+  "port": 8110,
+  "source_snapshot": "artifacts/round2-runtime-91782c6",
+  "completed_ingest_attempts_at_observation": 204,
+  "latest_ingest": {
+    "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_remember:segment-50:0",
+    "sample_id": "E10_remember",
+    "status": "ok",
+    "attempt": 0,
+    "elapsed_ms": 7109.858000000007,
+    "message_count": 6
+  },
+  "note": "Original frozen91782c6/v8 five exposed development backgrounds, unchanged throughout. All30 questions retained. 6/30(20%) over planned; 6/9 on judged questions excludes21 service errors and is not overall accuracy. E10_reflect/B05/F07_trajectory failed; F07_update3/4 and E10_remember3/5. No newv10 result, independent test set or final improvement claim.",
+  "attempt_outcomes": {
+    "ok": 196,
+    "retrying": 5,
+    "failed": 3
+  },
+  "terminal_failed_requests": [
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:E10_reflect:segment-26:0",
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Source operation source_operation_screen model stage unavailable\"}}"
+    },
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:B05_forget:segment-18:0",
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Erasure scope requires semantic binding; offline recovery cannot certify independence\"}}"
+    },
+    {
+      "request_id": "round2-history-batches-91782c6-dev-r1-facts:memops:F07_trajectory_ops:segment-48:0",
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}"
+    }
+  ],
+  "judgments_at_observation": {
+    "service_error": 21,
+    "judged": 9
+  },
+  "finished_background_results": [
+    {
+      "sample_id": "F07_update",
+      "judged": 4,
+      "correct": 3
+    },
+    {
+      "sample_id": "E10_remember",
+      "judged": 5,
+      "correct": 3
+    }
+  ],
+  "final_report": "reports/round2-history-batches-91782c6-dev-r1-final.json"
+}

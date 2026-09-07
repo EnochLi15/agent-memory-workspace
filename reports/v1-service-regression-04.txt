@@ -1,0 +1,493 @@
+
+> agent-memory-service@0.1.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ a selector operation exposes its actual target to the semantic verifier before commit (31.201375ms)
+✔ equivalent targets are verified too, while another device and person stay outside the binding (0.969167ms)
+✔ operation-specific candidates can repair a target excluded from the first 120 chunk-wide facts (4.44525ms)
+✔ forgetting a property binds and erases its legitimate historical values as well as the current value (30.524875ms)
+✔ forgetting a single value preserves other legitimate history of the same property (16.758417ms)
+✔ correction duplicate expansion follows selected old values, never its replacement value (55.656375ms)
+✔ SIGKILL during a real SQLite transaction rolls back erasure, vectors, source, FTS and receipt (235.891208ms)
+✔ a misspelled mode cannot silently select offline behavior (2.35525ms)
+{"event":"http_request","at":"2026-09-06T18:54:50.935Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":40,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:51.016Z","id":"req-1","stage":"search","mode":"offline","status":503,"elapsed_ms":4,"tenant":"0bfe935e70c321c7","error_code":"SOURCE_FORMAT"}
+{"event":"http_request","at":"2026-09-06T18:54:51.020Z","id":"req-2","stage":"add","mode":"offline","status":503,"elapsed_ms":4,"request_id":"a","tenant":"0bfe935e70c321c7","error_code":"SOURCE_FORMAT"}
+{"event":"http_request","at":"2026-09-06T18:54:51.096Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":3,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:51.102Z","id":"req-2","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+✔ an incompatible deployment cannot search or replay receipts from another source format (429.585875ms)
+✔ unknown future data format is refused even by a direct store reader (7.869583ms)
+✔ populated unversioned data cannot be opened as a fresh store (5.832625ms)
+{"event":"http_request","at":"2026-09-06T18:54:50.984Z","id":"req-2","stage":"add","mode":"enhanced","status":503,"elapsed_ms":87,"request_id":"1","tenant":"0bfe935e70c321c7","error_code":"DEADLINE"}
+{"event":"http_request","at":"2026-09-06T18:54:50.985Z","id":"req-3","stage":"add","mode":"enhanced","status":503,"elapsed_ms":88,"request_id":"2","tenant":"0bfe935e70c321c7","error_code":"DEADLINE"}
+{"event":"http_request","at":"2026-09-06T18:54:51.340Z","id":"req-4","stage":"search","mode":"enhanced","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+✔ queued add deadlines return promptly and cannot commit late model responses (673.467ms)
+✔ semantic erasure binds same-chunk restatements across scope labels while keeping an independently sourced same name (70.4465ms)
+✔ missing, uncertain or unsupported independence decisions reject the whole prepare without fallback (9.82325ms)
+✔ v3 transaction checks request/record fingerprint and cannot omit an erasure plan (7.84225ms)
+✔ independent-name evidence cannot exempt an unlinked echo elsewhere in the same passage (21.362542ms)
+✔ explicit restore preserves its authorized value and support while old unrelated erasures remain enforced (10.646833ms)
+✔ forget also scrubs older unlinked assistant echoes from searchable raw history (12.532209ms)
+✔ fault injection rolls back independent-retention certificates and forced erasures together (14.258833ms)
+{"event":"http_request","at":"2026-09-06T18:54:50.919Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":25,"request_id":"0","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:50.928Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":8,"request_id":"1","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:50.930Z","id":"req-3","stage":"add","mode":"offline","status":200,"elapsed_ms":2,"request_id":"2","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:50.935Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+✔ raw-only experiment preserves source roles and old statements without claiming lifecycle (264.376417ms)
+✔ message-local handles flatten chronologically without redirecting targets when groups arrive reordered (2.341375ms)
+✔ group coverage cannot omit, duplicate, invent, or silently substitute assistant messages (0.899875ms)
+✔ group provenance and stable handles cannot borrow other speakers or hide forward evidence (0.855042ms)
+✔ empty groups still require independent coverage and repairs use the flattened patch protocol (21.32575ms)
+✔ an empty generic knowledge group can remain empty without manufacturing a personal fact (0.918708ms)
+✔ repeated grouped protocol omissions reject instead of becoming an offline success (0.6165ms)
+✔ typed connection, timeout, rate limit and server failures remain unavailable after shard cancellation (11.178958ms)
+✔ schema, semantic and permanent provider failures cannot become retryable by their wording (1.05925ms)
+✔ unavailable shard preparation cannot fall back to offline success or proceed to embedding (2.500875ms)
+{"event":"http_request","at":"2026-09-06T18:54:51.844Z","id":"req-1","stage":"add","mode":"enhanced","status":503,"elapsed_ms":533,"request_id":"transport","tenant":"0bfe935e70c321c7","error_code":"EXTRACTION_UNAVAILABLE"}
+{"event":"http_request","at":"2026-09-06T18:54:51.992Z","id":"req-2","stage":"add","mode":"enhanced","status":200,"elapsed_ms":146,"request_id":"transport","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:51.997Z","id":"req-3","stage":"add","mode":"enhanced","status":200,"elapsed_ms":3,"request_id":"transport","tenant":"0bfe935e70c321c7"}
+✔ HTTP connection failure has no receipt; retrying the same request commits exactly once (814.908459ms)
+✔ bounded source balancing covers participants once without omitting shared context (3.085666ms)
+✔ foreign handles, omitted groups and duplicate ownership cannot become a partial merged result (1.302542ms)
+✔ first failure cancels siblings and waits for their cleanup before rejection (4.247833ms)
+✔ external cancellation and pre-aborted requests cannot publish late successes (0.761667ms)
+✔ cross-shard selector targets the earlier fact globally, preserves another actor, and commits atomically (36.007084ms)
+✔ parallel extraction failures reject preparation rather than falling back to offline partial facts (0.4575ms)
+✔ merged source references still reject future support and retain earlier cross-shard context (1.080375ms)
+✔ semantic repair sees the complete merged proposal and rechecks it globally (1.124292ms)
+✔ small chunks keep a single extraction call without shard ownership metadata (0.359792ms)
+✔ an operation cannot use selector resolution to delete a future cross-shard fact (0.937833ms)
+✔ missing array fields survive merge unchanged and still fail the strict grouped decoder (0.337708ms)
+✔ a missing operations field reaches bounded repair and still executes the real cross-shard operation atomically (8.487292ms)
+✔ a still-malformed global repair cannot publish defaults, skip verification, or exceed the existing repair limit (0.594292ms)
+✔ per-fact semantic and modality rejection cannot be hidden by complete message coverage (1.796584ms)
+✔ fact verdicts require complete unique coverage and actual declared human evidence (0.7075ms)
+✔ fact-specific repair cannot rewrite another fact sharing the same message (0.891042ms)
+✔ extractor repairs a rejected fact and rechecks it without rewriting its grounded neighbor (30.611708ms)
+✔ same-time conflict stays explicit; later state resolves it; as-of honors day boundary (43.157875ms)
+✔ new raw replay and differently named fact cannot recover erased value (17.272375ms)
+✔ erasure invalidates transitive derived facts but retains independent same-message neighbor (14.706542ms)
+✔ explicit restore grants only new value and leaves old replay blocked (11.889666ms)
+✔ correction retracts false history; scoped current relation removal preserves real history (10.952625ms)
+✔ embedding space mismatch rolls back request and original source (7.30475ms)
+✔ invalid extraction schema and wrong vector dimensions degrade without fabricated vectors (6.0965ms)
+✔ source-first schema failure preserves its cause instead of falling back to unchecked extraction (5.470958ms)
+✔ fabricated source is replaced only by grounded recovery; unknown operation ID is rejected (8.623208ms)
+✔ bounded entity expansion retrieves the second hop without inventing a conclusion (9.52975ms)
+✔ querying with another embedding space uses lexical fallback rather than mixing vectors (7.104166ms)
+✔ a valid but unrelated target ID cannot authorize deletion (17.96675ms)
+✔ partially recovered raw evidence becomes invisible when a linked fact is superseded or erased (15.119041ms)
+✔ forget closes alternate representations and leaves a value-free operation trace (10.682291ms)
+✔ a model plan alias becomes a tentative event without a second inference (6.127416ms)
+✔ derived evidence follows the current or historical visibility of its dependencies (9.82825ms)
+✔ failure audit distinguishes HTTP rejection, truncated output and filtered completion without echoing credentials (543.243375ms)
+✔ deadline, caller cancellation and connection errors have distinct bounded metadata (0.322ms)
+✔ repair retries wait for a short provider hint and send exactly the same body (230.233792ms)
+✔ permanent provider errors and excessive retry hints do not spend a second call (11.623667ms)
+✔ request cancellation interrupts backoff before a second model call (32.773625ms)
+✔ transient provider failure still permits at most the original two attempts (6.192083ms)
+✔ retry hint parsing is bounded and never turns protocol or semantic failures into retries (0.591083ms)
+✔ three transport attempts require opt-in and still preserve the same rejected repair input (18.429041ms)
+✔ an unfinished SDK provider error frame retries the identical request and discards partial JSON (29.024375ms)
+✔ explicit permanent stream errors, refusals and completed output are not sampled again (30.23675ms)
+✔ streaming extraction aggregates chunks and rejects premature EOF (28.758083ms)
+✔ explicit reasoning effort is sent without changing the provider-default request (11.62275ms)
+✔ stage routing uses explicit caller purpose and records the actual model without changing budgets (13.161916ms)
+✔ private tracing preserves the exact transition response and identity without logging credentials (7.101208ms)
+✔ unsupported stage models fail once with the actual route in audit and never switch models (3.458ms)
+✔ source erasure sends the compact strict schema to the verification model (2.105125ms)
+✔ source quote repair routes once to the verifier with its strict patch schema (1.757333ms)
+✔ source operation protocol supplies the JSON-mode prerequisite and uses the verification model (10.440083ms)
+✔ recorded keep-active restore proposals fail preflight before model or embedding work (0.628084ms)
+✔ assistant document headings never grant participant or deletion authority (5.90325ms)
+✔ a direct refusal to track is an erasure instruction, including conversational No prefixes (2.947125ms)
+✔ a direct no-tracking instruction passes authorization and erases only its bound property (33.126625ms)
+✔ polite retirement intents survive model validation and erase evidence while retaining neighbors (13.107083ms)
+✔ retirement paraphrase is handled even when the model emits empty arrays (9.200917ms)
+✔ stop-tracking directives retain negation, quotation and conditional boundaries (0.173667ms)
+✔ unresolved real commands cannot degrade to a successful empty operation list (9.679792ms)
+✔ one covered command cannot hide a second unresolved command (9.731875ms)
+✔ negation, quoted imperative, conditional and third-party request preserve stored values (9.970292ms)
+✔ unrelated quotation does not veto a separate real command (7.4175ms)
+✔ same-chunk handles bind only earlier sourced facts and are erased in the transaction (9.560375ms)
+{"event":"http_request","at":"2026-09-06T18:54:51.916Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":24,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:51.918Z","id":"req-2","stage":"add","mode":"offline","status":503,"elapsed_ms":2,"request_id":"b","tenant":"0bfe935e70c321c7","error_code":"AMBIGUOUS_OPERATION"}
+{"event":"http_request","at":"2026-09-06T18:54:51.923Z","id":"req-3","stage":"add","mode":"offline","status":200,"elapsed_ms":5,"request_id":"c","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:51.929Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+✔ HTTP success means retirement took effect; unresolved deletion returns failure atomically (175.68ms)
+✔ same-value records in another scope survive deletion and mixed-source redaction (20.0715ms)
+✔ repeating a completed property deletion is a safe no-op but an unrelated missing target is not (15.830458ms)
+✔ repairing one non-authorizing witness preserves a sibling valid forget (12.039833ms)
+✔ a witness repair cannot remove an unflagged valid deletion (10.947917ms)
+✔ one bounded patch receives independent target-scope and authorization errors together (13.056125ms)
+✔ scope mismatch reaches bounded extraction repair before transaction; an unrecorded assistant claim cannot target an unrelated fact (40.405792ms)
+✔ persistent invalid scope cannot degrade into a successful write that silently loses the correction (8.096416ms)
+✔ same-scope unrelated property still triggers repair; matching only the user is insufficient (10.876375ms)
+✔ replacement fact references cannot supersede a different property without an operation (9.278708ms)
+✔ a binding failure in an appended fact gets a new repair scope without exposing unrelated facts (9.482875ms)
+✔ a newly appended operation can be repaired after a localized coverage failure (8.495916ms)
+✔ refreshing a binding repair scope still rejects changes to unflagged facts (7.872167ms)
+✔ a complete personal-state message cannot disappear behind a later unrelated topic (7.943541ms)
+✔ offline retirement cannot turn an untyped experience bucket into a property-wide deletion (0.615833ms)
+✔ source recovery cannot redirect a same-chunk salary deletion to the following manager fact (10.570542ms)
+✔ one repair receives target binding and independent source errors together (16.702375ms)
+✔ verbose labels survive a sparse recheck at index 62 without mutating the proposal (13.409334ms)
+✔ compact labels survive a sparse recheck at index 62 without mutating the proposal (4.348959ms)
+✔ input labels cannot change patch permissions or become editable fact metadata (1.663125ms)
+✔ replacement groups distinguish a commitment from a backup name, other owners and scopes (2.317333ms)
+✔ removing an earlier slot keeps every remaining reference bound to the same fact (0.877417ms)
+✔ removing a referenced target cannot silently redirect a dependency or delete operation (0.6025ms)
+✔ appended slots are based on original length and remapped after deletions (1.083542ms)
+✔ a localized missing message cannot modify unrelated facts or add content from other messages (0.740083ms)
+✔ duplicate edits, full-object regeneration and unknown fields are rejected (0.456417ms)
+✔ an appended plan must explicitly preserve modality instead of silently defaulting to confirmed (0.449167ms)
+✔ actual replacement repair receives the mismatched fields and model-visible target handle before re-verification (28.021167ms)
+✔ replacement explanations distinguish property and scope, preserving valid references and all source text (0.564833ms)
+✔ HTTP audit correlates outcomes without logging messages, query, tenant identity or credentials (182.680375ms)
+✔ compact reranking preserves original evidence and resolves only supplied slots (1.405708ms)
+✔ compact reranker rejects omitted structure, foreign or duplicate slots and unbounded scores (0.323625ms)
+✔ source-linked retraction cannot acknowledge erasure; only explicit current-list removal permits retained history (6.888916ms)
+✔ wrong retirement effect requires a repair before checking and erases all selected entity facts and raw sources (39.111292ms)
+✔ unrepaired retirement effect fails closed even when the checker would approve (1.390125ms)
+✔ transaction independently rejects a prepared retraction substituted for a forget operation (6.17525ms)
+✔ second-person no-longer-needed tracking is direct retirement, preserving negative and reported boundaries (0.38775ms)
+✔ a valid same-message tracking retirement reaches verification without being told to remove its operation (11.680958ms)
+✔ source vectors recover an unextracted detail with no lexical query overlap (41.827833ms)
+✔ long messages keep bounded source passages and details omitted by extraction (25.030167ms)
+✔ forget erases source intervals and vectors while preserving independent unextracted detail (15.766834ms)
+✔ source passages inherit current, historical and correction visibility (13.222458ms)
+✔ reranking considers candidates beyond top_k and packs only the chosen evidence (196.362042ms)
+✔ mutation during rerank invalidates its snapshot and rechecks all returned content (105.606959ms)
+✔ list packing prefers distinct items without increasing the terminal budget (11.006166ms)
+✔ stage audit contains identifiers and hashes, not secret-bearing content (18.579042ms)
+✔ a representation switch requires fresh ingestion, even for a deletion-only chunk (12.760209ms)
+✔ conditional expansion follows declared direction and requested relation, not co-occurrence (12.280041ms)
+✔ relation gates respect master switch, direct evidence and bounded fallback (1.006208ms)
+✔ time-incompatible, hypothetical and erased bridges cannot extend the relation path (0.451125ms)
+✔ relation traversal stays within node and evidence limits on a branching graph (8.509792ms)
+✔ selective rerank skips complete direct evidence but keeps ambiguous and complex cases (0.481959ms)
+✔ conditional retrieval uses only visible grounded paths and returns evidence without invented conclusions (16.20025ms)
+✔ engine skips model rerank for direct evidence, reranks complex evidence and audits both decisions (116.644167ms)
+✔ unsupported query policy configurations fail at startup (0.41575ms)
+✔ selective rerank malformed output falls back without exposing a foreign or erased ID (110.140333ms)
+{"event":"http_request","at":"2026-09-06T18:54:52.568Z","id":"req-7","stage":"add","mode":"offline","status":200,"elapsed_ms":42,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.574Z","id":"req-8","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.579Z","id":"req-9","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"b23a6a8439c0dde5"}
+{"event":"http_request","at":"2026-09-06T18:54:52.580Z","id":"req-a","stage":"search","mode":"offline","status":200,"elapsed_ms":0,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.581Z","id":"req-b","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.583Z","id":"req-c","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.584Z","id":"req-d","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.585Z","id":"req-e","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.586Z","id":"req-f","stage":"add","mode":"offline","status":400,"elapsed_ms":1,"error_code":"INVALID_REQUEST"}
+{"event":"http_request","at":"2026-09-06T18:54:52.586Z","id":"req-g","stage":"add","mode":"offline","status":400,"elapsed_ms":0,"error_code":"INVALID_REQUEST"}
+✔ only prescribed routes, exact receipt, validation and top_k boundary (206.028666ms)
+{"event":"http_request","at":"2026-09-06T18:54:52.690Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":16,"request_id":"same","tenant":"ffab3b70eac742f4"}
+{"event":"http_request","at":"2026-09-06T18:54:52.697Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":7,"request_id":"same","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.705Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"ffab3b70eac742f4"}
+{"event":"http_request","at":"2026-09-06T18:54:52.706Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":2,"tenant":"0bfe935e70c321c7"}
+✔ strict tenant separation including names and path-like identities (122.670375ms)
+{"event":"http_request","at":"2026-09-06T18:54:52.815Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":14,"request_id":"a","tenant":"8ed3f6ad685b959e"}
+{"event":"http_request","at":"2026-09-06T18:54:52.823Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":8,"request_id":"b","tenant":"f44e64e75f3948e9"}
+{"event":"http_request","at":"2026-09-06T18:54:52.827Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"8ed3f6ad685b959e"}
+{"event":"http_request","at":"2026-09-06T18:54:52.832Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"8ed3f6ad685b959e"}
+{"event":"http_request","at":"2026-09-06T18:54:52.839Z","id":"req-5","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"b23a6a8439c0dde5"}
+✔ query options neither become evidence nor cross the tenant boundary (131.133459ms)
+{"event":"http_request","at":"2026-09-06T18:54:52.952Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":18,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.957Z","id":"req-2","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.958Z","id":"req-3","stage":"add","mode":"offline","status":200,"elapsed_ms":0,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.959Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":2,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:52.960Z","id":"req-5","stage":"add","mode":"offline","status":409,"elapsed_ms":1,"request_id":"a","tenant":"0bfe935e70c321c7","error_code":"REQUEST_CONFLICT"}
+{"event":"http_request","at":"2026-09-06T18:54:52.961Z","id":"req-6","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+✔ idempotency and payload conflict (118.753584ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.062Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":18,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.088Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":26,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.098Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":10,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.102Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+✔ current state excludes old value, explicit history preserves it (144.441334ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.201Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":12,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.205Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":4,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.209Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+✔ late historical state cannot replace newer state (106.193875ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.332Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":26,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.340Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":8,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.345Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.347Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":2,"tenant":"0bfe935e70c321c7"}
+✔ tentative plan and multiple hobbies do not overwrite confirmed facts (137.627916ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.465Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":11,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.472Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":7,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.476Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.480Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.482Z","id":"req-5","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.484Z","id":"req-6","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.484Z","id":"req-7","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.485Z","id":"req-8","stage":"add","mode":"offline","status":200,"elapsed_ms":0,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.486Z","id":"req-9","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.488Z","id":"req-a","stage":"add","mode":"offline","status":200,"elapsed_ms":3,"request_id":"c","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.489Z","id":"req-b","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+✔ forget suppresses all retrieval paths, retains neighbor and resists replay (139.264167ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.579Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":10,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.582Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":3,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.587Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+✔ forget it and do not forget are not destructive (98.820167ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.701Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":23,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.713Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":12,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.720Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.725Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+✔ one message can update a retained fact and forget a different property (138.167875ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.855Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":27,"request_id":"batch","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.861Z","id":"req-2","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.866Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":5,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.869Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":3,"tenant":"0bfe935e70c321c7"}
+✔ a fact introduced and forgotten within one add never becomes searchable (144.169292ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.976Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":16,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.989Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":13,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.996Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":7,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:53.997Z","id":"req-4","stage":"search","mode":"offline","status":200,"elapsed_ms":2,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.006Z","id":"req-5","stage":"add","mode":"offline","status":200,"elapsed_ms":9,"request_id":"c","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.008Z","id":"req-6","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.009Z","id":"req-7","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bfe935e70c321c7"}
+✔ descriptions of human forgetfulness are evidence, not memory deletion commands (138.088708ms)
+{"event":"http_request","at":"2026-09-06T18:54:54.122Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":20,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.128Z","id":"req-2","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.131Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":3,"tenant":"0bfe935e70c321c7"}
+✔ named assistant participant and Chinese evidence stay distinct (122.606542ms)
+{"event":"http_request","at":"2026-09-06T18:54:54.220Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":12,"request_id":"r0","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.223Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":14,"request_id":"r1","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.226Z","id":"req-3","stage":"add","mode":"offline","status":200,"elapsed_ms":18,"request_id":"r2","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.230Z","id":"req-4","stage":"add","mode":"offline","status":200,"elapsed_ms":21,"request_id":"r3","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.232Z","id":"req-5","stage":"add","mode":"offline","status":200,"elapsed_ms":24,"request_id":"r4","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.235Z","id":"req-6","stage":"add","mode":"offline","status":200,"elapsed_ms":27,"request_id":"r5","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.237Z","id":"req-7","stage":"add","mode":"offline","status":200,"elapsed_ms":29,"request_id":"r6","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.240Z","id":"req-8","stage":"add","mode":"offline","status":200,"elapsed_ms":32,"request_id":"r7","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.244Z","id":"req-9","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.274Z","id":"req-a","stage":"add","mode":"offline","status":200,"elapsed_ms":29,"request_id":"same-id","tenant":"139795a7241e72de"}
+{"event":"http_request","at":"2026-09-06T18:54:54.275Z","id":"req-b","stage":"add","mode":"offline","status":200,"elapsed_ms":30,"request_id":"same-id","tenant":"45b3e9dd6490eac7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.276Z","id":"req-c","stage":"add","mode":"offline","status":200,"elapsed_ms":31,"request_id":"same-id","tenant":"0419236116e37afe"}
+{"event":"http_request","at":"2026-09-06T18:54:54.277Z","id":"req-d","stage":"add","mode":"offline","status":200,"elapsed_ms":32,"request_id":"same-id","tenant":"4e23c59655b4335f"}
+{"event":"http_request","at":"2026-09-06T18:54:54.277Z","id":"req-e","stage":"add","mode":"offline","status":200,"elapsed_ms":33,"request_id":"same-id","tenant":"ee66f5fbd7f6daa0"}
+{"event":"http_request","at":"2026-09-06T18:54:54.278Z","id":"req-f","stage":"add","mode":"offline","status":200,"elapsed_ms":34,"request_id":"same-id","tenant":"0bbd31e03bd2047d"}
+{"event":"http_request","at":"2026-09-06T18:54:54.279Z","id":"req-g","stage":"add","mode":"offline","status":200,"elapsed_ms":34,"request_id":"same-id","tenant":"ec98fcf370a99bc2"}
+{"event":"http_request","at":"2026-09-06T18:54:54.280Z","id":"req-h","stage":"add","mode":"offline","status":200,"elapsed_ms":35,"request_id":"same-id","tenant":"b1b7b32d9d240ff3"}
+{"event":"http_request","at":"2026-09-06T18:54:54.281Z","id":"req-i","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"139795a7241e72de"}
+{"event":"http_request","at":"2026-09-06T18:54:54.282Z","id":"req-j","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"45b3e9dd6490eac7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.283Z","id":"req-k","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0419236116e37afe"}
+{"event":"http_request","at":"2026-09-06T18:54:54.284Z","id":"req-l","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"4e23c59655b4335f"}
+{"event":"http_request","at":"2026-09-06T18:54:54.285Z","id":"req-m","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"ee66f5fbd7f6daa0"}
+{"event":"http_request","at":"2026-09-06T18:54:54.286Z","id":"req-n","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"0bbd31e03bd2047d"}
+{"event":"http_request","at":"2026-09-06T18:54:54.287Z","id":"req-o","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"ec98fcf370a99bc2"}
+{"event":"http_request","at":"2026-09-06T18:54:54.287Z","id":"req-p","stage":"search","mode":"offline","status":200,"elapsed_ms":1,"tenant":"b1b7b32d9d240ff3"}
+✔ concurrent user writes are serialized and remain searchable (165.955583ms)
+{"event":"http_request","at":"2026-09-06T18:54:54.384Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":11,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.388Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":4,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.470Z","id":"req-1","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.473Z","id":"req-2","stage":"search","mode":"offline","status":200,"elapsed_ms":3,"tenant":"0bfe935e70c321c7"}
+✔ committed state survives restart including forgotten content (175.778125ms)
+{"event":"http_request","at":"2026-09-06T18:54:54.559Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":11,"request_id":"a","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.562Z","id":"req-2","stage":"add","mode":"offline","status":200,"elapsed_ms":2,"request_id":"b","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.566Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":4,"tenant":"0bfe935e70c321c7"}
+✔ quoted and hypothetical forgetting never mutates real memory (91.886625ms)
+✔ an incorrect numeric offset for a unique literal quote is resolved before verification (27.184959ms)
+✔ offset recovery cannot select repeated occurrences or borrow another message (3.835167ms)
+✔ a unique capitalization copying error uses the declared human span before semantic verification (2.458541ms)
+✔ case-insensitive recovery cannot choose among repeated spans or change the declared speaker (3.155375ms)
+✔ raw coverage candidates exclude assistants, commands and all declared fact witnesses (16.532708ms)
+✔ source-backed tuples require opted-in exact human references and an explicit classification (1.232916ms)
+✔ one participant raw witness cannot cover another participant or replace missing core facts (0.734667ms)
+✔ coverage certificates bind candidate changes and cannot survive a rejected sibling (0.4775ms)
+✔ source-first configuration requires indexed hybrid raw evidence and the coverage protocol (0.408ms)
+✔ v10 real preparation flow requires independent raw coverage and atomic indexed witnesses (24.056375ms)
+✔ coverage cannot be fabricated by bypassing the independent verifier (1.370208ms)
+✔ authorized full erasure discharges raw coverage without requiring the forgotten witness to remain indexed (0.992958ms)
+✔ partial authorized erasure still requires the exact independent survivor in the index (2.493791ms)
+✔ removing more than the authorized raw interval is still rejected (2.845458ms)
+✔ uniform compact decisions resolve the untouched original text, including Unicode and whitespace (1.170625ms)
+✔ mixed compact decisions erase all selected spans and retain independent same-name neighbors (0.292334ms)
+✔ missing, repeated, overlapping, rewritten and Unicode-splitting erasure quotes reject (0.399584ms)
+✔ compact uncertainty and mixed facts cannot produce a deletion plan (0.095667ms)
+✔ compact protocol requires every candidate exactly once and rejects extra decision fields (0.175417ms)
+✔ total transmitted capacity counts repeated tables across batches and rejects before any model call (12.971958ms)
+✔ reference tables reconstruct every candidate including different boundaries on the same source (0.2075ms)
+✔ packed batch capacity is checked on transmitted JSON and never drops repeated source-boundary pairs (27.326083ms)
+✔ quote repair preserves verdicts, valid siblings and the original response (0.45425ms)
+✔ all semantic decisions must be resolved before any quote defect is repairable (0.161375ms)
+✔ quote patches reject omitted, duplicate, uncertain, nonliteral and overlapping repairs (0.325916ms)
+✔ source batches run at bounded concurrency and merge original indices despite reversed completion (19.292542ms)
+✔ a failed classification cancels and drains running siblings without starting remaining batches (13.433833ms)
+✔ one global quotation repair covers defects in separate batches and preserves semantic classifications (4.049041ms)
+✔ later semantic uncertainty prevents any quotation repair even with a completed earlier defective batch (3.039417ms)
+✔ global repair is bounded to eight defects and rejects missing, duplicate, foreign or uncertain patches (43.608167ms)
+✔ external cancellation, empty work and invalid configuration do not publish partial plans (0.661167ms)
+✔ deadline cancellation during classification or global repair rejects late model successes (38.515708ms)
+✔ joint review includes every authorization and fixed erased obligation exactly once per source (1.613041ms)
+✔ one joint partition maps back to complete original coverage and preserves independent neighbors (1.244166ms)
+✔ joint review rejects the observed omitted style witness without another semantic sampling (0.486375ms)
+✔ identical words belonging to different sources, kinds or contexts are never merged (6.408291ms)
+✔ groups stay indivisible across batches and out of order responses preserve original indices (59.451125ms)
+✔ missing, duplicated, uncertain and nonliteral grouped rows cannot publish a partial plan (0.999125ms)
+✔ joint literal repair receives all boundaries and retains fixed decisions and original identity (0.436208ms)
+✔ joint mode is opt in, configuration constrained, and cancellation and original capacity remain enforced (0.601333ms)
+✔ shared boundary table losslessly reconstructs every source authorization and its own matching words (0.577709ms)
+✔ every batch carries complete local reference tables including repeated authorizations (39.928292ms)
+✔ source erasure removes old assistant paraphrases and preserves unextracted mixed-sentence neighbors (50.202834ms)
+✔ missing or uncertain source partitions cannot be committed and later echoes remain checked (20.703167ms)
+✔ source plan rejects stale raw evidence and rolls back source cuts with the transaction (13.974333ms)
+✔ exact partitions reject changed text, duplicates, missing coverage, mixed facts and split Unicode (0.286416ms)
+✔ v4 cannot silently reuse a pre-existing v3 directory (0.250333ms)
+✔ candidate capacity fails instead of truncating source coverage (21.295583ms)
+✔ source work capacity uses complete transmitted batches instead of repeated authorization copies (117.364416ms)
+✔ explicit restoration of the authorized value survives v4 source checks without reviving old raw text (12.226791ms)
+✔ source batches obey payload limits and preserve every original candidate index (30.663917ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=false (94.226333ms)
+✔ large source cleanup is atomic across batches; workers=1, reject final batch=true (54.452084ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=false (91.310917ms)
+✔ large source cleanup is atomic across batches; workers=3, reject final batch=true (45.807625ms)
+✔ verified erased facts are not rejudged, while all their original sources still undergo cleanup (13.470375ms)
+✔ source scope receives surviving fact meanings while never exempting a retired witness (9.444833ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=false (70.941834ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=1, repeat=true (77.514375ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=false (78.445709ms)
+✔ source quote repair shares cancellation and permits one global repair: workers=3, repeat=true (80.367833ms)
+✔ a certified erased fact cannot keep every original witness intact behind a reviewed source (8.6415ms)
+✔ later writes never reapply a historical erased span over a retained mixed-source neighbor (13.541375ms)
+✔ a newly erased nonlexical value still receives deterministic unreviewed source cleanup (13.716417ms)
+✔ complete batches preserve every original UTF-16 source within model input limits (41.1975ms)
+✔ closure catches an echo screened irrelevant and binds every final cut to complete review (1385.257083ms)
+✔ missing screening, foreign global targets, closure omissions and ownership vetoes reject (20.822625ms)
+✔ closure cannot retain an authorized target then report success (21.485667ms)
+✔ bounded worker phases order global resolution before closure and drain cancelled siblings (52.074042ms)
+✔ ordinary global decisions have no closure or source deletion authority (29.213333ms)
+✔ v8 validates full-history proof at atomic commit, preserving state on tamper and rollback (124.17875ms)
+✔ historical catalog is complete and deterministic, including non-searchable sources across sessions (16.968375ms)
+✔ historical source cuts are revalidated for fact overlaps and cannot target a future current assistant (1.618292ms)
+✔ v7 erases historical assertions and cross-session echoes atomically while preserving true records and neighbors (47.795583ms)
+✔ complete ordinary route bypasses large historical screening but resolves no forget obligation (9.016666ms)
+✔ routing rejects incomplete, duplicate, invented, assistant and future witnesses (2.524667ms)
+✔ request, facts and full history identity changes invalidate routing proof (4.281541ms)
+✔ source review and mixed routing cannot bypass complete historical proof or promote ordinary to source cuts (24.601458ms)
+✔ v9 requires routing dependencies and fresh directory (0.442541ms)
+✔ ordinary route cannot certify unknown forget as no-op even when extraction and semantic stubs omit it (3.282292ms)
+✔ v9 validates routing at atomic commit and refuses reuse of v8 storage (30.01675ms)
+✔ atomic v9 commit rejects an all-ordinary proof with omitted operations before any mutation (7.895667ms)
+✔ explicit no-store is retirement; reported, quoted and conditional requests cannot authorize source operations (13.658333ms)
+✔ source operation rejects incomplete/uncertain decisions, future targets and malformed cuts (5.7915ms)
+✔ source plan binds tenant/request/content and refuses overlap with a fact witness (1.583791ms)
+✔ source-only removal preserves true facts through rollback, retry, restart and every stored retrieval surface (54.882083ms)
+✔ v6 rejects missing/tampered plans and existing v5 directories (10.42575ms)
+✔ ordinary decisions cannot satisfy missing genuine forget operations (2.107291ms)
+✔ source operation input bounds the transmitted facts, not hidden embedding vectors (8.511958ms)
+✔ resolved source context is sent to the checker and invalidates reuse when it changes (3.558917ms)
+✔ negated summaries cannot reintroduce assistant-only details; independently stated user details are preserved (0.429833ms)
+✔ source tables losslessly partition original UTF-16 text, including metadata, long sentences and surrogate boundaries (11.617125ms)
+✔ expanded references retain the complete qualification and selected offsets for independent verification (11.498292ms)
+✔ references reject forged, repeated, future, assistant, metadata-only and mixed-encoding witnesses (3.599667ms)
+✔ literal subclause escape requires an actual unique same-message target and never relocates an absent quote (0.712917ms)
+✔ reference offsets select one occurrence; legacy quote-only witnesses retain all occurrences (1.147333ms)
+✔ semantic patches receive original messages and keep resolved reference offsets on unchanged facts (3.031875ms)
+✔ earlier repeated source can bind a same-chunk retirement; later occurrence fails preparation and transaction chronology (19.027083ms)
+✔ same-sentence remember-and-forget escape erases its target and preserves an independent neighboring fact (11.86725ms)
+✔ fault at each transactional boundary leaves no facts, source, index or receipt (42.372375ms)
+✔ calendar normalization preserves day/month/year/week precision and calendar boundaries (3.523042ms)
+✔ evidence states an event date without displaying the next day as a competing event date (0.224208ms)
+✔ remember event observation time is separate from the historical date described by its target (44.936208ms)
+✔ per-message session anchors survive chunking without applying the last header to earlier facts (19.77475ms)
+✔ ordinary timestamps advance the anchor; synthetic labels never anchor relative event dates (15.503292ms)
+✔ month precision does not invent a day or choose one state within an uncertain transition (20.849333ms)
+✔ late narration cannot replace a newer state and a plan remains tentative after its date (16.12325ms)
+✔ operation events retain intermediate updates and distinguish corrections from true history (16.846417ms)
+✔ forget removes values and derived reflection from every event view; restore includes only new authorization (27.870375ms)
+✔ event projection is transactional and query planning selects explicit operation and trajectory views (18.285417ms)
+✔ compatible detail survives duplicate-source merging followed by a single-valued routine (54.820334ms)
+✔ exclusive later state replaces the old value while preserving its legitimate history (10.883459ms)
+✔ exclusive backdated information cannot displace a later known state (14.710792ms)
+✔ exclusive states at the same effective time remain conflicted rather than picking a winner (14.371125ms)
+✔ uncertain implicit relationship preserves grounded statements with unresolved current state (20.630541ms)
+✔ a missing or stale transition plan cannot publish facts, sources, events or a receipt (27.434291ms)
+✔ v5 rejects reuse of an existing v4 directory (15.156666ms)
+✔ transition witnesses and exact coverage cannot be forged or truncated (15.14875ms)
+✔ an uncertain relationship still requires valid original-source witness indexes (12.739917ms)
+✔ all implicit pairs are bounded without silently dropping excess comparisons (10.615959ms)
+✔ verified explicit correction and a tentative future state retain their existing lifecycle semantics (20.620208ms)
+✔ forget and explicit restore still erase raw details without resurrecting old sources in v5 (18.409708ms)
+✔ an unresolved implicit preference cannot cancel an authorized unrelated forget (23.621875ms)
+✔ an explicit correction can resolve an uncertain value even when corroboration merges into a duplicate (21.722ms)
+✔ transition transport labels each witness without changing its fact or accepted slot meaning (20.318834ms)
+{"event":"http_request","at":"2026-09-06T18:54:53.938Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":39,"request_id":"lost-reply","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.075Z","id":"req-1","stage":"add","mode":"offline","status":200,"elapsed_ms":13,"request_id":"lost-reply","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:54.082Z","id":"req-2","stage":"add","mode":"offline","status":409,"elapsed_ms":1,"request_id":"lost-reply","tenant":"0bfe935e70c321c7","error_code":"REQUEST_CONFLICT"}
+{"event":"http_request","at":"2026-09-06T18:54:54.088Z","id":"req-3","stage":"search","mode":"offline","status":200,"elapsed_ms":6,"tenant":"0bfe935e70c321c7"}
+✔ lost HTTP response after commit remains idempotent across a service restart (344.972042ms)
+✔ compact tuples resolve exact sources and replacement pairs into the full strict validator (2.088958ms)
+✔ fact source slots select declared human sources, not message indexes or assistant evidence (0.669334ms)
+✔ machine-only source references and unsupported modalities still reject a fact (0.446375ms)
+✔ out-of-range IDs, extra tuple fields and missing arrays cannot make positive certificates (8.257958ms)
+✔ a malformed earlier array cannot erase a valid later missing-message rejection (0.732541ms)
+✔ valid fact rejection survives a malformed sibling and creates no positive cache (0.700125ms)
+✔ a local repair uses compact scoped checks with full context and labeled source/target references (0.595625ms)
+✔ format changes invalidate certificates and terse format cannot impersonate verbose output (0.909209ms)
+✔ an invalid coverage reference is a protocol error when grounded source-linked items exist (0.550042ms)
+✔ true missing content survives a sibling coverage-reference protocol failure without resampling (0.889416ms)
+✔ strict verification requests require all four arrays without changing extraction format (29.806959ms)
+✔ schema-conforming semantic rejection is never resampled and transport mode changes invalidate passes (27.877917ms)
+✔ unsupported strict schema fails once without silently downgrading the request (3.085709ms)
+✔ erasure scope uses the verifier model and its own strict decision schema (4.752292ms)
+✔ one repaired fact rechecks that fact and its message while preserving full input context (4.300584ms)
+✔ an unchanged rejected item cannot be passed by resampling the checker (1.248417ms)
+✔ transitive target changes invalidate dependent facts, operations, replacements and coverage (1.724417ms)
+✔ request, tenant, source and model identity changes cannot reuse certificates (1.205375ms)
+✔ deletion and index remapping recheck the remaining fact and removed message coverage (0.583209ms)
+✔ adding a fact invalidates its message coverage even when old facts remain unchanged (0.515916ms)
+✔ malformed checks create no positive certificate; omitted scoped checks cannot be filled by stale results (3.422958ms)
+✔ model output cannot replace a cached check or inject a forged certificate (0.598125ms)
+✔ missing and cyclic referenced evidence is rejected before model invocation (0.492375ms)
+✔ concurrent misuse of one session cannot certify a stale in-flight request (0.509625ms)
+✔ disabling positive reuse retains semantic rejection locks (0.439167ms)
+✔ Extractor shares a session only within prepare and honors the reuse ablation (26.50325ms)
+✔ verifier route changes invalidate certificates while extraction-only routing does not (0.509792ms)
+✔ malformed extraction retries route to repair even when a complete object is required (0.834334ms)
+✔ an explicit second repair round fills new omissions while preserving validated earlier evidence (1.661542ms)
+✔ two-round mode remains bounded and cannot resample an unchanged rejected proposal (0.721375ms)
+✔ retention context is visible without target operations and invalidates cached coverage on state changes (1.793625ms)
+✔ machine metadata is not human authorization, even if a model approves it (0.790542ms)
+✔ every operation, replacement and participant message needs a distinct verdict (0.426083ms)
+✔ extra assistant acknowledgements cannot substitute for required participant checks (3.260834ms)
+✔ semantic rejection repairs an otherwise structurally valid proposal; repeated rejection fails before commit (24.35725ms)
+✔ represented personal statement must cite a proposal item sourced to that message (0.334417ms)
+✔ ambiguous covered protocol is repaired once without rerunning extraction or hiding semantic rejection (1.599167ms)
+✔ a failed repair after semantic rejection cannot escape through offline fallback (0.380125ms)
+✔ compact successful checks retain coverage and reference enforcement (0.16875ms)
+✔ known semantic rejection survives malformed later checks without a favorable protocol resample (0.492958ms)
+✔ same HTTP-shaped request resumes the original rejection and commits exactly once (110.531959ms)
+✔ three continuation attempts remain bounded and cannot regenerate the rejected prefix (82.311625ms)
+✔ semantic exhaustion is terminal and is not retried as a transport interruption (74.892541ms)
+✔ server restart cannot replace a lost rejected prefix with a new model vote (137.441958ms)
+✔ another committed write invalidates stale continuation before it can regenerate (72.657875ms)
+✔ a different tenant commit cannot invalidate or consume this tenant prefix (80.708ms)
+✔ permanent initial model failure cannot commit the ordinary offline fallback in continuation mode (84.344375ms)
+✔ bounded malformed output repairs cannot become an offline success in continuation mode (68.402375ms)
+✔ disabling continuation after restart cannot bypass a recorded rejected preparation (133.972542ms)
+{"event":"http_request","at":"2026-09-06T18:54:56.317Z","id":"req-1","stage":"add","mode":"enhanced","status":503,"elapsed_ms":1551,"request_id":"r","tenant":"0bfe935e70c321c7","error_code":"WRITE_CONTINUATION_PENDING"}
+{"event":"http_request","at":"2026-09-06T18:54:56.345Z","id":"req-2","stage":"add","mode":"enhanced","status":200,"elapsed_ms":25,"request_id":"r","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:56.348Z","id":"req-3","stage":"add","mode":"enhanced","status":200,"elapsed_ms":1,"request_id":"r","tenant":"0bfe935e70c321c7"}
+✔ HTTP retries resume after actual SDK connection failures without regenerating the rejected prefix (1705.708416ms)
+{"event":"http_request","at":"2026-09-06T18:54:56.444Z","id":"req-1","stage":"add","mode":"enhanced","status":503,"elapsed_ms":21,"request_id":"r","tenant":"0bfe935e70c321c7","error_code":"WRITE_CONTINUATION_PENDING"}
+{"event":"http_request","at":"2026-09-06T18:54:56.457Z","id":"req-2","stage":"add","mode":"enhanced","status":200,"elapsed_ms":12,"request_id":"r","tenant":"0bfe935e70c321c7"}
+{"event":"http_request","at":"2026-09-06T18:54:56.460Z","id":"req-3","stage":"add","mode":"enhanced","status":200,"elapsed_ms":0,"request_id":"r","tenant":"0bfe935e70c321c7"}
+✔ HTTP retries resume after actual SDK provider_stream failures without regenerating the rejected prefix (109.085916ms)
+✔ successful prefix including negative verifier decisions replays without semantic voting (1.578875ms)
+✔ skipping an earlier verdict cannot certify a successful continuation (0.261667ms)
+✔ changed input is not a cache hit and cached objects cannot be mutated by consumers (0.159042ms)
+✔ permanent errors and semantic failures do not gain transport continuation (10.323333ms)
+✔ inner model deadline can resume but caller cancellation cannot (0.241583ms)
+✔ parallel calls are isolated by asynchronous attempt context (0.182ms)
+✔ cache eviction, expiry and tenant mutation fail closed without retaining raw packets (0.334375ms)
+✔ durable ledger refuses expired, lost, changed, terminal and excess continuation attempts (2.594292ms)
+✔ a deadline that coincides with a permanent provider error cannot make it retryable (0.159209ms)
+✔ complete late JSON is retained for replay without publishing after the inner deadline (0.17825ms)
+ℹ tests 352
+ℹ suites 0
+ℹ pass 352
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6352.720875

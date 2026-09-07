@@ -1,0 +1,137 @@
+{
+  "protocol": "paired-query-quality-plan-v1",
+  "profiles": [
+    "sources",
+    "rerank",
+    "coverage",
+    "events",
+    "conditional",
+    "sources-r2",
+    "rerank-r2",
+    "coverage-r2",
+    "events-r2",
+    "conditional-r2",
+    "sources-r3",
+    "rerank-r3",
+    "coverage-r3",
+    "events-r3",
+    "conditional-r3"
+  ],
+  "benchmarks": [
+    "locomo",
+    "memops"
+  ],
+  "pairs": [
+    {
+      "baseline": "sources",
+      "candidate": "rerank",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "rerank",
+      "candidate": "coverage",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "coverage",
+      "candidate": "events",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "events",
+      "candidate": "conditional",
+      "kind": "query_bundle"
+    },
+    {
+      "baseline": "sources-r2",
+      "candidate": "rerank-r2",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "rerank-r2",
+      "candidate": "coverage-r2",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "coverage-r2",
+      "candidate": "events-r2",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "events-r2",
+      "candidate": "conditional-r2",
+      "kind": "query_bundle"
+    },
+    {
+      "baseline": "sources-r3",
+      "candidate": "rerank-r3",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "rerank-r3",
+      "candidate": "coverage-r3",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "coverage-r3",
+      "candidate": "events-r3",
+      "kind": "query_component"
+    },
+    {
+      "baseline": "events-r3",
+      "candidate": "conditional-r3",
+      "kind": "query_bundle"
+    },
+    {
+      "baseline": "sources",
+      "candidate": "sources-r2",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "sources",
+      "candidate": "sources-r3",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "rerank",
+      "candidate": "rerank-r2",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "rerank",
+      "candidate": "rerank-r3",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "coverage",
+      "candidate": "coverage-r2",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "coverage",
+      "candidate": "coverage-r3",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "events",
+      "candidate": "events-r2",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "events",
+      "candidate": "events-r3",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "conditional",
+      "candidate": "conditional-r2",
+      "kind": "query_repeat"
+    },
+    {
+      "baseline": "conditional",
+      "candidate": "conditional-r3",
+      "kind": "query_repeat"
+    }
+  ],
+  "scope": "Three query repeats share one complete ingestion. Adjacent events-to-conditional changes multiple query policies and is a bundle. Repeat comparisons do not increase the number of independent backgrounds. Full acceptance, B1/U3 controls, candidate grids, human calibration and heldout are separate pending gates."
+}

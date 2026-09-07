@@ -1,0 +1,38 @@
+{
+  "checked_at": "2026-09-07T03:12:29.528835+00:00",
+  "formal_release": false,
+  "archive": "delivery/v1-b398a63/candidate-source-832ec2d.tar.gz",
+  "archive_sha256": "3a234d0437e6462d152f64711280dc0eb4b501bc73389372c8e2171fc92802e2",
+  "archive_bytes": 11045285,
+  "verified_files": 3381,
+  "source_commits": {
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678",
+    ".": "832ec2d0abc23e567042c4c7cfa725d372e7b720"
+  },
+  "recursive_clone_from_actual_archive": "passed",
+  "three_repository_fsck": "passed",
+  "configured_credential_scan": "passed",
+  "git_history_scan": [
+    {
+      "repository": "agent-memory-eval.git",
+      "reachable_objects_scanned": 263
+    },
+    {
+      "repository": "agent-memory-service.git",
+      "reachable_objects_scanned": 1170
+    },
+    {
+      "repository": "agent-memory-workspace.git",
+      "reachable_objects_scanned": 1860
+    }
+  ],
+  "judge_teardown_verified": true,
+  "remaining_gates": [
+    "long background and lifecycle acceptance",
+    "full 1000-question evaluation and audit",
+    "formal release readiness and final package deployment"
+  ],
+  "scope": "Source handoff only. Runtime archives are separate; no new deployment or model evaluation claimed.",
+  "verification_script_sha256": "c930a80eff4d4366581abcbc72553aa856d19855b6ef7f3b3424b0ed2497e2e9"
+}

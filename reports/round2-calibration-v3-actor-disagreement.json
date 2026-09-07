@@ -1,0 +1,155 @@
+{
+  "protocol": "v3-audit-same-input-actor-disagreement-v1",
+  "model": "gpt-5.5",
+  "input_sha256": "c3cbedfab702571a33bc6779ea560dcba4c86c357fc326e152cc184c1d423e1b",
+  "exact_same_model_input": true,
+  "prompt_sha256": [
+    "0a161c52f64c087878bfa0a504a08cd868422d98cd32b09a234b98da883f3afd",
+    "0a161c52f64c087878bfa0a504a08cd868422d98cd32b09a234b98da883f3afd"
+  ],
+  "input_hashes": {
+    "eval/configs/calibration-controls-v3.json": "644e3d7c1f585a2d65d61450db1c2ce42754ff255612fa26acfaf6b0a0adf1ae",
+    "eval/configs/calibration-actor-error-controls-v3.json": "9972b1ea238dc7526cf35b3081ad70871fa74aecffaf75e9b3de2c70a5cfc80c",
+    "eval/artifacts/round2-judge-controls48-gpt55-v3/manifest.json": "a39e3c74b17888048b60f1402b3eac3f501526b34e998343a4bfb09ff8bc5da1",
+    "eval/artifacts/round2-judge-controls48-gpt55-v3/results.jsonl": "0d8d1615dba7268439601b0b3123defb1a745ed7d5ba9853bbb40c667f278d1b",
+    "eval/artifacts/round2-judge-actor-errors11-gpt55-v3/manifest.json": "66bed67226cb9b4b273d51a842ce29e6e2a6522fee49ee70a101df518dfbc4a6",
+    "eval/artifacts/round2-judge-actor-errors11-gpt55-v3/results.jsonl": "94acebe95c451e67cea49d1dcdbdbde0500806238ba63b17618c8882f4f69701"
+  },
+  "verdicts": [
+    {
+      "run": "eval/artifacts/round2-judge-controls48-gpt55-v3",
+      "qid": "control-v1/StateTrajectory/paraphrase",
+      "correct": false,
+      "criteria": [
+        {
+          "id": "reference",
+          "requirement": "present",
+          "verdict": "violated",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The answer gives the ordered cities, but it does not correctly state that Leeds is the user's current city; the first-person current-city statement refers to the assistant, not the user."
+        },
+        {
+          "id": "must_include:0",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer places Bristol before York."
+        },
+        {
+          "id": "must_include:1",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer places York before Leeds."
+        },
+        {
+          "id": "must_include:2",
+          "requirement": "present",
+          "verdict": "violated",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The answer does not state that Leeds is current for the user; its current-residence wording is first-person."
+        },
+        {
+          "id": "must_not_include:0",
+          "requirement": "absent",
+          "verdict": "satisfied",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The answer does not say York is current."
+        },
+        {
+          "id": "must_not_include:1",
+          "requirement": "absent",
+          "verdict": "satisfied",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The forbidden token is absent."
+        }
+      ]
+    },
+    {
+      "run": "eval/artifacts/round2-judge-actor-errors11-gpt55-v3",
+      "qid": "control-v3/actor/direct-I",
+      "correct": true,
+      "criteria": [
+        {
+          "id": "reference",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer gives the ordered city changes Bristol, then York, then Leeds, and identifies Leeds as the current city."
+        },
+        {
+          "id": "must_include:0",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer places Bristol before York."
+        },
+        {
+          "id": "must_include:1",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer places York before Leeds."
+        },
+        {
+          "id": "must_include:2",
+          "requirement": "present",
+          "verdict": "satisfied",
+          "answer_span_ids": [
+            0
+          ],
+          "answer_quotes": [
+            "First Bristol, next York, and finally Leeds, where I now live."
+          ],
+          "reason": "The answer states Leeds is where the user now lives, making it current."
+        },
+        {
+          "id": "must_not_include:0",
+          "requirement": "absent",
+          "verdict": "satisfied",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The answer does not state that York is current."
+        },
+        {
+          "id": "must_not_include:1",
+          "requirement": "absent",
+          "verdict": "satisfied",
+          "answer_span_ids": [],
+          "answer_quotes": [],
+          "reason": "The answer does not include the forbidden string."
+        }
+      ]
+    }
+  ],
+  "scope": "The same unframed first-person answer received opposite verdicts under the same v3 prompt. The second probe explicitly challenged the original assistant-authored control label, but labels/qids were excluded from model input. Neither verdict is promoted to human truth. Original control mismatches are retained; full 199-case v3 audit gate remains unmet."
+}

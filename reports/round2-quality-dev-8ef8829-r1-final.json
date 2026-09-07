@@ -1,0 +1,129 @@
+{
+  "protocol": "completed-exposed-development-review-v1",
+  "run_dir": "eval/artifacts/round2-quality-dev-8ef8829-r1-facts-memops",
+  "service_commit": "8ef8829b3c4ac1dcafc93b2056ded04bdf836315",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "started_at": "2026-09-06T07:05:44.258Z",
+  "finished_at": "2026-09-06T07:21:48.165Z",
+  "input_artifact_sha256": {
+    "manifest.json": "939c3259dc501c426a3a8b941e34b9e492546b72ae3dc59875f1299bd7f731e1",
+    "metrics.json": "944f2e75b61ec1de515dc646b14ac730fb758072666e5e9fd7db751667f3c94b",
+    "ingest.jsonl": "32cc4be83ce4d73a0e4635b8543136561b0b45151316bac07e4ffd9200d44ea3",
+    "judgments.jsonl": "c71b85bd8c45f68fdf384922d32d30b13e300454fe6e7544810699be9fe602e9",
+    "requests.jsonl": "814d46a49fe26e396006945842e6520b55c1ae0c45c010a9fb84772dc1571cd5"
+  },
+  "planned_questions": 30,
+  "judged": 0,
+  "correct": 0,
+  "service_error_questions": 30,
+  "accuracy_over_planned": 0,
+  "judged_accuracy": null,
+  "add_status": {
+    "ok": 62,
+    "failed": 5
+  },
+  "samples": [
+    {
+      "sample": "E10_reflect",
+      "adds": {
+        "ok": 9,
+        "failed": 1
+      },
+      "questions": 6,
+      "question_status": {
+        "service_error": 6
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:E10_reflect:segment-10:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}",
+          "elapsed_ms": 28521.518375000014
+        }
+      ]
+    },
+    {
+      "sample": "B05_forget",
+      "adds": {
+        "ok": 18,
+        "failed": 1
+      },
+      "questions": 10,
+      "question_status": {
+        "service_error": 10
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:B05_forget:segment-18:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired within the request budget\"}}",
+          "elapsed_ms": 72519.500542
+        }
+      ]
+    },
+    {
+      "sample": "F07_trajectory_ops",
+      "adds": {
+        "ok": 17,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:F07_trajectory_ops:segment-18:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}",
+          "elapsed_ms": 36529.88041699992
+        }
+      ]
+    },
+    {
+      "sample": "F07_update",
+      "adds": {
+        "ok": 14,
+        "failed": 1
+      },
+      "questions": 4,
+      "question_status": {
+        "service_error": 4
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:F07_update:segment-14:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}",
+          "elapsed_ms": 84376.94466700009
+        }
+      ]
+    },
+    {
+      "sample": "E10_remember",
+      "adds": {
+        "ok": 4,
+        "failed": 1
+      },
+      "questions": 5,
+      "question_status": {
+        "service_error": 5
+      },
+      "failed_adds": [
+        {
+          "request_id": "round2-quality-dev-8ef8829-r1-facts:memops:E10_remember:segment-5:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Invalid or uncertain implicit transition evidence\"}}",
+          "elapsed_ms": 86258.78616699995
+        }
+      ]
+    }
+  ],
+  "paired_retrieval_reuse_eligible": false,
+  "scope": "One complete run on five exposed development backgrounds. All five terminate during ingestion, all 30 questions retain service_error in the denominator. Four generic v1 transition errors cannot be separated into uncertain semantics or malformed witnesses because original model bodies were not saved. Later v3 source changes did not hot reload into service8ef8829. Not heldout quality, not a replacement for historical331/1000."
+}

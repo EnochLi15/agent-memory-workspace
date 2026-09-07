@@ -1,0 +1,152 @@
+{
+  "protocol": "round2-resilient-source-quality-ladder-v1",
+  "policy": "Complete exposed development regression and fixed-budget query ablations on shared-joint-erasure ingestion. Source-first ingestion stays identical across sources, rerank, coverage, events and conditional profiles. 32 items/6000 tokens and fixed Answer/Judge throughout. Reuse allowed only after every add succeeds and clean source identities match. Each r2/r3 profile repeats inference on identical ingestion. New ingestion is required for changed write semantics; do not call this a facts-only or B1 comparison. This separate candidate spec opts into three typed transient model transport attempts (default remains two), with abortable bounded waits under the original request deadline. Input, model, final evidence budget and semantic repair rounds are unchanged. Record additional provider attempts/cost; no semantic rejection resampling. Requires fresh ingestion with the new service commit.",
+  "evaluation": {
+    "answer_model": "gpt-5.4-mini",
+    "judge_model": "gpt-5.4-mini"
+  },
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EXTRACTION_MODEL": "gpt-5.5",
+    "MEMORY_VERIFICATION_MODEL": "gpt-5.5",
+    "MEMORY_REPAIR_MODEL": "gpt-5.5",
+    "MEMORY_LLM_REASONING_EFFORT": "low",
+    "MEMORY_VERIFICATION_FORMAT": "compact",
+    "MEMORY_INCREMENTAL_VERIFICATION": "true",
+    "MEMORY_MAX_REPAIR_ROUNDS": "2",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_ADD_TIMEOUT_MS": "115000",
+    "MEMORY_SEARCH_TIMEOUT_MS": "55000",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RETRIEVAL": "hybrid",
+    "MEMORY_SOURCE_INDEX": "true",
+    "MEMORY_CANDIDATE_LIMIT": "200",
+    "MEMORY_RERANK_CANDIDATES": "80",
+    "MEMORY_RAW_FALLBACK": "true",
+    "MEMORY_RERANK": "false",
+    "MEMORY_COVERAGE_PACKING": "false",
+    "MEMORY_EVENT_VIEW": "false",
+    "MEMORY_EXPERIMENT_LIFECYCLE": "true",
+    "MEMORY_EXPERIMENT_TEMPORAL": "true",
+    "MEMORY_EXPERIMENT_MULTI_HOP": "false",
+    "MEMORY_EXPERIMENT_REFLECTION": "true",
+    "MEMORY_EXPERIMENT_RAW_ONLY": "false",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_schema",
+    "MEMORY_ERASURE_BINDING": "true",
+    "MEMORY_SOURCE_ERASURE": "true",
+    "MEMORY_SEMANTIC_TRANSITIONS": "true",
+    "MEMORY_EXTRACTION_FORMAT": "source_refs",
+    "MEMORY_SOURCE_OPERATIONS": "true",
+    "MEMORY_SOURCE_OPERATION_HISTORY": "true",
+    "MEMORY_SOURCE_OPERATION_BATCHES": "true",
+    "MEMORY_SOURCE_OPERATION_ROUTING": "true",
+    "MEMORY_SOURCE_FIRST": "true",
+    "MEMORY_EXTRACTION_WORKERS": "3",
+    "MEMORY_SOURCE_ERASURE_WORKERS": "3",
+    "MEMORY_SOURCE_ERASURE_GROUPED": "true",
+    "MEMORY_MODEL_TRANSPORT_ATTEMPTS": "3"
+  },
+  "profiles": {
+    "sources": {
+      "environment": {}
+    },
+    "rerank": {
+      "environment": {
+        "MEMORY_RERANK": "true"
+      }
+    },
+    "coverage": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true"
+      }
+    },
+    "events": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true"
+      }
+    },
+    "conditional": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true",
+        "MEMORY_EXPERIMENT_MULTI_HOP": "true",
+        "MEMORY_RELATION_MODE": "conditional",
+        "MEMORY_RERANK_POLICY": "selective",
+        "MEMORY_RERANK_FORMAT": "indices"
+      }
+    },
+    "sources-r2": {
+      "environment": {}
+    },
+    "rerank-r2": {
+      "environment": {
+        "MEMORY_RERANK": "true"
+      }
+    },
+    "coverage-r2": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true"
+      }
+    },
+    "events-r2": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true"
+      }
+    },
+    "conditional-r2": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true",
+        "MEMORY_EXPERIMENT_MULTI_HOP": "true",
+        "MEMORY_RELATION_MODE": "conditional",
+        "MEMORY_RERANK_POLICY": "selective",
+        "MEMORY_RERANK_FORMAT": "indices"
+      }
+    },
+    "sources-r3": {
+      "environment": {}
+    },
+    "rerank-r3": {
+      "environment": {
+        "MEMORY_RERANK": "true"
+      }
+    },
+    "coverage-r3": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true"
+      }
+    },
+    "events-r3": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true"
+      }
+    },
+    "conditional-r3": {
+      "environment": {
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true",
+        "MEMORY_EVENT_VIEW": "true",
+        "MEMORY_EXPERIMENT_MULTI_HOP": "true",
+        "MEMORY_RELATION_MODE": "conditional",
+        "MEMORY_RERANK_POLICY": "selective",
+        "MEMORY_RERANK_FORMAT": "indices"
+      }
+    }
+  }
+}

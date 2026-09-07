@@ -1,0 +1,226 @@
+{
+  "protocol": "source-pipeline-development-review-v1",
+  "captured_at": "2026-09-06T08:14:13.857712+00:00",
+  "source_variants": [
+    {
+      "run": "artifacts/round2-source-batch-replay-6BZtvo",
+      "report_sha256": "548913151bd7d6bf7e7be9d514e9b9baf7e5f30dbd569e5bb1dc333a81606aab",
+      "status": "failed",
+      "error": {
+        "code": "MODEL_OUTPUT",
+        "message": "Incomplete model output"
+      },
+      "elapsed_ms": 50943.325584000006,
+      "remaining_diagnostic_budget_ms": 50939,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 2,
+      "source_decision_replay": null,
+      "scope": "Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-UX86As",
+      "report_sha256": "12e8cb718d4a4361634d095f7ac8bd3ff4a310a678d3cfe48a806398d2da29c1",
+      "status": "failed",
+      "error": {
+        "code": "MODEL_OUTPUT",
+        "message": "Incomplete model output"
+      },
+      "elapsed_ms": 50946.94770800001,
+      "remaining_diagnostic_budget_ms": 50939,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "source_decision_replay": null,
+      "scope": "Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-86zE9v",
+      "report_sha256": "bb8a3a875c8f4bff457c3fe1580827f3a60544d780231e526cb51d0ef44fe0ef",
+      "status": "failed",
+      "error": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Uncertain or invalid compact source erasure effect"
+      },
+      "elapsed_ms": 43544.769625,
+      "remaining_diagnostic_budget_ms": 50939,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "source_decision_replay": null,
+      "scope": "Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-vT60aM",
+      "report_sha256": "f5120d635a4c4bf0395d51714b3003c84c9db3a7132612cda47334786a41bff5",
+      "status": "prepared",
+      "error": null,
+      "elapsed_ms": 1134.675625,
+      "remaining_diagnostic_budget_ms": 7395,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 0,
+      "source_decision_replay": {
+        "run": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-batch-replay-86zE9v",
+        "report_sha256": "bb8a3a875c8f4bff457c3fe1580827f3a60544d780231e526cb51d0ef44fe0ef",
+        "reserved_elapsed_ms": 43544.769625,
+        "used": 30,
+        "omitted": [
+          {
+            "source_id": "04fa6c1c397a0adfdfe9b3a9e50c39379a88e6084535739dd82ed15d73207a49",
+            "kind": "fact",
+            "effect": "erase"
+          },
+          {
+            "source_id": "04fa6c1c397a0adfdfe9b3a9e50c39379a88e6084535739dd82ed15d73207a49",
+            "kind": "fact",
+            "effect": "uncertain"
+          },
+          {
+            "source_id": "31d3470030693fa27a14b0e9ffdcb89869c505b295244e3a4a14764bcaafbb51",
+            "kind": "fact",
+            "effect": "erase"
+          },
+          {
+            "source_id": "31d3470030693fa27a14b0e9ffdcb89869c505b295244e3a4a14764bcaafbb51",
+            "kind": "fact",
+            "effect": "retain"
+          },
+          {
+            "source_id": "31d3470030693fa27a14b0e9ffdcb89869c505b295244e3a4a14764bcaafbb51",
+            "kind": "fact",
+            "effect": "retain"
+          }
+        ]
+      },
+      "scope": "Replay exact upstream model inputs/outputs and saved per-candidate source decisions only when the complete evidence/authorization payload matches. Omitted decisions must concern facts already certified erased by the preceding erasure stage; raw sources remain covered. Reuses model judgments, not a new full model-input replay or fresh benchmark. Both prior component elapsed times are reserved; original extraction was already replayed."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-bNGdWj",
+      "report_sha256": "e401b2098d955b0a9bf5e5665e29da1f098c8fcc7434c49f1751463dfa0c5512",
+      "status": "failed",
+      "error": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Erasure quote must uniquely identify original source text"
+      },
+      "elapsed_ms": 35653.937874999996,
+      "remaining_diagnostic_budget_ms": 50939,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "source_decision_replay": null,
+      "scope": "Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-lPa3LO",
+      "report_sha256": "c0cdea0a2f681e1c8ff8c623fffa42cd0d76447496975640cf0c1b0fbfbe2ccd",
+      "status": "failed",
+      "error": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Compact erasure quotes overlap"
+      },
+      "elapsed_ms": 3081.776458,
+      "remaining_diagnostic_budget_ms": 15285,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "source_decision_replay": {
+        "run": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-batch-replay-bNGdWj",
+        "report_sha256": "e401b2098d955b0a9bf5e5665e29da1f098c8fcc7434c49f1751463dfa0c5512",
+        "reserved_elapsed_ms": 35653.937874999996
+      },
+      "scope": "Replay exact upstream model inputs/outputs and saved per-candidate source decisions only when the complete evidence/authorization payload matches. Omitted decisions must concern facts already certified erased by the preceding erasure stage; raw sources remain covered. Reuses model judgments, not a new full model-input replay or fresh benchmark. Both prior component elapsed times are reserved; original extraction was already replayed."
+    },
+    {
+      "run": "artifacts/round2-source-batch-replay-1g1Mvy",
+      "report_sha256": "e6a3359c5cea7b9bf37f43227a8e064684d83b221180ac8cc0e790a4708cff50",
+      "status": "prepared",
+      "error": null,
+      "elapsed_ms": 3598.5016250000003,
+      "remaining_diagnostic_budget_ms": 15285,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "source_decision_replay": {
+        "run": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-batch-replay-bNGdWj",
+        "report_sha256": "e401b2098d955b0a9bf5e5665e29da1f098c8fcc7434c49f1751463dfa0c5512",
+        "reserved_elapsed_ms": 35653.937874999996,
+        "used": 30,
+        "omitted": []
+      },
+      "scope": "Replay exact upstream model inputs/outputs and saved per-candidate source decisions only when the complete evidence/authorization payload matches. Omitted decisions must concern facts already certified erased by the preceding erasure stage; raw sources remain covered. Reuses model judgments, not a new full model-input replay or fresh benchmark. Both prior component elapsed times are reserved; original extraction was already replayed."
+    },
+    {
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-batch-replay-cRRGIT",
+      "status": "failed",
+      "error": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Uncertain or invalid compact source erasure effect"
+      },
+      "elapsed_ms": 46705.825375,
+      "remaining_diagnostic_budget_ms": 50939,
+      "recorded_generation_calls": 6,
+      "live_generation_calls": 1,
+      "scope": "Exact upstream input/output replay through erasure binding; fresh calls only after the original capacity failure. A fixed 90-second budget is reduced by parent elapsed time, but original extraction was already replayed in the parent. Not end-to-end latency, a fresh full sample or a benchmark score.",
+      "report_sha256": "1e455475038ff54b906beb4464224e588aa6f9e055fb9998cddb6d584dac0fac",
+      "finding": "One assistant message asks generally whether the backup or middle-name situation changes. The classifier returned uncertain_scope against the removed backup-name property. This semantic uncertainty was not quote-repaired or resampled."
+    }
+  ],
+  "successful_transaction_review": {
+    "run": "artifacts/round2-checkpoint-transaction-QlWmpc",
+    "report_sha256": "962604d50892dcf9059f4d1fb0e4674ee6957d50238b68279551e5ce78516442",
+    "state_sha256": "ba7e539cbf7018a1321164e0b59503c28144b576687c19d05c5eaf79f1c24992",
+    "commit_status": "committed",
+    "revision": [
+      18,
+      19
+    ],
+    "erasure_semantics_pass": false,
+    "remaining_raw_leaks": [
+      {
+        "id": "558ffd766222266d59a320eab6ef7a3b453ecb4794f2fdec96e9c4880c5c24eb",
+        "content": "Actually, can you                                   ? We've decided we don't need a backup. Elara is the name, period. There's no scenario where we'd switch at this point. It just felt like keeping Iris on there was hedging for no reason, and we want to commit fully."
+      }
+    ],
+    "remaining_passage_leaks": [
+      {
+        "id": "source-67f261889e7e6944683354eb2256b231cfeeb16d51f11261aac7aa92081e403d",
+        "source_id": "558ffd766222266d59a320eab6ef7a3b453ecb4794f2fdec96e9c4880c5c24eb",
+        "content": "It just felt like keeping Iris on there was hedging for no reason, and we want to commit fully."
+      }
+    ],
+    "retained_current_decisions": [
+      {
+        "id": "bde3ef804ea9dd6fb87e7427fe21a20735eff42fc1433101b29f3706debfb1c5",
+        "content": "We don't need a backup."
+      },
+      {
+        "id": "75d99d7863f79f5ef38bd7bf40a012826ca3fe6b25ad1bee2019c36ec6ee7ff4",
+        "content": "There's no scenario where we'd switch at this point."
+      }
+    ],
+    "finding": "Source partition retained the retired-name hedging clause even though erasure binding certified its fact for deletion. HTTP/transaction success alone is insufficient. The subsequent consistency guard rejects when every located witness of an erased fact remains intact; it does not prove complete semantic deletion."
+  },
+  "fresh_latest_B05_failure": {
+    "run": "artifacts/round2-live-checkpoint-JTtJQK",
+    "report_sha256": "d6fe5919e430aca396a53a3f02734683c24216d6e91b2270e45600004dadac96",
+    "status": "failed",
+    "stage_elapsed_ms": {
+      "extraction": 21936.87175,
+      "verification_initial": 20834.45025,
+      "repair": 21939.417334,
+      "verification_incremental": 17407.096833,
+      "erasure_binding": 5036.716875,
+      "source_erasure_failed": 2676.240959
+    },
+    "finding": "The 90-second total model budget was almost exhausted before source review began. Source review received only about 2.7 seconds. Fixing source output copying cannot alone make this fresh chunk finish."
+  },
+  "scope": "Every variant is exposed-data development. Replayed stages are not fresh full-prefix runs. Preserve failed semantic controls (packed ownership 5/6), failed components and original full-run question denominators. Historical 331/1000 is unchanged.",
+  "latest_service_commit": "96f40bd",
+  "service_tests": {
+    "passed": 198,
+    "total": 198,
+    "report": "reports/round2-source-consistency-service-tests.txt",
+    "sha256": "5f8961d251fdd91c89c07eea86a0f59339ef4db4e040ec65b7a80d6cefc32973"
+  },
+  "latest_actual_lifecycle": {
+    "run": "artifacts/round2-source-lifecycle-EgdnDe",
+    "report_sha256": "9f9760e583601c98d9092fe5de70f595f04851182876b8a69e7fb0d9db371fbc",
+    "steps": 4,
+    "passed": 4,
+    "scope": "Fresh actual HTTP, generation, verification, local embedding and commits on assistant-authored controls; not a full benchmark or independently labeled test."
+  }
+}

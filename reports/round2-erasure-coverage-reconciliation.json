@@ -1,0 +1,59 @@
+{
+  "protocol": "verified-erasure-source-coverage-reconciliation-v1",
+  "candidate_commit": "26ebc1af93f32c286fd206cef0e73839bff4b97c",
+  "frozen_runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-26ebc1a",
+  "baseline": {
+    "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/round2-raw-coverage-diagnostic-tB1Ckd.json",
+    "sha256": "f4b5e7ac1227079372b30c334f9044d4e7049cbb511908de4dcddd501bbc765a",
+    "status": "rejected",
+    "error": {
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Accepted raw coverage was erased, linked to state, or not indexed"
+    },
+    "packets": 8,
+    "rollback_verified": true
+  },
+  "candidate": {
+    "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/round2-raw-coverage-diagnostic-p516gi.json",
+    "sha256": "fb196f3b53c3fbf23e93d6b011b01666c953e27c0835d6c2227cceaa2638ce64",
+    "status": "committed",
+    "packets": 8,
+    "precommit_checks": {
+      "forged_erasure_rejected": true,
+      "injected_index_failure_rolled_back": true
+    },
+    "checks": [
+      {
+        "name": "single_revision",
+        "pass": true
+      },
+      {
+        "name": "receipt_persisted",
+        "pass": true
+      },
+      {
+        "name": "no_degradation",
+        "pass": true
+      },
+      {
+        "name": "erased_appointment_context_absent",
+        "pass": true
+      },
+      {
+        "name": "sms_context_preserved",
+        "pass": true
+      },
+      {
+        "name": "surviving_source_passages_indexed",
+        "pass": true
+      }
+    ],
+    "original_database_unchanged": true
+  },
+  "tests": {
+    "service_passed": 318,
+    "source_coverage_passed": 10,
+    "new_regressions": 3
+  },
+  "scope": "One real failed request replayed with exact saved model decisions and fixture embeddings. Validated erasure can discharge removed incidental raw text; all survivors must be exact independent indexed witnesses. No fresh model test, complete background result, or accuracy claim. Main service/eval remain frozen."
+}

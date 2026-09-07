@@ -1,0 +1,175 @@
+{
+  "protocol": "sealed-memops-background-cohort-v1",
+  "seed": "round2-confirmation-20260906-v1",
+  "per_operation": 3,
+  "normalized_sha256": "7ca1e23170bb59fea18cb491835b9174a061617461827251ad865868a6b2dd18",
+  "exposure_sha256": "bbc4e2ac136489694190f2b165dc5f05ea0afd6418e6f905809750c9d546b6a5",
+  "dataset_sha256": "0137355ac5a1f753a7a928aa6d3902c7b53bde8b53c0e53af217cf024d7c456e",
+  "dataset_path": "artifacts/round2-sealed-memops-v1/memops.json",
+  "selection_fields": [
+    "sample_id",
+    "group_id",
+    "operation"
+  ],
+  "content_printed": false,
+  "full_sessions_and_questions_preserved": true,
+  "reserved_groups": [
+    "A07",
+    "A27",
+    "A33",
+    "B06",
+    "B14",
+    "B23",
+    "B26",
+    "B29",
+    "C03",
+    "C07",
+    "C11",
+    "C22",
+    "D10",
+    "E01",
+    "F14"
+  ],
+  "samples": [
+    {
+      "sample_id": "B26_remember",
+      "group_id": "B26",
+      "sessions": 50,
+      "questions": 12,
+      "record_sha256": "75f5071248e70d6478348c831371da8f814d61263680bbf2b2dd92f88151510c"
+    },
+    {
+      "sample_id": "D10_forget",
+      "group_id": "D10",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "1924e042f5d7c5fa585a7e918e651f4c75bc4f7e6db58ebb8e71e720bd51110a"
+    },
+    {
+      "sample_id": "C07_update",
+      "group_id": "C07",
+      "sessions": 50,
+      "questions": 8,
+      "record_sha256": "2e8fe99cd5abc415cc1222bdb09f99851295113df6ced08f1bed266da819d3bf"
+    },
+    {
+      "sample_id": "B14_reflect",
+      "group_id": "B14",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "561a616e3d223777659b22c45fbdf2ffd4186b15776b3fec7eded53e8b98555c"
+    },
+    {
+      "sample_id": "E01_trajectory_ops",
+      "group_id": "E01",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "a7df85432fa818b966956f030575bea898ba672956d1ac298f0c2bfe674c41ed"
+    },
+    {
+      "sample_id": "A07_remember",
+      "group_id": "A07",
+      "sessions": 50,
+      "questions": 12,
+      "record_sha256": "4725dbbf95020910e2ecfed0733791c168836dcf5b0a2b1e14a85e27cbe768fb"
+    },
+    {
+      "sample_id": "C03_forget",
+      "group_id": "C03",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "b2971326623fbaf1716485a5c37e7b435c9c40b74ab3d755774c45fe858593b2"
+    },
+    {
+      "sample_id": "C22_update",
+      "group_id": "C22",
+      "sessions": 50,
+      "questions": 8,
+      "record_sha256": "c14ffaf80a30a6b2f80d7ed73fddef0b4d6d6b4c4e14e0c2d359f2da7f93902d"
+    },
+    {
+      "sample_id": "A27_reflect",
+      "group_id": "A27",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "26bbc0dedc544ed2417a7e469254937b9ff5571af211c5128e9d5ccefb3d43eb"
+    },
+    {
+      "sample_id": "B29_trajectory_ops",
+      "group_id": "B29",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "2a266346d8ecc7435fb7afc3f2fcda79dafe4930801b6db656b9c6d0dac91793"
+    },
+    {
+      "sample_id": "B23_remember",
+      "group_id": "B23",
+      "sessions": 50,
+      "questions": 12,
+      "record_sha256": "ec27b4efec554a3267bffde8f35f56448e1b9013661d4fdbe9a8a97abb0933da"
+    },
+    {
+      "sample_id": "C11_forget",
+      "group_id": "C11",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "9342416ee9dad53981b8116f90c804829736b1ecaea2d346f374d3931cd4a9dd"
+    },
+    {
+      "sample_id": "A33_update",
+      "group_id": "A33",
+      "sessions": 50,
+      "questions": 8,
+      "record_sha256": "570807ad0e595a8d119cabac45ec8d629b10a3eb58a9420341986483c8b90b92"
+    },
+    {
+      "sample_id": "F14_reflect",
+      "group_id": "F14",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "8c16014f0ac73d84db621db8356a9f03feedf1b0ce5e1d1fb36da4a70bf35ef8"
+    },
+    {
+      "sample_id": "B06_trajectory_ops",
+      "group_id": "B06",
+      "sessions": 50,
+      "questions": 10,
+      "record_sha256": "c93ae9cd78709e59311c28c88a49be26cfa5c9965c49a5368b2eb16a25a4eb75"
+    }
+  ],
+  "planned_questions": 150,
+  "planned_sessions": 750,
+  "category_counts": {
+    "Forget/CandidateDisambiguation": 6,
+    "Forget/OperationApplication": 6,
+    "Forget/OperationTrace": 6,
+    "Forget/StateTransition": 6,
+    "Forget/TargetBinding": 6,
+    "Reflect/CandidateDisambiguation": 6,
+    "Reflect/OperationApplication": 6,
+    "Reflect/OperationTrace": 6,
+    "Reflect/StateTransition": 6,
+    "Reflect/TargetBinding": 6,
+    "Remember/CandidateDisambiguation": 6,
+    "Remember/OperationApplication": 6,
+    "Remember/OperationTrace": 6,
+    "Remember/StateTransition": 12,
+    "Remember/TargetBinding": 6,
+    "TrajectoryOps/OperationApplication": 6,
+    "TrajectoryOps/OperationTrace": 6,
+    "TrajectoryOps/StateTrajectory": 6,
+    "TrajectoryOps/StateTransition": 6,
+    "TrajectoryOps/TargetBinding": 6,
+    "Update/CandidateDisambiguation": 6,
+    "Update/OperationApplication": 6,
+    "Update/OperationTrace": 6,
+    "Update/TargetBinding": 6
+  },
+  "policy": [
+    "All variants of each selected background are reserved from further development.",
+    "Do not inspect questions, references or rubrics before configuration freeze and confirmation.",
+    "All errors remain in the planned denominator. No replacement of difficult backgrounds.",
+    "No recorded exposure is not proof against unlogged inspection or model pretraining.",
+    "Independent human judge calibration and complete development validation remain prerequisites."
+  ]
+}

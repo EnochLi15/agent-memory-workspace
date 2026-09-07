@@ -1,0 +1,57 @@
+{
+  "protocol": "round2-running-regression-observation-v1",
+  "observed_at": "2026-09-06T13:22:19.935033+00:00",
+  "campaign": "round2-resilient-bfec674-dev-r1",
+  "process_observation": "  PID STAT ELAPSED COMM\n81978 S      44:30 node\n81980 S      44:30 node\n",
+  "runs": [
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-locomo",
+      "status": "finished",
+      "planned_questions": 30,
+      "last_add_status_counts": {
+        "ok": 27,
+        "failed": 2
+      },
+      "question_status_counts": {
+        "service_error": 30
+      },
+      "judged": 0,
+      "correct": 0,
+      "terminal_write_failures": [
+        {
+          "request_id": "round2-resilient-bfec674-dev-r1-sources:locomo:conv-44:session-2:1",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}"
+        },
+        {
+          "request_id": "round2-resilient-bfec674-dev-r1-sources:locomo:conv-48:session-16:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}"
+        }
+      ]
+    },
+    {
+      "run_id": "round2-resilient-bfec674-dev-r1-sources-memops",
+      "status": "running",
+      "planned_questions": 30,
+      "last_add_status_counts": {
+        "ok": 100,
+        "failed": 2
+      },
+      "question_status_counts": {
+        "service_error": 16
+      },
+      "judged": 0,
+      "correct": 0,
+      "terminal_write_failures": [
+        {
+          "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:E10_reflect:segment-26:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Accepted raw coverage was erased, linked to state, or not indexed\"}}"
+        },
+        {
+          "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}"
+        }
+      ]
+    }
+  ],
+  "scope": "Point-in-time observation, not final score or proof of ongoing liveness. Main service/eval remain frozen. No concurrent fresh model diagnostics."
+}

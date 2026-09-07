@@ -1,0 +1,76 @@
+{
+  "protocol": "round2-model-retry-review-v1",
+  "service_candidate": "bfec674",
+  "candidate_branch": "improvement/write-continuation",
+  "tests": {
+    "service_passed": 315,
+    "targeted_passed": 42,
+    "red_tests_failed_as_expected": 3
+  },
+  "transport_policy": {
+    "default_attempts": 2,
+    "allowed_attempts": [
+      1,
+      2,
+      3
+    ],
+    "default_wait_ms": [
+      500,
+      1000
+    ],
+    "max_provider_hint_ms": 5000,
+    "same_input_and_model": true,
+    "original_deadline_unchanged": true,
+    "semantic_repair_rounds_unchanged": true,
+    "cross_request_resume": false
+  },
+  "experiment_spec": "configs/round2-resilient-source-quality.json",
+  "locked_repair_control": "reports/round2-locked-repair-semantic-review.json",
+  "fresh_http_controls": [
+    "reports/round2-fresh-failed-add-HgEPBa.json",
+    "reports/round2-fresh-failed-add-fyfrFV.json"
+  ],
+  "status": "candidate_implemented_two_fresh_http_controls_passed",
+  "limitations": [
+    "A same-input diagnostic continuation on frozen 87d67b1 recovered after original repair connection failures; it is not an implemented checkpoint/resume service feature.",
+    "Both fresh HTTP requests succeeded without retries, so neither demonstrates a third-attempt or backoff benefit on the real gateway.",
+    "Three attempts are explicit opt-in, and their configuration invalidates ingestion reuse. Cost comparisons must account for additional attempts.",
+    "Full frozen regression retains all original service errors; complete fresh ingestion and remaining acceptance gates are open."
+  ],
+  "fresh_http_summary": [
+    {
+      "report": "reports/round2-fresh-failed-add-HgEPBa.json",
+      "status": "http_accepted",
+      "http_status": 200,
+      "checks": [
+        {
+          "name": "single_revision",
+          "pass": true
+        },
+        {
+          "name": "receipt_persisted",
+          "pass": true
+        }
+      ],
+      "generation_attempts": 6,
+      "transport_retries": 0
+    },
+    {
+      "report": "reports/round2-fresh-failed-add-fyfrFV.json",
+      "status": "http_accepted",
+      "http_status": 200,
+      "checks": [
+        {
+          "name": "single_revision",
+          "pass": true
+        },
+        {
+          "name": "receipt_persisted",
+          "pass": true
+        }
+      ],
+      "generation_attempts": 6,
+      "transport_retries": 0
+    }
+  ]
+}

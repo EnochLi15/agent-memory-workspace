@@ -1,0 +1,180 @@
+{
+  "protocol": "fixed-proposal-index-paired-verification-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-verification-index-repeat-VPgUcP",
+  "started_at": "2026-09-06T12:07:01.618Z",
+  "live": true,
+  "planned_calls": 6,
+  "order": [
+    [
+      "original",
+      "labeled"
+    ],
+    [
+      "labeled",
+      "original"
+    ],
+    [
+      "original",
+      "labeled"
+    ]
+  ],
+  "model": "gpt-5.5",
+  "effort": "low",
+  "input_hashes": {
+    "original": "e2eb54616c5f82aa5ebad761e626605b1afa909bfe1c7bcb133016c1318cd755",
+    "labeled": "3b6057cfae70a39a1f9823e9da0eae596cea8fd2aed2b660101560307f9f6ae8"
+  },
+  "system_hashes": {
+    "original": "8069c1d3c3ab1531aee890f3f09d4511ecf5cde35be664eacadeeb9a83c51772",
+    "labeled": "b62b64d98340e49c9d70fac58fd34b0ff43d54a6d58f84ab28984e53f41148cc"
+  },
+  "rows": [
+    {
+      "round": 1,
+      "variant": "original",
+      "started_at": "2026-09-06T12:07:01.621Z",
+      "protocol_errors": [],
+      "semantic_findings": [],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          true,
+          0
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 25878.376834
+    },
+    {
+      "round": 1,
+      "variant": "labeled",
+      "started_at": "2026-09-06T12:07:27.499Z",
+      "protocol_errors": [],
+      "semantic_findings": [],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          true,
+          0
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 24953.148959
+    },
+    {
+      "round": 2,
+      "variant": "labeled",
+      "started_at": "2026-09-06T12:07:52.453Z",
+      "protocol_errors": [],
+      "semantic_findings": [],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          true,
+          0
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 23331.335082999998
+    },
+    {
+      "round": 2,
+      "variant": "original",
+      "started_at": "2026-09-06T12:08:15.785Z",
+      "protocol_errors": [],
+      "semantic_findings": [
+        "fact 63: The statement is supported, but it describes a confirmed current process rather than an uncertain or tentative fact."
+      ],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          false,
+          0,
+          "The statement is supported, but it describes a confirmed current process rather than an uncertain or tentative fact."
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 28042.454167000004
+    },
+    {
+      "round": 3,
+      "variant": "original",
+      "started_at": "2026-09-06T12:08:43.828Z",
+      "protocol_errors": [],
+      "semantic_findings": [
+        "fact 63: The source confirms cooking is slowly becoming one of Andrew's favorite hobbies as a current trend, not a tentative modality."
+      ],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          false,
+          0,
+          "The source confirms cooking is slowly becoming one of Andrew's favorite hobbies as a current trend, not a tentative modality."
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 25219.604750000013
+    },
+    {
+      "round": 3,
+      "variant": "labeled",
+      "started_at": "2026-09-06T12:09:09.049Z",
+      "protocol_errors": [],
+      "semantic_findings": [],
+      "neighbor_checks": [
+        [
+          62,
+          true,
+          true,
+          0
+        ],
+        [
+          63,
+          true,
+          true,
+          0
+        ]
+      ],
+      "status": "validated",
+      "elapsed_ms": 22756.151333
+    }
+  ],
+  "scope": "Three preplanned paired verifier-only repeats on one exposed proposal. Every outcome retained, no repair or storage. Verdict consistency is not semantic correctness or benchmark accuracy. Shared gateway timings may be contended.",
+  "finished_at": "2026-09-06T12:09:31.806Z",
+  "completed_calls": 6
+}

@@ -1,0 +1,75 @@
+{
+  "protocol": "fact-verification-model-controls-v1",
+  "model": "gpt-5.5",
+  "reasoning_effort": "low",
+  "cases_sha256": "2260cf591064693dea15b20a84695bc8374a122408b3902a37fc09b655567efa",
+  "source_sha256": {
+    "service/src/verification.ts": "86525e1f4dcb370fc4df08a427e02275b5a1d427d60b5097b34cf69cdb6ce314",
+    "service/src/models.ts": "efbc00b517759bdcc68a4d82bd4a7837fbd2ac469f5eac5f84539a2af17173ff"
+  },
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-fact-verification-controls-sPCcyB",
+  "results": [
+    {
+      "id": "valid_plan",
+      "expected_accept": true,
+      "issues": [],
+      "accepted": true,
+      "pass": true,
+      "elapsed_ms": 3524.685
+    },
+    {
+      "id": "plan_as_current_state",
+      "expected_accept": false,
+      "issues": [
+        "fact 0: The source states a tentative future move, not that the user currently lives in Paris.",
+        "message 0: The user's tentative future plan to move to Paris next year is memorable but is not correctly represented; the proposal incorrectly makes it a confirmed current residence.; missing statement: I might move to Paris next year."
+      ],
+      "accepted": false,
+      "pass": true,
+      "elapsed_ms": 10356.658417
+    },
+    {
+      "id": "wrong_actor",
+      "expected_accept": false,
+      "issues": [
+        "fact 0: The source says the user's friend Kevin lives in Paris, not the user.",
+        "message 0: The memorable fact is that the user's friend Kevin lives in Paris, which is not represented by the proposal.; missing statement: My friend Kevin lives in Paris."
+      ],
+      "accepted": false,
+      "pass": true,
+      "elapsed_ms": 4671.542374999999
+    },
+    {
+      "id": "negated_preference",
+      "expected_accept": false,
+      "issues": [
+        "fact 0: The source states the user does not like skiing, not that they like skiing.",
+        "message 0: The user's stated dislike of skiing is memorable but is not correctly represented by the proposal.; missing statement: I do not like skiing."
+      ],
+      "accepted": false,
+      "pass": true,
+      "elapsed_ms": 5312.108916000001
+    },
+    {
+      "id": "question_as_personal_fact",
+      "expected_accept": false,
+      "issues": [
+        "fact 0: A question about whether Paris is a good city to live in does not state that the user lives in Paris."
+      ],
+      "accepted": false,
+      "pass": true,
+      "elapsed_ms": 3615.659458000002
+    },
+    {
+      "id": "valid_current_state",
+      "expected_accept": true,
+      "issues": [],
+      "accepted": true,
+      "pass": true,
+      "elapsed_ms": 8726.233124999999
+    }
+  ],
+  "passed": 6,
+  "planned": 6,
+  "scope": "Six fixed assistant-authored critic controls with real API calls; not new benchmark answers or full service inference."
+}

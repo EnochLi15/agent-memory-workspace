@@ -1,0 +1,45 @@
+{
+  "scope": "Two authored protocol controls, not human calibration or judge accuracy.",
+  "rows": [
+    {
+      "answer": "Oslo",
+      "expected_correct": true,
+      "exit_code": 0,
+      "elapsed_seconds": 9.364569999976084,
+      "result": {
+        "score": 1.0,
+        "reason": "llm_judge_refined",
+        "name": "refined"
+      }
+    },
+    {
+      "answer": "Paris",
+      "expected_correct": false,
+      "exit_code": 0,
+      "elapsed_seconds": 3.0869546670001,
+      "result": {
+        "score": 0.0,
+        "reason": "llm_judge_refined",
+        "name": "refined"
+      }
+    }
+  ],
+  "adapter": {
+    "models": [
+      {
+        "name": "qwen3:14b",
+        "digest": "bdbd181c33f2ed1b31c972991882db3cf4d192569092138a7d29e973cd9debe8",
+        "size": 9276198565
+      },
+      {
+        "name": "nomic-embed-text:latest",
+        "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+        "size": 274302450
+      }
+    ],
+    "adapter_sha256": "2b706c6be868147e6daaf7ced2e7860db880596c82275fed2de10bc2c8e143d7",
+    "runtime_helper_sha256": "b3811a34c6cb4a4534c94d27c2670e9bfb0bac96b7b58484721bc5b5d28dda5b"
+  },
+  "warmup_note": "Initial plain-text smoke returned OK. instead of exact OK; retained as an instruction-format mismatch. The actual pinned scoring bridge then passed the positive and negative protocol controls.",
+  "passed": true
+}

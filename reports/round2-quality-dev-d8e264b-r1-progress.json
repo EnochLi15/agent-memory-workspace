@@ -1,0 +1,26 @@
+{
+  "protocol": "running-development-snapshot-v1",
+  "observed_at": "2026-09-06T05:59:25.576750+00:00",
+  "run_dir": "eval/artifacts/round2-quality-dev-d8e264b-r1-facts-memops",
+  "manifest_snapshot": "artifacts/round2-quality-dev-d8e264b-r1/initial-manifest-snapshot.json",
+  "manifest_snapshot_sha256": "47d227e1612cc046147752204a50e1e75e0c3189626c6cd16a3f6dde7412ed5a",
+  "service_commit": "d8e264b210debfaf31a4aeaa587986c6e01af301",
+  "eval_commit": "94d58f6eeb4ac62cf700f908f42d7b9c3494ac6a",
+  "planned_questions": 30,
+  "backgrounds": [
+    "E10_reflect",
+    "B05_forget",
+    "F07_trajectory_ops",
+    "F07_update",
+    "E10_remember"
+  ],
+  "session_counts_per_background": 50,
+  "run_status_at_snapshot": "running",
+  "add_status_at_snapshot": {
+    "ok": 4
+  },
+  "verified_orchestrator_handle": 17689,
+  "service_pid": 88596,
+  "eval_pid": 88597,
+  "scope": "Initial live-process and partial-ingestion snapshot only. No final accuracy or success estimate; failures remain in the complete planned denominator. Five already exposed backgrounds, no new holdout."
+}

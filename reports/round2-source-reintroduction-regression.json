@@ -1,0 +1,13 @@
+{
+  "protocol": "recorded-source-reintroduction-regression-v1",
+  "parent": "artifacts/round2-source-operation-http-5LV9qJ",
+  "source_sha256": "36eeb70eb6c1da69da7b713835ed03fd625789ffbfa8f8e70ac26575c613fe1d",
+  "requests_sha256": "d899c0f276756ab74860528183f98aa01948693351cbad314790b8dcd39de83a",
+  "state_sha256": "2be55d5bd690844adfdcb897fc1ae3eab075d7f5eb6044ec6b0b16220810da5b",
+  "findings": [
+    "fact 1: Reintroduces details present only in rejected assistant sources; remove this rejected-claim summary, including negated restatements. Preserve independently grounded human facts.",
+    "fact 2: Reintroduces details present only in rejected assistant sources; remove this rejected-claim summary, including negated restatements. Preserve independently grounded human facts."
+  ],
+  "blocked_before_commit": true,
+  "scope": "Exact two leaked negative facts from the prior real HTTP result are rejected by the new necessary anti-reintroduction guard. No model call, no database mutation, no full semantic or benchmark recovery."
+}

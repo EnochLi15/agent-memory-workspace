@@ -1,0 +1,63 @@
+{
+  "protocol": "v1-erasure-input-fix-v1",
+  "checked_at": "2026-09-06T23:29:30.061012+00:00",
+  "service_commit": "32a14245d070eabe6150a1e4ce9b61c6d00373e1",
+  "cause": "The timed-out erasure binding call repeatedly transmitted 23 facts and seven boundaries in 48 candidate pairs.",
+  "change": "Use lossless FACTS and BOUNDARIES reference tables, preserving complete records and each candidate pair index, scope coordinate and linked source slots. The existing decoder, context survival guard, model choice, output protocol, call count and all budgets remain unchanged.",
+  "tests": {
+    "new": 3,
+    "total_service_tests": 394,
+    "passed": true,
+    "coverage": [
+      "round-trip every evidence field and pair identity",
+      "preserve same-ID records with different evidence or authorization",
+      "large repeated records reduce wire input without truncation",
+      "existing scope, context, source erasure and atomicity tests pass"
+    ]
+  },
+  "saved_input_replay": {
+    "protocol": "v1-erasure-input-replay-v1",
+    "pairs": 48,
+    "facts": 23,
+    "boundaries": 7,
+    "old_input_characters": 109004,
+    "new_input_characters": 48124,
+    "reduction_percent": 55.8511614252688,
+    "all_evidence_round_trip": true,
+    "old_rejected_packet_still_rejected": true,
+    "scope": "Lossless input compression only. Same facts, authorization, source contexts, pair order and decoder behavior. No actual latency, model, HTTP, complete-background or scoring success claim.",
+    "trace_sha256": "d56129ee18bd5676926c97889f7c482ade13ad1fff3b73a50c658310301855f8"
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-1JB6bA/report.json",
+  "scope": "Input size and regression evidence only. No actual latency improvement, real erasure success, whole-background acceptance or new score asserted. Human labels remain zero.",
+  "sha256": {
+    "artifacts/v1-erasure-input-fix-01/before.log": "2d2f44307e527759fced3b5de13c7ab77fc54e5025054c60f5fc08ccdea84d3c",
+    "artifacts/v1-erasure-input-fix-01/after.log": "2eaa563baac0129d4b49c1a24923f6aedb874c88635dbcae796edfac4b386b2c",
+    "artifacts/v1-erasure-input-fix-01/input-replay.json": "699deca8830a1848073a24ad574370f6dd23d342438a69b759662a7f888b17a4",
+    "reports/v1-service-regression-17.txt": "f0069573afed3dade96dbf73c62ce880f8fd95f29987ec335d6eb1531b878585"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_complete_erasure_response": true,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Independent-value witness must include the colliding value or valid linked context"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-pair-witness-blocker.json",
+  "ci": {
+    "headSha": "32a14245d070eabe6150a1e4ce9b61c6d00373e1",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34066978630"
+  }
+}

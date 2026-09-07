@@ -1,0 +1,112 @@
+{
+  "protocol": "source-reference-extraction-review-v1",
+  "service_commit": "b4cdd3c243b8bcae02d05433120b9d7eca23fbac",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-runtime-b4cdd3c",
+  "tests": {
+    "passed": 214,
+    "failed": 0,
+    "new_cases": 8,
+    "report": "reports/round2-source-refs-service-tests.txt",
+    "sha256": "0add285370fd30c0c3f8c13e4c46d21dabefe97913b787925ba4dafe1dfa96bb"
+  },
+  "scope": "Two fresh real-model failed-chunk preparations on final saved development snapshots; one private clone commit. Not a full-prefix rerun, paired benchmark or quality score.",
+  "cases": [
+    {
+      "sample": "F07_update",
+      "status": "prepared",
+      "elapsed_ms": 26624.009416,
+      "generation_calls": 2,
+      "captured_snapshot_sha256": "af0eb87c879580a4170346406891761430429d70a973c72b46497e46e79a864e",
+      "spec_sha256": "972a1d2d4acb08e138c922ea37bf92d7f1f6ba31a4ca7bc3674db02ee9c508bf",
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-live-checkpoint-suX4DE",
+      "report_sha256": "022080ed43a4fa2b45197b2aef78140126d33562c83455d2d1aae8361683f801",
+      "initial_facts": 12,
+      "initial_output_compact_chars": 3053,
+      "stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 16947.970459
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 9188.718625000001
+        },
+        {
+          "outcome": "ok",
+          "elapsed_ms": 428.65958300000057
+        }
+      ],
+      "transaction": {
+        "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-checkpoint-transaction-uqzXwm",
+        "report_sha256": "7e127090c98aed41631c41da6fc1d053ce0e1139a4266a5c8bf763ef5bc27fc8",
+        "status": "committed",
+        "revision_before": 5,
+        "revision_after": 6,
+        "changed_prior_facts": 0
+      },
+      "manual_review": {
+        "promotion_qualifiers_in_selected_witness": true,
+        "test_before_full_rollout_fact_present": true,
+        "search_accuracy_request_atomic_fact_present": false,
+        "search_accuracy_original_passage_active": true,
+        "independent_checker_reported_missing": false
+      }
+    },
+    {
+      "sample": "B05_forget",
+      "status": "failed",
+      "elapsed_ms": 90009.920333,
+      "generation_calls": 4,
+      "captured_snapshot_sha256": "11dafb35ab8372d6bad7bf39cffb1f733c6b5db4726d9897b72976819a196863",
+      "spec_sha256": "972a1d2d4acb08e138c922ea37bf92d7f1f6ba31a4ca7bc3674db02ee9c508bf",
+      "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-live-checkpoint-3O2i0t",
+      "report_sha256": "2e3fda6c2493c047b3586f04926ba22f27bec1c951badcc8c59490ddbf77ef3d",
+      "initial_facts": 37,
+      "initial_output_compact_chars": 9953,
+      "stages": [
+        {
+          "purpose": "extraction",
+          "outcome": "ok",
+          "elapsed_ms": 53043.204166999996
+        },
+        {
+          "purpose": "repair",
+          "outcome": "error",
+          "elapsed_ms": 5532.197625000001,
+          "error_category": "connection",
+          "transport_code": "UND_ERR_SOCKET"
+        },
+        {
+          "purpose": "repair",
+          "outcome": "ok",
+          "elapsed_ms": 7376.313458000004
+        },
+        {
+          "purpose": "verification",
+          "outcome": "ok",
+          "elapsed_ms": 23303.604250000004
+        },
+        {
+          "purpose": "erasure_binding",
+          "outcome": "error",
+          "elapsed_ms": 615.0810419999907,
+          "error_category": "deadline",
+          "transport_code": null
+        }
+      ],
+      "error": {
+        "code": "VERIFICATION_UNAVAILABLE",
+        "message": "Could not bind erasure scope within the shared model budget"
+      }
+    }
+  ],
+  "conclusions": [
+    "Complete-span references fix the observed short promotion quote and preserve selected repeated occurrences. Semantic support and completeness are not guaranteed by reference existence.",
+    "F07 prepare was 26.624s versus prior grouped 35.015s, with 12 versus13 facts. B05 output was9953 versus12042 compact characters, with37 versus36 facts. These are single development attempts with different outputs and possible provider load; not a causal performance estimate.",
+    "B05 needed53.043s extraction, a5.532s failed socket attempt,7.376s successful repair and23.304s verification. Erasure binding had only0.615s and ended at the original90s model deadline. No write was committed.",
+    "The mini source-reference config exists but was not exercised in this review. Production remains flat and the historical8088 service is unchanged.",
+    "The full development2542f2a0/30 result and historical331/1000 result are unchanged. Full E0-E5 acceptance, source-span mutation targets, new backgrounds and three complete paired repeats remain open."
+  ]
+}

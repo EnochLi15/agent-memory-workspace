@@ -1,0 +1,54 @@
+{
+  "protocol": "v1-release-manifest-v1",
+  "version": "v0.1.0",
+  "status": "draft_pending_gates",
+  "human_labels": 0,
+  "commits": {
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "gates": {
+    "blockers": "reports/v1-blocker-closure.json",
+    "runtime": "reports/v1-runtime-soak-acceptance.json",
+    "deployment": "reports/v1-clean-clone-b398a63-acceptance.json",
+    "durability": [
+      "reports/v1-offline-backup-restore-b398a63.json",
+      "reports/v1-enhanced-backup-restore-b398a63.json",
+      "reports/v1-compatible-rollback-b398a63.json"
+    ],
+    "small_pair": "reports/v1-small-b398a63-results.json",
+    "long_pair": "reports/v1-long-b398a63-results.json",
+    "full_audit": "reports/v1-full-completed-run-audit.json",
+    "full_report": "reports/v1-full-results.json"
+  },
+  "deployment_log_directory": "artifacts/v1-clean-clone-03",
+  "long_dataset_manifest": "configs/v1-fixed-long-regression.json",
+  "primary_runs": {
+    "locomo": "v1-full-b398a63-01-candidate-locomo",
+    "memops": "v1-full-b398a63-01-candidate-memops"
+  },
+  "runtime_bundles": "reports/v1-runtime-bundles.json",
+  "service_image": "comp-agent-memory-service:v0.1.0",
+  "delivery_report": "reports/V1-DELIVERY-REPORT.md",
+  "required_documents": [
+    "README.md",
+    "docs/DEPLOYMENT.md",
+    "docs/29-V1交付收敛计划.md",
+    "reports/V1-DELIVERY-REPORT.md",
+    "service/README.md",
+    "service/UPSTREAM.md",
+    "service/upstream/mem0/LICENSE",
+    "eval/README.md",
+    "configs/release-enhanced.env",
+    "configs/release-offline.env",
+    ".env.example",
+    "compose.yaml",
+    "Makefile",
+    "service/upstream/mem0/source-package.json",
+    "eval/python/upstream/LICENSE.txt",
+    "eval/python/upstream/NOTICE",
+    "eval/python/upstream/memops/LICENSE",
+    "reports/v1-ci-verification.json"
+  ],
+  "scope": "Formal packaging requires all explicit evidence gates. Draft manifest and planned run IDs do not assert completion. Original failed runs and historical release artifacts remain unchanged."
+}

@@ -1,0 +1,149 @@
+{
+  "protocol": "v1-retention-context-fix-v1",
+  "checked_at": "2026-09-06T23:16:53.858943+00:00",
+  "service_commit": "1d7c0ffc289fda8b427f3817202f6096ea734e63",
+  "cause": "Independent fact quotes omit a colliding value that appears in the same original human message. The old literal-only guard safely rejected these legitimate contextual witnesses.",
+  "change": [
+    "Expose deduplicated linked human source messages and bind them into the erasure-plan fingerprint.",
+    "Resolve optional value context as unique exact spans in the same original source as the primary claim.",
+    "Revalidate source identity and span coordinates during commit. Reject retention if the union of final erasure cuts overlaps either witness; skip only a fact actually erased by the transaction.",
+    "Keep transient context out of stored fact content and retained quotes; no source format or limits changed."
+  ],
+  "regressions": {
+    "new_tests": 7,
+    "total_service_tests": 388,
+    "passed": true,
+    "before": "artifacts/v1-retention-context-fix-01/before.log",
+    "after": "reports/v1-service-regression-15.txt",
+    "coverage": [
+      "same-message independent context",
+      "unlinked, assistant, fabricated, repeated and stale evidence rejected",
+      "forged offsets rejected",
+      "legacy pronoun-only dependent evidence rejected",
+      "transaction rollback, neighbor preservation and restart",
+      "borrowing erased-neighbor context rejected",
+      "either primary or context span erased causes rollback"
+    ]
+  },
+  "saved_input_replay": {
+    "protocol": "v1-retention-context-replay-v1",
+    "candidate_pairs": 48,
+    "source_contexts": 10,
+    "old_input_characters": 103158,
+    "new_input_characters": 108187,
+    "previous_witness_failures": [
+      {
+        "index": 2,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 8,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 9,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 10,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 14,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 16,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 22,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 24,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 30,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 34,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 35,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 37,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      },
+      {
+        "index": 39,
+        "linked_human_contexts": 1,
+        "unique_claim_and_value_contexts": 1
+      }
+    ],
+    "all_previous_failures_have_linked_context": true,
+    "original_snapshot_unchanged": true,
+    "source_sha256": {
+      "snapshot": "5fa95ec8eb1126bbb3a6f0ba1db34c18dcb5922a156e31acdf502b6085a7208f",
+      "trace": "18195a30ad3b55f018a6f210148a5eaa5d69d1e77b65f4cb0c0ad61a198459b1",
+      "script": "2a3713c6f63287ea2f58e1490eb49294d63fa0e46ba21d28f8a5ca1809f39139"
+    },
+    "scope": "No semantic decisions invented or scores changed. Unique same-message literal coverage only; independent ownership and survival after all erasures still require fresh classification and commit validation."
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-duqz57/report.json",
+  "scope": "Context unit/integration and input coverage pass. Fresh diagnostic terminated in earlier extraction schema handling, so no real-model erasure-stage or full-history acceptance claim. Old scores unchanged.",
+  "evidence_sha256": {
+    "artifacts/v1-retention-context-fix-01/before.log": "1e7473bc9dbf33cfdf97b7b12b849cf54c62209b4c8b2fb9ba8e57042bbe37ad",
+    "artifacts/v1-retention-context-fix-01/integration.log": "b063fa6ddcb45f8992de129890a7a95f473ca5176ab25e24440f31f80fc6d669",
+    "artifacts/v1-retention-context-fix-01/context-replay.json": "6293bca6867e63046a9882dc1b86abcafbd62751475eaf6615a12dc8d6cc9efa",
+    "reports/v1-service-regression-15.txt": "ec5f1d48d0da72006f4f39f06c9510701d6ae1636234a9e63c91709c2c608506"
+  },
+  "fresh_http_passed": false,
+  "fresh_http_reached_erasure": false,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "fresh_http_original_database_unchanged": true,
+  "ci": {
+    "headSha": "1d7c0ffc289fda8b427f3817202f6096ea734e63",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34066394299"
+  },
+  "subsequent_diagnostic": {
+    "service_commit": "ed81688",
+    "report": "reports/v1-d25-shared-budget-blocker.json",
+    "reached_erasure": true,
+    "complete_erasure_response": false,
+    "passed": false
+  }
+}

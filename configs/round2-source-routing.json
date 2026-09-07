@@ -1,0 +1,72 @@
+{
+  "protocol": "round2-source-routing-v1",
+  "policy": "Fresh v9 storage. Independent per-instruction model routing uses complete current human messages and compact existing facts. Only fully witnessed all-ordinary requests skip source history screening; all normal binding, forget coverage, semantic erasure and atomic commit remain required. Source-review and mixed requests retain complete v8 history review. Routing proof is bound to request/facts/full history and checked at commit. Original 90-second shared model budget and fixed Answer/Judge/evidence budgets are unchanged. Snapshot replays are prepare-only diagnostics, not full ingestion or benchmark accuracy. Defaults remain experimental; fresh data and full paired repeats required.",
+  "evaluation": {
+    "answer_model": "gpt-5.4-mini",
+    "judge_model": "gpt-5.4-mini"
+  },
+  "defaults": {
+    "MEMORY_MODE": "enhanced",
+    "MEMORY_LLM_MODEL": "gpt-5.4-mini",
+    "MEMORY_EXTRACTION_MODEL": "gpt-5.5",
+    "MEMORY_VERIFICATION_MODEL": "gpt-5.5",
+    "MEMORY_REPAIR_MODEL": "gpt-5.5",
+    "MEMORY_LLM_REASONING_EFFORT": "low",
+    "MEMORY_VERIFICATION_FORMAT": "compact",
+    "MEMORY_INCREMENTAL_VERIFICATION": "true",
+    "MEMORY_MAX_REPAIR_ROUNDS": "2",
+    "MEMORY_EMBEDDING_BASE_URL": "http://127.0.0.1:11434",
+    "MEMORY_EMBEDDING_MODEL": "nomic-embed-text:latest",
+    "MEMORY_EMBEDDING_DIMENSIONS": "768",
+    "MEMORY_EMBEDDING_DIGEST": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "MEMORY_ADD_TIMEOUT_MS": "115000",
+    "MEMORY_SEARCH_TIMEOUT_MS": "55000",
+    "MEMORY_MAX_EVIDENCE": "32",
+    "MEMORY_TOKEN_BUDGET": "6000",
+    "MEMORY_RETRIEVAL": "hybrid",
+    "MEMORY_SOURCE_INDEX": "true",
+    "MEMORY_CANDIDATE_LIMIT": "200",
+    "MEMORY_RERANK_CANDIDATES": "80",
+    "MEMORY_RAW_FALLBACK": "false",
+    "MEMORY_RERANK": "false",
+    "MEMORY_COVERAGE_PACKING": "false",
+    "MEMORY_EVENT_VIEW": "false",
+    "MEMORY_EXPERIMENT_LIFECYCLE": "true",
+    "MEMORY_EXPERIMENT_TEMPORAL": "true",
+    "MEMORY_EXPERIMENT_MULTI_HOP": "false",
+    "MEMORY_EXPERIMENT_REFLECTION": "true",
+    "MEMORY_EXPERIMENT_RAW_ONLY": "false",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_schema",
+    "MEMORY_ERASURE_BINDING": "true",
+    "MEMORY_SOURCE_ERASURE": "true",
+    "MEMORY_SEMANTIC_TRANSITIONS": "true",
+    "MEMORY_EXTRACTION_FORMAT": "flat",
+    "MEMORY_SOURCE_OPERATIONS": "true",
+    "MEMORY_SOURCE_OPERATION_HISTORY": "true",
+    "MEMORY_SOURCE_OPERATION_BATCHES": "true",
+    "MEMORY_SOURCE_OPERATION_ROUTING": "true"
+  },
+  "profiles": {
+    "facts": {
+      "environment": {}
+    },
+    "sources": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true"
+      }
+    },
+    "rerank": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true",
+        "MEMORY_RERANK": "true"
+      }
+    },
+    "coverage": {
+      "environment": {
+        "MEMORY_RAW_FALLBACK": "true",
+        "MEMORY_RERANK": "true",
+        "MEMORY_COVERAGE_PACKING": "true"
+      }
+    }
+  }
+}

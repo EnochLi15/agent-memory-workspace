@@ -1,0 +1,240 @@
+{
+  "protocol": "verification-encoding-paired-review-v1",
+  "parent_report_sha256": "cef0ec31961fe03ab83f4fd58ff6b2295979d78eb36ae233b0437963db9be50a",
+  "run_dir": "artifacts/round2-compact-controls-wwlQwN",
+  "controls_correct": 26,
+  "controls_planned": 26,
+  "long_expected_rejections": 6,
+  "long_planned": 6,
+  "generation_calls": 32,
+  "format_repairs": 0,
+  "normalized_input_pairs_equal": [
+    "valid_plan",
+    "plan_as_current_state",
+    "wrong_actor",
+    "negated_preference",
+    "question_as_personal_fact",
+    "valid_current_state",
+    "missing_plan",
+    "generic_question",
+    "authorized_forget",
+    "negated_forget",
+    "wrong_forget_target",
+    "valid_replacement",
+    "wrong_replacement",
+    "archived_C30_0",
+    "archived_C30_1",
+    "archived_C30_2"
+  ],
+  "posthoc_expected_item_checks": [
+    {
+      "id": "plan_as_current_state",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "plan_as_current_state",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_actor",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_actor",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "negated_preference",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "negated_preference",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "question_as_personal_fact",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "question_as_personal_fact",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "missing_plan",
+      "format": "verbose",
+      "required_issue_prefix": "message 0:",
+      "matched": true
+    },
+    {
+      "id": "missing_plan",
+      "format": "compact",
+      "required_issue_prefix": "message 0:",
+      "matched": true
+    },
+    {
+      "id": "negated_forget",
+      "format": "compact",
+      "required_issue_prefix": "operation 0:",
+      "matched": true
+    },
+    {
+      "id": "negated_forget",
+      "format": "verbose",
+      "required_issue_prefix": "operation 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_forget_target",
+      "format": "verbose",
+      "required_issue_prefix": "operation 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_forget_target",
+      "format": "compact",
+      "required_issue_prefix": "operation 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_replacement",
+      "format": "verbose",
+      "required_issue_prefix": "replacement fact 0:",
+      "matched": true
+    },
+    {
+      "id": "wrong_replacement",
+      "format": "compact",
+      "required_issue_prefix": "replacement fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_0",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_0",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "compact",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "verbose",
+      "required_issue_prefix": "fact 0:",
+      "matched": true
+    }
+  ],
+  "long_rows": [
+    {
+      "id": "archived_C30_0",
+      "format": "compact",
+      "elapsed_ms": 20246.81479100001,
+      "completion_tokens": 1027,
+      "output_chars": 1288,
+      "reasoning_tokens": 511,
+      "accepted": false,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_0",
+      "format": "verbose",
+      "elapsed_ms": 32772.526459000015,
+      "completion_tokens": 1704,
+      "output_chars": 4715,
+      "reasoning_tokens": 516,
+      "accepted": false,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "verbose",
+      "elapsed_ms": 43815.129292,
+      "completion_tokens": 2326,
+      "output_chars": 6642,
+      "reasoning_tokens": 505,
+      "accepted": false,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_1",
+      "format": "compact",
+      "elapsed_ms": 21072.64295899999,
+      "completion_tokens": 1026,
+      "output_chars": 1254,
+      "reasoning_tokens": 516,
+      "accepted": false,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "compact",
+      "elapsed_ms": 20068.311084000015,
+      "completion_tokens": 1014,
+      "output_chars": 1299,
+      "reasoning_tokens": 494,
+      "accepted": false,
+      "generation_calls": 1
+    },
+    {
+      "id": "archived_C30_2",
+      "format": "verbose",
+      "elapsed_ms": 47730.280958999996,
+      "completion_tokens": 2529,
+      "output_chars": 6603,
+      "reasoning_tokens": 718,
+      "accepted": false,
+      "generation_calls": 1
+    }
+  ],
+  "long_medians": {
+    "verbose": {
+      "elapsed_ms": 43815.129292,
+      "completion_tokens": 2326,
+      "output_chars": 6603
+    },
+    "compact": {
+      "elapsed_ms": 20246.81479100001,
+      "completion_tokens": 1026,
+      "output_chars": 1288
+    }
+  },
+  "median_latency_reduction_fraction": 0.5379035707947395,
+  "median_completion_token_reduction_fraction": 0.5588993981083406,
+  "scope": "13 simple controls in both formats plus three paired checker-only calls on the same archived rejected proposal. Expected-item localization checked separately without altering original model results. Equal normalized full inputs; one model and effort. Timing is local observed evidence, not full-prefix recovery, a benchmark score or a general speed guarantee."
+}

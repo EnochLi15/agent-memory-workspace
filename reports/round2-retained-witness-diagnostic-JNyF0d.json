@@ -1,0 +1,40 @@
+{
+  "protocol": "retained-witness-exact-guard-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-retained-witness-diagnostic-JNyF0d",
+  "parent": "artifacts/round2-B05-87d67b1-retained-failure-6511nn_4",
+  "original_runtime": "artifacts/round2-runtime-8cb099f",
+  "original_storage_sha256": "c95b45078845478d5e579869f18e8b7439a069aed8d84bb533e8466fd267ee3c",
+  "instrumented_storage_sha256": "808bc53c9b71f5178afc3f1e3408fae39b456add51b560d13f28fd0649bfbccf",
+  "live": true,
+  "started_at": "2026-09-06T12:10:12.350Z",
+  "fresh_llm_calls": 2,
+  "scope": "Saved extraction prefix with fresh remaining model decisions and budget; private commit and unchanged guard. Not whole-request latency or benchmark quality.",
+  "degraded": [],
+  "status": "committed",
+  "checks": [
+    {
+      "name": "no_degradation",
+      "pass": true
+    },
+    {
+      "name": "single_revision",
+      "pass": true
+    },
+    {
+      "name": "receipt_persisted",
+      "pass": true
+    },
+    {
+      "name": "Elara_stays_active",
+      "pass": true
+    },
+    {
+      "name": "previously_retained_Elara_source_unchanged",
+      "pass": true
+    }
+  ],
+  "finished_at": "2026-09-06T12:10:31.096Z",
+  "saved_packets_used": 3,
+  "saved_packets_planned": 3,
+  "original_database_unchanged": true
+}

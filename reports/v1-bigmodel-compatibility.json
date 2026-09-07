@@ -1,0 +1,113 @@
+{
+  "checked_at": "2026-09-07T03:46:50.295114+00:00",
+  "formal_release": false,
+  "models": {
+    "at": "2026-09-07T03:45:08.357554+00:00",
+    "models_probes": [
+      {
+        "base": "https://open.bigmodel.cn/api/coding/paas/v4",
+        "status": 200,
+        "body": "{\"object\":\"list\",\"data\":[{\"id\":\"glm-4.5\",\"object\":\"model\",\"created\":1753632000,\"owned_by\":\"z-ai\"},{\"id\":\"glm-4.5-air\",\"object\":\"model\",\"created\":1753632000,\"owned_by\":\"z-ai\"},{\"id\":\"glm-4.6\",\"object\":\"model\",\"created\":1759276800,\"owned_by\":\"z-ai\"},{\"id\":\"glm-4.7\",\"object\":\"model\",\"created\":1766332800,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5\",\"object\":\"model\",\"created\":1770739200,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5-turbo\",\"object\":\"model\",\"created\":1773504000,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5.1\",\"object\":\"model\",\"created\":1774620000,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5.2\",\"object\":\"model\",\"created\":1781625600,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5.3\",\"object\":\"model\",\"created\":1786636800,\"owned_by\":\"z-ai\"},{\"id\":\"glm-5.3-flash\",\"object\":\"model\",\"created\":1786636800,\"owned_by\":\"z-ai\"}]}"
+      },
+      {
+        "base": "https://open.bigmodel.cn/api/v1",
+        "status": 200,
+        "body": "{\"models\":[{\"apply_patch_tool_type\":\"freeform\",\"base_instructions\":\"\",\"context_window\":1048576,\"default_reasoning_level\":\"max\",\"default_reasoning_summary\":\"none\",\"description\":\"Z.ai's latest flagship model\",\"display_name\":\"glm-5.3\",\"effective_context_window_percent\":95,\"experimental_supported_tools\":[],\"input_modalities\":[\"text\"],\"max_context_window\":1048576,\"priority\":0,\"shell_type\":\"shell_command\",\"slug\":\"glm-5.3\",\"support_verbosity\":false,\"supported_in_api\":true,\"supported_reasoning_levels\":[{\"description\":\"Light reasoning\",\"effort\":\"low\"},{\"description\":\"Enhanced reasoning\",\"effort\":\"high\"},{\"description\":\"Deep reasoning\",\"effort\":\"max\"}],\"supports_parallel_tool_calls\":true,\"supports_reasoning_summaries\":true,\"truncation_policy\":{\"limit\":10000,\"mode\":\"bytes\"},\"visibility\":\"list\"},{\"apply_patch_tool_type\":\"freeform\",\"base_instructions\":\"\",\"context_window\":1048576,\"default_reasoning_level\":\"max\",\"default_reasoning_summary\":\"none\",\"description\":\"Fast multimodal coding model\",\"display_name\":\"glm-5.3-flash\",\"effective_context_window_percent\":95,\"experimental_supported_tools\":[],\"input_modalities\":[\"text\",\"image\"],\"max_context_window\":1048576,\"priority\":1,\"shell_type\":\"shell_command\",\"slug\":\"glm-5.3-flash\",\"support_verbosity\":false,\"supported_in_api\":true,\"supported_reasoning_levels\":[{\"description\":\"Light reasoning\",\"effort\":\"low\"},{\"description\":\"Enhanced reasoning\",\"effort\":\"high\"},{\"description\":\"Deep reasoning\",\"effort\":\"max\"}],\"supports_parallel_tool_calls\":true,\"supports_reasoning_summaries\":true,\"truncation_policy\":{\"limit\":10000,\"mode\":\"bytes\"},\"visibility\":\"list\"},{\"apply_patch_tool_type\":\"freeform\",\"base_instructions\":\"\",\"context_window\":204800,\"default_reasoning_level\":\"max\",\"default_reasoning_summary\":\"none\",\"description\":\"Agent-optimized model\",\"display_name\":\"glm-5-turbo\",\"effective_context_window_percent\":95,\"experimental_supported_tools\":[],\"input_modalities\":[\"text\"],\"max_context_window\":204800,\"priority\":2,\"shell_type\":\"shell_command\",\"slug\":\"glm-5-turbo\",\"support_verbosity\":false,\"supported_in_api\":true,\"supported_reasoning_levels\":[],\"supports_parallel_tool_calls\":true,\"supports_reasoning_summaries\":true,\"truncation_policy\":{\"limit\":10000,\"mode\":\"bytes\"},\"visibility\":\"list\"}]}"
+      }
+    ]
+  },
+  "chat_checks": [
+    {
+      "at": "2026-09-07T03:45:44.225Z",
+      "model": "glm-5.3",
+      "format": "json_object",
+      "protocol": "chat-completions",
+      "max_retries": 0,
+      "completed": true,
+      "valid_json": true,
+      "answer": "\n{\"ok\":true}\n",
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 15,
+        "total_tokens": 95,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 4
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_ms": 1091
+    },
+    {
+      "at": "2026-09-07T03:45:45.317Z",
+      "model": "glm-5.3",
+      "format": "json_schema",
+      "protocol": "chat-completions",
+      "max_retries": 0,
+      "completed": true,
+      "valid_json": true,
+      "answer": "{\"ok\":true}",
+      "usage": {
+        "prompt_tokens": 27,
+        "completion_tokens": 7,
+        "total_tokens": 34,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_ms": 1032
+    },
+    {
+      "at": "2026-09-07T03:45:46.349Z",
+      "model": "glm-5.3-flash",
+      "format": "json_object",
+      "protocol": "chat-completions",
+      "max_retries": 0,
+      "completed": true,
+      "valid_json": true,
+      "answer": "{\"ok\":true}",
+      "usage": {
+        "prompt_tokens": 80,
+        "completion_tokens": 7,
+        "total_tokens": 87,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        }
+      },
+      "finish_reason": "stop",
+      "elapsed_ms": 828
+    }
+  ],
+  "responses_check": {
+    "at": "2026-09-07T03:45:47.177Z",
+    "model": "glm-5.3",
+    "protocol": "responses",
+    "max_retries": 0,
+    "completed": true,
+    "response_status": "completed",
+    "answer": "OK",
+    "usage": {
+      "input_tokens": 16,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 70,
+      "output_tokens_details": {
+        "reasoning_tokens": 67
+      },
+      "total_tokens": 86
+    },
+    "elapsed_ms": 3488
+  },
+  "candidate_spec": "configs/v1-bigmodel-pair.json",
+  "scope": "Synthetic compatibility checks only. Real lifecycle and quality acceptance still pending. Service remains on Chat Completions; no Responses adapter added."
+}

@@ -1,0 +1,49 @@
+{
+  "protocol": "v1-historical-erasure-target-links-stage-v1",
+  "status": "completed",
+  "started_at": "2026-09-06T21:02:54.976Z",
+  "scope": "One fresh partial-scope verifier call on the unchanged final rejected proposal, with explicit server-computed target links. No saved verdict used for acceptance, no HTTP or score replacement.",
+  "covered_records": 12,
+  "uncovered_records": [
+    {
+      "id": "05aeb040af0a55854ee235c6c6a0b647b4fa7c133c5656a956377c3b19bf9752",
+      "subject": "user",
+      "predicate": "indian_food_preference_contrast"
+    },
+    {
+      "id": "db03719e602a4e8668e81900fb36d492de5595258b710d7d93d1f436058b72cb",
+      "subject": "user",
+      "predicate": "conversation_with_person"
+    }
+  ],
+  "input_sha256": "a29f9a74869463abc2b395540be662e98684a5e918e9210e698a1d3da8b61f38",
+  "protocol_errors": [],
+  "instruction_check": {
+    "index": 6,
+    "disposition": "represented",
+    "fact_indices": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "operation_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "raw_slots": [
+      1
+    ]
+  },
+  "finished_at": "2026-09-06T21:03:11.641Z"
+}

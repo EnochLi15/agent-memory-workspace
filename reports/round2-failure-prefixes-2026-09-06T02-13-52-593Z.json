@@ -1,0 +1,63 @@
+{
+  "protocol": "failed-prefix-http-replay-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-failure-prefixes/2026-09-06T02-13-52-593Z",
+  "extraction_model": "gpt-5.5",
+  "embedding_model": "nomic-embed-text:latest",
+  "source_sha256": {
+    "service/src/config.ts": "d21e6178653e55cc7d5e2865bf09f514568b4794d4d9d054a2bb43790228db61",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "12a6cc0e549f9e31e6b00a11d046a2238a5f8172e7835698e6655bb3121370b8",
+    "service/src/models.ts": "4720f0f8113f60390e2019f80791ae1a7f62bb5cbbdf0009e8c78b882596970c",
+    "service/src/operation-intent.ts": "8c2c91202873bc5fb7fa3446d404b3177b3f6f85867d9b4920687ee23dd24ded",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "63e094771abb6df19ec69a087c86e1ae64f491581837223e9d4022756a40b294",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "2cddc453adbd64a2352870c31bb9bc2aa6de1668be53355c70e8be3f2e463953",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "e83b64f6ba43e9a0cfab14a1a1731fa44cf9ed366af29dcf73fbecaff95b7ba6",
+    "service/src/verification.ts": "9c7efb3d7e6243e6364e007ba1f747e083a5d24265287ffe5792e7f90ad99c14",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "probe_sha256": "e8a0bdc4415339b5e1e0a2ffe280267f1689a4dc7c6d41c676f396e0e0122af6",
+  "prior_requests_sha256": "37be79c2c2bf55cefdd9c890b1a2d1ef25ac7cad7e5f913f0039fdfc4ffd0017",
+  "started_at": "2026-09-06T02:13:52.617Z",
+  "scope": "Replay all original messages and chunk boundaries through each of four known failing adds; namespace changed for isolation. Fresh real extraction/local embeddings. HTTP success alone does not prove lifecycle semantics or full-sample recovery.",
+  "cases": [
+    {
+      "user_id": "round2-prefix:D17_remember",
+      "original_failure": {
+        "request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"No unambiguous existing target\"}}",
+        "elapsed_ms": 15851.164124999195
+      },
+      "planned_adds": 1,
+      "adds": [
+        {
+          "original_request_id": "holdout-v2-U3:memops:D17_remember:segment-1:0",
+          "status": 503,
+          "elapsed_ms": 80089.818792,
+          "error": {
+            "error": {
+              "code": "VERIFICATION_UNAVAILABLE",
+              "message": "Could not complete evidence verification within the request budget"
+            }
+          }
+        }
+      ],
+      "status": "failed",
+      "final_revision": 0,
+      "fact_states": {}
+    }
+  ],
+  "finished_at": "2026-09-06T02:15:12.814Z",
+  "prefixes_accepted": 0,
+  "planned": 1
+}

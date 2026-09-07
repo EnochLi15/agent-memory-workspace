@@ -1,0 +1,220 @@
+{
+  "protocol": "v1-blocker-followup-v1",
+  "updated_at": "2026-09-06T18:33:51.547301+00:00",
+  "status": "in_progress",
+  "scope": "Root-cause mapping for 19 terminal logical writes in the interrupted run. Rechecks do not replace original scores or prove complete backgrounds now pass. Human labels: 0.",
+  "original_trace_sha256": "405ff5394b32fc43448d6cf157ad4582748975fd2cb7c3d40dd78454b4fcde8a",
+  "cases": [
+    {
+      "case": "locomo:conv-42:session-5:0",
+      "classification": "provider_interruption_and_code_classification",
+      "cause": "HTTP-200 SSE errors without a status were treated as semantic failures. Only interrupted streams with recognized transient or untagged provider errors now enter bounded transport recovery.",
+      "evidence": "service/tests/model-stream-retry.test.ts; service/tests/write-continuation-http.test.ts",
+      "status": "regression_passed_full_background_pending"
+    },
+    {
+      "case": "locomo:conv-41:session-4:0",
+      "classification": "provider_interruption_and_code_classification",
+      "cause": "HTTP-200 SSE errors without a status were treated as semantic failures. Only interrupted streams with recognized transient or untagged provider errors now enter bounded transport recovery.",
+      "evidence": "service/tests/model-stream-retry.test.ts; service/tests/write-continuation-http.test.ts",
+      "status": "regression_passed_full_background_pending"
+    },
+    {
+      "case": "memops:C01_forget:segment-5:0",
+      "classification": "provider_interruption_and_code_classification",
+      "cause": "HTTP-200 SSE errors without a status were treated as semantic failures. Only interrupted streams with recognized transient or untagged provider errors now enter bounded transport recovery.",
+      "evidence": "service/tests/model-stream-retry.test.ts; service/tests/write-continuation-http.test.ts",
+      "status": "regression_passed_full_background_pending"
+    },
+    {
+      "case": "locomo:conv-30:session-15:0",
+      "classification": "prompt_contract_mismatch",
+      "cause": "Verifier demanded a separate durable assessment for conversational praise. Shared evidence boundaries clarify this while preserving concrete events.",
+      "evidence": "artifacts/v1-verification-boundaries-01/conv-30-session-15-0.json",
+      "status": "isolated_verification_rechecked_full_write_pending"
+    },
+    {
+      "case": "locomo:conv-47:session-3:0",
+      "classification": "prompt_contract_mismatch",
+      "cause": "Invalid numeric source offsets spent repair rounds; verifier subsequently rejected tentative modality for a future goal. Unique literal offsets now resolve in the same message; shared modality guidance is aligned.",
+      "evidence": "artifacts/v1-verification-boundaries-01/conv-47-session-3-0.json",
+      "status": "isolated_verification_rechecked_full_write_pending"
+    },
+    {
+      "case": "locomo:conv-50:session-19:0",
+      "classification": "prompt_contract_mismatch",
+      "cause": "Verifier rejected caption-only inferred descriptions despite extractor explicitly allowing them. Shared policy corrects that conflict. Live recheck accepted caption facts but reported a different missing personal-context item.",
+      "evidence": "artifacts/v1-verification-boundaries-01/conv-50-session-19-0.json",
+      "status": "isolated_verification_rechecked_full_write_pending"
+    },
+    {
+      "case": "locomo:conv-43:session-7:0",
+      "classification": "prompt_contract_mismatch",
+      "cause": "Verifier rejected an explicitly attributed inferred image description solely because it was metadata.",
+      "evidence": "artifacts/v1-verification-boundaries-01/conv-43-session-7-0.json",
+      "status": "isolated_verification_rechecked_full_write_pending"
+    },
+    {
+      "case": "memops:D05_reflect:segment-24:0",
+      "classification": "offset_copy_and_semantic_rejection",
+      "cause": "Final repair gave start=44 for a unique verbatim quote actually at 41. The invalid fact was dropped, causing partial-recovery semantic rejection. Exact same-message offset recovery is now tested. Question-versus-intent remains subject to independent verification.",
+      "evidence": "service/tests/source-copy-recovery.test.ts",
+      "status": "regression_passed_full_write_pending"
+    },
+    {
+      "case": "memops:C23_forget:segment-20:0",
+      "classification": "semantic_authorization_disagreement",
+      "cause": "Verifier treated 'I am not going to track that one' as a deletion, while the deterministic guard did not recognize direct authorization. This self-action statement is ambiguous; it must not be force-authorized merely to pass the sample.",
+      "evidence": "saved repair feedback and final verification in immutable candidate-model-trace.jsonl",
+      "status": "conservative_rejection_preserved"
+    },
+    {
+      "case": "memops:A14_trajectory_ops:segment-35:0",
+      "classification": "intent_guard_and_unsupported_target",
+      "cause": "The guard missed a trailing comma clause: resolved, so no need to track. That grammar is now covered with quotation/conditional negatives. The saved final verdict also rejected changing a historical usage record through a current update; that protection stays.",
+      "evidence": "service/tests/operation-intent.test.ts; saved final verifier",
+      "status": "regression_passed_full_write_pending"
+    },
+    {
+      "case": "memops:B24_remember:segment-34:0",
+      "classification": "offset_copy_and_unsupported_facts",
+      "cause": "A numeric offset error triggered heuristic partial recovery. Final verifier correctly rejected fabricated event/hobby claims and hearsay promoted to confirmed facts. Unique offset handling removes the copying defect; semantic rejects stay.",
+      "evidence": "service/tests/source-copy-recovery.test.ts; saved final verifier",
+      "status": "regression_passed_full_write_pending"
+    },
+    {
+      "case": "memops:C28_trajectory_ops:segment-12:0",
+      "classification": "binding_and_unsupported_qualifier",
+      "cause": "Model initially added an unsupported timing qualifier; its patch then changed scope while an operation still referenced incompatible targets. The strict target binding rejection is retained.",
+      "evidence": "saved repair feedback, last patch and final verifier",
+      "status": "rejection_preserved"
+    },
+    {
+      "case": "memops:D22_update:segment-11:0",
+      "classification": "participant_detection_and_scope_binding",
+      "cause": "Ingredients: was interpreted as a person, and an assistant recipe step Remove from heat became an obligatory deletion. Document-heading exclusion fixes that false authority. Saved multi-target hotel updates also had differing scopes; they still require correctly split operations. Independent fresh HTTP write now passed in 41.6s with one revision and receipt.",
+      "evidence": "service/tests/operation-intent.test.ts; saved original request; reports/round2-fresh-failed-add-NQpNb6.json",
+      "status": "fresh_http_write_passed_full_background_pending"
+    },
+    {
+      "case": "memops:D25_remember:segment-49:0",
+      "classification": "intent_guard_and_masked_error",
+      "cause": "No, don't track was not recognized; the final extraction schema failure fell back to offline then surfaced as missing source coverage. Both defects now have regression coverage. One new fresh preparation was attempted; source routing succeeded, then gateway connection failures stopped extraction, with no commit. A separate fresh HTTP diagnostic subsequently completed: first request returned continuation-pending after 90.1s, identical retry succeeded after 37.4s, exactly one revision and receipt, original database unchanged.",
+      "evidence": "service/tests/operation-intent.test.ts; service/tests/lifecycle.test.ts; reports/round2-live-checkpoint-round2-live-checkpoint-f6GUeY.json; reports/round2-fresh-failed-add-mjLB6H.json",
+      "status": "fresh_http_write_passed_full_background_pending"
+    },
+    {
+      "case": "memops:C27_trajectory_ops:segment-38:0",
+      "classification": "inconsistent_model_erasure_plan",
+      "cause": "The erasure classifier deleted a related relief/concern fact but kept its literal original witness. The cross-plan guard correctly rejected the write atomically. Removing that guard or widening cuts mechanically would risk leakage or deleting independent neighbors. Independent fresh HTTP write completed through an identical-request continuation. Read-only logical table/FTS scan found none of three selected erased detail strings; two independent appointment/location neighbors remained active. The original rejection remains unchanged.",
+      "evidence": "service/src/source-erasure.ts assertErasedWitnessProgress; saved source_erasure input/output; reports/round2-fresh-failed-add-1OHEnD.json; reports/v1-live-erasure-readback.json",
+      "status": "fresh_http_write_and_erasure_readback_passed_full_background_pending"
+    },
+    {
+      "case": "memops:A29_update:segment-24:0",
+      "classification": "host_suspend_exceeded_recovery_boundary",
+      "cause": "Observed HTTP durations ~15.4–15.6 minutes or ~9.3 minutes align with logged 920s clamshell sleep and 547s maintenance sleep. These exceed the 5-minute in-process continuation TTL. Later runner disappearance remains unexplained; sleep does not prove its termination cause.",
+      "evidence": "artifacts/round2-full-98c12e5-v1/power-events-followup.txt; original HTTP ingest timestamps",
+      "status": "bounded_expiry_preserved_runtime_soak_pending"
+    },
+    {
+      "case": "memops:A06_update:segment-33:0",
+      "classification": "host_suspend_exceeded_recovery_boundary",
+      "cause": "Observed HTTP durations ~15.4–15.6 minutes or ~9.3 minutes align with logged 920s clamshell sleep and 547s maintenance sleep. These exceed the 5-minute in-process continuation TTL. Later runner disappearance remains unexplained; sleep does not prove its termination cause.",
+      "evidence": "artifacts/round2-full-98c12e5-v1/power-events-followup.txt; original HTTP ingest timestamps",
+      "status": "bounded_expiry_preserved_runtime_soak_pending"
+    },
+    {
+      "case": "memops:D20_reflect:segment-1:0",
+      "classification": "host_suspend_exceeded_recovery_boundary",
+      "cause": "Observed HTTP durations ~15.4–15.6 minutes or ~9.3 minutes align with logged 920s clamshell sleep and 547s maintenance sleep. These exceed the 5-minute in-process continuation TTL. Later runner disappearance remains unexplained; sleep does not prove its termination cause.",
+      "evidence": "artifacts/round2-full-98c12e5-v1/power-events-followup.txt; original HTTP ingest timestamps",
+      "status": "bounded_expiry_preserved_runtime_soak_pending"
+    },
+    {
+      "case": "memops:C02_update:segment-1:0",
+      "classification": "host_suspend_exceeded_recovery_boundary",
+      "cause": "Observed HTTP durations ~15.4–15.6 minutes or ~9.3 minutes align with logged 920s clamshell sleep and 547s maintenance sleep. These exceed the 5-minute in-process continuation TTL. Later runner disappearance remains unexplained; sleep does not prove its termination cause.",
+      "evidence": "artifacts/round2-full-98c12e5-v1/power-events-followup.txt; original HTTP ingest timestamps",
+      "status": "bounded_expiry_preserved_runtime_soak_pending"
+    }
+  ],
+  "live_policy_check": {
+    "protocol": "v1-verification-boundaries-check",
+    "scope": "Live verification of saved final proposals with one shared evidence policy; no ingestion, repair, commit or benchmark score.",
+    "source_sha256": "405ff5394b32fc43448d6cf157ad4582748975fd2cb7c3d40dd78454b4fcde8a",
+    "policy_sha256": "4078f5bd3055c030f044f8911440f75c9ad69b66a7ca60fa6a61d31b69d277f0",
+    "started_at": "2026-09-06T18:26:22.336Z",
+    "cases": [
+      {
+        "case": "conv-43:session-7:0",
+        "input_sha256": "a3594cd75f644c0fa35dad25f94873be6bfba17f3016217b155acffae36477e7",
+        "system_sha256": "4c89df26677d6b5ea887079486acede298f28ce7d9aa826c628aa794e184b81e",
+        "model": "gpt-5.5",
+        "status": "returned",
+        "rejected_facts": [],
+        "missing_messages": [],
+        "elapsed_ms": 11217.303375
+      },
+      {
+        "case": "conv-50:session-19:0",
+        "input_sha256": "e65acf6c79b48f33ab8d969cf9fc43ad0672c28df64743e20bbd2c63ceaf660f",
+        "system_sha256": "4c89df26677d6b5ea887079486acede298f28ce7d9aa826c628aa794e184b81e",
+        "model": "gpt-5.5",
+        "status": "returned",
+        "rejected_facts": [],
+        "missing_messages": [
+          [
+            5,
+            "missing",
+            "Last time we talked, you mentioned your car hobby - how's that going?",
+            "The message includes a specific prior personal context that Dave had mentioned his car hobby; the linked facts only cover Calvin's Ratatouille preference/theme and do not structure this durable Dave car-hobby context."
+          ]
+        ],
+        "elapsed_ms": 26709.234249999998
+      },
+      {
+        "case": "conv-47:session-3:0",
+        "input_sha256": "7503b84d70fb613566ed91dc9d65a95acc847c1cce5ecffc0eae9e28dcae75b7",
+        "system_sha256": "4c89df26677d6b5ea887079486acede298f28ce7d9aa826c628aa794e184b81e",
+        "model": "gpt-5.5",
+        "status": "returned",
+        "rejected_facts": [],
+        "missing_messages": [],
+        "elapsed_ms": 24366.915167000006
+      },
+      {
+        "case": "conv-30:session-15:0",
+        "input_sha256": "499bc1a99e60dcb09c8539dc2c6a8b41be4108df69d2a6012ae4745f9ad3f07a",
+        "system_sha256": "4c89df26677d6b5ea887079486acede298f28ce7d9aa826c628aa794e184b81e",
+        "model": "gpt-5.5",
+        "status": "returned",
+        "rejected_facts": [],
+        "missing_messages": [],
+        "elapsed_ms": 19541.978583000004
+      }
+    ],
+    "finished_at": "2026-09-06T18:27:44.216Z"
+  },
+  "runtime_soak": {
+    "spec": "artifacts/v1-runtime-soak-02/spec.json",
+    "runtime": "artifacts/v1-runtime-soak-02/runtime.json",
+    "status": "running_not_yet_passed"
+  },
+  "service_commit": "4ba5891",
+  "service_regression": {
+    "tests": 347,
+    "passed": 347,
+    "failed": 0,
+    "output": "reports/v1-service-regression-02.txt"
+  },
+  "runtime_and_identity_tests": {
+    "tests": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "negative_caption_check": {
+    "path": "artifacts/v1-verification-boundaries-01/negative-ownership.json",
+    "result": "unsupported personal preference rejected"
+  }
+}

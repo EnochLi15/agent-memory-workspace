@@ -1,0 +1,15 @@
+✔ complete batches preserve every original UTF-16 source within model input limits (18.932ms)
+✔ closure catches an echo screened irrelevant and binds every final cut to complete review (1154.556291ms)
+✔ missing screening, foreign global targets, closure omissions and ownership vetoes reject (19.993709ms)
+✔ closure cannot retain an authorized target then report success (20.499083ms)
+✔ bounded worker phases order global resolution before closure and drain cancelled siblings (50.305833ms)
+✔ ordinary global decisions have no closure or source deletion authority (28.692417ms)
+✔ v8 validates full-history proof at atomic commit, preserving state on tamper and rollback (126.817583ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1607.196292

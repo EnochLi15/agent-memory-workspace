@@ -1,0 +1,62 @@
+{
+  "protocol": "shared-gateway-overlap-v1",
+  "campaign": "round2-joint-87d67b1-dev-r1",
+  "events": [
+    {
+      "at": "2026-09-06T12:04:57.444147+00:00",
+      "event": "candidate_controls_start",
+      "service_candidate": "8cb099f",
+      "controls": [
+        "proposal-index-control",
+        "shard-array-repair"
+      ],
+      "reason": "Full regression already has terminal failures; run remains diagnostic. Exclude overlapping shared-gateway timings from uncontended performance claims."
+    },
+    {
+      "at": "2026-09-06T12:14:40.611967+00:00",
+      "event": "candidate_controls_end",
+      "completed": [
+        "proposal-index-control",
+        "shard-array-repair",
+        "verification-index-repeat",
+        "retained-witness-diagnostic",
+        "lifecycle-variants"
+      ]
+    },
+    {
+      "at": "2026-09-06T12:17:07.516969+00:00",
+      "event": "candidate_controls_start",
+      "controls": [
+        "locked-repair-control"
+      ],
+      "reason": "Preserve original rejection and verify exact failed repair independently; shared-gateway timings excluded from uncontended comparison."
+    },
+    {
+      "at": "2026-09-06T12:17:28.633Z",
+      "observed_at": "2026-09-06T12:23:01.571358+00:00",
+      "event": "candidate_controls_end",
+      "completed": [
+        "locked-repair-control"
+      ]
+    },
+    {
+      "at": "2026-09-06T12:24:36.552536+00:00",
+      "event": "candidate_controls_start",
+      "service_candidate": "bfec674",
+      "controls": [
+        "fresh-failed-add:LoCoMo48",
+        "fresh-failed-add:F07_update"
+      ],
+      "reason": "Fresh requests in isolated snapshots, every model stage newly generated. Contended timings excluded from uncontended performance comparison."
+    },
+    {
+      "at": "2026-09-06T12:29:10.706076+00:00",
+      "event": "candidate_controls_end",
+      "completed": [
+        "fresh-failed-add:LoCoMo48",
+        "fresh-failed-add:F07_update"
+      ]
+    }
+  ],
+  "scope": "Exclude overlapping durations from uncontended performance comparisons. Does not establish cause of transport failures."
+}

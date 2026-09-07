@@ -1,0 +1,30 @@
+{
+  "protocol": "v1-isolated-http-storage-readback-v1",
+  "checked_at": "2026-09-06T20:38:44.479305+00:00",
+  "service_commit": "57d8e65b89ccec41d0fa29d261a6512f2cb1864f",
+  "passed": false,
+  "checks": {
+    "historical_Priya_food_preferences_erased": false,
+    "Marcus_frequency_retained": true,
+    "user_mild_curry_ginger_retained": true,
+    "user_food_budget_retained": true
+  },
+  "remaining_fact_ids": [
+    "6b324d86624027aba881ff8e8223eb6513a18c824e603d31c3c6e18c5c88d911",
+    "62203ad54f3f87001152b1c03833f4da844579fb6cebf36534c6a595909896b2",
+    "9cdc32ea121463f1296aaa5a85ef28ca8c766974d210f2c1e8a9aea33856fc4b",
+    "6e4c89ad15d36db57b63ed4937873a8827e18272ff15e5bc2150b6b1466d1e5c"
+  ],
+  "remaining_source_mentions": {
+    "fukujinzuke": 3,
+    "Carolina Reaper": 2,
+    "vindaloo": 2
+  },
+  "cause_evidence": "Initial extraction selected historical Priya targets. Binding repair replaced the broad operation with only three new fact targets. Verification accepted that narrowed scope. Historical food preferences remain active despite the pre-frozen erasure expectation.",
+  "scope": "Read-only logical storage of one isolated post-HTTP diagnostic, not a fresh full background or benchmark score. D25 expectation was frozen before original candidate ingestion reached this segment.",
+  "evidence_sha256": {
+    "artifacts/v1-delivery-tools/artifacts/round2-fresh-failed-add-6KKzev/report.json": "43aea56bef7f069cf472207b6c4d628230e15a1ce937a05c9ebe2f02dc401fda",
+    "artifacts/v1-delivery-tools/artifacts/round2-fresh-failed-add-6KKzev/data/f516089439cd1cc358d1d26f17968ca6bb822492ddd721ef87602c8af328e14b/memory.sqlite": "2206c1e8cb6bc6d7df4be2892b710cc4532205b3b38ac9f33af8e3d9b67146ad",
+    "artifacts/v1-long-33a9e05-01/storage-expectations.json": "429f2c204c95e822657cf235981ac617df437a6942f4e55ec70d3ea0d2df7f9b"
+  }
+}

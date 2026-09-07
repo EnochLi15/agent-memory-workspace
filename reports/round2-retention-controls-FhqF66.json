@@ -1,0 +1,38 @@
+{
+  "protocol": "resolved-source-retention-verifier-controls-v1",
+  "scope": "Three synthetic verifier-only cases with fixture source actions and facts; real verification model, no extraction/storage or benchmark accuracy.",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-retention-controls-FhqF66",
+  "source_sha256": {
+    "models.ts": "34a3cdd259c0aed3f256caeb9ef4fae5c29b32cbac23bfa5d0cb953174fb90c5",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "types.ts": "9fad8597deb3ac09183c4b8093d8b608d40024bd4ff5d46ea3d6771f51482f71"
+  },
+  "started_at": "2026-09-06T09:26:08.524Z",
+  "results": [
+    {
+      "name": "existing_active_retention",
+      "findings": [],
+      "pass": true,
+      "elapsed_ms": 4882.008457999999
+    },
+    {
+      "name": "new_personal_detail_requires_memory",
+      "findings": [
+        "message 0: The user's dentist being Dr. Lumen is a new specific personal fact, but no proposed fact represents it.; missing statement: My dentist is Dr. Lumen."
+      ],
+      "pass": true,
+      "elapsed_ms": 4078.663958
+    },
+    {
+      "name": "missing_existing_record_cannot_use_retention_exception",
+      "findings": [
+        "message 0: The browser preference is already active, but there is no existing active fact provided for the brother's real gym, and the message indicates it should be kept.; missing statement: Keep my brother's real gym and my browser preference."
+      ],
+      "pass": true,
+      "elapsed_ms": 5304.399874999999
+    }
+  ],
+  "status": "passed",
+  "finished_at": "2026-09-06T09:26:22.791Z"
+}

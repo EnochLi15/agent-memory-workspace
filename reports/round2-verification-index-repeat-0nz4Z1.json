@@ -1,0 +1,33 @@
+{
+  "protocol": "fixed-proposal-index-paired-verification-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-verification-index-repeat-0nz4Z1",
+  "started_at": "2026-09-06T12:06:48.408Z",
+  "live": false,
+  "planned_calls": 6,
+  "order": [
+    [
+      "original",
+      "labeled"
+    ],
+    [
+      "labeled",
+      "original"
+    ],
+    [
+      "original",
+      "labeled"
+    ]
+  ],
+  "model": "gpt-5.5",
+  "effort": "low",
+  "input_hashes": {
+    "original": "e2eb54616c5f82aa5ebad761e626605b1afa909bfe1c7bcb133016c1318cd755",
+    "labeled": "3b6057cfae70a39a1f9823e9da0eae596cea8fd2aed2b660101560307f9f6ae8"
+  },
+  "system_hashes": {
+    "original": "8069c1d3c3ab1531aee890f3f09d4511ecf5cde35be664eacadeeb9a83c51772",
+    "labeled": "b62b64d98340e49c9d70fac58fd34b0ff43d54a6d58f84ab28984e53f41148cc"
+  },
+  "rows": [],
+  "scope": "Three preplanned paired verifier-only repeats on one exposed proposal. Every outcome retained, no repair or storage. Verdict consistency is not semantic correctness or benchmark accuracy. Shared gateway timings may be contended."
+}

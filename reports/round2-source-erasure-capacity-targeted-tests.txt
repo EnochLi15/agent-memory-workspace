@@ -1,0 +1,36 @@
+✔ actual replacement repair receives the mismatched fields and model-visible target handle before re-verification (24.639417ms)
+✔ replacement explanations distinguish property and scope, preserving valid references and all source text (0.591084ms)
+✔ uniform compact decisions resolve the untouched original text, including Unicode and whitespace (1.160167ms)
+✔ mixed compact decisions erase all selected spans and retain independent same-name neighbors (0.315833ms)
+✔ missing, repeated, overlapping, rewritten and Unicode-splitting erasure quotes reject (0.431958ms)
+✔ compact uncertainty and mixed facts cannot produce a deletion plan (0.093959ms)
+✔ compact protocol requires every candidate exactly once and rejects extra decision fields (0.178166ms)
+✔ reference tables reconstruct every candidate including different boundaries on the same source (0.2225ms)
+✔ packed batch capacity is checked on transmitted JSON and never drops repeated source-boundary pairs (30.346459ms)
+✔ quote repair preserves verdicts, valid siblings and the original response (0.46325ms)
+✔ all semantic decisions must be resolved before any quote defect is repairable (0.161667ms)
+✔ quote patches reject omitted, duplicate, uncertain, nonliteral and overlapping repairs (0.415875ms)
+✔ source erasure removes old assistant paraphrases and preserves unextracted mixed-sentence neighbors (42.504084ms)
+✔ missing or uncertain source partitions cannot be committed and later echoes remain checked (19.211375ms)
+✔ source plan rejects stale raw evidence and rolls back source cuts with the transaction (14.860292ms)
+✔ exact partitions reject changed text, duplicates, missing coverage, mixed facts and split Unicode (0.352875ms)
+✔ v4 cannot silently reuse a pre-existing v3 directory (0.238459ms)
+✔ candidate capacity fails instead of truncating source coverage (14.614167ms)
+✔ source work capacity uses complete transmitted batches instead of repeated authorization copies (113.367917ms)
+✔ explicit restoration of the authorized value survives v4 source checks without reviving old raw text (10.402667ms)
+✔ source batches obey payload limits and preserve every original candidate index (28.867916ms)
+✔ large source cleanup is atomic across batches; reject final batch=false (83.206292ms)
+✔ large source cleanup is atomic across batches; reject final batch=true (44.531292ms)
+✔ verified erased facts are not rejudged, while all their original sources still undergo cleanup (9.304125ms)
+✔ source scope receives surviving fact meanings while never exempting a retired witness (8.190583ms)
+✔ source quote repair shares the deadline and permits only one batch repair: repeat=false (64.871083ms)
+✔ source quote repair shares the deadline and permits only one batch repair: repeat=true (41.978417ms)
+✔ a certified erased fact cannot keep every original witness intact behind a reviewed source (8.268791ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 700.259792

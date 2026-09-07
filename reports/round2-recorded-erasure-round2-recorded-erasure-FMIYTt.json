@@ -1,0 +1,76 @@
+{
+  "protocol": "recorded-erasure-scope-and-clone-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-recorded-erasure-FMIYTt",
+  "sample": "B05_forget",
+  "snapshot_sha256": "6b7562701a45e6d332a5f56a65f5f7af213967ad9118291d36478a900400661a",
+  "parent_prepared_sha256": "418021d70e09b6201aa103ca5c37033f91448fe0d1b5ea6770392aee87587e2a",
+  "spec_sha256": "5cecfe15ab81d78ba0f038c821486b3f9696842ba7c5da2bbb28a238bc16f753",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "ab9c72161db72756cd3d0b3406d83f9db51e1f1fa667465f53bac80370668050",
+    "db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction.ts": "c4b73837371f699a045e924ccc677c3f5ecc36b3ef4f0a6f6603d8c7c5f9cb1f",
+    "models.ts": "8c7de47b7f30d54f568d19ab5c15b07caea6b405a89d6ef0f2395fd90b435936",
+    "operation-intent.ts": "3c5c09d302b7eba4aed7828972c27570129f3b3c81f84620651f8f2177af1036",
+    "passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "cb874ec70d911466cca1ef31af3878a853e8d1dfc770fb33e1530a405978712d",
+    "retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "storage.ts": "fa9d1d0d06478530bdef4b84110677ed12b6785d6c8454198bb320d954bcc277",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "types.ts": "a8412b1b40911e3dea78d674dfa6244ee0b6420e6d1628836e868fd8e24a14f1",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "input_sha256": "96b127bf8a525250a448386a7a7903cfeec3940c6adc81314c9477d61d4ad9f9",
+  "candidate_pairs": 2,
+  "automatic_pairs": 0,
+  "status": "committed",
+  "scope": "The old archived extraction and semantic checks are fixed. Only erasure binding calls a new model. A private unerased v2 checkpoint may be transplanted to v3 for this transaction diagnostic, explicitly logged; this is not supported production migration, a fresh full prefix, an overall latency comparison or a benchmark score.",
+  "reuse": {
+    "type": "fixed-output",
+    "parent_report_sha256": "96667ffafb6c076868e948cb146a1a70bcc1f27e057bdb1e56fe0e3d080c37c3",
+    "output_sha256": "cced3e7819da0aec5b714497b2139604774bb9ce847ccf1104cf46a33e311d06"
+  },
+  "new_generation_calls": 0,
+  "binding_elapsed_ms": 0.9363330000000047,
+  "plan": {
+    "fingerprint": "ed77788f2803417afe07401ad86cbba1a99f502c2ba301352a6100794bb18a22",
+    "decisions": [
+      {
+        "fact_id": "5af47d36e6be5f0094d267e59e1ce7967a2dbc72c09a328f8188e37af13470e7",
+        "key": "c7ba44f696d11eb7c74b8861a23008c2fe4dccb3407b3f415f52568ded9fe892",
+        "effect": "erase",
+        "quote": "remove Iris from the list entirely"
+      },
+      {
+        "fact_id": "e47e7ced11bd7d3cae0181f219d26904875cdead385c8838e66e21aa160bcfcd",
+        "key": "c7ba44f696d11eb7c74b8861a23008c2fe4dccb3407b3f415f52568ded9fe892",
+        "effect": "erase",
+        "quote": "keeping Iris on there was hedging for no reason"
+      }
+    ]
+  },
+  "diagnostic_transplant": {
+    "from": "dual-source-v2",
+    "to": "dual-source-v3",
+    "erased_records": 0,
+    "markers": 0
+  },
+  "receipt": {
+    "success": true,
+    "request_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget:segment-18:0",
+    "user_id": "round2-quality-dev-441cc48-r1-facts:memops:B05_forget",
+    "session_id": "segment-18"
+  },
+  "state_sha256": "e0b0df11a37b3510c7c520dc065a247b04a8ab18b80e9afb05b7494bac4da0b2",
+  "committed_revision": 19,
+  "queries_sha256": "c887b3e14e7e8f922b5f2692b62c7177d7b838b44faf4ef8f1378dcad679d274",
+  "elapsed_ms": 278.702541
+}

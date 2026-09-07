@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-09-07T03:10:34.522203+00:00",
+  "scope": "Read-only local outbound diagnosis; no network settings changed",
+  "https_github": {
+    "result": "TLS failure",
+    "curl_exit_code": 35
+  },
+  "connected_vpn": "Quantumult X 2",
+  "vpn_provider": "com.crossutility.quantumult-x",
+  "prior_evidence": {
+    "post-run-network-check.json": {
+      "checked_at": "2026-09-07T02:26:30.527645+00:00",
+      "scope": "One unauthenticated HEAD per public HTTPS target after Git push TLS failure. No network/proxy settings changed.",
+      "https_checks": [
+        {
+          "url": "https://github.com",
+          "exit_code": 35,
+          "result": "000 198.18.2.242 0.516712",
+          "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443"
+        },
+        {
+          "url": "https://api.github.com",
+          "exit_code": 35,
+          "result": "000 198.18.2.237 0.527194",
+          "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to api.github.com:443"
+        },
+        {
+          "url": "https://www.cloudflare.com",
+          "exit_code": 35,
+          "result": "000 198.18.22.109 0.516716",
+          "error": "curl: (35) LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to www.cloudflare.com:443"
+        }
+      ],
+      "system_proxy_flags": {},
+      "git_proxy_configured": false,
+      "local_commit": "d7af7ab",
+      "push_completed": false
+    },
+    "network-route-details.json": {
+      "54.183.78.37": {
+        "destination": "32.0.0.0",
+        "mask": "224.0.0.0",
+        "interface": "utun4"
+      },
+      "1.1.1.1": {
+        "destination": "1.0.0.0",
+        "mask": "255.0.0.0",
+        "interface": "utun4"
+      },
+      "clash_listeners": [],
+      "service_directory_files": [
+        "clash-core-service"
+      ]
+    }
+  },
+  "conclusion": "Both model generation and unrelated outbound HTTPS failed. Local TUN path is implicated for investigation; model/gateway internal root cause is not established. Prior residual Clash helper attribution was incorrect.",
+  "formal_release": false
+}

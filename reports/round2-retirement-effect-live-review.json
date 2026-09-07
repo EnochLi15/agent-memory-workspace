@@ -1,0 +1,36 @@
+{
+  "protocol": "retirement-effect-live-review-v1",
+  "service_commit": "4bca000",
+  "run_dir": "artifacts/round2-failure-prefixes/2026-09-06T05-28-32-111Z-zRped7",
+  "hashes": {
+    "results.json": "88c0a5355f3316696f60dce35ae5d58dc965817ddbd225ef2675c0455530f6e1",
+    "D17_remember-state.json": "3801b09936354e8950757c9404cf1166019c9b1d4e8a7f7e7948c12b6dabcc98",
+    "retrieval-probe-v1/answers.jsonl": "42f4e1c268f6ee1dbd47a2426831d85d239c393590f8748a739cb31656d775a2",
+    "retrieval-probe-v1/report.json": "32a75cccd17f44ab2e5d0c73b14399982089f1d157f81123b564b1c377e7fa7b"
+  },
+  "checks": {
+    "three_tablet_targets_erased": true,
+    "no_active_tablet_fact": true,
+    "no_active_tablet_passage": true,
+    "firefox_safari_kevin_preserved": true,
+    "no_deleted_detail_in_retrieval": true,
+    "no_deleted_detail_in_answers": true
+  },
+  "deletion_and_neighbor_gate_pass": true,
+  "answers": [
+    {
+      "query": "What are my default browsers on my work laptop and iPhone, and what browser does Kevin use?",
+      "answer": "Your default browser on your work laptop is Firefox, and on your iPhone it is Safari. Kevin uses Brave as his default browser."
+    },
+    {
+      "query": "What information do you still have about my old tablet and its bookmark syncing issue?",
+      "answer": "I only have that your current browser defaults are Firefox on the laptop and Safari on the phone, and that you set Safari as the default browser on your iPhone around mid-March. I also have that you tried Firefox on mobile first, but the gesture navigation felt janky, so you went with Safari instead."
+    }
+  ],
+  "answer_limitation": "The second answer supplies retained browser facts rather than explicitly stating that tablet records are unavailable. It does not disclose erased details; this is not a claim of optimal answer relevance or benchmark correctness.",
+  "variant_run_dir": "artifacts/round2-lifecycle-variants/2026-09-06T05-28-33-220Z-xf7oPa",
+  "variant_results_sha256": "4f070291467175a1ee29800d556112820e20d17e6669c0a0fd84cb39cf0bf28a",
+  "variants_passed": 5,
+  "variants_planned": 5,
+  "scope": "One complete original D17 prefix, two fixed-mini posthoc answers, and five two-add synthetic controls with new model calls. Code and response-format differ from the c8cbcae attempt; no causal latency claim, no full benchmark or three repeats."
+}

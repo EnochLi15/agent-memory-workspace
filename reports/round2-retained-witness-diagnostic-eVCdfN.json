@@ -1,0 +1,32 @@
+{
+  "protocol": "retained-witness-exact-guard-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-retained-witness-diagnostic-eVCdfN",
+  "parent": "artifacts/round2-B05-87d67b1-retained-failure-6511nn_4",
+  "original_runtime": "artifacts/round2-service-shard-repair",
+  "original_storage_sha256": "c95b45078845478d5e579869f18e8b7439a069aed8d84bb533e8466fd267ee3c",
+  "instrumented_storage_sha256": "808bc53c9b71f5178afc3f1e3408fae39b456add51b560d13f28fd0649bfbccf",
+  "fresh_llm_calls": 0,
+  "scope": "Private instrumented runtime only captures the same fact and cuts at the original rejecting guard. No guard bypass, new model decision or live-service mutation. All successful saved packets must match exact system/input.",
+  "status": "committed",
+  "checks": [
+    {
+      "name": "single_revision",
+      "pass": true
+    },
+    {
+      "name": "receipt_persisted",
+      "pass": true
+    },
+    {
+      "name": "Elara_stays_active",
+      "pass": true
+    },
+    {
+      "name": "previously_retained_Elara_source_unchanged",
+      "pass": true
+    }
+  ],
+  "saved_packets_used": 5,
+  "saved_packets_planned": 5,
+  "original_database_unchanged": true
+}

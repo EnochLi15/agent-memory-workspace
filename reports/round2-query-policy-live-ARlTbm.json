@@ -1,0 +1,1023 @@
+{
+  "protocol": "query-policy-http-synthetic-v1",
+  "scope": "One deterministic synthetic seed with real local vectors. Two retrieval profiles over that unchanged database, real HTTP search, model rerank and fixed ordinary mini Answer. Keyword checks are diagnostic controls, not benchmark accuracy or independent judging; no full repeat or holdout claim.",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-query-policy-live-ARlTbm",
+  "started_at": "2026-09-06T09:46:55.672Z",
+  "status": "passed",
+  "answer_model": "gpt-5.4-mini",
+  "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+  "spec_sha256": "1cf6bb57860889cc111353e69039a7b171868426c29b0af62e7cb0088096c824",
+  "source_sha256": {
+    "binding.ts": "4ccba1a00fceb1bbe09340a9e7a1c0566181cf437aa60040a86499380ea2465d",
+    "config.ts": "61a7d313756727958ec1c35ec846758afa469280baa1b06041aeb39bb7ed9f02",
+    "db-worker.ts": "05097317fd42ebfbfed24917c3b99fc60c85cede517abef0789cd1d9bc46ef8d",
+    "engine.ts": "f9a3ebcb287ee6485f320a8e684f9bb1a44b61d1b2f5eaf113ef1a208d6b2100",
+    "erasure.ts": "d18efdca0f625dbc34e447520b154b710fb4d2078bec5cda8e2eeac7da36b4f4",
+    "events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "extraction-groups.ts": "972c623a99049b42cc3728960a3296144337a90ce319b6549d1c021bad4b5e77",
+    "extraction.ts": "c2cdcdbe6ab260f2a4736dc6498f0f8f09aabd9972896a1ff06008d381074e5d",
+    "model-failure.ts": "fb25710858adaf2c51652cc760d4584dc1ca5d9c5e2c3ef2c5d9b6acf0186ed6",
+    "models.ts": "34a3cdd259c0aed3f256caeb9ef4fae5c29b32cbac23bfa5d0cb953174fb90c5",
+    "operation-intent.ts": "71b8d3c58cb87960b3a13ee42d9b3791a19d376300e0e76964ada6c057eaa477",
+    "passages.ts": "ff533810a23519c29a5f776de5e10fbc26478cf7d1141f410aab9045d8110010",
+    "prompts.ts": "0daad6bd694ea372b9631ef617fd412b0f44bae62c967140821f6a7e3b2f6eba",
+    "repair.ts": "42a03fa6cd0a96cab9e10f2235aae4c5289cebe7b590474039c552fe83f37cf0",
+    "reranking.ts": "7750e78cbd212b33414d77be9bfde9a0344ea52818f51c17e2fec24432e67d3e",
+    "retrieval-policy.ts": "8e621c40985923792dfddbf1abaff771c2bedef782b7dace7792b0923b0952ef",
+    "retrieval.ts": "ff0bfc41947ed492f16636a09d3f4b907b39c8de7f0525fc49c0ebb52c27c41f",
+    "server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "source-erasure.ts": "c4f7807a827f746fb4d13d36b947c66cab118eba748fe345a26c15279844a40e",
+    "source-operation-batches.ts": "41e90a82dcd03688c3ded797dedce7b31c3043c8ebc99b0d589c2527a30f6480",
+    "source-operations.ts": "6e634ea233c29197e5ed0ff6b5a210eff2e458cf0654dfb76de696832b01afe0",
+    "source-references.ts": "d938f973e1b782229aee775207348c7cd74036cf879d1ba6423f2fabea33866b",
+    "storage.ts": "b5297347cf8e09c418730a7dff7bb1f7195b206b6aa1ea8628d9fbd4fbf70f09",
+    "temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "text.ts": "a2cfddd00834bf3b0917cb61f96df857e89a7959bb30a7a3d3ae696355693393",
+    "transitions.ts": "cd4265e2001bd148297e62bed758fde70a043105bb5e23af81628f320866c466",
+    "types.ts": "9fad8597deb3ac09183c4b8093d8b608d40024bd4ff5d46ea3d6771f51482f71",
+    "verification-compact.ts": "dc63398b9d0a2d385c182bbb8491cdc115b198f41321471a47a22d25df95461d",
+    "verification-session.ts": "d536d77eb3015c00ab5383628c71aa769c7a1dc5f4995005696ecf2c9d0de8a7",
+    "verification.ts": "08927e6bca7fee1b5b657b4f8b3a0b4ea83f6dec2245a35272274ca67d341fa2"
+  },
+  "profiles": [
+    {
+      "profile": "conditional",
+      "results": [
+        {
+          "id": "browser",
+          "query": "What is my browser?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 4426.882417,
+          "memories": [
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.08,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Firefox",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "color",
+          "query": "What is my favorite color?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 3774.4414159999997,
+          "memories": [
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.05,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.04,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Blue.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "coffee",
+          "query": "What is my preferred coffee?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 2834.0219159999997,
+          "memories": [
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.05,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 250,
+          "answer": "Black drip coffee.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "friend_hobby",
+          "query": "What hobby does Alice's friend enjoy?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 3775.0910000000003,
+          "memories": [
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.92,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.2,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.05,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.03,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Bob enjoys kayaking.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "employer_location",
+          "query": "Where is the employer of Alice's friend based?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 2571.138833000001,
+          "memories": [
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.98,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.7,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.4,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.05,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 383,
+          "answer": "Oslo.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "hobby_list",
+          "query": "What hobbies do Alice and Bob have?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 3472.746416000002,
+          "memories": [
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.15,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.15,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.02,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+          "expected_terms_present": true,
+          "within_budget": true
+        }
+      ],
+      "storage_unchanged": true,
+      "rerank_decisions": [
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "8140fc048fd953b8b0b14cb963b3c420456be725abb74c391bf38a04806fcf03",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 4362.619875,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "6647236a3d7f7d796401fbbe96d630f269d1beb3185d76b092f3125c25cd514d",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 3664.2794589999994,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "c4f8c58cfb4319fc99b45e410753e677039f9782edb68d3ac96be298c7326585",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 2735.562,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "3f36204fc94bed2572d41f674d88da19cd491c4d6deab9e3574712436ef81a59",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.75,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 3699.5819999999985,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "2838b792be1f7aa22733fd6afe62ae5d75f96f8cc774977a6ac3ca0b15db1e01",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.5,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 2472.0434160000004,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "2468bc840b5189b2173abd8ba9fcc4d79ee74978109809eb182bfde82b22aa7f",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "always",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.6666666666666666,
+            "enabled": true,
+            "reason": "always"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 3373.6413749999992,
+          "scores_discarded": false
+        }
+      ],
+      "rerank_requested": 6
+    },
+    {
+      "profile": "selective",
+      "results": [
+        {
+          "id": "browser",
+          "query": "What is my browser?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 81.68616699999984,
+          "memories": [
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.03278689,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.03225806,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.01587302,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.015625,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.01538462,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.01515152,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01492537,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01470588,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01449275,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01268657,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Firefox",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "color",
+          "query": "What is my favorite color?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 100.44574999999895,
+          "memories": [
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.03278689,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.01612903,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01587302,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.015625,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.01538462,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01515152,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.01492537,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.01470588,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01449275,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01231884,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Blue.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "coffee",
+          "query": "What is my preferred coffee?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 83.85016699999687,
+          "memories": [
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.03278689,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01612903,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.01587302,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.015625,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.01538462,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01515152,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.01492537,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.01470588,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01449275,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01231884,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Black drip coffee.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "friend_hobby",
+          "query": "What hobby does Alice's friend enjoy?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 113.90712500000518,
+          "memories": [
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.0527192,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 0.05258699,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 0.03774603,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.02138462,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01915152,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.015625,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "d080d38bf6177648ea7033a844fa70b80ecd09283574daa833dd47d122084da8",
+              "content": "My favorite color is blue.\nVerbatim source context (use this to verify actor and negation):\nuser: My favorite color is blue.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 6de4bd614d21]",
+              "score": 0.01492537,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "c259b95dc163e78ca4cc3e595cd6bf7268f05d2b22ae0c850f5293ff7f03bafb",
+              "content": "My preferred coffee is black drip coffee.\nVerbatim source context (use this to verify actor and negation):\nuser: My preferred coffee is black drip coffee.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bd10b53dc0f3]",
+              "score": 0.01470588,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "b5b7556e3591fe853201b0061a2a0679b0368c5ccd91a3ce8bbc4ccfcac2d59d",
+              "content": "My browser is Firefox.\nVerbatim source context (use this to verify actor and negation):\nuser: My browser is Firefox.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: bcc42d705292]",
+              "score": 0.01449275,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01287879,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 795,
+          "answer": "Bob enjoys kayaking.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "employer_location",
+          "query": "Where is the employer of Alice's friend based?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 2691.8746249999967,
+          "memories": [
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.98,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.97,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "source-f0acc42bd46471ea142e218c8cc24fcfc3ab02bcdcd80d5071781e397bb1356e",
+              "content": "Cedar is based in Oslo.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.19,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 305,
+          "answer": "Oslo.",
+          "expected_terms_present": true,
+          "within_budget": true
+        },
+        {
+          "id": "hobby_list",
+          "query": "What hobbies do Alice and Bob have?",
+          "status": "passed",
+          "http_status": 200,
+          "search_ms": 3108.7424580000006,
+          "memories": [
+            {
+              "id": "125635d3f73afe0444793a5a3c7afd44b54522fd6bd59afe70ea9bec08832d55",
+              "content": "Alice: I enjoy painting.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: I enjoy painting.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: f982426d39ea]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "782f3a8e1890dc6a45f85dae434a39acfe3aec28386294a58b19e9e6969b0cda",
+              "content": "Bob: I enjoy kayaking.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I enjoy kayaking.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 522c1ae58e02]",
+              "score": 1,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "6736c8df8dd1144bd62658da5c7378c22265b4b56071198f3ca021060adbc94e",
+              "content": "Alice: My friend is Bob.\nVerbatim source context (use this to verify actor and negation):\nuser: Alice: My friend is Bob.\n[status: confirmed; subject/speaker: Alice; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 0719971e4a20]",
+              "score": 0.12,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "28ab12f19e9545c02e60e96d252bf49573bc8095742e5287a7f91ab95c611e4c",
+              "content": "Bob: I work for Cedar.\nVerbatim source context (use this to verify actor and negation):\nuser: Bob: I work for Cedar.\n[status: confirmed; subject/speaker: Bob; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: cb4d741fa591]",
+              "score": 0.05,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "15618762b343f074358535b54a325a9fb1749ebeb62258cf0cb701a5443f4757",
+              "content": "Diane: My browser is Safari.\nVerbatim source context (use this to verify actor and negation):\nuser: Diane: My browser is Safari.\n[status: confirmed; subject/speaker: Diane; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: e382c4e68e4c]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            },
+            {
+              "id": "47e40ecb741c458ef7dda3304876fd04bea154a8f4de3c952f9a82e4127d11e5",
+              "content": "Cedar is based in Oslo.\nVerbatim source context (use this to verify actor and negation):\nuser: Cedar is based in Oslo.\n[status: confirmed; subject/speaker: Cedar; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 44f45d236e2f]",
+              "score": 0.01,
+              "created_at": "2026-01-01T00:00:00Z"
+            }
+          ],
+          "evidence_tokens": 477,
+          "answer": "Alice enjoys painting, and Bob enjoys kayaking.",
+          "expected_terms_present": true,
+          "within_budget": true
+        }
+      ],
+      "storage_unchanged": true,
+      "rerank_decisions": [
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "8140fc048fd953b8b0b14cb963b3c420456be725abb74c391bf38a04806fcf03",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": false,
+            "reason": "fits_budget"
+          },
+          "rerank_outcome": "skipped",
+          "elapsed_ms": 4.590499999998428,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "6647236a3d7f7d796401fbbe96d630f269d1beb3185d76b092f3125c25cd514d",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": false,
+            "reason": "fits_budget"
+          },
+          "rerank_outcome": "skipped",
+          "elapsed_ms": 4.839874999997846,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "c4f8c58cfb4319fc99b45e410753e677039f9782edb68d3ac96be298c7326585",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 1,
+            "enabled": false,
+            "reason": "fits_budget"
+          },
+          "rerank_outcome": "skipped",
+          "elapsed_ms": 2.567250000000058,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "3f36204fc94bed2572d41f674d88da19cd491c4d6deab9e3574712436ef81a59",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.75,
+            "enabled": false,
+            "reason": "fits_budget"
+          },
+          "rerank_outcome": "skipped",
+          "elapsed_ms": 8.768834000002244,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "2838b792be1f7aa22733fd6afe62ae5d75f96f8cc774977a6ac3ca0b15db1e01",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.5,
+            "enabled": true,
+            "reason": "ambiguous_candidates"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 2590.0863750000062,
+          "scores_discarded": false
+        },
+        {
+          "event": "retrieval_policy",
+          "query_sha256": "2468bc840b5189b2173abd8ba9fcc4d79ee74978109809eb182bfde82b22aa7f",
+          "tenant_sha256": "61e19ebbb887c9f8df12dbc8497574b37784a1b54383adcba08f7fda4c0d5933",
+          "revision": 1,
+          "initial_revision": 1,
+          "rerank_policy": "selective",
+          "rerank_format": "indices",
+          "decision": {
+            "candidate_count": 18,
+            "initial_coverage": 0.6666666666666666,
+            "enabled": true,
+            "reason": "complex_query"
+          },
+          "rerank_outcome": "ok",
+          "elapsed_ms": 3006.8045420000053,
+          "scores_discarded": false
+        }
+      ],
+      "rerank_requested": 2
+    }
+  ],
+  "finished_at": "2026-09-06T09:47:42.078Z"
+}

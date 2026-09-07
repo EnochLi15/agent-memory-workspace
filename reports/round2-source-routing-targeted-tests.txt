@@ -1,0 +1,16 @@
+✔ complete ordinary route bypasses large historical screening but resolves no forget obligation (7.206708ms)
+✔ routing rejects incomplete, duplicate, invented, assistant and future witnesses (1.787417ms)
+✔ request, facts and full history identity changes invalidate routing proof (1.783958ms)
+✔ source review and mixed routing cannot bypass complete historical proof or promote ordinary to source cuts (22.460791ms)
+✔ v9 requires routing dependencies and fresh directory (0.385708ms)
+✔ ordinary route cannot certify unknown forget as no-op even when extraction and semantic stubs omit it (3.001708ms)
+✔ v9 validates routing at atomic commit and refuses reuse of v8 storage (29.527917ms)
+✔ atomic v9 commit rejects an all-ordinary proof with omitted operations before any mutation (7.585083ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 243.984208

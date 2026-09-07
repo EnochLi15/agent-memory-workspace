@@ -1,0 +1,180 @@
+{
+  "protocol": "v1-small-closed-loop-v1",
+  "checked_at": "2026-09-06T21:42:30.362452+00:00",
+  "campaign": "v1-small-7a50d22-01",
+  "scope": "Exposed fixed two-group ten-question control. Same final evidence budget, embedding, Answer/Judge and dataset; not equal total compute. Not overall accuracy or stable gain.",
+  "runs": {
+    "raw": {
+      "planned": 10,
+      "correct": 8,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 3,
+      "max_estimated_tokens": 500,
+      "erased_code_returned_qids": [
+        "small-city",
+        "small-manager",
+        "small-work-browser",
+        "small-friend-browser",
+        "small-forgotten-code"
+      ],
+      "service_generation_attempts": 0,
+      "generation_purposes": {},
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "add_mean_ms": 76.80840020000002,
+      "search_mean_ms": 87.97371659999999,
+      "artifact_sha256": {
+        "metrics.json": "d599ccec2ded1c2ccf654ed447828314d9270cd15a12d09b5e5a390a312564f8",
+        "predictions.jsonl": "4315bcfb91712c65f88ee806c4a62af31fa2693f144b42e6c7dd922ba0db9e64",
+        "judgments.jsonl": "f909d7271423744434a14e512c09b61ee4ac4a36eaecadba03b75b7261ea0625",
+        "report.md": "2e0de582b7e8096fbac460c62af4c772e2bc9fe182a811a57d9643e758218c0c",
+        "ingest.jsonl": "a19e4556d343e0065f23b693e55118c378108437745e7a40e75ac748e118c196",
+        "requests.jsonl": "b5d1691dc1ffc0fd78e7763ea57b54f1ea4587ebe8c0bc6075410238e90a536f",
+        "manifest.json": "26651d7553f742cd0d5c46a8c6e13c16ab09764708d1c19b1acf809548d1c122",
+        "retrievals.jsonl": "1e0d6a74d670fb13b61bc49d5b709e36ea58b0870307b1d1a63eb7a57dcc9b77"
+      }
+    },
+    "candidate": {
+      "planned": 10,
+      "correct": 10,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 13,
+      "max_estimated_tokens": 980,
+      "erased_code_returned_qids": [],
+      "service_generation_attempts": 11,
+      "generation_purposes": {
+        "extraction": 5,
+        "verification": 5,
+        "source_erasure": 1
+      },
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 63270,
+        "completion_tokens": 2848,
+        "total_tokens": 66118
+      },
+      "add_mean_ms": 15422.156700000001,
+      "search_mean_ms": 88.89672900000078,
+      "artifact_sha256": {
+        "metrics.json": "2cb1a7440d2f737781d4a7682e49f507b1d2a860ae8e946ed405beb4d078e8c1",
+        "predictions.jsonl": "5477b940d73d72e94ff5bdd45791853a789ba083ee965ef6f56a8c7173927742",
+        "judgments.jsonl": "415b1aa8320031db84b8fe76e6be4153a9212d9a467b5fb9ab9bc94f56d4ac73",
+        "report.md": "2fe8a7a8e09fa058b63e8a2b1d206a24316e9dd3ebaecaff9dbe84e354008ffc",
+        "ingest.jsonl": "0f4b6aac0974d8b7c542cf5a8c3be7eca632f8657bb25893ac96051badd5e178",
+        "requests.jsonl": "a7bba405e519370d186666dd65742b36291436f953320101f2d7cdaffbb1e790",
+        "manifest.json": "b8338db0e9cbd6932c08981e4852eb9359cf4e519e01ad5330b17d4b55b3a983",
+        "retrievals.jsonl": "9d6a78a9c5e558a5ce8fc03835089e654b8aa6ff0fadd3393318764662fd9a9a"
+      }
+    }
+  },
+  "storage": {
+    "protocol": "v1-fixed-small-storage-readback-v1",
+    "campaign": "v1-small-7a50d22-01",
+    "checks": {
+      "bounded-lifecycle": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "code_absent_from_readable_tables_and_fts": true,
+        "code_erased_without_vector_or_quotes": true,
+        "current_city_Portland": true,
+        "current_browser_Safari": true,
+        "old_city_superseded": true,
+        "old_browser_superseded": true,
+        "Clara_neighbor_retained": true,
+        "Kevin_Brave_retained": true,
+        "forget_event_present": true,
+        "two_update_events_present": true
+      },
+      "bounded-retention": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "Maya_Chrome_retained": true,
+        "Olivia_Edge_retained": true,
+        "Andrew_Boston_retained": true,
+        "Andrew_painting_retained": true,
+        "no_unauthorized_forget_event": true,
+        "no_erased_facts": true
+      }
+    },
+    "databases": {
+      "service/.data/v1-small-7a50d22-01-candidate/da219efb271d7ed02d5908e5717be716bdd1f963eb32331867cb9e75f826f76f/memory.sqlite": {
+        "sha256": "0ff10cb8b14f4d4a4742b02982f2f37ba7eb60824dfc0135ec3717db50c8177f",
+        "source_format": "dual-source-v10-s1",
+        "revision": "3"
+      },
+      "service/.data/v1-small-7a50d22-01-candidate/d29e92a4e5c33ee4af4b910f3b8c43668363f3790071e302564d94ca3401100a/memory.sqlite": {
+        "sha256": "ae4c6ab6d5448d3490c22323212e4b98b951092369ac8c5d8950612d03664d2e",
+        "source_format": "dual-source-v10-s1",
+        "revision": "2"
+      }
+    },
+    "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+    "scan_correction": "First scan treated an active Safari instead of Firefox statement as active Firefox. Current-value checks now inspect the structured value and retain separate superseded-history assertions. First script/result preserved; service and data unchanged.",
+    "count": 20,
+    "passed": true
+  },
+  "review": {
+    "method": "Independent assistant comparison of all twenty answers with the fixed questions and gold meanings. Not a human review or a blinded independent study.",
+    "human_labels": 0,
+    "assistant_accepted_answers": 20,
+    "rubric_disagreements": [
+      {
+        "profile": "raw",
+        "qid": "small-manager",
+        "reason": "Clara directly answers Who is my manager; requiring the word manager is overstrict."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-andrew-city",
+        "reason": "Boston directly answers the question about Andrew\u2019s current city; the question supplies attribution."
+      }
+    ],
+    "original_scores_unchanged": true
+  },
+  "evidence_sha256": {
+    "artifacts/v1-small-7a50d22-01/raw-runtime.json": "0e151dc6281bcb4b1ff05d68eab2513c5952802c76a8cf7e350b5c5c7e0c45c6",
+    "artifacts/v1-small-7a50d22-01/raw-http-audit.json": "4c5304c3cfc0f8358f5b5a96d99a526ab7e627ad82a798f6153c566cf505edd2",
+    "eval/artifacts/v1-small-7a50d22-01-raw-memops/manifest.json": "26651d7553f742cd0d5c46a8c6e13c16ab09764708d1c19b1acf809548d1c122",
+    "eval/artifacts/v1-small-7a50d22-01-raw-memops/judgments.jsonl": "f909d7271423744434a14e512c09b61ee4ac4a36eaecadba03b75b7261ea0625",
+    "eval/artifacts/v1-small-7a50d22-01-raw-memops/predictions.jsonl": "4315bcfb91712c65f88ee806c4a62af31fa2693f144b42e6c7dd922ba0db9e64",
+    "eval/artifacts/v1-small-7a50d22-01-raw-memops/retrievals.jsonl": "1e0d6a74d670fb13b61bc49d5b709e36ea58b0870307b1d1a63eb7a57dcc9b77",
+    "artifacts/v1-small-7a50d22-01/candidate-runtime.json": "2a07a23f5232d3d423a4e85ba6bbc765f6dd34a2cbd4da619ae8a5e76be0203b",
+    "artifacts/v1-small-7a50d22-01/candidate-http-audit.json": "f7131ef0efd52c566d9f55aac22d31eb17dc925d70ee27b697c5688b491e3a83",
+    "eval/artifacts/v1-small-7a50d22-01-candidate-memops/manifest.json": "b8338db0e9cbd6932c08981e4852eb9359cf4e519e01ad5330b17d4b55b3a983",
+    "eval/artifacts/v1-small-7a50d22-01-candidate-memops/judgments.jsonl": "415b1aa8320031db84b8fe76e6be4153a9212d9a467b5fb9ab9bc94f56d4ac73",
+    "eval/artifacts/v1-small-7a50d22-01-candidate-memops/predictions.jsonl": "5477b940d73d72e94ff5bdd45791853a789ba083ee965ef6f56a8c7173927742",
+    "eval/artifacts/v1-small-7a50d22-01-candidate-memops/retrievals.jsonl": "9d6a78a9c5e558a5ce8fc03835089e654b8aa6ff0fadd3393318764662fd9a9a",
+    "artifacts/v1-small-7a50d22-01/candidate-storage-check.json": "f21eae7370be9d3ea569cf1377414ddd7810c47def9d5a243464d771b9388cf4",
+    "artifacts/v1-small-7a50d22-01/check-storage.py": "45602f5bbe526e69d148f12bae30ae2b1e766e71d8eade29f74e342350d4ecec",
+    "configs/round2-small-closed-loop-v1.json": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "configs/round2-small-pair-v1.json": "8c9c9fb4febcf78d0c26ee71d40023212a309b06f81b0138de8660d89e306e28"
+  },
+  "commits": {
+    "workspace": "d7e299ecaf7affc9ea4cf62c72bd18c34ab60f59",
+    "service": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
+    "eval": "e5406c6c912c480742c34e9e25be9fd7aeb3d4ef"
+  },
+  "passed": true
+}

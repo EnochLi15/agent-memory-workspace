@@ -1,0 +1,13 @@
+{
+  "mode": "offline",
+  "scope": "Same-user HTTP readback after container restart and replay of the original committed add.",
+  "user_id": "contract-1788720287945",
+  "checks": {
+    "receipt_replay": true,
+    "updated_city_retained": true,
+    "old_city_not_current": true,
+    "forgotten_code_absent": true,
+    "manager_neighbor_retained": true
+  },
+  "passed": true
+}

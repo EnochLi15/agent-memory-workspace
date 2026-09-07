@@ -1,0 +1,19 @@
+{
+  "protocol": "property-versus-value-state-review-v1",
+  "parent_results_sha256": "38524b9a398ab2590da497821a563f4612d6d630827e3422daf275b0152bd2ed",
+  "checks": {
+    "property": {
+      "raw_and_active_passages_exclude_all_requested_values": true,
+      "state_sha256": "27e88611d0374e9d15f4f5d2d902f5adb91812d6e5f61f9a032e1837d4302041",
+      "retained_seattle": false
+    },
+    "value": {
+      "raw_and_active_passages_exclude_all_requested_values": true,
+      "state_sha256": "25d0f27e0eeb6078b3553036d168d5e302e81516a18d01d8095de55f9fc5422c",
+      "retained_seattle": true
+    }
+  },
+  "review": "Property case clears Seattle and Boston from raw and active passages; value case clears Boston and keeps legitimate Seattle history. Actual three-query HTTP checks passed in both namespaces.",
+  "scope": "Two real-model controls only, not broad benchmark coverage.",
+  "probe_sha256_at_run": "0ff473487fd5d7d6e4ba95c113a27220dea59746813dd59ae4f6a21847a09a32"
+}

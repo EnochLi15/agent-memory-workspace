@@ -1,0 +1,229 @@
+{
+  "protocol": "v1-d25-shared-budget-diagnostic-v1",
+  "checked_at": "2026-09-06T23:24:50.057806+00:00",
+  "service_commit": "ed81688e76a60889de89bbeaace73467b0c1aeb5",
+  "diagnostic": "artifacts/round2-fresh-failed-add-tbvcXi/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 29956.060667,
+      "request_sha256": "a14a22084c3d2940abfddca814293d6147b0c9c0c7f28d53d9393ce1c927f0f2",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 90112.604875,
+      "request_sha256": "a14a22084c3d2940abfddca814293d6147b0c9c0c7f28d53d9393ce1c927f0f2",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 90119.646084,
+      "request_sha256": "a14a22084c3d2940abfddca814293d6147b0c9c0c7f28d53d9393ce1c927f0f2",
+      "code": "VERIFICATION_UNAVAILABLE"
+    }
+  ],
+  "terminal_error": {
+    "code": "VERIFICATION_UNAVAILABLE",
+    "message": "Could not bind erasure scope within the shared model budget"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "erasure_binding": {
+    "fresh_call_elapsed_ms": 29754.28437499999,
+    "stream_started": true,
+    "complete_response": false,
+    "partial_output_characters": 6389
+  },
+  "transient_socket_errors": 10,
+  "stage_timings": [
+    {
+      "at": "2026-09-06T23:20:19.957Z",
+      "purpose": "source_operation_route",
+      "outcome": "ok",
+      "elapsed_ms": 11398.926958
+    },
+    {
+      "at": "2026-09-06T23:20:25.721Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5533.778957999999
+    },
+    {
+      "at": "2026-09-06T23:20:25.722Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:25.725Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5537.217624999999
+    },
+    {
+      "at": "2026-09-06T23:20:25.725Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:31.775Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5548.715666
+    },
+    {
+      "at": "2026-09-06T23:20:31.775Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:31.777Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5546.183417
+    },
+    {
+      "at": "2026-09-06T23:20:31.778Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:38.347Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5568.414874999999
+    },
+    {
+      "at": "2026-09-06T23:20:38.352Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 18164.920833
+    },
+    {
+      "at": "2026-09-06T23:20:38.354Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5569.232082999999
+    },
+    {
+      "at": "2026-09-06T23:20:44.242Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5544.405833000001
+    },
+    {
+      "at": "2026-09-06T23:20:44.243Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:50.271Z",
+      "purpose": "extraction",
+      "outcome": "error",
+      "elapsed_ms": 5524.708332999995
+    },
+    {
+      "at": "2026-09-06T23:20:50.271Z",
+      "purpose": "extraction"
+    },
+    {
+      "at": "2026-09-06T23:20:55.277Z",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 16579.782750000002
+    },
+    {
+      "at": "2026-09-06T23:21:03.720Z",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 25022.767333
+    },
+    {
+      "at": "2026-09-06T23:21:06.321Z",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 15048.948500000006
+    },
+    {
+      "at": "2026-09-06T23:21:11.863Z",
+      "purpose": "repair",
+      "outcome": "error",
+      "elapsed_ms": 5527.707457999997
+    },
+    {
+      "at": "2026-09-06T23:21:11.864Z",
+      "purpose": "repair"
+    },
+    {
+      "at": "2026-09-06T23:21:17.882Z",
+      "purpose": "repair",
+      "outcome": "error",
+      "elapsed_ms": 5517.1265829999975
+    },
+    {
+      "at": "2026-09-06T23:21:17.883Z",
+      "purpose": "repair"
+    },
+    {
+      "at": "2026-09-06T23:21:47.989Z",
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 29104.182625
+    },
+    {
+      "at": "2026-09-06T23:22:08.472Z",
+      "purpose": "verification",
+      "outcome": "error",
+      "elapsed_ms": 20440.211708000003
+    },
+    {
+      "at": "2026-09-06T23:22:14.351Z",
+      "purpose": "verification",
+      "outcome": "error",
+      "elapsed_ms": 5515.340292000008
+    },
+    {
+      "at": "2026-09-06T23:22:14.352Z",
+      "purpose": "verification"
+    },
+    {
+      "at": "2026-09-06T23:22:37.026Z",
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 22171.931333
+    },
+    {
+      "at": "2026-09-06T23:22:44.307Z",
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 7259.123749999999
+    },
+    {
+      "at": "2026-09-06T23:23:08.565Z",
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 24215.843250000005
+    },
+    {
+      "at": "2026-09-06T23:23:38.589Z",
+      "purpose": "erasure_binding",
+      "outcome": "error",
+      "elapsed_ms": 29754.28437499999
+    }
+  ],
+  "next_action": "Inspect the measured serial preparation critical path within the unchanged three-request/90s inner model budgets. Minimize redundant serialized model work or response overhead using existing stages, without removing evidence/erasure checks or retrying this version until it succeeds. Full background acceptance remains required.",
+  "scope": "Fresh extraction, two repairs and two verifications completed. Erasure binding streamed but missed the remaining ~30s budget in the final permitted continuation. No complete erasure decision packet, source partition or commit was accepted. This diagnostic is not a benchmark score or proof that semantic blockers are closed.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-tbvcXi/report.json": "46f84c20df1fe329e6cf0e2a940224308c22430255315caa12d065fd90eb90fd",
+    "artifacts/round2-fresh-failed-add-tbvcXi/private-model-trace.jsonl": "d56129ee18bd5676926c97889f7c482ade13ad1fff3b73a50c658310301855f8",
+    "artifacts/round2-fresh-failed-add-tbvcXi/model-calls.jsonl": "1e069c907952e1904f10df000189d49bb5082dfe1e9e378bd45c5e0985fe2af8"
+  }
+}

@@ -1,0 +1,26 @@
+✖ later writes never reapply a historical erased span over a retained mixed-source neighbor (43.077667ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 331.456958
+
+✖ failing tests:
+
+test at tests/source-erasure.test.ts:1:19643
+✖ later writes never reapply a historical erased span over a retained mixed-source neighbor (43.077667ms)
+  Error: Source erasure removed every witness for a retained fact
+      at <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/storage.ts:267:59)
+      at sqliteTransaction (/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules/better-sqlite3/lib/methods/transaction.js:65:24)
+      at TenantStore.commit (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/src/storage.ts:368:7)
+      at Object.commit (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/source-erasure.test.ts:24:49)
+      at <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/source-erasure.test.ts:174:92)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-service-shard-repair/tests/source-erasure.test.ts:25:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    code: 'EVIDENCE_VALIDATION',
+    status: 503
+  }

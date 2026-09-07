@@ -1,0 +1,70 @@
+{
+  "protocol": "v1-d25-forget-coverage-diagnostic-v1",
+  "checked_at": "2026-09-06T23:50:32.223783+00:00",
+  "service_commit": "d9f9ec6981fea727f3f0479042f9cefb9cbc3371",
+  "diagnostic": "artifacts/round2-fresh-failed-add-1B8ZIn/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 90105.393833,
+      "request_sha256": "00d316ec21b0776db15b87c2e1c21e230423833159ac6d50c6531dbbcc2a2160",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 22466.19587499999,
+      "request_sha256": "00d316ec21b0776db15b87c2e1c21e230423833159ac6d50c6531dbbcc2a2160",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Evidence still fails semantic verification after repair"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "verification": {
+    "fact_checks": 25,
+    "operation_checks": 12,
+    "all_fact_checks_passed": true,
+    "all_operation_checks_passed": true,
+    "missing_message_checks": [
+      [
+        6,
+        "missing",
+        "No, don't track Priya's stuff—that's her business.",
+        "The forget request covers Priya's information, but existing shared Priya-related records remain uncovered: user_and_Priya order_difference at Koku Kitchen and user_and_Priya spice_preference_comparison at Koku Kitchen."
+      ]
+    ]
+  },
+  "repair_sequence": [
+    {
+      "packet": "artifacts/v1-d25-d9f9ec6-01/repair-6.json",
+      "finding": "One operation selected both direct-actor and shared-actor targets, triggering OPERATION_SCOPE. Repair removed the shared-actor targets but did not split the remaining scopes."
+    },
+    {
+      "packet": "artifacts/v1-d25-d9f9ec6-01/repair-7.json",
+      "finding": "The remaining selected targets spanned different scopes, triggering AMBIGUOUS_OPERATION. Second repair split them into direct-actor operations; semantic coverage then rejected omitted shared records."
+    }
+  ],
+  "next_action": "Inspect existing repair feedback and target grouping so all known subject/scope constraints and already-selected shared target groups are visible in one bounded repair. Do not auto-authorize target rewrites, invent targets, increase repair rounds or treat deferred erasure as executed coverage. Preserve the actual semantic rejection and validate the repair against source authorization.",
+  "scope": "New generated proposal failed before erasure binding. Mixed-summary prompt change was not exercised by this run. Original terminal diagnostic and benchmark scores remain unchanged.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-1B8ZIn/report.json": "6832f21945b0999ec8c4d40b9b80ebd5c389f2d6c4afbcfe3f3f455bb7be6c97",
+    "artifacts/v1-d25-d9f9ec6-01/verification-packet.json": "6df500bb91ae125ff67395f08cff9de87597d9c4ed41c1db7fea2f9d613d3a79",
+    "artifacts/v1-d25-d9f9ec6-01/repair-6.json": "c96dd6a8fe71f03f5129c5cddf2845e892936d15fc46c9628024316874a59e67",
+    "artifacts/v1-d25-d9f9ec6-01/repair-7.json": "35402504424e7a16a45f6bcf361f2647484641edeacd41f16fce29851a74ed13"
+  }
+}

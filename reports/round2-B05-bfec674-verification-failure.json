@@ -1,0 +1,323 @@
+{
+  "protocol": "verification-full-regression-failure-v1",
+  "service_commit": "bfec674",
+  "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-B05-bfec674-verification-failure-7u4tud2y",
+  "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+  "request_sha256": "7c5db81bf9868373547578b00de236ff68e99f79f452471e1f3155895d8c6a28",
+  "database_sha256": "3d6dfb23f72dbccef3d8bc61249e58010adf43a6d334fcbae3caf7818df7a16b",
+  "trace_sha256": "e52df5a23936b15d51f25adfe01221f95e5add983b042f70929d60089d9ba1db",
+  "failed_request_committed": false,
+  "prior_receipts": 47,
+  "http_outcomes": [
+    {
+      "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+      "status": "retrying",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+      "elapsed_ms": 90045.1270000001
+    },
+    {
+      "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+      "status": "retrying",
+      "attempt": 1,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+      "elapsed_ms": 90075.52704100008
+    },
+    {
+      "request_id": "round2-resilient-bfec674-dev-r1-sources:memops:B05_forget:segment-47:0",
+      "status": "failed",
+      "attempt": 2,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Could not complete evidence verification within the request budget\"}}",
+      "elapsed_ms": 90046.55604099995
+    }
+  ],
+  "stages": [
+    {
+      "purpose": "extraction",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "error",
+      "attempt": 1,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 2,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 1,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "deadline",
+      "error_type": "Error",
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": true,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "deadline",
+      "error_type": "Error",
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": true,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "connection",
+      "error_type": "Error",
+      "transport_code": "UND_ERR_SOCKET",
+      "http_status": null,
+      "signal_aborted": false,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 1,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempt": 0,
+      "error_category": null,
+      "error_type": null,
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": null,
+      "finish_reason": null
+    },
+    {
+      "purpose": "verification",
+      "outcome": "error",
+      "attempt": 0,
+      "error_category": "deadline",
+      "error_type": "Error",
+      "transport_code": null,
+      "http_status": null,
+      "signal_aborted": true,
+      "finish_reason": null
+    }
+  ],
+  "scope": "Read-only backup of terminated B05 tenant. All three original HTTP outcomes and model attempts retained. No new provider call. Ten affected questions remain service_error."
+}

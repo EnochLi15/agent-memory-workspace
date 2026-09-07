@@ -1,0 +1,39 @@
+{
+  "protocol": "joint-source-capacity-diagnostic-v1",
+  "original_candidates": 74,
+  "grouped_sources": 51,
+  "original_batches": [
+    {
+      "rows": 55,
+      "chars": 62636
+    },
+    {
+      "rows": 19,
+      "chars": 27096
+    }
+  ],
+  "grouped_batches": [
+    {
+      "rows": 17,
+      "chars": 60428
+    },
+    {
+      "rows": 12,
+      "chars": 57707
+    },
+    {
+      "rows": 11,
+      "chars": 60272
+    },
+    {
+      "rows": 9,
+      "chars": 56021
+    },
+    {
+      "rows": 2,
+      "chars": 17913
+    }
+  ],
+  "complete_original_membership": true,
+  "scope": "Lossless grouping and wire size only, no model correctness or latency claim."
+}

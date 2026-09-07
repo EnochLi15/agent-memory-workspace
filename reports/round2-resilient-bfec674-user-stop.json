@@ -1,0 +1,14 @@
+{
+  "protocol": "user-directed-regression-stop-v1",
+  "run_id": "round2-resilient-bfec674-dev-r1-sources-memops",
+  "status": "interrupted",
+  "at": "2026-09-06T13:27:38.918071+00:00",
+  "prior_manifest_sha256": "3f707235dc6b9f9ce1dded54ca157afb4717e6125c6adc65f157f5cd27535074",
+  "planned": 30,
+  "recorded": 16,
+  "service_errors": 16,
+  "judged": 0,
+  "unrecorded": 14,
+  "reason": "User directed stopping large regression to prioritize a fixed small closed loop and raw baseline; evaluator terminated with SIGTERM. Existing outcomes preserved; remaining questions not completed.",
+  "historical_scores_unchanged": true
+}

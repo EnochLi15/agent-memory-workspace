@@ -1,0 +1,120 @@
+{
+  "protocol": "round2-frozen-regression-final-v1",
+  "campaign": "round2-joint-87d67b1-dev-r1",
+  "finished_verified_at": "2026-09-06T12:34:38.561721+00:00",
+  "processes_terminal": true,
+  "runner_exit_code": 0,
+  "service_commit": "87d67b1",
+  "eval_commit": "ddfab86",
+  "runs": [
+    {
+      "benchmark": "locomo",
+      "run_id": "round2-joint-87d67b1-dev-r1-sources-locomo",
+      "planned": 30,
+      "judged": 0,
+      "correct": 0,
+      "status_counts": {
+        "service_error": 30
+      },
+      "successful_adds": 39,
+      "attempt_status_counts": {
+        "ok": 39,
+        "retrying": 2,
+        "failed": 2
+      },
+      "terminal_write_failures": [
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-44:session-10:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Repair modified an unavailable or unflagged fact\"}}",
+          "elapsed_ms": 82725.755
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:locomo:conv-48:session-15:1",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 59175.99916699994
+        }
+      ],
+      "artifact_hashes": {
+        "manifest.json": "e3829650f3f16d60f9ba9c5508c698307828d8e6cebdfd640809fa7a7da8faa4",
+        "metrics.json": "c8f11fd9bd5f120b67c00b6d0634d543533cdec320c5f1ed0eda78081742d432",
+        "judgments.jsonl": "633c5a77690b9715beed1c31a58dfcffa99d082c4f28d6bb270c2460db0f68f4",
+        "ingest.jsonl": "6906c5b4bf5596f042f20afb2eef07ccc5d20c5822a6a15a7ebb3643bc0c5efd",
+        "requests.jsonl": "a0d1b753afe9b5b13ee81c0d7a569384df84bad925d695478b72b42e1c3efc54"
+      }
+    },
+    {
+      "benchmark": "memops",
+      "run_id": "round2-joint-87d67b1-dev-r1-sources-memops",
+      "planned": 30,
+      "judged": 0,
+      "correct": 0,
+      "status_counts": {
+        "service_error": 30
+      },
+      "successful_adds": 160,
+      "attempt_status_counts": {
+        "ok": 160,
+        "failed": 5
+      },
+      "terminal_write_failures": [
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_reflect:segment-19:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Extraction shard omitted or invented a participant group\"}}",
+          "elapsed_ms": 5417.5404160000035
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:B05_forget:segment-19:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Source erasure removed every witness for a retained fact\"}}",
+          "elapsed_ms": 36703.939167000004
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:F07_trajectory_ops:segment-48:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Parallel extraction did not complete all participant groups: Connection error.\"}}",
+          "elapsed_ms": 11868.543459000066
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:F07_update:segment-36:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 46204.18208299996
+        },
+        {
+          "request_id": "round2-joint-87d67b1-dev-r1-sources:memops:E10_remember:segment-38:0",
+          "status": "failed",
+          "attempt": 0,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 53264.9709999999
+        }
+      ],
+      "artifact_hashes": {
+        "manifest.json": "ce05f264079dfc09eac696e9e3241533910d6f2290ff0397da92e275e79b15dd",
+        "metrics.json": "6955187e647296846f9408bf0cc6848aaaea7d07622116ba560bcd8a0f2e09cc",
+        "judgments.jsonl": "ddba269bceae2bb86e20e2b90b2ee1642c959c3b21a2ad2f3cbe6af0a51ce424",
+        "ingest.jsonl": "9b63cf862d17b848dc138f8976cbd4daa06045ec69d6d3a480f994ab204de4b1",
+        "requests.jsonl": "8f198cef4448e93fc465b21c1f87f07d58d749db888eab5a8d32972c205fe3e8"
+      }
+    }
+  ],
+  "payload_audit": "reports/round2-joint-87d67b1-final-audit.json",
+  "gateway_overlap": "reports/round2-shared-gateway-overlap.json",
+  "scope": "Complete exposed development regression, all failures retained. No judged answers; operational zero over planned is not an answer-quality estimate or a replacement for historical 331/1000. Shared gateway periods are excluded from uncontended latency comparison.",
+  "totals": {
+    "planned": 60,
+    "judged": 0,
+    "correct": 0,
+    "successful_adds": 199,
+    "service_errors": 60
+  },
+  "acceptance_passed": false
+}

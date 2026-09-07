@@ -1,0 +1,23 @@
+✖ a binding failure in an appended fact gets a new repair scope without exposing unrelated facts (29.986042ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 200.504958
+
+✖ failing tests:
+
+test at tests/operation-repair.test.ts:1:5191
+✖ a binding failure in an appended fact gets a new repair scope without exposing unrelated facts (29.986042ms)
+  Error: Invalid target/scope repair patch
+      at Extractor.prepare (/Users/enoch/Workspace/comp/agent-memory-workspace/service/src/extraction.ts:198:116)
+      at async <anonymous> (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/operation-repair.test.ts:49:17)
+      at async fixture (/Users/enoch/Workspace/comp/agent-memory-workspace/service/tests/operation-repair.test.ts:20:6)
+      at async Test.run (node:internal/test_runner/test:1332:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    code: 'OPERATION_TARGET',
+    status: 503
+  }

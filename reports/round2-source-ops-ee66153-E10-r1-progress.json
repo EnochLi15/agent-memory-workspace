@@ -1,0 +1,18 @@
+{
+  "protocol": "full-background-progress-v1",
+  "at": "2026-09-06T09:08:31.582702+00:00",
+  "run": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/round2-source-ops-ee66153-E10-r1-facts-memops",
+  "service_commit": "ee661539023bae83f166b2f8bd154e2012b0ae76",
+  "eval_commit": "b6c8125d45d3da3ea7f3baad5896e421cce1bf74",
+  "status": "running",
+  "latest_add_statuses": {
+    "ok": 37,
+    "failed": 0,
+    "retrying": 0
+  },
+  "latest_request_id": "round2-source-ops-ee66153-E10-r1-facts:memops:E10_reflect:segment-37:0",
+  "runner_session": 54534,
+  "service_pid": 72828,
+  "eval_pid": 72829,
+  "scope": "Live progress only, not final quality or successful ingestion certification."
+}

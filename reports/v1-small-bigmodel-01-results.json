@@ -1,0 +1,102 @@
+{
+  "protocol": "v1-bigmodel-small-initial-v1",
+  "campaign": "v1-small-bigmodel-01",
+  "passed": false,
+  "human_labels": 0,
+  "runs": {
+    "candidate": {
+      "planned": 10,
+      "correct": 5,
+      "statuses": {
+        "service_error": 5,
+        "judged": 5
+      },
+      "committed_adds": 4,
+      "planned_adds": 5,
+      "http_attempts": 6,
+      "service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+      "eval_commit": "b8ae27a16f1eba948eeb366b49687180282f3678",
+      "workspace_commit": "1907ad1b4812fdbd638f29a38b9fd055ce1f0b85",
+      "http_audit_passed": true,
+      "evidence_sha256": {
+        "manifest.json": "23a9371bad5cb38486b125f5d9ae67673e41d8136aa9f8be2605535f745de226",
+        "judgments.jsonl": "b1ddb3db16f5717010caea59bfaf5c9de482dd850ec3b82b5a2d5f5c55a1f2af",
+        "ingest.jsonl": "dcd3d473f49adfdfa0e423ddc648e22a9eff4e4fd58a48165b0f9f58e3485209"
+      }
+    },
+    "raw": {
+      "planned": 10,
+      "correct": 6,
+      "statuses": {
+        "judged": 10
+      },
+      "committed_adds": 5,
+      "planned_adds": 5,
+      "http_attempts": 5,
+      "service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+      "eval_commit": "b8ae27a16f1eba948eeb366b49687180282f3678",
+      "workspace_commit": "1907ad1b4812fdbd638f29a38b9fd055ce1f0b85",
+      "http_audit_passed": true,
+      "evidence_sha256": {
+        "manifest.json": "8a3ec4d895c74b19c68910a93e21b876e44cae5f9278136d31ef3c6aff13f27c",
+        "judgments.jsonl": "7977af0f7830517832b200ea8187f0871530e0dfb330a5d5d09a7b99eda34f7a",
+        "ingest.jsonl": "9443d0a889ab522413f0e6479623e0f5e301f1a371652ecb36603386bad7f45c"
+      }
+    }
+  },
+  "storage": {
+    "protocol": "v1-fixed-small-storage-readback-v1",
+    "campaign": "v1-small-bigmodel-01",
+    "checks": {
+      "bounded-lifecycle": {
+        "receipts_match_logical_adds": false,
+        "no_pending_preparation": true,
+        "code_absent_from_readable_tables_and_fts": false,
+        "code_erased_without_vector_or_quotes": false,
+        "current_city_Portland": true,
+        "current_browser_Safari": true,
+        "old_city_superseded": true,
+        "old_browser_superseded": true,
+        "Clara_neighbor_retained": true,
+        "Kevin_Brave_retained": true,
+        "forget_event_present": false,
+        "two_update_events_present": true
+      },
+      "bounded-retention": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "Maya_Chrome_retained": true,
+        "Olivia_Edge_retained": true,
+        "Andrew_Boston_retained": true,
+        "Andrew_painting_retained": true,
+        "no_unauthorized_forget_event": true,
+        "no_erased_facts": true
+      }
+    },
+    "databases": {
+      "service/.data/v1-small-bigmodel-01-candidate/9544218f61dfaa7c438b5986f16bc74a35b8604fde49d45978f0fd737486590e/memory.sqlite": {
+        "sha256": "9111a34b417eb2a6436bd3096452d7b01018ecc90200334df29125259c875e0f",
+        "source_format": "dual-source-v10-s1",
+        "revision": "2"
+      },
+      "service/.data/v1-small-bigmodel-01-candidate/391fd0665fd73ac27c04377a421c59618dbae049a23758497d12435231d1f9cb/memory.sqlite": {
+        "sha256": "40d34d1cbbee69d749f9428e2cde3fb3c240f6e428e31f5d976385c3af7fbd9c",
+        "source_format": "dual-source-v10-s1",
+        "revision": "2"
+      }
+    },
+    "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+    "check_provenance": "Reuses the previously corrected fixed 20-check verifier; current value checks use structured value, with independent superseded-history assertions.",
+    "count": 20,
+    "passed": false
+  },
+  "cause": {
+    "stage": "verification",
+    "category": "invalid_json",
+    "response_format": "json_schema",
+    "finish_reason": "stop",
+    "detail": "Provider returned an extra closing brace despite requested strict schema. Local parser correctly rejected it; failed forget did not commit. Initial tiny schema check was insufficient evidence of strict enforcement.",
+    "official_documentation": "https://docs.bigmodel.cn/cn/guide/capabilities/struct-output",
+    "next_change": "Use existing json_object configuration documented by provider; retain strict local decoding and semantic guards. No budget or retry increase."
+  }
+}

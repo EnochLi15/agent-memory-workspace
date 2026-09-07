@@ -1,0 +1,69 @@
+{
+  "protocol": "repair-output-budget-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-repair-output-budget-IRl6AV",
+  "parent": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-routing-replay-fncZvB",
+  "scope": "Exact failed repair packet, one SDK attempt per ceiling, only max_completion_tokens changes. Stage protocol and transport diagnostic, not full preparation/commit or benchmark quality.",
+  "packet_sha256": "3a61003e718f67b542d745ef8621d1c531b3bb1ed591d5133a10a99e1c79a21f",
+  "spec_sha256": "5c5ee5acbe4fcef060c5a3da391c65c3c6e8bd12a4c8c4046c42b2dd1e916a4e",
+  "started_at": "2026-09-06T10:12:38.907Z",
+  "results": [
+    {
+      "max_completion_tokens": 10000,
+      "status": "complete",
+      "elapsed_ms": 19273.771,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 19906,
+        "completion_tokens": 599,
+        "total_tokens": 20505,
+        "prompt_tokens_details": {
+          "cached_tokens": 19200
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 376
+        }
+      },
+      "output_chars": 919,
+      "wire_bytes": 97313
+    },
+    {
+      "max_completion_tokens": 2000,
+      "status": "complete",
+      "elapsed_ms": 15125.378875000002,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 19906,
+        "completion_tokens": 724,
+        "total_tokens": 20630,
+        "prompt_tokens_details": {
+          "cached_tokens": 19200
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 506
+        }
+      },
+      "output_chars": 898,
+      "wire_bytes": 97312
+    },
+    {
+      "max_completion_tokens": 4000,
+      "status": "complete",
+      "elapsed_ms": 13474.253624999998,
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 19906,
+        "completion_tokens": 629,
+        "total_tokens": 20535,
+        "prompt_tokens_details": {
+          "cached_tokens": 19200
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 408
+        }
+      },
+      "output_chars": 901,
+      "wire_bytes": 97312
+    }
+  ],
+  "finished_at": "2026-09-06T10:13:26.793Z"
+}

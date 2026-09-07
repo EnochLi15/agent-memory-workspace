@@ -1,0 +1,41 @@
+
+> agent-memory-eval@0.1.0 test
+> node --import tsx --test tests/*.test.ts && python3 -m unittest discover -s tests -p 'test_*.py'
+
+✔ calibration audit stops scheduling after a transport outage and retains unattempted cases in the denominator (18163.100625ms)
+✔ omission-type harmful extras fail without requiring a quote of absent information (1.108583ms)
+✔ span references restore exact case and Markdown from the saved answer (0.194291ms)
+✔ a prohibited assertion cannot be reclassified as an omission to avoid evidence (0.315541ms)
+✔ missing, duplicate and invalid span references are protocol errors, not passes (0.200084ms)
+✔ long Unicode spans preserve original UTF-16 positions and conflicting rubrics remain reviewable (0.1865ms)
+✔ live audit input excludes control labels and preserves the exact saved answer (20.946333ms)
+✔ criterion aggregation cannot pass with a missing fact even if model supplies an overall pass (1.157166ms)
+✔ larger audit budget does not change the ordinary Answer default (12.9755ms)
+✔ incomplete, duplicated and reference-only quotations are not accepted as successful audits (0.381125ms)
+✔ uncertain rubric needs review and literal diagnostic does not silently decide semantics (0.143916ms)
+✔ chunk limits preserve order, role and session marker without injecting answer fields (0.894958ms)
+✔ canonical contract checksum validates distributed schema (0.687791ms)
+✔ HTTP client rejects wrong receipt echo and unsorted results (23.196917ms)
+✔ report keeps infrastructure failures in denominator and de-duplicates resumed judgments (2.355625ms)
+✔ streamed model completion survives UTF-8 and event boundary splits (12.86325ms)
+✔ MemOps pair IDs distinguish evaluation settings and individual question instances (1.033833ms)
+✔ resume refuses a changed service commit before making another HTTP request (248.758292ms)
+{"event":"sample_complete","sample":"s","judged":1,"planned":1}
+✔ transient add failure retries the identical request and records each attempt (1192.969709ms)
+{"event":"sample_complete","sample":"s","judged":0,"planned":2}
+✔ EVIDENCE_VALIDATION rejection is not retried and keeps every affected question in the denominator (198.713833ms)
+{"event":"sample_complete","sample":"s","judged":0,"planned":2}
+✔ SOURCE_OPERATION_LIMIT rejection is not retried and keeps every affected question in the denominator (185.553709ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 18321.006375
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.107s
+
+OK

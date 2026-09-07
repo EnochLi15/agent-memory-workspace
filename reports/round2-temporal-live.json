@@ -1,0 +1,305 @@
+{
+  "acceptance_protocol": "temporal-synthetic-v3",
+  "answer_repetitions": 3,
+  "check_sha256": "103e3a24af9be5999540050eb5c0631037772f2641b3c206dcac38f69ffbf86f",
+  "probe_sha256": "5aa7d2f45858d4ef36d98f72be8aff4939bd607ff675acbde728873f160dd0c2",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-temporal-live/2026-09-05T12-32-08-948Z",
+  "started_at": "2026-09-05T12:32:09.012Z",
+  "scope": "Five synthetic acceptance cases with real HTTP, remote extraction/rerank, local embeddings and the unchanged ordinary Answer prompt; not benchmark accuracy",
+  "answer_model": "gpt-5.4-mini",
+  "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+  "source_sha256": {
+    "service/src/config.ts": "d21e6178653e55cc7d5e2865bf09f514568b4794d4d9d054a2bb43790228db61",
+    "service/src/db-worker.ts": "ec9678256b034f450a632aa286de541c8f118af9008f825152408cfc539f6a7a",
+    "service/src/engine.ts": "b9bb098ad3258bda27cb57db110099669856ef6e55d64d1a03741fc51d70f6fa",
+    "service/src/events.ts": "193ab43b764954fb54de8149ba65396a9b96a86fb25469daa3f8851962d3cb95",
+    "service/src/extraction.ts": "b451c1db1fdd013b8e16da265ebef5c9faf5e36a586d1544f6560f653ca5f22e",
+    "service/src/models.ts": "e3830f995d4aa8477f8bae5d7f37db59ab91b4ab7da85347d67e6ba75b5918d9",
+    "service/src/operation-intent.ts": "60fdc51f9ccb50719f11f686d8877141d214db5198b3cb5bf7ce7e0ba2b6c8b3",
+    "service/src/passages.ts": "9feb240db19adaf906fb744387e30f3bfc71e5cd54caeecf6ca679545adcd034",
+    "service/src/prompts.ts": "45f168008536bb458665e094fc93489c88caa3c27e871c67fc47852895b3b913",
+    "service/src/retrieval.ts": "0aa905245c4129f97041a315d658fcea10fb5028998b00f612c48acbdf78cfcc",
+    "service/src/server.ts": "e7de6d019934460fd6c0b5f9847ede849e0b350a1440edd73a0ebab2a4557934",
+    "service/src/storage.ts": "3d3b3b0b780312312652b99c3bffee21b63cb2a4fa13ab89477969c1b0cc09a6",
+    "service/src/temporal.ts": "54313fe6446cf3b05a229efffd4d06fd007d5e07fac5d50b7a3c842521912299",
+    "service/src/text.ts": "14f6a5c34b238f4de52a84d9ee53547ff9c96a6268c0576c1e132b73303bc7d6",
+    "service/src/types.ts": "2646531732c08079a2719f56d3cccde8b21884ad910515091e00f13cc380817a",
+    "service/src/mem0/entity_extraction.ts": "a10aa54ccf2184a7720181f8fe2c46d29cb27bcb5fc0525823a26e987fb077f6",
+    "service/src/mem0/lemmatization.ts": "8a0e52186f42974087d25d245cdfad3a5e3af7452b7a947ecb5c209df39f9e18",
+    "service/src/mem0/scoring.ts": "213931081b967a199f7bae9459cbbd6b4115c186fc5ddf6e76f65dee1b3ad96b"
+  },
+  "cases": [
+    {
+      "id": "leap-day",
+      "query": "What calendar date did I visit the Harbor Museum?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 3168.2114579999998
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "247bf98003a80ffd45929963b1c9d223a4f59b47c59ab6cb88e9f2a5b56f02ec",
+          "content": "I visited the Harbor Museum yesterday.\nEvent date: 2024-02-29 (day precision). Resolved from \"yesterday\" relative to source date 2024-03-01.\nVerbatim source context (use this to verify actor and negation):\nuser: [Session time: 1 March 2024] I visited the Harbor Museum yesterday.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2024-03-01T00:00:00Z; original time: yesterday; valid from: 2024-02-29; source: 81eeb10b40fb]",
+          "score": 1,
+          "created_at": "2024-03-01T00:00:00Z"
+        }
+      ],
+      "answers": [
+        {
+          "repeat": 0,
+          "answer": "2024-02-29",
+          "answer_check": true
+        },
+        {
+          "repeat": 1,
+          "answer": "2024-02-29",
+          "answer_check": true
+        },
+        {
+          "repeat": 2,
+          "answer": "2024-02-29",
+          "answer_check": true
+        }
+      ],
+      "evidence_check": true,
+      "answer_passes": 3
+    },
+    {
+      "id": "month-precision",
+      "query": "In what month and year did I join the night photography club?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 2387.5679999999993
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "bcf3ce170b485ecbffe3521659e269d381e537ec13afa46b4a219a207cdf5742",
+          "content": "joined the night photography club in November 2024\nEvent month: 2024-11; exact day unknown.\nVerbatim source context (use this to verify actor and negation):\nuser: I joined the night photography club in November 2024. I remember the month but not the exact day.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2025-01-01T00:00:00Z; original time: in November 2024; valid from: 2024-11; source: 1447ff5912d6]",
+          "score": 0.99,
+          "created_at": "2025-01-01T00:00:00Z"
+        },
+        {
+          "id": "source-549951f87dc17d19dca06733e2c90924d0768ffe7cf4b4b2158c53e350e78682",
+          "content": "I joined the night photography club in November 2024. \n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2025-01-01T00:00:00Z; source: 1447ff5912d6]",
+          "score": 0.95,
+          "created_at": "2025-01-01T00:00:00Z"
+        },
+        {
+          "id": "source-71470775208652f40de5280ab65194d496780469bbbfafba18fb77e6e872be88",
+          "content": "I remember the month but not the exact day.\n[status: original source; interpret its speaker, negation and conditional wording; subject/speaker: user; scope: unspecified; observed: 2025-01-01T00:00:00Z; source: 1447ff5912d6]",
+          "score": 0.2,
+          "created_at": "2025-01-01T00:00:00Z"
+        }
+      ],
+      "answers": [
+        {
+          "repeat": 0,
+          "answer": "November 2024",
+          "answer_check": true
+        },
+        {
+          "repeat": 1,
+          "answer": "November 2024",
+          "answer_check": true
+        },
+        {
+          "repeat": 2,
+          "answer": "November 2024",
+          "answer_check": true
+        }
+      ],
+      "evidence_check": true,
+      "answer_passes": 3
+    },
+    {
+      "id": "trajectory",
+      "query": "How did my city change over our conversation, in order?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 1843.9112080000014
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2933.8611249999994
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3212.8695000000007
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "event-481d745b6c793880f1f8d7b7d401d8cdb2cf03e100d5f3b8fdc13d51bed72fcb",
+          "content": "Memory operation remember current city. Source order 0. Before: [none]. After: I live in Oslo. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 481d745b6c79]",
+          "score": 1,
+          "created_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "id": "4657e613deca049da68e4529383b8ff2cd261e197e539f4f57c0ad9ace7fb5c3",
+          "content": "I now live in Bergen.\nVerbatim source context (use this to verify actor and negation):\nuser: I now live in Bergen.\n[status: historical; valid until 2026-03-01T00:00:00Z; subject/speaker: user; scope: unspecified; observed: 2026-02-01T00:00:00Z; valid until: 2026-03-01T00:00:00Z; source: 3d541b1c9399]",
+          "score": 0.95,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "event-3d541b1c939917bb9e4fd19335a7a122c8c96a3ab09c829e918fbabfdbd00e69",
+          "content": "Memory operation update current city. Source order 10000000. Before: I live in Oslo. (confirmed; superseded). After: I now live in Bergen. (confirmed; superseded).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-02-01T00:00:00Z; source: 3d541b1c9399]",
+          "score": 0.94,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "ea0de9699c885650ef0d4a0984108066f29178ad593ea709cf80226123389a5a",
+          "content": "I now live in Tromso.\nVerbatim source context (use this to verify actor and negation):\nuser: I now live in Tromso.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: b963369467cd]",
+          "score": 0.92,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "37eb3669b19eb8610dfdbc07c386c9bbf51e2c6c5227135cb4c81b193d866c02",
+          "content": "I live in Oslo.\n[status: historical; valid until 2026-02-01T00:00:00Z; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; valid until: 2026-02-01T00:00:00Z; source: 481d745b6c79]",
+          "score": 0.9,
+          "created_at": "2026-01-01T00:00:00Z"
+        }
+      ],
+      "answers": [
+        {
+          "repeat": 0,
+          "answer": "Oslo → Bergen → Tromso",
+          "answer_check": true
+        },
+        {
+          "repeat": 1,
+          "answer": "Oslo → Bergen → Tromso",
+          "answer_check": true
+        },
+        {
+          "repeat": 2,
+          "answer": "Oslo, then Bergen, then Tromso.",
+          "answer_check": true
+        }
+      ],
+      "evidence_check": true,
+      "answer_passes": 3
+    },
+    {
+      "id": "forget-restore",
+      "query": "What is my access code now, and what did I ask you to do with the old one?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 2373.935166999996
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 2158.8595840000053
+        },
+        {
+          "status": 200,
+          "elapsed_ms": 3537.3098329999993
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "event-f5473d4b8ef9e6068edaab226975a5d85d2c113ad3adc28fe90351e0ebccbbfc",
+          "content": "The user explicitly authorized remembering the new access code again. Memory operation restore access code. Source order 20000000. Before: [value unavailable: removed, withdrawn, or dependent evidence no longer visible]. After: Remember again: my access code is NEW-927. (confirmed; active).\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: f5473d4b8ef9]",
+          "score": 0.98,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "3aa4a5786ec34c8c08eba318da38c9a40d98ffe61a7eecd28c2b7774e05e6b5f",
+          "content": "Remember again: my access code is NEW-927.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-03-01T00:00:00Z; source: f5473d4b8ef9]",
+          "score": 0.93,
+          "created_at": "2026-03-01T00:00:00Z"
+        },
+        {
+          "id": "event-99f54453b70f285f6d329f58437d5b5c09a27c4b98d6531a57b4762aa233d87d",
+          "content": "The user explicitly asked the memory service to forget the access code. Memory operation access code entry was explicitly removed from memory (forgotten). Source order 10000000. Before: [forgotten value not retained]. After: [absent].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-02-01T00:00:00Z; source: 99f54453b70f]",
+          "score": 0.88,
+          "created_at": "2026-02-01T00:00:00Z"
+        },
+        {
+          "id": "event-8fa7567bf3f8fcf107f1780a4232406e425a3a0b5edb8cdd9ea1acb8e9f2d168",
+          "content": "Memory operation remember access code. Source order 3. Before: [none]. After: [value unavailable: removed, withdrawn, or dependent evidence no longer visible].\n[status: confirmed; subject/speaker: memory event; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 8fa7567bf3f8]",
+          "score": 0.62,
+          "created_at": "2026-01-01T00:00:00Z"
+        },
+        {
+          "id": "cd553aefaeee83413180d80ed4210a73f6890f799ecad7ed680f175ba0392010",
+          "content": "My manager is Clara.\n[status: confirmed; subject/speaker: user; scope: unspecified; observed: 2026-01-01T00:00:00Z; source: 8fa7567bf3f8]",
+          "score": 0.01,
+          "created_at": "2026-01-01T00:00:00Z"
+        }
+      ],
+      "answers": [
+        {
+          "repeat": 0,
+          "answer": "Your current access code is NEW-927. You asked to forget the old access code.",
+          "answer_check": true
+        },
+        {
+          "repeat": 1,
+          "answer": "Your access code now is NEW-927. You asked to forget the old access code.",
+          "answer_check": true
+        },
+        {
+          "repeat": 2,
+          "answer": "Your current access code is NEW-927. You asked to forget the old access code.",
+          "answer_check": true
+        }
+      ],
+      "evidence_check": true,
+      "answer_passes": 3
+    },
+    {
+      "id": "synthetic-anchor",
+      "query": "What exact calendar date did I see the meteor shower?",
+      "adds": [
+        {
+          "status": 200,
+          "elapsed_ms": 2626.215541999998
+        }
+      ],
+      "status": "passed",
+      "memories": [
+        {
+          "id": "5e5fd40dc8d27df06e49c0349fb4fe40ba9c8839389c3bf24bcfcc7cb58b4550",
+          "content": "I saw a meteor shower yesterday.\nEvent date unresolved. Original expression: yesterday.\nVerbatim source context (use this to verify actor and negation):\nuser: [Session time: synthetic ordering marker 2000-01-01; not an event date] I saw a meteor shower yesterday.\n[status: confirmed; subject/speaker: user; scope: unspecified; synthetic order marker, not an event date: 2000-01-01T00:00:00Z; original time: yesterday; source: 1d6af6c57d0a]",
+          "score": 0.98,
+          "created_at": "2000-01-01T00:00:00Z"
+        }
+      ],
+      "answers": [
+        {
+          "repeat": 0,
+          "answer": "I do not know.",
+          "answer_check": true
+        },
+        {
+          "repeat": 1,
+          "answer": "I do not know.",
+          "answer_check": true
+        },
+        {
+          "repeat": 2,
+          "answer": "I don’t know the exact calendar date; the memory only says you saw a meteor shower “yesterday,” without resolving that to a specific date.",
+          "answer_check": true
+        }
+      ],
+      "evidence_check": true,
+      "answer_passes": 3
+    }
+  ],
+  "finished_at": "2026-09-05T12:33:17.559Z",
+  "passed": 5,
+  "planned": 5,
+  "answer_passes": 15,
+  "planned_answers": 15,
+  "status": "passed"
+}

@@ -1,0 +1,112 @@
+{
+  "protocol": "source-erasure-witness-diagnostic-v1",
+  "run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/round2-source-erasure-witness-diagnostic-xcPhfW",
+  "parent": "artifacts/round2-source-erasure-classified-commit-bci3B4",
+  "scope": "Instrumented isolated commit of the previously prepared plan, no new model calls. Captures only the existing witness-consistency guard inputs; no guards bypassed and no successful commit.",
+  "error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Source erasure left every original witness intact for an erased fact"
+  },
+  "rollback_verified": true,
+  "misses": [
+    {
+      "id": "a498456426537714b101cb2247c27853994856a5b31d6ddabfccea4b64c4fd51",
+      "subject": "user and user's wife",
+      "predicate": "baby_name_style_preference",
+      "scope": "Iris",
+      "content": "User and user's wife are drawn to the understated feel of Iris.",
+      "witnesses": [
+        {
+          "source_id": "637759b2d6ea628cb8bbe45ed8fa7bc514a1f940521e700efebdc46f17827ab1",
+          "quote": "Iris has that same understated feel we're drawn to.",
+          "start": 306,
+          "changed": false
+        }
+      ],
+      "source_classifications": [
+        {
+          "candidate_index": 33,
+          "boundary_subject": "user and user's wife",
+          "boundary_predicate": "backup_baby_first_name",
+          "boundary_scope": "expected daughter",
+          "effect_parts": [
+            [
+              "erase",
+              "Our backup first name is Iris."
+            ],
+            [
+              "retain",
+              " We both like it—simple, natural, quiet elegance—but Elara is still our number one. My wife and I agree on that ranking. Iris is there in case something changes, like if we suddenly meet five other babies named Elara or something. It's just nice to have a fallback, you know? Iris has that same understated feel we're drawn to."
+            ]
+          ],
+          "reason": "mixed_source",
+          "linked_erased_fact_visible": true
+        },
+        {
+          "candidate_index": 34,
+          "boundary_subject": "user and user's wife",
+          "boundary_predicate": "baby_name_fallback_reason",
+          "boundary_scope": "Iris",
+          "effect_parts": [
+            [
+              "retain",
+              "Our backup first name is Iris. We both like it—simple, natural, quiet elegance—but Elara is still our number one. My wife and I agree on that ranking. "
+            ],
+            [
+              "erase",
+              "Iris is there in case something changes, like if we suddenly meet five other babies named Elara or something."
+            ],
+            [
+              "retain",
+              " "
+            ],
+            [
+              "erase",
+              "It's just nice to have a fallback, you know?"
+            ],
+            [
+              "retain",
+              " Iris has that same understated feel we're drawn to."
+            ]
+          ],
+          "reason": "mixed_source",
+          "linked_erased_fact_visible": true
+        },
+        {
+          "candidate_index": 35,
+          "boundary_subject": "user and user's wife",
+          "boundary_predicate": "baby_name_ranking_agreement",
+          "boundary_scope": "expected daughter",
+          "effect_parts": [
+            [
+              "erase",
+              "Our backup first name is Iris."
+            ],
+            [
+              "retain",
+              " "
+            ],
+            [
+              "erase",
+              "We both like it—simple, natural, quiet elegance—but Elara is still our number one."
+            ],
+            [
+              "retain",
+              " "
+            ],
+            [
+              "erase",
+              "My wife and I agree on that ranking."
+            ],
+            [
+              "retain",
+              " Iris is there in case something changes, like if we suddenly meet five other babies named Elara or something. It's just nice to have a fallback, you know? Iris has that same understated feel we're drawn to."
+            ]
+          ],
+          "reason": "mixed_source",
+          "linked_erased_fact_visible": true
+        }
+      ]
+    }
+  ]
+}

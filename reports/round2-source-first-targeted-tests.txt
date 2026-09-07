@@ -1,0 +1,15 @@
+✔ raw coverage candidates exclude assistants, commands and all declared fact witnesses (15.958917ms)
+✔ source-backed tuples require opted-in exact human references and an explicit classification (1.129667ms)
+✔ one participant raw witness cannot cover another participant or replace missing core facts (0.702333ms)
+✔ coverage certificates bind candidate changes and cannot survive a rejected sibling (0.465458ms)
+✔ source-first configuration requires indexed hybrid raw evidence and the coverage protocol (0.357375ms)
+✔ v10 real preparation flow requires independent raw coverage and atomic indexed witnesses (17.369458ms)
+✔ coverage cannot be fabricated by bypassing the independent verifier (1.175792ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 327.641667

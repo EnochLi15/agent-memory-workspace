@@ -1,0 +1,44 @@
+{
+  "protocol": "assistant-protocol-error-semantic-review-v1",
+  "parent_results_sha256": "b7ef2b15a3134bd90024aac1dc02ffbbeb299c119cdf75797bb29a1b9de82970",
+  "packet_sha256": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d",
+  "reviewer": "assistant, not independent human truth",
+  "reviews": [
+    {
+      "qid": "D20_forget.json#p1_operation_trace#adjacent_operation#0",
+      "model_status": "protocol_error",
+      "assistant_correct": false,
+      "category": "missing_required_content",
+      "reason": "Project Hail Mary及姐妹阅读Kindred均未回答；引用协议另有You/you大小写不一致。"
+    },
+    {
+      "qid": "A13_reflect.json#p5_operation_application#longitudinal_operation#9",
+      "model_status": "protocol_error",
+      "assistant_correct": false,
+      "category": "incomplete_reference",
+      "reason": "没有完整旅行药物准备清单，缺少参考中的loratadine及当前剂量；部分引文去掉了Markdown加粗标记，触发逐字验证。"
+    },
+    {
+      "qid": "D01_reflect.json#p5_operation_application#adjacent_operation#8",
+      "model_status": "protocol_error",
+      "assistant_correct": false,
+      "category": "missing_required_content",
+      "reason": "只写Pixel风格，没有明确Pixel 8 Pro兼容性；引文遗漏Markdown加粗标记。"
+    },
+    {
+      "qid": "C27_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+      "model_status": "protocol_error",
+      "assistant_correct": false,
+      "category": "missing_required_content",
+      "reason": "缺少blood type A-negative；同时遗漏April 24th未确认状态。对遗漏型harmful_extra要求存在引文是协议设计缺口。"
+    },
+    {
+      "qid": "C27_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+      "model_status": "protocol_error",
+      "assistant_correct": false,
+      "category": "omission_rubric",
+      "reason": "rubric明确把遗漏April 24th未确认状态列为harmful_extra，答案没有提及该候选日期；遗漏不能提供所遗漏内容的答案引文。"
+    }
+  ],
+  "scope": "Separate semantic review of all five completed independent-audit protocol errors. Does not rewrite quotes, original verdicts, protocol validity, or historical accuracy."
+}

@@ -1,0 +1,72 @@
+{
+  "summary": {
+    "protocol": "transport-only-audit-merge-v1",
+    "audit_protocol": "semantic-criteria-audit-v2",
+    "planned": 199,
+    "status_counts": {
+      "judged": 153,
+      "protocol_error": 40,
+      "needs_review": 6
+    },
+    "correct": 21,
+    "incorrect": 132,
+    "by_type": {
+      "OperationApplication": {
+        "judged": 31,
+        "protocol_error": 7
+      },
+      "TargetBinding": {
+        "judged": 38,
+        "protocol_error": 8,
+        "needs_review": 1
+      },
+      "OperationTrace": {
+        "protocol_error": 21,
+        "judged": 37,
+        "needs_review": 1
+      },
+      "CandidateDisambiguation": {
+        "judged": 5
+      },
+      "StateTransition": {
+        "judged": 34,
+        "needs_review": 4,
+        "protocol_error": 2
+      },
+      "StateTrajectory": {
+        "judged": 8,
+        "protocol_error": 2
+      }
+    },
+    "prior_vs_audit": {
+      "primary_correct": {
+        "prior_False_audit_False": 128,
+        "prior_True_audit_False": 4,
+        "prior_False_audit_True": 15,
+        "prior_True_audit_True": 6
+      },
+      "upstream_correct": {
+        "prior_True_audit_False": 121,
+        "prior_False_audit_False": 11,
+        "prior_True_audit_True": 21
+      }
+    },
+    "independent_human_reviews": 0,
+    "scope": "Same-model posthoc criterion audit on selected exposed answers. No historical score replacement; unresolved rows remain in denominator."
+  },
+  "manifest": {
+    "protocol": "transport-only-audit-merge-v1",
+    "original": "eval/artifacts/round2-judge-audit199-v2",
+    "retry": "eval/artifacts/round2-judge-audit199-v2-transport-retry",
+    "input_hashes": {
+      "eval/artifacts/round2-judge-audit199-v2/results.jsonl": "16b532b1fe9999d921b44633caf2d9c9117280727d2a8c4a8b5aa02427a4cb5d",
+      "eval/artifacts/round2-judge-audit199-v2-transport-retry/results.jsonl": "c6c1372620c7b7b4decd3a86a33bab9ba3cf3a14204082d0fcc9a6e35e6b63e5",
+      "eval/artifacts/round2-judge-audit199-v2/manifest.json": "5e21e13d2ec557a96b04db667e0e67647b5d8c5ff9cfe715b6f7caac7dfa2117",
+      "eval/artifacts/round2-judge-audit199-v2-transport-retry/manifest.json": "c6222d92137c229524e98cfe785d993c6237b0446872438d8793aabb7667355e",
+      "eval/artifacts/round2-judge-calibration-v1/blind.jsonl": "8511b7f60654efec0a085be7ca7046e98133878be3c5c7b5e22df186aff4f67d",
+      "eval/artifacts/round2-judge-calibration-v1/prior-verdicts.jsonl": "7559a59806e0374a44690016f6f9eae042508a3db400590a654fa34d5a30bb30"
+    },
+    "source_sha256": "135c7107e822bbc28cb682d4f4c94c3dcb0c1b66f9396ee84fcc4906982484a8",
+    "results_sha256": "eea3885ae89e8f750d28cd4b7ae33ab59b7024d2173ea89aaa1a618b395eebfc"
+  }
+}
