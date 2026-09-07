@@ -1,0 +1,344 @@
+{
+  "protocol": "v1-small-closed-loop-v1",
+  "checked_at": "2026-09-07T03:54:51.705655+00:00",
+  "campaign": "v1-small-bigmodel-02",
+  "scope": "Exposed fixed two-group ten-question control. Same final evidence budget, embedding, Answer/Judge and dataset; not equal total compute. Not overall accuracy or stable gain.",
+  "runs": {
+    "raw": {
+      "planned": 10,
+      "correct": 5,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 3,
+      "max_estimated_tokens": 500,
+      "erased_code_returned_qids": [
+        "small-city",
+        "small-manager",
+        "small-work-browser",
+        "small-friend-browser",
+        "small-forgotten-code"
+      ],
+      "service_generation_attempts": 0,
+      "generation_purposes": {},
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "add_mean_ms": 99.3995502,
+      "search_mean_ms": 68.44578319999975,
+      "artifact_sha256": {
+        "metrics.json": "27dcc70a03be60f26531e9dd74390f16d0274bfd5628cf6ffeffdc81c924bc07",
+        "predictions.jsonl": "b4f068e73e37ca786822c5e5a58d2a871bcb4361862c29154f5a813eaf315642",
+        "judgments.jsonl": "678830ac5b831dbf5d0b9f20dd4a6f0dea573129b71e878ed69165c0809a4728",
+        "report.md": "fd20fac50885a0a24e789320cb57bef740b7e77c0a5152a8f354cc60d0316ea4",
+        "ingest.jsonl": "19467359369ab4507a2180f1078d810308cc8d0b4dbe18384584ec910f0b1aae",
+        "requests.jsonl": "bd61907bdeaa43f5a16cbfc9801262eb4bf9110bb95b1bb17c75540a6bd23eca",
+        "manifest.json": "4e7fc5427aefce78bbffa9d73a1e62b5536bcd97908b3d504e18354c185e4713",
+        "retrievals.jsonl": "5c535fa9d536223ff7ae291e55ec16df6fe1d713faf8e2cc14e76a6d7f32f68a"
+      }
+    },
+    "candidate": {
+      "planned": 10,
+      "correct": 8,
+      "judged": 9,
+      "statuses": {
+        "judge_error": 1,
+        "judged": 9
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 11,
+      "max_estimated_tokens": 907,
+      "erased_code_returned_qids": [],
+      "service_generation_attempts": 13,
+      "generation_purposes": {
+        "extraction": 5,
+        "verification": 6,
+        "source_erasure": 1,
+        "repair": 1
+      },
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 42422,
+        "completion_tokens": 2523,
+        "total_tokens": 44945
+      },
+      "add_mean_ms": 9987.4857584,
+      "search_mean_ms": 76.29320410000146,
+      "artifact_sha256": {
+        "metrics.json": "d3791ad6efd219b355f9544b8769d46edf77d680816e7a0461890b184f0372b3",
+        "predictions.jsonl": "65b5794efb5cdaf821068c9132b0f45fc64d737a6c3c89a0bf7645f2331d72cc",
+        "judgments.jsonl": "cd909b6641ae12dea2912cbfa3e2bd2869242994dc222e7f1cacdb6541c4ce73",
+        "report.md": "c32bfc3c0ad62824d265ba89ed6c5d8abf5708b845337503a1088a22b25dae84",
+        "ingest.jsonl": "46e895977c8379e9429dcbea365d991b4116616f5730b5e4a8e709116834f9df",
+        "requests.jsonl": "63188bfa6eb1e7ab72d0677919410dada36bcb1bf4d99f11b62177dbe54cd94c",
+        "manifest.json": "2502ae96bf16505ea7e59a2b395d189ada1d847ac8ed68c257b2f3f11eeb3907",
+        "retrievals.jsonl": "4d8fe38d6c8ba3c0ad34417dabefcfa23851da568bd0397fbac889bf58c2b53b"
+      }
+    }
+  },
+  "storage": {
+    "protocol": "v1-fixed-small-storage-readback-v1",
+    "campaign": "v1-small-bigmodel-02",
+    "checks": {
+      "bounded-retention": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "Maya_Chrome_retained": true,
+        "Olivia_Edge_retained": true,
+        "Andrew_Boston_retained": true,
+        "Andrew_painting_retained": true,
+        "no_unauthorized_forget_event": true,
+        "no_erased_facts": true
+      },
+      "bounded-lifecycle": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "code_absent_from_readable_tables_and_fts": true,
+        "code_erased_without_vector_or_quotes": true,
+        "current_city_Portland": true,
+        "current_browser_Safari": true,
+        "old_city_superseded": true,
+        "old_browser_superseded": true,
+        "Clara_neighbor_retained": true,
+        "Kevin_Brave_retained": true,
+        "forget_event_present": true,
+        "two_update_events_present": true
+      }
+    },
+    "databases": {
+      "service/.data/v1-small-bigmodel-02-candidate/68fffebbad5b2cebc85c3c417896f1e83f0b8d30e975a9865ad10113df6fc25a/memory.sqlite": {
+        "sha256": "756d4757779dfbff587229d964870bef6f9e99d41031744991fc28d4c86814d1",
+        "source_format": "dual-source-v10-s1",
+        "revision": "2"
+      },
+      "service/.data/v1-small-bigmodel-02-candidate/45223e106f22836828550b26dd0fdf8ab867640de30cf31b64f0d8f647f7b850/memory.sqlite": {
+        "sha256": "efdf9ee7427bf4922b5af151dea9daca0fa7db4bf63d3544f5bfbd377de1cf8a",
+        "source_format": "dual-source-v10-s1",
+        "revision": "3"
+      }
+    },
+    "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+    "check_provenance": "Reuses the previously corrected fixed 20-check verifier; current value checks use structured value, with independent superseded-history assertions.",
+    "count": 20,
+    "passed": true
+  },
+  "review": {
+    "method": "Assistant reviewed all 20 saved predictions against source sessions, questions, references and rubric meaning. Not blinded; no model rescoring.",
+    "human_labels": 0,
+    "original_scores_unchanged": true,
+    "items": [
+      {
+        "profile": "candidate",
+        "qid": "small-city",
+        "answer": "Your current city is Portland. You stated: \"I now live in Portland\" (confirmed, observed 2026-02-01; original time expression was \"now\").",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-tablet-browser",
+        "answer": "Maya's old Android tablet uses Chrome.",
+        "assistant_correct": true,
+        "reason": "Saved answer correctly says Chrome; judge JSON parsing failed. This review does not replace the missing machine verdict."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-olivia-browser",
+        "answer": "Olivia uses Edge on her laptop. This is confirmed: Maya stated, \"My friend Olivia uses Edge on her laptop.\"",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-manager",
+        "answer": "Your manager is Clara.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-andrew-hobby",
+        "answer": "Andrew's hobby is painting.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-work-browser",
+        "answer": "Your default browser on your work laptop is Safari (previously Firefox).",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-andrew-city",
+        "answer": "Andrew lives in Boston, per his own statement (\"I live in Boston\"), confirmed and observed on 2026-01-01.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-tablet-sale",
+        "answer": "No. As of 2026-02-01, Maya stated that she has not sold her old Android tablet and that tracking of it should continue. Her earlier instruction to forget it only applies if she sells it in the future.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-friend-browser",
+        "answer": "Your friend Kevin uses **Brave** on his laptop (confirmed as of January 1, 2026).",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-forgotten-code",
+        "answer": "I don't know. None of the stored memories contain your access code.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-browser",
+        "answer": "Maya uses Chrome on her old Android tablet. (She noted that her friend Olivia uses Edge, but that's on Olivia's laptop.)",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-city",
+        "answer": "You currently live in Portland. You stated on 2026-02-01, \"I now live in Portland,\" which supersedes the earlier record from 2026-01-01 that said you lived in Seattle.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-olivia-browser",
+        "answer": "Olivia uses Edge on her laptop, according to Maya.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-manager",
+        "answer": "Your manager is Clara.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-andrew-hobby",
+        "answer": "Andrew's hobby is painting.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-work-browser",
+        "answer": "Your current default browser on your work laptop is **Safari**. You updated this on 2026-02-01, when you noted it changed from Firefox (which was your previous default as of 2026-01-01).",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-andrew-city",
+        "answer": "Andrew lives in Boston \u2014 he stated, \"I live in Boston.\"",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-sale",
+        "answer": "No. As of February 1, 2026, Maya explicitly stated, \"I have not sold it,\" referring to her old Android tablet, and asked that tracking of it continue. There is no record of her having sold it since then.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-friend-browser",
+        "answer": "Your friend Kevin uses Brave on his laptop, according to what you told me on 2026-01-01. There's no later update changing this.",
+        "assistant_correct": true,
+        "reason": "Answer matches the fixed source and reference; any dated provenance or explicitly superseded history is supported by the supplied sessions."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-forgotten-code",
+        "answer": "Your access code was previously recorded, but you asked me to forget it on March 1, 2026. I've removed that information and can't provide it. If you need your access code, please re-share it or retrieve it from its original source.",
+        "assistant_correct": false,
+        "reason": "No code is disclosed and the March 1 forgetting request is supported. However the claim that the raw baseline removed the stored information is misleading: raw retrieval retains it. The judge stated a different, unsupported reason for rejection."
+      }
+    ],
+    "rubric_disagreements": [
+      {
+        "profile": "candidate",
+        "qid": "small-work-browser",
+        "reason": "Judge rejected source-supported context as absent from the short reference. Source sessions support the added facts."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-browser",
+        "reason": "Judge rejected source-supported context as absent from the short reference. Source sessions support the added facts."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-work-browser",
+        "reason": "Judge rejected source-supported context as absent from the short reference. Source sessions support the added facts."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-sale",
+        "reason": "Judge rejected source-supported context as absent from the short reference. Source sessions support the added facts."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-friend-browser",
+        "reason": "Judge rejected source-supported context as absent from the short reference. Source sessions support the added facts."
+      }
+    ],
+    "assistant_accepted_answers": 19,
+    "source_sha256": {
+      "eval/artifacts/v1-small-bigmodel-02-raw-memops/predictions.jsonl": "b4f068e73e37ca786822c5e5a58d2a871bcb4361862c29154f5a813eaf315642",
+      "eval/artifacts/v1-small-bigmodel-02-candidate-memops/predictions.jsonl": "65b5794efb5cdaf821068c9132b0f45fc64d737a6c3c89a0bf7645f2331d72cc"
+    }
+  },
+  "evidence_sha256": {
+    "artifacts/v1-small-bigmodel-02/raw-runtime.json": "4e35f4b7375a1268b9d4866127b2f5054d1717aff0107ea7504aded136b7db82",
+    "artifacts/v1-small-bigmodel-02/raw-http-audit.json": "d5c3fe3106fb715ddc673f5fa74152fcb53732e162d1e8957260f735cfe3e5d6",
+    "eval/artifacts/v1-small-bigmodel-02-raw-memops/manifest.json": "4e7fc5427aefce78bbffa9d73a1e62b5536bcd97908b3d504e18354c185e4713",
+    "eval/artifacts/v1-small-bigmodel-02-raw-memops/judgments.jsonl": "678830ac5b831dbf5d0b9f20dd4a6f0dea573129b71e878ed69165c0809a4728",
+    "eval/artifacts/v1-small-bigmodel-02-raw-memops/predictions.jsonl": "b4f068e73e37ca786822c5e5a58d2a871bcb4361862c29154f5a813eaf315642",
+    "eval/artifacts/v1-small-bigmodel-02-raw-memops/retrievals.jsonl": "5c535fa9d536223ff7ae291e55ec16df6fe1d713faf8e2cc14e76a6d7f32f68a",
+    "artifacts/v1-small-bigmodel-02/candidate-runtime.json": "cfe1384bc62775c60ab0214875404b6bbdf01587a026267c36f3030aa30b12ff",
+    "artifacts/v1-small-bigmodel-02/candidate-http-audit.json": "4f7f4e34cec293f553a914ade273f4c3ae0699f10184180623d7d53589803b60",
+    "eval/artifacts/v1-small-bigmodel-02-candidate-memops/manifest.json": "2502ae96bf16505ea7e59a2b395d189ada1d847ac8ed68c257b2f3f11eeb3907",
+    "eval/artifacts/v1-small-bigmodel-02-candidate-memops/judgments.jsonl": "cd909b6641ae12dea2912cbfa3e2bd2869242994dc222e7f1cacdb6541c4ce73",
+    "eval/artifacts/v1-small-bigmodel-02-candidate-memops/predictions.jsonl": "65b5794efb5cdaf821068c9132b0f45fc64d737a6c3c89a0bf7645f2331d72cc",
+    "eval/artifacts/v1-small-bigmodel-02-candidate-memops/retrievals.jsonl": "4d8fe38d6c8ba3c0ad34417dabefcfa23851da568bd0397fbac889bf58c2b53b",
+    "artifacts/v1-small-bigmodel-02/candidate-storage-check.json": "bc94abfddf6db47e54deac31a18e73eceeef6d8cb6c62d95a97938256ad03d3c",
+    "artifacts/v1-small-bigmodel-02/check-storage.py": "a870930af4e1bde528dabcdd0a2e3da07824c14cdff20f95b29c325624f64159",
+    "artifacts/v1-small-bigmodel-02/assistant-review.json": "7d92ae4159729224edad3ae2c0e64159e3b117e7076ea22637bfd464bafd1efb",
+    "configs/round2-small-closed-loop-v1.json": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "configs/v1-bigmodel-pair.json": "cc0d279af1a0dca6bcc64ad4c21a75e2e5f9a01ed13175617ba450d8745e05ab"
+  },
+  "commits": {
+    "workspace": "39b4c451004c406871221bc21c7d56a6b587d2f5",
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "passed": false
+}

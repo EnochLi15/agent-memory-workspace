@@ -137,3 +137,12 @@ V1打包只选择本次验收绑定的文件，保留凭据及Git可达历史扫
 `delivery/v1-b398a63/candidate-source-832ec2d.tar.gz` 是非正式V1的源码交接快照，固定根仓库`832ec2d`、service `b398a63`及eval `b8ae27a`。外部同名`.sha256`文件用于核对归档，包内`SOURCE-INVENTORY.json`逐文件绑定内容。已实际读回3381个文件、从归档递归克隆并检查三个仓库Git完整性；配置凭据与可达源码历史扫描通过。详见[源码交接验证](../reports/v1-candidate-source-handoff.json)。该验证报告是在归档完成后生成，因此不包含在上述固定快照中。
 
 解压后按包内`CANDIDATE-README.md`操作。快照包含三个bare仓库；运行镜像和本地embedding归档单独提供，身份见[运行归档清单](../reports/v1-runtime-bundles.json)。源码离线克隆不等于依赖离线安装，运行镜像平台仍仅Linux arm64。该快照不替代正式打包/readiness门槛，也不证明长背景、全量或最终包部署通过。
+
+
+## BigModel 候选接入（2026-09-07）
+
+用户提供的新接口已完成最小连通性检查。当前本地`.env`选择`configs/v1-bigmodel-enhanced.env`，base为`https://open.bigmodel.cn/api/coding/paas/v4`；写入/核验/修复使用`glm-5.3`，辅助及独立评测Answer/Judge使用`glm-5.3-flash`，本地nomic embedding保持原digest。新机器需自行填写密钥并显式设置`MEMORY_CONFIG_FILE=configs/v1-bigmodel-enhanced.env`。Responses接口测试通过，服务仍沿用Chat Completion。此前正在运行的服务未自动重启或切换。
+
+采用官方文档中的`json_object`模式，保留本地严格结构与语义校验。首次`json_schema`小集因非法JSON导致一次遗忘写入失败，结果独立保留。配置调整后的第二轮两边各5次写入、10次检索均成功，候选20项存储检查通过；机器计分候选8/10（9题已判、1题judge_error），原文5/10。判分解析失败的原始响应未被现有评测器保留，不能确定其具体尾随字符或把它直接归因于流式解析实现。没有补判或覆盖旧分数。助手复核不是人工校准，短参考造成的判分争议不计入修正成绩。
+
+对应[兼容性结果](../reports/v1-bigmodel-compatibility.json)、[首轮失败](../reports/v1-small-bigmodel-01-results.json)、[第二轮结果](../reports/v1-small-bigmodel-02-results.json)。这些是新的候选证据，不替代旧发布清单中的提交/模型身份；完整小集判分、长背景、全量与正式发布仍未通过。按用户要求收敛，本轮后未启动长背景或全量测试。
