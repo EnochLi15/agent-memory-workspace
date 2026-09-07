@@ -1,0 +1,356 @@
+{
+  "protocol": "v1-small-closed-loop-v1",
+  "checked_at": "2026-09-07T01:46:57.248292+00:00",
+  "campaign": "v1-small-b398a63-01",
+  "scope": "Exposed fixed two-group ten-question control. Same final evidence budget, embedding, Answer/Judge and dataset; not equal total compute. Not overall accuracy or stable gain.",
+  "runs": {
+    "raw": {
+      "planned": 10,
+      "correct": 10,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 3,
+      "max_estimated_tokens": 500,
+      "erased_code_returned_qids": [
+        "small-city",
+        "small-manager",
+        "small-work-browser",
+        "small-friend-browser",
+        "small-forgotten-code"
+      ],
+      "service_generation_attempts": 0,
+      "generation_purposes": {},
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "add_mean_ms": 114.34604979999999,
+      "search_mean_ms": 69.98426260000001,
+      "artifact_sha256": {
+        "metrics.json": "451968e514cf49ccd9c9116b044dfcee175d9943ee290e978819c4ad6827bffc",
+        "predictions.jsonl": "06517e6268796e8f7188cdfda6a4355f649531abeab688750b673c877c19d139",
+        "judgments.jsonl": "f1c03f347601cc747bc4ab87fa9e7a8dc94306ee74c281b75e5f5e32edc585bd",
+        "report.md": "5204968a31c080c1f1696953d61de16c50a676e710bcf570c9a4d885ad95b277",
+        "ingest.jsonl": "c90f695777fc118eaf33c97f8acfe1d61a0dfd72bcf21a0e63c8637bce45b850",
+        "requests.jsonl": "92269b25673be485acf972e73eec48ca3d082342f329b9f7c3142db801d12b8a",
+        "manifest.json": "eab9b646a72e2df4cfea79bb1bca93dbad9be367a3782fc428484749629655e1",
+        "retrievals.jsonl": "8a2257bb9be1f7beb0706c5c80a810c9de052a04bd92270d330d635118abf12d"
+      }
+    },
+    "candidate": {
+      "planned": 10,
+      "correct": 10,
+      "judged": 10,
+      "statuses": {
+        "judged": 10
+      },
+      "logical_adds": 5,
+      "http_add_attempts": 5,
+      "all_adds_ok": true,
+      "finished": true,
+      "http_audit_passed": true,
+      "clean_sources": true,
+      "max_items": 11,
+      "max_estimated_tokens": 867,
+      "erased_code_returned_qids": [],
+      "service_generation_attempts": 11,
+      "generation_purposes": {
+        "extraction": 5,
+        "verification": 5,
+        "source_erasure": 1
+      },
+      "generation_errors": 0,
+      "service_generation_reported_tokens": {
+        "prompt_tokens": 64187,
+        "completion_tokens": 2285,
+        "total_tokens": 66472
+      },
+      "add_mean_ms": 14319.869541799999,
+      "search_mean_ms": 88.34705439999925,
+      "artifact_sha256": {
+        "metrics.json": "91871f87c615adc3bda1972a1c681028da0d226650f5fa63b6a67cd64f1bc318",
+        "predictions.jsonl": "de82bc8082dd65c17dd670479c8560fbd810738012f8e930597171479d954eb4",
+        "judgments.jsonl": "7b8c900f02339329d42548de2292744ab25ee2b029c21ff80c8274e92453740a",
+        "report.md": "a90203757c5eea312051fe8e7982d389ebc91e0678d8d3607215803bb28734df",
+        "ingest.jsonl": "ce3cc4b1dca5a65ae38f68ddc647c4f68cd40a4114ee6000170bb7bc171786cb",
+        "requests.jsonl": "ddf9b368176aac960242dd04d7e3f55224a6b5e7cf43051125f8050bf588be77",
+        "manifest.json": "2539563cd71aa5bedd2ea22de0dfa7f41ce5fc6b70f0b9f17949a51117befeb5",
+        "retrievals.jsonl": "940a8d48d58cbf19343074da93d4de4a4b969024d1063882206fa4e2b5ecd7da"
+      }
+    }
+  },
+  "storage": {
+    "protocol": "v1-fixed-small-storage-readback-v1",
+    "campaign": "v1-small-b398a63-01",
+    "checks": {
+      "bounded-lifecycle": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "code_absent_from_readable_tables_and_fts": true,
+        "code_erased_without_vector_or_quotes": true,
+        "current_city_Portland": true,
+        "current_browser_Safari": true,
+        "old_city_superseded": true,
+        "old_browser_superseded": true,
+        "Clara_neighbor_retained": true,
+        "Kevin_Brave_retained": true,
+        "forget_event_present": true,
+        "two_update_events_present": true
+      },
+      "bounded-retention": {
+        "receipts_match_logical_adds": true,
+        "no_pending_preparation": true,
+        "Maya_Chrome_retained": true,
+        "Olivia_Edge_retained": true,
+        "Andrew_Boston_retained": true,
+        "Andrew_painting_retained": true,
+        "no_unauthorized_forget_event": true,
+        "no_erased_facts": true
+      }
+    },
+    "databases": {
+      "service/.data/v1-small-b398a63-01-candidate/7d3dbac2642608f4d715814f952f281a0b6b151884fa34e486e14cc8e7c6984a/memory.sqlite": {
+        "sha256": "9e338f441bb95ccc63643c028653734e11dd68dbadbf27147270f5f12be25e0a",
+        "source_format": "dual-source-v10-s1",
+        "revision": "3"
+      },
+      "service/.data/v1-small-b398a63-01-candidate/45376807e2b09267615f4dbf731d3b2b2b8785be67a017a9d3489ff1db6951ef/memory.sqlite": {
+        "sha256": "af73c987b90eac22ba956d26d8f97227a5cba717f64b27988960acd53664e8a1",
+        "source_format": "dual-source-v10-s1",
+        "revision": "2"
+      }
+    },
+    "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+    "check_provenance": "Reuses the previously corrected fixed 20-check verifier; current value checks use structured value, with independent superseded-history assertions.",
+    "count": 20,
+    "passed": true
+  },
+  "review": {
+    "method": "Assistant independently compared all 20 saved answers against questions, references and rubric meaning after the runs. Outputs were not blinded; no additional model rescoring or human review.",
+    "human_labels": 0,
+    "assistant_accepted_answers": 20,
+    "rubric_disagreements": [],
+    "original_scores_unchanged": true,
+    "source_sha256": {
+      "eval/artifacts/v1-small-b398a63-01-raw-memops/predictions.jsonl": "06517e6268796e8f7188cdfda6a4355f649531abeab688750b673c877c19d139",
+      "eval/artifacts/v1-small-b398a63-01-candidate-memops/predictions.jsonl": "de82bc8082dd65c17dd670479c8560fbd810738012f8e930597171479d954eb4"
+    },
+    "items": [
+      {
+        "profile": "raw",
+        "qid": "small-city",
+        "question": "What is my current city?",
+        "reference": "Portland",
+        "answer": "Portland.",
+        "assistant_correct": true,
+        "reason": "Portland is the current city; no current Seattle claim."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-browser",
+        "question": "Which browser does Maya use on her old Android tablet?",
+        "reference": "Chrome",
+        "answer": "Chrome",
+        "assistant_correct": true,
+        "reason": "Chrome is retained for Maya\u2019s tablet."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-manager",
+        "question": "Who is my manager?",
+        "reference": "Clara",
+        "answer": "Clara.",
+        "assistant_correct": true,
+        "reason": "Clara answers the manager question directly."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-olivia-browser",
+        "question": "Which browser does Maya's friend Olivia use on her laptop?",
+        "reference": "Edge",
+        "answer": "Olivia uses Edge on her laptop.",
+        "assistant_correct": true,
+        "reason": "Edge answers Olivia\u2019s browser question."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-work-browser",
+        "question": "What is the current default browser on my work laptop?",
+        "reference": "Safari",
+        "answer": "Safari",
+        "assistant_correct": true,
+        "reason": "Safari is the current work-laptop browser."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-andrew-hobby",
+        "question": "What is Andrew's hobby?",
+        "reference": "Painting",
+        "answer": "Andrew\u2019s hobby is painting.",
+        "assistant_correct": true,
+        "reason": "Painting attributed to Andrew."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-friend-browser",
+        "question": "Which browser does my friend Kevin use on his laptop?",
+        "reference": "Brave",
+        "answer": "Brave.",
+        "assistant_correct": true,
+        "reason": "Brave attributed to Kevin by explicit answer or question context."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-andrew-city",
+        "question": "Where does Andrew live?",
+        "reference": "Boston",
+        "answer": "Andrew lives in Boston.",
+        "assistant_correct": true,
+        "reason": "Boston attributed to Andrew."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-tablet-sale",
+        "question": "Has Maya sold her old Android tablet?",
+        "reference": "No, she has not sold it.",
+        "answer": "No, Maya has not sold her old Android tablet.",
+        "assistant_correct": true,
+        "reason": "Explicitly states Maya has not sold the tablet; conditional/fictional forgetting did not authorize deletion."
+      },
+      {
+        "profile": "raw",
+        "qid": "small-forgotten-code",
+        "question": "What is my access code?",
+        "reference": "I do not know; the access code was forgotten.",
+        "answer": "I do not know.",
+        "assistant_correct": true,
+        "reason": "States no retained information and supplies no code."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-tablet-browser",
+        "question": "Which browser does Maya use on her old Android tablet?",
+        "reference": "Chrome",
+        "answer": "Chrome",
+        "assistant_correct": true,
+        "reason": "Chrome is retained for Maya\u2019s tablet."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-olivia-browser",
+        "question": "Which browser does Maya's friend Olivia use on her laptop?",
+        "reference": "Edge",
+        "answer": "Edge",
+        "assistant_correct": true,
+        "reason": "Edge answers Olivia\u2019s browser question."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-andrew-hobby",
+        "question": "What is Andrew's hobby?",
+        "reference": "Painting",
+        "answer": "Andrew's hobby is painting.",
+        "assistant_correct": true,
+        "reason": "Painting attributed to Andrew."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-andrew-city",
+        "question": "Where does Andrew live?",
+        "reference": "Boston",
+        "answer": "Andrew lives in Boston.",
+        "assistant_correct": true,
+        "reason": "Boston attributed to Andrew."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-tablet-sale",
+        "question": "Has Maya sold her old Android tablet?",
+        "reference": "No, she has not sold it.",
+        "answer": "No, Maya has not sold her old Android tablet.",
+        "assistant_correct": true,
+        "reason": "Explicitly states Maya has not sold the tablet; conditional/fictional forgetting did not authorize deletion."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-city",
+        "question": "What is my current city?",
+        "reference": "Portland",
+        "answer": "Portland",
+        "assistant_correct": true,
+        "reason": "Portland is the current city; no current Seattle claim."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-manager",
+        "question": "Who is my manager?",
+        "reference": "Clara",
+        "answer": "Clara.",
+        "assistant_correct": true,
+        "reason": "Clara answers the manager question directly."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-work-browser",
+        "question": "What is the current default browser on my work laptop?",
+        "reference": "Safari",
+        "answer": "Safari",
+        "assistant_correct": true,
+        "reason": "Safari is the current work-laptop browser."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-friend-browser",
+        "question": "Which browser does my friend Kevin use on his laptop?",
+        "reference": "Brave",
+        "answer": "Kevin uses Brave on his laptop.",
+        "assistant_correct": true,
+        "reason": "Brave attributed to Kevin by explicit answer or question context."
+      },
+      {
+        "profile": "candidate",
+        "qid": "small-forgotten-code",
+        "question": "What is my access code?",
+        "reference": "I do not know; the access code was forgotten.",
+        "answer": "I do not know.",
+        "assistant_correct": true,
+        "reason": "States no retained information and supplies no code."
+      }
+    ]
+  },
+  "evidence_sha256": {
+    "artifacts/v1-small-b398a63-01/raw-runtime.json": "4d9eab0706f3619f4ee0d5ce2d47353f03dec1b727015cc91f98cee89ff032bd",
+    "artifacts/v1-small-b398a63-01/raw-http-audit.json": "1f04126645eacda56a2d93400f89ce06ee8a0245cbb848e1896d0826c9dfda9c",
+    "eval/artifacts/v1-small-b398a63-01-raw-memops/manifest.json": "eab9b646a72e2df4cfea79bb1bca93dbad9be367a3782fc428484749629655e1",
+    "eval/artifacts/v1-small-b398a63-01-raw-memops/judgments.jsonl": "f1c03f347601cc747bc4ab87fa9e7a8dc94306ee74c281b75e5f5e32edc585bd",
+    "eval/artifacts/v1-small-b398a63-01-raw-memops/predictions.jsonl": "06517e6268796e8f7188cdfda6a4355f649531abeab688750b673c877c19d139",
+    "eval/artifacts/v1-small-b398a63-01-raw-memops/retrievals.jsonl": "8a2257bb9be1f7beb0706c5c80a810c9de052a04bd92270d330d635118abf12d",
+    "artifacts/v1-small-b398a63-01/candidate-runtime.json": "c1171ad62db0260610ab9bef0d4a9cbe8e7219c48043b0346b614f5f3d7d0cf6",
+    "artifacts/v1-small-b398a63-01/candidate-http-audit.json": "c42e8ed58ec26a5531b8f5c0afa3e19dfc6e2ecb3264e450d2f9db55c85207b1",
+    "eval/artifacts/v1-small-b398a63-01-candidate-memops/manifest.json": "2539563cd71aa5bedd2ea22de0dfa7f41ce5fc6b70f0b9f17949a51117befeb5",
+    "eval/artifacts/v1-small-b398a63-01-candidate-memops/judgments.jsonl": "7b8c900f02339329d42548de2292744ab25ee2b029c21ff80c8274e92453740a",
+    "eval/artifacts/v1-small-b398a63-01-candidate-memops/predictions.jsonl": "de82bc8082dd65c17dd670479c8560fbd810738012f8e930597171479d954eb4",
+    "eval/artifacts/v1-small-b398a63-01-candidate-memops/retrievals.jsonl": "940a8d48d58cbf19343074da93d4de4a4b969024d1063882206fa4e2b5ecd7da",
+    "artifacts/v1-small-b398a63-01/candidate-storage-check.json": "b74e4c14f2c6dd6947d3c2fa6c87517b224d1eb5a10ef6dd6604be499c2cbebb",
+    "artifacts/v1-small-b398a63-01/check-storage.py": "a870930af4e1bde528dabcdd0a2e3da07824c14cdff20f95b29c325624f64159",
+    "artifacts/v1-small-b398a63-01/assistant-review.json": "d918ab766c5a1486a2a2d06ece59c184f700a0ad774ffff65f6e195c2cfd95e5",
+    "configs/round2-small-closed-loop-v1.json": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "configs/round2-small-pair-v1.json": "8c9c9fb4febcf78d0c26ee71d40023212a309b06f81b0138de8660d89e306e28"
+  },
+  "commits": {
+    "workspace": "528d38b9b7466349373fd97a9cc09a25ece7132d",
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "passed": true
+}
