@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-09-07T00:08:13.614168+00:00",
+  "checked_at": "2026-09-06T23:50:32.223783+00:00",
   "scope": "Exact current service and eval CI; not real-model, whole-background or final release acceptance.",
   "repositories": {
     "service": {
-      "commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
-      "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34068565580",
+      "commit": "d9f9ec6981fea727f3f0479042f9cefb9cbc3371",
+      "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34067793153",
       "status": "completed",
       "conclusion": "success",
       "jobs": [

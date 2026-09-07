@@ -1,0 +1,69 @@
+{
+  "protocol": "v1-d25-user-event-diagnostic-v1",
+  "checked_at": "2026-09-07T00:04:21.694566+00:00",
+  "service_commit": "6166e2f08a9963c2d410b85ac3fa5bd4e31b6e7e",
+  "diagnostic": "artifacts/round2-fresh-failed-add-xIMdvs/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 90133.687042,
+      "request_sha256": "f5b2df0fbf34a5aed2b4381a7cc1dcbfe287b48fc70320ff44961f4971eabd88",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 41980.235167000006,
+      "request_sha256": "f5b2df0fbf34a5aed2b4381a7cc1dcbfe287b48fc70320ff44961f4971eabd88",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 50173.036333,
+      "request_sha256": "f5b2df0fbf34a5aed2b4381a7cc1dcbfe287b48fc70320ff44961f4971eabd88",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Evidence still fails semantic verification after repair"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "repair_progress": "First structural repair split the multi-scope operation and reached semantic verification. The second repair addressed missing related records but also added two unauthorized user-owned event deletions.",
+  "rejected_operation_checks": [
+    [
+      11,
+      false,
+      false,
+      "The instruction not to track Priya's stuff does not authorize forgetting the user's own Koku Kitchen visit event merely because it names Priya."
+    ],
+    [
+      15,
+      false,
+      false,
+      "The instruction not to track Priya's stuff does not authorize forgetting the user's own lunch chat event merely because it names Priya."
+    ]
+  ],
+  "cause": "The independent-user-event ownership rule was explicit in verification semantics but absent from shared extraction/repair fact rules. Structural group membership was not the semantic authorization error.",
+  "next_action": "Share the existing ownership rule through EVIDENCE_BOUNDARIES so extraction, source-reference extraction, repair FACT_RULES and verification agree. Preserve verifier rejection and target/source authorization; do not remove independent user events merely because they mention the forgotten person.",
+  "scope": "No erasure binding, source partition or commit accepted in this run. No extra attempt after permanent semantic failure or replacement of original scores.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-xIMdvs/report.json": "cb6255c5148064f7440fdccbceb9f8b3307e491525af1ea040e92ac1cea6cf61",
+    "artifacts/v1-d25-6166e2f-01/verification-15.json": "ea6788eb63e59f5a36dd4912deb41cc00819b44f0ee7e7a59cd6084b47410579",
+    "artifacts/v1-d25-6166e2f-01/repair-14.json": "e04289307792bffcc89b494824ce5062868d2f5ac8bf203ac080fe7851ca780a",
+    "artifacts/v1-d25-6166e2f-01/first-repair.json": "06526db4549e0ac1fb013472f690aa153233873d299edea8d9bdff2d35119bf5"
+  }
+}

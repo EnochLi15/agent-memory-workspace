@@ -1,0 +1,104 @@
+{
+  "protocol": "v1-d25-repair-transport-diagnostic-v1",
+  "checked_at": "2026-09-07T00:08:13.614168+00:00",
+  "service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+  "diagnostic": "artifacts/round2-fresh-failed-add-392pAh/report.json",
+  "passed": false,
+  "attempts": [
+    {
+      "attempt": 0,
+      "http_status": 503,
+      "elapsed_ms": 35348.884291,
+      "request_sha256": "c2459c36668042f17e95d255368782e82372fb7e1e03eb848552cdb9f01a641c",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 1,
+      "http_status": 503,
+      "elapsed_ms": 90130.50737499999,
+      "request_sha256": "c2459c36668042f17e95d255368782e82372fb7e1e03eb848552cdb9f01a641c",
+      "code": "WRITE_CONTINUATION_PENDING"
+    },
+    {
+      "attempt": 2,
+      "http_status": 503,
+      "elapsed_ms": 18587.384833999982,
+      "request_sha256": "c2459c36668042f17e95d255368782e82372fb7e1e03eb848552cdb9f01a641c",
+      "code": "EVIDENCE_VALIDATION"
+    }
+  ],
+  "terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "A rejected proposal could not be repaired after a model or protocol failure"
+  },
+  "checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "original_database_unchanged": true,
+  "semantic_findings": [
+    [
+      6,
+      "missing",
+      "No, don't track Priya's stuff—that's her business.",
+      "The forget request is only partially executed; it omits applicable Priya-related records: Priya went to Koku Kitchen with the user yesterday, Priya is the user's coworker, and user/Priya comparative records about different Koku Kitchen orders and opposite spice spectrum. User-specific planning facts are covered by facts 9-12, but the erasure scope is incomplete."
+    ]
+  ],
+  "repair_errors": [
+    {
+      "at": "2026-09-07T00:05:17.224Z",
+      "purpose": "repair",
+      "error_category": "deadline",
+      "transport_code": null,
+      "stream_started": true,
+      "finish_reason": null,
+      "signal_aborted": true
+    },
+    {
+      "at": "2026-09-07T00:05:23.145Z",
+      "purpose": "repair",
+      "error_category": "connection",
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false,
+      "finish_reason": null,
+      "signal_aborted": false
+    },
+    {
+      "at": "2026-09-07T00:05:29.230Z",
+      "purpose": "repair",
+      "error_category": "connection",
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false,
+      "finish_reason": null,
+      "signal_aborted": false
+    },
+    {
+      "at": "2026-09-07T00:05:35.809Z",
+      "purpose": "repair",
+      "error_category": "connection",
+      "transport_code": "UND_ERR_SOCKET",
+      "stream_started": false,
+      "finish_reason": null,
+      "signal_aborted": false
+    }
+  ],
+  "interpretation": [
+    "First structural repair completed and the verifier accepted all 25 fact checks and ten direct operations, but identified four omitted related records.",
+    "Second repair produced no complete response: one deadline-interrupted stream followed by three pre-stream UND_ERR_SOCKET connection failures in the final permitted HTTP attempt.",
+    "No second repaired proposal was available to evaluate the shared user-event boundary. No erasure binding, raw-source partition or commit reached."
+  ],
+  "next_action": "Keep this same-version diagnostic terminal. Use the saved complete first proposal and coverage finding to check that the pending second repair has sufficient aliases, source context and exact ownership rules; separately distinguish gateway transport failure from remaining semantic coverage. Complete current-candidate real-model and fixed-background acceptance before release; do not increase limits, add retries or declare gates passed from unit tests.",
+  "scope": "External repair transport blocked this diagnostic after a real unresolved coverage finding. It neither proves the new ownership policy fails nor proves it passes. Old diagnostics and benchmark scores remain unchanged.",
+  "sha256": {
+    "artifacts/round2-fresh-failed-add-392pAh/report.json": "f42d800f6051916680043bcd1f7a9903ab7b64344413373cdbc9c1c84d6b4f61",
+    "artifacts/round2-fresh-failed-add-392pAh/private-model-trace.jsonl": "034d6bdfbf45891006549401c8458296969927c77134d712e7498c52087c872c",
+    "artifacts/v1-d25-b398a63-01/verification-12.json": "343426f6c601f4114d19d84f437f1906c45c4b496ac95dceb9224e434c0f008d",
+    "artifacts/v1-d25-b398a63-01/repair-11.json": "efd8d195323ee2f8fa4d61db8b879feeb138014e82511b024a7222567774a0fc"
+  }
+}

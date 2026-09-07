@@ -1,0 +1,84 @@
+{
+  "protocol": "v1-operation-feedback-fix-v1",
+  "checked_at": "2026-09-06T23:57:53.347503+00:00",
+  "service_commit": "6166e2f08a9963c2d410b85ac3fa5bd4e31b6e7e",
+  "production_change_commit": "0c3e9a67d1bde5a3205ca43b36d605da18bb9044",
+  "cause": "The single-error operation guard hid a simultaneous cross-scope conflict behind a subject mismatch; the first repair dropped a shared-actor target, and the next repair only addressed scopes.",
+  "change": [
+    "Expose all existing structural conflicts while preserving the runtime guard’s original first-error priority.",
+    "Group only already-selected targets by compatible subject/property/scope and show model-visible aliases, including stable same-request handles.",
+    "Keep complete source authorization, chronology, semantic verification, candidate bounds and repair budget unchanged. Groups are suggestions, never automatic target rewrites or deletion authorization."
+  ],
+  "tests": {
+    "new": 6,
+    "total_service_tests": 406,
+    "passed": true,
+    "coverage": [
+      "all simultaneous structural conflicts",
+      "shared-actor target and alias preservation, no neighbor nomination",
+      "one bounded repair retains shared records for global verification",
+      "unchanged invalid repairs stop at original two-round ceiling",
+      "structurally compatible groups still fail semantic rejection",
+      "protected scope identities remain separate"
+    ],
+    "test_correction": "The semantic refusal fixture uses the default one-repair configuration. Its expected count was corrected in 6166e2f; production limits were not changed. The earlier CI failure at 0c3e9a6 is retained."
+  },
+  "saved_packet_replay": {
+    "protocol": "v1-operation-feedback-replay-v1",
+    "operation": 0,
+    "old_first_error": "OPERATION_SCOPE",
+    "simultaneous_conflicts": [
+      "OPERATION_SCOPE",
+      "AMBIGUOUS_OPERATION"
+    ],
+    "selected_targets": 6,
+    "compatible_groups": 6,
+    "shared_actor_groups": [
+      {
+        "subject": "user_and_Priya",
+        "predicate": "order_difference",
+        "scope": "Koku Kitchen",
+        "target_ids": [
+          "m74"
+        ]
+      }
+    ],
+    "target_set_unchanged": true,
+    "proposal_unchanged": true,
+    "scope": "Read-only structural explanation of the exact first failed proposal. No generated repair, new target discovery, source authorization, model, HTTP or benchmark success claimed.",
+    "packet_sha256": "c96dd6a8fe71f03f5129c5cddf2845e892936d15fc46c9628024316874a59e67"
+  },
+  "fresh_http_pending": false,
+  "fresh_http_diagnostic": "artifacts/round2-fresh-failed-add-xIMdvs/report.json",
+  "scope": "Structural diagnostics and regression evidence only. Model repair success, full D25, fixed-long and release acceptance remain unverified.",
+  "sha256": {
+    "artifacts/v1-operation-feedback-fix-01/before.log": "a16089489967b2d5b280c31b01a479ba1a4c916740bd7b840fe8937ae95954ac",
+    "artifacts/v1-operation-feedback-fix-01/after.log": "a2c2fbc960fd606007c586225490632cb3c8cca9bd3af4d708d0ad5f522846d1",
+    "artifacts/v1-operation-feedback-fix-01/feedback-replay.json": "2f062996d577d1e45e52132972694c2e998de7da168083ab4f1c10777b3bb179",
+    "reports/v1-service-regression-20.txt": "a8d7bebf53137a6223fff63d491f7e528371826780bd8e0f2d4301e8ad044044"
+  },
+  "ci": {
+    "headSha": "6166e2f08a9963c2d410b85ac3fa5bd4e31b6e7e",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34068277462"
+  },
+  "earlier_test_failure_ci": "https://github.com/EnochLi15/agent-memory-service/actions/runs/34068235948",
+  "fresh_http_passed": false,
+  "fresh_http_structural_repair_passed": true,
+  "fresh_http_terminal_error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Evidence still fails semantic verification after repair"
+  },
+  "fresh_http_checks": [
+    {
+      "name": "failed_request_not_committed",
+      "pass": true
+    },
+    {
+      "name": "snapshot_unchanged",
+      "pass": true
+    }
+  ],
+  "followup": "reports/v1-d25-user-event-blocker.json"
+}
