@@ -6,10 +6,10 @@ relying only on HTTP idempotent receipts; eval never reads service storage.
 """
 import argparse,json,os,pathlib,subprocess,time,urllib.request,hashlib,sys
 from contextlib import ExitStack
-from experiment_runtime import ManagedRun, RunInterrupted, launch_detached, read_status
+from experiment_runtime import ManagedRun, RunInterrupted, launch_detached, read_status, evaluation_schedule, run_benchmark_jobs
 from experiment_identity import validate_reuse
 root=pathlib.Path(__file__).resolve().parents[1]
-p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--trace-models',action='store_true');p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int);p.add_argument('--detach',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--concurrency',type=int,default=3);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--trace-models',action='store_true');p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int);p.add_argument('--detach',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--concurrency',type=int);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
 campaign=root/'artifacts'/args.campaign
 runtime_path=campaign/(args.profile+'-runtime.json')
 if args.status:
@@ -21,6 +21,7 @@ if args.detach:
 try:
  with ExitStack() as files, ManagedRun(runtime_path) as runtime:
   spec_bytes=args.spec.read_bytes();spec=json.loads(spec_bytes);profile=spec['profiles'][args.profile];evaluation=spec.get('evaluation',{})
+  concurrency,execution=evaluation_schedule(evaluation,args.concurrency)
   env=os.environ.copy()
   for line in (root/'.env').read_text().splitlines():
    if '=' in line and not line.lstrip().startswith('#'):
@@ -49,6 +50,7 @@ try:
   safe['private_model_trace_enabled']=args.trace_models
   safe['experiment_spec_sha256']=hashlib.sha256(spec_bytes).hexdigest()
   safe['evaluation_configuration']=evaluation
+  safe['evaluation_execution']={'concurrency':concurrency,'benchmark_execution':execution}
   if args.reuse_ingestion:
    origins={}
    source_identity={part:{'commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=root/part,text=True).strip(),'dirty':bool(subprocess.check_output(['git','status','--porcelain'],cwd=root/part,text=True).strip())} for part in ['service','eval']}
@@ -71,7 +73,6 @@ try:
   if sys.platform=='darwin':
    runtime.spawn('sleep-prevention',['/usr/bin/caffeinate','-i','-w',str(os.getpid())],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
   log=files.enter_context(open(campaign/(args.profile+'-service.log'),'x'));service=runtime.spawn('service',service_command,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT)
-  jobs=[]
   for _ in range(80):
    runtime.poll()
    if service.poll() is not None:raise RuntimeError('Service exited; inspect service log')
@@ -80,24 +81,18 @@ try:
      if response.status==200:break
    except Exception:time.sleep(.25)
   else:raise RuntimeError('Service did not become ready')
-  for benchmark in (['locomo','memops'] if args.benchmark=='both' else [args.benchmark]):
+  def launch_benchmark(benchmark):
    run_id=name+'-'+benchmark;run_env=env.copy();run_env['EVAL_PYTHON']=str(root/'eval/.venv/bin/python');run_env['MEMORY_LLM_BASE_URL']=answer_base
    run_env.pop('EVALUATOR_API_BASE',None);run_env.pop('EVALUATOR_API_KEY',None)
    override=args.locomo_data if benchmark=='locomo' else args.memops_data
    data_file=override or f'.data/{benchmark}-{args.split}.json'
-   command=['node','dist/cli.js','run','--data',data_file,'--run-id',run_id,'--memory-namespace',namespace,'--base-url',f'http://127.0.0.1:{args.port}','--concurrency',str(args.concurrency),'--judge-kind','refined-python' if benchmark=='locomo' else 'rubric']
+   command=['node','dist/cli.js','run','--data',data_file,'--run-id',run_id,'--memory-namespace',namespace,'--base-url',f'http://127.0.0.1:{args.port}','--concurrency',str(concurrency),'--judge-kind','refined-python' if benchmark=='locomo' else 'rubric']
    if 'answer_model' in evaluation:command+=['--answer-model',evaluation['answer_model']]
    if 'judge_model' in evaluation and not (benchmark=='locomo' and args.upstream_judge):command+=['--judge-model',evaluation['judge_model']]
    if benchmark=='locomo' and args.upstream_judge:
     run_env.update(EVALUATOR_API_BASE='http://127.0.0.1:8766/v1',EVALUATOR_API_KEY='local');command+=['--judge-model','qwen3:14b','--mode','upstream-reproduction']
-   out=files.enter_context(open(campaign/(args.profile+'-'+benchmark+'.log'),'x'));job=runtime.spawn(benchmark,command,cwd=root/'eval',env=run_env,stdout=out,stderr=subprocess.STDOUT);jobs.append((benchmark,job,out));print(json.dumps({'event':'started','run_id':run_id,'pid':job.pid,'service_pid':service.pid}),flush=True)
-  while jobs:
-   runtime.poll()
-   if service.poll() is not None:raise RuntimeError('Service exited during evaluation')
-   for benchmark,job,out in jobs[:]:
-    if job.poll() is not None:
-     print(json.dumps({'event':'finished','benchmark':benchmark,'exit_code':job.returncode}),flush=True);out.close();jobs.remove((benchmark,job,out))
-     if job.returncode:raise RuntimeError('Evaluator process failed')
-   if jobs:time.sleep(1)
+   out=files.enter_context(open(campaign/(args.profile+'-'+benchmark+'.log'),'x'));job=runtime.spawn(benchmark,command,cwd=root/'eval',env=run_env,stdout=out,stderr=subprocess.STDOUT);print(json.dumps({'event':'started','run_id':run_id,'pid':job.pid,'service_pid':service.pid}),flush=True)
+   return benchmark,job,out
+  run_benchmark_jobs(runtime,service,['locomo','memops'] if args.benchmark=='both' else [args.benchmark],launch_benchmark,execution)
 except RunInterrupted as error:
  sys.exit(128+error.signum)

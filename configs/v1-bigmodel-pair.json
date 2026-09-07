@@ -3,7 +3,9 @@
   "policy": "Two exposed synthetic groups, ten questions, five planned add requests. Functional convergence only, not benchmark/generalization accuracy. Freeze before first answer. Independent empty namespaces; identical hybrid embedding, final 32 evidence/6000 estimated-token cap, Answer/Judge prompts/models and inference attempts. B1 stores message chunks verbatim with no LLM extraction or memory operations. Candidate retains only lifecycle/temporal/source verification and bounded continuation; rerank, coverage packing, event view, multi-hop and reflection disabled. Do not increase samples or repetitions before reviewing both runs and storage invariants. Report service overhead separately: total compute is not equalized. Agent review is model review, never human calibration.",
   "evaluation": {
     "answer_model": "glm-5.2",
-    "judge_model": "glm-5.2"
+    "judge_model": "glm-5.2",
+    "concurrency": 1,
+    "benchmark_execution": "sequential"
   },
   "defaults": {
     "MEMORY_MODE": "enhanced",
@@ -46,12 +48,13 @@
     "MEMORY_SOURCE_OPERATION_BATCHES": "true",
     "MEMORY_SOURCE_OPERATION_ROUTING": "true",
     "MEMORY_SOURCE_FIRST": "true",
-    "MEMORY_EXTRACTION_WORKERS": "3",
-    "MEMORY_SOURCE_ERASURE_WORKERS": "3",
+    "MEMORY_EXTRACTION_WORKERS": "1",
+    "MEMORY_SOURCE_ERASURE_WORKERS": "1",
     "MEMORY_SOURCE_ERASURE_GROUPED": "true",
     "MEMORY_MODEL_TRANSPORT_ATTEMPTS": "3",
     "MEMORY_WRITE_CONTINUATION": "true",
-    "MEMORY_RELATION_MODE": "off"
+    "MEMORY_RELATION_MODE": "off",
+    "MEMORY_MODEL_MIN_INTERVAL_MS": "1000"
   },
   "profiles": {
     "candidate": {

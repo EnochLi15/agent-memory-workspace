@@ -75,6 +75,44 @@ class RunInterrupted(BaseException):
         self.signum = signum
 
 
+def evaluation_schedule(evaluation, override=None):
+    concurrency = evaluation.get('concurrency', 3) if override is None else override
+    if type(concurrency) is not int or concurrency < 1:
+        raise ValueError('Evaluation concurrency must be a positive integer')
+    if 'concurrency' in evaluation and concurrency != evaluation['concurrency']:
+        raise ValueError('Concurrency differs from the frozen evaluation spec')
+    execution = evaluation.get('benchmark_execution', 'parallel')
+    if execution not in ('parallel', 'sequential'):
+        raise ValueError('Unknown benchmark execution mode')
+    return concurrency, execution
+
+
+def run_benchmark_jobs(runtime, service, benchmarks, launch, execution):
+    pending = iter(benchmarks)
+    jobs = []
+    exhausted = False
+    while jobs or not exhausted:
+        runtime.poll()
+        if service.poll() is not None:
+            raise RuntimeError('Service exited during evaluation')
+        for benchmark, job, out in jobs[:]:
+            if job.poll() is not None:
+                print(json.dumps({'event': 'finished', 'benchmark': benchmark,
+                                  'exit_code': job.returncode}), flush=True)
+                out.close()
+                jobs.remove((benchmark, job, out))
+                if job.returncode:
+                    raise RuntimeError('Evaluator process failed')
+        while not exhausted and (execution == 'parallel' or not jobs):
+            benchmark = next(pending, None)
+            if benchmark is None:
+                exhausted = True
+            else:
+                jobs.append(launch(benchmark))
+        if jobs:
+            time.sleep(.1)
+
+
 class ManagedRun:
     def __init__(self, path):
         self.path = Path(path)

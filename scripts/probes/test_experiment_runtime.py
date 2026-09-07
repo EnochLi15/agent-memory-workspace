@@ -10,10 +10,44 @@ import unittest
 
 SCRIPTS = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(SCRIPTS))
-from experiment_runtime import ManagedRun, launch_detached, read_status
+from experiment_runtime import ManagedRun, launch_detached, read_status, evaluation_schedule, run_benchmark_jobs
 
 
 class ExperimentRuntimeTests(unittest.TestCase):
+    def test_frozen_schedule_rejects_concurrency_override(self):
+        spec = {'concurrency': 1, 'benchmark_execution': 'sequential'}
+        self.assertEqual(evaluation_schedule(spec), (1, 'sequential'))
+        self.assertEqual(evaluation_schedule({}), (3, 'parallel'))
+        with self.assertRaisesRegex(ValueError, 'frozen'):
+            evaluation_schedule(spec, 3)
+        for value in (0, -1, 1.5, True):
+            with self.assertRaises(ValueError):
+                evaluation_schedule({}, value)
+        with self.assertRaises(ValueError):
+            evaluation_schedule({'benchmark_execution': 'typo'})
+
+    def test_sequential_jobs_wait_for_exit_and_do_not_continue_after_failure(self):
+        for exit_code in (0, 7):
+            with tempfile.TemporaryDirectory() as directory:
+                path = Path(directory) / 'runtime.json'
+                children = []
+                with ManagedRun(path) as run:
+                    service = run.spawn('service', [sys.executable, '-c', 'import time;time.sleep(60)'])
+                    def launch(name):
+                        if children:
+                            self.assertEqual(children[0].poll(), 0)
+                        out = open(Path(directory) / (name + '.log'), 'w')
+                        job = run.spawn(name, [sys.executable, '-c',
+                                              f'import time;time.sleep(.05);raise SystemExit({exit_code})'], stdout=out)
+                        children.append(job)
+                        return name, job, out
+                    if exit_code:
+                        with self.assertRaisesRegex(RuntimeError, 'Evaluator process failed'):
+                            run_benchmark_jobs(run, service, ['locomo', 'memops'], launch, 'sequential')
+                    else:
+                        run_benchmark_jobs(run, service, ['locomo', 'memops'], launch, 'sequential')
+                    self.assertEqual(len(children), 1 if exit_code else 2)
+
     def test_concurrent_prepared_runners_cannot_overwrite_ownership(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / 'runtime.json'

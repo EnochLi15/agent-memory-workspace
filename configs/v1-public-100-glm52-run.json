@@ -3,7 +3,9 @@
   "policy": "User-requested 100-question candidate evaluation; 50 LoCoMo plus 50 MemOps. Complete selected background histories retained. No additional 100-question raw baseline. Public exposed data, not hidden or an estimate of the prior complete 1000-question run. Preserve existing HTTP/model budgets and strict local validation. No failed-result repair or automatic repeat.",
   "evaluation": {
     "answer_model": "glm-5.2",
-    "judge_model": "glm-5.2"
+    "judge_model": "glm-5.2",
+    "concurrency": 1,
+    "benchmark_execution": "sequential"
   },
   "defaults": {
     "MEMORY_MODE": "enhanced",
@@ -46,12 +48,13 @@
     "MEMORY_SOURCE_OPERATION_BATCHES": "true",
     "MEMORY_SOURCE_OPERATION_ROUTING": "true",
     "MEMORY_SOURCE_FIRST": "true",
-    "MEMORY_EXTRACTION_WORKERS": "3",
-    "MEMORY_SOURCE_ERASURE_WORKERS": "3",
+    "MEMORY_EXTRACTION_WORKERS": "1",
+    "MEMORY_SOURCE_ERASURE_WORKERS": "1",
     "MEMORY_SOURCE_ERASURE_GROUPED": "true",
     "MEMORY_MODEL_TRANSPORT_ATTEMPTS": "3",
     "MEMORY_WRITE_CONTINUATION": "true",
-    "MEMORY_RELATION_MODE": "off"
+    "MEMORY_RELATION_MODE": "off",
+    "MEMORY_MODEL_MIN_INTERVAL_MS": "1000"
   },
   "profiles": {
     "candidate": {
