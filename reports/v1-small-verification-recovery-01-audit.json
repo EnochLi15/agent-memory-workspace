@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-09-07T10:22:22.637603+00:00",
+  "complete_matrix": true,
+  "expected_runs": 1,
+  "audited_runs": 1,
+  "pending": [],
+  "reviewed_runner_sha256": "cd71e7b73af849a67d1b9a479d08d62f378e797996ca558b34d34ef42fce0eb6",
+  "token_estimator_sha256": "19becdb65f0a14e87597292847c892df6655f484e17ea52d8a3dfeee178ccbcb",
+  "audit_script_sha256": "32b307b3e065fd7988631207d15a57c8323a48913581060c1bbdff42c0ef0978",
+  "runs": [
+    {
+      "run_id": "v1-small-verification-recovery-01-candidate-memops",
+      "http_trace": {
+        "run_id": "v1-small-verification-recovery-01-candidate-memops",
+        "checked_at": "2026-09-07T10:22:22.573Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "648291e53848c4c0155ccc96225215cf75812cfcaaf12b88cf6f79eb4d3ba15d",
+          "dataset": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+          "requests": "a3d79611d0a03f2dff7cc77c0b2ab7d03dabdcc48ab2451148eeea7dfba27c65",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 10,
+          "dataset_questions_in_selected_samples": 10,
+          "expected_add_chunks": 5,
+          "observed_add_attempts": 5,
+          "distinct_observed_adds": 5,
+          "observed_searches": 10
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 0,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "judged": 10
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 5
+      },
+      "add_attempt_ms": {
+        "n": 5,
+        "mean": 6782.6752664000005,
+        "p50": 7039.265165999997,
+        "p95": 7705.257333000001,
+        "p99": 7705.257333000001,
+        "max": 7705.257333000001
+      },
+      "successful_search_ms": {
+        "n": 10,
+        "mean": 107.27592900000018,
+        "p50": 103.98249999999825,
+        "p95": 191.08066600002348,
+        "p99": 191.08066600002348,
+        "max": 191.08066600002348
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 10,
+          "mean": 10.5,
+          "p50": 11,
+          "p95": 11,
+          "p99": 11,
+          "max": 11
+        },
+        "estimated_tokens": {
+          "n": 10,
+          "mean": 805.3,
+          "p50": 870,
+          "p95": 871,
+          "p99": 871,
+          "max": 871
+        },
+        "utf8_bytes": {
+          "n": 10,
+          "mean": 2405.3,
+          "p50": 2598,
+          "p95": 2598,
+          "p99": 2598,
+          "max": 2598
+        },
+        "exact_duplicate_fraction_within_response": 0.0,
+        "token_scope": "Actual service estimateTokens function including Han adjustment. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "Source-ID coverage is available as an identifier diagnostic, not entailment."
+      },
+      "input_sha256": {
+        "manifest.json": "648291e53848c4c0155ccc96225215cf75812cfcaaf12b88cf6f79eb4d3ba15d",
+        "requests.jsonl": "a3d79611d0a03f2dff7cc77c0b2ab7d03dabdcc48ab2451148eeea7dfba27c65",
+        "ingest.jsonl": "e12d8f07f52d4ad9f1e38bdd48b9559fcf72a54e883622c720d8372b84c08fd1",
+        "retrievals.jsonl": "be2c2727df434e2e2921445539beaa2cad21f5f9463eea9f148e698d913143b5",
+        "predictions.jsonl": "91a08577c9597546b9c52a4759f809e658c30b97ae586eb71c8b8e1325be1c41",
+        "judgments.jsonl": "f6a40226b3082e85b65ad0e56cd1e748abd3482699b49d0057ea33d1f65de31e",
+        "metrics.json": "2c69867f54d5d8c49b358d8f9840f1697a568e890cab50c00f200b0ab37b0295"
+      }
+    }
+  ],
+  "scope": "Saved service-bound requests and source boundary audit. Errors remain terminal attempts; no partial scores read, no model calls, no claim that source review is network capture."
+}
