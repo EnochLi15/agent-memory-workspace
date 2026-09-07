@@ -130,3 +130,10 @@ python3 scripts/verify-delivery.py --archive delivery/agent-memory-v0.1.0.tar.gz
 V1打包只选择本次验收绑定的文件，保留凭据及Git可达历史扫描，排除运行数据库、私有模型原文追踪和无关实验目录。独立验证会实际读取归档、检查逐文件哈希，并从包内递归克隆三个仓库。归档验证不替代部署与功能测试：还需按包内说明加载镜像，并在独立卷启动后执行HTTP契约及旧用户恢复检查。正式交接需要这两类证据同时通过。
 
 旧版脚本不带 `--release` 的调用仅用于复核历史交付，仍保留旧实验矩阵要求，不属于本版发布路径。
+
+
+## 当前可接手的候选源码快照
+
+`delivery/v1-b398a63/candidate-source-832ec2d.tar.gz` 是非正式V1的源码交接快照，固定根仓库`832ec2d`、service `b398a63`及eval `b8ae27a`。外部同名`.sha256`文件用于核对归档，包内`SOURCE-INVENTORY.json`逐文件绑定内容。已实际读回3381个文件、从归档递归克隆并检查三个仓库Git完整性；配置凭据与可达源码历史扫描通过。详见[源码交接验证](../reports/v1-candidate-source-handoff.json)。该验证报告是在归档完成后生成，因此不包含在上述固定快照中。
+
+解压后按包内`CANDIDATE-README.md`操作。快照包含三个bare仓库；运行镜像和本地embedding归档单独提供，身份见[运行归档清单](../reports/v1-runtime-bundles.json)。源码离线克隆不等于依赖离线安装，运行镜像平台仍仅Linux arm64。该快照不替代正式打包/readiness门槛，也不证明长背景、全量或最终包部署通过。
