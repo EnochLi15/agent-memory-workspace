@@ -1,0 +1,86 @@
+{
+  "protocol": "v1-model-generation-connectivity-v1",
+  "checked_at": "2026-09-07T02:23:46.654885+00:00",
+  "status": "generation_unavailable_in_checks",
+  "scope": "Post-run bounded synthetic controls only; original failed business requests and all scores preserved. Does not identify unobserved gateway internals.",
+  "checks": {
+    "post-run-models-connectivity.json": {
+      "checked_at": "2026-09-07T02:16:45.516899+00:00",
+      "scope": "One read-only GET /models using existing configured credentials after terminal evaluation. Does not re-run a failed write or establish generation availability.",
+      "proxy_environment_present": {
+        "HTTP_PROXY": false,
+        "HTTPS_PROXY": false,
+        "ALL_PROXY": false,
+        "NO_PROXY": false,
+        "NODE_USE_ENV_PROXY": false
+      },
+      "http_status": 200,
+      "models": [
+        "codex-auto-review",
+        "gpt-4o-audio-preview",
+        "gpt-4o-realtime-preview",
+        "gpt-5.2",
+        "gpt-5.2-2025-12-11",
+        "gpt-5.2-chat-latest",
+        "gpt-5.2-pro",
+        "gpt-5.2-pro-2025-12-11",
+        "gpt-5.3-codex-spark",
+        "gpt-5.4",
+        "gpt-5.4-2026-03-05",
+        "gpt-5.4-mini",
+        "gpt-5.5",
+        "gpt-5.6",
+        "gpt-5.6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "gpt-image-1",
+        "gpt-image-1.5",
+        "gpt-image-2"
+      ],
+      "models_list_returned": true,
+      "elapsed_seconds": 0.7596401659538969
+    },
+    "generation-connectivity-sdk.json": {
+      "at": "2026-09-07T02:20:07.272Z",
+      "transport": "OpenAI SDK 6.27.0, maxRetries=0",
+      "scope": "One small synthetic connectivity request after terminal evaluation. No failed business write replay or benchmark score.",
+      "model": "gpt-5.5",
+      "completed": false,
+      "error_type": "APIConnectionError",
+      "error_message": "Connection error.",
+      "http_status": null,
+      "transport_code": null,
+      "elapsed_ms": 623.544
+    },
+    "generation-connectivity-http.json": {
+      "at": "2026-09-07T02:20:07.990543+00:00",
+      "transport": "Python urllib direct HTTP, no application retry",
+      "scope": "Same small synthetic request as SDK probe; no failed write replay or benchmark score.",
+      "model": "gpt-5.5",
+      "completed": false,
+      "error_type": "RemoteDisconnected",
+      "error_message": "Remote end closed connection without response",
+      "elapsed_ms": 547.117582987994
+    },
+    "generation-connectivity-answer-model.json": {
+      "at": "2026-09-07T02:21:35.149Z",
+      "transport": "OpenAI SDK 6.27.0, maxRetries=0",
+      "scope": "One small availability check of the already configured Answer/Judge model, same payload as gpt-5.5 control except model. No model replacement, failed-write replay or benchmark rescore.",
+      "model": "gpt-5.4-mini",
+      "completed": false,
+      "error_type": "APIConnectionError",
+      "error_message": "Connection error.",
+      "http_status": null,
+      "transport_code": null,
+      "elapsed_ms": 576.1101249999999
+    }
+  },
+  "evidence_sha256": {
+    "artifacts/v1-long-b398a63-01/post-run-models-connectivity.json": "d1f7adef1c53ca1472ef080f49d00f2a4d927d9f1aa0945fa05193e463435f7f",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-body.json": "05f4797e5bcc2883ef63acd724fb7c7691ce51c897b408093192c02cbfaed50e",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-sdk.json": "213e1df12a01a523243b8b5cd84f3d0106010b6993d3912aaa312bac1e092bc9",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-http.json": "8d9e74f72c11a09b06cc60cdb0802e1e752bd65f5f21b0c939d163fc4a4477c8",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-answer-model.json": "de86694e04269847244fbf993cf8cb8618fa4c93dc8a1abcfaf2b7bacfeb1d6f"
+  },
+  "next_step": "Obtain gateway generation-route logs for 2026-09-07 10:00–10:22 Asia/Shanghai or a usable replacement endpoint. Preserve budgets and recover the intended enhanced service before a newly frozen acceptance run; do not use list/health success as a substitute."
+}

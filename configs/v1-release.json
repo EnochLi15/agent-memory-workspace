@@ -17,7 +17,7 @@
       "reports/v1-compatible-rollback-b398a63.json"
     ],
     "small_pair": "reports/v1-small-b398a63-results.json",
-    "long_pair": "reports/v1-long-closed-loop.json",
+    "long_pair": "reports/v1-long-b398a63-results.json",
     "full_audit": "reports/v1-full-completed-run-audit.json",
     "full_report": "reports/v1-full-results.json"
   },

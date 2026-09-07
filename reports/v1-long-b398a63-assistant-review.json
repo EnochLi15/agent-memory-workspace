@@ -1,0 +1,293 @@
+{
+  "protocol": "v1-long-assistant-review-v1",
+  "checked_at": "2026-09-07T02:10:17.197337+00:00",
+  "profile": "raw",
+  "selection": "Posthoc targeted review of date equivalence, semantic rubric disagreements, safe abstentions and three clear incorrect controls; 11 of 37 answers. Not a random or blind sample.",
+  "method": "Assistant compared saved questions, gold/reference rubric and answers; inspected saved retrieved sources for the three LoCoMo disagreements. No model rescoring calls.",
+  "human_labels": 0,
+  "reviewed": 11,
+  "categories": {
+    "judge_disagreement": 6,
+    "uphold_incorrect": 3,
+    "strict_rubric_safe_abstention": 2
+  },
+  "original_scores_unchanged": true,
+  "official_correct": 14,
+  "official_planned": 37,
+  "items": [
+    {
+      "qid": "conv-30#q0000",
+      "benchmark": "locomo",
+      "question": "When Jon has lost his job as a banker?",
+      "reference": [
+        "19 January, 2023"
+      ],
+      "rubric": null,
+      "answer": "Jon lost his job as a banker yesterday, which was resolved to 2023-01-19.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "high",
+      "category": "judge_disagreement",
+      "reason": "Answer explicitly gives 2023-01-19, matching the reference 19 January 2023. Retrieved source resolves yesterday relative to 20 January. Original zero score is retained."
+    },
+    {
+      "qid": "conv-30#q0024",
+      "benchmark": "locomo",
+      "question": "When Jon is planning to open his dance studio?",
+      "reference": [
+        "20 June, 2023"
+      ],
+      "rubric": null,
+      "answer": "Jon was still searching for a place to open his dance studio on 1 February 2023, and as of 19 June 2023 he said the official opening night was tomorrow.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "high",
+      "category": "judge_disagreement",
+      "reason": "Answer says the official opening night was tomorrow as of 19 June 2023, which resolves to the reference 20 June. Historical search context does not contradict that date."
+    },
+    {
+      "qid": "conv-43#q0159",
+      "benchmark": "locomo",
+      "question": "What could John do after his basketball career?",
+      "reference": [
+        "He wants to use his platform to make a positive difference and inspire others, possibly by starting a foundation and doing charity work."
+      ],
+      "rubric": null,
+      "answer": "John could look into endorsements, build his brand, and do things away from the court like charity or inspiring people.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "medium",
+      "category": "judge_disagreement",
+      "reason": "Answer includes charity and inspiring others, the substantive reference goal; endorsements and branding are explicitly supported by retrieved source D11:17. Reference presents a foundation as a possibility, not the only valid plan."
+    },
+    {
+      "qid": "conv-43#q0154",
+      "benchmark": "locomo",
+      "question": "What is a Star Wars book that Tim might enjoy?",
+      "reference": [
+        "Star Wars: Jedi Apprentice"
+      ],
+      "rubric": null,
+      "answer": "Tim might enjoy The Name of the Wind by Patrick Rothfuss.",
+      "original_correct": false,
+      "assistant_correct": false,
+      "confidence": "high",
+      "category": "uphold_incorrect",
+      "reason": "The answer recommends The Name of the Wind when the question asks for a Star Wars book; wrong requested category and reference."
+    },
+    {
+      "qid": "conv-30#q0019",
+      "benchmark": "locomo",
+      "question": "What does Jon's dance studio offer?",
+      "reference": [
+        "one-on-one metoring and training to dancers, workshops and classes to local schools and centers"
+      ],
+      "rubric": null,
+      "answer": "Jon’s dance studio offers workshops and classes to local schools and centers, and he also said he helps dancers of all ages and levels express themselves.",
+      "original_correct": false,
+      "assistant_correct": false,
+      "confidence": "high",
+      "category": "uphold_incorrect",
+      "reason": "Answer covers workshops/classes but omits the reference one-to-one mentoring and training."
+    },
+    {
+      "qid": "conv-30#q0005",
+      "benchmark": "locomo",
+      "question": "What Jon thinks the ideal dance studio should look like?",
+      "reference": [
+        "By the water, with natural light and Marley flooring"
+      ],
+      "rubric": null,
+      "answer": "Jon seems to think the ideal dance studio is by the water, with an ocean view and yoga mats, and he also mentions wanting great natural light.",
+      "original_correct": false,
+      "assistant_correct": false,
+      "confidence": "high",
+      "category": "uphold_incorrect",
+      "reason": "Answer omits required Marley flooring, so it does not cover the stated ideal studio."
+    },
+    {
+      "qid": "D25_remember.json#p6_remember_negative#adjacent_operation#10",
+      "benchmark": "memops",
+      "question": "What's my favorite dessert again?",
+      "reference": "I don't have any information about your favorite dessert. You haven't shared that with me.",
+      "rubric": {
+        "must_include": [
+          "no information about favorite dessert",
+          "not provided"
+        ],
+        "acceptable_paraphrases": [
+          "I don't have a favorite dessert on file",
+          "You haven't mentioned a favorite dessert",
+          "I have no record of your favorite dessert"
+        ],
+        "must_not_include": [
+          "Any invented dessert name",
+          "Any dessert fabricated from context"
+        ],
+        "harmful_extra": [
+          "Inventing a dessert based on the user's flavor profile",
+          "Guessing mochi, matcha ice cream, or any other dessert"
+        ],
+        "harmless_extra": []
+      },
+      "answer": "I don’t know.",
+      "original_correct": false,
+      "assistant_correct": null,
+      "confidence": "high",
+      "category": "strict_rubric_safe_abstention",
+      "reason": "I do not know safely abstains and invents no dessert, but does not explicitly state that a preference was never provided as the rubric requires. Record a conversational-adequacy versus rubric distinction, not a definitive scoring correction."
+    },
+    {
+      "qid": "D25_remember.json#p6_remember_negative#longitudinal_operation#11",
+      "benchmark": "memops",
+      "question": "What's my favorite dessert again?",
+      "reference": "I don't have any information about your favorite dessert. You haven't shared that with me.",
+      "rubric": {
+        "must_include": [
+          "no information about favorite dessert",
+          "not provided"
+        ],
+        "acceptable_paraphrases": [
+          "I don't have a favorite dessert on file",
+          "You haven't mentioned a favorite dessert",
+          "I have no record of your favorite dessert"
+        ],
+        "must_not_include": [
+          "Any invented dessert name",
+          "Any dessert fabricated from context"
+        ],
+        "harmful_extra": [
+          "Inventing a dessert based on the user's flavor profile",
+          "Guessing mochi, matcha ice cream, or any other dessert"
+        ],
+        "harmless_extra": []
+      },
+      "answer": "I don’t know.",
+      "original_correct": false,
+      "assistant_correct": null,
+      "confidence": "high",
+      "category": "strict_rubric_safe_abstention",
+      "reason": "Same safe abstention versus explicit not-provided rubric requirement; do not count as a confirmed false negative or change the score."
+    },
+    {
+      "qid": "D25_remember.json#p3_state_transition#adjacent_operation#4",
+      "benchmark": "memops",
+      "question": "Is the condiment I like on the side at my go-to lunch spot related to the same flavor philosophy as my interest in gochujang?",
+      "reference": "Yes. The pickled ginger you get at Koku Kitchen and your interest in gochujang both reflect your preference for fermented, tangy, and umami-rich flavors that add complexity without chili heat. Pickled ginger provides bright acidity and fermented tang, while gochujang provides fermented sweetness—both align with your mild-but-complex flavor philosophy.",
+      "rubric": {
+        "must_include": [
+          "pickled ginger",
+          "gochujang",
+          "fermented"
+        ],
+        "acceptable_paraphrases": [
+          "both fit the mild-but-complex preference",
+          "both are fermented flavors the user enjoys"
+        ],
+        "must_not_include": [
+          "User likes chili heat"
+        ],
+        "harmful_extra": [
+          "Claiming the user puts gochujang on the curry at Koku Kitchen"
+        ],
+        "harmless_extra": [
+          "Mentioning Sichuan peppercorn tingle as another example of the same philosophy",
+          "Mentioning umami or aromatic depth"
+        ]
+      },
+      "answer": "Yes. Your go-to lunch spot order includes extra pickled ginger on the side, and your flavor philosophy around gochujang is about fermented sweetness, umami, and complexity without chili heat.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "medium",
+      "category": "judge_disagreement",
+      "reason": "Answer affirms the connection and names pickled ginger, gochujang, fermented sweetness, umami and complexity without chili heat. The rubric requires those concepts and permits paraphrase; the model judge demands a more explicit both-are-fermented clause."
+    },
+    {
+      "qid": "D22_update.json#p5_operation_application#longitudinal_operation#7",
+      "benchmark": "memops",
+      "question": "I have a work trip to Denver next month. I'll be flying Delta from Seattle. Draft a short booking checklist for me that covers the hotel brand I should search, the loyalty number I should enter for my flight, and whether I should also explore that hotel chain my colleague mentioned — and explain your reasoning for each item.",
+      "reference": "Hotel: Search for Hilton properties in Denver. You decided Hilton is your definitive hotel brand and you'd rather stay at a Hilton farther from the venue and take a rideshare than use Marriott. Request a room away from the elevator due to noise sensitivity. Flight: Book Delta. Enter SkyMiles number 2847301566 at booking to earn qualifying miles toward Gold Medallion. Hyatt exploration: Not recommended at this time. You mentioned Dave's tip about a Hyatt status-match promotion but explicitly said you haven't verified the details and aren't making any changes yet. Stick with Hilton until you decide otherwise.",
+      "rubric": {
+        "must_include": [
+          "Hilton for hotel",
+          "2847301566 for Delta booking",
+          "Hyatt not yet adopted or verified"
+        ],
+        "acceptable_paraphrases": [
+          "Hilton is the go-to hotel chain",
+          "SkyMiles number 2847301566",
+          "Hyatt promotion not confirmed"
+        ],
+        "must_not_include": [
+          "Marriott as the hotel to book",
+          "Hyatt as the hotel to book"
+        ],
+        "harmful_extra": [
+          "recommending Marriott properties",
+          "treating Hyatt as an adopted preference"
+        ],
+        "harmless_extra": [
+          "mentioning the room-away-from-elevator preference",
+          "mentioning scent sensitivity",
+          "mentioning MQM tally",
+          "mentioning Silver Medallion status"
+        ]
+      },
+      "answer": "Search for Hilton.\n\nEnter SkyMiles number 2847301566 for your Delta flight.\n\nYes, also explore Hyatt if Dave’s promotion details check out; Hilton is still the current go-to brand, but that Hyatt option was described as a potential Q4 consideration, not a change to your current preference.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "medium",
+      "category": "judge_disagreement",
+      "reason": "Answer keeps Hilton as current, uses the correct Delta number and makes Hyatt exploration conditional on promotion details checking out. It does not adopt Hyatt or recommend booking it; the judge treats conditional exploration as adoption."
+    },
+    {
+      "qid": "D22_update.json#p5_operation_application#adjacent_operation#6",
+      "benchmark": "memops",
+      "question": "I have a work trip to Denver next month. I'll be flying Delta from Seattle. Draft a short booking checklist for me that covers the hotel brand I should search, the loyalty number I should enter for my flight, and whether I should also explore that hotel chain my colleague mentioned — and explain your reasoning for each item.",
+      "reference": "Hotel: Search for Hilton properties in Denver. You decided Hilton is your definitive hotel brand and you'd rather stay at a Hilton farther from the venue and take a rideshare than use Marriott. Request a room away from the elevator due to noise sensitivity. Flight: Book Delta. Enter SkyMiles number 2847301566 at booking to earn qualifying miles toward Gold Medallion. Hyatt exploration: Not recommended at this time. You mentioned Dave's tip about a Hyatt status-match promotion but explicitly said you haven't verified the details and aren't making any changes yet. Stick with Hilton until you decide otherwise.",
+      "rubric": {
+        "must_include": [
+          "Hilton for hotel",
+          "2847301566 for Delta booking",
+          "Hyatt not yet adopted or verified"
+        ],
+        "acceptable_paraphrases": [
+          "Hilton is the go-to hotel chain",
+          "SkyMiles number 2847301566",
+          "Hyatt promotion not confirmed"
+        ],
+        "must_not_include": [
+          "Marriott as the hotel to book",
+          "Hyatt as the hotel to book"
+        ],
+        "harmful_extra": [
+          "recommending Marriott properties",
+          "treating Hyatt as an adopted preference"
+        ],
+        "harmless_extra": [
+          "mentioning the room-away-from-elevator preference",
+          "mentioning scent sensitivity",
+          "mentioning MQM tally",
+          "mentioning Silver Medallion status"
+        ]
+      },
+      "answer": "- Search for Hilton hotels: your preferred hotel brand is Hilton, and you’ve said Hilton only going forward.\n- Enter SkyMiles number 2847301566 for your Delta flight.\n- Also explore Hyatt only as a potential Q4 consideration; it was mentioned as a lead from Dave, but Hilton remains your go-to hotel brand for now.",
+      "original_correct": false,
+      "assistant_correct": true,
+      "confidence": "medium",
+      "category": "judge_disagreement",
+      "reason": "Answer retains Hilton and the correct flight number while describing Hyatt only as a potential future consideration. Under the rubric not-yet-adopted-or-verified condition, this merits review; it does not name Hyatt as the hotel to book."
+    }
+  ],
+  "evidence_sha256": {
+    "artifacts/v1-fixed-long-regression-01/locomo.json": "65cfcc588b712d6ce1ef3ceb254bbefc23e9782ed218caf2bfbe5fd78418d4f5",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/predictions.jsonl": "5928dcf3e5dee869401fe43d02ac87bd703e941fbe49808c1cf6ac329132fa21",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/judgments.jsonl": "fe11d2c08ed82279f7d3062a12ab6f1fa8219624b1363d3612d685fa04e78738",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/retrievals.jsonl": "48b3e5980c43af5bdeb6e39ea709651c23d8c26f0706acb4bcf21eef0f487645",
+    "artifacts/v1-fixed-long-regression-01/memops.json": "5e81e1b9e105062167376010e470730e56894b40d86cb2b7f0d0ec23312c7fc9",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/predictions.jsonl": "b205822f8d09d27abf0b1f80f72abd2f592cfe908b54a399b784fcd488d6a875",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/judgments.jsonl": "2f4b6ba2d6eb19bfad63d0b76a5bf6572fa33831dea386650955498989d56a6b",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/retrievals.jsonl": "247a36aca9ef340ff802197545a2be4195b828b9ed0c6b46d09b983b01ed8fcc"
+  },
+  "scope": "Diagnostic review, not human calibration, judge accuracy estimate, revised benchmark score or candidate comparison. Medium-confidence cases remain adjudication candidates."
+}

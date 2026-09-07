@@ -1,0 +1,49 @@
+{
+  "protocol": "v1-runtime-bundles-v1",
+  "checked_at": "2026-09-07T01:54:46.940746+00:00",
+  "service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+  "eval_commit": "b8ae27a16f1eba948eeb366b49687180282f3678",
+  "archives": [
+    {
+      "path": "delivery/v1-b398a63/runtime-images.tar",
+      "bytes": 409889792,
+      "sha256": "c136b37950ab398d889f4da639539082e70e0fbbf842ed273bcc1e262587b78d"
+    },
+    {
+      "path": "delivery/local-embedding.tar",
+      "bytes": 274319360,
+      "sha256": "9908e6e0d78ca92b7e132e754f6339084c7cb87fa87b9a6405e8f40203d99106"
+    }
+  ],
+  "images": [
+    {
+      "tags": [
+        "comp-agent-memory-service:v1-b398a63"
+      ],
+      "id": "sha256:dacb496eafa3eebe54e61a028261db602e52f7e99734b65b06040f09b8cd4389",
+      "architecture": "arm64"
+    },
+    {
+      "tags": [
+        "comp-agent-memory-eval:v1-b8ae27a"
+      ],
+      "id": "sha256:05bce05e2400605d8c809608fb229fbe72b22294aae974ccd9f8a990bbf2e93c",
+      "architecture": "arm64"
+    }
+  ],
+  "archive_config_digests_verified": true,
+  "image_layers_verified": 26,
+  "embedding_files_verified": 5,
+  "embedding_manifest_digest": "sha256:0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+  "architecture": "linux/arm64",
+  "formal_release": false,
+  "scope": "Frozen candidate runtime images and unchanged selected embedding archive. Export contents/configs/layers validated, no final source/evaluation package or completed V1 claim. Qwen judge weights and Ollama executable remain documented external requirements.",
+  "docker_load_verified": true,
+  "docker_load_log_sha256": "5125ea882f2e158bc3e016b59462ad2cecedd2110c5198822ed905143eea8ea0",
+  "evidence_sha256": {
+    "artifacts/v1-clean-clone-03/runtime-export-readback.json": "d59b9d6ea4e85de188438ad5f3b03d7acf16cb20e153005ecc51db45e0c6925b",
+    "artifacts/v1-clean-clone-03/runtime-load.log": "5125ea882f2e158bc3e016b59462ad2cecedd2110c5198822ed905143eea8ea0",
+    "artifacts/v1-clean-clone-03/eval-image-binding.json": "f3dc8b2699d7c585281727b0bc01f6ab543e25252e8e6a0b80ba72157718310d",
+    "artifacts/v1-clean-clone-03/verify-runtime-bundles.py": "fefca79522a5a17c6192727090a6df985974a965574a6864bfa1c71d9d650b76"
+  }
+}

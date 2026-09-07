@@ -1,0 +1,361 @@
+{
+  "protocol": "v1-long-results-v1",
+  "checked_at": "2026-09-07T02:18:10.237344+00:00",
+  "campaign": "v1-long-b398a63-01",
+  "scope": "Fixed exposed four complete-background ingestion requirements and 37 questions. One frozen independent empty-state candidate/raw pair. No rescore or success replacement. Not overall 1000-question accuracy.",
+  "passed": false,
+  "audit_complete": true,
+  "backgrounds": 4,
+  "planned_questions_per_profile": 37,
+  "human_labels": 0,
+  "runs": {
+    "candidate-locomo": {
+      "run_id": "v1-long-b398a63-01-candidate-locomo",
+      "planned": 19,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 19
+      },
+      "logical_adds_attempted": 51,
+      "logical_adds_committed": 49,
+      "logical_adds_failed": 2,
+      "http_attempts": 56,
+      "ingest_statuses": {
+        "ok": 49,
+        "retrying": 5,
+        "failed": 2
+      },
+      "failures": [
+        {
+          "request_id": "v1-long-b398a63-01-candidate:locomo:conv-30:session-18:0",
+          "status": "failed",
+          "attempt": 2,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"VERIFICATION_UNAVAILABLE\",\"message\":\"Implicit transition verification unavailable within shared model budget\"}}",
+          "elapsed_ms": 3622.410499999998
+        },
+        {
+          "request_id": "v1-long-b398a63-01-candidate:locomo:conv-43:session-18:0",
+          "status": "failed",
+          "attempt": 2,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EXTRACTION_UNAVAILABLE\",\"message\":\"Parallel extraction could not reach the model provider\"}}",
+          "elapsed_ms": 3514.133416000055
+        }
+      ],
+      "finished": true,
+      "source_clean_at_start": true
+    },
+    "candidate-memops": {
+      "run_id": "v1-long-b398a63-01-candidate-memops",
+      "planned": 18,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 18
+      },
+      "logical_adds_attempted": 65,
+      "logical_adds_committed": 63,
+      "logical_adds_failed": 2,
+      "http_attempts": 72,
+      "ingest_statuses": {
+        "ok": 63,
+        "retrying": 7,
+        "failed": 2
+      },
+      "failures": [
+        {
+          "request_id": "v1-long-b398a63-01-candidate:memops:D22_update:segment-16:0",
+          "status": "failed",
+          "attempt": 2,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"A rejected proposal could not be repaired after a model or protocol failure\"}}",
+          "elapsed_ms": 20914.206999999937
+        },
+        {
+          "request_id": "v1-long-b398a63-01-candidate:memops:D25_remember:segment-47:0",
+          "status": "failed",
+          "attempt": 2,
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EXTRACTION_UNAVAILABLE\",\"message\":\"Parallel extraction could not reach the model provider\"}}",
+          "elapsed_ms": 3419.911499999929
+        }
+      ],
+      "finished": true,
+      "source_clean_at_start": true
+    },
+    "raw-locomo": {
+      "run_id": "v1-long-b398a63-01-raw-locomo",
+      "planned": 19,
+      "correct": 4,
+      "judged": 19,
+      "statuses": {
+        "judged": 19
+      },
+      "logical_adds_attempted": 70,
+      "logical_adds_committed": 70,
+      "logical_adds_failed": 0,
+      "http_attempts": 70,
+      "ingest_statuses": {
+        "ok": 70
+      },
+      "failures": [],
+      "finished": true,
+      "source_clean_at_start": true
+    },
+    "raw-memops": {
+      "run_id": "v1-long-b398a63-01-raw-memops",
+      "planned": 18,
+      "correct": 10,
+      "judged": 18,
+      "statuses": {
+        "judged": 18
+      },
+      "logical_adds_attempted": 104,
+      "logical_adds_committed": 104,
+      "logical_adds_failed": 0,
+      "http_attempts": 104,
+      "ingest_statuses": {
+        "ok": 104
+      },
+      "failures": [],
+      "finished": true,
+      "source_clean_at_start": true
+    }
+  },
+  "profiles": {
+    "candidate": {
+      "correct": 0,
+      "planned": 37,
+      "judged": 0,
+      "accuracy_over_planned": 0.0,
+      "conditional_accuracy": null,
+      "statuses": {
+        "service_error": 37
+      },
+      "logical_adds_attempted": 116,
+      "logical_adds_committed": 112,
+      "http_attempts": 128,
+      "service_generation_attempts": 569,
+      "generation_outcomes": {
+        "ok": 473,
+        "error": 96
+      },
+      "generation_errors": {
+        "deadline": 2,
+        "connection": 81,
+        "cancelled": 13
+      },
+      "reported_generation_tokens": {
+        "prompt_tokens": 6117062,
+        "completion_tokens": 268714,
+        "total_tokens": 6385776
+      },
+      "cost_scope": "Service generation usage where reported; excludes embedding, Answer/Judge tokens and unreported failed-request billing. Not dollar cost or equal total compute.",
+      "http_add_latency": {
+        "count": 128,
+        "mean_ms": 36660.796476859374,
+        "max_ms": 91917.8505,
+        "p95_ms": 76876.060666
+      },
+      "search_latency": {
+        "count": 0,
+        "mean_ms": null,
+        "max_ms": null,
+        "p95_ms": null
+      },
+      "run_wall_seconds": 1377.378663,
+      "logical_adds_planned": 174,
+      "logical_adds_not_attempted": 58,
+      "write_success_over_planned": 0.6436781609195402
+    },
+    "raw": {
+      "correct": 14,
+      "planned": 37,
+      "judged": 37,
+      "accuracy_over_planned": 0.3783783783783784,
+      "conditional_accuracy": 0.3783783783783784,
+      "statuses": {
+        "judged": 37
+      },
+      "logical_adds_attempted": 174,
+      "logical_adds_committed": 174,
+      "http_attempts": 174,
+      "service_generation_attempts": 0,
+      "generation_outcomes": {},
+      "generation_errors": {},
+      "reported_generation_tokens": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "cost_scope": "Service generation usage where reported; excludes embedding, Answer/Judge tokens and unreported failed-request billing. Not dollar cost or equal total compute.",
+      "http_add_latency": {
+        "count": 174,
+        "mean_ms": 4991.48717862069,
+        "max_ms": 33733.07258400001,
+        "p95_ms": 18119.57674999998
+      },
+      "search_latency": {
+        "count": 37,
+        "mean_ms": 760.7563817567535,
+        "max_ms": 1940.1716249999881,
+        "p95_ms": 1755.807541999966
+      },
+      "run_wall_seconds": 330.297287,
+      "logical_adds_planned": 174,
+      "logical_adds_not_attempted": 0,
+      "write_success_over_planned": 1.0
+    }
+  },
+  "commits": {
+    "workspace": "763f21913a3f611c29f938936a1cf6be82da9db0",
+    "service": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+    "eval": "b8ae27a16f1eba948eeb366b49687180282f3678"
+  },
+  "failure_snapshots": {
+    "protocol": "v1-terminal-failure-snapshots-v1",
+    "cases": [
+      {
+        "sample": "conv-30",
+        "request_id": "v1-long-b398a63-01-candidate:locomo:conv-30:session-18:0",
+        "evidence_directory": "artifacts/v1-long-b398a63-01/conv-30-session-18-failure",
+        "revision": 24,
+        "receipt_count": 24,
+        "receipt_absent": true,
+        "affected_questions": 10,
+        "original_terminal_preserved": true
+      },
+      {
+        "sample": "conv-43",
+        "request_id": "v1-long-b398a63-01-candidate:locomo:conv-43:session-18:0",
+        "evidence_directory": "artifacts/v1-long-b398a63-01/conv-43-session-18-failure",
+        "revision": 25,
+        "receipt_count": 25,
+        "receipt_absent": true,
+        "affected_questions": 9,
+        "original_terminal_preserved": true
+      },
+      {
+        "sample": "D22_update",
+        "request_id": "v1-long-b398a63-01-candidate:memops:D22_update:segment-16:0",
+        "evidence_directory": "artifacts/v1-long-b398a63-01/d22-segment16-failure",
+        "revision": 15,
+        "receipt_count": 15,
+        "receipt_absent": true,
+        "affected_questions": 8,
+        "original_terminal_preserved": true
+      },
+      {
+        "sample": "D25_remember",
+        "request_id": "v1-long-b398a63-01-candidate:memops:D25_remember:segment-47:0",
+        "evidence_directory": "artifacts/v1-long-b398a63-01/d25-segment-47-failure",
+        "revision": 48,
+        "receipt_count": 48,
+        "receipt_absent": true,
+        "affected_questions": 10,
+        "original_terminal_preserved": true
+      }
+    ],
+    "scope": "All four failed backgrounds preserved; every failed request has no committed receipt. 37 terminal service_error questions remain unchanged."
+  },
+  "storage": {
+    "passed": false,
+    "complete_backgrounds_candidate": 0,
+    "D25_forgetting_request_reached": false,
+    "D25_neighbors_after_forgetting": "not_tested",
+    "D22_final_state": "not_tested_in_incomplete_background",
+    "failed_requests_committed": 0,
+    "scope": "No claim of final update/forget state: all four backgrounds terminated during ingestion. Isolated failure snapshots certify atomic noncommit and preserve committed prefix only."
+  },
+  "review": {
+    "human_labels": 0,
+    "method": "Targeted assistant posthoc review, not blind/human calibration. Candidate has no answers to review.",
+    "raw_reviewed": 11,
+    "raw_categories": {
+      "judge_disagreement": 6,
+      "uphold_incorrect": 3,
+      "strict_rubric_safe_abstention": 2
+    },
+    "original_scores_unchanged": true
+  },
+  "unresolved_p0": [
+    "Full long-background ingestion and D25 final erasure/neighbor checks remain unaccepted.",
+    "Repeated pre-stream generation connection closures exhaust existing bounded recovery; gateway/internal path root cause is not available from current client logs."
+  ],
+  "evidence_sha256": {
+    "eval/artifacts/v1-long-b398a63-01-candidate-locomo/manifest.json": "324e6eabab367155fc25c6d2a6f19b79c66df170411c0af5261ae7b508152b71",
+    "eval/artifacts/v1-long-b398a63-01-candidate-locomo/judgments.jsonl": "bb6672be4fee072715e7fbfc8dcb6e79767d580fb613e6303b541ea563422a64",
+    "eval/artifacts/v1-long-b398a63-01-candidate-locomo/ingest.jsonl": "c0bc7f00b45af2771108a9cba0d079a5f4f40401e6ac5afe34ec81150fc064bc",
+    "eval/artifacts/v1-long-b398a63-01-candidate-locomo/requests.jsonl": "97ba7b2f4240c5268014dab544f4da34d8411c236205300710f56b96a99f47d0",
+    "eval/artifacts/v1-long-b398a63-01-candidate-memops/manifest.json": "7097fc039cf1e2ddc21a7f5f81919c1193f19c796862103829fc497b629d01bf",
+    "eval/artifacts/v1-long-b398a63-01-candidate-memops/judgments.jsonl": "f7b266dc67ce09e01d3a3b14637b4db370eeb749286e87071934b04734bbd968",
+    "eval/artifacts/v1-long-b398a63-01-candidate-memops/ingest.jsonl": "7cd273d054515d1dc1d2dcc8536f323c8733110cafe0bb50cf1259486d2f248d",
+    "eval/artifacts/v1-long-b398a63-01-candidate-memops/requests.jsonl": "aa4fca53bd2fe1e12d5fb9ec25bcad547905f4597c2fa9fae48c0edd06d55e34",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/manifest.json": "433763f66d57043c2f88b9645a9537faab028b65991a0dfcbc619cda2fbcf713",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/judgments.jsonl": "fe11d2c08ed82279f7d3062a12ab6f1fa8219624b1363d3612d685fa04e78738",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/ingest.jsonl": "5e8c54e648b2a1530d21cd67e777561a9d889da131751f42ed34acafd7357ec3",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/predictions.jsonl": "5928dcf3e5dee869401fe43d02ac87bd703e941fbe49808c1cf6ac329132fa21",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/retrievals.jsonl": "48b3e5980c43af5bdeb6e39ea709651c23d8c26f0706acb4bcf21eef0f487645",
+    "eval/artifacts/v1-long-b398a63-01-raw-locomo/requests.jsonl": "cced3adb3fd6cadf8a2ef26671bdd844d390bf19fb6fa184ca2990f35ad539a5",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/manifest.json": "364e99e42a6f78d88ebc73197ace35b2ae9e24b004ce4e53fa8d639a27657c64",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/judgments.jsonl": "2f4b6ba2d6eb19bfad63d0b76a5bf6572fa33831dea386650955498989d56a6b",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/ingest.jsonl": "90f3b3ce005d5ae1e75335f91aa7975f7b0d41ae4918fe20bd63e3b67023c1eb",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/predictions.jsonl": "b205822f8d09d27abf0b1f80f72abd2f592cfe908b54a399b784fcd488d6a875",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/retrievals.jsonl": "247a36aca9ef340ff802197545a2be4195b828b9ed0c6b46d09b983b01ed8fcc",
+    "eval/artifacts/v1-long-b398a63-01-raw-memops/requests.jsonl": "a5d22c59b80b59225a5733ade00d32a36fe29fb784693ee1a6e0404ff78d0917",
+    "artifacts/v1-long-b398a63-01/completed-audit.json": "94150838177c768ae77cf3961437f0dc3fc2a9c673b539ae7c8195e02e7ebeef",
+    "artifacts/v1-long-b398a63-01/raw-assistant-review.json": "f2dd3e7232bf399cdc9c5ecbdd94773267701a0adc3252432d5bd2be91c7b76a",
+    "artifacts/v1-long-b398a63-01/raw-terminal-summary.json": "c920044265d32b8c0ef0d14e0b51a59f41c783b187cb9273e0c1c1b8960f3be2",
+    "artifacts/v1-long-b398a63-01/failure-snapshots.json": "dcdbfc1ed0dad9638e33c986d484220254ecfe6eff08768161dbd2ba6afec810",
+    "artifacts/v1-long-b398a63-01/candidate-runtime.json": "56a75b53c685644e03435e777928580193544e85c24ac568ca76edc5161fa1e3",
+    "artifacts/v1-long-b398a63-01/raw-runtime.json": "b728c09db5fe1401f2fbd1ee996838964d94f786acdf380b90b43410d3bc7c65",
+    "artifacts/v1-long-b398a63-01/storage-expectations.json": "429f2c204c95e822657cf235981ac617df437a6942f4e55ec70d3ea0d2df7f9b",
+    "artifacts/v1-long-b398a63-01/readiness.json": "7111a45d66d0aa19c0fffedd7588f09356f66fb65c283dc9dbbc43b9aa2f0467",
+    "artifacts/v1-long-b398a63-01/readiness-first-timeout.json": "ed81444f982d4ec870e526ee5a9078a5851f7ffc7d18e5fe47824e07e97df361",
+    "artifacts/v1-long-b398a63-01/post-run-models-connectivity.json": "d1f7adef1c53ca1472ef080f49d00f2a4d927d9f1aa0945fa05193e463435f7f",
+    "artifacts/v1-long-b398a63-01/host-workload-note.json": "908c3f958641a4b533345250bb67096460e5dc56e7475be71ac267b0ae41d68f",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-body.json": "05f4797e5bcc2883ef63acd724fb7c7691ce51c897b408093192c02cbfaed50e",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-sdk.json": "213e1df12a01a523243b8b5cd84f3d0106010b6993d3912aaa312bac1e092bc9",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-http.json": "8d9e74f72c11a09b06cc60cdb0802e1e752bd65f5f21b0c939d163fc4a4477c8",
+    "artifacts/v1-long-b398a63-01/generation-connectivity-answer-model.json": "de86694e04269847244fbf993cf8cb8618fa4c93dc8a1abcfaf2b7bacfeb1d6f"
+  },
+  "causes": [
+    {
+      "sample": "D22_update",
+      "stage": "repair",
+      "prestream_connection_failures": 9,
+      "cancelled_siblings": 0,
+      "semantic_rejection_before_transport_failure": true
+    },
+    {
+      "sample": "conv-30",
+      "stage": "state_transition",
+      "prestream_connection_failures": 9,
+      "cancelled_siblings": 0,
+      "extraction_repair_verification_returned": true
+    },
+    {
+      "sample": "conv-43",
+      "stage": "extraction",
+      "prestream_connection_failures": 19,
+      "cancelled_siblings": 6
+    },
+    {
+      "sample": "D25_remember",
+      "stage": "extraction",
+      "prestream_connection_failures": 19,
+      "cancelled_siblings": 6
+    }
+  ],
+  "completed_previous_regression_points": [
+    "conv-30 session-8 chunks 0 and 1 committed in this complete-prefix run; whole background later failed at session-18.",
+    "conv-30 session-15 completed; original narrow verbal-praise policy conflict did not stop this prefix."
+  ],
+  "comparison_limit": "Candidate produced no answers because all four contexts failed. 0/37 is the honest planned-denominator score, not an estimated 0% answering-model accuracy. Raw 14/37 has known assistant-reviewed grading disagreements. No gain or superiority claim.",
+  "latency_limit": "Shared host; candidate/raw overlapped, and image export/readback overlapped initial ingestion. Observations are functional-run latency, not isolated performance measurements.",
+  "post_run_connectivity": {
+    "models_http_status": 200,
+    "gpt_5_5_sdk_completed": false,
+    "gpt_5_5_direct_http_completed": false,
+    "gpt_5_4_mini_sdk_completed": false,
+    "scope": "One SDK and one direct HTTP small gpt-5.5 request, plus one current Answer-model request, all no retries and no failed-write replay. Both models disconnected before a generation response; list availability does not prove generation availability."
+  }
+}
