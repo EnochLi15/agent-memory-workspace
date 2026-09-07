@@ -1,0 +1,102 @@
+{
+  "protocol": "public-100-glm52-results-v1",
+  "checked_at": "2026-09-07T06:30:32.329858+00:00",
+  "campaign": "v1-public-100-glm52-02",
+  "planned_questions": 100,
+  "terminal_questions": 100,
+  "formal_release": false,
+  "passed": false,
+  "human_labels": 0,
+  "model": "glm-5.2",
+  "commits": {
+    "service": "47903127ceda48cee8e1544df02b070318c70d6d",
+    "eval": "c1bca67468d338eebcaa1eafd39c28227ad11fbe"
+  },
+  "workspace_commit": "2a5396f19b492bf0a0cffcb3acd72838c5aafe1b",
+  "benchmarks": {
+    "locomo": {
+      "planned": 50,
+      "terminal_questions": 50,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 50
+      },
+      "committed_adds": 1,
+      "http_attempts": 3,
+      "terminal_write_failures": [
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:locomo:conv-50:session-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:locomo:conv-49:session-1:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Incomplete verification coverage\"}}"
+        }
+      ],
+      "http_audit_passed": true
+    },
+    "memops": {
+      "planned": 50,
+      "terminal_questions": 50,
+      "correct": 0,
+      "judged": 0,
+      "statuses": {
+        "service_error": 50
+      },
+      "committed_adds": 11,
+      "http_attempts": 17,
+      "terminal_write_failures": [
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:memops:A28_forget:segment-4:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:memops:C30_update:segment-1:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:memops:D25_remember:segment-5:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:memops:C28_trajectory_ops:segment-3:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Grouped extraction could not cover every participant within bounded repair rounds\"}}"
+        },
+        {
+          "request_id": "v1-public-100-glm52-02-candidate:memops:A06_reflect:segment-2:0",
+          "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Write continuation cannot resume this request\"}}"
+        }
+      ],
+      "http_audit_passed": true
+    }
+  },
+  "end_to_end_accuracy": 0,
+  "judged_accuracy": null,
+  "model_calls": {
+    "attempts": 47,
+    "outcomes": {
+      "ok": 46,
+      "error": 1
+    },
+    "errors": {
+      "invalid_json": 1
+    },
+    "http_429": 0,
+    "peak_inflight_inferred_from_audit": 1
+  },
+  "elapsed_seconds": 442.534465,
+  "runtime_status": "finished",
+  "evidence_sha256": {
+    "artifacts/v1-public-100-glm52-02/candidate-runtime.json": "dc40f63825736be26092da6beb2d5e32c741b927120c13a64d749e2b73175d09",
+    "artifacts/v1-public-100-glm52-02/candidate-service.json": "27ff7e3041fc63f673539670661a203ec2c78cb485e03ed5e7029dccf6671da3",
+    "artifacts/v1-public-100-glm52-02/candidate-model-calls.jsonl": "3e8e232ddb866c5ab52294d472c75208e35c912f423734afd0ea94e419e6b3f3",
+    "reports/v1-public-100-glm52-02-audit.json": "f182e731bd2239073b39c438fd5161ddc273865f67936e0b1a8f063a21acc48d"
+  },
+  "limitations": [
+    "No judged answers: zero is end-to-end success, not conditional answer accuracy.",
+    "Storage forgetting/update/neighbor invariants were not revalidated because all backgrounds failed ingestion.",
+    "Zero 429 in this run does not guarantee account-wide availability.",
+    "Previous campaign results preserved; no automatic additional repeat."
+  ]
+}

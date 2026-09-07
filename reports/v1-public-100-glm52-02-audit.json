@@ -1,0 +1,156 @@
+{
+  "checked_at": "2026-09-07T06:29:22.607960+00:00",
+  "complete_matrix": true,
+  "expected_runs": 2,
+  "audited_runs": 2,
+  "pending": [],
+  "reviewed_runner_sha256": "cd71e7b73af849a67d1b9a479d08d62f378e797996ca558b34d34ef42fce0eb6",
+  "token_estimator_sha256": "19becdb65f0a14e87597292847c892df6655f484e17ea52d8a3dfeee178ccbcb",
+  "audit_script_sha256": "32b307b3e065fd7988631207d15a57c8323a48913581060c1bbdff42c0ef0978",
+  "runs": [
+    {
+      "run_id": "v1-public-100-glm52-02-candidate-locomo",
+      "http_trace": {
+        "run_id": "v1-public-100-glm52-02-candidate-locomo",
+        "checked_at": "2026-09-07T06:29:22.413Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "5386cc49a45bb43324de3809f6c51fd744ae6c7581e586475a983c4f855df70f",
+          "dataset": "9a47f6ba0481a2f00588df22e1d4d281c0b3964b0b43d26eb1b63a54f4a51c6a",
+          "requests": "97077e97f373bdc05d17549a5426a92d7c0ad7a41919c949a33f93bab9303c1c",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 50,
+          "dataset_questions_in_selected_samples": 50,
+          "expected_add_chunks": 73,
+          "observed_add_attempts": 3,
+          "distinct_observed_adds": 3,
+          "observed_searches": 0
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 0,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "service_error": 50
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 1,
+        "failed": 2
+      },
+      "add_attempt_ms": {
+        "n": 3,
+        "mean": 67844.50001366666,
+        "p50": 69959.57112499999,
+        "p95": 73882.589625,
+        "p99": 73882.589625,
+        "max": 73882.589625
+      },
+      "successful_search_ms": {
+        "n": 0
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 0
+        },
+        "estimated_tokens": {
+          "n": 0
+        },
+        "utf8_bytes": {
+          "n": 0
+        },
+        "exact_duplicate_fraction_within_response": null,
+        "token_scope": "Actual service estimateTokens function including Han adjustment. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "Source-ID coverage is available as an identifier diagnostic, not entailment."
+      },
+      "input_sha256": {
+        "manifest.json": "5386cc49a45bb43324de3809f6c51fd744ae6c7581e586475a983c4f855df70f",
+        "requests.jsonl": "97077e97f373bdc05d17549a5426a92d7c0ad7a41919c949a33f93bab9303c1c",
+        "ingest.jsonl": "d13d9ea8c3488490d93efc44818ca87bad453e5614bf7b7220db4aa5f442ed3f",
+        "retrievals.jsonl": null,
+        "predictions.jsonl": null,
+        "judgments.jsonl": "41085140f2002605712efb5aaccad9b6392dc0da35278a4a5895be199bf14cbb",
+        "metrics.json": "9af365c0e0a8eb200ed542b210127cc52ec8a2e3db7f32a8ab9a9fc3c7173a66"
+      }
+    },
+    {
+      "run_id": "v1-public-100-glm52-02-candidate-memops",
+      "http_trace": {
+        "run_id": "v1-public-100-glm52-02-candidate-memops",
+        "checked_at": "2026-09-07T06:29:22.546Z",
+        "passed": true,
+        "hashes": {
+          "manifest": "45a3597586fc224d0cd18d87fa9a8f3dd0ba1e46cb5d22a4c6a11e1052ff4ce1",
+          "dataset": "f4a573588d151ce3fdc1716fb6c3201caf8ae787b2ac022aff5d646cfc88a3c3",
+          "requests": "88c28eccc06e1bae0c645b56a0bd111c6fba77503083cb7d8fb777b7fc16a6a8",
+          "audit_script": "9475a0387adab1ee46d6e600bc2928d1705117e0353eb3de08daab3d2ed9aeba",
+          "chunk_implementation": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+        },
+        "counts": {
+          "planned_questions": 50,
+          "dataset_questions_in_selected_samples": 50,
+          "expected_add_chunks": 258,
+          "observed_add_attempts": 17,
+          "distinct_observed_adds": 16,
+          "observed_searches": 0
+        },
+        "violations": [],
+        "scope": "Exact saved HTTP payloads match role/content/timestamp-only conversation chunks or query/options/top_k-only questions. Repeated add IDs must have identical dataset payloads. Missing requests may reflect recorded service errors or resumed ingestion, not a successful-completion claim. Answer outbound traffic is not captured by this trace; its field whitelist is verified separately in source. No semantic claim that public conversation text lacks answer information."
+      },
+      "answer_runner_matches_reviewed_source": true,
+      "terminal_qid_coverage_exact": true,
+      "option_elements": 32,
+      "options_are_plain_strings": true,
+      "terminal_statuses": {
+        "service_error": 50
+      },
+      "ingestion_attempt_statuses": {
+        "ok": 11,
+        "failed": 5,
+        "retrying": 1
+      },
+      "add_attempt_ms": {
+        "n": 17,
+        "mean": 13907.401083411762,
+        "p50": 12525.933333000008,
+        "p95": 34253.025042,
+        "p99": 34253.025042,
+        "max": 34253.025042
+      },
+      "successful_search_ms": {
+        "n": 0
+      },
+      "returned_evidence": {
+        "count": {
+          "n": 0
+        },
+        "estimated_tokens": {
+          "n": 0
+        },
+        "utf8_bytes": {
+          "n": 0
+        },
+        "exact_duplicate_fraction_within_response": null,
+        "token_scope": "Actual service estimateTokens function including Han adjustment. Per-item estimates only; excludes prompt/JSON overhead and is not tokenizer billing.",
+        "deduplication_scope": "Residual exact duplicate output text only; no claim about unseen candidate removal.",
+        "source_id_comparability": "Source-ID coverage is available as an identifier diagnostic, not entailment."
+      },
+      "input_sha256": {
+        "manifest.json": "45a3597586fc224d0cd18d87fa9a8f3dd0ba1e46cb5d22a4c6a11e1052ff4ce1",
+        "requests.jsonl": "88c28eccc06e1bae0c645b56a0bd111c6fba77503083cb7d8fb777b7fc16a6a8",
+        "ingest.jsonl": "b3c32f68932d57a33a33092239ce5aecdff26219b5c94f85ec752b5484ec6829",
+        "retrievals.jsonl": null,
+        "predictions.jsonl": null,
+        "judgments.jsonl": "58dba5241f7c89aff47f3eceeb3303b8aecebf608f1be54f676a174e5b62d784",
+        "metrics.json": "ed71460298a58fb6a223aad26e956682d9aed3800e89f196bc1cd90c37701a89"
+      }
+    }
+  ],
+  "scope": "Saved service-bound requests and source boundary audit. Errors remain terminal attempts; no partial scores read, no model calls, no claim that source review is network capture."
+}
