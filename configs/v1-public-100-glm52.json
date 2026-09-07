@@ -1,0 +1,185 @@
+{
+  "protocol": "public-100-glm52-selection-v1",
+  "created_at": "2026-09-07T04:45:00.751115+00:00",
+  "seed": "v1-public-100-glm52-20260907",
+  "total_questions": 100,
+  "human_labels": 0,
+  "scope": "User-requested 100-question candidate evaluation; 50 LoCoMo plus 50 MemOps. Complete selected background histories retained. No additional 100-question raw baseline. Public exposed data, not hidden or an estimate of the prior complete 1000-question run.",
+  "selection_rule": "Background selection uses SHA256(seed + sample_id), independent of answers and observed scores. LoCoMo: two backgrounds with >=25 questions, 25 SHA256-ranked qids each. MemOps: one background each for forget(10), update(8), remember(12), trajectory_ops(10), reflect(10), keeping all questions. This cluster/operation-balanced selection limits ingestion cost and is not a uniform random sample of all questions.",
+  "benchmarks": {
+    "locomo": {
+      "source": "eval/.data/locomo-test.json",
+      "source_sha256": "111784f360e5f428304ce3f156f0afe1fce0e9e2b9cc7f988878ab68de0e162d",
+      "input": "artifacts/v1-public-100-glm52-01/locomo.json",
+      "sha256": "9a47f6ba0481a2f00588df22e1d4d281c0b3964b0b43d26eb1b63a54f4a51c6a",
+      "questions": 50,
+      "samples": [
+        {
+          "sample_id": "conv-50",
+          "sessions": 30,
+          "questions": 25,
+          "qids": [
+            "conv-50#q0142",
+            "conv-50#q0027",
+            "conv-50#q0044",
+            "conv-50#q0035",
+            "conv-50#q0034",
+            "conv-50#q0024",
+            "conv-50#q0012",
+            "conv-50#q0037",
+            "conv-50#q0000",
+            "conv-50#q0026",
+            "conv-50#q0049",
+            "conv-50#q0006",
+            "conv-50#q0009",
+            "conv-50#q0032",
+            "conv-50#q0047",
+            "conv-50#q0007",
+            "conv-50#q0040",
+            "conv-50#q0036",
+            "conv-50#q0001",
+            "conv-50#q0008",
+            "conv-50#q0023",
+            "conv-50#q0015",
+            "conv-50#q0038",
+            "conv-50#q0043",
+            "conv-50#q0018"
+          ],
+          "sessions_sha256": "60492b937e0c4656e311e391f955501c0ace1f5dc2f9b282ba8b229b8255f0d6"
+        },
+        {
+          "sample_id": "conv-49",
+          "sessions": 25,
+          "questions": 25,
+          "qids": [
+            "conv-49#q0059",
+            "conv-49#q0008",
+            "conv-49#q0066",
+            "conv-49#q0039",
+            "conv-49#q0115",
+            "conv-49#q0016",
+            "conv-49#q0023",
+            "conv-49#q0034",
+            "conv-49#q0102",
+            "conv-49#q0043",
+            "conv-49#q0108",
+            "conv-49#q0097",
+            "conv-49#q0024",
+            "conv-49#q0128",
+            "conv-49#q0007",
+            "conv-49#q0045",
+            "conv-49#q0113",
+            "conv-49#q0095",
+            "conv-49#q0032",
+            "conv-49#q0075",
+            "conv-49#q0026",
+            "conv-49#q0041",
+            "conv-49#q0076",
+            "conv-49#q0088",
+            "conv-49#q0084"
+          ],
+          "sessions_sha256": "9ead6f90b2df4e8b89a77aed4e89c37d262ee9d9366996937b083698a1ba67ee"
+        }
+      ]
+    },
+    "memops": {
+      "source": "eval/.data/memops-test.json",
+      "source_sha256": "ecb9cca368601668fbec85d62e0def111c65cb142fba250966da6c16fde0da33",
+      "input": "artifacts/v1-public-100-glm52-01/memops.json",
+      "sha256": "f4a573588d151ce3fdc1716fb6c3201caf8ae787b2ac022aff5d646cfc88a3c3",
+      "questions": 50,
+      "samples": [
+        {
+          "sample_id": "A28_forget",
+          "sessions": 50,
+          "questions": 10,
+          "qids": [
+            "A28_forget.json#p4_candidate_disambiguation#adjacent_operation#6",
+            "A28_forget.json#p5_operation_application#longitudinal_operation#9",
+            "A28_forget.json#p1_operation_trace#longitudinal_operation#1",
+            "A28_forget.json#p3_state_transition#adjacent_operation#4",
+            "A28_forget.json#p2_target_binding#longitudinal_operation#3",
+            "A28_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+            "A28_forget.json#p5_operation_application#adjacent_operation#8",
+            "A28_forget.json#p1_operation_trace#adjacent_operation#0",
+            "A28_forget.json#p3_state_transition#longitudinal_operation#5",
+            "A28_forget.json#p2_target_binding#adjacent_operation#2"
+          ],
+          "sessions_sha256": "d69cb3c189e858fce8a40b63dcc95224e0ce6561ad58b60afc7e37d7168f7ec2"
+        },
+        {
+          "sample_id": "C30_update",
+          "sessions": 50,
+          "questions": 8,
+          "qids": [
+            "C30_update.json#p4_candidate_disambiguation#longitudinal_operation#5",
+            "C30_update.json#p5_operation_application#longitudinal_operation#7",
+            "C30_update.json#p1_operation_trace#longitudinal_operation#1",
+            "C30_update.json#p2_target_binding#adjacent_operation#2",
+            "C30_update.json#p4_candidate_disambiguation#adjacent_operation#4",
+            "C30_update.json#p5_operation_application#adjacent_operation#6",
+            "C30_update.json#p1_operation_trace#adjacent_operation#0",
+            "C30_update.json#p2_target_binding#longitudinal_operation#3"
+          ],
+          "sessions_sha256": "3ccf03807e30204b6cc228d4c9ab0e1d1ab958f2468436fccb4d44cafa6c6368"
+        },
+        {
+          "sample_id": "D25_remember",
+          "sessions": 50,
+          "questions": 12,
+          "qids": [
+            "D25_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+            "D25_remember.json#p5_operation_application#adjacent_operation#8",
+            "D25_remember.json#p1_operation_trace#adjacent_operation#0",
+            "D25_remember.json#p3_state_transition#adjacent_operation#4",
+            "D25_remember.json#p2_target_binding#longitudinal_operation#3",
+            "D25_remember.json#p4_candidate_disambiguation#adjacent_operation#6",
+            "D25_remember.json#p5_operation_application#longitudinal_operation#9",
+            "D25_remember.json#p1_operation_trace#longitudinal_operation#1",
+            "D25_remember.json#p6_remember_negative#longitudinal_operation#11",
+            "D25_remember.json#p2_target_binding#adjacent_operation#2",
+            "D25_remember.json#p6_remember_negative#adjacent_operation#10",
+            "D25_remember.json#p3_state_transition#longitudinal_operation#5"
+          ],
+          "sessions_sha256": "20784185d57dc218caa61c8aad60c5f1f119599ccf286702fc0bcb32801ca0c5"
+        },
+        {
+          "sample_id": "C28_trajectory_ops",
+          "sessions": 50,
+          "questions": 10,
+          "qids": [
+            "C28_trajectory_ops.json#p4_operation_application#longitudinal_operation#7",
+            "C28_trajectory_ops.json#p1_operation_trace#longitudinal_operation#1",
+            "C28_trajectory_ops.json#p5_state_trajectory#longitudinal_operation#9",
+            "C28_trajectory_ops.json#p3_state_transition#adjacent_operation#4",
+            "C28_trajectory_ops.json#p2_target_binding#longitudinal_operation#3",
+            "C28_trajectory_ops.json#p4_operation_application#adjacent_operation#6",
+            "C28_trajectory_ops.json#p1_operation_trace#adjacent_operation#0",
+            "C28_trajectory_ops.json#p5_state_trajectory#adjacent_operation#8",
+            "C28_trajectory_ops.json#p3_state_transition#longitudinal_operation#5",
+            "C28_trajectory_ops.json#p2_target_binding#adjacent_operation#2"
+          ],
+          "sessions_sha256": "d1b54a40b189a2fe742e9751d8237a42b277a3ed6286fc29c32aa414b33101e2"
+        },
+        {
+          "sample_id": "A06_reflect",
+          "sessions": 50,
+          "questions": 10,
+          "qids": [
+            "A06_reflect.json#p4_candidate_disambiguation#longitudinal_operation#7",
+            "A06_reflect.json#p5_operation_application#longitudinal_operation#9",
+            "A06_reflect.json#p1_operation_trace#adjacent_operation#0",
+            "A06_reflect.json#p3_state_transition#adjacent_operation#4",
+            "A06_reflect.json#p2_target_binding#adjacent_operation#2",
+            "A06_reflect.json#p4_candidate_disambiguation#adjacent_operation#6",
+            "A06_reflect.json#p5_operation_application#adjacent_operation#8",
+            "A06_reflect.json#p1_operation_trace#longitudinal_operation#1",
+            "A06_reflect.json#p3_state_transition#longitudinal_operation#5",
+            "A06_reflect.json#p2_target_binding#longitudinal_operation#3"
+          ],
+          "sessions_sha256": "c9461d9a6973d1480cf79112ae34b82f9a1fef9f5c5b966e165ac95cce559883"
+        }
+      ]
+    }
+  }
+}

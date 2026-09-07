@@ -2,9 +2,9 @@
 
 三个独立仓库：本工作区负责规范、版本、编排及报告；`service/` 是 mem0 TS 源码改造服务；`eval/` 是只通过 HTTP 通信的独立评测器。两者是固定 commit 的 Git submodule，不能互相引用运行时代码。
 
-当前交付为候选版，尚未完成正式V1验收。最新接入 BigModel：`glm-5.3`负责写入/核验/修复，`glm-5.3-flash`负责回答与判分，本地nomic embedding保持不变。[最新固定小集](reports/v1-small-bigmodel-02-results.json)中，候选5次写入、10次检索和20项存储检查通过；机器计分8/10（9题已判、1题判分JSON错误），原文5/10。助手复核不是人工校准，也不替换机器分数。
+当前交付为候选版，尚未完成正式V1验收。最新接入 BigModel：当前按用户要求统一使用`glm-5.2`负责写入、核验、修复、回答与判分，本地nomic embedding保持不变。[此前GLM-5.3/Flash固定小集](reports/v1-small-bigmodel-02-results.json)中，候选5次写入、10次检索和20项存储检查通过；机器计分8/10（9题已判、1题判分JSON错误），原文5/10。助手复核不是人工校准，也不替换机器分数。
 
-下一项必须关闭的是判分JSON错误；完整小集、长背景、1000题评测与正式封版仍按[V1交付收敛计划](docs/29-V1交付收敛计划.md)验收。为控制额度，当前未继续启动评测。此前GPT配置的[小集](reports/v1-small-b398a63-results.md)、[长背景](reports/v1-long-b398a63-results.md)、部署和恢复证据独立保留，不能作为新模型配置已经通过的证据。
+下一项必须关闭的是判分JSON错误；完整小集、长背景、1000题评测与正式封版仍按[V1交付收敛计划](docs/29-V1交付收敛计划.md)验收。最新评测范围缩减为100题（50 LoCoMo + 50 MemOps），数据及模型配置见[本轮冻结清单](configs/v1-public-100-glm52.json)；旧1000题计划不再执行。此前GPT配置的[小集](reports/v1-small-b398a63-results.md)、[长背景](reports/v1-long-b398a63-results.md)、部署和恢复证据独立保留，不能作为新模型配置已经通过的证据。
 
 ## 快速运行
 

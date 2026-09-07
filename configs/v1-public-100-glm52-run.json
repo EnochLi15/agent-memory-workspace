@@ -1,6 +1,6 @@
 {
-  "protocol": "fixed-small-raw-pair-v1",
-  "policy": "Two exposed synthetic groups, ten questions, five planned add requests. Functional convergence only, not benchmark/generalization accuracy. Freeze before first answer. Independent empty namespaces; identical hybrid embedding, final 32 evidence/6000 estimated-token cap, Answer/Judge prompts/models and inference attempts. B1 stores message chunks verbatim with no LLM extraction or memory operations. Candidate retains only lifecycle/temporal/source verification and bounded continuation; rerank, coverage packing, event view, multi-hop and reflection disabled. Do not increase samples or repetitions before reviewing both runs and storage invariants. Report service overhead separately: total compute is not equalized. Agent review is model review, never human calibration.",
+  "protocol": "public-100-candidate-evaluation-v1",
+  "policy": "User-requested 100-question candidate evaluation; 50 LoCoMo plus 50 MemOps. Complete selected background histories retained. No additional 100-question raw baseline. Public exposed data, not hidden or an estimate of the prior complete 1000-question run. Preserve existing HTTP/model budgets and strict local validation. No failed-result repair or automatic repeat.",
   "evaluation": {
     "answer_model": "glm-5.2",
     "judge_model": "glm-5.2"
@@ -56,27 +56,6 @@
   "profiles": {
     "candidate": {
       "environment": {}
-    },
-    "raw": {
-      "environment": {
-        "MEMORY_WRITE_CONTINUATION": "false",
-        "MEMORY_ERASURE_BINDING": "false",
-        "MEMORY_SOURCE_ERASURE": "false",
-        "MEMORY_SEMANTIC_TRANSITIONS": "false",
-        "MEMORY_SOURCE_OPERATIONS": "false",
-        "MEMORY_SOURCE_OPERATION_HISTORY": "false",
-        "MEMORY_SOURCE_OPERATION_BATCHES": "false",
-        "MEMORY_SOURCE_OPERATION_ROUTING": "false",
-        "MEMORY_SOURCE_FIRST": "false",
-        "MEMORY_SOURCE_ERASURE_GROUPED": "false",
-        "MEMORY_SOURCE_INDEX": "false",
-        "MEMORY_EXPERIMENT_LIFECYCLE": "false",
-        "MEMORY_EXPERIMENT_TEMPORAL": "false",
-        "MEMORY_RAW_FALLBACK": "false",
-        "MEMORY_EXPERIMENT_RAW_ONLY": "true",
-        "MEMORY_EXTRACTION_WORKERS": "1",
-        "MEMORY_SOURCE_ERASURE_WORKERS": "1"
-      }
     }
   },
   "provider_transition": {
@@ -85,5 +64,6 @@
     "scope": "New candidate identity after user supplied alternative. Prior datasets, algorithms, budgets and results preserved. Provider and models changed; scores are not a code-only comparison.",
     "response_format": "Use documented JSON mode after strict schema request returned malformed JSON. All local structure, evidence and authorization checks remain enabled.",
     "model_transition": "User requested the GLM-5.2 family; all remote stages now use glm-5.2. Prior GLM-5.3/Flash results remain historical."
-  }
+  },
+  "dataset_manifest": "configs/v1-public-100-glm52.json"
 }

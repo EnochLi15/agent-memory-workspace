@@ -146,3 +146,6 @@ V1打包只选择本次验收绑定的文件，保留凭据及Git可达历史扫
 采用官方文档中的`json_object`模式，保留本地严格结构与语义校验。首次`json_schema`小集因非法JSON导致一次遗忘写入失败，结果独立保留。配置调整后的第二轮两边各5次写入、10次检索均成功，候选20项存储检查通过；机器计分候选8/10（9题已判、1题judge_error），原文5/10。判分解析失败的原始响应未被现有评测器保留，不能确定其具体尾随字符或把它直接归因于流式解析实现。没有补判或覆盖旧分数。助手复核不是人工校准，短参考造成的判分争议不计入修正成绩。
 
 对应[兼容性结果](../reports/v1-bigmodel-compatibility.json)、[首轮失败](../reports/v1-small-bigmodel-01-results.json)、[第二轮结果](../reports/v1-small-bigmodel-02-results.json)。这些是新的候选证据，不替代旧发布清单中的提交/模型身份；完整小集判分、长背景、全量与正式发布仍未通过。按用户要求收敛，本轮后未启动长背景或全量测试。
+
+
+最新用户调整：恢复有效的BigModel凭据（仅本地保存），所有远程阶段统一`glm-5.2`，仍用Chat Completion与`json_object`。一次真实流式JSON调用通过。当前100题候选运行使用`configs/v1-public-100-glm52-run.json`及`configs/v1-public-100-glm52.json`，不再安排1000题，也不额外跑100题原文基线。此前GLM-5.3/Flash的分数不用于证明GLM-5.2已通过验收。LoCoMo保留现有refined-python评分实现、模型改为GLM-5.2；MemOps保留现有rubric评分实现。两者均为明确标注模型的公开代理评测。
