@@ -1,0 +1,32 @@
+{
+  "protocol": "v1-compatible-rollback-v1",
+  "candidate_service_commit": "b398a63f2097c4754bfa7b5cb8cf3c458ff9df9b",
+  "scope": "Readback of candidate snapshots with earlier compatible s1 images in restored isolated volumes; does not claim compatibility with future formats.",
+  "checks": {
+    "offline_receipt_replay": true,
+    "offline_updated_city_retained": true,
+    "offline_old_city_not_current": true,
+    "offline_forgotten_code_absent": true,
+    "offline_manager_neighbor_retained": true,
+    "enhanced_receipt_replay": true,
+    "enhanced_updated_city_retained": true,
+    "enhanced_old_city_not_current": true,
+    "enhanced_forgotten_code_absent": true,
+    "enhanced_manager_neighbor_retained": true
+  },
+  "modes": {
+    "offline": {
+      "previous_service_commit": "9db2ce9",
+      "image_id": "sha256:66967b767054c6804accbdc14e8b22e7ea3a14cf8d4737ddab51838c197c5d7f",
+      "snapshot_sha256": "6aa87295f73cd106d78077d458fcc0b66769d85b86041fc340fe98641d076a00",
+      "readback_sha256": "21e4c3d18b50d35fac1e4384889ab52f2282d4fdfebe21ba81b5ef43020ac7f5"
+    },
+    "enhanced": {
+      "previous_service_commit": "7a50d22d3281ace3f078c9a4c66f3917556ad659",
+      "image_id": "sha256:d57477d823d2b964542db3f859191ebe14f7589e8c31968b55af479247c75376",
+      "snapshot_sha256": "262537981fde7cd9c610b11b6e333ea62ad9bdcd628d8418b00270f8bddb44ae",
+      "readback_sha256": "8f5d0b4e9cae961e70a41b4893704dbff21434936fd70b0237894db21e9aa473"
+    }
+  },
+  "passed": true
+}

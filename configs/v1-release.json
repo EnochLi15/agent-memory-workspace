@@ -10,18 +10,18 @@
   "gates": {
     "blockers": "reports/v1-blocker-closure.json",
     "runtime": "reports/v1-runtime-soak-acceptance.json",
-    "deployment": "reports/v1-clean-clone-acceptance.json",
+    "deployment": "reports/v1-clean-clone-b398a63-acceptance.json",
     "durability": [
-      "reports/v1-offline-backup-restore.json",
-      "reports/v1-enhanced-backup-restore.json",
-      "reports/v1-compatible-rollback.json"
+      "reports/v1-offline-backup-restore-b398a63.json",
+      "reports/v1-enhanced-backup-restore-b398a63.json",
+      "reports/v1-compatible-rollback-b398a63.json"
     ],
     "small_pair": "reports/v1-small-b398a63-results.json",
     "long_pair": "reports/v1-long-closed-loop.json",
     "full_audit": "reports/v1-full-completed-run-audit.json",
     "full_report": "reports/v1-full-results.json"
   },
-  "deployment_log_directory": "artifacts/v1-clean-clone-01",
+  "deployment_log_directory": "artifacts/v1-clean-clone-03",
   "long_dataset_manifest": "configs/v1-fixed-long-regression.json",
   "primary_runs": {
     "locomo": "v1-full-b398a63-01-candidate-locomo",
