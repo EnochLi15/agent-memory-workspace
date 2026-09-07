@@ -36,7 +36,7 @@
     "MEMORY_EXPERIMENT_MULTI_HOP": "false",
     "MEMORY_EXPERIMENT_REFLECTION": "false",
     "MEMORY_EXPERIMENT_RAW_ONLY": "false",
-    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_schema",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_object",
     "MEMORY_ERASURE_BINDING": "true",
     "MEMORY_SOURCE_ERASURE": "true",
     "MEMORY_SEMANTIC_TRANSITIONS": "true",
@@ -82,6 +82,7 @@
   "provider_transition": {
     "from": "unavailable previous generation endpoint",
     "to": "https://open.bigmodel.cn/api/coding/paas/v4",
-    "scope": "New candidate identity after user supplied alternative. Prior datasets, algorithms, budgets and results preserved. Provider and models changed; scores are not a code-only comparison."
+    "scope": "New candidate identity after user supplied alternative. Prior datasets, algorithms, budgets and results preserved. Provider and models changed; scores are not a code-only comparison.",
+    "response_format": "Use documented JSON mode after strict schema request returned malformed JSON. All local structure, evidence and authorization checks remain enabled."
   }
 }
