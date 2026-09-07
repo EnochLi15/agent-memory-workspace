@@ -1,6 +1,6 @@
 # Agent Memory Service（可独立部署记忆服务）
 
-面向赛题三接口的记忆服务：**ADD**（自主提取，同步可检）、**SEARCH**（只返证据）、**HEALTH**（就绪探测）。同一镜像两种形态：`offline`（零外部依赖，规则提取 + 词法检索）与 `enhanced`（LLM 分组提取 + 语义检索，任一模型能力故障自动降档为确定性方案并带审计标记提交）。
+面向赛题三接口的记忆服务：**ADD**（自主提取，同步可检）、**SEARCH**（只返证据）、**HEALTH**（就绪探测）。同一镜像两种形态：`offline`（零外部依赖，规则提取 + 词法检索）与 `enhanced`（LLM 分组提取 + 语义检索，任一模型能力故障自动降档为确定性方案并带审计标记提交）。内容型 add 附带确定性跨会话聚合（pattern 卡，服务列表完备与 Reflect 汇总）与多源佐证排序信号，两形态行为一致。
 
 设计说明见 [docs/方案设计-最终交付版.md](docs/方案设计-最终交付版.md)（赛题对齐、六能力机制矩阵、写入成功哲学）。工作区结构：本仓负责编排与报告，`service/`（TS 服务实现）与 `eval/`（HTTP 契约校验器/评测器）为固定 commit 的 submodule，只通过 HTTP 通信。
 
@@ -47,9 +47,10 @@ make down
 
 ## 验证状态（2026-09-07）
 
-- 单元 **422/422**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode）。
+- 单元 **431/431**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 7 项、多源佐证 2 项）。
 - 契约校验器 **12/12**（offline 实例）。
-- 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中）。
+- intent v2 全量回归：LoCoMo refined 1,382 题 {CURRENT:1376, HISTORICAL:5, TRAJECTORY:1} 零误报；MemOps 纵向 134 去重对 32/32 命中 TRAJECTORY。
+- 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**聚合卡端到端**（跨会话累积→单卡全值→forget 全路径清→干净重建）、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中且聚合卡照常产出）。
 - 已知边界：offline 形态转述类查询召回有限（无嵌入），由 enhanced 形态覆盖；source-first v10 表示未纳入 release（见上表）。
 
 ## 历史与归档
