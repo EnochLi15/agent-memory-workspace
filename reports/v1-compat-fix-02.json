@@ -1,0 +1,176 @@
+{
+  "protocol": "bounded-protocol-compatibility-validation-v1",
+  "service_commit": "b36d8886c2a1d22e4ccc9ea40b4469aa5841f8da",
+  "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe",
+  "service_tests": {
+    "passed": 430,
+    "failed": 0
+  },
+  "targeted_replay": {
+    "offline": [
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:locomo:conv-50:session-12:0",
+        "case": "trailing_comma",
+        "passed": true,
+        "removed_commas": 1,
+        "facts": 13,
+        "scope": "Decoded schema only; semantic verification is still required"
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:locomo:conv-49:session-1:1",
+        "trace_id": "b7c8c555-0571-4068-990e-65d085d2a247",
+        "case": "null_reason",
+        "passed": true,
+        "findings": []
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:locomo:conv-49:session-1:1",
+        "trace_id": "720fc232-fcb9-4a7f-91c6-6220d5c5e9cc",
+        "case": "null_reason",
+        "passed": true,
+        "findings": []
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:C30_update:segment-6:0",
+        "trace_id": "b5d22c6a-90e5-4ed2-b252-5a31f6012214",
+        "case": "null_reason",
+        "passed": true,
+        "findings": []
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:C30_update:segment-6:0",
+        "trace_id": "b8784b9d-5cff-4191-ac66-f972c8b1f96f",
+        "case": "null_reason",
+        "passed": true,
+        "findings": []
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:A06_reflect:segment-11:0",
+        "case": "structural_json_corruption",
+        "passed": true,
+        "outcome": "rejected_without_guessing_or_retry",
+        "scope": "Expected terminal boundary; this request remains unsuccessful"
+      }
+    ],
+    "live": [
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:D25_remember:segment-45:0",
+        "case": "wrapped_patch",
+        "passed": true,
+        "findings": [],
+        "facts": 17
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:C28_trajectory_ops:segment-22:0",
+        "case": "wrapped_patch",
+        "passed": true,
+        "findings": [],
+        "facts": 1
+      },
+      {
+        "request_id": "v1-public-100-glm52-03-candidate:memops:A28_forget:segment-23:0",
+        "case": "source_reason",
+        "passed": false,
+        "classificationReplays": 1,
+        "repairCalls": 1,
+        "error_type": "Error",
+        "error": "Invalid global source quote repair"
+      }
+    ]
+  },
+  "small_campaign": {
+    "campaign": "v1-small-compat-fix-02",
+    "runtime_status": "finished",
+    "planned": 10,
+    "question_statuses": {
+      "judged": 10
+    },
+    "judge_correct": 5,
+    "raw_judge_accuracy": 0.5,
+    "writes": {
+      "ok": 5
+    },
+    "retrievals": 10,
+    "storage_checks": {
+      "protocol": "v1-fixed-small-storage-readback-v1",
+      "campaign": "v1-small-compat-fix-02",
+      "checks": {
+        "bounded-lifecycle": {
+          "receipts_match_logical_adds": true,
+          "no_pending_preparation": true,
+          "code_absent_from_readable_tables_and_fts": true,
+          "code_erased_without_vector_or_quotes": true,
+          "current_city_Portland": true,
+          "current_browser_Safari": true,
+          "old_city_superseded": true,
+          "old_browser_superseded": true,
+          "Clara_neighbor_retained": true,
+          "Kevin_Brave_retained": true,
+          "forget_event_present": true,
+          "two_update_events_present": true
+        },
+        "bounded-retention": {
+          "receipts_match_logical_adds": true,
+          "no_pending_preparation": true,
+          "Maya_Chrome_retained": true,
+          "Olivia_Edge_retained": true,
+          "Andrew_Boston_retained": true,
+          "Andrew_painting_retained": true,
+          "no_unauthorized_forget_event": true,
+          "no_erased_facts": true
+        }
+      },
+      "databases": {
+        "service/.data/v1-small-compat-fix-02-candidate/a5bc5acdd975c47c73c5d38966d16f25bec27b86b3536cda03776e8085e954b1/memory.sqlite": {
+          "sha256": "e274529f8f9c7f21bad1df1159ab3a3e7fdb77da7f9b7f9190e8d6af34be3304",
+          "source_format": "dual-source-v10-s1",
+          "revision": "3"
+        },
+        "service/.data/v1-small-compat-fix-02-candidate/56b03965fc3624da833cced665d888e42c30b1d78766c04f86c4126b2c85891d/memory.sqlite": {
+          "sha256": "b6ebcccb44db2915b91d7eec84941be871c586e35cdf7b0c5faca7fd286e699f",
+          "source_format": "dual-source-v10-s1",
+          "revision": "2"
+        }
+      },
+      "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+      "check_provenance": "Reuses the previously corrected fixed 20-check verifier; current value checks use structured value, with independent superseded-history assertions.",
+      "count": 20,
+      "passed": true
+    }
+  },
+  "agent_review": {
+    "human_labels": 0,
+    "scope": "Assistant review against fixture and saved retrieval evidence, not independent human calibration; original judge scores unchanged.",
+    "disputed_judge_rejections": [
+      "small-city",
+      "small-work-browser",
+      "small-friend-browser",
+      "small-andrew-hobby"
+    ],
+    "basis": "Cited facts, quotes and observation dates are present in the original fixture; the judge rejected them as unsupported without access to those sources.",
+    "confirmed_answer_failure": {
+      "qid": "small-tablet-sale",
+      "finding": "The original message contains I have not sold it; no structured sale-status fact or searchable passage containing sold was found in readonly storage, and retrieval did not return this evidence."
+    }
+  },
+  "full_100_rerun": false,
+  "formal_release": false,
+  "remaining": [
+    "A06 structural JSON corruption remains terminal; no missing fields or verdicts are guessed.",
+    "A28 reason review returned uncertain for one fixed partition, so this erasure remains uncommitted.",
+    "Judge evidence calibration and the missing unsold-tablet fact remain unresolved."
+  ],
+  "evidence_sha256": {
+    "artifacts/v1-compat-fix-02/result.json": "b972c01fce5799797bf2026389b5c7b3dae222e87e3c4ec21b89cf451ee4d1e5",
+    "artifacts/v1-compat-fix-02/model-calls.jsonl": "9cedf2073c0d6b8daaaaeb74398292634480535f733d7ad2fca0a5919997eaa3",
+    "artifacts/v1-compat-fix-02/model-trace.jsonl": "80db73e26639ee922943551b048a55d4f3559bbb15338e6cb66c6cadff91118e",
+    "artifacts/v1-small-compat-fix-02/candidate-runtime.json": "619f5d6f2f102fcccbef854a1eeefb3537ee952ba7c6e413561bd5415275efbb",
+    "artifacts/v1-small-compat-fix-02/candidate-service.json": "181ff8f784fe5d3f78fe1e04c0bab1814b3625f0d7fc1b135bb8aca083563ecc",
+    "artifacts/v1-small-compat-fix-02/candidate-storage-check.json": "2f6dc3c18a2be2b50eeac23d0b01be55c116abbf9243303c72044525b396fa21",
+    "eval/artifacts/v1-small-compat-fix-02-candidate-memops/manifest.json": "933eb8d1d7f4e504240f7488556a912604748ecd0f9af9457f8e6753415f5ec4",
+    "eval/artifacts/v1-small-compat-fix-02-candidate-memops/judgments.jsonl": "fc6cbc2eb3a1ecf3640af958381b57127bb65e45874e0c7ba95eef8081e40d49",
+    "eval/artifacts/v1-small-compat-fix-02-candidate-memops/predictions.jsonl": "79f4cdfd0404ac5ce37182697228ae46fcd3e7d5e45b8caee87dc331acdf9cfd",
+    "eval/artifacts/v1-small-compat-fix-02-candidate-memops/retrievals.jsonl": "e4696a475a8a0c91c63bbbda3627bb1ad400f2b90deafcc09ea896eaa8c0f2f2",
+    "reports/v1-small-compat-fix-02-audit.json": "97e8e943a33b519568801ff6a7062a510eb821f4d3118dd8ded09f97906235dd"
+  }
+}
