@@ -1,0 +1,60 @@
+{
+  "offline": [
+    {
+      "case": "plan_normalization",
+      "trace_id": "9f99d4e7-3ca8-4c24-b96a-b802ff4127c7",
+      "passed": true
+    },
+    {
+      "case": "plan_normalization",
+      "trace_id": "e3223f4a-29b4-4672-a2c9-b780446667ae",
+      "passed": true
+    },
+    {
+      "case": "plan_normalization",
+      "trace_id": "59abd802-2c4a-4d41-b4de-6999762b3d95",
+      "passed": true
+    },
+    {
+      "case": "plan_normalization",
+      "trace_id": "1685f043-f6d5-4180-8617-8d3b2ff360eb",
+      "passed": true
+    },
+    {
+      "case": "verification_explanation",
+      "trace_id": "7a319ca2-9c7c-49d9-8375-4c2f1efca10e",
+      "passed": true,
+      "issues": []
+    },
+    {
+      "case": "verification_explanation",
+      "trace_id": "c99daf46-358a-40fe-8646-48e377f38ed9",
+      "passed": true,
+      "issues": []
+    }
+  ],
+  "live": {
+    "passed": true,
+    "request_id": "v1-public-100-glm52-02-candidate:memops:C30_update:segment-1:0",
+    "remote_calls": 2,
+    "elapsed_ms": 14030,
+    "facts": 7,
+    "operations": 0,
+    "degraded": [],
+    "scope": "Original failed extraction replayed; all bounded repair and verification calls are live GLM-5.2. No existing storage altered."
+  },
+  "protocol": "write-protocol-fix-validation-v1",
+  "service_commit": "21e2d6f627df1c752d805155287581881659c87d",
+  "service_tests": {
+    "passed": 420,
+    "failed": 0
+  },
+  "full_100_rerun": false,
+  "judged_accuracy": null,
+  "human_labels": 0,
+  "evidence_sha256": {
+    "artifacts/v1-protocol-fix-01/result.json": "f929117dcbbef5cfa88031b4cda53bf0385ed47dea80f6a92ed89197152fe2bf",
+    "artifacts/v1-protocol-fix-01/model-calls.jsonl": "e55c382f7c25ae910e1b343219765aef9a4bd72b21e53b8661367861482c426c",
+    "artifacts/v1-protocol-fix-01/model-trace.jsonl": "b47d3ea775da6218a66f3828029be0fa517a1d49e5d024041f8f5a5a93d1b0f7"
+  }
+}

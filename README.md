@@ -44,3 +44,5 @@ MEMORY_LLM_BASE_URL=https://open.bigmodel.cn/api/coding/paas/v4
 详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。历史交付实例曾在 `http://127.0.0.1:8088` 通过增强模式 contract，配置与当时验证见 [部署验证](reports/deployed-service.json)；这不代表本次候选或该端口当前状态。历史1000题主评测、32组开发对照、完整诊断和两轮性能已有归档，本地配置结果331/1000，含36题服务错误。历史归档校验见`delivery/final-verification.json`，相应边界见[实施状态](docs/IMPLEMENTATION-STATUS.md)。
 
 第二轮服务冻结`98c12e5`、eval`11da2a6`的1000题评测已经中断：LoCoMo 83/500，MemOps尚有348题无结果，不能报告新的完整准确率。原始现场与历史331/1000保留，监控已暂停。详见[中断归档](reports/round2-full-98c12e5-interrupted.md)；后续实施按[V1交付收敛计划](docs/29-V1交付收敛计划.md)推进。
+
+写入协议修正已合入服务主分支：[修复及验证](reports/v1-protocol-fix.md)。420项本地回归通过，6条原始输出回放通过；一个原始失败请求经2次真实模型调用完成修复和核验。尚未重跑100题，旧分数保持不变。
