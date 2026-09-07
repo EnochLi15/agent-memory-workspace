@@ -1,48 +1,57 @@
-# Agent Memory 赛题交付工作区
+# Agent Memory Service（可独立部署记忆服务）
 
-三个独立仓库：本工作区负责规范、版本、编排及报告；`service/` 是 mem0 TS 源码改造服务；`eval/` 是只通过 HTTP 通信的独立评测器。两者是固定 commit 的 Git submodule，不能互相引用运行时代码。
+面向赛题三接口的记忆服务：**ADD**（自主提取，同步可检）、**SEARCH**（只返证据）、**HEALTH**（就绪探测）。同一镜像两种形态：`offline`（零外部依赖，规则提取 + 词法检索）与 `enhanced`（LLM 分组提取 + 语义检索，任一模型能力故障自动降档为确定性方案并带审计标记提交）。
 
-当前交付为候选版，尚未完成正式V1验收。最新接入 BigModel：当前按用户要求统一使用`glm-5.2`负责写入、核验、修复、回答与判分，本地nomic embedding保持不变。[此前GLM-5.3/Flash固定小集](reports/v1-small-bigmodel-02-results.json)中，候选5次写入、10次检索和20项存储检查通过；机器计分8/10（9题已判、1题判分JSON错误），原文5/10。助手复核不是人工校准，也不替换机器分数。
+设计说明见 [docs/方案设计-最终交付版.md](docs/方案设计-最终交付版.md)（赛题对齐、六能力机制矩阵、写入成功哲学）。工作区结构：本仓负责编排与报告，`service/`（TS 服务实现）与 `eval/`（HTTP 契约校验器/评测器）为固定 commit 的 submodule，只通过 HTTP 通信。
 
-下一项必须关闭的是判分JSON错误；完整小集、长背景、1000题评测与正式封版仍按[V1交付收敛计划](docs/29-V1交付收敛计划.md)验收。最新评测范围缩减为100题（50 LoCoMo + 50 MemOps），数据及模型配置见[本轮冻结清单](configs/v1-public-100-glm52.json)；旧1000题计划不再执行。此前GPT配置的[小集](reports/v1-small-b398a63-results.md)、[长背景](reports/v1-long-b398a63-results.md)、部署和恢复证据独立保留，不能作为新模型配置已经通过的证据。
-
-最新100题评测已结束：[结果报告](reports/v1-public-100-glm52-results.md)。100题全部因背景写入失败成为service_error，端到端0/100、无已判分答案；已记录429限流及分组/核验覆盖问题，未自动重跑。
-
-限流修正：BigModel候选现采用服务内共享串行队列、请求启动间隔至少1秒、429共享等待；评测固定单背景并发，LoCoMo结束后再启动MemOps。说明及本地验证见[限流修正记录](reports/v1-glm52-rate-limit-fix.md)。串行100题复测已完成：[最新结果](reports/v1-public-100-glm52-02-results.md)。本轮模型调用47次、429为0、峰值并发为1；但100题仍全部写入失败，端到端0%，无已判分答案。分组/核验覆盖和非法JSON问题仍未解决。
-
-## 快速运行
-
-宿主机：Node 24.18.0、Python 3、Docker。使用 `nvm use`，然后：
+## 快速启动（非交互）
 
 ```sh
-make init
-make build
-make up-offline
-make contract
+make init && make build
+make up-offline          # docker compose，默认 configs/release-offline.env，零外部依赖
+make contract            # 12 项契约校验（http://127.0.0.1:8088）
 make down
 ```
 
-离线模式镜像完成构建后不需要网络或模型；停止默认保留卷。增强模式使用 `configs/release-enhanced.env`，在本地 `.env` 配置 LLM 连接与凭据后执行 `make up`；离线模式有独立配置和数据卷，凭据文件已被 Git 忽略。Ollama 的本地 embedding 模型必须预先准备，服务不会自动下载。
+- **Docker**：`docker compose up -d` 默认 offline 形态；LLM 形态用 `MEMORY_CONFIG_FILE=configs/release-enhanced.env docker compose up -d`，并在本地 `.env` 填 `MEMORY_LLM_API_KEY` / `MEMORY_LLM_BASE_URL`。`stop_grace_period: 125s` 覆盖 add 尾时。
+- **裸机**：`set -a; . configs/release-offline.env; set +a; MEMORY_DATA_DIR=/data/mem node service/dist/server.js`（:8088）。
+- 增强模式的本地 embedding（nomic-embed-text）须预置于 Ollama，服务不自动下载。
 
-BigModel候选使用 `configs/v1-bigmodel-enhanced.env`。在受Git忽略的本地`.env`中设置以下两项并自行填写`MEMORY_LLM_API_KEY`，再按部署说明启动：
+## LLM 使用披露（赛题要求）
 
-```dotenv
-MEMORY_CONFIG_FILE=configs/v1-bigmodel-enhanced.env
-MEMORY_LLM_BASE_URL=https://open.bigmodel.cn/api/coding/paas/v4
-```
+`offline` 形态不调用任何模型。`enhanced` 形态（`configs/release-enhanced.env`，OpenAI/Ollama 兼容端点）使用：
 
-该配置使用`json_object`及本地严格校验；协议连通不等于完整验收通过。详细限制和原始结果见[接入交接说明](docs/DEPLOYMENT.md)。
+| 用途 | 模型（配置项） | 失败行为 |
+|---|---|---|
+| 分组提取与修补 | `gpt-5.4-mini` 起步档，提取/核验/修补各可独立指定（`MEMORY_EXTRACTION_MODEL` 等当前为 `gpt-5.5`） | 能力故障（网络/超时/坏 JSON/宕机）→ 降档为确定性离线提取，`extraction_offline` 审计标记，HTTP 200 保持可检索 |
+| 证据核验 | 同上 `gpt-5.5` | 协议错一轮修补；核验通道不可用 → 降档离线方案（离线事实以逐字引证自证，不经语义核验）；**模型健康但语义认证"不确定/不独立" → 保持拒绝，不降级** |
+| 擦除独立性 / 源擦除 / 状态转移 | 同上 `gpt-5.5` | 能力故障 → 确定性方案（全候选擦除 / 全标 uncertain）+ 审计标记 |
+| 嵌入 | `nomic-embed-text`（本地 Ollama） | 不可用 → 词法路由降级（`embedding_lexical`） |
+| 兜底与 rerank 位 | `gpt-5.4-mini`（`MEMORY_LLM_MODEL`） | rerank 关闭时仅作未映射用途兜底 |
 
-`make smoke` 额外调用已配置的 Answer/Judge，运行两类合成样本。公开数据先按 eval 文档下载和转换，然后使用 `make eval-locomo`、`make eval-memops`。`make report RUN_ID=...` 汇总；`make clean-run RUN_ID=...` 仅删除指定实验文件；`make down` 不删持久记忆。
+评测机不重放失败的 add，故一切**能力故障**降档提交而非 5xx；**语义拒绝**（退休指令不可绑定、证据不成立）保持 fail-closed——HTTP 200 必须意味着指令生效。写续传模式（`MEMORY_WRITE_CONTINUATION`，交互式客户端用）保持基座严格契约，**两份 release 配置均已关闭**。
 
-`make eval-init data` 初始化固定 Python Judge 依赖并下载、校验和转换公开数据；`make baseline-init` 初始化 U0/U1 对照并验证重构等价。源码对照、B0–B6 和单项消融的配置与运行方式见 [实验协议](docs/EXPERIMENT-PROTOCOL.md)。MemOps 每个问题实例的 ID 包含 evaluation setting，避免合并成对探针。端到端代理得分和上游生命周期诊断分别保存。
+## 接口契约
 
-正式赛题 Answer、500+500 选择器与 MemOps 判分映射尚未提供。当前公开复现使用明确记录的本地转换与模型，不能当成正式平台得分。历史实现、验证、评测与已知缺陷见[历史交付报告](reports/DELIVERY-REPORT.md)；模型列表、生成与本地向量验证见[模型配置](docs/MODEL-SETUP.md)。
+- `POST /add` `{request_id, user_id, session_id, messages:[{role, content, timestamp?}]}` → 200 `{success, request_id, user_id, session_id}`。同 `request_id` 重放返回回执；同 ID 异载荷 409。无 `timestamp` 的消息获得严格递增的合成排序标记（`time_basis='ordering'`），该标记不充当日期锚。
+- `POST /search` `{query, user_id, top_k}`（可带 `options`）→ 200 `{data:[{id, content, score, created_at}]}`，只返记忆证据，不生成答案。选择题候选嵌在题面时走四级匹配梯（精确等值 → 数字守卫 → 短串守卫 → 长文重叠），唯一精确命中强制 rank-1。
+- `GET /health` → 引擎就绪即 `200 {"status":"ok","models":"ok"|"degraded"}`；模型探测（GET /models，30s 缓存）只作元数据，不阻断就绪（降档提交使死端点下服务仍可用）。
+- `user_id` 为检索隔离键：每 user 独立 SQLite 目录 + 串行写队列；`add ≤ 115s`、`search ≤ 55s` 内部预算（低于赛题 120s/60s）。
 
-离线 Git 交付：`make bundle` 创建三个 bare 镜像，并实际验证递归克隆。内部相对 submodule URL 适配三个镜像相邻的目录；上传到代码托管平台时按实际位置配置远端。
+## 配置矩阵
 
-详细离线镜像、本地 embedding 导入和部署边界见 [部署说明](docs/DEPLOYMENT.md)。历史交付实例曾在 `http://127.0.0.1:8088` 通过增强模式 contract，配置与当时验证见 [部署验证](reports/deployed-service.json)；这不代表本次候选或该端口当前状态。历史1000题主评测、32组开发对照、完整诊断和两轮性能已有归档，本地配置结果331/1000，含36题服务错误。历史归档校验见`delivery/final-verification.json`，相应边界见[实施状态](docs/IMPLEMENTATION-STATUS.md)。
+| 配置 | 形态 | 提取 | 检索 | 说明 |
+|---|---|---|---|---|
+| `configs/release-offline.env` | offline | 确定性规则 | 词法 FTS5（porter 词干）+ 原文 | 零依赖，评测兜底形态 |
+| `configs/release-enhanced.env` | enhanced | LLM 分组（v5 组合） | 混合（语义+词法+实体）+ 原文 | source-first v10 家族（routing/batches/source-first）保持关闭：其"独立覆盖"表示依赖活模型、无法降档，可用性优先 |
 
-第二轮服务冻结`98c12e5`、eval`11da2a6`的1000题评测已经中断：LoCoMo 83/500，MemOps尚有348题无结果，不能报告新的完整准确率。原始现场与历史331/1000保留，监控已暂停。详见[中断归档](reports/round2-full-98c12e5-interrupted.md)；后续实施按[V1交付收敛计划](docs/29-V1交付收敛计划.md)推进。
+## 验证状态（2026-09-07）
 
-写入协议修正已合入服务主分支：[修复及验证](reports/v1-protocol-fix.md)。420项本地回归通过，6条原始输出回放通过；一个原始失败请求经2次真实模型调用完成修复和核验。尚未重跑100题，旧分数保持不变。
+- 单元 **422/422**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode）。
+- 契约校验器 **12/12**（offline 实例）。
+- 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中）。
+- 已知边界：offline 形态转述类查询召回有限（无嵌入），由 enhanced 形态覆盖；source-first v10 表示未纳入 release（见上表）。
+
+## 历史与归档
+
+本仓继承基座（EnochLi15/agent-memory-workspace）全部工程骨架（事务化存储、双源索引、幂等、写续传）与历史评测档案。基座 glm-5.2 两轮 100 题 0/100 写入失败的事故记录与限流修正见 [reports/](reports/)；其根因（source-first 严格契约 + 分组/核验覆盖失败即 5xx）已由本轮降档哲学修复并以测试固化。历史 GPT 331/1000 等归档仅作对照，不代表当前配置。部署细节见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)，模型准备见 [docs/MODEL-SETUP.md](docs/MODEL-SETUP.md)，实验协议见 [docs/EXPERIMENT-PROTOCOL.md](docs/EXPERIMENT-PROTOCOL.md)。

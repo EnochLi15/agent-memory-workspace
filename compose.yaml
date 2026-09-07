@@ -7,7 +7,10 @@ services:
     ports:
       - "127.0.0.1:${MEMORY_PORT:-8088}:8088"
     env_file:
-      - ${MEMORY_CONFIG_FILE:-configs/release-enhanced.env}
+      # Offline by default: `docker compose up -d` is non-interactive with zero
+      # external dependencies. Point MEMORY_CONFIG_FILE at release-enhanced.env
+      # to enable the LLM pipeline.
+      - ${MEMORY_CONFIG_FILE:-configs/release-offline.env}
     environment:
       HOST: 0.0.0.0
       PORT: 8088
