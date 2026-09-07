@@ -12,17 +12,18 @@
 
 ## 快速运行
 
-宿主机：Node 24.18.0、Python 3、Docker。使用 `nvm use`，然后：
+无需 Docker：使用 Node 24.18.0，执行 `nvm use`，然后：
 
 ```sh
 make init
 make build
-make up-offline
-make contract
-make down
+make local
+# 另一终端执行 make contract；启动终端 Ctrl+C 停止，数据保留。
 ```
 
-离线模式镜像完成构建后不需要网络或模型；停止默认保留卷。增强模式使用 `configs/release-enhanced.env`，在本地 `.env` 配置 LLM 连接与凭据后执行 `make up`；离线模式有独立配置和数据卷，凭据文件已被 Git 忽略。Ollama 的本地 embedding 模型必须预先准备，服务不会自动下载。
+默认原生离线运行不需要模型。`make local-dev` 自动编译并重启，`make local-debug` 支持 TypeScript 断点；配置模型后使用 `make local LOCAL_MODE=enhanced`。模式使用独立本地数据目录。详见[无 Docker 开发指南](docs/LOCAL-DEVELOPMENT.md)。
+
+Docker 保持可选：使用 `make docker-build` 构建镜像，`make up-offline` / `make up` 启动，`make down` 停止并保留卷。Ollama 的本地 embedding 模型必须预先准备，服务不会自动下载。
 
 BigModel候选使用 `configs/v1-bigmodel-enhanced.env`。在受Git忽略的本地`.env`中设置以下两项并自行填写`MEMORY_LLM_API_KEY`，再按部署说明启动：
 
