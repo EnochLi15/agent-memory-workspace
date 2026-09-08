@@ -1,0 +1,43 @@
+{
+  "protocol": "B30-tail-real-source-gate-validation-v1",
+  "at": "2026-09-08T19:06:10.046388+00:00",
+  "validation": "passed_expected_rejection",
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py",
+    "--campaign",
+    "priority-B30-tail-qa-20260909-01",
+    "--plan"
+  ],
+  "exit_code": 1,
+  "rejection": "Actual single-add HTTP 200 is required before planning",
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py\", line 116, in <module>\n    try:main()\n        ~~~~^^\n  File \"/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py\", line 106, in main\n    if args.plan:print(json.dumps(prepare(args),indent=2));return\n                                  ~~~~~~~^^^^^^\n  File \"/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py\", line 61, in prepare\n    previous,origin,samples,schedule,receipts,snapshot,files,dependencies=source()\n                                                                          ~~~~~~^^\n  File \"/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py\", line 47, in source\n    receipts=successful_prefix(database,case,prefix,results[0],schedule,data['namespace'])\n  File \"/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py\", line 31, in successful_prefix\n    if result.get('http_status')!=200 or result.get('http_attempts')!=1:raise ValueError('Actual single-add HTTP 200 is required before planning')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: Actual single-add HTTP 200 is required before planning\n",
+  "tail_campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-tail-qa-20260909-01",
+  "tail_campaign_existed_before": false,
+  "tail_campaign_exists_after": false,
+  "plan_created": false,
+  "tail_started": false,
+  "new_model_calls": 0,
+  "actual_single_add": {
+    "campaign": "priority-B30-segment30-add-20260909-01",
+    "http_status": 503,
+    "error_code": "EVIDENCE_VALIDATION",
+    "revision_before": 30,
+    "revision_after": 30,
+    "receipt_present": false,
+    "integrity": "pass",
+    "failed_write_logical_hashes": {
+      "before": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3",
+      "after": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3"
+    }
+  },
+  "source_files_before_and_after": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/runtime.json": "c19a43268a8ddd46a1ca33d9072dcfd24065ce074da281d59417189cbb67d768",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/summary.json": "2e414180998d49bb0a33c69a75e866fac337cd80d445b5b8f41307f289a19f2a",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/results.private.json": "177f3a8dfe0639682cc947b327945705e9dd805bfaadec21ddd82a41e13855d8",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/model-calls.jsonl": "217dae72a2e3c4f279e7affdd53839524da743899ffef6d19650a721b7be5ec3"
+  },
+  "source_files_unchanged": true,
+  "scope": "One real-source --plan rejection check only. No candidate, adapter, old script, answer, score or database was changed. Successful-prefix gate remains closed."
+}

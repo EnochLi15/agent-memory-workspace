@@ -1,0 +1,144 @@
+{
+  "candidate_commit": "b8d501f88dfddb1d4607cece7e88980aa8729790",
+  "campaign": "priority-B30-segment30-add-20260909-01",
+  "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+  "conclusion": "The lexical fix triggered and the preferred_name operation passed this new real semantic verification. The remaining failure concerns source citation and semantic coverage of the related name_reason record, not recurrence of the old lexical rejection.",
+  "http": {
+    "sample_id": "B30_forget",
+    "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+    "http_status": 503,
+    "elapsed_ms": 46773.245958,
+    "http_attempts": 1,
+    "error_code": "EVIDENCE_VALIDATION",
+    "transport_error": false,
+    "revision_before": 30,
+    "revision_after": 30,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3",
+      "after": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3"
+    },
+    "integrity": "pass",
+    "successful_degraded_add": false
+  },
+  "model_calls": [
+    {
+      "purpose": "extraction",
+      "trace_id": "f6e7b014-9ed1-481e-be4c-627166459e77",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 21714.091458
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "90b31390-0f61-4f5e-b0df-488a12de3ee4",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 6844.037333
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "a369c5e8-1163-4fbc-bb2d-ac598eedbca2",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 2377.3513329999987
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "173a7575-8581-4288-8e28-63d3c64148bb",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 15646.373209000005
+    }
+  ],
+  "feedback_trajectory": [
+    {
+      "stage": "extraction",
+      "facts": 14,
+      "operations": 1,
+      "issue": "The operation and replacement fact both mixed m10 preferred_name/family with m18 name_reason/empty scope. Initial repair feedback names target/property/scope and replacement mismatches; no source authorization error for operation 0."
+    },
+    {
+      "stage": "repair1",
+      "changes": "Narrowed fact 4 supersedes and operation 0 target to m10; appended operation 1 for m18 name_reason.",
+      "issue": "Appended operation 1 cited the updated state statement (either name accepted), not the direct tracking-retirement instruction. Its binding resolved but source authorization was false.",
+      "next_scope": {
+        "fact_indices": [],
+        "operation_indices": [
+          1
+        ],
+        "source_indices": [
+          6
+        ]
+      }
+    },
+    {
+      "stage": "repair2",
+      "changes": "Removed only operation 1; retained preferred_name operation 0 and the supported replacement.",
+      "issue": "No direct instruction was missing according to the lexical obligation alarm, because operation 0 still covered that span; this alarm does not certify complete semantic target coverage."
+    },
+    {
+      "stage": "verification",
+      "fact_checks": {
+        "supported": 14,
+        "total": 14
+      },
+      "operation0": {
+        "authorized": true,
+        "target_matches": true
+      },
+      "replacement0_supported": true,
+      "finding": "Message 6 missing: the related active name_reason record remains uncovered by the request to stop tracking the specific preference. The actual model verdict rejected completeness after both repairs were already spent."
+    }
+  ],
+  "gate_evidence": {
+    "one_direct_obligation": {
+      "message_index": 6,
+      "start": 179,
+      "end": 250
+    },
+    "operation0_source_authorized_in_all_three_proposals": true,
+    "repair1_added_operation1_source_authorized": false,
+    "final_operation0_real_semantic_verdict": [
+      0,
+      true,
+      true,
+      null
+    ]
+  },
+  "comparison_to_ce935": {
+    "old_report": "reports/priority-B30-segment30-incident-20260909.json",
+    "old": "Original direct tracking command failed lexical authorization; the second repair removed the preferred_name operation, leaving zero operations and a semantic omission.",
+    "new": "Direct command passes lexical authorization; preferred_name operation remains and passes semantic verification. Appended name_reason operation used a different, non-instruction source and was removed; final omission is the related reason record.",
+    "limitation": "Fresh extraction differs (14 rather than 11 facts and additional replacement/operation work), so the entire model-output trajectory is not a controlled same-output comparison."
+  },
+  "local_exact_replay": {
+    "recorded_packets": 4,
+    "all_system_and_input_hashes_match": true,
+    "outputs_unchanged": true,
+    "same_terminal_error": {
+      "name": "Error",
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Evidence still fails semantic verification after repair"
+    },
+    "cloud_calls": 0,
+    "embedding_calls": 0,
+    "commit_attempts": 0,
+    "snapshot_revision": 30,
+    "snapshot_sha256": "463d55c50b58df11e65948d901664560b4c2139373bb1172ce80b336a940a269",
+    "snapshot_unchanged": true,
+    "source_database_untouched": true
+  },
+  "boundary": "Do not automatically assign the direct command to all name/family records, assume it authorizes m18, increase repair rounds, or bypass final semantic verification. A candidate source hint, if pursued separately, remains subject to target binding and a new semantic verdict.",
+  "artifact": "artifacts/priority-B30-segment30-candidate-incident-20260909"
+}

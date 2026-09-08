@@ -1,0 +1,76 @@
+{
+  "status": "frozen_for_new_single_add_evaluation; lexical_gate_fix_only",
+  "base_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+  "candidate_commit": "b8d501f88dfddb1d4607cece7e88980aa8729790",
+  "candidate_dist": "artifacts/priority-b30-tracking-intent-fix-20260909/candidate-dist",
+  "candidate_manifest": "artifacts/priority-b30-tracking-intent-fix-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "c886e1f869f865e73d4cebdb9ef28362319cc926c850f5f834fd31506df7947a",
+  "dist_files": 141,
+  "incident_report": "reports/priority-B30-segment30-incident-20260909.json",
+  "change": "Recognize a complete no-need-to-worry-about-tracking retirement statement with a bounded concrete-reference object. This narrow branch rejects tentative, quoted/reported, conditional, question, negative, and tracking-the-management-of-forgetting forms; it checks tentative cues before speaker-prefix removal. No other recognition branch, operation target binding, repair limit, or semantic guard changed.",
+  "tests": {
+    "initial_failure_first": {
+      "tests": 10,
+      "passed": 2,
+      "failed": 8,
+      "log": "tracking-retirement-red.txt"
+    },
+    "review_prefix_failure_first": {
+      "tests": 10,
+      "passed": 9,
+      "failed": 1,
+      "log": "tracking-prefix-red.txt"
+    },
+    "final_targeted": {
+      "passed": 10,
+      "failed": 0,
+      "log": "tracking-retirement-final-green.txt"
+    },
+    "build_passed": true,
+    "full_service": {
+      "passed": 598,
+      "failed": 0,
+      "log": "full-test-final.txt"
+    },
+    "independent_review": "next_eval_risk: final 10 tests plus 25 additional bounded negative checks passed; no remaining limited-scope blocker"
+  },
+  "recorded_output_comparison": {
+    "original_outputs_held_fixed": 2,
+    "new_stage_sequence": [
+      "extraction",
+      "repair",
+      "verification"
+    ],
+    "first_extraction_system_and_input_identical": true,
+    "repair1_changed_input_fields": [
+      "REPAIR_FEEDBACK"
+    ],
+    "repair1_scope_and_failed_proposal_identical": true,
+    "repair1_output_target_ids": [
+      "m10"
+    ],
+    "repair1_output_scope": "family",
+    "new_verification_facts": 11,
+    "new_verification_operations": 1,
+    "new_operation_predicate": "preferred_name",
+    "new_operation_scope": "family",
+    "m18_name_reason_not_targeted": true,
+    "new_verification_contains_required_operation_and_target_context": true,
+    "original_repair2_and_zero_operation_verification_not_reused": true,
+    "stop": "Before unseen semantic verdict; no positive semantic output supplied and no prepare/commit success claimed.",
+    "replay_report": "artifacts/priority-b30-tracking-intent-fix-20260909/replay-report.json"
+  },
+  "isolation": {
+    "cloud_calls": 0,
+    "embedding_calls": 0,
+    "qa_calls": 0,
+    "commit_attempts": 0,
+    "snapshot_revision": 30,
+    "snapshot_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391",
+    "snapshot_unchanged": true,
+    "failed_receipt": null,
+    "main_checkout_untouched": true,
+    "source_database_untouched": true
+  },
+  "next_step": "Run the root-scheduled single original failed add against this frozen candidate. A new semantic verdict and any required erasure review are still required; no QA score or write recovery can be inferred from held-output replay."
+}
