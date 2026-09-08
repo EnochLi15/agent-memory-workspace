@@ -47,10 +47,10 @@ make down
 
 ## 验证状态（2026-09-07）
 
-- 单元 **431/431**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 7 项、多源佐证 2 项）。
+- 单元 **434/434**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 10 项、多源佐证 2 项）。
 - 契约校验器 **12/12**（offline 实例）。
 - intent v2 全量回归：LoCoMo refined 1,382 题 {CURRENT:1376, HISTORICAL:5, TRAJECTORY:1} 零误报；MemOps 纵向 134 去重对 32/32 命中 TRAJECTORY。
-- 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**聚合卡端到端**（跨会话累积→单卡全值→forget 全路径清→干净重建）、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中且聚合卡照常产出）。
+- 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**聚合卡端到端**（跨会话累积→单卡全值→forget 全路径清且兄弟成员原文零连坐→复述零复活→干净重建→restore 成员回归家族卡）、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中且聚合卡照常产出）。
 - 已知边界：offline 形态转述类查询召回有限（无嵌入），由 enhanced 形态覆盖；source-first v10 表示未纳入 release（见上表）。
 
 ## 历史与归档
