@@ -1,0 +1,54 @@
+{
+  "status": "frozen_local_integration",
+  "commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+  "base_commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+  "reviewed_cherry_pick": "d44a5bbe28fb38fdce6571e7b7d95d4f39bb3a73",
+  "candidate_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-focus-fallback-integration-20260909/candidate-dist",
+  "importable_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-focus-fallback-integration-20260909/service/dist",
+  "manifest": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-focus-fallback-integration-20260909/final-manifest.json",
+    "sha256": "0b43eb46dd1c7c189f386e57d4f61188edca24d1eda7f119e6be5fa7eb65c61c",
+    "dist_file_count": 144
+  },
+  "scope": {
+    "conflicts": 0,
+    "extra_code_edits": 0,
+    "changed_files": [
+      "src/extraction.ts",
+      "tests/erasure-fallback-guard.test.ts",
+      "tests/review-regressions.test.ts"
+    ],
+    "exact_reviewed_patch_sha256": "00bf897c776fb1a478a83de2a3f90e81decabd7d826370f26dfc8e75c02c3131",
+    "base_manifest_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/final-manifest.json",
+    "base_manifest_sha256": "70a4b158a4e6e25b6db211c820574e6909e1ef67987f4cff2b8d0726fa4a7efe",
+    "base_candidate_dist_unchanged": true,
+    "inherited_query_focus_source_files_unchanged": true,
+    "clean_worktree": true
+  },
+  "validation": {
+    "full_passed": 703,
+    "full_failed": 0,
+    "full_cancelled": 0,
+    "full_skipped": 0,
+    "duration_ms": 12405.346292,
+    "build_passed": true,
+    "queryFocus_default_off_verified_by_configFromEnv": true,
+    "cloud_calls": 0,
+    "new_qa_calls": 0,
+    "deployment_performed": false
+  },
+  "log_sha256": {
+    "integration-build.txt": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "integration-full-tests.txt": "632798df94e8e16c6f569bef667c538ecc9145e564eebb952f07dbea59552f4c"
+  },
+  "default_query_focus": false,
+  "behavior": [
+    "The query-focus implementation and configuration are byte-identical to frozen 9c7 source files.",
+    "The only integrated patch removes deterministic erase/retain fallback for nonempty ambiguous erasure candidates, preserving fail-closed behavior."
+  ],
+  "limitations": [
+    "This is a local integration baseline. The currently authorized 16-question QA stays pinned to 9c7cf1bc and is not attributed to this integration.",
+    "The erasure fallback guard rejects unresolved nonempty ambiguous erasure work; it does not establish that B14 has recovered.",
+    "queryFocus remains disabled by default and requires an explicit flag. Actual third-party focus is not proof that every third-party fact is relevant."
+  ]
+}

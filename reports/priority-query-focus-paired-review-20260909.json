@@ -1,0 +1,556 @@
+{
+  "status": "REAL_FOCUS_OFFLINE_PAIRED_REVIEW_NOT_NEW_QA",
+  "candidate_commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+  "focus_results_sha256": "560e9ffd7f7f766984d03eb47892674342620a5ad4d95cd770c98147a20ab582",
+  "original_reproductions_exact": 16,
+  "unified_reproductions_exact": 16,
+  "inspected_queries": 16,
+  "context_identical_count": 5,
+  "coverage_table": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-query-focus-coverage-table-20260909.json",
+  "coverage_table_sha256": "2e07fd6e2aee43fc37deb45731e7a29136f2ebc99ebf8832b73f75802f92e031",
+  "primary_result": "B03 p1/p5 missing evidence and B30 p3/p5 target evidence improve. B30 p1 remains unchanged due to the actual self_state classification. A06 own-state p1/p2/p3/p5 are fully preserved, including the unique booking.",
+  "limitations": [
+    "Actual focus results only; no oracle label replacement or retry.",
+    "This report does not generate new Answer/Judge outcomes. More selected facts, fewer rows, or more source coverage are not accuracy scores.",
+    "other_people does not certify every other person is relevant. A06 p4 adds unrelated spouse/pet distractors, and changed B03/B30 queries also retain or add near-match people.",
+    "Exact erased-ID/full-claim absence is a limited read-only guard, not a fresh semantic privacy adjudication."
+  ],
+  "rows": [
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p1_operation_trace#longitudinal_operation#1",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 31,
+      "baseline_tokens": 5999,
+      "candidate_tokens": 5981,
+      "added_ids": [
+        "0fc37bf776108508078023b6aef11dbbcfa5790ea4385fd1a358b15fe371eca2",
+        "29b143dbfe5bf433a0a4034bb59c4516a4d20d028c59d277be55235fa93b1034",
+        "3338ca02d798732e9d2f0ec1cbf9d610e3370121d8d287e10ee3baec432c7b92",
+        "8dab4d7da94c7cd02e6a28ed984f0c10a78c2b946fac67a7361a7e5017b00ecc",
+        "9ff1f626f1bc4978686496240ad79fe4e295dfb9d9491e85e5017475d1effc7d",
+        "b25b00259087327ec4a5e16ee173d2286c3d7899f760f739b1a9cfe6abf38562",
+        "deee71cb05de08e3b85f5e298750efd92a863c41995b86cf437445bdaeb3d6d2",
+        "e036ba5a859ae52d6affcbc82f1142e4081ba7c4c116f9bab704ffc45b9949d3",
+        "fbd030b84301bc9ba035d9482915011cc5290fbccf051f566b574c649a05f6de",
+        "fe35ccaace371c20e5a997d213fba4958ee2ae5f9558522e5be333f2daf43236"
+      ],
+      "removed_ids": [
+        "836b5263e42d83214e89feea7567c6d505a37890dfc241fdeced5b6b2f55f218",
+        "8556bafdfc77b7dc6cfa77cca3a78e9091547af137f81ad4c58d5242bd3e8d46",
+        "cb550399931d10c4cc9750eade9b9c85896df8c01e6d78c9a52f18972c85801e",
+        "eb514eb5191b683301fa8b352be5b2331dcd5d5c0695ea01095c1c5a342961f8",
+        "event-21c1a954b0f78f3d4135414098996a1cfb0da4f458f4cc46007e6ee781f94b02",
+        "event-4b769f19335cbfe2ce41b62c2927dcac972b00e49b692904dd496e8113e9abd4",
+        "event-59ebe9bac6ba6f5304f646bbded7e3f742c48a8aa4515a155e81e7eacc8aa44b",
+        "event-bfb6aa05decfc1ac50286b932633781e758e188b1314baea2d04f2dd89424a29",
+        "event-ebd4c5821f9bc6ed8004071a57d4a88bb6d60de15dbd941fdd0ffc540667556f",
+        "event-f70b51223c73664712feb48ad40a596d65a28f900900ad1f11350d09c9262a28",
+        "pattern-49537b846eeb3fafa8c0c0d1f227f64899d962bfc816b263ead28a138250191d"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Both previously missing member/entry-role and executive-title evidence become complete. Executive title is carried by full source context on the newly selected manager fact, despite no separate title fact. Same-name other-team distractor remains; no new Answer/Judge."
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p2_target_binding#longitudinal_operation#3",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5688,
+      "candidate_tokens": 5739,
+      "added_ids": [
+        "1dd0022667ac6ab0b114a4ebd87f4964841f5f13da7d9b4a62beead4b685af57",
+        "29b143dbfe5bf433a0a4034bb59c4516a4d20d028c59d277be55235fa93b1034",
+        "8dab4d7da94c7cd02e6a28ed984f0c10a78c2b946fac67a7361a7e5017b00ecc",
+        "b25b00259087327ec4a5e16ee173d2286c3d7899f760f739b1a9cfe6abf38562",
+        "dbe27358049815d595d0872ffd24d265d9bc11f573e71f9e77568b18eabc68fe",
+        "e036ba5a859ae52d6affcbc82f1142e4081ba7c4c116f9bab704ffc45b9949d3",
+        "fe35ccaace371c20e5a997d213fba4958ee2ae5f9558522e5be333f2daf43236"
+      ],
+      "removed_ids": [
+        "02120bf04f99e835df1a1f7a55bd7422019711ac462d3591afe1fe2559d46b00",
+        "1f59807ddedb5902c12a8253eeef99bc4d0296ed4fbdb28b2f478c26c7471d3b",
+        "5c53b14072cb111aa41653c404772ad8f25be4fed19490d999e4f74f30d75142",
+        "acd331be95f75564a3d044a33cdab2ac0d07e4270b40b679371630db9e8c502e",
+        "b7b162a832d5a96138ed5731374f2c768e483d60894af9292dbfac10c21810bb",
+        "c5c671080c8884dd25aee011d4d9bd5ad542125b3a492bd413a6666cefe468db",
+        "pattern-49537b846eeb3fafa8c0c0d1f227f64899d962bfc816b263ead28a138250191d"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Previously correct teammate-versus-directory title distinction retains full relevant evidence. More organizational and other-team facts enter; no proven new score or regression."
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p3_state_transition#longitudinal_operation#5",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5737,
+      "candidate_tokens": 5666,
+      "added_ids": [
+        "0fc37bf776108508078023b6aef11dbbcfa5790ea4385fd1a358b15fe371eca2",
+        "7cd75ddc6f016080bb200a50fbdb2b6a162ea923b34b0b0528ed04f1307d7f17",
+        "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+        "c2f476ef8656c58bf008fe9ee6556af8166407937fcf16ea0a6c7f65b8f9514d"
+      ],
+      "removed_ids": [
+        "15ff0cfdc405074b3989b6a7e31a2845e6ff568a51976f5b24d6d0511f9d0635",
+        "5b74e026b8c1d9c29dd7aa8ab60b91d9d7e8a1a7244a2389131c0c2b605ce50c",
+        "5c6f881da8ac077945f91c823a00d6f6dcc6830393934d63eeede1694271d6ac",
+        "b7b162a832d5a96138ed5731374f2c768e483d60894af9292dbfac10c21810bb"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Previously correct manager/executive-chain evidence is retained; current executive title is now a directly selected complete fact."
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5395,
+      "candidate_tokens": 5490,
+      "added_ids": [
+        "1dd0022667ac6ab0b114a4ebd87f4964841f5f13da7d9b4a62beead4b685af57",
+        "29b143dbfe5bf433a0a4034bb59c4516a4d20d028c59d277be55235fa93b1034",
+        "3338ca02d798732e9d2f0ec1cbf9d610e3370121d8d287e10ee3baec432c7b92",
+        "7cd75ddc6f016080bb200a50fbdb2b6a162ea923b34b0b0528ed04f1307d7f17",
+        "8dab4d7da94c7cd02e6a28ed984f0c10a78c2b946fac67a7361a7e5017b00ecc",
+        "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+        "b25b00259087327ec4a5e16ee173d2286c3d7899f760f739b1a9cfe6abf38562",
+        "dbe27358049815d595d0872ffd24d265d9bc11f573e71f9e77568b18eabc68fe",
+        "e036ba5a859ae52d6affcbc82f1142e4081ba7c4c116f9bab704ffc45b9949d3",
+        "fbd030b84301bc9ba035d9482915011cc5290fbccf051f566b574c649a05f6de",
+        "fe35ccaace371c20e5a997d213fba4958ee2ae5f9558522e5be333f2daf43236"
+      ],
+      "removed_ids": [
+        "0eb0ffb91b5f5425bec47a661eb025bf664baecdb76a11aa1e056221d8b66b36",
+        "13e2b08ef99bcb883ad497e9fecdf8fe6a6ce8ef0b56285c77665558d445bce3",
+        "1ad14399aa52ddf06bd2d1f3b8128efc4f917791e9a1395f4c282d5a0fe0bccb",
+        "27c740308f1a7ae55a8a12bc2c736bb28d9199c045f169ae3ea09d4b71ff85d4",
+        "6905c4b8325c3054ffaf25e4902142037b243a1b03f3db2684101394f1086dab",
+        "72f806a042a36aab3e4043734e55f7006c8ef7891f62c1411c9e0302fc164aa9",
+        "a1ac69d89a70e4b208966e35f64091b2bea1be32ad3a6e9c16a04bd91798b009",
+        "b3e182148f076fb07e4025cea318593201601e8d3a0a2ea2445363c55d9a2023",
+        "d535f5c3e1a88eaf78b06a0fffd08c9057829fe61d06b9e4c0d17f69b514c8fd",
+        "fa6a19c6f8a5d55335d52c9462950cf18444ed1de8972576b9d0738435f850d3",
+        "pattern-ba51e307e3a5dd6ed9bdd3026eafbba4541aa8214565ced930d4ccf0006bb8e5"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Previously correct official-title evidence remains complete; unrelated organizational people also enter."
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p5_operation_application#longitudinal_operation#9",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5651,
+      "candidate_tokens": 5727,
+      "added_ids": [
+        "1dd0022667ac6ab0b114a4ebd87f4964841f5f13da7d9b4a62beead4b685af57",
+        "1e645ee77ba9dd6757bbcab04699b0923d799ffdc869620a2a467bb09fbf4dd3",
+        "29b143dbfe5bf433a0a4034bb59c4516a4d20d028c59d277be55235fa93b1034",
+        "3338ca02d798732e9d2f0ec1cbf9d610e3370121d8d287e10ee3baec432c7b92",
+        "7cd75ddc6f016080bb200a50fbdb2b6a162ea923b34b0b0528ed04f1307d7f17",
+        "8dab4d7da94c7cd02e6a28ed984f0c10a78c2b946fac67a7361a7e5017b00ecc",
+        "9ff1f626f1bc4978686496240ad79fe4e295dfb9d9491e85e5017475d1effc7d",
+        "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+        "b25b00259087327ec4a5e16ee173d2286c3d7899f760f739b1a9cfe6abf38562",
+        "c2f476ef8656c58bf008fe9ee6556af8166407937fcf16ea0a6c7f65b8f9514d",
+        "dbe27358049815d595d0872ffd24d265d9bc11f573e71f9e77568b18eabc68fe",
+        "e036ba5a859ae52d6affcbc82f1142e4081ba7c4c116f9bab704ffc45b9949d3",
+        "fe35ccaace371c20e5a997d213fba4958ee2ae5f9558522e5be333f2daf43236"
+      ],
+      "removed_ids": [
+        "09bcfb48796e42e9391d6e89fc4e9a075956832c46c3336f65c1224f619b4490",
+        "4958994f4edfe9fefbc6348d24b27d16f48dba8f3da70e00bd0ac44760d4d9dc",
+        "4bfdceaa969e10d3d53e4949b761f6b12462ec5f9dfb74fd4cf72f6112feac25",
+        "69d1888bfc0d4107ca9b24b096db4575500e772a0f0a6864e7b0d5aecd1d8e04",
+        "6f6f9f57992c5af1537aec39c38673deb6f94858eaf3a6c80c7f1b5396d20286",
+        "86eb00ab1ba6e6ca529e9cbef7f85c9892873f2dc3a9e43d75f430c081b8304d",
+        "9b46aa2db8f10ef4aa0ab227052afb590b614a0873d3beb0d719cb7c6a2670dd",
+        "be7cfe862443572300c778eae4e4cfd4ea4a08dd9ab80bd569124a0ac01ad04a",
+        "c9f8404356bbc47b066ce70963cefc01eca71c1db40d95da2b75dd59d55bca16",
+        "e66499fee0c42559e14b70dfe52496910cd02f6c971debb192d3cab3ec14028a",
+        "f89b73239ecb5f3e34cecdaa5795fd7f3d4768db69bd892ce4e396b462e8e2f4",
+        "pattern-4562f554ae60dd66a2c51c14d11c64f260cf8354651afd78d25f348e5f662857",
+        "pattern-4a3f7ea57ef65d8538ee9a52e993c642ca42d1978ab0780ff909282762a4af63"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Previously absent interim responsibility, exact official title, executive title and management chain all become complete claims and/or linked full source bundles. Foundational analyst contribution remains available."
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p6_remember_negative#longitudinal_operation#11",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5723,
+      "candidate_tokens": 5529,
+      "added_ids": [
+        "0fc37bf776108508078023b6aef11dbbcfa5790ea4385fd1a358b15fe371eca2",
+        "1dd0022667ac6ab0b114a4ebd87f4964841f5f13da7d9b4a62beead4b685af57",
+        "7cd75ddc6f016080bb200a50fbdb2b6a162ea923b34b0b0528ed04f1307d7f17",
+        "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+        "c2f476ef8656c58bf008fe9ee6556af8166407937fcf16ea0a6c7f65b8f9514d",
+        "fbd030b84301bc9ba035d9482915011cc5290fbccf051f566b574c649a05f6de"
+      ],
+      "removed_ids": [
+        "02120bf04f99e835df1a1f7a55bd7422019711ac462d3591afe1fe2559d46b00",
+        "0eb0ffb91b5f5425bec47a661eb025bf664baecdb76a11aa1e056221d8b66b36",
+        "72f806a042a36aab3e4043734e55f7006c8ef7891f62c1411c9e0302fc164aa9",
+        "a1ac69d89a70e4b208966e35f64091b2bea1be32ad3a6e9c16a04bd91798b009",
+        "eb822c2116d269a23ce2a5198ac24de201f841a759f9e2beefa92b96127bece7",
+        "pattern-ba51e307e3a5dd6ed9bdd3026eafbba4541aa8214565ced930d4ccf0006bb8e5"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "More organizational facts enter a previously correct missing-employee-ID question. No employee-ID fact is introduced; abstention accuracy has not been retested."
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "actual_focus": "self_state",
+      "context_identical": true,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5984,
+      "candidate_tokens": 5984,
+      "added_ids": [],
+      "removed_ids": [],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual semantic result is self_state; full context is identical and the previously missing new naming state is still absent. This is an unresolved narrator-versus-owner classification miss, not a repaired retrieval outcome."
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p2_target_binding#longitudinal_operation#3",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5052,
+      "candidate_tokens": 5380,
+      "added_ids": [
+        "03d4bf48858c09b274bb93173384eb8e940a67df841eccec1a0a19d0fb7b84ac",
+        "243cc7bf8ce806a783f3bde437be659d0725d6a47f17a3002582ac12e0857f56",
+        "4e27aff535e0de5d7c7d26b9cfdb6f189992c4301b39d92838480de40720c748",
+        "723cf65a0b0fff03898a1f24faa6b9e4a70d5af60c30c18ebaa9e29307a6d0b5",
+        "761e96d3a3f931c260ef77cd75518f3c9115946d996835e8b723eb835d555a6d",
+        "8705363ef9d5a89bba7c2fd8bfa824d06e554f02ae15b4da2b9e167d1ee7f9ce",
+        "8ddc50bf2d977988881103403e9077a9e4cf51e454a093a18593729a320928e2",
+        "8f220e5d740c0429b71f06bf38644873838e5c18dd89110155ee8d94924c9e04",
+        "a1c03daf71527270a77cfb5fc37ac87a2809c4d950c32bd7876050669feaf9b9",
+        "aef9f16a04b563914b09d5ddcdfc4cd49b3f0537a0bb419f399db2c727cb48ce",
+        "b7de58958d5bef539c853ee8d2d052392c3a492d405a1a56045ee974547fc960",
+        "c1ed4cd5ea9c5e3d51636621a322cf8a47de26a79ed494dcc0861c83f8dc06dc",
+        "cbcac4035d7e9a48faac5d07aa83b957fa49a2d9b57e6168fb95ef47a4d3a242",
+        "e1b7a454787d9abf0afb09c0eb5a50dfd7ab804b6a36d37e5298fdcd483265ae"
+      ],
+      "removed_ids": [
+        "0b47640392466e572269869d92d6a21f0ff6b8a66a994f6500db16234806b94f",
+        "0d8a48998462cb2ba52ff68e8bcaf7b5ca224b50f6a3a749dca126a71f39f2b1",
+        "14b0e207cae76c7bb1061764f8e0943f18a605b71e8063da7d063bfad390aae9",
+        "3c3b0ecd3ebe9c316615eaf24482af1af4706e26a8ef477685cfef3d244b644d",
+        "45a9d1eca08e7aa36e7c1f8c9da6e013a7c00145fa09071c92b9577b5e29c2fa",
+        "5013f0ceeaaed170b9c4a015b293c2a52dce55cadb1724550aebdda6b525ae8e",
+        "61e5c77d7f63e3076862a642b02922d144b6668fc1f4977c35f25dbf44e64340",
+        "6d9cf5551b2c95fff8a32f122bab310f652dee8e8c7924cf031461ebb1748c3e",
+        "83bdb6a89398fc32815af87860a10286983f6a1e5525b3156091b3ec0c072fbe",
+        "aae6d31b782dbce1db6f10c434b003c5a06b16f80e7d79256a222517f128c3b5",
+        "bcf05fe6617fef4c4f98cfd1b051c9e5d3e13456aac12e4b8c5da519012a01d8",
+        "ccba6bea93ec7b799dc6e2020d2667f0f83ab09760ba3cd39623c42cd4e197ad",
+        "f44d4a83b5aabb4769b00a808d8d650d369a4763aa70a8e8055c2cfe49676965",
+        "fe23b284e67773a9ea0f0a58bd3059818f32746347ea0a6037f3c63455fc09ad"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Current other-person facts enter, but the erased identity trace gap is not repaired. No erased record or full erased claim is returned."
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p3_state_transition#longitudinal_operation#5",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5501,
+      "candidate_tokens": 5254,
+      "added_ids": [
+        "03d4bf48858c09b274bb93173384eb8e940a67df841eccec1a0a19d0fb7b84ac",
+        "243cc7bf8ce806a783f3bde437be659d0725d6a47f17a3002582ac12e0857f56",
+        "4e27aff535e0de5d7c7d26b9cfdb6f189992c4301b39d92838480de40720c748",
+        "761e96d3a3f931c260ef77cd75518f3c9115946d996835e8b723eb835d555a6d",
+        "8705363ef9d5a89bba7c2fd8bfa824d06e554f02ae15b4da2b9e167d1ee7f9ce",
+        "8ddc50bf2d977988881103403e9077a9e4cf51e454a093a18593729a320928e2",
+        "8f220e5d740c0429b71f06bf38644873838e5c18dd89110155ee8d94924c9e04",
+        "a1c03daf71527270a77cfb5fc37ac87a2809c4d950c32bd7876050669feaf9b9",
+        "a5840df7647ff30a72bb6248c810f24e39b7921345bf9cd6e78d0afa97803dea",
+        "aef9f16a04b563914b09d5ddcdfc4cd49b3f0537a0bb419f399db2c727cb48ce",
+        "b7de58958d5bef539c853ee8d2d052392c3a492d405a1a56045ee974547fc960",
+        "c1ed4cd5ea9c5e3d51636621a322cf8a47de26a79ed494dcc0861c83f8dc06dc",
+        "cbcac4035d7e9a48faac5d07aa83b957fa49a2d9b57e6168fb95ef47a4d3a242",
+        "e1b7a454787d9abf0afb09c0eb5a50dfd7ab804b6a36d37e5298fdcd483265ae"
+      ],
+      "removed_ids": [
+        "0d8a48998462cb2ba52ff68e8bcaf7b5ca224b50f6a3a749dca126a71f39f2b1",
+        "20324b8f1af9f5b9f760514edbebe2f136d42e836b2aab94e48f223f9a1a8d8b",
+        "457615a9fc47cd7b7334f4111c8f313e19cf3b187d0f93ec404adce395a3987a",
+        "4a04dbb67892dec2060985d18386f654b99844e8e2daf6cfb7fb10347a284512",
+        "4b8f0a0d5380089347ba645571a79f48d18648fe2f725924e6f405373d832224",
+        "65ffa1d346d28121356c10f78f57181964e167adc75ed822be5e4ab8c89634ea",
+        "698f26d38daac768a9ba9b8edb3dcf0ba673a01a28f25d9d7958bf3e927ab270",
+        "6daaffc8c97a814f9792c3cca79a6dcbf050d1b3f85cb293d8fae607b5e5a286",
+        "83bdb6a89398fc32815af87860a10286983f6a1e5525b3156091b3ec0c072fbe",
+        "ca970c6824f7c1e07305d8cde21d3591c8efed88f564788817ce78e8af53d260",
+        "dcacbf5f085d17bcd5f5e588da94b0535ec512236643aafdc76047956b0f0fed",
+        "pattern-664633a9d314ff388445e9d1c9d8a30ba6fd38e96ccd335b71f3c9558fbe4bfe",
+        "source-9fecb58b46bb9ee700013d1689ec3934478dc899a5ed74102e05e9ed22986367",
+        "source-e2f22cdc6f76f4929dd893e57de267f3a256fa73e1b9402b43adcd0855a31e16"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "The new either-name state and roommate full-name rule become complete direct claims with linked source quotes. Other unrelated-person evidence also enters."
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5688,
+      "candidate_tokens": 5928,
+      "added_ids": [
+        "03d4bf48858c09b274bb93173384eb8e940a67df841eccec1a0a19d0fb7b84ac",
+        "243cc7bf8ce806a783f3bde437be659d0725d6a47f17a3002582ac12e0857f56",
+        "4e27aff535e0de5d7c7d26b9cfdb6f189992c4301b39d92838480de40720c748",
+        "8705363ef9d5a89bba7c2fd8bfa824d06e554f02ae15b4da2b9e167d1ee7f9ce",
+        "8ddc50bf2d977988881103403e9077a9e4cf51e454a093a18593729a320928e2",
+        "a1c03daf71527270a77cfb5fc37ac87a2809c4d950c32bd7876050669feaf9b9",
+        "cbcac4035d7e9a48faac5d07aa83b957fa49a2d9b57e6168fb95ef47a4d3a242",
+        "e1b7a454787d9abf0afb09c0eb5a50dfd7ab804b6a36d37e5298fdcd483265ae"
+      ],
+      "removed_ids": [
+        "1f083416e43a1b00c6b1dd3d6404a9dc78523be096150d62b96f48978847c7bc",
+        "20324b8f1af9f5b9f760514edbebe2f136d42e836b2aab94e48f223f9a1a8d8b",
+        "371e50900d6e28d07573fae6df086639044929fca3c37bd4d27d1451c14dd33f",
+        "85b2c60588b7ad83e222233ac88c5113910e37c2ce952f4830e3cb57c38771cf",
+        "bcf05fe6617fef4c4f98cfd1b051c9e5d3e13456aac12e4b8c5da519012a01d8",
+        "c096c6990927ac2f133c92c497e246698a9a09e0039d0a246b90f80e686ae8d9",
+        "ca970c6824f7c1e07305d8cde21d3591c8efed88f564788817ce78e8af53d260",
+        "pattern-664633a9d314ff388445e9d1c9d8a30ba6fd38e96ccd335b71f3c9558fbe4bfe"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Previously correct roommate full-name evidence is preserved; a direct full-name preference fact is added while all four prior relevant context rows remain. More other people are also present."
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p5_operation_application#longitudinal_operation#9",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 32,
+      "candidate_count": 32,
+      "baseline_tokens": 5376,
+      "candidate_tokens": 5160,
+      "added_ids": [
+        "03d4bf48858c09b274bb93173384eb8e940a67df841eccec1a0a19d0fb7b84ac",
+        "243cc7bf8ce806a783f3bde437be659d0725d6a47f17a3002582ac12e0857f56",
+        "4e27aff535e0de5d7c7d26b9cfdb6f189992c4301b39d92838480de40720c748",
+        "723cf65a0b0fff03898a1f24faa6b9e4a70d5af60c30c18ebaa9e29307a6d0b5",
+        "761e96d3a3f931c260ef77cd75518f3c9115946d996835e8b723eb835d555a6d",
+        "8705363ef9d5a89bba7c2fd8bfa824d06e554f02ae15b4da2b9e167d1ee7f9ce",
+        "8ddc50bf2d977988881103403e9077a9e4cf51e454a093a18593729a320928e2",
+        "8f220e5d740c0429b71f06bf38644873838e5c18dd89110155ee8d94924c9e04",
+        "9de9e89ef1bbd2654099736f1dbcd6216c8df2908eb87b55aa7c45382fa736cf",
+        "a1c03daf71527270a77cfb5fc37ac87a2809c4d950c32bd7876050669feaf9b9",
+        "a5840df7647ff30a72bb6248c810f24e39b7921345bf9cd6e78d0afa97803dea",
+        "b7de58958d5bef539c853ee8d2d052392c3a492d405a1a56045ee974547fc960",
+        "cbcac4035d7e9a48faac5d07aa83b957fa49a2d9b57e6168fb95ef47a4d3a242",
+        "e1b7a454787d9abf0afb09c0eb5a50dfd7ab804b6a36d37e5298fdcd483265ae"
+      ],
+      "removed_ids": [
+        "02a5087d168330fbe2e1046b919d5d6e75fb8a446e3961fcc3b163430a528963",
+        "0b47640392466e572269869d92d6a21f0ff6b8a66a994f6500db16234806b94f",
+        "0d8a48998462cb2ba52ff68e8bcaf7b5ca224b50f6a3a749dca126a71f39f2b1",
+        "228ff0e172ab0c013facb7bd9889054d39d9996486404a215c11b9ba5e1b52a8",
+        "25ca219af7324feed25b247157da9fd16b04b693da8442331635abca8dc9f9b1",
+        "371e50900d6e28d07573fae6df086639044929fca3c37bd4d27d1451c14dd33f",
+        "41aa7cd2da72cf0ae48512891ba5de7db2d81b1089b026b48f1d455a1cb2024f",
+        "4a04dbb67892dec2060985d18386f654b99844e8e2daf6cfb7fb10347a284512",
+        "543820bdb2329db3a50fa6cf0241d01cd9e8a602d1aa7f7a384c379ec8953bac",
+        "57f1e4909a8097244066dd9aafa16f17c1109381fac4a4bdfbf5e812b9e1a5b0",
+        "6f48b4173b9b9251e902d098d0798864d71d6b9b9d200329cb6208de14d5fb29",
+        "9390642e80e67690a62f57ca8e9ece4da90367c8176c16e6c9bd32f58bbd46af",
+        "c096c6990927ac2f133c92c497e246698a9a09e0039d0a246b90f80e686ae8d9",
+        "d76152bfa1e3cb3940fd510938dfd010f7753b0c5a9c348321f9694d536e754f"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Both correct job-start-month and relative name-change claims enter in full. The longer timing fact has two of three original quotes; its entire stored claim and the date-bearing primary quote are present. Do not call the entire source bundle complete."
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "actual_focus": "self_state",
+      "context_identical": true,
+      "baseline_count": 17,
+      "candidate_count": 17,
+      "baseline_tokens": 5953,
+      "candidate_tokens": 5953,
+      "added_ids": [],
+      "removed_ids": [],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual self_state: complete context identical. Own-state evidence unchanged; prior diagnostic wedding decoy is not newly added."
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+      "actual_focus": "unknown",
+      "context_identical": true,
+      "baseline_count": 19,
+      "candidate_count": 19,
+      "baseline_tokens": 5989,
+      "candidate_tokens": 5989,
+      "added_ids": [],
+      "removed_ids": [],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual unknown: complete context identical. Existing private-detail/forget boundaries unchanged."
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "actual_focus": "self_state",
+      "context_identical": true,
+      "baseline_count": 28,
+      "candidate_count": 28,
+      "baseline_tokens": 5996,
+      "candidate_tokens": 5996,
+      "added_ids": [],
+      "removed_ids": [],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual self_state: complete context identical. Unique booking remains at position 26 with byte-identical rendered evidence, complete claim and both source quotes. All own-state plan details remain."
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "actual_focus": "other_people",
+      "context_identical": false,
+      "baseline_count": 17,
+      "candidate_count": 16,
+      "baseline_tokens": 5998,
+      "candidate_tokens": 5962,
+      "added_ids": [
+        "0c37f6d1495baea20108f4e059f903ae8634af33a9c6c5f9defef1a09cf8f58f",
+        "3601ad4534b4fdce883cb01be5c2b64faab198672c61bf0dadbd6d88d84e0115",
+        "6dadbb0309ff898a0ee17bdd3b61204fd0cdf372afa15fdf6effd5ee787480a9",
+        "pattern-cfb9d88ed79f5fb14fc4ccc9232f0572cf96b88f76b5ec3e0721bbe4aaa512fb"
+      ],
+      "removed_ids": [
+        "3716dcbb4491a467fc7d2be9fe4a5e935821eabd121c0b8c08948fb14af18f0a",
+        "6a8a2f835ac89124ec226ab170663fc37dbe663f3c98dd138114954baa6e1e71",
+        "795311f395f5ea114ba7dafc9670129736331798c8f564dfb804db8e34d5c54c",
+        "9999a438f1d2cb6ec225a782bb2740c18697558a49a68e14f876a35c9851411b",
+        "a877942c4a531c9263774aa2d6c986b33d14ccba813d92978cd6ae438fac3156"
+      ],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual other_people: the four existing friend-support/privacy-restraint context rows remain, and no erased record/full erased claim returns. Four unrelated spouse/pet rows enter while five own/background rows leave, including marriage/duration; this is added distractor risk, not an accuracy gain."
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+      "actual_focus": "self_state",
+      "context_identical": true,
+      "baseline_count": 20,
+      "candidate_count": 20,
+      "baseline_tokens": 5981,
+      "candidate_tokens": 5981,
+      "added_ids": [],
+      "removed_ids": [],
+      "erased_ids_or_complete_erased_claims_returned": {
+        "unified": [],
+        "candidate": []
+      },
+      "review": "Actual self_state: complete context identical."
+    }
+  ],
+  "database_checks": [
+    {
+      "dataset": "B03",
+      "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/B03-rev50.sqlite",
+      "revision": 50,
+      "sha256_before": "ca5c64a2c854beebd21bc8f486525a5506be8264dd2929cca3fc0915249cb1be",
+      "sha256_after": "ca5c64a2c854beebd21bc8f486525a5506be8264dd2929cca3fc0915249cb1be",
+      "original_source_sha256_still_matches": true
+    },
+    {
+      "dataset": "B30",
+      "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/B30-rev51.sqlite",
+      "revision": 51,
+      "sha256_before": "e3b913e8ec569d614a0c76aad7253f3a1adb23972c69ac280109f64eb0924ba8",
+      "sha256_after": "e3b913e8ec569d614a0c76aad7253f3a1adb23972c69ac280109f64eb0924ba8",
+      "original_source_sha256_still_matches": true
+    },
+    {
+      "dataset": "A06",
+      "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/A06-rev51.sqlite",
+      "revision": 51,
+      "sha256_before": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "sha256_after": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "original_source_sha256_still_matches": true
+    }
+  ],
+  "cloud_calls_by_reviewer": 0,
+  "new_qa_calls": 0,
+  "service_or_candidate_edits": 0,
+  "original_database_writes": 0
+}

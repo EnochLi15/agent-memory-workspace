@@ -28,6 +28,16 @@ B03 新单点在统一基底上将 `verificationResponseFormat` 设为 `json_obj
 
 B03 两道错题也指向检索选取：目标成员入职及职级、高管职级、临时组长身份、汇报链事实均仍为 active、confirmed，对应完整来源仍可用。p1 返回 32 条证据，其中 26 条属于 user、6 条为操作事件；p5 返回的 32 条全部属于 user。目标人物事实与完整来源被降权或因数量限制未选中，并非写入抽取遗漏或被遗忘操作删掉。记录中的融合候选名次与后续 pack 名次不同，不能直接用前者判断最终覆盖。
 
-下一步建立“用户自己的状态”与“用户提及的其他人物”的查询范围判定，并同时检查 B03、B30 和 A06 的遗漏、干扰反例。模糊问题保留原路径；不能仅凭 I/my、列表题或出现人物词就放宽范围。B14 的既有删除核验问题仍需单独解决，尚不适合再次启动 972 题全量。
+查询范围候选 `9c7cf1b` 已实现并冻结，692 项测试及构建通过。它只根据原查询判断属性属于用户、其他人物或无法确定；仅明确指向其他人物时取消实际人物事实的主体惩罚，原始来源和操作事件的权重、可见性规则保持。功能默认关闭，验证时显式启用；分类与向量计算并行，每次最多一次请求、512 个输出 token、8 秒上限，失败走原路径，有界缓存只保留有效结果。
 
-详细记录：[B03 最新评测](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-tail02-qa-results-20260909.json)、[B03 两题归因](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-tail02-error-attribution-20260909.json)、[B30 完整评测](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B30-tail-qa-results-20260909.json)、[检索诊断](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B30-A06-packing-diagnostic-20260909.json)、[查询范围设计](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-query-focus-design-20260909.json)、[B03 第 45 块成功验证](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-segment45-json-object-results-20260909.json)、[格式配置依据](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-source-format-recovery-design-20260909.json)、[统一修复基底](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-unified-repair-baseline-20260909.json)。
+一次 34 个查询的真实分类验证已完成，平均耗时 1.42 秒、最长约 3.03 秒，全部单次成功。18 个预先固定的独立对照中 17 个分类符合预期；唯一偏差是 unknown→self_state，两者均保留原检索路径，没有将用户自身或模糊范围错误扩大为其他人物。其余 16 个为原评测查询，模型只收到查询文本。
+
+用实际分类结果和原向量进行配对检索后，B03 p1/p5、B30 p3/p5 的关键主张和完整来源得到补充，B30 p4 的原正确依据保留。A06 p1/p2/p3/p5 的完整结果逐项不变，p3 的唯一预订事实、两条原引用及第 26 条的位置都保留。B30 p1 被实际模型分类为 self_state，原遗漏仍在；A06 p4 保留了朋友相关依据，却新增无关配偶、宠物证据。
+
+已于上海时间 05:57:23 启动 `priority-query-focus-qa-20260909-01`：固定上述 `9c7cf1b` 候选，152 次完整历史幂等回执、16 道原题，顺序为 B03、B30、A06，单 worker。新 Engine 正常运行分类、检索、回答和判分，没有用此前 34 次分类结果填充缓存。配置沿用成功 B03 的 JSON 模式，仅开启查询范围功能；配对覆盖变化本身不计作 QA 得分。
+
+另一个隔离候选 `d44a5bbe` 修补了分类器不可用时的删除降级：存在未核验的歧义事实时拒绝整次提交，避免仅凭共享来源或缺少值引用就删除独立邻居。689 项测试通过，本地对照验证拒绝后全表不变。这个缺口未触发最近 B14 的实际失败，因此它不代表 B14 已恢复；尚不适合再次启动 972 题全量。
+
+两个修补已无冲突合成后续候选 `8717d918`，703 项测试及构建通过，144 个产物两份哈希一致。当前这次 16 题仍归属 `9c7cf1b`；集成候选尚未进行新的真实评测或部署。
+
+详细记录：[查询范围真实验证](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-query-focus-diagnostic-20260909.json)、[16 题配对审查](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-query-focus-paired-review-20260909.json)、[降级删除修补](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-erasure-fallback-guard-20260909.json)、[B03 最新评测](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-tail02-qa-results-20260909.json)、[B03 两题归因](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-tail02-error-attribution-20260909.json)、[B30 完整评测](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B30-tail-qa-results-20260909.json)、[检索诊断](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B30-A06-packing-diagnostic-20260909.json)、[B03 第 45 块成功验证](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-segment45-json-object-results-20260909.json)、[格式配置依据](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-source-format-recovery-design-20260909.json)、[统一修复基底](/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-unified-repair-baseline-20260909.json)。
