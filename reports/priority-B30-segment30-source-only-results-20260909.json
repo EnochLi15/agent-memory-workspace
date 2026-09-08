@@ -1,0 +1,236 @@
+{
+  "protocol": "single-failed-add-readonly-result-v1",
+  "created_at": "2026-09-08T20:00:01.133291+00:00",
+  "campaign": "priority-B30-segment30-add-20260909-03",
+  "scope": "One real single-attempt unchanged HTTP add; no QA, score change, model replay, or new model call during this audit.",
+  "candidate": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "6727cd4fc9ab42a8ef6fbd277e61d2b361cbed5cb5ae35e77204b2c1c3db1958",
+    "commit": "484f188de0ee2e83a38e91914dde00ae77f582b4"
+  },
+  "compiled_files_verified": 141,
+  "result": {
+    "sample_id": "B30_forget",
+    "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+    "http_status": 503,
+    "elapsed_ms": 40249.914208,
+    "http_attempts": 1,
+    "error_code": "OPERATION_TARGET",
+    "transport_error": false,
+    "revision_before": 30,
+    "revision_after": 30,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3",
+      "after": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3"
+    },
+    "integrity": "pass"
+  },
+  "exact_prefix_receipts": 30,
+  "all_standard_receipt_fields_verified": true,
+  "runtime": {
+    "status": "failed",
+    "controller_pid": 7093,
+    "controller_identity": "Wed Sep  9 03:51:38 2026",
+    "controller_alive": false,
+    "children": {
+      "sleep-prevention": {
+        "pid": 7123,
+        "process_identity": "Wed Sep  9 03:51:39 2026",
+        "exit_code": -15,
+        "stopped_by_runner": true,
+        "alive": false
+      },
+      "service": {
+        "pid": 7125,
+        "process_identity": "Wed Sep  9 03:51:39 2026",
+        "exit_code": 0,
+        "stopped_by_runner": true,
+        "alive": false
+      },
+      "http-add-0": {
+        "pid": 7149,
+        "process_identity": "Wed Sep  9 03:51:39 2026",
+        "exit_code": 0,
+        "stopped_by_runner": null,
+        "alive": false
+      }
+    }
+  },
+  "actual_call_sequence": [
+    {
+      "trace_id": "8fc84fe5-adf5-4ea3-a4bc-7f0a51a70f27",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "record_sha256": "84e79459030a6a7aa3e30ae3a482c24f32500160260d07a769e3271e37774695",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+      "input_sha256": "207980118029de5dcdaa5502ef22330f51d851ab4f8a76a1397baed3a1104e6f",
+      "output_sha256": "af1061c3adadf0c7e032e2cb053a6f6b9ba4efc91ddd4a1d6045283e53691d1e",
+      "output_hash_method": "Exact UTF8 string or canonical sorted-key compact JSON for structured trace output",
+      "elapsed_ms": 19980.480875,
+      "verification_scope": null
+    },
+    {
+      "trace_id": "07905276-e4d9-49f1-9b44-efde7ad309d2",
+      "purpose": "repair",
+      "outcome": "ok",
+      "record_sha256": "7a5307db9ee9329ba3d1b8b2b5d6db1b01028de73abc7874c3018a7b5be0d395",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0",
+      "input_sha256": "8ab54e64f643c5cb24cbd2d9a30170121204e2647c745260b1e2e453bb73a517",
+      "output_sha256": "7d86e533338470c3ddf5b4f02490b7631a30248a90707f08cfe9c8214763db1d",
+      "output_hash_method": "Exact UTF8 string or canonical sorted-key compact JSON for structured trace output",
+      "elapsed_ms": 4902.156375000002,
+      "verification_scope": null
+    },
+    {
+      "trace_id": "30a78135-2090-4fb8-87e4-9c9861ac8863",
+      "purpose": "verification",
+      "outcome": "ok",
+      "record_sha256": "bdeed263ade1fa7042d3a1f5ca86e09816e50d3883e619de3bf1b654d3011692",
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+      "input_sha256": "5dfbf34eba4a8dfc2319fbaa2af0e0ffac72dfdb971a1b74ae4501843a3dc5ec",
+      "output_sha256": "b8b2ef0a33b28827b854ecf385625b16c28cfe3daefbdaab9066dd0efe223156",
+      "output_hash_method": "Exact UTF8 string or canonical sorted-key compact JSON for structured trace output",
+      "elapsed_ms": 11949.970125000003,
+      "verification_scope": {
+        "facts": 11,
+        "operations": 1,
+        "replacements": 1,
+        "messages": 8,
+        "reused": 0
+      }
+    },
+    {
+      "trace_id": "c1658250-7dde-4cfd-b893-0c959e9a4dc6",
+      "purpose": "repair",
+      "outcome": "ok",
+      "record_sha256": "9313cc10bb3574bb4faeadf3f2737f172cbfd0d39f537eb4b82f037033d2e420",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0",
+      "input_sha256": "82b994caa35d27b212f69ba81e68bc84df8ed305965e834a8404066989cff133",
+      "output_sha256": "4c90e1af2d3f20fb951a95d76662f4a3bff49786eb491e17fa82d3fefe8fe589",
+      "output_hash_method": "Exact UTF8 string or canonical sorted-key compact JSON for structured trace output",
+      "elapsed_ms": 3234.3823330000014,
+      "verification_scope": null
+    }
+  ],
+  "failure_analysis": {
+    "evidence_basis": "Four complete original model-trace records and independent pure applyRepair/operationBindingProblems inspection by next_eval_risk; no model outputs changed.",
+    "repair_1": {
+      "trace_id": "07905276-e4d9-49f1-9b44-efde7ad309d2",
+      "effect": "Only op0 retained, narrowed to target m10; fact4 predicate changed; no op1 created."
+    },
+    "semantic_verification": {
+      "trace_id": "30a78135-2090-4fb8-87e4-9c9861ac8863",
+      "passed": {
+        "facts": 11,
+        "operations": 1,
+        "replacements": 1
+      },
+      "remaining": "message6 reported missing historical m18 name_reason"
+    },
+    "repair_2": {
+      "trace_id": "c1658250-7dde-4cfd-b893-0c959e9a4dc6",
+      "effect": "op0 target_ids re-expanded to m10 and m18 while scope remained family. applyRepair accepts the patch structure; subsequent binding validation rejects it.",
+      "binding_errors": [
+        "OPERATION_SCOPE",
+        "AMBIGUOUS_OPERATION"
+      ],
+      "scope_conflict": {
+        "m10": "family",
+        "m18": ""
+      }
+    },
+    "automatic_source_only_triggered": false,
+    "automatic_source_only_reason": "No op1 was produced and op0 sources remained authorizesForget=true, so the new fallback condition was never reached.",
+    "source_erasure_model_call_reached": false,
+    "important_boundary": "Forget operations do not require equal property strings; this final binding rejection concerns inconsistent target scopes, not merely different properties.",
+    "terminal_mapping": "extraction.ts:604 maps an unresolved Operation target binding issue after the repair budget to OPERATION_TARGET.",
+    "model_call_outcome_note": "All four model calls completed with outcome ok; this is not semantic acceptance or successful ingestion."
+  },
+  "comparison_with_02": {
+    "previous_campaign": "priority-B30-segment30-add-20260909-02",
+    "previous_http_status": 503,
+    "previous_error_code": "EVIDENCE_VALIDATION",
+    "previous_elapsed_ms": 45503.205416,
+    "current_http_status": 503,
+    "current_error_code": "OPERATION_TARGET",
+    "current_elapsed_ms": 40249.914208,
+    "meaning": "02 terminated at unresolved semantic evidence validation; 03 reached a final repair that restored the missing target but introduced inconsistent scope binding. Both runs failed atomically at revision30. The new automatic source-only branch was not exercised in 03."
+  },
+  "integrity": {
+    "complete_logical_state_equal": true,
+    "logical_hash_before_after": {
+      "before": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3",
+      "after": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3"
+    },
+    "snapshot_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391",
+    "clone_sha256_before_after_audit": "463d55c50b58df11e65948d901664560b4c2139373bb1172ce80b336a940a269",
+    "source_snapshot_unchanged": true,
+    "failed_request_receipt_absent": true,
+    "controller_and_all_owned_children_stopped": true
+  },
+  "tail_gate": {
+    "open": false,
+    "reason": "HTTP503, revision30 and no segment-30:0 receipt; no successful rev31 predecessor exists."
+  },
+  "evidence": {
+    "independent_validation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-source-only-result-20260909/independent-validation.json",
+    "independent_validation_sha256": "e3de159b7063e80955123a6ffc9e317fd4c271edb8a88f10bc14d86add8ece08",
+    "source_files": {
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/plan.json": "a04702f3a569cc495d0982b4b180fb4f8590c397e224ac4ada2376264758f354",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/runtime.json": "45ebf38a78bc82583336658b2d8b95144b4abbf03a165a061b1bae268949c04f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/summary.json": "0131ee4241e4b56123e5c0f4200cf256666dd672ccd70841435ffdb32e5d2cbb",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/results.private.json": "f9f6b5af6677276371d614b521a613d357dedd89c9a37ed63ca4d4f2bb46a6bb",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/http-results/0.private.json": "b5722ec0add7354c3ee95b86d0eb8f2b7776728b7b78eeafee236488504e442d",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/model-calls.jsonl": "44b5fb1e81331ed7585c455377713ea38d2fa69e78477b271923e4d2751a3f70",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/model-trace.jsonl": "bb260f5200dabd3cf806abdb29ad43596aeaf8506818e669f81012df23bc0306",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/service.log": "3d5fb0436b214cdf6080eaf4ab06f606e63f5c6a9a173df73436ef4ce27ae3e7"
+    }
+  },
+  "new_model_calls": 0,
+  "latency": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-03/model-calls.jsonl",
+    "source_sha256": "44b5fb1e81331ed7585c455377713ea38d2fa69e78477b271923e4d2751a3f70",
+    "http_elapsed_ms": 40249.914208,
+    "model_calls_elapsed_ms": 40066.98970800001,
+    "non_model_remainder_ms": 182.9244999999937,
+    "stages": [
+      {
+        "purpose": "extraction",
+        "trace_id": "8fc84fe5-adf5-4ea3-a4bc-7f0a51a70f27",
+        "elapsed_ms": 19980.480875
+      },
+      {
+        "purpose": "repair",
+        "trace_id": "07905276-e4d9-49f1-9b44-efde7ad309d2",
+        "elapsed_ms": 4902.156375000002
+      },
+      {
+        "purpose": "verification",
+        "trace_id": "30a78135-2090-4fb8-87e4-9c9861ac8863",
+        "elapsed_ms": 11949.970125000003
+      },
+      {
+        "purpose": "repair",
+        "trace_id": "c1658250-7dde-4cfd-b893-0c959e9a4dc6",
+        "elapsed_ms": 3234.3823330000014
+      }
+    ],
+    "interpretation": "The four sequential model stages account for almost the entire 40.25s HTTP request; extraction about20s and verification about12s dominate. This conclusion uses this run actual timings, not earlier-batch averages."
+  },
+  "qa": {
+    "questions_run": 0,
+    "new_scores": 0,
+    "prior_repeated_samples_added_to_score": false
+  }
+}
