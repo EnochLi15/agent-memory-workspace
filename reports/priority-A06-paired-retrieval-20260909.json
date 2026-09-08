@@ -1,0 +1,197 @@
+{
+  "protocol": "A06-paired-retrieval-summary-v1",
+  "status": "completed_readonly_offline_comparison",
+  "old_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "candidate_commit": "8cc94c9b66a5228ac21c49ce471f9721220aee58",
+  "cloud_calls": 0,
+  "embedding_calls": 0,
+  "answer_judge_calls": 0,
+  "snapshot_sha256": "3b1195744cfb3de5ac3a0420c50751a310531ffc1db0c4025eda61088d125e6f",
+  "revision": 51,
+  "token_budget": 6000,
+  "candidate_limit": 200,
+  "max_evidence": 32,
+  "method": "Same actual successful search vectors captured in the new 8cc94c9 QA run; unmodified queries/options/config and frozen revision 51 snapshot. Execute each frozen version collectCandidates+packEvidence with corresponding TenantStore read methods on independent read-only clones. No constructor, model, server or worker is instantiated. New output must deep-equal actual recorded memories and packing audit.",
+  "verification": {
+    "five_actual_vectors_reused_without_conversion": true,
+    "candidate_full_memories_match_actual": 5,
+    "candidate_complete_audit_records_match_actual": 5,
+    "old_candidate_pools_and_scores_match_new": 5,
+    "read_only_database_clones_unchanged": true,
+    "dist_hash_checks": {
+      "old": {
+        "frozen_and_executed_dist_files_verified": 141,
+        "commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de"
+      },
+      "candidate": {
+        "frozen_and_executed_dist_files_verified": 141,
+        "commit": "8cc94c9b66a5228ac21c49ce471f9721220aee58"
+      }
+    },
+    "complete_input_bounds": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-paired-retrieval-20260909/input-bounds.json"
+  },
+  "questions": [
+    {
+      "question": "p1_operation_trace",
+      "old_selected": 17,
+      "candidate_selected": 21,
+      "old_tokens": 5953,
+      "candidate_tokens": 5928,
+      "added": 4,
+      "removed": 0,
+      "candidate_pool_identical": true,
+      "new_output_matches_actual": true,
+      "old_counterfactual_matches_saved_old_output": true,
+      "new_answer_input_identical_to_original": false
+    },
+    {
+      "question": "p2_target_binding",
+      "old_selected": 18,
+      "candidate_selected": 18,
+      "old_tokens": 5980,
+      "candidate_tokens": 5980,
+      "added": 0,
+      "removed": 0,
+      "candidate_pool_identical": true,
+      "new_output_matches_actual": true,
+      "old_counterfactual_matches_saved_old_output": true,
+      "new_answer_input_identical_to_original": true
+    },
+    {
+      "question": "p3_state_transition",
+      "old_selected": 28,
+      "candidate_selected": 28,
+      "old_tokens": 5996,
+      "candidate_tokens": 5996,
+      "added": 0,
+      "removed": 0,
+      "candidate_pool_identical": true,
+      "new_output_matches_actual": true,
+      "old_counterfactual_matches_saved_old_output": true,
+      "new_answer_input_identical_to_original": true
+    },
+    {
+      "question": "p4_candidate_disambiguation",
+      "old_selected": 17,
+      "candidate_selected": 17,
+      "old_tokens": 5998,
+      "candidate_tokens": 5998,
+      "added": 0,
+      "removed": 0,
+      "candidate_pool_identical": true,
+      "new_output_matches_actual": true,
+      "old_counterfactual_matches_saved_old_output": true,
+      "new_answer_input_identical_to_original": true
+    },
+    {
+      "question": "p5_operation_application",
+      "old_selected": 20,
+      "candidate_selected": 20,
+      "old_tokens": 5981,
+      "candidate_tokens": 5981,
+      "added": 0,
+      "removed": 0,
+      "candidate_pool_identical": true,
+      "new_output_matches_actual": true,
+      "old_counterfactual_matches_saved_old_output": true,
+      "new_answer_input_identical_to_original": true
+    }
+  ],
+  "p1_budget_accounting": {
+    "original_tokens": 5953,
+    "duplicate_wrapper_tokens_removed": 827,
+    "previously_selected_row_expansion_tokens": 50,
+    "new_four_evidence_tokens": 752,
+    "candidate_tokens": 5928,
+    "net_tokens_removed": 25,
+    "removed_selected_evidence": 0,
+    "explanation": "Freed volume both restores the normal time lead/full source context of a previously shortened skincare-plan row and admits four more ranked rows. Three new rows do not cover required missing details; one recovers dog preference through its source context."
+  },
+  "p1_added_evidence_review": [
+    {
+      "id": "ef0df37ba66c9b1ea0734135207af2597a4f5fefc1032134dace74f9e80701e0",
+      "rank": 18,
+      "summary": "Assistive technology consultation plan",
+      "body_tokens": 58,
+      "support_tokens": 77,
+      "metadata_tokens": 44,
+      "total_tokens": 179,
+      "required_evidence_gain": "none found"
+    },
+    {
+      "id": "b165b2229b035625f67c8a9964714e28dcb72a5368b267b0d614425f1971ddd7",
+      "rank": 19,
+      "summary": "Local drinks and venue plan",
+      "body_tokens": 76,
+      "support_tokens": 88,
+      "metadata_tokens": 45,
+      "total_tokens": 209,
+      "required_evidence_gain": "none found"
+    },
+    {
+      "id": "9c2855cd6b8118e0c9592d4b35499311cc9699683ee6ee01bd09772c427cfb86",
+      "rank": 20,
+      "summary": "Contacting a friend this weekend",
+      "body_tokens": 48,
+      "support_tokens": 129,
+      "metadata_tokens": 55,
+      "total_tokens": 232,
+      "required_evidence_gain": "Source context adds the complete dog-preference witness including Basenji; the selected fact body itself is only a contact plan."
+    },
+    {
+      "id": "9047478c51fcdeb96a843ea23545a931fb05e6688bdbf8f3e7e36452aa9b2df4",
+      "rank": 21,
+      "summary": "Honey and fruit cooking plan",
+      "body_tokens": 33,
+      "support_tokens": 55,
+      "metadata_tokens": 44,
+      "total_tokens": 132,
+      "required_evidence_gain": "none found"
+    }
+  ],
+  "required_evidence_findings": {
+    "p1": [
+      "The dog-preference fact and exact raw quote remain outside the 200-candidate pool. A newly selected contact-plan fact shares the source and expands its intact context, which contains the dog-preference witness. The completed Answer uses Basenji.",
+      "The maiden-name fact (Choi) and its exact raw witness remain outside the pool; none of the four new rows supply it.",
+      "The sister-engagement fact (Min-ji/David) remains outside the pool. Its correct raw witness is a candidate but remains excluded by the budget.",
+      "Both anniversary-trip facts remain candidates at positions 44/45 and excluded by budget; Cannon Beach and Surfsand remain absent from selected evidence."
+    ],
+    "p3": [
+      "Rendering, selected evidence, scores and complete Answer input are unchanged.",
+      "Choi and its exact raw witness remain outside the pool. The sister-engagement fact is outside the pool while its correct raw witness remains a budget discard.",
+      "Marriage/trip and dog details were already supplied by selected facts or intact source context; no new coverage is gained."
+    ],
+    "p5": [
+      "Rendering, selected evidence, scores and complete Answer input are unchanged.",
+      "The sister-engagement fact remains candidate 86 but is excluded by budget; two exact raw-witness candidates are also not selected.",
+      "The selected dinner fact still contains Min-ji and David without the missing sister/engagement relation, while a competing engagement remains selected. This is a binding-evidence gap plus possible Answer underuse, not total absence of both names."
+    ]
+  },
+  "answer_observation": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-A06-history-qa-20260909-01-candidate-memops/predictions.jsonl",
+    "complete_prefix_bytes": 6402,
+    "complete_prefix_sha256": "00e867834522c01489d3059c6f1912f156221fd6a09e676975db472460031375",
+    "p1_answer_sha256": "f016ba8bbfaa9856f590d63f10c63363253408437e4d1d27a7b425e1a183d06f",
+    "p1_literal_presence": {
+      "Choi": false,
+      "Min-ji": false,
+      "David": false,
+      "Cannon": false,
+      "Surfsand": false,
+      "Basenji": true
+    },
+    "note": "Read-only observation of completed Answer output, not a new Answer/Judge call or regrade."
+  },
+  "limits": [
+    "These are the new run vectors, not captured original e9b5da4 run vectors. The old output is a same-vector counterfactual, even where it happens to equal original saved output.",
+    "Exact-value/quote matches and selected fact IDs are reported separately; a shared source ID alone is not proof of required body coverage.",
+    "This report does not rerun Answer/Judge or estimate a QA score. Any answer changes with identical inputs cannot be attributed to this rendering patch.",
+    "The current root QA report records 0/5; this analysis does not alter original scores or rejudge. The p2 true-to-false flip with byte-identical input cannot be credited to this rendering patch.",
+    "The fixed-set 827-token saving is not a final 827-token budget reduction: after normal packing refills the budget, net reduction is 25 tokens. More selected rows are not automatically more required evidence.",
+    "Section token counts are allocated by cumulative estimator differences, so a one-token rounding shift does not imply metadata text changed."
+  ],
+  "qa_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-A06-history-rendering-qa-results-20260909.json",
+  "detailed_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-paired-retrieval-20260909/paired-retrieval-report.json",
+  "private_evidence": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-paired-retrieval-20260909/paired-results.private.json",
+  "replay_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-paired-retrieval-20260909/replay.mjs"
+}

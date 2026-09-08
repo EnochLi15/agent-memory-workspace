@@ -1,0 +1,127 @@
+{
+  "protocol": "B14-derived-erasure-evidence-design-v1",
+  "created_at": "2026-09-08T17:13:32.494399+00:00",
+  "status": "design_and_test_evidence_only_not_a_recovery_candidate",
+  "base_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+  "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/service",
+  "production_code_changed": false,
+  "cloud_calls": 0,
+  "real_add_replays": 0,
+  "new_semantic_verdicts": 0,
+  "decision": "Do not ship a quote-only change. The original entire packet remains rejected, but its food0/1 erase decisions individually pass the existing decoder and plan validator. Inherited evidence alone would not protect the explicit keep boundary.",
+  "ranked_hypotheses": [
+    {
+      "rank": 1,
+      "hypothesis": "A source-less derived card can expose actual parent evidence through its explicit dependency closure without forging direct quotes.",
+      "prediction": "The original card resolves to two same-tenant active parents and three uniquely located source quotes; missing/cyclic/erased/ambiguous/unlinked evidence rejects.",
+      "result": "Supported by a read-only prototype and 13 passing diagnostics. No runtime decoder or plan schema was changed."
+    },
+    {
+      "rank": 2,
+      "hypothesis": "The aggregate witness failure currently hides an independent authorization hole in erasure expansion.",
+      "prediction": "Original food0 and food1 erase decisions will pass decodeErasure plus validateErasurePlan if checked independently.",
+      "result": "Confirmed: both required safety tests are red on unchanged50cc. The full original four-decision packet is still rejected."
+    },
+    {
+      "rank": 3,
+      "hypothesis": "A property/source-only guard cannot both preserve independent same-literal facts and execute all renamed/implicitly dependent erasures.",
+      "prediction": "Blanket cross-slot rejection will also reject existing same-chunk renamed-property erasure cases; blanket source propagation will delete independent neighboring records.",
+      "result": "Supported by the existing cross-scope/source-context contracts (15 passing baseline tests). Such a rule may only fail the transaction conservatively, never force retain or claim successful completion."
+    }
+  ],
+  "source_provenance": {
+    "card_id": "pattern-da59aa3e4f431f4f82e0d7dafcd14f06742009565804b5b553335544bec53e31",
+    "card_revision": 6,
+    "explicit_parent_count": 2,
+    "parent_quote_count": 3,
+    "source_count": 2,
+    "all_three_quotes_unique_in_own_declared_sources": true,
+    "sources_searchable": [
+      false,
+      false
+    ],
+    "sources_redacted": [
+      false,
+      false
+    ],
+    "visibility_correction": "searchable=false is normal raw-retrieval suppression after successful fact extraction (storage.ts:428,488), not proof of erasure. snapshot.erasureSources includes stored messages (storage.ts:125). The prototype checks intact source content and conservatively rejects redacted source records instead of using searchable as an evidence gate.",
+    "prototype_bounds": {
+      "max_depth": 8,
+      "max_nodes": 32,
+      "source_tables": "Only server-read same-tenant snapshot facts/messages; model-supplied dependency/source tables are never trusted.",
+      "witness_coordinates": [
+        "dependency path",
+        "parent_fact_id",
+        "source_id",
+        "unique UTF-16 start/end",
+        "exact original quote"
+      ],
+      "identity": "Fingerprint binds tenant, card, parent propositions/states and original source bytes."
+    }
+  },
+  "food_boundary_findings": [
+    {
+      "candidate": 0,
+      "finding": "The direct quote says food scene there, while the structured fact supplies Portland from neighboring residence context. A keep decision cannot borrow a value_context that is removed with the residence claim. The real retained-value-context guard still rejects that counterfactual."
+    },
+    {
+      "candidate": 1,
+      "finding": "Its own exact food-memory quote contains Portland; a restaurant visit does not establish residence. The recorded erase reason conflates them despite the full original keep clause being present."
+    },
+    {
+      "candidate": 2,
+      "finding": "effect=uncertain is independently a semantic refusal. Even a hypothetical real parent quote must not convert uncertain into erase or retain."
+    }
+  ],
+  "ordered_implementation_plan": [
+    {
+      "order": 1,
+      "change": "Define a read-only inherited-evidence protocol for source-less derived facts. Resolve explicit depends_on from the tenant snapshot, preserve parent/source identity, and expose evidence tables without mutating source_quotes or inventing a new fact.",
+      "acceptance": "All dependency branches must have valid supported evidence; absent, stale, cyclic, ambiguous or redacted evidence remains a refusal. Bind witness structure and source bytes into prepare/commit fingerprints. Original generated aggregate-content quotes remain invalid."
+    },
+    {
+      "order": 2,
+      "change": "Before accepting any cross-property erasure expansion, independently verify the proposed final erased/retained propositions against the complete original instruction, including explicit keep exceptions. Treat the scope classifier’s erase decision as a proposal, not an authorization certificate.",
+      "acceptance": "Current recorded food0/1 erase packets must be rejected independently of the aggregate candidate. Missing or negative semantic certificates reject the whole transaction; never automatically relabel them retain. Do not create substitute deletion authority from overlapping words, same-source IDs, or property labels."
+    },
+    {
+      "order": 3,
+      "change": "Validate inherited witnesses and retention contexts again against the final union of source cuts and erased dependency IDs.",
+      "acceptance": "A retained card cannot cite an erased parent or cut value/context. Retiring a contaminated derived representation must preserve independently supported raw clauses and member facts. Same-fact renamed-property echoes must not silently survive; genuine ambiguity rejects."
+    },
+    {
+      "order": 4,
+      "change": "Only after the two food safety tests are green together with the inherited-evidence tests, consider a new separately authorized live validation.",
+      "acceptance": "Keep the original uncertain verdict and original wrong food erase outputs immutable and rejected. A synthetic revised proposal or local witness transport success is not a new semantic verdict, successful add, or score change."
+    }
+  ],
+  "why_no_production_commit": "The parent-witness transport prototype can be validated locally, but no minimal deterministic rule was shown to honor both natural-language keep exceptions and renamed/implicit dependency erasures. Shipping only that transport change would remove the current aggregate blocker while leaving food0/1 authorization unprotected. The explicit safety requirements therefore remain red and no deployable change was committed.",
+  "validation": {
+    "inheritance_prototype": {
+      "passed": 13,
+      "failed": 0,
+      "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/inheritance-prototype-tests.txt"
+    },
+    "required_food_guard_red": {
+      "passed": 1,
+      "failed": 2,
+      "expected": "The two isolated original food erases should be rejected but are accepted; full original packet still rejects.",
+      "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/food-authority-required-red.txt"
+    },
+    "existing_boundary_contracts": {
+      "passed": 15,
+      "failed": 0,
+      "artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/existing-boundary-tests.txt"
+    },
+    "red_test_command": "node --test /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/required-food-guard.red.test.mjs",
+    "prototype_command": "node --test /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/inheritance-prototype.test.mjs"
+  },
+  "provenance": {
+    "snapshot_sha256": "c74c50c636732facbea634f2744510440b315b72bb6a61a8ce1b0bfe2dd50240",
+    "private_fixture_sha256": "48a4fcd2adebc84177df6f7d7d5fd31a23f3aa42fa66cdeb2f02f4db7f046019",
+    "prototype_sha256": "96b4c4b1cf44880f7d7aa6b11127b27f4a7b4dc3226a081e6fbb4c359872bcfa",
+    "red_test_sha256": "7de339922627d192b6207a7cae2e25909b1e0703b9fba09fd1bd3a7d6c7cc1a0",
+    "original_erasure_packet_input_sha256": "5ca1a6d2931f9ad49b367b062b466774c6618ccec601f161310fdf82dfb4b8a8",
+    "parent_report_unchanged": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B14-erasure-witness-incident-20260909.json"
+  }
+}
