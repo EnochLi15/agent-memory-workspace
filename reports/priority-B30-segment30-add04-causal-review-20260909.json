@@ -1,0 +1,168 @@
+{
+  "run_id": "priority-B30-segment30-add-20260909-04",
+  "candidate_commit": "a0b2bf0a9ad79029ea5c41f7e80eb28c51d4a520",
+  "http_status": 200,
+  "elapsed_ms": 58785.430916,
+  "http_attempts": 1,
+  "independent_read_only_review": true,
+  "new_cloud_calls": 0,
+  "new_adds": 0,
+  "qa_or_scores_modified": false,
+  "cause": {
+    "automatic_split_exactly_matches_actual_verified_proposal": true,
+    "model_last_patch_only_merges_existing_targets": true,
+    "model_appended_operations": 0,
+    "source_only_proposal_needed": false,
+    "source_authorizes": [
+      true
+    ],
+    "binding_before": [
+      [
+        "OPERATION_SCOPE",
+        "AMBIGUOUS_OPERATION"
+      ]
+    ],
+    "verified_operations": [
+      {
+        "predicate": "preferred_name",
+        "scope": "family",
+        "target_ids": [
+          "475c7c381eb6459a53acf03d500387d23fa26d16443524573e950006e2dc0caa"
+        ]
+      },
+      {
+        "predicate": "name_reason",
+        "scope": "",
+        "target_ids": [
+          "809deeb8b65caba5505f25fd2183888e5bcc4eeb91eda3ecd267f1a20aec7e2a"
+        ]
+      }
+    ],
+    "target_union_unchanged": true,
+    "original_facts_unchanged": true
+  },
+  "semantic_result": {
+    "first_verification": "Existing preferred-name operation passed; message 6 missed the existing name-reason record.",
+    "last_model_repair": "Only merged m10 and m18 in op0.target_ids; appended no operation.",
+    "automatic_split": "Pure candidate helper on original request/snapshot and the exact final repaired proposal is deeply equal to actual final verification PROPOSAL.",
+    "final_scope": {
+      "fact_indices": [],
+      "operation_indices": [
+        0,
+        1
+      ],
+      "replacements": [],
+      "message_indices": [
+        6
+      ]
+    },
+    "final_operation_checks": [
+      [
+        0,
+        true,
+        true,
+        null
+      ],
+      [
+        1,
+        true,
+        true,
+        null
+      ]
+    ],
+    "final_message_checks": [
+      [
+        6,
+        "represented",
+        [
+          4
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    ],
+    "source_erasure_decisions": 13
+  },
+  "trace": [
+    {
+      "index": 0,
+      "purpose": "extraction",
+      "trace_id": "85e53202-6120-456b-aab8-a4b538a0f729",
+      "outcome": "ok",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+      "input_sha256": "207980118029de5dcdaa5502ef22330f51d851ab4f8a76a1397baed3a1104e6f",
+      "output_sha256": "0010d3ac9ebbebc71eeea017deda5c286a6cdf499e412c751b26355a90e04321"
+    },
+    {
+      "index": 1,
+      "purpose": "repair",
+      "trace_id": "9acb19f6-7afa-4eb3-a6a7-ef0fbc242e3a",
+      "outcome": "ok",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0",
+      "input_sha256": "ff7e3f4cdb5d26bf0e0789a552c9c274a3373569602e45dcd368fb85aadbb947",
+      "output_sha256": "ea787d585b0131db1d8cfe32726740f51dc0002ac6db6b7f544e7d2133527750"
+    },
+    {
+      "index": 2,
+      "purpose": "verification",
+      "trace_id": "ea04210b-0ec5-4cae-8f6a-e534d33b1e55",
+      "outcome": "ok",
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+      "input_sha256": "14b233126e2ba82ddc12da76c997906288d608884f5b99ba6145a590791970d9",
+      "output_sha256": "28cd03ca44993467d0bdde5e7f82d052720cc6c29f7105bffd55fe85a325bdbf"
+    },
+    {
+      "index": 3,
+      "purpose": "repair",
+      "trace_id": "e60a65a3-9e69-44ec-8e52-377140cbb768",
+      "outcome": "ok",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0",
+      "input_sha256": "4e77814a6187d4fe8c9b8f27e855d59ab0654b5a07c3818060a699bad54b9749",
+      "output_sha256": "1ef6ff395f6dcfbbbadfa2dd7c80cf5900ca9e26c617c6dd70cf35722af1dd54"
+    },
+    {
+      "index": 4,
+      "purpose": "verification",
+      "trace_id": "99bccb5f-5d64-4528-afe1-0a55ab54914e",
+      "outcome": "ok",
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+      "input_sha256": "e569dd155699c8618f582c4867d5e19fc7f6160a8356098b5f4ecdf12fa0edbf",
+      "output_sha256": "623b4b1fb04b2d876da0314925bc51a3ca7e86c6e8bebb1d8dc4dc53c131f516"
+    },
+    {
+      "index": 5,
+      "purpose": "source_erasure",
+      "trace_id": "4efdd8b7-c38c-4247-a890-808d3bd9fff0",
+      "outcome": "ok",
+      "system_sha256": "aaba22b3b4a31ff5ffc4c3703159901491e40bc40e93a1c9da9085eaa5ca6225",
+      "input_sha256": "593b9b281fe3eec3b953e9ddf140dd4804ba9e0856063b16354ada1c9b5d152b",
+      "output_sha256": "786d07e879da0349f491d3667d2880fcbccb6852518a82c3512723ff7c92595b"
+    }
+  ],
+  "database": {
+    "revision_before": 30,
+    "revision_after": 31,
+    "old_receipts_unchanged": 30,
+    "new_exact_matching_receipts": 1,
+    "integrity_check": "ok",
+    "target_states": [
+      {
+        "id": "475c7c381eb6459a53acf03d500387d23fa26d16443524573e950006e2dc0caa",
+        "state": "erased"
+      },
+      {
+        "id": "809deeb8b65caba5505f25fd2183888e5bcc4eeb91eda3ecd267f1a20aec7e2a",
+        "state": "erased"
+      }
+    ],
+    "original_snapshot_unchanged": true,
+    "original_snapshot_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391"
+  },
+  "candidate_files_exact": 141,
+  "successful_degraded_adds": 0,
+  "unknown_generation_calls": 0,
+  "prefix_generation_calls": 0,
+  "interpretation": "This original B30 add recovered with normal semantic and source-erasure acceptance and committed atomically. It is not a QA result or evidence that the remaining tail succeeds."
+}

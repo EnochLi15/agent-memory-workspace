@@ -1,0 +1,172 @@
+{
+  "status": "frozen_optional_internal_aggregate_deferral_candidate",
+  "candidate_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "base_commit": "36e766921220c64d114d7e5ec83d306cbc560a87",
+  "candidate_manifest": "artifacts/priority-autoaggregate-deferral-fix-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "2c0e09d1e0dbf5e6b79437e048b9dba61e4ee61a1fbc538d89380db743f36cdc",
+  "observed_failure": {
+    "report": "reports/priority-B03-segment34-results-20260909.json",
+    "campaign": "artifacts/priority-B03-segment34-add-20260909-01",
+    "http_status": 503,
+    "elapsed_ms": 8586.559125,
+    "stage": "source_erasure",
+    "provider_calls": 3,
+    "provider_transport_attempts": [
+      0,
+      0,
+      0
+    ],
+    "provider_outcomes": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "source_verdict": {
+      "effect": "uncertain",
+      "reason": "mixed_fact",
+      "erase_quotes": []
+    },
+    "interpretation": "Protocol enhancement took effect. This is a valid semantic refusal, not transport, malformed output, or a reason to resample."
+  },
+  "change": {
+    "eligibility": [
+      "Only objects returned by this invocation of internal aggregatePatterns",
+      "No matching ID anywhere in the snapshot",
+      "Existing plain-content/no operations/no sourceOperationPlan/lifecycle gates",
+      "Original erasureBinding and sourceErasure enabled, rawOnly disabled",
+      "Same sourceErasureWork nomination against existing historical boundaries"
+    ],
+    "action": "Before any erasure plans are created, omit only eligible nominated internal cards from incoming facts. Final facts then run all existing verification, erasure, transition, source, embedding and commit paths.",
+    "degraded_tag": "aggregate_deferred_erasure",
+    "does_not_trigger_extraction_offline": true,
+    "no_scope_or_property_shortcuts": true,
+    "preserved": [
+      "all model-proposed facts and reflections, even forged aggregate-looking text",
+      "all old cards and members",
+      "all original messages",
+      "all raw-source review obligations",
+      "all uncertain/capability refusal guards",
+      "all later plan/commit fingerprints"
+    ],
+    "tradeoff": "Optional derived card, its successor transition and corresponding reflection event are absent. The old active card is not retired by this omitted successor. Future aggregate generation can recompute from members; reflect/list retrieval impact is unmeasured."
+  },
+  "validation": {
+    "failure_first": {
+      "tests": 10,
+      "failed": 3,
+      "passed": 7
+    },
+    "targeted_passed": 10,
+    "full_passed": 643,
+    "full_failed": 0,
+    "full_duration_ms": 11461.260292,
+    "build_passed": true,
+    "independent_review": "Parent reviewed the single production-file diff and eligibility, unchanged raw-source refusal and dedicated degraded tag; no blocking findings.",
+    "actual_replay": {
+      "status": "local_prepare_only_with_explicit_null_embedding_stub",
+      "cloud_calls": 0,
+      "db_opens": 0,
+      "db_writes": 0,
+      "commit_calls": 0,
+      "qa_calls": 0,
+      "actual_trace_sha256": "69d76d8448ddc3b12833988dd6979ada4b9c440c2304e0f385c1af3b41763281",
+      "snapshot_sha256": "75cc65ac568e14cacaa92ae2516fc7d07b20739f132c2cbddc8e9b7e5226f229",
+      "runs": [
+        {
+          "name": "actual_36e766",
+          "calls": [
+            {
+              "purpose": "extraction",
+              "input_sha256": "7d83177ddf32988a0773c40dabca00873ea091e9c641a6f77b377e230869d095",
+              "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+              "actual_input_and_system_exact": true
+            },
+            {
+              "purpose": "verification",
+              "input_sha256": "e10350b69b0873570e9473556cc246dd87549daf63d12c4cb25cc0c751caf026",
+              "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+              "actual_input_and_system_exact": true
+            },
+            {
+              "purpose": "source_erasure",
+              "input_sha256": "bdfcc1a26f774254f8ea2e4e145916f402d62cab9a00a64dcde52658d5902ce5",
+              "system_sha256": "a1b3f501e64f82dccb3d90d166ce904c405bcf7f89489809f395398322c4ea15",
+              "actual_input_and_system_exact": true
+            }
+          ],
+          "embedding_stub_calls": 0,
+          "failure": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Uncertain or invalid compact source erasure effect"
+          }
+        },
+        {
+          "name": "candidate",
+          "calls": [
+            {
+              "purpose": "extraction",
+              "input_sha256": "7d83177ddf32988a0773c40dabca00873ea091e9c641a6f77b377e230869d095",
+              "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+              "actual_input_and_system_exact": true
+            },
+            {
+              "purpose": "verification",
+              "input_sha256": "e10350b69b0873570e9473556cc246dd87549daf63d12c4cb25cc0c751caf026",
+              "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+              "actual_input_and_system_exact": true
+            }
+          ],
+          "embedding_stub_calls": 1
+        }
+      ],
+      "deferral": {
+        "id": "pattern-03d53f67de50cafcdd405356d0fa10f58d442de4293e9cf2616c8e2eebc77aaa",
+        "kind": "reflection",
+        "dependency_count": 6,
+        "previous_active_card_id": "15ff0cfdc405074b3989b6a7e31a2845e6ff568a51976f5b24d6d0511f9d0635",
+        "member_ids": [
+          "7d0cb8adb3ede9b83607e0944d6dc0d5ab7c2126668a4c8fc28ad15f5b93c3a4",
+          "69d1888bfc0d4107ca9b24b096db4575500e772a0f0a6864e7b0d5aecd1d8e04",
+          "4da0b6651e36c49d2bd412f3eda4591b9d037dde9ef3814ada3086753e14d627",
+          "4dc56bb887e990747ac95ae911c79074bee2c703bc453a8c3fdfe160bab36b5e",
+          "6905c4b8325c3054ffaf25e4902142037b243a1b03f3db2684101394f1086dab",
+          "fd814dba225ef4aff8a0d1ab2472c016650d8a96c58d7860059ffe9f115dfbaa"
+        ],
+        "old_members": 5,
+        "new_members": 1
+      },
+      "candidate": {
+        "facts": 2,
+        "messages": 6,
+        "source_erasure_candidates": 0,
+        "degraded": [
+          "aggregate_deferred_erasure"
+        ],
+        "all_final_plan_fingerprints_valid": true,
+        "raw_messages_exact": true,
+        "snapshot_unchanged": true
+      },
+      "limits": [
+        "Original source uncertainty is reproduced, never converted to a retain/erase verdict.",
+        "Candidate uses only the two exact original upstream outputs; no source-erasure semantic output is needed for the empty final candidate set.",
+        "Null embedding is an explicit local stub, not a saved or model output. No database commit or HTTP recovery has been proved.",
+        "Optional derived card and corresponding reflection event are absent; retrieval impact remains unmeasured."
+      ]
+    },
+    "changed_dist_files": [
+      "extraction.js",
+      "extraction.js.map"
+    ]
+  },
+  "limits": {
+    "cloud_calls": 0,
+    "database_opens": 0,
+    "database_writes": 0,
+    "database_commits": 0,
+    "qa_calls": 0,
+    "scores_changed": false,
+    "null_embedding_stub_calls": 1,
+    "null_embedding_is_saved_model_output": false,
+    "actual_http_write_recovery_proven": false
+  }
+}
