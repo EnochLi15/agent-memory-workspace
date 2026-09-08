@@ -1,0 +1,94 @@
+{
+  "status": "single counterfactual standard verification accepted; no add or QA run",
+  "candidate_commit": "4b855790bdf0ea31467fe23692dfdb91212a62e4",
+  "source_campaign": "priority-B30-segment30-add-20260909-02",
+  "experiment": "Preserve the actual proposal before repair2, all 13 facts, both existing operation targets/fields, and all 16 original messages. Replace only operation 1 source.quote with the exact direct retirement quote already present in its actual candidate hint. This is an explicitly authored counterfactual patch, not an original model repair response.",
+  "preflight": {
+    "original_first_three_system_and_input_packets_match": true,
+    "original_first_two_outputs_reused": true,
+    "changed_paths": [
+      "/operations/1/source/quote"
+    ],
+    "other_proposal_fields_equal_after_normal_alias_resolution": true,
+    "new_check_scope_operation_indices": [
+      0,
+      1
+    ],
+    "independent_review": "next_eval_risk verified the original proposal, exact source-only difference, payload, normal derived scope, and one-call stop boundaries before cloud execution"
+  },
+  "actual_result": {
+    "logical_verification_calls": 1,
+    "physical_transport_attempts": 1,
+    "attempt": 0,
+    "http_status": 200,
+    "provider_outcome": "ok",
+    "elapsed_ms": 7548.806417,
+    "cloud_started_at": "2026-09-08T19:25:10.885Z",
+    "cloud_finished_at": "2026-09-08T19:25:18.443Z",
+    "trace_id": "721cc55a-19a9-4ad1-9e31-b68b10825115",
+    "facts_supported": 13,
+    "operations": [
+      [
+        0,
+        true,
+        true,
+        null
+      ],
+      [
+        1,
+        true,
+        true,
+        null
+      ]
+    ],
+    "replacement": [
+      [
+        0,
+        true,
+        null
+      ]
+    ],
+    "message6": [
+      6,
+      "represented",
+      [
+        4,
+        5
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "standard_decoder_findings": [],
+    "protocol_resamples": 0
+  },
+  "conclusion": "This exact direct source and the unchanged name_reason target were accepted by the same frozen standard verification path. Existing evidence therefore supports a repair source-selection problem: the actual repair removed the operation, while the explicit source-only alternative passed without relaxing target or semantic guards. One accepted counterfactual verification does not establish that the model repair will choose it or that full source erasure and commit will succeed.",
+  "hashes": {
+    "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+    "input_sha256": "2b19292ac275093d76136b32a11242769c5b65054b9a25af7db1d62e92b05ffc",
+    "counterfactual_patch_sha256": "1d438d990574da2efc9a7532594fc1194136e3d711e3adcc861980f6e60252f9",
+    "counterfactual_diff_file_sha256": "c2585436a8eb9d8a006ec17fced0ecdd5763b4611b51a0a8562c79c2f572b838",
+    "actual_output_file_sha256": "494d42dd2d4e12598c8acbc39fce903366edee2ee64efbbe3aa11c5bd9bfd160",
+    "raw_output_json_sha256": "7f8bbcea83835fc28b2ba6b392af412a72a32452eea86e9ca49a38fe00ff030f",
+    "actual_http_request_body_sha256": "9af1b5a677da125740e05d127c9b09eba67f504f8f87516aca4c1ab417e182b3",
+    "script_sha256": "f073b900ffca77dbf91b96bb1f1e142571bbd243e9c98701782ba84efe3d8496"
+  },
+  "isolation": {
+    "add_http_requests": 0,
+    "commit_attempts": 0,
+    "embedding_calls": 0,
+    "source_erasure_calls": 0,
+    "qa_calls": 0,
+    "score_changes": 0,
+    "snapshot_revision": 30,
+    "snapshot_sha256": "463d55c50b58df11e65948d901664560b4c2139373bb1172ce80b336a940a269",
+    "snapshot_unchanged": true,
+    "failed_receipt": null,
+    "source_database_untouched": true,
+    "candidate_code_untouched": true,
+    "one_use_marker": "cloud-call-issued.once",
+    "stopped_immediately_after_standard_decoder": true
+  },
+  "artifact": "artifacts/priority-B30-source-only-verification-20260909"
+}
