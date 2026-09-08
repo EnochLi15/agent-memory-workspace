@@ -1,0 +1,163 @@
+{
+  "protocol": "event-recovery-two-phase-results-v1",
+  "campaign": "priority-event-recovery-20260909-01",
+  "candidate_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+  "candidate_manifest_sha256": "6697eb391c2528353d8b57173511584d6bd6ae8acbc9c635a09f248231b04160",
+  "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+  "scope": "Original mixed-version prefixes, event-vocabulary candidate tails and standard fixed questions. Phase denominators 5 and 11. Original failed campaigns and all earlier scores remain unchanged.",
+  "runtime_status": "failed",
+  "controller_and_all_owned_children_stopped": true,
+  "started_at": "2026-09-08T18:23:25.883980+00:00",
+  "finished_at": "2026-09-08T18:34:08.764310+00:00",
+  "elapsed_seconds": 642.88033,
+  "planned_questions": 16,
+  "correct": 2,
+  "accuracy_over_planned": 0.125,
+  "question_status_counts": {
+    "judged": 5,
+    "service_error": 11
+  },
+  "samples": [
+    {
+      "sample": "A06_forget",
+      "correct": 2,
+      "questions": 5,
+      "status_counts": {
+        "judged": 5
+      },
+      "revision_before": 51,
+      "revision_after": 51,
+      "new_successful_adds": 0
+    },
+    {
+      "sample": "B03_remember",
+      "correct": 0,
+      "questions": 6,
+      "status_counts": {
+        "service_error": 6
+      },
+      "revision_before": 20,
+      "revision_after": 33,
+      "new_successful_adds": 13
+    },
+    {
+      "sample": "B30_forget",
+      "correct": 0,
+      "questions": 5,
+      "status_counts": {
+        "service_error": 5
+      },
+      "revision_before": 13,
+      "revision_after": 30,
+      "new_successful_adds": 17
+    }
+  ],
+  "phases": [
+    {
+      "phase": "a06",
+      "elapsed_seconds": 246.581012,
+      "planned_questions": 5,
+      "correct": 2,
+      "status_counts": {
+        "judged": 5
+      },
+      "new_add_successful": 0,
+      "new_add_failed": 0,
+      "output": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-a06"
+    },
+    {
+      "phase": "b03-b30",
+      "elapsed_seconds": 394.31659,
+      "planned_questions": 11,
+      "correct": 0,
+      "status_counts": {
+        "service_error": 11
+      },
+      "new_add_successful": 30,
+      "new_add_failed": 2,
+      "output": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-b03-b30"
+    }
+  ],
+  "writes": {
+    "verified_prefix_receipts": 84,
+    "planned_new_adds": 68,
+    "new_successful_adds": 30,
+    "new_failed_adds": 2,
+    "unattempted_new_adds": 36,
+    "physical_HTTP_responses": 116,
+    "transport_attempts": 116,
+    "successful_degraded_adds": 0,
+    "write_generation_calls": 80
+  },
+  "latency_seconds": {
+    "successful_new_add": {
+      "count": 30,
+      "mean": 11.027601056966663,
+      "p50": 7.319171333000005,
+      "p95_nearest_rank": 27.332638208999995,
+      "max": 56.12577145900001
+    },
+    "search_HTTP": {
+      "count": 5,
+      "mean": 0.2200731415999963,
+      "p50": 0.17475445800000308,
+      "max": 0.444024291
+    }
+  },
+  "failed_adds": [
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-34:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Mixed erasure requires a source and explicit quotes\"}}",
+      "elapsed_ms": 17226.393958999994
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Evidence still fails semantic verification after repair\"}}",
+      "elapsed_ms": 44563.93441699998
+    }
+  ],
+  "integrity": {
+    "status": "pass",
+    "originals_and_frozen_files_unchanged": true,
+    "a06_final_clone_logical_state_unchanged": true,
+    "new_clone_revisions_equal_prefix_plus_successful_receipts": true,
+    "all_question_records_unique_and_complete": true
+  },
+  "limitations": [
+    "This new16 consists of A06/B03/B30. The prior7/16 used A06/B01/B14, so the two totals are not an apples-to-apples accuracy comparison.",
+    "Completed mixed-version history recovery with original namespace and exact receipts; not fresh ingestion or a972-question score.",
+    "A06 outcomes remain1/5 e9,0/5 history-rendering,2/5 event-vocabulary, recorded as separate runs. No rejudgment or selecting among repeated identical-version runs.",
+    "Successful-degraded events count only successful committed writes; zero does not certify failed preparations as non-degraded.",
+    "Search elapsed_ms excludes Answer/Judge model time. Per-call Answer/Judge latency is not logged by the frozen evaluator."
+  ],
+  "artifact_hashes": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/plan.json": "bc3a8b02e7d7f9ff8e348b267340a470a753fd225ea90c2527655abc7c0c0173",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/summary.json": "26cb002107d8ab1d77ff12471e382842f49cd7f09a2e6e1796036d55707ea315",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/runtime.json": "b9348dfb633502277d1f737312fb3c77e10429c267d6138670b9529bbea16cd2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/phase-status.json": "04c82ec1e3d533057016fca6324e76e3df6966b171a32fd650a79f4aeb23e639",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/request-status.json": "ca24743258a7612c43c631054b2a8c980cfe6be9851beea6e558df1a4dac0f17",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/question-status.json": "58e2ece5295e6ec5ecc8a011b51712c6e1a1873d9fb2c55ca67ab0d89207c74e",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/model-calls.jsonl": "ba135dc84ff4eab696b22737e31c84abcc09757f5bd7768307514d5ea8c3a54a"
+  },
+  "write_generation_calls": {
+    "count": 80,
+    "outcomes": {
+      "ok": 80
+    },
+    "attempts": {
+      "0": 80
+    },
+    "purposes": {
+      "extraction": 32,
+      "verification": 34,
+      "repair": 8,
+      "state_transition": 1,
+      "source_erasure": 5
+    }
+  },
+  "write_generation_interpretation": "All recorded service generation calls returned successfully on attempt 0. The two failed adds were rejected by evidence/protocol or semantic validation after model responses, not model transport errors."
+}

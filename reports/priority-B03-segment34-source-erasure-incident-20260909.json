@@ -1,0 +1,306 @@
+{
+  "protocol": "recorded-source-erasure-incident-v1",
+  "sample": "B03_remember",
+  "segment": "34:0",
+  "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-34:0",
+  "scope": {
+    "read_only_source_databases": true,
+    "cloud_calls": 0,
+    "real_add_replays": 0,
+    "frozen_code_mutations": 0,
+    "score_mutations": 0,
+    "other_tenant_mutations": 0
+  },
+  "conclusion": "Confirmed protocol violation: a fact candidate received effect=mixed. The quote is nonempty and uniquely located; the error is not missing quotation or model connection failure. The candidate is a newly generated aggregate, whose erasure scope remains unproved.",
+  "candidate": {
+    "commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+    "dist_file_count": 141,
+    "all_dist_files_match_frozen_manifest": true,
+    "manifest_sha256": "6697eb391c2528353d8b57173511584d6bd6ae8acbc9c635a09f248231b04160"
+  },
+  "http": {
+    "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-34:0",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Mixed erasure requires a source and explicit quotes\"}}",
+    "elapsed_ms": 17226.393958999994
+  },
+  "stages": [
+    {
+      "purpose": "extraction",
+      "trace_id": "aee99688-a35a-47fd-baec-40bcdbcfbf87",
+      "input_sha256": "7d83177ddf32988a0773c40dabca00873ea091e9c641a6f77b377e230869d095",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 2876.1437499999884
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "9f5a2a60-bee2-494e-966d-b9f46f7d736b",
+      "input_sha256": "f77444192fb03102a72595ae86d94d16ea5d82f1243103ddc2e15990aac9a4c8",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 3101.8971659999806
+    },
+    {
+      "purpose": "source_erasure",
+      "trace_id": "ce1baced-8441-4711-8cce-3be5f2f2c79f",
+      "input_sha256": "09fcf5c6a2e0cea99ad58132cbf26475de78906511df958d2b8a905e300c00d6",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11192.597875000036
+    }
+  ],
+  "causal_chain": [
+    "Two ordinary facts pass extraction and verification; no retirement operations are present.",
+    "The deterministic aggregate generator creates one inferred reflection for prospective revision 34 from six confirmed members.",
+    "Four lexical anchor matches nominate the new aggregate against an existing revision 12 boundary. Neither exact retired-value identity nor scope is established by this nomination.",
+    "The grouped source_erasure model receives one kind=fact row and returns mixed/mixed_source with one exact nonempty quote.",
+    "sourceReasonProblems calls compactSourceRows; the kind!==source guard rejects before quote defects or global source repair are reached.",
+    "prepare rejects before engine commit; revision remains 33 and the request has no receipt or persisted input messages."
+  ],
+  "aggregate": {
+    "id": "pattern-6678a5c0bfeb8e54892cebfca8af12e0c9beef93c76c0be6b2b38c4170fdf3cc",
+    "kind": "reflection",
+    "modality": "inferred",
+    "revision": 34,
+    "source_quotes": 0,
+    "source_spans": 0,
+    "source_ids": 6,
+    "depends_on_count": 6,
+    "supersedes": [
+      "15ff0cfdc405074b3989b6a7e31a2845e6ff568a51976f5b24d6d0511f9d0635"
+    ],
+    "members": [
+      {
+        "id": "fd814dba225ef4aff8a0d1ab2472c016650d8a96c58d7860059ffe9f115dfbaa",
+        "revision": 30,
+        "current": false,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "d3794501faf05bff6792fc64f6990c70a89280a6c0b1682e20b97b6549f64817"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": false,
+        "model_quote_is_part_of_member_content": false
+      },
+      {
+        "id": "69d1888bfc0d4107ca9b24b096db4575500e772a0f0a6864e7b0d5aecd1d8e04",
+        "revision": 14,
+        "current": false,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "6dfca93c4e6184b12b23aed78d7f927be7c2f313c2ad04bfac7ad0ea632ba9f4"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": false,
+        "model_quote_is_part_of_member_content": false
+      },
+      {
+        "id": "4da0b6651e36c49d2bd412f3eda4591b9d037dde9ef3814ada3086753e14d627",
+        "revision": 14,
+        "current": false,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "43050d17898da1901ed84343a64be17a92ed7445165fd3e68764ce77c8859590"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": false,
+        "model_quote_is_part_of_member_content": false
+      },
+      {
+        "id": "6905c4b8325c3054ffaf25e4902142037b243a1b03f3db2684101394f1086dab",
+        "revision": 14,
+        "current": false,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "aa8769e6b64fa55d00f96a5e2a7dfd12692e142164b1d122b147bad122606205"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": false,
+        "model_quote_is_part_of_member_content": false
+      },
+      {
+        "id": "7d0cb8adb3ede9b83607e0944d6dc0d5ab7c2126668a4c8fc28ad15f5b93c3a4",
+        "revision": 34,
+        "current": true,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "232fa918fbc8453592eeaee2595c4aa6042a3d4b2a4f1d87251e4dddce783f7b"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": false,
+        "model_quote_is_part_of_member_content": false
+      },
+      {
+        "id": "4dc56bb887e990747ac95ae911c79074bee2c703bc453a8c3fdfe160bab36b5e",
+        "revision": 14,
+        "current": false,
+        "state": "active",
+        "kind": "fact",
+        "modality": "confirmed",
+        "predicate": "experience",
+        "source_ids": [
+          "161520fd81ac7dd05959ea11b57aef9ec4995bd788f62414ff1c387fb701d6b7"
+        ],
+        "source_quote_count": 1,
+        "model_quote_is_part_of_member_value": true,
+        "model_quote_is_part_of_member_content": false
+      }
+    ]
+  },
+  "transmitted_context": {
+    "kind": "fact",
+    "context_keys": [
+      "subject",
+      "predicate",
+      "scope",
+      "value",
+      "modality",
+      "source_quotes"
+    ],
+    "has_depends_on": false,
+    "has_fact_kind": false,
+    "text_marks_aggregated_pattern": true,
+    "omitted_fields": [
+      "actual fact kind reflection",
+      "depends_on",
+      "source_ids",
+      "source_spans",
+      "member records and witnesses"
+    ],
+    "causality_limit": "The model still saw kind=fact and an explicit no-mixed-FACT prompt. Missing provenance is confirmed, but it is not established as the cause of the protocol violation."
+  },
+  "quote": {
+    "nonempty": true,
+    "count": 1,
+    "unique_in_generated_card": true,
+    "sha256": "c3e2aa3ee3e116c79a28a9412f92d2d318116319ebd8345caa73272906292a2a",
+    "provenance": "Exact substring of generated aggregate text and one existing member value, not that member content. This is not a new validated human-source witness."
+  },
+  "semantic_scope": {
+    "boundary": {
+      "revision": 12,
+      "predicate": "roommate_coworker",
+      "boundary": "value",
+      "tokenCount": 11,
+      "authorization_present": false,
+      "hashed_scope_present": true,
+      "raw_scope_present": false
+    },
+    "card_exact_retired_value_match": false,
+    "quoted_member": {
+      "id": "4dc56bb887e990747ac95ae911c79074bee2c703bc453a8c3fdfe160bab36b5e",
+      "predicate": "experience",
+      "state": "active",
+      "revision": 14,
+      "exact_retired_value_in_content": false,
+      "source_quotes_contain_retired_value": false
+    },
+    "candidate_nomination_anchor_count": 4,
+    "interpretation": "Lexical anchor nomination is not proof of erasure scope. No exact-value match does not prove independence. The historical boundary lacks original authorization text."
+  },
+  "database_evidence": {
+    "source_database": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite",
+    "backup": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-incident-20260909/before.sqlite",
+    "backup_sha256": "75cc65ac568e14cacaa92ae2516fc7d07b20739f132c2cbddc8e9b7e5226f229",
+    "source_database_main_wal_unchanged": true,
+    "revision": 33,
+    "receipts": 33,
+    "successful_new_adds_since_rev20": 13,
+    "failed_receipt_absent": true,
+    "failed_messages_absent": true,
+    "failed_fact_sources_absent": true,
+    "exact_schedule_prefix": true,
+    "candidate_present_before_failed_add": false,
+    "original_rev20_database_sha256": "0447b5d4093752ae65f7e1f9c7d3ecb1bbd403a3eca10465aac5b5733f3a2aa6",
+    "writeContinuation": false,
+    "quick_check": "ok",
+    "commit_reached": false,
+    "atomicity_evidence_limit": "No complete logical dump was captured immediately before the failed HTTP attempt. Evidence is the recorded prepare refusal before commit, exact replay from the observed revision-33 snapshot, unchanged prefix receipts/revision, and absence of all failed message IDs and fact source references. Do not describe this as a directly observed pre/post full-table equality."
+  },
+  "reproduction": {
+    "result": "original_three_packets_reproduced_same_prepare_refusal",
+    "recorded_model_calls": 3,
+    "all_system_and_input_strings_exactly_match": true,
+    "pure_decoder_also_reproduces": true,
+    "files": {
+      "artifacts/priority-B03-segment34-incident-20260909/snapshot.private.json": "5fce9a05c4491bb244a71ee7a5e4b19e407e72cdd872d472f7013b998c99a6aa",
+      "artifacts/priority-B03-segment34-incident-20260909/semantic-scope-check.json": "8cf5d18136b9c8a88c3fd132faa8078de8401c30d0f862937c6da9fb6a246029",
+      "artifacts/priority-B03-segment34-incident-20260909/packets.private.json": "fdc8480d5151a502fed024fe0b62d62bda42d3a1b34624d9deb0012de7e1214c",
+      "artifacts/priority-B03-segment34-incident-20260909/failed-ingest.private.json": "458344308cc1496a4937962013026f85b8f17876ec9333b9032e4f65e666cc6f",
+      "artifacts/priority-B03-segment34-incident-20260909/capture.json": "be4e10c1d4604c939f24c5a7caffdb3efe33e892c0bb64d7f29c38452ed97bca",
+      "artifacts/priority-B03-segment34-incident-20260909/replay-recorded.mjs": "85e7594e1ae297e2dac35fd0f5be8097014e30659131e5f020e1e4f2ab925f78",
+      "artifacts/priority-B03-segment34-incident-20260909/capture-extraction.mjs": "d1efef68865dda3ae73ca640803fc60d8c74a02f1892f4f3b5c54c1f8da42d81",
+      "artifacts/priority-B03-segment34-incident-20260909/request.private.json": "72e099370f28fb23f77b8e1060664081fa8a44b45ba7f8a5665af19df1429d8c",
+      "artifacts/priority-B03-segment34-incident-20260909/before.sqlite": "75cc65ac568e14cacaa92ae2516fc7d07b20739f132c2cbddc8e9b7e5226f229",
+      "artifacts/priority-B03-segment34-incident-20260909/replay-result.json": "8669ff4bff91fac30077ad78331595cd1f6242f694abcd7eeae16b0eb2d322de",
+      "artifacts/priority-B03-segment34-incident-20260909/aggregate-capture.private.json": "3d8388fb577ddc9b5106b5c527ef995364ece70bbe5e750892732232d26ad03b"
+    },
+    "script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-incident-20260909/replay-recorded.mjs",
+    "note": "Replay returns original recorded JSON outputs unchanged and forbids embeddings/unrecorded model calls. It writes only new artifact outputs with exclusive creation; use a fresh copied artifact directory without aggregate-capture.private.json/replay-result.json to rerun."
+  },
+  "code_evidence": [
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/service-dist/source-erasure.js",
+      "line": 45,
+      "detail": "Fact context excludes actual kind and dependency/source provenance."
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/service-dist/source-erasure-grouped.js",
+      "line": 8,
+      "detail": "Prompt explicitly requires uncertain for mixed FACT claims."
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/service-dist/source-erasure.js",
+      "line": 131,
+      "detail": "Combined kind/quote guard gives misleading shared error text."
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/service-dist/source-erasure-execution.js",
+      "line": 18,
+      "detail": "Structural kind error throws before collection of bounded repair defects."
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/service-dist/engine.js",
+      "line": 104,
+      "detail": "Prepare must succeed before commit at line 128; continuation is disabled."
+    }
+  ],
+  "next_steps": [
+    {
+      "priority": 1,
+      "proposal": "Split the error into fact-mixed protocol violation versus missing source quote; expose per-kind allowed effects and bounded reflection/member provenance. Preserve refusal for the original mixed package and for uncertain scope.",
+      "limit": "This improves diagnosis and model input; it does not establish recovered add success. Existing global repair edits literal quotes or a narrow reason mismatch, not semantic effect. Do not relabel mixed as erase or retain."
+    },
+    {
+      "priority": 2,
+      "proposal": "Design a separate path for declining materialization of a new optional aggregate when its scope cannot be proved, with explicit independent validation of members and source evidence. Review its supersedes link so omitting a new card cannot silently retire its predecessor.",
+      "limit": "This is a design hypothesis, not implemented. Do not delete existing members/cards or expand raw-source cuts merely to unblock the aggregate. Anchor overlap and different predicates do not prove either contamination or independence."
+    }
+  ],
+  "evaluation": {
+    "fixed_question_count": 6,
+    "statuses": {
+      "service_error": 6
+    },
+    "qa_executed_for_this_sample": false,
+    "scores_unchanged": true
+  },
+  "comparison_to_B14": "Both involve source-less inferred aggregates, but rejection layers differ: this is grouped source-erasure mixed-on-fact validation; B14 was erasure-binding scope-witness validation with uncertain effect. No evidence establishes one shared patch as sufficient."
+}
