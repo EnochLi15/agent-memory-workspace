@@ -1,0 +1,133 @@
+{
+  "status": "speaker_fix_effective_new_source_response_format_failure",
+  "campaign": "artifacts/priority-B03-segment45-add-20260909-01",
+  "candidate_commit": "d6712b866281dc4d88f85c37830641bba7352883",
+  "http_status": 503,
+  "elapsed_ms": 65428.257666,
+  "revision": 44,
+  "receipt_present": false,
+  "speaker_fix": {
+    "actual_participants": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+    ],
+    "assistant9_not_classified_human": true,
+    "all_14_original_messages_retained_in_both_standard_verification_inputs": true,
+    "initial_groups_complete": true
+  },
+  "actual_flow": {
+    "initial_facts": 7,
+    "initial_operations": 0,
+    "initial_semantic_findings": [
+      "Unsupported surname taken only from an unadopted assistant suggestion.",
+      "Message8 omitted exact job-title clarification and reporting chain."
+    ],
+    "repair": "One fact edited to remove unsupported surname; one fact appended for missing user-supported work relationship.",
+    "final_proposal_facts": 8,
+    "final_semantic_checks": "Two changed/new facts and affected messages passed; previous unchanged valid checks were reused.",
+    "source_erasure_candidates": 6,
+    "source_erasure_kinds": [
+      "fact",
+      "fact",
+      "source",
+      "source",
+      "source",
+      "source"
+    ]
+  },
+  "root_cause": {
+    "stage": "source_erasure model output parsing",
+    "trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+    "outcome": "error",
+    "error_type": "SyntaxError",
+    "error_category": "invalid_json",
+    "finish_reason": "stop",
+    "signal_aborted": false,
+    "refusal_detected": false,
+    "transport_code": null,
+    "output_shape": "A complete JSON decisions object is followed by explanatory prose, so the entire returned text is invalid JSON.",
+    "leading_object_for_diagnostic_inspection_only": {
+      "decisions": 6,
+      "effects": [
+        "retain",
+        "retain",
+        "retain",
+        "retain",
+        "retain",
+        "retain"
+      ],
+      "characters": 490
+    },
+    "trailing_non_json_characters": 416,
+    "full_output_sha256": "0e3f494495e9de37f709c4f946e152963a1848e7709ead71ce31df01dca24299",
+    "not_a_semantic_uncertain_verdict": true,
+    "standard_source_decoder_was_not_reached": true,
+    "fallback": "Parser SyntaxError is a capability/format failure; conservativeSourceErasureFallback correctly refuses unresolved nonempty candidate work. No retain/erase decision was committed."
+  },
+  "actual_calls": [
+    {
+      "purpose": "extraction",
+      "trace_id": "5cbb29cd-e414-403a-b70e-f1abd8531c69",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 20789.875333
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "ba7599c1-6464-491a-9434-fb9aa9d6a0e1",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 15225.053457999998
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "7fca9f22-1db8-471e-a0ed-d8a007cc1ebc",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11958.088583000004
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "771a75a2-ced4-4dea-b0d0-3a65738c2a30",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 4374.136875000004
+    },
+    {
+      "purpose": "source_erasure",
+      "trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+      "attempt": 0,
+      "outcome": "error",
+      "elapsed_ms": 12861.208417000002
+    }
+  ],
+  "snapshot": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/snapshots/B03_remember-rev44.sqlite",
+    "sha256": "2527f38217f79afb9f020bf477b02777bb1f39ffd671d31612ecf4043d7a24c2"
+  },
+  "no_new_activity": {
+    "cloud_calls": 0,
+    "database_opens": 0,
+    "database_writes": 0,
+    "qa_calls": 0,
+    "retries": 0,
+    "candidate_edits": 0
+  },
+  "limits": [
+    "The diagnostic leading-object inspection is not an accepted source verdict and is not supplied to the service decoder or a fixture.",
+    "This run confirms the speaker classifier and downstream semantic-repair path, not successful add recovery.",
+    "Runtime, prefix receipts and failed-write atomicity are independently audited by campaign_runner."
+  ],
+  "input_hashes": {
+    "model-trace.jsonl": "fb81a7b5a27bde2d885329a7f3ad4fe6c290c7b440488a60d61931c47bea6852",
+    "model-calls.jsonl": "cd650aa10522c443368da65c66038222c51b6e8751247ced298819185baf2da3",
+    "summary.json": "be042cd9d71e4f1acbdd7983340855ca74b22c9b6808c231f1be58a7204c3230",
+    "results.private.json": "d58c9369846321356afb9a51b3878c039b3bb445efd99fe6b7a7ce1f239199d1",
+    "frozen-inputs.private.json": "e3c82da5a775808b9e19049b5cd31fce0a9e61aa0979b138fe5a3d1b87734ff3"
+  }
+}

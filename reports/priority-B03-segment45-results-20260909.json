@@ -1,0 +1,292 @@
+{
+  "protocol": "single-failed-add-readonly-result-v1",
+  "created_at": "2026-09-08T20:37:18.993584+00:00",
+  "campaign": "priority-B03-segment45-add-20260909-01",
+  "scope": "One unchanged original single-attempt HTTP add on the actual revision44 mixed-version prefix. No QA, score changes, model-output rewriting or rerun.",
+  "candidate": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "8bbc72c7a85fd79edb992bcd12531ec9673e08575aa917046a8463857b8421f4",
+    "commit": "d6712b866281dc4d88f85c37830641bba7352883"
+  },
+  "compiled_files_verified": 141,
+  "result": {
+    "sample_id": "B03_remember",
+    "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-45:0",
+    "http_status": 503,
+    "elapsed_ms": 65428.257666,
+    "http_attempts": 1,
+    "error_code": "EVIDENCE_VALIDATION",
+    "transport_error": false,
+    "revision_before": 44,
+    "revision_after": 44,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "ceea72ef6db3b21d91237523adae286149a10d8b58675cf2785067b51fb67e4f",
+      "after": "ceea72ef6db3b21d91237523adae286149a10d8b58675cf2785067b51fb67e4f"
+    },
+    "integrity": "pass"
+  },
+  "error_message": "Source erasure semantic review required for 6 unresolved candidate pairs; lexical nomination cannot authorize erasure or retention",
+  "runtime": {
+    "status": "failed",
+    "pid": 28837,
+    "process_identity": "Wed Sep  9 04:32:45 2026",
+    "alive": false,
+    "started_at": "2026-09-08T20:32:45.378807+00:00",
+    "finished_at": "2026-09-08T20:33:51.739337+00:00",
+    "children": {
+      "sleep-prevention": {
+        "pid": 28863,
+        "process_identity": "Wed Sep  9 04:32:45 2026",
+        "alive": false,
+        "exit_code": -15,
+        "stopped_by_runner": true
+      },
+      "service": {
+        "pid": 28865,
+        "process_identity": "Wed Sep  9 04:32:45 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": true
+      },
+      "http-add-0": {
+        "pid": 28878,
+        "process_identity": "Wed Sep  9 04:32:45 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": null
+      }
+    }
+  },
+  "actual_call_sequence": [
+    {
+      "trace_id": "5cbb29cd-e414-403a-b70e-f1abd8531c69",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 20789.875333,
+      "attempt": 0,
+      "line": 1,
+      "record_sha256": "83e23be8b0a2308da7bb9e7d4adad5102bf25b1e523ab9f383da0100cb29a282"
+    },
+    {
+      "trace_id": "ba7599c1-6464-491a-9434-fb9aa9d6a0e1",
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 15225.053457999998,
+      "attempt": 0,
+      "verification_scope": {
+        "facts": 7,
+        "operations": 0,
+        "replacements": 0,
+        "messages": 7,
+        "reused": 0
+      },
+      "line": 2,
+      "record_sha256": "a6fbc8237381e9d95041b7d6b4ce913721a42352df8085d972cd8f2f70c48d56"
+    },
+    {
+      "trace_id": "7fca9f22-1db8-471e-a0ed-d8a007cc1ebc",
+      "purpose": "repair",
+      "outcome": "ok",
+      "elapsed_ms": 11958.088583000004,
+      "attempt": 0,
+      "line": 3,
+      "record_sha256": "6b70a164f29f063c039bcc871710865979a4aaa3c06587896636134be434a96b"
+    },
+    {
+      "trace_id": "771a75a2-ced4-4dea-b0d0-3a65738c2a30",
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 4374.136875000004,
+      "attempt": 0,
+      "verification_scope": {
+        "facts": 2,
+        "operations": 0,
+        "replacements": 0,
+        "messages": 2,
+        "reused": 11
+      },
+      "line": 4,
+      "record_sha256": "417aa2cc1f83a94e0ef795c2f34f3b84614e984cf37922bf8c2944d3cc919c3b"
+    },
+    {
+      "trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+      "purpose": "source_erasure",
+      "outcome": "error",
+      "elapsed_ms": 12861.208417000002,
+      "attempt": 0,
+      "error_type": "SyntaxError",
+      "error_category": "invalid_json",
+      "finish_reason": "stop",
+      "refusal_detected": false,
+      "signal_aborted": false,
+      "stream_started": true,
+      "http_status": null,
+      "source_erasure_batch": {
+        "index": 0,
+        "count": 1,
+        "offset": 0,
+        "candidates": 6
+      },
+      "line": 5,
+      "record_sha256": "bb312d293971e002d97e60dcd1b22c0e2eb0f9adf94cdd3328f614a68d139930"
+    }
+  ],
+  "latency": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/model-calls.jsonl",
+    "source_sha256": "cd650aa10522c443368da65c66038222c51b6e8751247ced298819185baf2da3",
+    "http_elapsed_ms": 65428.257666,
+    "model_calls_elapsed_ms": 65208.36266600001,
+    "non_model_remainder_ms": 219.89499999998952,
+    "stages": [
+      {
+        "trace_id": "5cbb29cd-e414-403a-b70e-f1abd8531c69",
+        "purpose": "extraction",
+        "outcome": "ok",
+        "elapsed_ms": 20789.875333,
+        "attempt": 0,
+        "line": 1,
+        "record_sha256": "83e23be8b0a2308da7bb9e7d4adad5102bf25b1e523ab9f383da0100cb29a282"
+      },
+      {
+        "trace_id": "ba7599c1-6464-491a-9434-fb9aa9d6a0e1",
+        "purpose": "verification",
+        "outcome": "ok",
+        "elapsed_ms": 15225.053457999998,
+        "attempt": 0,
+        "verification_scope": {
+          "facts": 7,
+          "operations": 0,
+          "replacements": 0,
+          "messages": 7,
+          "reused": 0
+        },
+        "line": 2,
+        "record_sha256": "a6fbc8237381e9d95041b7d6b4ce913721a42352df8085d972cd8f2f70c48d56"
+      },
+      {
+        "trace_id": "7fca9f22-1db8-471e-a0ed-d8a007cc1ebc",
+        "purpose": "repair",
+        "outcome": "ok",
+        "elapsed_ms": 11958.088583000004,
+        "attempt": 0,
+        "line": 3,
+        "record_sha256": "6b70a164f29f063c039bcc871710865979a4aaa3c06587896636134be434a96b"
+      },
+      {
+        "trace_id": "771a75a2-ced4-4dea-b0d0-3a65738c2a30",
+        "purpose": "verification",
+        "outcome": "ok",
+        "elapsed_ms": 4374.136875000004,
+        "attempt": 0,
+        "verification_scope": {
+          "facts": 2,
+          "operations": 0,
+          "replacements": 0,
+          "messages": 2,
+          "reused": 11
+        },
+        "line": 4,
+        "record_sha256": "417aa2cc1f83a94e0ef795c2f34f3b84614e984cf37922bf8c2944d3cc919c3b"
+      },
+      {
+        "trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+        "purpose": "source_erasure",
+        "outcome": "error",
+        "elapsed_ms": 12861.208417000002,
+        "attempt": 0,
+        "error_type": "SyntaxError",
+        "error_category": "invalid_json",
+        "finish_reason": "stop",
+        "refusal_detected": false,
+        "signal_aborted": false,
+        "stream_started": true,
+        "http_status": null,
+        "source_erasure_batch": {
+          "index": 0,
+          "count": 1,
+          "offset": 0,
+          "candidates": 6
+        },
+        "line": 5,
+        "record_sha256": "bb312d293971e002d97e60dcd1b22c0e2eb0f9adf94cdd3328f614a68d139930"
+      }
+    ],
+    "interpretation": "Measured sequential stages: extraction20.790s, verification15.225s, repair11.958s, verification4.374s, source_erasure12.861s. The final model response reached stop but failed JSON parsing."
+  },
+  "failure_analysis": {
+    "speaker_fix": "The prior grouped-participant failure was passed. Extraction produced7facts and reached standard semantic verification.",
+    "semantic_repair": "The first verification rejected an assistant-only surname and reported missing title/reporting evidence; one repair changed one fact and added one fact. The second verification passed with8finalfacts.",
+    "final_stage": "source_erasure",
+    "final_trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+    "classification": "invalid_json_with_trailing_prose",
+    "provider_outcome": {
+      "error_type": "SyntaxError",
+      "error_category": "invalid_json",
+      "finish_reason": "stop",
+      "refusal_detected": false,
+      "signal_aborted": false,
+      "stream_started": true
+    },
+    "response_shape": "An initial complete JSON object with six retain decisions was followed by non-whitespace explanatory prose, making the full response invalid JSON.",
+    "service_consequence": "The unresolved six candidate pairs reached the conservative fallback, which refused to authorize erasure or retention from lexical nomination alone.",
+    "important_boundary": "The initial six retain decisions were not accepted as a complete semantic certificate. This audit inspected their shape without salvaging, rewriting, or replaying them. No explicit uncertain effect or network failure caused this rejection.",
+    "attribution": "Original call/trace inspection and independent analysis by retrieval_optimization; local JSON decode shape verified without model calls."
+  },
+  "integrity": {
+    "status": "pass",
+    "revision_before": 44,
+    "revision_after": 44,
+    "exact_standard_prefix_receipts": 44,
+    "failed_request_receipt_absent": true,
+    "all_tables_and_schema_unchanged": true,
+    "logical_hashes": {
+      "before": "ceea72ef6db3b21d91237523adae286149a10d8b58675cf2785067b51fb67e4f",
+      "after": "ceea72ef6db3b21d91237523adae286149a10d8b58675cf2785067b51fb67e4f"
+    },
+    "source_snapshot_hashes_unchanged": true,
+    "candidate_inputs_execution_hashes_unchanged": true,
+    "controller_and_all_owned_children_stopped": true
+  },
+  "tail_gate": {
+    "open": false,
+    "reason": "HTTP503, revision44 and no segment-45:0 receipt; the required successful revision45 prefix is absent."
+  },
+  "qa": {
+    "questions_run": 0,
+    "new_scores": 0,
+    "prior_repeated_samples_added": false
+  },
+  "evidence": {
+    "independent_validation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-result-20260909/independent-validation.json",
+    "independent_validation_sha256": "85f4dafdb4dae08ed9a7771646958cff5c205d78b51f533a8e690f7dd169fca5",
+    "source_files": {
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/plan.json": "e28f4609a8d9fdca7d82c5d5b29f4637bd43a0f57788813ba9394ac27522e75e",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/runtime.json": "6706cd7913e0befba5564617d99af8d7c810beed8e6ba9122df4347e4ca7f228",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/summary.json": "be042cd9d71e4f1acbdd7983340855ca74b22c9b6808c231f1be58a7204c3230",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/results.private.json": "d58c9369846321356afb9a51b3878c039b3bb445efd99fe6b7a7ce1f239199d1",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/http-results/0.private.json": "467fd542d013974759ff8e0e076ab143f89562d60404477ed77e1ca45b3ce7ee",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/model-calls.jsonl": "cd650aa10522c443368da65c66038222c51b6e8751247ced298819185baf2da3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/model-trace.jsonl": "fb81a7b5a27bde2d885329a7f3ad4fe6c290c7b440488a60d61931c47bea6852",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/service.log": "45dc87d478dc0745994e7a53b39fa607f217f2fe88af117a71c7accd84e5c463",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/inputs.private.json": "e3c82da5a775808b9e19049b5cd31fce0a9e61aa0979b138fe5a3d1b87734ff3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/frozen-inputs.private.json": "e3c82da5a775808b9e19049b5cd31fce0a9e61aa0979b138fe5a3d1b87734ff3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/candidate-manifest.json": "8bbc72c7a85fd79edb992bcd12531ec9673e08575aa917046a8463857b8421f4",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/source-provenance.json": "0019d92a14dbec3cda6c74d36e9a93a35b42a1e76840d168b13efe9fe409ae95",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "2a76af7f5184ddd29e0363700b5eb8a10775f7546766484b916df3d34389c461",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/snapshots/B03_remember-rev44.sqlite": "2527f38217f79afb9f020bf477b02777bb1f39ffd671d31612ecf4043d7a24c2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "026e4e80a9d82883276b95cc5e16dbf2631e653e4f355820f64e51667c599ec1"
+    }
+  },
+  "new_model_calls_during_audit": 0
+}

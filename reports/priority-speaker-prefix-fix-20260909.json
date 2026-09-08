@@ -1,0 +1,189 @@
+{
+  "status": "frozen_speaker_prefix_classification_candidate",
+  "candidate_commit": "d6712b866281dc4d88f85c37830641bba7352883",
+  "base_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "candidate_manifest": "artifacts/priority-speaker-prefix-fix-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "8bbc72c7a85fd79edb992bcd12531ec9673e08575aa917046a8463857b8421f4",
+  "incident_report": "reports/priority-B03-segment45-incident-20260909.json",
+  "tail_result_report": "reports/priority-B03-tail-qa-results-20260909-01.json",
+  "change": {
+    "production_file": "src/text.ts",
+    "added_lines": 7,
+    "scope": "Reject candidate speaker labels that contain ordinary sentence-ending periods or here-is/here-are/here's introductions. Permit single-letter initials and the explicit existing-name title abbreviations Dr, Prof, St, Mr, Mrs, Ms, Mx, Jr, Sr, Rev and Fr.",
+    "preserved": [
+      "role=user always participates",
+      "single and multi-initial names including J.-P. Durand",
+      "conventional titles, apostrophes, hyphens and multilingual names",
+      "existing document-header guards",
+      "all original assistant content remains context",
+      "strict grouped/source-reference/semantic/erasure guards and model budgets"
+    ],
+    "not_implemented": [
+      "automatic insertion of missing groups",
+      "automatic not_memorable verdict",
+      "deletion or rewriting of assistant message9",
+      "broad person-name inference redesign"
+    ]
+  },
+  "validation": {
+    "failure_first": {
+      "tests": 7,
+      "passed": 2,
+      "failed": 5
+    },
+    "independent_review_regression": {
+      "test": "J.-P. Durand",
+      "failed_before_correction": true,
+      "correction": "Use the immediately preceding contiguous letters for each period, allowing hyphenated initials while still rejecting empty/standalone dots."
+    },
+    "final_targeted_passed": 8,
+    "full_passed": 651,
+    "full_failed": 0,
+    "full_duration_ms": 11107.535583,
+    "build_passed": true,
+    "independent_review": "Parent reviewed the seven production lines and requested the hyphenated-initial regression, which is included and passes.",
+    "actual_outputs_audit": {
+      "status": "original_three_outputs_decode_with_true_human_participants",
+      "cloud_calls": 0,
+      "database_opens": 0,
+      "database_writes": 0,
+      "embedding_calls": 0,
+      "commit_calls": 0,
+      "old_participants": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        9,
+        10,
+        12
+      ],
+      "new_participants": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12
+      ],
+      "removed_false_participant": {
+        "index": 9,
+        "role": "assistant",
+        "original_text_retained_in_context": true
+      },
+      "runs": [
+        {
+          "purpose": "extraction",
+          "trace_id": "666ae5b8-4e88-431b-a4f3-23496bf658ff",
+          "output_sha256": "6e1db0b972bfa64e1095f70f160a4a253c8eca260d67acdbe9dc487f549eefac",
+          "facts": 3,
+          "operations": 0,
+          "structural_decode": "passed",
+          "actual_group_indexes": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_scope": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_input_sha256": "15f8a91f4d38aa45946301a438d3af8bc77d780a5899159f5cd925cf68bd6cb2",
+          "verification_called": false
+        },
+        {
+          "purpose": "repair",
+          "trace_id": "8d62f705-cd2f-41c4-b8ef-941806f25e86",
+          "output_sha256": "1be15b599b8922fc48e7c99f8139e3a1f93889796ca641f4c86bea50ef78e09b",
+          "facts": 8,
+          "operations": 0,
+          "structural_decode": "passed",
+          "actual_group_indexes": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_scope": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_input_sha256": "1aea3237b391a94a3cc01688b5f23f34b7919fde194cd9e2b1ecf7e3f509756a",
+          "verification_called": false
+        },
+        {
+          "purpose": "repair",
+          "trace_id": "af9aa801-ae39-4cdf-8623-957948ce04c4",
+          "output_sha256": "1893db4c70912fbf494ddc63e28ee742b347fb47abd0a2edb1ac10dac4a23912",
+          "facts": 9,
+          "operations": 0,
+          "structural_decode": "passed",
+          "actual_group_indexes": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_scope": [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10,
+            12
+          ],
+          "verification_input_sha256": "17570a29be0c24567537d17765aa8002d2cf7d2094c6c5c64dcda5baca490320",
+          "verification_called": false
+        }
+      ],
+      "unchanged": {
+        "all_actual_model_outputs": true,
+        "all_fact_and_operation_fields": true,
+        "all_source_refs_expanded_to_same_original_spans": true,
+        "all_14_original_messages_in_standard_verification_input": true
+      },
+      "limits": [
+        "Each actual output is examined independently; after the corrected initial envelope, real execution will request a new semantic verification rather than replay the old repairs.",
+        "No missing group is inserted by production code. The old-decoder empty group exists only in this local equality assertion.",
+        "This audit builds the standard verification input and scopes without fabricating any verification verdict; it does not prove complete add recovery."
+      ]
+    },
+    "changed_dist_files": [
+      "text.js",
+      "text.js.map"
+    ]
+  },
+  "limits": {
+    "cloud_calls": 0,
+    "database_opens": 0,
+    "database_writes": 0,
+    "qa_calls": 0,
+    "scores_changed": false,
+    "new_semantic_verification_verdict": false,
+    "complete_add_recovery_proven": false,
+    "scope_note": "The three original proposals are individually decoded and their standard verification inputs inspected. This is not an exact new end-to-end execution; fresh real verification is still required."
+  }
+}

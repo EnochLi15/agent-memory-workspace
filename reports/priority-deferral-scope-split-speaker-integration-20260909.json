@@ -1,0 +1,56 @@
+{
+  "status": "locally_integrated_not_frozen",
+  "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service",
+  "base_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "common_base": "484f188de0ee2e83a38e91914dde00ae77f582b4",
+  "merge_conflicts": 0,
+  "staged_patch_sha256": "8a900e384e5bfd03fd9fc6cbe158411fc3c9359ee8ab38671e8cfa7fdb5e759c",
+  "production_changes_relative_to_eaddb821": [
+    "src/extraction.ts",
+    "src/repair.ts",
+    "src/text.ts"
+  ],
+  "new_or_modified_tests_beyond_existing_candidates": false,
+  "source_sha256": {
+    "src/extraction.ts": "635faad8e91b1e61f19616d3322389eeb08356086c3c45a94a5bc227b060d56d",
+    "src/repair.ts": "10ccb3075e7bfe7839e5d21c844b0f735b9f27fb5906f2a76cdf8b756c4b3e88",
+    "src/source-erasure.ts": "5a1c1402196db0724fc3e941de43d7bfbc6b52f1f270aeb535912e2019bcd0c0",
+    "src/source-erasure-grouped.ts": "d91314c99833f3dd667da1c0c9293ab8d26f16eaa1ab143a0d171b722a1087f2",
+    "tests/forget-scope-split.test.ts": "7c250b1428e165b8d5b6d1cb9134736595704044cf92a4583e33c198d2d82d4c",
+    "tests/autoaggregate-deferral.test.ts": "1bddbb5d6e3b69af9ad9cffcdf998c1f61b75721c44e8b370b7ee5932e8aec82",
+    "tests/fact-erasure-contract.test.ts": "9a47efacca6f290085b928a7506e2df6595506632c8c960c1d4a1f21f9d6d477",
+    "src/text.ts": "5d08c98e7c457aee26b59773a73fa337412da44d5d938c0adaf2d622699a6c65",
+    "tests/speaker-prefix.test.ts": "53dbc4023a7f6df9634a6b43cd2a5567ce004a764f99d2d9b91b6204d0cd2ab2"
+  },
+  "checks": {
+    "build_passed": true,
+    "full_tests_passed": 678,
+    "full_tests_failed": 0,
+    "diff_check_passed": true,
+    "cloud_calls": 0,
+    "database_writes": 0,
+    "new_adds": 0,
+    "running_services_modified": false
+  },
+  "interaction": [
+    "Aggregation requires no parsed operations and no sourceOperationPlan; an accepted split or source-only proposal with operations does not enter aggregate generation.",
+    "operationProposalUsed remains sticky across repair attempts. Removing an operation cannot erase the requirement for complete standard semantic verification or allow degraded preparation.",
+    "Even if a later no-operation result reaches aggregate generation, aggregate_deferred_erasure is an ordinary degraded marker and the sticky final guard rejects it; it is not exempted.",
+    "Pending direct instructions and sourceOperationPlan validation remain unchanged. No split/source substitution edits erasure protocol or stored history.",
+    "Standard Models.verify identity and VerificationSession fingerprints remain unchanged. B03 allowed_effects/fact_kind/dependency_count wire metadata is unchanged from eaddb821.",
+    "speakerPrefix narrows assistant sentence introductions consistently across participant coverage, operation source recognition and fact speaker classification. It does not change the split target union, the strict verification method gate, cached evidence fingerprints, or degradation handling.",
+    "All 678 existing combined regression tests passed; no candidate-external test or behavior change was introduced."
+  ],
+  "validation_logs": {
+    "build-with-speaker.txt": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "full-tests-with-speaker.txt": "d480b59ffe26f0ef5882adc09a4ac81d30a114afd9a5cbf7bc9dee0a5b9e844b",
+    "integration-with-speaker.diff": "3b3fb8d91a1feaaaa148edb8a18ac0b5254d69f74c98b484d2aeba7019308e98"
+  },
+  "release_gate": "No unified commit, manifest, frozen dist copy, service replacement, cloud call or QA run. Await parent decision after current independent sample results.",
+  "applied_commits": [
+    "a0b2bf0a9ad79029ea5c41f7e80eb28c51d4a520",
+    "d6712b866281dc4d88f85c37830641bba7352883"
+  ],
+  "combination_diff": "Against d6712b8 the staged tree differs only by the exact a0b2bf0 extraction/repair changes and its original test file. Cherry-picks required no manual conflict resolution.",
+  "old_670_report_preserved": true
+}

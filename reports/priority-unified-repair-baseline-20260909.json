@@ -1,0 +1,37 @@
+{
+  "status": "frozen_unified_repair_baseline_not_deployed",
+  "commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "branch": "integration/deferral-scope-split-20260909",
+  "source_root": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service",
+  "dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/final-dist",
+  "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/final-manifest.json",
+  "manifest_sha256": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+  "dist_file_count": 141,
+  "validation": {
+    "full_passed": 678,
+    "full_failed": 0,
+    "build_passed": true,
+    "logs_reused_without_repeating_tests": true,
+    "exact_tested_sources_unchanged_before_freeze": true,
+    "cloud_calls": 0,
+    "qa_calls": 0,
+    "deployment_performed": false
+  },
+  "validation_logs": {
+    "build-with-speaker.txt": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "full-tests-with-speaker.txt": "d480b59ffe26f0ef5882adc09a4ac81d30a114afd9a5cbf7bc9dee0a5b9e844b",
+    "integration-with-speaker.diff": "3b3fb8d91a1feaaaa148edb8a18ac0b5254d69f74c98b484d2aeba7019308e98"
+  },
+  "prior_integration_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-deferral-scope-split-speaker-integration-20260909.json",
+  "prior_integration_report_sha256": "1011c351ec5c4da837ff9829405d247ae9c11d08975e16b3ecb3ddb1f6990cbc",
+  "known_unresolved": [
+    "B30 complete original history writes successfully, but the existing standard tail QA score is 1/5: remaining retrieval packing/candidate coverage and operation-trace identity issues are not fixed by this baseline.",
+    "B03 current first continuation reaches revision 44. The segment-45 speaker-classification fault is fixed in its independent live candidate, but source-erasure output containing JSON followed by prose still causes invalid_json/HTTP503. That format fault remains unresolved.",
+    "This combined commit has passed local regression only; it is a unified repair baseline, not a new full benchmark score or a deployed service."
+  ],
+  "notes": [
+    "No test or build was repeated at freezing because tested source hashes exactly match.",
+    "No running candidate, database, original campaign, evaluator, score or cloud request was modified.",
+    "The manifest uses commit and dist fields compatible with the existing fixed-add executor."
+  ]
+}
