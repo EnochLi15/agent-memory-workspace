@@ -1,0 +1,442 @@
+{
+  "protocol": "readonly-A06-answer-judge-errors-v1",
+  "created_at": "2026-09-08T17:30:24.905875+00:00",
+  "scope": "Fixed original five questions only. Read recorded answers, judges and exact selected memories; no model call, rejudgment, score edit, DB access or competition protocol change. Gold only supports retrospective diagnosis, never online retrieval.",
+  "source_result_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-A06-history-rendering-qa-results-20260909.json",
+  "source_result_report_sha256": "c1838bf3edd6ec66e5944455eb2572bb49155642e75f12fe9a3ae51c1c67a8ba",
+  "scores": {
+    "original_correct": 1,
+    "candidate_correct": 0,
+    "planned_questions": 5,
+    "original_accuracy": 0.2,
+    "candidate_accuracy": 0
+  },
+  "questions": [
+    {
+      "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "category": "Forget/OperationTrace",
+      "rubric_required": [
+        "June 14, 2019",
+        "Lauren Choi",
+        "Portland courthouse",
+        "Min-ji",
+        "David",
+        "Cannon Beach",
+        "Surfsand Resort",
+        "Basenji"
+      ],
+      "gold_answer_sha256": "10b3e193661242999c844088eefc72de17fc37253e235cc37f8a54bbc43b5bc2",
+      "classification": "selected_evidence_still_incomplete",
+      "diagnosis": "The four new rows contain three unrelated plans and a texting-plan row whose verbatim context includes Basenji. New Answer uses that context. No selected text contains the still-missing family names or trip labels. Main failure is selected-evidence coverage, not failure to use the new relevant dog evidence.",
+      "unfulfilled_requirements": [
+        "Lauren Choi",
+        "Min-ji and David engagement",
+        "Cannon Beach",
+        "Surfsand Resort"
+      ],
+      "judge_comparison": "Both false for missing required details; new Judge acknowledges the added dog plan.",
+      "versions": {
+        "old": {
+          "answer_summary": "Marriage date and ceremony covered; surname, engagement, trip and dog plan missing.",
+          "answer_sha256": "889d79bba3c8ffab9d4c2a80b957a377d8b8795a5ee25945d6f163511e0732d5",
+          "prediction_record_sha256": "d670317d0882729ad5b2319c4e0231956db94002e5641eeafb9f0676a6aa1a8e",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "58a08aea781c54f08d590ec1a7effad28550eb581d8dae27244c70da33f5927e",
+          "judge_raw_sha256": "904449c89ccf2877dcea7b7ffa4546498ea2b6e53daa7f3232dddadcd5cd2ccb",
+          "retrieval_record_sha256": "37fd2a676330078740d5babd85c47e3039a9c944da852df1ae2894e2fd9b01f6",
+          "memory_count": 17,
+          "answer_user_sha256": "f5e5b185f998b1e1c7672174bdebd1bf74ad9525028b2a7d5539df324e048515",
+          "answer_messages_sha256": "4f7b3d1d073ff7fd56c6004146e08d636286b110b09efa808b696dc3b1b184c7",
+          "answer_http_body_sha256": "b671405a9b725f19bcc498f1beff90f01a4a56a1a49eaa209dda5e4480fb36f3",
+          "judge_messages_sha256": "21a2aa787d634366ebbfd1e9074fe2623fc1d93b205760acfeeea39dd13c5164"
+        },
+        "new": {
+          "answer_summary": "Marriage retained; Basenji/wait-until-after-summer newly used. Surname, engagement and trip still missing.",
+          "answer_sha256": "f016ba8bbfaa9856f590d63f10c63363253408437e4d1d27a7b425e1a183d06f",
+          "prediction_record_sha256": "39a187e9ad807c932d4921eaa2e54bc87865d8234f66a36964c4afe2ee8fc4e3",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "b06c84c8aec34bd297d01dc7a5cb5975c873a7da55c69fd309aba609ba03866e",
+          "judge_raw_sha256": "ccefe1e06a8b29f3f8485ce2079aa6215b7ad643bcee252cc9d175d54c7e7e3c",
+          "retrieval_record_sha256": "184d17ac8c5f004fcc14d30ecebc5298185795cd24d5f5ff34bbf2ae59524f4b",
+          "memory_count": 21,
+          "answer_user_sha256": "7be0820e8bfdbe73cf1504cee226e26a8dfae865e75f16cea52bdcf43a40108d",
+          "answer_messages_sha256": "fdc1498ced158f4ef82181d6a214762795b2a3442cf7835e0105756bb79bec22",
+          "answer_http_body_sha256": "8d483cf3829b3d6d5d52f0a552a71173d28311f35ca1a214674e51161c2260c8",
+          "judge_messages_sha256": "462bee020199d41471afc21ae29b9bece20775a84d68b7de130aa907d1fd1e2b"
+        }
+      },
+      "evidence": [
+        {
+          "id": "9c2855cd6b8118e0c9592d4b35499311cc9699683ee6ee01bd09772c427cfb86",
+          "new_rank": 20,
+          "content_sha256": "d2031cb219c8dfc766380b97822f85c2d26ac6e4481c8ae06269dc830f73cc74"
+        }
+      ],
+      "answer_http_body_identical": false,
+      "judge_messages_identical": false,
+      "short_new_answer_quote": "Lauren wants to get a Basenji"
+    },
+    {
+      "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+      "category": "Forget/TargetBinding",
+      "rubric_required": [
+        "Tomás",
+        "removed",
+        "Lauren Choi",
+        "Min-ji",
+        "engagement"
+      ],
+      "gold_answer_sha256": "917bd2ef17a5611e3b17830a77b0cb64dc08e34a318320eb272e3b50c28dc06c",
+      "classification": "unsafe_service_event_evidence_plus_changed_answer",
+      "diagnosis": "All 18 memories and the reconstructed full Answer HTTP body are identical. Both versions already expose sensitive event descriptions. Old Answer happened not to repeat them and cannot establish safety; new Answer does. Judge inputs differ because Answer differs, so this is not an isolated Judge-only flip. Observed Answer variability is real; a specific sampling/backend cause and numerical Judge contribution are not identified.",
+      "unfulfilled_requirements": [
+        "Lauren Choi",
+        "Min-ji own engagement to David"
+      ],
+      "judge_comparison": "Old true treats Lauren as Lauren Choi and another engagement involving Min-ji as her own. New false cites actual sensitive-name leakage plus missing/misbound required information.",
+      "versions": {
+        "old": {
+          "answer_summary": "Names the removed friend and abstracts private deletion details. Omits surname and substitutes another couple’s engagement.",
+          "answer_sha256": "fd61e9e8858c2b8b65d543cad78b6a86ba93f97c694ff2b08516e2acb183afd7",
+          "prediction_record_sha256": "9b79b12165e68a7e5990fc749076ffefe354d350625ae70b1efa8d9ad8f1517e",
+          "correct": true,
+          "status": "judged",
+          "judgment_record_sha256": "3a800e8a7ea3d0e647edc620c020f5e7b7da209da882a6a50ba9d9c3d941ab41",
+          "judge_raw_sha256": "48c9d198dfc2b9b9a0e108244fdf1a38be525b8e1d4a2c1fe8ed5ce7e8fdadd8",
+          "retrieval_record_sha256": "cc1b001cec4ede4fbae7cff7834eabcbe120dcc597e530b0932f4d056c4a4e5f",
+          "memory_count": 18,
+          "answer_user_sha256": "d9f5f33d8ae09ea80c41f3888473809c721ac80a095ba8e6fdd115350e1bf552",
+          "answer_messages_sha256": "bc84f2479b603c077a07d9cf06beb2989111e60c1f44f86333d2d88ad6d37833",
+          "answer_http_body_sha256": "f545e5be95037b12a1d975ae4836dc112afbfdd7287a3100d8f471431fb3ba78",
+          "judge_messages_sha256": "e71f2f69287843f0332b096d09d038377273ae4c8d0fb43df264dcac42690799"
+        },
+        "new": {
+          "answer_summary": "Translates/expands the sensitive descriptors in the first two operation events; repeats the prohibited name and divorce-related details. Same identity/engagement gap remains.",
+          "answer_sha256": "4733c8d72ad48d38ae81658ae2235b7a61aec6983eaa62279ba5f24c6ae6f21e",
+          "prediction_record_sha256": "8ad0a88d7d55ccf4866d1f96b14cbc5a97573d0c51b39b534c8f31572c81ef96",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "8a9491b93d0de1062a262701e2491e2595b74d8eb84ff4525fa01c798eecdb6f",
+          "judge_raw_sha256": "4044840b080f17b29b7276901d9d14243d9e4d072b5abcd417dc7e745c7f79ff",
+          "retrieval_record_sha256": "30de7565e598913586faad250a53149a57f9a1e2760d84ff6ffa469dadab8ae3",
+          "memory_count": 18,
+          "answer_user_sha256": "d9f5f33d8ae09ea80c41f3888473809c721ac80a095ba8e6fdd115350e1bf552",
+          "answer_messages_sha256": "bc84f2479b603c077a07d9cf06beb2989111e60c1f44f86333d2d88ad6d37833",
+          "answer_http_body_sha256": "f545e5be95037b12a1d975ae4836dc112afbfdd7287a3100d8f471431fb3ba78",
+          "judge_messages_sha256": "d7be88c2ad1b44f85737037eba2de625c5d5ba135ce3bc3c8e8f9b8703d43eca"
+        }
+      },
+      "evidence": [
+        {
+          "id": "event-5763559b0bede4dfcff16f26778dfc658800fd97daa1de09c2e925a66068129e",
+          "new_rank": 1,
+          "content_sha256": "a549d2a75a4492521e9866b78e9febc4c30adde2949bc967c96849fe9c31a2b8"
+        },
+        {
+          "id": "event-b2967d7551a00421ca7b5a2be0108a7b34d6b413190c7cfe50af999d7980edd9",
+          "new_rank": 2,
+          "content_sha256": "7ec5103b20bff0cf411cf70fe197f38d6e0caf202e09a9cfdff1fa57fd5012dd"
+        },
+        {
+          "id": "964245ff46cab2a68a567e218fbec98a1fa025e29a6a770067bdcc62636c3a1d",
+          "new_rank": 14,
+          "content_sha256": "387f4411f13c1b9f399edb582a1a66648399a9f831d6086b601994fd811ba8ef"
+        }
+      ],
+      "answer_http_body_identical": true,
+      "judge_messages_identical": false,
+      "short_new_answer_quote": "including the separation timeline and the name Andrea",
+      "sensitive_name_presence": {
+        "old": {
+          "answer": false,
+          "memories": [
+            "event-5763559b0bede4dfcff16f26778dfc658800fd97daa1de09c2e925a66068129e"
+          ]
+        },
+        "new": {
+          "answer": true,
+          "memories": [
+            "event-5763559b0bede4dfcff16f26778dfc658800fd97daa1de09c2e925a66068129e"
+          ]
+        }
+      },
+      "sensitive_name_present_in_options": false
+    },
+    {
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "category": "Forget/StateTransition",
+      "rubric_required": [
+        "June 14, 2019",
+        "Lauren Choi",
+        "Min-ji",
+        "David",
+        "Cannon Beach",
+        "Surfsand Resort",
+        "Basenji"
+      ],
+      "gold_answer_sha256": "31afab9186a05348b7abd7e0cb65e0223f0d86f30b34c0ab418aca83ca0f27ea",
+      "classification": "unchanged_input_missing_family_binding",
+      "diagnosis": "All 28 memories and the reconstructed Answer input are identical. Target engagement names and surname are absent from selected records, while trip/dog evidence is used. Changed prose cannot be credited to rendering.",
+      "unfulfilled_requirements": [
+        "Lauren Choi",
+        "Min-ji and David engagement"
+      ],
+      "judge_comparison": "Both false for missing Min-ji/David engagement and Lauren Choi.",
+      "versions": {
+        "old": {
+          "answer_summary": "Wedding, anniversary destination/lodging and dog plans included; target engagement and surname absent.",
+          "answer_sha256": "3914e0da265d26d169e276d36345b588bb7eb62aa5b47e2ef4204a6035291146",
+          "prediction_record_sha256": "d073f5aa7cd551e0016082bcd723db0c50ce6c4a27bbdcfa552d71d0000b8051",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "660572b9011d92de9f94e3a0761d704557a4c5ef3b8dc7f263a2de5387a9445e",
+          "judge_raw_sha256": "59debdcac4b29c03e98dd46c9041fcc729944cba28ceffd2869da9ac32a23698",
+          "retrieval_record_sha256": "28d0bf21ff477c0c78c6f65d752afc5a84b793f2ce051fa4aabdc894f54c4642",
+          "memory_count": 28,
+          "answer_user_sha256": "9ee2a58a861e221a81258a1b42b59d362b5f0273eb45165256e0303804040f71",
+          "answer_messages_sha256": "5e280ddacbbe0fb456687af5fee60f3fb106fcc11f6efd442fb29249a4f4f319",
+          "answer_http_body_sha256": "4fc5733ce3e3e7447f9f9ca7bff503326fd7cf4069211d1b19113b400a83f0a8",
+          "judge_messages_sha256": "7da3af7fbea583e37a564f0b878687807d859cec45718c708a1cbb8e5b5d60a9"
+        },
+        "new": {
+          "answer_summary": "Same supported core plus irrelevant promotion/texting details; same required facts absent.",
+          "answer_sha256": "6460be4fc094fbe2437283fb410d18eecd26f7e671e2439c798e1882aa82a8bc",
+          "prediction_record_sha256": "d4d540b2a2f0f7ccc23d351767bc3ad4d2790a65b273cfae5db518a5b8ae1077",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "c3781f4d52a7f9e2160620727f43c1eec306d63856874dfc5b5caaf0cc5a7a5f",
+          "judge_raw_sha256": "88a851e71abcbecede0ceb9e2651c896144de4113817eedbb2610e8df5fa6baa",
+          "retrieval_record_sha256": "3d061b6690be8c363fa7adfee3587b6de0d825dff98f64aea5b70ff1c0f3f1c4",
+          "memory_count": 28,
+          "answer_user_sha256": "9ee2a58a861e221a81258a1b42b59d362b5f0273eb45165256e0303804040f71",
+          "answer_messages_sha256": "5e280ddacbbe0fb456687af5fee60f3fb106fcc11f6efd442fb29249a4f4f319",
+          "answer_http_body_sha256": "4fc5733ce3e3e7447f9f9ca7bff503326fd7cf4069211d1b19113b400a83f0a8",
+          "judge_messages_sha256": "ef6e02d40280ca3ddf8dfdc99b79c82b031a218b4612936753e647b3452b9801"
+        }
+      },
+      "evidence": [
+        {
+          "id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+          "new_rank": 26,
+          "content_sha256": "f2806dd66d6f79edd093449fe1836f51c425cf1b8c3b1ef86f202d420836a131"
+        },
+        {
+          "id": "d60a1315a0529d7d252a64712cd99126817afe7291eca5dcd36156f1aa4d36eb",
+          "new_rank": 11,
+          "content_sha256": "446e798981e64e1f10f4df75461c8a27286b3ba23e80210459d107b5f212ed9f"
+        }
+      ],
+      "answer_http_body_identical": true,
+      "judge_messages_identical": false
+    },
+    {
+      "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "category": "Forget/CandidateDisambiguation",
+      "rubric_required": [
+        "no specific personal details"
+      ],
+      "gold_answer_sha256": "03dc646bec9cd6e8c399bfe8903be95c12008f0d73a507423aca2169fdbeba96",
+      "classification": "answer_echoes_sensitive_multiple_choice_distractors",
+      "diagnosis": "Both sets of 17 actual memories contain no Andrea/divorce/January-separation claim. Sensitive details are in the supplied options. This is option echo by Answer, distinct from p2 where the service evidence itself leaks. Input is unchanged.",
+      "unfulfilled_requirements": [],
+      "judge_comparison": "Both false despite correct selection; negation does not remove sensitive content from the answer.",
+      "versions": {
+        "old": {
+          "answer_summary": "Correctly selects first option, then negates but repeats forbidden distractor details.",
+          "answer_sha256": "55c98bbd197c1c3385c9dfbf9f11f560f0463e699879b725abeb3a71e8c242ab",
+          "prediction_record_sha256": "53f0156fac223f63b9b8b834e7f7e3a5828d8226d495fc007aacf594a2cdb4e8",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "9ba76244f592dd4a9302a056d4016f2d914a8fb0f89985b5e426b83afe644495",
+          "judge_raw_sha256": "843c172fab70e66b6c508525099a76b09289590225ada005a0051d381c27fa69",
+          "retrieval_record_sha256": "1fbfaf32f74f5b1b97fe045a50f83a629d3b958ab81ba4b19cf7d741980d64ec",
+          "memory_count": 17,
+          "answer_user_sha256": "e04d53e3b50bd17a0f1f198ce5041d9641736379d76fc2ca8c9fc590d6ffaa1c",
+          "answer_messages_sha256": "9ffcaeba0a6342e290ac464ed3a042a03333f24e443d362416dca3781d2672a8",
+          "answer_http_body_sha256": "bb7feb81a4d2b41ac402b876cf7006cf9a5c8a225bc7ceea0c087c805e975e79",
+          "judge_messages_sha256": "389f54a7818f4a4d99fed9faa71d8ead2af7fc3304a2bed80a9c3dc41e344975"
+        },
+        "new": {
+          "answer_summary": "Again selects first option, then repeats a forbidden name while saying details are not retained.",
+          "answer_sha256": "e41e19f4dbcb1cfb87beb22b6c44132b55f80c4c48454d11f5d3524e7bdfec46",
+          "prediction_record_sha256": "66f74fae5da1f183547904427618f9d694496a84e5700ff2de6e18848ae6a103",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "5abe2efa84c8e71a7cc39a28beca08341db0b5e840eedff16fec47ffbf7caecf",
+          "judge_raw_sha256": "b8b97ceee55c12af0fb334d9782e79027370bfd1cd512433baa29e62ec5fd6d9",
+          "retrieval_record_sha256": "d3e5e6a54d27c0a5f67ece46f3d07d156b8c6a505c645d531c3f80af21e342e3",
+          "memory_count": 17,
+          "answer_user_sha256": "e04d53e3b50bd17a0f1f198ce5041d9641736379d76fc2ca8c9fc590d6ffaa1c",
+          "answer_messages_sha256": "9ffcaeba0a6342e290ac464ed3a042a03333f24e443d362416dca3781d2672a8",
+          "answer_http_body_sha256": "bb7feb81a4d2b41ac402b876cf7006cf9a5c8a225bc7ceea0c087c805e975e79",
+          "judge_messages_sha256": "29f3878fef6148611a1132bf93c7241d5778518b8b173a0e4b18aa665fce4093"
+        }
+      },
+      "evidence": [],
+      "answer_http_body_identical": true,
+      "judge_messages_identical": false,
+      "short_new_answer_quote": "anything about a divorce or Andrea",
+      "sensitive_name_presence": {
+        "old": {
+          "answer": true,
+          "memories": []
+        },
+        "new": {
+          "answer": true,
+          "memories": []
+        }
+      },
+      "sensitive_name_present_in_options": true
+    },
+    {
+      "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+      "category": "Forget/OperationApplication",
+      "rubric_required": [
+        "Min-ji",
+        "David",
+        "Cannon Beach",
+        "Surfsand Resort",
+        "6th anniversary"
+      ],
+      "gold_answer_sha256": "4aa741b19e572cb978f8cc299d052aa088a059762f38833bdfd8eab957a2f471",
+      "classification": "incomplete_identity_binding_with_answer_name_omission",
+      "diagnosis": "Rank13 does contain both names, but only in a tentative dinner-plan summary; verbatim support uses pronouns and does not establish sister/fiancé or engagement identity. Rank6 describes another couple’s engagement. This is not zero name retrieval, nor a clear case of ignoring a fully supported engagement binding. Both answers omit names in this incomplete context. All 20 memories and Answer input are unchanged.",
+      "unfulfilled_requirements": [
+        "Min-ji",
+        "David"
+      ],
+      "judge_comparison": "Both false solely for missing Min-ji and David; other required facts and sensitive-topic avoidance accepted.",
+      "versions": {
+        "old": {
+          "answer_summary": "Card includes engagement, destination, lodging and sixth-anniversary paraphrase but addresses couple generically.",
+          "answer_sha256": "ea16afed42655444d04e7379a7f3eef4d8f2428280844def623fe8eb46055353",
+          "prediction_record_sha256": "b7e133c64c4de61b42ebd955874fe7fc51fce1ecb8a16054e2af3f5448342c25",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "91c1b9b76386851688754f065625335e955a037dcc4ffbb8caf3fb870a95309a",
+          "judge_raw_sha256": "96585d34c95ebcfcadb5588da3fb35776d8025759c293a49aaf88155e1adf0c7",
+          "retrieval_record_sha256": "b02cd81629c3b703b47fe5d3ed459224ffd45665db1b4533cf8daed9a7e91d3a",
+          "memory_count": 20,
+          "answer_user_sha256": "175d918c0d8cc8177132e465971428ac46de4b79d6f664ef6e97975392d5c687",
+          "answer_messages_sha256": "dc1b4e7e6b6848bbdd80f11fe309ae5f61cbbf8fc1e919c6529bcdc5bbe8e2aa",
+          "answer_http_body_sha256": "b2f318965c3c238e4b0caa10f8a0e048835d6c28de705cec49175eb697867eb6",
+          "judge_messages_sha256": "3382ba78d433feba38c5026feb3269c2adeda7122deb6ad09e9a8f1ff29298c7"
+        },
+        "new": {
+          "answer_summary": "Same required trip/anniversary facts; both recipient names still omitted.",
+          "answer_sha256": "28c4eac7e0db8e3a7014b915dee44edaa17e940d988cab8592dc905dd7cd26cf",
+          "prediction_record_sha256": "651d213c2e4994dbddb72489cf237311872e4ddf89fba43f5fb844642617db06",
+          "correct": false,
+          "status": "judged",
+          "judgment_record_sha256": "944a3eafc4b5789732dbff566e93e7515acfb5b1c2fba32952a840d2d1a9b915",
+          "judge_raw_sha256": "1348c33093aedfa3709a6c6fb251c5f0cb1995df506f71574274c31fa3cabc44",
+          "retrieval_record_sha256": "e406bc31c0f2c8c76817eea40585265283d43d7724802e88be5c02e7e8eb3339",
+          "memory_count": 20,
+          "answer_user_sha256": "175d918c0d8cc8177132e465971428ac46de4b79d6f664ef6e97975392d5c687",
+          "answer_messages_sha256": "dc1b4e7e6b6848bbdd80f11fe309ae5f61cbbf8fc1e919c6529bcdc5bbe8e2aa",
+          "answer_http_body_sha256": "b2f318965c3c238e4b0caa10f8a0e048835d6c28de705cec49175eb697867eb6",
+          "judge_messages_sha256": "27ae7999830e4ebe1f22c52acd1cec81117e30a0bbea79915fce03da31e26763"
+        }
+      },
+      "evidence": [
+        {
+          "id": "f4105aed62d7241f5819922f8fb8c6d6db4cdea7b88200d5ee113b493d507820",
+          "new_rank": 13,
+          "content_sha256": "d971af2593f0c3c9c82b3ed577fbf356431d8d3d8e4b9b6bbfa0e6ae9616ae0d"
+        },
+        {
+          "id": "964245ff46cab2a68a567e218fbec98a1fa025e29a6a770067bdcc62636c3a1d",
+          "new_rank": 6,
+          "content_sha256": "387f4411f13c1b9f399edb582a1a66648399a9f831d6086b601994fd811ba8ef"
+        },
+        {
+          "id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+          "new_rank": 10,
+          "content_sha256": "f2806dd66d6f79edd093449fe1836f51c425cf1b8c3b1ef86f202d420836a131"
+        }
+      ],
+      "answer_http_body_identical": true,
+      "judge_messages_identical": false
+    }
+  ],
+  "inference_control": {
+    "model": "glm-5.2",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "rubric_prompt_sha256": "ac62ed729c4994310c7064235afcfee33d6e553161d7b434a8daceb19aa6e31d",
+    "inference_seed_or_temperature_sent": false,
+    "hash_method": "Independent reconstruction of the frozen runner/models.js JSON.stringify request, with absent options omitted; SHA256 of Answer user string, messages array and full HTTP JSON body, and Judge messages array. These are explicitly named reconstruction hashes, not assumed identical to a differently normalized diagnostic hash.",
+    "limit": "Manifest seed=20260905 is reporting/bootstrap metadata. Different Answer output gives different Judge input; no same-answer Judge counterfactual was run, so Judge-only randomness cannot be isolated."
+  },
+  "priorities": [
+    {
+      "priority": 0,
+      "action": "Close free-text operation-event descriptor/category exposure in Search for new and legacy events, preserving safe operation/time metadata.",
+      "reason": "p2 service evidence already leaks in both runs; old Answer abstention is accidental protection.",
+      "limit": "Projection safety does not prove old private DB bytes were physically purged."
+    },
+    {
+      "priority": 1,
+      "action": "Use gold-independent supported relationship bindings and budget diagnostics to investigate missing family evidence and unrelated aggregate competition.",
+      "reason": "p1/p3 lack complete selected family facts; p5 has names without the complete intended relationship binding.",
+      "limit": "No reference-term injection or score-driven online retrieval."
+    },
+    {
+      "priority": 2,
+      "action": "Record option echo and Judge interpretation differences as separate diagnostics under the existing protocol.",
+      "reason": "p4 options supply sensitive text; p2 old Judge accepted an incomplete/misbound engagement answer.",
+      "limit": "No Answer/Judge prompt change, rescoring or extra A06 draws."
+    }
+  ],
+  "artifacts": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/manifest.json": {
+      "sha256": "9bed9cdf194a0940ba3f54a38d09f1ef50972d3ab6ede67c6165d61867fdd410",
+      "bytes": 20159
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/predictions.jsonl": {
+      "sha256": "6ea503bd487dd0271d738abaa7aa435fa327f8cf7905b770ab24c67952cfd807",
+      "bytes": 12180,
+      "complete_records": 11
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/judgments.jsonl": {
+      "sha256": "05401c4ee5c9735c459e39a50c96c2476a0d6087b634794009187ba1ed310190",
+      "bytes": 11681,
+      "complete_records": 16
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/retrievals.jsonl": {
+      "sha256": "29315f0d27a937ce68d7bb798d3be13a7a9308e7279930814ac95ddc1f01ef0a",
+      "bytes": 224512,
+      "complete_records": 11
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-A06-history-qa-20260909-01-candidate-memops/manifest.json": {
+      "sha256": "b63f0d5291ec224f90a00077ff0f13fefc80f852b8a1f2b246751ff03a62a131",
+      "bytes": 20694
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-A06-history-qa-20260909-01-candidate-memops/predictions.jsonl": {
+      "sha256": "00e867834522c01489d3059c6f1912f156221fd6a09e676975db472460031375",
+      "bytes": 6402,
+      "complete_records": 5
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-A06-history-qa-20260909-01-candidate-memops/judgments.jsonl": {
+      "sha256": "8c2a3d748339bf0e1e57fdf26b8ed46c29b144cda53b8334f3ece6dbdb2c55cf",
+      "bytes": 4114,
+      "complete_records": 5
+    },
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-A06-history-qa-20260909-01-candidate-memops/retrievals.jsonl": {
+      "sha256": "07b2d32cd1056b57d2d5e533e5b2d1061fc4ef1e27e9f1d5d1531f39a1fce61f",
+      "bytes": 104465,
+      "complete_records": 5
+    }
+  },
+  "derivation_files": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-answer-errors-20260909/input-hashes.json": "fc365db5b9e59e1ff01ae54b7f6d23db0b979ddcecb354a49db3a8b870b03e90",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-answer-errors-20260909/derive-input-hashes.mjs": "60d214f94b4a1a9f7907cd1ffa98eb9288ef6094fe20150de2aa0e63915371e2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-answer-errors-20260909/build-report.py": "70906d704ee2b9665bf2966a209cfed20eabe00ec93ceed1ec511adcd1a0dd4b"
+  },
+  "limits": [
+    "No new score or successful-write claim.",
+    "The five fixed outcomes remain 1/5 old and 0/5 new.",
+    "Input-identical output variability does not demonstrate a retrieval-rendering regression."
+  ]
+}

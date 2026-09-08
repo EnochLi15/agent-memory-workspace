@@ -1,0 +1,93 @@
+{
+  "status": "WIP_NOT_DEPLOYABLE",
+  "base_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+  "commit": "a3847b18bb10118bab85b5da5f17353ec3aae63f",
+  "branch": "wip/b14-final-erasure-auth-20260909",
+  "service": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/service",
+  "documentation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/service/docs/erasure-authorization-wip.md",
+  "tests": {
+    "build": "pass",
+    "new_local": {
+      "tests": 4,
+      "pass": 4,
+      "fail": 0
+    },
+    "full": {
+      "tests": 569,
+      "pass": 530,
+      "fail": 39,
+      "elapsed_ms": 11200.974917,
+      "failure_categories": {
+        "missing_or_stale_final_erasure_authorization": 39
+      }
+    },
+    "original_recorded_components": {
+      "tests": 3,
+      "pass": 1,
+      "expected_red_failures": 2,
+      "full_uncertain_packet": "still_rejected"
+    }
+  },
+  "local_timing": {
+    "fixture": "two facts, one shared source, one forget; synthetic data",
+    "preview_elapsed_ms": 2.7077500000000043,
+    "checks": 3,
+    "input_chars": 5789,
+    "campaign_scale_measured": false
+  },
+  "privacy_and_scope": {
+    "cloud_calls": 0,
+    "real_adds": 0,
+    "original_database_writes": 0,
+    "original_full_packet_recovered": false,
+    "frozen_service_modified": false,
+    "old_tests_given_blanket_positive_certificates": false
+  },
+  "cost": {
+    "new_logical_model_calls_max": 1,
+    "trigger": "expanded fact erase OR raw source/passage rewrite, including raw cleanup attached to direct fact deletion",
+    "same_verification_model_and_shared_deadline": true,
+    "protocol_resampling": 0,
+    "preview": "private serialized SQLite memory image, repeated commit calculation",
+    "candidate_limit": 128,
+    "input_limit_characters": 256000,
+    "truncate_on_overflow": false
+  },
+  "open_work": [
+    "independent semantic verdict is untested; no B14 recovery",
+    "39 existing fixture/degraded-flow compatibility failures",
+    "all final representations including event/index review coverage",
+    "realistic clone latency/memory and bounded closure capacity",
+    "inherited human witness protocol remains separate; uncertain unchanged"
+  ],
+  "logs": {
+    "authorization-final-full-tests.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-final-full-tests.txt",
+      "sha256": "b4c7d7f60655d74dbb27a2b3cb2b12fdb06dc006182e008a29122b3ed21106cd"
+    },
+    "authorization-build.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-build.txt",
+      "sha256": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7"
+    },
+    "authorization-preview-initial-red.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-preview-initial-red.txt",
+      "sha256": "fd01c73034bed48a3ff8cc0f5e8d33e425f75c752f7c40b886cf67e42ed709c8"
+    },
+    "authorization-preview-tests.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-preview-tests.txt",
+      "sha256": "cb6026c8b8d201dfe21e4481b021c5093c3ecae014608d1011d913e042ddf60b"
+    },
+    "authorization-initial-full-tests.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-initial-full-tests.txt",
+      "sha256": "e8eb5877fea63f1601563b736715fa852539cc006d6c6ee9d211344b20d7f051"
+    },
+    "authorization-original-packet-tests.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-original-packet-tests.txt",
+      "sha256": "ea8c2e1f8f39e779ed2ff7ffd8604678a5d31720f06b186ae0d7f29651f43267"
+    }
+  },
+  "protocol": "B14-final-erasure-authorization-wip-summary-v1",
+  "source_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-derived-evidence-design-20260909/authorization-wip-report.json",
+  "source_report_sha256": "d10708ab2e167be7a58d31cab0246bd4a350958cb8fa35448ca6bd55f670e5f1",
+  "source_dist_file_count": 144
+}

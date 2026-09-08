@@ -1,0 +1,205 @@
+{
+  "protocol": "event-vocabulary-fix-v1",
+  "date": "2026-09-09",
+  "status": "local-tests-passed-candidate-frozen",
+  "problem": "A06 p2 retrieved operation-event evidence repeated forgotten details from a model-written descriptor in both old and new QA runs. The old answer merely happened not to repeat them; it did not establish service safety.",
+  "parent_answer_analysis": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-A06-answer-errors-20260909.json",
+  "candidate": {
+    "base_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+    "commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+    "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/service",
+    "working_tree_clean": true,
+    "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/candidate-manifest.json",
+    "manifest_sha256": "6697eb391c2528353d8b57173511584d6bd6ae8acbc9c635a09f248231b04160",
+    "dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/candidate-dist",
+    "dist_file_count": 141,
+    "changed_dist_files_vs_base": [
+      "events.d.ts",
+      "events.js",
+      "events.js.map",
+      "storage.js",
+      "storage.js.map"
+    ],
+    "changed_production_sources": [
+      "src/events.ts",
+      "src/storage.ts"
+    ],
+    "tests": "tests/event-vocabulary.test.ts",
+    "diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/candidate.diff",
+    "diff_sha256": "2c0179cd15c4e7fb3ec187e27fef24ad06113f0093dc190e6ac9172965636740"
+  },
+  "root_cause": [
+    {
+      "location": "base50cc src/types.ts:32",
+      "finding": "Operation.reason is a free-form string, not a value-free category certificate."
+    },
+    {
+      "location": "base50cc src/storage.ts:459",
+      "finding": "Only the forget reason length (<=40 characters) and token overlap with erased values were checked. Translation, synonym paraphrase or another sensitive name could pass this lexical check."
+    },
+    {
+      "location": "base50cc src/storage.ts:397 and :421",
+      "finding": "Erasure masks fact-backed passages and original message source spans. The free-text event descriptor is independent copied model output, not a source span."
+    },
+    {
+      "location": "base50cc src/storage.ts:438 and :470",
+      "finding": "New event rows are created after source masking and inserted into memory_events. No corresponding old-event descriptor cleanup runs during source erasure."
+    },
+    {
+      "location": "base50cc src/events.ts:21; src/retrieval.ts:55",
+      "finding": "projectEvents used descriptor || category as literal text; retrieve then ranks this projected event. The existing forgotten Before/After placeholders protected referenced fact values, but did not sanitize descriptor/category."
+    }
+  ],
+  "incident_records": [
+    {
+      "id": "event-5763559b0bede4dfcff16f26778dfc658800fd97daa1de09c2e925a66068129e",
+      "row_sha256": "7033f73179d24e65341dd18154d457820cdbf68c5696ee20ddd58899a68042ed",
+      "type": "forget",
+      "category": "memory record",
+      "actor": "user",
+      "ordinal": 4020000059,
+      "observed_at": "2025-02-06T00:00:08.000Z",
+      "revision": 38,
+      "descriptor_chars": 40,
+      "descriptor_sha256": "51e7bf2c02af39577f5fdf1e648d75c75b21fb4c5856f2ba06da5aac4f77ba87",
+      "source_ids": [
+        "ae6a07cacfef83f90d0a9d789fbbc2283b096434651334fa4f5cfacc7568d5b7"
+      ],
+      "before_ids": [
+        "a523b8cf861ac9db58f0fbfb40c95dff82dc70c8c387233c04c3e39a80eeb2b3"
+      ],
+      "after_ids": [],
+      "sources": [
+        {
+          "id": "ae6a07cacfef83f90d0a9d789fbbc2283b096434651334fa4f5cfacc7568d5b7",
+          "row_sha256": "c71604d62d119dcf57093eda19394f668a7957ac136cf4db620e1fd85a3092c0",
+          "content_sha256": "f15bac3dc211488fc7e6f498bb0ffe2ff89b3f5e33c054f5d5da3579825099a9",
+          "redacted": true,
+          "partial": true,
+          "searchable": true,
+          "content_chars": 327
+        }
+      ]
+    },
+    {
+      "id": "event-b2967d7551a00421ca7b5a2be0108a7b34d6b413190c7cfe50af999d7980edd9",
+      "row_sha256": "b3155011c770023feaebc6378e5f251fe8aad899a1dfa839bf2f83ea5d945d9e",
+      "type": "forget",
+      "category": "memory record",
+      "actor": "user",
+      "ordinal": 4020000188,
+      "observed_at": "2025-02-06T00:00:08.000Z",
+      "revision": 38,
+      "descriptor_chars": 30,
+      "descriptor_sha256": "bfe8943bf1a4f3b3aad328a3f37a2010be054e7a96efd9d9beb0cd4555aa01ec",
+      "source_ids": [
+        "ae6a07cacfef83f90d0a9d789fbbc2283b096434651334fa4f5cfacc7568d5b7"
+      ],
+      "before_ids": [
+        "7b0c453645420e19fac731ce863f348562a2aac8272e21ee5fc4d15b57ec97ef"
+      ],
+      "after_ids": [],
+      "sources": [
+        {
+          "id": "ae6a07cacfef83f90d0a9d789fbbc2283b096434651334fa4f5cfacc7568d5b7",
+          "row_sha256": "c71604d62d119dcf57093eda19394f668a7957ac136cf4db620e1fd85a3092c0",
+          "content_sha256": "f15bac3dc211488fc7e6f498bb0ffe2ff89b3f5e33c054f5d5da3579825099a9",
+          "redacted": true,
+          "partial": true,
+          "searchable": true,
+          "content_chars": 327
+        }
+      ]
+    }
+  ],
+  "fix": {
+    "write": "eventDescriptor accepts only a complete, exact, case-sensitive member of the code-defined vocabulary (existing event categories plus previous city). No trim, normalization, substring extraction, translation or model call. storage also retains the original erased-value token-overlap rejection.",
+    "legacy_projection": "projectEvents independently audits stored descriptors and categories. Unknown descriptor falls back to an audited category; unknown category becomes memory record for every operation type, including restore authorization text.",
+    "preserved": [
+      "forget operation and user/participant actor role",
+      "event id and source_ids",
+      "ordinal and observation time/time basis",
+      "revision",
+      "existing safe categories",
+      "previous city descriptor",
+      "existing fact visibility and erased-value placeholders"
+    ],
+    "scope": "Only two production source files changed. No erasure authorization, memory fact/source deletion logic, search ranking algorithm, Answer/Judge configuration, gold, model output or stored score was changed."
+  },
+  "validation": {
+    "red_new_write": {
+      "passed": 0,
+      "failed": 1,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/red-new-write.txt",
+      "cause": "Translated private value persisted as descriptor."
+    },
+    "green_new_write": {
+      "passed": 1,
+      "failed": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/green-new-write.txt"
+    },
+    "red_legacy_projection": {
+      "passed": 1,
+      "failed": 1,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/red-legacy-projection.txt",
+      "cause": "Untrusted legacy descriptor appeared verbatim in projected evidence."
+    },
+    "green_legacy_projection": {
+      "passed": 2,
+      "failed": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/green-legacy-projection.txt"
+    },
+    "targeted": {
+      "passed": 23,
+      "failed": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/targeted-tests.txt",
+      "coverage": [
+        "translated private values",
+        "synonym paraphrases",
+        "sensitive person names",
+        "exact full-string matching, including whitespace/case/zero-width character variants",
+        "previous city positive",
+        "allowed descriptor still rejected on erased-value overlap",
+        "legacy unsafe category for all seven operation types",
+        "legacy descriptor projection preserves metadata and input object",
+        "actual retrieve protects Search while stored legacy row bytes remain unchanged"
+      ]
+    },
+    "build": {
+      "exit_code": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/build.txt"
+    },
+    "full_service": {
+      "passed": 588,
+      "failed": 0,
+      "duration_ms": 11810.803584,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/full-tests.txt"
+    },
+    "frozen_hash_revalidation": true,
+    "same_vector_real_snapshot_replay": "Independently delegated to retrieval_optimization for all 184 events and five original query vectors; this report does not claim a new Answer/Judge score."
+  },
+  "data_and_model_boundary": {
+    "new_model_calls": 0,
+    "cloud_calls": 0,
+    "original_db_writes": 0,
+    "old_qa_results_unchanged": true,
+    "legacy_read": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-history-qa-20260909-01/A06.sqlite",
+      "mode": "ro+immutable",
+      "sha256_before_and_after": "3b1195744cfb3de5ac3a0420c50751a310531ffc1db0c4025eda61088d125e6f",
+      "same_file_hash": true,
+      "events_count": 184
+    },
+    "physical_descriptor_residue": "The two incident descriptor strings still physically exist in the old private A06 snapshot (and this change performs no migration or purge of any existing DB). The candidate suppresses arbitrary descriptors in Search projections, and blocks them for future event writes; it does not claim whole-database purge.",
+    "private_provenance": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-vocabulary-fix-20260909/legacy-event-provenance.private.json"
+  },
+  "log_sha256": {
+    "red-new-write.txt": "bc93fcedae75164788d8066b783d7ee3b9f701dd2524a24d133a3e60d14a8f08",
+    "green-new-write.txt": "6406500fb05a11c4f01aeb7acf7fd93dc1fcf14f432ed3b84bd33173f17d25af",
+    "red-legacy-projection.txt": "036f08a10f2ccd7a14e79cb17b5a78dabc0978696ddde0f55d09ccc2200e670d",
+    "green-legacy-projection.txt": "f1634bcfabb6fd5b4d1118e31596239833fc5c8106f0526cb1a4e324b247773b",
+    "targeted-tests.txt": "81002dcded41a2e0d7358820811176698b3114560003cb369d7aadfa05f84599",
+    "build.txt": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "full-tests.txt": "349a9d25674139508cee5af9f36dc85e9b35449b98e7f3ed9ddb0ca44060d895"
+  }
+}

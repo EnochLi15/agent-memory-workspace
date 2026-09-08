@@ -1,0 +1,171 @@
+{
+  "protocol": "A06-event-vocabulary-paired-summary-v1",
+  "status": "completed_readonly_offline_comparison",
+  "base_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+  "candidate_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+  "candidate_manifest_sha256": "6697eb391c2528353d8b57173511584d6bd6ae8acbc9c635a09f248231b04160",
+  "cloud_calls": 0,
+  "embedding_calls": 0,
+  "answer_judge_calls": 0,
+  "snapshot_sha256": "3b1195744cfb3de5ac3a0420c50751a310531ffc1db0c4025eda61088d125e6f",
+  "revision": 51,
+  "vectors_source_run": "priority-A06-history-qa-20260909-01",
+  "method": "Reuse the five actual query vectors, exact requests/options, full executed configuration and frozen revision 51 history. Compare base 50cc and ce935bfd collectCandidates/packEvidence on separate read-only SQLite clones without constructing a server, worker or model. Also project all 184 unchanged legacy events directly.",
+  "verification": {
+    "base_output_matches_prior_e9_same_vector_counterfactual": 5,
+    "candidate_frozen_dist_files_verified": 141,
+    "independent_database_clones_unchanged": true,
+    "all_legacy_event_metadata_type_source_order_and_time_preserved": 184,
+    "legacy_free_text_descriptors": 3,
+    "legacy_descriptors_still_projected": 0,
+    "new_global_projection_content_changes": 3,
+    "sensitive_marker_hits_in_any_selected_candidate_search": 0
+  },
+  "questions": [
+    {
+      "question": "p1_operation_trace",
+      "old_selected": 17,
+      "candidate_selected": 17,
+      "old_tokens": 5953,
+      "candidate_tokens": 5953,
+      "added_selected": 0,
+      "removed_selected": 0,
+      "same_complete_search_output": true,
+      "candidate_pool_added": 0,
+      "candidate_pool_removed": 0,
+      "retained_display_order_changed": false,
+      "sensitive_marker_evidence_pairs_before": 0,
+      "sensitive_marker_evidence_pairs_after": 0,
+      "sensitive_distinct_selected_rows_before": 0,
+      "sensitive_distinct_selected_rows_after": 0
+    },
+    {
+      "question": "p2_target_binding",
+      "old_selected": 18,
+      "candidate_selected": 19,
+      "old_tokens": 5980,
+      "candidate_tokens": 5989,
+      "added_selected": 1,
+      "removed_selected": 0,
+      "same_complete_search_output": false,
+      "candidate_pool_added": 0,
+      "candidate_pool_removed": 0,
+      "retained_display_order_changed": true,
+      "sensitive_marker_evidence_pairs_before": 4,
+      "sensitive_marker_evidence_pairs_after": 0,
+      "sensitive_distinct_selected_rows_before": 2,
+      "sensitive_distinct_selected_rows_after": 0
+    },
+    {
+      "question": "p3_state_transition",
+      "old_selected": 28,
+      "candidate_selected": 28,
+      "old_tokens": 5996,
+      "candidate_tokens": 5996,
+      "added_selected": 0,
+      "removed_selected": 0,
+      "same_complete_search_output": true,
+      "candidate_pool_added": 0,
+      "candidate_pool_removed": 0,
+      "retained_display_order_changed": false,
+      "sensitive_marker_evidence_pairs_before": 0,
+      "sensitive_marker_evidence_pairs_after": 0,
+      "sensitive_distinct_selected_rows_before": 0,
+      "sensitive_distinct_selected_rows_after": 0
+    },
+    {
+      "question": "p4_candidate_disambiguation",
+      "old_selected": 17,
+      "candidate_selected": 17,
+      "old_tokens": 5998,
+      "candidate_tokens": 5998,
+      "added_selected": 0,
+      "removed_selected": 0,
+      "same_complete_search_output": true,
+      "candidate_pool_added": 0,
+      "candidate_pool_removed": 0,
+      "retained_display_order_changed": false,
+      "sensitive_marker_evidence_pairs_before": 0,
+      "sensitive_marker_evidence_pairs_after": 0,
+      "sensitive_distinct_selected_rows_before": 0,
+      "sensitive_distinct_selected_rows_after": 0
+    },
+    {
+      "question": "p5_operation_application",
+      "old_selected": 20,
+      "candidate_selected": 20,
+      "old_tokens": 5981,
+      "candidate_tokens": 5981,
+      "added_selected": 0,
+      "removed_selected": 0,
+      "same_complete_search_output": true,
+      "candidate_pool_added": 0,
+      "candidate_pool_removed": 0,
+      "retained_display_order_changed": false,
+      "sensitive_marker_evidence_pairs_before": 0,
+      "sensitive_marker_evidence_pairs_after": 0,
+      "sensitive_distinct_selected_rows_before": 0,
+      "sensitive_distinct_selected_rows_after": 0
+    }
+  ],
+  "p2_details": {
+    "changed_retained_events": [
+      {
+        "id": "event-5763559b0bede4dfcff16f26778dfc658800fd97daa1de09c2e925a66068129e",
+        "before_rank": 1,
+        "after_rank": 2,
+        "same_event_id_retained": true
+      },
+      {
+        "id": "event-af235801c16d3da1d717a9de395ab53ad69a8e28b48458483c6a945e3f646f7a",
+        "before_rank": 4,
+        "after_rank": 3,
+        "same_event_id_retained": true
+      },
+      {
+        "id": "event-b2967d7551a00421ca7b5a2be0108a7b34d6b413190c7cfe50af999d7980edd9",
+        "before_rank": 2,
+        "after_rank": 4,
+        "same_event_id_retained": true
+      }
+    ],
+    "forget_type_preserved": true,
+    "source_order_numbers_and_observation_time_preserved": true,
+    "all_three_records_remain_selected": true,
+    "display_order_note": "Two event rows exchange retrieval rank after text sanitization. Their original Source order numbers and time fields remain unchanged; retrieval display order is not chronological order.",
+    "privacy_result": "The two legacy event descriptions no longer expose the removed spouse name, divorce or separation details. The third unrestricted descriptor is also replaced with a safe category. The check covers full Search content, not only exact whole-descriptor absence.",
+    "budget": {
+      "old_tokens": 5980,
+      "removed_unsafe_descriptor_tokens": 223,
+      "new_contact_plan_tokens": 232,
+      "candidate_tokens": 5989
+    },
+    "added_evidence": [
+      {
+        "id": "9c2855cd6b8118e0c9592d4b35499311cc9699683ee6ee01bd09772c427cfb86",
+        "rank": 19,
+        "predicate": "contact_plan",
+        "tokens": 232,
+        "content_sha256": "d2031cb219c8dfc766380b97822f85c2d26ac6e4481c8ae06269dc830f73cc74"
+      }
+    ],
+    "added_evidence_meaning": "A contact-plan fact is newly selected; its intact source context also contains the dog preference. This is a retrieval change, not proof of improved target-binding QA.",
+    "removed_evidence_count": 0
+  },
+  "limitations": [
+    "Uses vectors captured in the 8cc historical QA run on completed revision 51 history; neither variant is a new model or QA run.",
+    "The old database is deliberately not rewritten. This validates legacy event projection at search time; candidate write-time regression tests are reported separately by the implementation agent.",
+    "Selected evidence and exact quote coverage are diagnostics, not an accuracy or QA score.",
+    "Candidate legacy descriptor/category projection has been validated against this snapshot. Write-time protection and synthetic malicious categories belong to the implementation agent regression tests.",
+    "The test is against base50cc; it does not include the separate8cc historical-rendering patch.",
+    "No candidate Answer/Judge was run, no live database was modified, and existing QA scores are unchanged."
+  ],
+  "artifacts": {
+    "detailed_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-event-paired-retrieval-20260909/paired-event-report.json",
+    "all_event_projection_checks": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-event-paired-retrieval-20260909/projection-checks.json",
+    "private_selected_evidence": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-event-paired-retrieval-20260909/paired-results.private.json",
+    "replay_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-event-paired-retrieval-20260909/replay.mjs",
+    "frozen_candidate_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-event-paired-retrieval-20260909/candidate-dist"
+  },
+  "implementation_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-event-vocabulary-fix-20260909.json"
+}
