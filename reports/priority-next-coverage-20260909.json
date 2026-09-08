@@ -1,0 +1,481 @@
+{
+  "protocol": "priority-next-coverage-review-v1",
+  "created_at": "2026-09-08T22:09:05.229362+00:00",
+  "scope": "Report-only preservation of the completed read-only review. No new campaign, selection, dataset, request schedule file, model call, database write, or score is created.",
+  "original_plan": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/plan.json",
+    "sha256": "db5f4d0399034a4142f0bf3f39b9a695888702d20461f6ef19ae42540e6544be",
+    "planned_questions": 972,
+    "planned_adds": 5258,
+    "selection_manifest": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/configs/priority-benchmarks-20260908.json",
+      "sha256": "4613e5fa0eca0ee03346659e0ae71afee8595e475c4ff8f570b9db28a1244c1f"
+    }
+  },
+  "original_run_observed": {
+    "attempted_phase": "memops-risk",
+    "questions": 37,
+    "question_statuses": {
+      "service_error": 37
+    },
+    "sample_ids": [
+      "B14_forget",
+      "A06_forget",
+      "B01_remember",
+      "B03_remember",
+      "B14_reflect",
+      "B30_forget",
+      "B30_reflect"
+    ],
+    "successful_adds": 210,
+    "failed_adds": 7,
+    "risk_phase_planned_adds": 362,
+    "risk_phase_unattempted_adds": 145,
+    "sources": [
+      {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-full-20260908-01-candidate-memops-risk/ingest.jsonl",
+        "sha256": "050b82fd64b75d9bd9ddba16ab57696ad2aaefbbb054e1c56a82e36d10d4a6c3"
+      },
+      {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-full-20260908-01-candidate-memops-risk/judgments.jsonl",
+        "sha256": "2fed5fda90d2694886af88f166683ae8c76f18c658a3f6c20db4385cf950a726"
+      },
+      {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-full-20260908-01-candidate-memops-risk/manifest.json",
+        "sha256": "6a343c8a69f2a8947a76d4bf9ff51e128296bb9f6291a7d2ca5764b671fc9f7f"
+      }
+    ]
+  },
+  "unattempted_in_original_full_run": {
+    "questions": 935,
+    "scope_caveat": "Unattempted in this frozen 972-question campaign; not a claim that none of these questions appeared in earlier independent pilots. In particular conv-30 already has a separate 72-question pilot.",
+    "memops": {
+      "questions": 435,
+      "operation_samples": 88,
+      "background_groups": 31,
+      "planned_adds": 4536,
+      "source_dataset": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/data/memops-rest.json",
+        "sha256": "cdc1c629d4935b1ce48724fc6318025a28dbe7b5c8fd105251128bc8253df6ae"
+      },
+      "sample_ids": [
+        "A01_reflect",
+        "A01_remember",
+        "A01_update",
+        "A02_forget",
+        "A02_reflect",
+        "A02_remember",
+        "A02_update",
+        "A04_forget",
+        "A04_reflect",
+        "A04_remember",
+        "A06_reflect",
+        "A06_remember",
+        "A06_update",
+        "A07_forget",
+        "A07_reflect",
+        "A07_remember",
+        "A14_forget",
+        "A14_reflect",
+        "A14_update",
+        "A16_reflect",
+        "A16_remember",
+        "A16_update",
+        "A26_forget",
+        "A26_reflect",
+        "A26_remember",
+        "A26_update",
+        "A27_reflect",
+        "A28_forget",
+        "A28_reflect",
+        "A28_remember",
+        "A28_update",
+        "A29_forget",
+        "A29_reflect",
+        "A29_remember",
+        "A29_update",
+        "A30_forget",
+        "A30_reflect",
+        "A30_update",
+        "B01_forget",
+        "B01_reflect",
+        "B01_update",
+        "B03_reflect",
+        "B03_update",
+        "B04_forget",
+        "B04_reflect",
+        "B04_remember",
+        "B04_update",
+        "B05_forget",
+        "B05_reflect",
+        "B05_remember",
+        "B05_update",
+        "B06_reflect",
+        "B06_update",
+        "B10_reflect",
+        "B10_remember",
+        "B10_update",
+        "B11_forget",
+        "B11_reflect",
+        "B11_remember",
+        "B11_update",
+        "B14_remember",
+        "B21_forget",
+        "B21_reflect",
+        "B21_update",
+        "B22_forget",
+        "B22_reflect",
+        "B22_remember",
+        "B22_update",
+        "B23_forget",
+        "B23_reflect",
+        "B23_remember",
+        "B23_update",
+        "B24_forget",
+        "B25_forget",
+        "B26_forget",
+        "B26_remember",
+        "B27_reflect",
+        "B27_update",
+        "B29_forget",
+        "B29_remember",
+        "B29_update",
+        "B30_update",
+        "C01_forget",
+        "C01_reflect",
+        "C01_update",
+        "C02_reflect",
+        "C02_remember",
+        "C02_update"
+      ],
+      "by_operation": {
+        "remember": {
+          "samples": 19,
+          "questions": 114
+        },
+        "forget": {
+          "samples": 20,
+          "questions": 100
+        },
+        "reflect": {
+          "samples": 25,
+          "questions": 125
+        },
+        "update": {
+          "samples": 24,
+          "questions": 96
+        }
+      }
+    },
+    "locomo": {
+      "questions": 500,
+      "conversations": 9,
+      "planned_adds": 360,
+      "source_dataset": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/data/locomo.json",
+        "sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc"
+      },
+      "samples": [
+        {
+          "sample_id": "conv-26",
+          "questions": 129,
+          "sessions": 19,
+          "adds": 28,
+          "categories": {
+            "multi_hop": 24,
+            "temporal": 36,
+            "single_hop": 69
+          }
+        },
+        {
+          "sample_id": "conv-41",
+          "questions": 106,
+          "sessions": 32,
+          "adds": 46,
+          "categories": {
+            "multi_hop": 23,
+            "temporal": 26,
+            "single_hop": 57
+          }
+        },
+        {
+          "sample_id": "conv-30",
+          "questions": 72,
+          "sessions": 19,
+          "adds": 27,
+          "categories": {
+            "multi_hop": 9,
+            "temporal": 23,
+            "single_hop": 40
+          }
+        },
+        {
+          "sample_id": "conv-42",
+          "questions": 65,
+          "sessions": 29,
+          "adds": 44,
+          "categories": {
+            "multi_hop": 25,
+            "temporal": 40,
+            "single_hop": 0
+          }
+        },
+        {
+          "sample_id": "conv-43",
+          "questions": 47,
+          "sessions": 29,
+          "adds": 43,
+          "categories": {
+            "multi_hop": 23,
+            "temporal": 24,
+            "single_hop": 0
+          }
+        },
+        {
+          "sample_id": "conv-44",
+          "questions": 45,
+          "sessions": 28,
+          "adds": 46,
+          "categories": {
+            "multi_hop": 27,
+            "temporal": 18,
+            "single_hop": 0
+          }
+        },
+        {
+          "sample_id": "conv-47",
+          "questions": 16,
+          "sessions": 31,
+          "adds": 46,
+          "categories": {
+            "multi_hop": 16,
+            "temporal": 0,
+            "single_hop": 0
+          }
+        },
+        {
+          "sample_id": "conv-48",
+          "questions": 14,
+          "sessions": 30,
+          "adds": 46,
+          "categories": {
+            "multi_hop": 14,
+            "temporal": 0,
+            "single_hop": 0
+          }
+        },
+        {
+          "sample_id": "conv-49",
+          "questions": 6,
+          "sessions": 25,
+          "adds": 34,
+          "categories": {
+            "multi_hop": 6,
+            "temporal": 0,
+            "single_hop": 0
+          }
+        }
+      ]
+    }
+  },
+  "recommended_next_sample": {
+    "sample_id": "conv-43",
+    "benchmark": "locomo",
+    "source_dataset": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/data/locomo.json",
+      "sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc"
+    },
+    "selection": "The complete already-selected original conv-43 sample, all existing sessions and all 47 existing questions. No new question filtering or answer-dependent selection.",
+    "questions": 47,
+    "qids": [
+      "conv-43#q0000",
+      "conv-43#q0001",
+      "conv-43#q0003",
+      "conv-43#q0004",
+      "conv-43#q0005",
+      "conv-43#q0006",
+      "conv-43#q0007",
+      "conv-43#q0008",
+      "conv-43#q0009",
+      "conv-43#q0010",
+      "conv-43#q0011",
+      "conv-43#q0012",
+      "conv-43#q0013",
+      "conv-43#q0014",
+      "conv-43#q0015",
+      "conv-43#q0016",
+      "conv-43#q0017",
+      "conv-43#q0019",
+      "conv-43#q0021",
+      "conv-43#q0022",
+      "conv-43#q0023",
+      "conv-43#q0024",
+      "conv-43#q0025",
+      "conv-43#q0026",
+      "conv-43#q0027",
+      "conv-43#q0028",
+      "conv-43#q0029",
+      "conv-43#q0030",
+      "conv-43#q0031",
+      "conv-43#q0032",
+      "conv-43#q0033",
+      "conv-43#q0034",
+      "conv-43#q0035",
+      "conv-43#q0036",
+      "conv-43#q0037",
+      "conv-43#q0038",
+      "conv-43#q0039",
+      "conv-43#q0040",
+      "conv-43#q0041",
+      "conv-43#q0042",
+      "conv-43#q0043",
+      "conv-43#q0044",
+      "conv-43#q0045",
+      "conv-43#q0046",
+      "conv-43#q0047",
+      "conv-43#q0048",
+      "conv-43#q0049"
+    ],
+    "sessions": 29,
+    "messages": 680,
+    "timestamp_range": [
+      "2023-05-21T19:48:00.000Z",
+      "2024-01-12T13:41:00.000Z"
+    ],
+    "categories": {
+      "temporal": 24,
+      "multi_hop": 23
+    },
+    "questions_with_multiple_annotated_sources": 26,
+    "fresh_adds": 43,
+    "schedule_reuse": {
+      "helper": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-failed-tail-evaluation.py",
+        "sha256": "886591fb6925b6b1659a65c1c33b9c5af0a6ab837f517494e3e54dfd33dfed7f"
+      },
+      "function": "request_schedule(eval_root, data_file, namespace)",
+      "line": 122,
+      "eval_root": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/checkout/eval",
+      "frozen_chunker": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/checkout/eval/dist/adapters.js",
+        "sha256": "f1da551a78bb9cf433f76f3fde7c44e33f0d60d0d5d1e0f772f35a9507edfac5"
+      },
+      "source_input": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/data/locomo.json",
+      "filter_after_reconstruction": "sample_id == 'conv-43'",
+      "chunk_messages": 20,
+      "chunk_words": 2000,
+      "request_id_rule": "<new namespace>:locomo:conv-43:<original session_id>:<part>",
+      "expected_add_count": 43,
+      "note": "Reuse the existing pure schedule function and frozen evaluator chunks. This report does not allocate a namespace or create a schedule/campaign."
+    },
+    "rationale": [
+      "Adds a complete different LoCoMo conversation instead of continuing to optimize only the same three MemoryOps samples.",
+      "Covers named-person query focus, long-history competition, temporal retrieval and cross-session multi-hop evidence.",
+      "conv-44 has the fewest questions among temporal-containing selected conversations (45), but needs 46 adds and contains only 18 temporal questions; conv-43 has 43 adds and 24 temporal questions.",
+      "Smaller selected conv-47/48/49 subsets contain no temporal questions.",
+      "This expansion does not independently establish deletion safety or restore the unresolved B14 path."
+    ],
+    "score_protocol": {
+      "requirement": "Preserve the original LoCoMo phase protocol. Do not use the MemoryOps rubric proxy or relabel its scores as LoCoMo official-protocol scores.",
+      "mode": "upstream-reproduction",
+      "judge_kind": "refined-python",
+      "judge_model": "qwen3:14b",
+      "judge_execution": "Local quantized Q4_K_M model with the upstream refined Python Judge prompt/runtime. This is the original configured reproduction protocol, not a claim of leaderboard-equivalent Judge model.",
+      "answer_model": "glm-5.2",
+      "chunk_messages": 20,
+      "chunk_words": 2000,
+      "concurrency": 1,
+      "top_k": 100,
+      "configuration_source": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/configs/priority-single-worker-run-20260908.json",
+        "sha256": "11991decc5c03bd2a443b6c33211d79eab6d37463d9b295ad2abad64a8fc9c6b"
+      },
+      "existing_phase_entry": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-priority-campaign.py",
+        "sha256": "d89f06bcd6e2c55b06a53a71f41103c5461ebb46183f7f24e61c7120e37aa463"
+      },
+      "phase_branch_lines": [
+        309,
+        320
+      ],
+      "score_denominator": 47,
+      "original_scores_unchanged": true
+    }
+  },
+  "timing_basis": {
+    "fresh_locomo_adds": [
+      {
+        "run": "post-pull-conv30-20260908-01-candidate-locomo",
+        "successful_fresh_adds": 27,
+        "HTTP_elapsed_sum_seconds": 759.028725915,
+        "seconds_per_add": 28.11217503388889,
+        "manifest": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/post-pull-conv30-20260908-01-candidate-locomo/manifest.json",
+          "sha256": "b701f5339a8fc1a41d51e0a76a2567c11603f6f1cbb047415cae3807b21e4e4c"
+        },
+        "ingest": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/post-pull-conv30-20260908-01-candidate-locomo/ingest.jsonl",
+          "sha256": "cbb63d93eef73496af9cfb637b0d83c51e22a7bb5b6f08dd311b01b55da597e9"
+        }
+      },
+      {
+        "run": "priority-full-conv30-20260908-02-candidate-locomo",
+        "successful_fresh_adds": 27,
+        "HTTP_elapsed_sum_seconds": 953.598243709,
+        "seconds_per_add": 35.31845347070371,
+        "manifest": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-full-conv30-20260908-02-candidate-locomo/manifest.json",
+          "sha256": "fd7656c2fa50f56f57579070499ecab19d4b519a1e684182053d91994fd1850e"
+        },
+        "ingest": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-full-conv30-20260908-02-candidate-locomo/ingest.jsonl",
+          "sha256": "7bf47a30b0763112fb4b95f384fc18f1a4f5ee5fc3854a12babc120af61ccbd7"
+        }
+      }
+    ],
+    "same_locomo_protocol_QA_reference": {
+      "questions": 72,
+      "evaluation_wall_seconds": 878.021,
+      "cached_prefix_adds": 27,
+      "cached_prefix_HTTP_seconds": 0.048415872,
+      "write_model_calls": 0,
+      "report": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-conv30-72-results-20260908.json",
+        "sha256": "732fd21d5dd721afe59769519505671854d8dd67e3be387156f94df1221727cd"
+      },
+      "caveat": "Includes original Answer/Judge and evaluation overhead; cached millisecond add timings must not be used to price fresh ingestion."
+    },
+    "original_memops_successful_add_reference": {
+      "count": 210,
+      "HTTP_elapsed_sum_seconds": 2185.657846374,
+      "mean_seconds": 10.407894506542858,
+      "note": "Useful only as separate MemoryOps context; not substituted for LoCoMo long-history ingestion."
+    },
+    "conv43_estimate": {
+      "fresh_add_minutes_from_observed_locomo_means": [
+        20.147058774287036,
+        25.311558320670994
+      ],
+      "rough_successful_end_to_end_minutes": [
+        40,
+        60
+      ],
+      "suggested_scheduling_allowance_minutes": [
+        60,
+        90
+      ],
+      "query_focus_max_extra_seconds_if_enabled": 376,
+      "caveat": "Rough planning range, not a measured conv-43 result or confidence interval. Histories, Judge/model load, repairs and retries vary. The earlier broad QA allowance also used recent MemoryOps proxy timings; that is not a reason to change the required LoCoMo Judge protocol. Any new run must record its actual stage timings."
+    }
+  },
+  "priority_decision": "After the current 16-question QA reaches terminal state, prefer the single original conv-43 coverage expansion over a fresh full 972-question restart. Do not resample the known B14 failure path merely to seek a passing verdict.",
+  "actions_performed": {
+    "report_written_only": true,
+    "new_model_calls": 0,
+    "new_plans": 0,
+    "new_datasets": 0,
+    "new_request_schedule_files": 0,
+    "database_writes": 0,
+    "score_changes": 0
+  }
+}

@@ -1,0 +1,696 @@
+{
+  "protocol": "priority-query-focus-standard-qa-results-v1",
+  "campaign": "priority-query-focus-qa-20260909-01",
+  "candidate_commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+  "scope": "First standard QA run of this candidate: fresh Engine classifier, original 16 questions, no prior focus cache injection, no previous result replacement.",
+  "status": "finished",
+  "integrity": "pass",
+  "execution_status": "completed",
+  "planned_questions": 16,
+  "judged": 16,
+  "correct": 10,
+  "accuracy_over_planned": 0.625,
+  "samples": [
+    {
+      "sample_id": "B03_remember",
+      "planned_questions": 6,
+      "judged": 6,
+      "correct": 5,
+      "accuracy_over_planned": 0.8333333333333334,
+      "service_errors": 0
+    },
+    {
+      "sample_id": "B30_forget",
+      "planned_questions": 5,
+      "judged": 5,
+      "correct": 3,
+      "accuracy_over_planned": 0.6,
+      "service_errors": 0
+    },
+    {
+      "sample_id": "A06_forget",
+      "planned_questions": 5,
+      "judged": 5,
+      "correct": 2,
+      "accuracy_over_planned": 0.4,
+      "service_errors": 0
+    }
+  ],
+  "http_ingest": {
+    "planned_adds": 152,
+    "physical_add_requests": 152,
+    "unique_logical_adds": 152,
+    "status_200": 152,
+    "exact_prefix_receipts": 152,
+    "retry_attempts": 0,
+    "new_writes": 0,
+    "successful_degraded_adds": 0
+  },
+  "databases": [
+    {
+      "sample_id": "B03_remember",
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite",
+      "source_sha256": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a",
+      "source_hash_unchanged": true,
+      "snapshot_sha256": "ca5c64a2c854beebd21bc8f486525a5506be8264dd2929cca3fc0915249cb1be",
+      "snapshot_hash_unchanged": true,
+      "revision_before": 50,
+      "revision_after": 50,
+      "exact_receipts": 50,
+      "new_receipts": 0,
+      "all_logical_tables_unchanged": true,
+      "clone_sha256": "a4da3dbb72610859958f7278219d91d185c17814c97d4ecf8430767484832bdf"
+    },
+    {
+      "sample_id": "B30_forget",
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-tail-qa-20260909-01/data/21336bef65e29958fa1adfd86c152e56ae1b66af6d977a2c11038a742b992e31/memory.sqlite",
+      "source_sha256": "fcb75e95cfbf2c2c41853f436e0e6d2b2b4840d770c0e3e717cb8e50580219d7",
+      "source_hash_unchanged": true,
+      "snapshot_sha256": "e3b913e8ec569d614a0c76aad7253f3a1adb23972c69ac280109f64eb0924ba8",
+      "snapshot_hash_unchanged": true,
+      "revision_before": 51,
+      "revision_after": 51,
+      "exact_receipts": 51,
+      "new_receipts": 0,
+      "all_logical_tables_unchanged": true,
+      "clone_sha256": "0c7a5ff87d9571e0fa7f03bec656e708debe4cf06c787a6073d93c34fe57f846"
+    },
+    {
+      "sample_id": "A06_forget",
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/b8371f72cbe206a0e94482d8afa9389e3ad89e6f9e758c27b509f73d6be1aadf/memory.sqlite",
+      "source_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "source_hash_unchanged": true,
+      "snapshot_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "snapshot_hash_unchanged": true,
+      "revision_before": 51,
+      "revision_after": 51,
+      "exact_receipts": 51,
+      "new_receipts": 0,
+      "all_logical_tables_unchanged": true,
+      "clone_sha256": "6e60e4717456a191d5ae0bc3f2dc690e3895a5dde9318a240123f02481b308e0"
+    }
+  ],
+  "model_calls": {
+    "search_query_focus_generation": 16,
+    "focus_outcomes": {
+      "ok": 16
+    },
+    "focus_classifier_outcomes": {
+      "model": 16
+    },
+    "per_query_call_count": 1,
+    "model_attempts": [
+      0
+    ],
+    "generation_retries": 0,
+    "cache_hits": 0,
+    "disabled": 0,
+    "fallback": 0,
+    "add_generation": 0,
+    "add_embedding": 0,
+    "search_embedding": 16,
+    "rerank_generation": 0,
+    "fresh_Engine": true,
+    "query_only_input_exact": true
+  },
+  "configuration": {
+    "actual_service_config_sha256": "929c4b64017f8e6acdbc20cbbb04908776ba05f489ef8af84d7a5498118ddea0",
+    "actual_equals_reviewed_config_with_runtime_paths": true,
+    "queryFocus": true,
+    "queryFocusTimeout": 8000,
+    "verificationResponseFormat": "json_object",
+    "candidateLimit": 200,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "rerank": false,
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "answer_model": "glm-5.2",
+    "judge_model": "glm-5.2",
+    "judge_kind": "rubric",
+    "mode": "proxy",
+    "answer_inference": {
+      "stream": true,
+      "max_completion_tokens": 1800,
+      "attempts": 3
+    },
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "rubric_prompt_sha256": "ac62ed729c4994310c7064235afcfee33d6e553161d7b434a8daceb19aa6e31d",
+    "chunk_messages": 20,
+    "chunk_words": 2000
+  },
+  "timing": {
+    "runtime_ms": 500573.62899999996,
+    "eval_ms": 497345.0,
+    "idempotent_add_total_ms": 196.71687799977582,
+    "search_total_ms": 30380.37621000001,
+    "query_focus_generation_total_ms": 28580.46775000001,
+    "query_focus_generation_mean_ms": 1786.2792343750007,
+    "query_focus_generation_max_ms": 3271.870708000002,
+    "search_embedding_total_ms": 1095.22671000011,
+    "QA_and_other_eval_overhead_ms": 466767.9069120002,
+    "note": "Focus and embedding run concurrently within Search. The residual combines Answer/Judge and evaluator overhead; separate Answer/Judge latency was not measured."
+  },
+  "frozen_files": {
+    "plan_sha256": "5ab68e3bf5aa47224787b7a97fec816a9a4afe3680687f9575c1c881cd241129",
+    "compiled_dist_count": 144,
+    "all_compiled_hashes_match": true,
+    "pinned_source_and_dependency_count": 799,
+    "all_pins_unchanged": true,
+    "entry_sha256": "5a985e02ef070cd4d81c74a3628427976a5201e030f65425217276b467a659c0",
+    "candidate_manifest_sha256": "70a4b158a4e6e25b6db211c820574e6909e1ef67987f4cff2b8d0726fa4a7efe"
+  },
+  "owned_processes": {
+    "controller": {
+      "pid": 65088,
+      "process_identity": "Wed Sep  9 05:57:23 2026",
+      "alive": false,
+      "exit_code": 0
+    },
+    "children": {
+      "sleep-prevention": {
+        "pid": 65146,
+        "process_identity": "Wed Sep  9 05:57:25 2026",
+        "alive": false,
+        "exit_code": -15,
+        "stopped_by_runner": true
+      },
+      "service": {
+        "pid": 65148,
+        "process_identity": "Wed Sep  9 05:57:25 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": true
+      },
+      "eval-completed": {
+        "pid": 65151,
+        "process_identity": "Wed Sep  9 05:57:25 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": null
+      }
+    },
+    "monitor_gaps": []
+  },
+  "records": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/summary.json": "ad9e797eecebfc8aae69d2e4177a3f7176bd0eb81c0fb145af378ad78dac977f",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/runtime.json": "fb8fa4bba3cf89031ed74fbb696523ee6ee682dc2936c030949697bd30c2770a",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/http-receipts.jsonl": "39fd55b0a4af849db56f04dc24f7ce9b797586be97b33a0303db39e31ead78f4",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/model-calls.jsonl": "508fd3d855ad9464f20ffd135c31159ab249eb9a1170a88e6a01e8229d7dc648",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/model-trace.jsonl": "86d801caaf475cefa8358070fd181148bd16b4bfcffa207cce83943b770bfef6",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/retrieval-stages.jsonl": "3b490e6210e2a89acca3973e885a51ac1e66a1e8ff767f9fa11239e5a585d249",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/search-vectors.private.jsonl": "cac2cc97ea22e72e68d3b7b768903a82b7b7ab2da4a13f5df7662feff5f2398b",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/manifest.json": "deb277eb0cce6c426486fbf86023d822c75b824dc45c5757133ab351df15bc85",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/requests.jsonl": "995debe4e988724692dd53a5946b32c89c7b1a93d6d0b01a73ff6868bba57555",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/ingest.jsonl": "858400b38422da269ce4b4bbbfe02500763918a7a056e93568081246770e0005",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/retrievals.jsonl": "cfa1d5c51a4b9eee0a6da39b8cad0ad3edd9bf5742e3fcf3c4cd4cfbaef078f1",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/predictions.jsonl": "ef0eedd076d5f0ac67ad925d5e92c45ff0e955f020053ff2cd6909ccc9b90aa2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/judgments.jsonl": "9f9e893f7efe42a030b1104c03d7139221e83b4bb8d305396923667dd8c680f4"
+  },
+  "questions": [
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "ee7453e1270496def1d1206791814a4544e2baffc55951997547f1c99cf158d8",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1084.879125,
+      "selected_evidence_count": 31,
+      "evidence_tokens": 5981,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        935.9502910000001
+      ],
+      "focus_trace_ids": [
+        "8769cbec-cb40-4fcd-b95e-186816993bb0"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "ce3fa9d8dba0a072d34d338e2dad144e6d43b5545d7166787ff835ce5e3b4435",
+      "prediction_record_sha256": "39e5aaf913c9b2c6aabdc6f316365f6cc35d78ac6d1dc775e03145573c19f90a",
+      "judgment_record_sha256": "921139694f0671e4f02641dcdc8d4d6a58460ed97202d6485214fecc87a77fe3",
+      "search_vector_record_sha256": "ea7706aa439b246cc2c219ad246cc6dd5d7324495d18a281812365d330140c11"
+    },
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "9e9da11ce8e7d3494cd9377ad2288f6fcdc32df4c623fe01bfaf0f0ad71a7ce5",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1449.234792000003,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5739,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1357.7690839999996
+      ],
+      "focus_trace_ids": [
+        "27a859a1-96ab-4732-85ec-c648693b0a6d"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "6d173b27742a88b027dd522c9650f44a2ecb94379bd24dbf7d68d4273e28cfa2",
+      "prediction_record_sha256": "d4f7c1a9e431bbe2f56bd0d25134e7527c8bc736065dd7455a10fd6fd45617cb",
+      "judgment_record_sha256": "491649c3efcfd38a0df4054f5d0fcd7cff57c1ac3621905310ccdb48f49f47d2",
+      "search_vector_record_sha256": "43e34bd13670bf7176ed56c6dbff85fb67b56a34ab14a65398a014b126128a01"
+    },
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "b23d09fd7c9178838ed0bfeaafd0430216bd4b09da1c6f12b092437e7bf2fb89",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1243.1732499999998,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5666,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1164.3090410000004
+      ],
+      "focus_trace_ids": [
+        "956625a6-0f91-49d1-981b-bd5e920b64ef"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "e935c4aa8d1950ea731dc296db517ce6e145124eac7b20ed923ba401c7d991da",
+      "prediction_record_sha256": "b432807b09bec2b22630c06f1669102245f663796094da43dc1957a896f88142",
+      "judgment_record_sha256": "6a47cc66b2fbdbb4a73f53ff77eebf8a6d7f6dc1a934f65464eab4717f2fc727",
+      "search_vector_record_sha256": "0c5779e6f91ae0938039c3f6581ff3a0f6dff5f38e814f1ae82aa01a0d5c6c0d"
+    },
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "4e8d205a260f8c63e7c143d31b3af24f61712acb505e3699023f733fb5ccc26c",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1736.4442909999998,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5490,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1659.582500000004
+      ],
+      "focus_trace_ids": [
+        "1251e036-f0d6-48b6-bae9-0d23eee49d49"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "aca905648cf5e7788a886dad701feaf26c4736310552b0a0debcaa9cb9643d72",
+      "prediction_record_sha256": "aeba7e7e4e2d483e87784ef4254b185a1ea92f55086088112bacb9e4da44b4ee",
+      "judgment_record_sha256": "71096bd4724669fb36ce2ad04daaa958f70b2071ecd6a253c008652c4822a93f",
+      "search_vector_record_sha256": "1865053636f7f70eb69bc624eb092a1b532ed7968962d22fb0abc24d119ef1bf"
+    },
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "bdada01e43e79dfab24efb674e5983201c21788556eea24748e7daa25729c487",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 3350.995167000001,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5727,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        3271.870708000002
+      ],
+      "focus_trace_ids": [
+        "be1ccfd4-a08d-4955-832d-d4bd5684d573"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "0b18fcaee94f9cb42d591d2194f521fec593c7eb3b6c6d1aaf3238a88308000b",
+      "prediction_record_sha256": "2f71036a3bc4a580dde971a42439247a4d58ded2624978677fc0ed61f0f9d15f",
+      "judgment_record_sha256": "6419aa34291215890b39e02a0291cb91991d65ec720e12f909cdb02e9c95f22f",
+      "search_vector_record_sha256": "2449e8c059252b60272103eb35ac07d17a317f45c19b771f8e276e482751c187"
+    },
+    {
+      "sample_id": "B03_remember",
+      "qid": "B03_remember.json#p6_remember_negative#longitudinal_operation#11",
+      "query_sha256": "c7cf3c5918b108fed60123d88951c5692014d7601b4aa548831cf1c6c449629f",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1993.6377499999944,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5529,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1917.9731670000037
+      ],
+      "focus_trace_ids": [
+        "183abf7d-d651-4555-acb9-f5649e162273"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "58b66f749af469c1ef11b8f2cf4e903f1f32abbea9206356f1b19eed2419d916",
+      "prediction_record_sha256": "1afca4bd16d740bf2e0508d98f16475dfa8c695f55a54de098f1a7a59edc20d9",
+      "judgment_record_sha256": "b96e127b6be95cd4b49a7fb9d7920c7579d642dfe769514cf2e70cc30ab1771e",
+      "search_vector_record_sha256": "07b7439f5b26c6df8860970ea61a8ec38540ebc756d3c6217aa6462bd6a57e9b"
+    },
+    {
+      "sample_id": "B30_forget",
+      "qid": "B30_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "42377c71db139d5c60de22ee0424c1892a4b1ed1047951292458e2d66050e2b9",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1801.0024580000027,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5984,
+      "focus": "self_state",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1682.8632910000015
+      ],
+      "focus_trace_ids": [
+        "f3e658e6-6cdf-41bf-8518-5e988b31b192"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "062fafd25e54b02bcdf89a42ddbf1a78e652b79585653f7b2ccf6c852f15a688",
+      "prediction_record_sha256": "86fa4bb5d0c685ddd2c006201bec9e7e901c5730a2a0e68435bc2f4321fb3791",
+      "judgment_record_sha256": "9460f4621a883ddc4fa725c74a7c46d7811494bd85042a8b7e665018d65a4725",
+      "search_vector_record_sha256": "69a6fb10a977965080369950d9f6f718eb6dd6aee0c5b8883a749069b38b5fa1"
+    },
+    {
+      "sample_id": "B30_forget",
+      "qid": "B30_forget.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "c7b48e7ae8bd255a14c2dae3a9ee94b65054c08cb704046f8598ae2c0c3fbd7f",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 2321.670584000007,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5380,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        2217.0915830000013
+      ],
+      "focus_trace_ids": [
+        "f1a32926-0047-4978-9a2d-bbe7f0df9867"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "e6b542355f804455ad733f96c9d6b1ba1bacffb32977191096d640b1b9ad2388",
+      "prediction_record_sha256": "d5a0448be0a70afae9b9fb5c839e4dcdf95c3466d9669fa6847dba0b38a5afea",
+      "judgment_record_sha256": "51ed94df428cc5318012b9d18ba1c84a801e17dc26cff6984fbb4af3a50686c6",
+      "search_vector_record_sha256": "2446fee6fed9b2223217f789d7a77b7322bea57295bbf9d63a862f49d2b09de6"
+    },
+    {
+      "sample_id": "B30_forget",
+      "qid": "B30_forget.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "a2e6964410e1f119456b8a7124891c508e7318ffc493e7aa9587af7548638b11",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 2038.285749999981,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5254,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1944.231541999994
+      ],
+      "focus_trace_ids": [
+        "dd9f32df-6c40-4ae3-93a1-4bed860641cf"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "b4e71c8495b1a6f38ebcf69d9e07493681832e92769627160f3d8bfe7bf6b699",
+      "prediction_record_sha256": "2643c1e353fdebd5a8ad3b513a035b4863c56f6f664b228053ecf8de8fd6b2bf",
+      "judgment_record_sha256": "33c755ee78dc6b49cc0f5c37e4c4fb1a3744019996c110d7255494bcf6141315",
+      "search_vector_record_sha256": "bacc5e43cd6472915224125e4078956d09573cb09cd694f6db9a9471bf7b1725"
+    },
+    {
+      "sample_id": "B30_forget",
+      "qid": "B30_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "aa1f0878e970959e36465e50183d3c9b61a2a35de0f2113455af2fbfa24b27b5",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 2977.2425419999927,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5928,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        2874.096583000006
+      ],
+      "focus_trace_ids": [
+        "d9962e1d-989b-4aab-97c1-5df4c585cb8c"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "69f3d459400cc4c10417cd44ad0231a747081c00212247cf9b0f22a81f3177e6",
+      "prediction_record_sha256": "e9d0bb56fa6b917c5142f11261ef23724de130151191139ca00a31c8e03260b4",
+      "judgment_record_sha256": "ad762a4e2719808b705fb8afdf0dd26cd1d959d95d0746b4810dfc617ab8084f",
+      "search_vector_record_sha256": "943ad7834aa9418ecedefb61c0ee92fd4be6d5459b5d623e50943162a3cb148a"
+    },
+    {
+      "sample_id": "B30_forget",
+      "qid": "B30_forget.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "d00774f9f8d6085f7025f07c013724cbd118dda037c8df14c390943d4b935b44",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1369.4119170000195,
+      "selected_evidence_count": 32,
+      "evidence_tokens": 5160,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1265.4207089999982
+      ],
+      "focus_trace_ids": [
+        "b216df33-16fb-4fd6-b3b2-2b854ca0efd1"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "489ce5ea69f961b42df996d57d6b757580ca24ba7f5fcd1a138658aa68948a34",
+      "prediction_record_sha256": "6157161b400aa174c8bb74b66f4d44fff5a30abdcc04a3d48e02454b6153704b",
+      "judgment_record_sha256": "5477f38a6aaa0d0b6b58d7d42f7a4541180d120d34384e82e6c88ab703024ca3",
+      "search_vector_record_sha256": "caaa76a7b1dedecb5ae67be3d3a54e7faa4433c10f28e5e8d9d74d0d4fd1b373"
+    },
+    {
+      "sample_id": "A06_forget",
+      "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "e2e1012f84bf95ed8a00c863c46e1178dfa94e728a275333ee19bfa3b935fd5b",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 2113.301582999993,
+      "selected_evidence_count": 17,
+      "evidence_tokens": 5953,
+      "focus": "self_state",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1883.700583000027
+      ],
+      "focus_trace_ids": [
+        "4734c528-0a63-4c01-acb9-78b2020c5849"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "1d5828e2ff420d543d1109e87a93d6d63224e2b884f156f89f060651a7aa3bbc",
+      "prediction_record_sha256": "936852f1f29b058204b15ee6dc0ee02f0a20ed739c8bebafe4d3621fc3a8711e",
+      "judgment_record_sha256": "c07c2f0154e790200e8a778752e1eb5df62b30903422caaf15efc31e42276636",
+      "search_vector_record_sha256": "bb01d6b2d798a929c9f74c0c92dd74e23c44e3a1b0f08b3b40c64c50174d7f5b"
+    },
+    {
+      "sample_id": "A06_forget",
+      "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "f6ccbfde3b4899d2b09f2c21ce1ba50561a2a76540cf7b2f15395f480cb1f2a4",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1942.931500000006,
+      "selected_evidence_count": 19,
+      "evidence_tokens": 5989,
+      "focus": "unknown",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1825.8302079999703
+      ],
+      "focus_trace_ids": [
+        "62b1cc0e-a76b-49e1-9128-3817147bc817"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "fc05ed3a89986a714dd90f4babfa030a98bedaa264c83ef91ea163284aa82e23",
+      "prediction_record_sha256": "7bd1c1109f539855b26388dc7cc0d59a1c3eec77decf7a40b009752004e2b0d1",
+      "judgment_record_sha256": "c41cb18b7196fccdf7866797c435fef350bd5e1c2941fbdcaa52f4e61c001d07",
+      "search_vector_record_sha256": "b3a620ff938a38ab5c5eaa7b53d7f209449ee81aa7566c950042b860501d9351"
+    },
+    {
+      "sample_id": "A06_forget",
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "4cd8300b22298c85c9c6901efa252773f1ba2431482cb91ffe8e6aa99f373f27",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1636.3429589999723,
+      "selected_evidence_count": 28,
+      "evidence_tokens": 5996,
+      "focus": "self_state",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1496.9579169999924
+      ],
+      "focus_trace_ids": [
+        "9f7fbba5-fa2d-4ae8-94d6-fb5e6d8cd24e"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "d51fcb3d79a04acd47dcab625581f21ed92fb8f9111dd65cd3d65f2577e29271",
+      "prediction_record_sha256": "914fc2b07ca9df6b8f86990b354779f244f1e40027ad57852055730e42e156f3",
+      "judgment_record_sha256": "de0ac5f2671029fc80ebb068c4fc7bc7d95c02390a513b2a5a211eba2e3d7087",
+      "search_vector_record_sha256": "122e1708c6e3563fae15f7717de88b60da2e84bb490f74d9980f10ae5ffb8cf7"
+    },
+    {
+      "sample_id": "A06_forget",
+      "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "28cdfe1f3f879777e0550a3a3f5bb7b95f97bc21f790b14bddf74d554403bb75",
+      "status": "judged",
+      "correct": true,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1766.2082500000251,
+      "selected_evidence_count": 16,
+      "evidence_tokens": 5962,
+      "focus": "other_people",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1655.8607090000296
+      ],
+      "focus_trace_ids": [
+        "2c32e70e-17a8-4990-8f0c-2aa8c1ea4e6b"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "58fd025cad1cfe459ed8ffc2b40ea47366a9b3e1c383e4b671a2cf6a0d8ae6b0",
+      "prediction_record_sha256": "3ac909fe9dba1a9444b36585af2cac7c6126d68d429de9d37b2d7faeb1a2f47a",
+      "judgment_record_sha256": "b335a3e4c2d435a2b2cec561def9e2b79c747838553976064bfced816ad0c5a7",
+      "search_vector_record_sha256": "edc80c9ec26f4e9e9e2cca73554bce8df9e94df93fbb8723c95efc701bb1b43c"
+    },
+    {
+      "sample_id": "A06_forget",
+      "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "c2b6c016905f81123806cac32a634a7e86a5a15b234176a8382c353e460c47e9",
+      "status": "judged",
+      "correct": false,
+      "search_input_equals_original": true,
+      "search_elapsed_ms": 1555.614292000013,
+      "selected_evidence_count": 20,
+      "evidence_tokens": 5981,
+      "focus": "unknown",
+      "focus_classifier_outcome": "model",
+      "focus_generation_calls": 1,
+      "focus_generation_outcomes": [
+        "ok"
+      ],
+      "focus_generation_elapsed_ms": [
+        1426.9598339999793
+      ],
+      "focus_trace_ids": [
+        "25e47afb-90a6-4b21-9fdf-c49f63c5392f"
+      ],
+      "focus_attempts": [
+        0
+      ],
+      "retrieval_record_sha256": "6cc0e812694c7ba87be2118ef42147f2fccdce2635828438020659a46a6a8ef6",
+      "prediction_record_sha256": "a0ab538c58eb149db07ed7a7e2b70a0d7bf43d17eb44c950eacc392c240a58eb",
+      "judgment_record_sha256": "bc4968c64be3c37c53d846a0048a35efa27ea56777ec6a77ccb71bb1fa5b4207",
+      "search_vector_record_sha256": "628f3530f03b9fffa2d39295161916e25a881fa5457da1502b1bc00dcfdec0ae"
+    }
+  ],
+  "reviewer_new_model_calls": 0,
+  "limitations": [
+    "One candidate run; no answer resampling, rejudging or general stability claim.",
+    "Raw queries, source memories, answers and judge explanations remain in private local records."
+  ]
+}

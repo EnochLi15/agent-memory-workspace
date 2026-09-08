@@ -1,0 +1,268 @@
+{
+  "status": "completed_readonly_single_question_attribution",
+  "qid": "B03_remember.json#p3_state_transition#longitudinal_operation#5",
+  "query_sha256": "b23d09fd7c9178838ed0bfeaafd0430216bd4b09da1c6f12b092437e7bf2fb89",
+  "scope": {
+    "cloud_calls": 0,
+    "new_answer_calls": 0,
+    "new_judge_calls": 0,
+    "running_database_opened": false,
+    "code_or_service_mutation": false,
+    "frozen_snapshot_read_mode": "mode=ro&immutable=1"
+  },
+  "conclusion": {
+    "observed_failure_layer": "Answer omitted the required current executive title despite retaining the identity and reporting-chain claims.",
+    "old_judgment": true,
+    "new_judgment": false,
+    "judge_comparison": "Both recorded judgments apply the same must-include title requirement. The old Answer included it and the new Answer omitted it; this does not establish judge inconsistency.",
+    "causal_limit": "The new retrieval changed ordering and other context composition, while preserving the relevant evidence. One new Answer/Judge sample cannot separate response variation from sensitivity to that changed context; do not attribute the entire score change to the query-focus code.",
+    "minimal_next_step": "Keep this fixed-denominator regression in the 16-question result. Any later mechanism experiment must separately control context order/composition and generation variation; no retry or rescore was performed here."
+  },
+  "focus": {
+    "actual": "other_people",
+    "paired": "other_people",
+    "evidence_quotes_equal": true,
+    "actual_policy": {
+      "focus": "other_people",
+      "outcome": "model",
+      "evidence_spans": [
+        {
+          "start": 3,
+          "end": 24
+        },
+        {
+          "start": 45,
+          "end": 72
+        }
+      ]
+    },
+    "trace_id": "956625a6-0f91-49d1-981b-bd5e920b64ef",
+    "model": "glm-5.2",
+    "attempt": 0,
+    "transport_attempt_limit": 1,
+    "outcome": "ok",
+    "elapsed_ms": 1164.3090410000004
+  },
+  "embedding": {
+    "exact_vector_equality": true,
+    "exact_query_and_model_metadata_equality": true,
+    "dimensions": 768,
+    "model": "nomic-embed-text:latest",
+    "digest": "0a109f422b47e3a30ba2b10eca18548e944e8a23073ee3f3e947efcf3c45e59f",
+    "canonical_vectors_sha256": "f9a87ba71904adf9c21b3a7a0a576a0a11df1847bbce0a0b03c6a57a129cd3c4",
+    "rows": [
+      {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/search-vectors.private.jsonl",
+        "line": 3,
+        "line_sha256": "75c16109d31672cd8ef57d75663d10d8f0cc1a9a51186ca4005067692d1b958c",
+        "canonical_row_sha256": "037cedf982c80592eea7af864de9c059d47f5f4566f2a91ef7046acdf6b30eeb"
+      },
+      {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/search-vectors.private.jsonl",
+        "line": 3,
+        "line_sha256": "1ea95c2b67ea3250d16323c36c8d7e98d3213f9bb0d5f720acfd27f3a48216f6",
+        "canonical_row_sha256": "a5179901fb2d4bc6ac748fdb719578c0d297e7026508dc60a92138d3420666b2"
+      }
+    ]
+  },
+  "contexts": {
+    "old_full_context_equal_frozen_recorded_original_and_5ca": true,
+    "new_full_context_equal_frozen_9c7_paired_candidate": true,
+    "old_count": 32,
+    "new_count": 32,
+    "old_canonical_sha256": "a458f0e6ae7b935be85ad88cd3df0a26e108d3d65de1c747950ca0a4909b5a05",
+    "new_canonical_sha256": "ad80d14cc9db5c3c702c5b71da2912cf00794f3fd797bc12fcd364cb0b0871ab",
+    "new_reported_tokens": 5666,
+    "paired_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/candidate-9c7cf1b/contexts.private.json",
+    "paired_file_sha256": "b74e03e6e731215fd2b12330305c8560f92a04a0cfc275f2d6b29cc2c5b944e0",
+    "evidence_checks": [
+      {
+        "role": "manager_relationship",
+        "fact_id": "deee71cb05de08e3b85f5e298750efd92a863c41995b86cf437445bdaeb3d6d2",
+        "predicate": "manager",
+        "state": "active",
+        "source_ids": [
+          "b4c6c9525b617772b4f9797e3450cfdae6fe86dcd1cff79d2c6fee94e7b492b2"
+        ],
+        "claim_sha256": "2b0d4a6de4602af9a0c8e6f97625bd3989afa0e25d199a29729cabecef29c8dc",
+        "quote_sha256": [
+          "306d48764c0f5be8f5769f589040540eeb81c994d8b46464a3c509d177d1dc26"
+        ],
+        "old": {
+          "selected_positions": [
+            1
+          ],
+          "full_claim_present": true,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": [
+            "3e16c1a2b41fae6b6e69b99c2c2319e1420c8252866de7fd4d8a689ed7e29d46"
+          ]
+        },
+        "new": {
+          "selected_positions": [
+            2
+          ],
+          "full_claim_present": true,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": [
+            "3e16c1a2b41fae6b6e69b99c2c2319e1420c8252866de7fd4d8a689ed7e29d46"
+          ]
+        }
+      },
+      {
+        "role": "current_executive_title",
+        "fact_id": "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+        "predicate": "job_title",
+        "state": "active",
+        "source_ids": [
+          "b4c6c9525b617772b4f9797e3450cfdae6fe86dcd1cff79d2c6fee94e7b492b2"
+        ],
+        "claim_sha256": "0ddef14b7eb05dfb5282987f41d68529956c701f6dbe222099beff665ebde450",
+        "quote_sha256": [
+          "6802728acba02e0d6baa0af1a21d413614015bf2cbf6fa8d5d9a6d35daa51104"
+        ],
+        "old": {
+          "selected_positions": [],
+          "full_claim_present": false,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": []
+        },
+        "new": {
+          "selected_positions": [
+            14
+          ],
+          "full_claim_present": true,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": [
+            "047f144d93a3b71104ec9f3d84fc493b2f1672ed17dbbc644f1684dc21e5ba14"
+          ]
+        }
+      },
+      {
+        "role": "reporting_chain",
+        "fact_id": "dbe27358049815d595d0872ffd24d265d9bc11f573e71f9e77568b18eabc68fe",
+        "predicate": "reports_to",
+        "state": "active",
+        "source_ids": [
+          "43050d17898da1901ed84343a64be17a92ed7445165fd3e68764ce77c8859590"
+        ],
+        "claim_sha256": "5236151a6aa55ebea0118e34c19ea607582a3180d653e506a7956ee106023fb8",
+        "quote_sha256": [
+          "456bb8b88bec08b3b669924c7e9f1ac72c221a3518d709067e95ae9d1e7986ee"
+        ],
+        "old": {
+          "selected_positions": [
+            5
+          ],
+          "full_claim_present": true,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": [
+            "97123c68d8d121bc8f58918763d929475f91f5dd047facf0e07a05b685da84a9"
+          ]
+        },
+        "new": {
+          "selected_positions": [
+            1
+          ],
+          "full_claim_present": true,
+          "all_verbatim_quotes_present": true,
+          "selected_rendered_content_sha256": [
+            "97123c68d8d121bc8f58918763d929475f91f5dd047facf0e07a05b685da84a9"
+          ]
+        }
+      }
+    ],
+    "position_note": "Positions are one-based positions in complete rendered Search memories sent to the Answer path, not candidate-pool ranks.",
+    "complete_manager_source_render_unchanged": true,
+    "interpretation": "The full source context containing the current title moves from position 1 to position 2 unchanged. The candidate additionally selects the standalone current-title fact at position 14. The required evidence was not erased, lost in packing, or shortened in the captured Search context."
+  },
+  "snapshot": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/B03-rev50.sqlite",
+    "revision": 50,
+    "sha256_before_and_after": "ca5c64a2c854beebd21bc8f486525a5506be8264dd2929cca3fc0915249cb1be",
+    "unchanged": true
+  },
+  "evaluation_protocol_unchanged": {
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "answer_model": "glm-5.2",
+    "answer_inference": {
+      "stream": true,
+      "max_completion_tokens": 1800,
+      "attempts": 3
+    },
+    "judge_model": "glm-5.2",
+    "judge_kind": "rubric",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "rubric_prompt_sha256": "ac62ed729c4994310c7064235afcfee33d6e553161d7b434a8daceb19aa6e31d",
+    "contract_sha256": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab",
+    "split_sha256": "094570626ffb97d802043aa52278b2035c6f8c624f1c99fe8a7ed535b9b2898a",
+    "seed": 20260905,
+    "top_k": 100
+  },
+  "record_pins": {
+    "old": {
+      "predictions": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/predictions.jsonl",
+        "line": 3,
+        "line_sha256": "bf5e936d8b8ed6caaa6625537994a56129d1ae26a8bf48a7c12bdb00d3fc57b6",
+        "canonical_row_sha256": "9c2848afaeddb20812e5b48377cf50fbdee0106b50988d3448a83553290f0170"
+      },
+      "judgments": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/judgments.jsonl",
+        "line": 3,
+        "line_sha256": "cabab8d3192689f07b81278198b5931b7d8610dabb2a270f3ba94d2619028576",
+        "canonical_row_sha256": "c8c3bc48740e2f9f64e3bef06965fbc51f602457b1a9f1b6834eb43127dbe648"
+      },
+      "retrievals": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/retrievals.jsonl",
+        "line": 3,
+        "line_sha256": "0d4acc4e047c749bf880d52cd7c021d8293a3dc478809231617196b891677677",
+        "canonical_row_sha256": "7524e2e26510b6963284a99fbb20be6f523350d95e787e01f90d71621e364a79"
+      }
+    },
+    "new": {
+      "predictions": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/predictions.jsonl",
+        "line": 3,
+        "line_sha256": "efef6b03af2b12cf97df1b373ecedfd1325373f77d5ddb3fe8f5dd34eb71254a",
+        "canonical_row_sha256": "a9d7747043b2525f523609f1cc8f6d77a8a4097ee29f4a2d77f37fda70670966"
+      },
+      "judgments": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/judgments.jsonl",
+        "line": 3,
+        "line_sha256": "0f3543188492f860b6d20db69c335d899c3c41d13eb144c2449e5caae1cbdabd",
+        "canonical_row_sha256": "f9bd31266c86eb47b23c048ebb57f459b481d293d26778d884bbda57ad688a37"
+      },
+      "retrievals": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-query-focus-qa-20260909-01-candidate-memops/retrievals.jsonl",
+        "line": 3,
+        "line_sha256": "b48e3afa0823593298df80a0d4710e9f3510de504fb366413737e5e279f778d9",
+        "canonical_row_sha256": "46110234774dbdf60d91fcec7b4f39cd73b58d5b39608f7bec251b25ed5fadd5"
+      }
+    }
+  },
+  "focus_trace_pin": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/model-trace.jsonl",
+    "line": 3,
+    "line_sha256": "2c39207c60fb56446f3f7d328be2763f1be65ac7238a76d77638d965133dfbe7",
+    "canonical_row_sha256": "c7be783838a61e137ecc0fd2c50fe074bb74ca3ce8e4333560f2a686bcd804da"
+  },
+  "focus_audit_pin": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/model-calls.jsonl",
+    "line": 6,
+    "line_sha256": "02435ad5afbe93066cf9446b4b86d27ddffccdf1f4bd48df5a82319311d4e601",
+    "canonical_row_sha256": "4a0b667fcb9e022f1622abfc4a589af32cb532352b7e3be289e4a193bcc775ac"
+  },
+  "retrieval_policy_pin": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/retrieval-stages.jsonl",
+    "line": 6,
+    "line_sha256": "e7becfbe80be207c79506b3811facd1880b2d677329e16e3656baa0e66e1ae4d",
+    "canonical_row_sha256": "0bd0f845f317df99826698f2fe789cce7a2ed6479c94d91e71db254a0c6fa927"
+  },
+  "retrieval_stage_pin": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-qa-20260909-01/retrieval-stages.jsonl",
+    "line": 5,
+    "line_sha256": "27f5656f11d40dde23ea89eb6b8d21c3c513292fc1c56205692da070bd1ad56f",
+    "canonical_row_sha256": "2545f1fff4968c606a405fa2925cd0d364208903da83bbefd16ec766cfb2cd06"
+  }
+}
