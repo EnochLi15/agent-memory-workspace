@@ -1,0 +1,260 @@
+{
+  "protocol": "priority-conv43-preparation-v1",
+  "created_at": "2026-09-08T22:39:47.865629+00:00",
+  "status": "started_standard_evaluation",
+  "scope": "Preparation and startup record only. The running evaluation is unchanged; no score or successful 43-add outcome is claimed here.",
+  "campaign": "priority-conv43-20260909-01",
+  "candidate": {
+    "commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+    "base_commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+    "integrated_fix_commit": "d44a5bbe28fb38fdce6571e7b7d95d4f39bb3a73",
+    "manifest_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/candidate-manifest.json",
+    "manifest_sha256": "0b43eb46dd1c7c189f386e57d4f61188edca24d1eda7f119e6be5fa7eb65c61c",
+    "dist_files": 144,
+    "all_dist_hashes_verified": true,
+    "prior_full_service_tests": {
+      "full_passed": 703,
+      "full_failed": 0,
+      "full_cancelled": 0,
+      "full_skipped": 0,
+      "duration_ms": 12405.346292,
+      "build_passed": true,
+      "queryFocus_default_off_verified_by_configFromEnv": true,
+      "cloud_calls": 0,
+      "new_qa_calls": 0,
+      "deployment_performed": false
+    },
+    "score_attribution": "The earlier 10/16 MemoryOps result belongs to 9c7cf1bc, not this integrated 8717d918 run."
+  },
+  "plan": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/plan.json",
+    "sha256": "15ae8d19c59b1bb4b7ff2b6ce888bbe7f5db9add5a2d04566124fd366d079c2a",
+    "entry": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/executor/scripts/probes/run-conv43-evaluation.py",
+    "entry_sha256": "289358edcfa9150a07d8bd49c6ead42ce82611cef96a72e6ea295a88bac43881",
+    "validation": {
+      "validation": "passed",
+      "model_calls_made": 0,
+      "planned_questions": 47,
+      "fresh_adds": 43,
+      "candidate_commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+      "entry_point": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/executor/scripts/probes/run-conv43-evaluation.py",
+      "judge_protocol": {
+        "mode": "upstream-reproduction",
+        "judge_kind": "refined-python",
+        "judge_model": "qwen3:14b",
+        "answer_model": "glm-5.2"
+      }
+    },
+    "independent_frozen_entry_validate_passed": true,
+    "core_source_sha256": "d89f06bcd6e2c55b06a53a71f41103c5461ebb46183f7f24e61c7120e37aa463",
+    "adapted_core_sha256": "a75d5de09824698ca800975f1ac0393a6ee0a046994d6274402289889846918b",
+    "compiled_and_eval_code_pins": 171,
+    "execution_and_artifact_pins": 16,
+    "source_pins": 31,
+    "all_pins_rechecked_unchanged": true
+  },
+  "runner_reuse": {
+    "base": "run-priority-campaign.py run_campaign, ingestion_gate, ManagedRun and original start_local_judge",
+    "exact_core_replacements": [
+      "Load the pinned service-base configuration instead of recomputing it during execution.",
+      "Use the existing HTTP schedule guard/receipt audit and transparent search-vector observer launcher.",
+      "Replace the obsolete MemoryOps/935-question gate error text."
+    ],
+    "wrapper_changes": [
+      "One complete LoCoMo phase and fixed denominator 47.",
+      "Pinned 10800-second owned-run deadline.",
+      "Final successful HTTP receipt/hash/body and revision checks, with all unrecorded questions retained."
+    ],
+    "old_frozen_files_modified": false
+  },
+  "local_tests": {
+    "file": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_conv43_evaluation.py",
+    "sha256": "9728fc69bc73bec71426e4cb33bf0a4ef55dce4094e4853c699c965705835760",
+    "passed": 3,
+    "failed": 0,
+    "tests": [
+      "Whole original sample boundaries and exact core source preserve the LoCoMo Judge branch.",
+      "All 47 questions retain the denominator when results are absent.",
+      "43 matching receipts pass; a changed stored request hash fails."
+    ],
+    "model_calls": 0
+  },
+  "input": {
+    "original_dataset": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/data/locomo.json",
+    "original_dataset_sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc",
+    "selected_dataset": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/conv43.json",
+    "selected_dataset_sha256": "cc53643e566824d905ab8759952928353ccca78bbd723f705fa2bb7e8e2d65e4",
+    "sample": "conv-43",
+    "sessions": 29,
+    "messages": 680,
+    "questions": 47,
+    "qids": [
+      "conv-43#q0000",
+      "conv-43#q0001",
+      "conv-43#q0003",
+      "conv-43#q0004",
+      "conv-43#q0005",
+      "conv-43#q0006",
+      "conv-43#q0007",
+      "conv-43#q0008",
+      "conv-43#q0009",
+      "conv-43#q0010",
+      "conv-43#q0011",
+      "conv-43#q0012",
+      "conv-43#q0013",
+      "conv-43#q0014",
+      "conv-43#q0015",
+      "conv-43#q0016",
+      "conv-43#q0017",
+      "conv-43#q0019",
+      "conv-43#q0021",
+      "conv-43#q0022",
+      "conv-43#q0023",
+      "conv-43#q0024",
+      "conv-43#q0025",
+      "conv-43#q0026",
+      "conv-43#q0027",
+      "conv-43#q0028",
+      "conv-43#q0029",
+      "conv-43#q0030",
+      "conv-43#q0031",
+      "conv-43#q0032",
+      "conv-43#q0033",
+      "conv-43#q0034",
+      "conv-43#q0035",
+      "conv-43#q0036",
+      "conv-43#q0037",
+      "conv-43#q0038",
+      "conv-43#q0039",
+      "conv-43#q0040",
+      "conv-43#q0041",
+      "conv-43#q0042",
+      "conv-43#q0043",
+      "conv-43#q0044",
+      "conv-43#q0045",
+      "conv-43#q0046",
+      "conv-43#q0047",
+      "conv-43#q0048",
+      "conv-43#q0049"
+    ],
+    "qids_order_sha256": "28bbe60a9f834b3a4b7f9a97f315dd9364d98714b7345e076b15fa8b336fd0c3",
+    "whole_original_sample_equal": true,
+    "answer_dependent_selection": false,
+    "schedule": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/schedule.json",
+    "schedule_sha256": "2fa4a8028960304f3eff2dff12333931ab9c65ab337672b69f13f1d8a45ff191",
+    "fresh_adds": 43,
+    "schedule_source": "Frozen eval7a2 adapters.chunks via existing request_schedule helper",
+    "chunk_messages": 20,
+    "chunk_words": 2000
+  },
+  "storage": {
+    "namespace": "priority-conv43-20260909-01-candidate",
+    "data_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/data",
+    "fresh_directory_absent_at_plan_and_validation": true,
+    "preexisting_receipts": 0,
+    "original_databases_reused": false,
+    "expected_final_receipts_if_complete": 43,
+    "receipt_integrity": "Every successful request must match the original JSON request hash and exact receipt; revision must equal the successful receipt count. Failed/unattempted requests must not acquire receipts."
+  },
+  "runtime_dependencies": {
+    "eval_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/code/eval",
+    "eval_resolved": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/checkout/eval",
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "python_venv_resolved": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv",
+    "python_version_independent_preparation_check": "3.11.15",
+    "python_packages_observed": [
+      {
+        "name": "openai",
+        "version": "2.26.0",
+        "metadata_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv/lib/python3.11/site-packages/openai-2.26.0.dist-info/METADATA",
+        "metadata_sha256_at_preparation": "e3dac828d7f9e567aa3c6063502ffbc522c6eac47ba70d2f5bee9fa965c8d89e"
+      },
+      {
+        "name": "tenacity",
+        "version": "9.1.2",
+        "metadata_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv/lib/python3.11/site-packages/tenacity-9.1.2.dist-info/METADATA",
+        "metadata_sha256_at_preparation": "d6f3caf72fc1ee40caf9135adf7b5d44a45100115b4ea92b80f19ed183b157a5"
+      },
+      {
+        "name": "httpx",
+        "version": "0.28.1",
+        "metadata_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv/lib/python3.11/site-packages/httpx-0.28.1.dist-info/METADATA",
+        "metadata_sha256_at_preparation": "febb9b0f8f3e80d57c8199c304f35c4336e8581d1d18d7983c92766b82793b25"
+      },
+      {
+        "name": "httpcore",
+        "version": "1.0.9",
+        "metadata_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv/lib/python3.11/site-packages/httpcore-1.0.9.dist-info/METADATA",
+        "metadata_sha256_at_preparation": "fe2d4fda6199128978779e0cf27f3c045c531863fcdd987eacc74f3a18d41c21"
+      },
+      {
+        "name": "pydantic",
+        "version": "2.13.5",
+        "metadata_path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/.venv/lib/python3.11/site-packages/pydantic-2.13.5.dist-info/METADATA",
+        "metadata_sha256_at_preparation": "0685830d13647bd6f3f05526043d32a8b2a221d86b53773053d6c52bb17a9c07"
+      }
+    ],
+    "service_node_modules_resolved": "/Users/enoch/Workspace/comp/agent-memory-workspace/service/node_modules",
+    "eval_node_modules_resolved": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/node_modules",
+    "service_package_lock_sha256": "061adb8ed927bc96a0cf11f328a4d399c474fb2a348562748b7898db04161d1a",
+    "eval_package_lock_sha256": "e4891c6991ccb92221258754c4bf0237232924bfac20f39d635396e10e177ab3",
+    "shared_dependency_caveat": "node_modules and the Python .venv are existing shared runtime links. Source artifacts, helper scripts and package locks are pinned; this report records dependency versions/metadata but does not claim a newly isolated environment or that every shared library byte was copied into the campaign."
+  },
+  "startup": {
+    "observed_runtime_status": "running",
+    "observed_at": "2026-09-08T22:39:47.652271+00:00",
+    "controller_pid": 80249,
+    "controller_identity": "Wed Sep  9 06:36:44 2026",
+    "started_at": "2026-09-08T22:36:44.331300+00:00",
+    "service_pid": 80270,
+    "judge_pid": 80274,
+    "judge_owned_ready_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/locomo-judge-ready.json",
+    "judge_standard_preflight": {
+      "exit_code": 0,
+      "score": 1,
+      "elapsed_seconds": 21.25606,
+      "log_sha256": "91975eb8acf8a5193e5fa19a6d68aded8978ba48d43608ccc29d47d3ed953434",
+      "note": "The original helper performed its single synthetic local Judge preflight before ingestion."
+    },
+    "evaluator_pid": 80420,
+    "evaluator_started_at": "2026-09-08T22:37:06.281283+00:00",
+    "evaluator_run_dir": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo",
+    "sleep_prevention_owned": true,
+    "process_ownership": "ManagedRun owns only this controller\u2019s subprocess handles and stops them on completion/error/timeout. This report does not stop or restart them."
+  },
+  "timing_policy": "Use original add/search elapsed metrics and the Answer/Judge-plus-overhead residual; evaluator code was not modified to add stage timers. Actual results and elapsed time will be reported at terminal state.",
+  "reporter_actions": {
+    "new_model_calls": 0,
+    "new_embeddings": 0,
+    "new_judge_calls": 0,
+    "running_files_changed": 0,
+    "new_report_only": true
+  },
+  "privacy": "No model response text, source conversation text, gold answers, credentials or secret environment values appear in this public report.",
+  "evaluation_protocol": {
+    "benchmark": "locomo",
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "judge_quantization": "Q4_K_M",
+    "answer_model": "glm-5.2",
+    "concurrency": 1,
+    "top_k": 100,
+    "fixed_denominator": 47,
+    "original_evaluation_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "verificationResponseFormat": "json_object",
+    "queryFocus": true,
+    "queryFocusTimeout": 8000,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "candidateLimit": 200,
+    "only_three_environment_overrides": {
+      "MEMORY_QUERY_FOCUS": "true",
+      "MEMORY_QUERY_FOCUS_TIMEOUT_MS": "8000",
+      "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_object"
+    },
+    "service_base_sha256": "b1d9905bad812baba1e37abadafdb9462209de5bc4cb05c7d0ce54e1b5c55326",
+    "actual_service_config_sha256": "6e801a24ead2ad534a0a1c07ac0d9f49a8cefed44e459d3c38d8113a63cabbc7",
+    "note": "The original LoCoMo local quantized Judge reproduction protocol is preserved; this is not the MemoryOps rubric proxy or a claim of leaderboard-identical Judge hardware/model."
+  }
+}
