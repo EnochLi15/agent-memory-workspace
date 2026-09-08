@@ -1,0 +1,180 @@
+{
+  "status": "frozen_protocol_input_enhancement_not_write_recovery",
+  "candidate_commit": "36e766921220c64d114d7e5ec83d306cbc560a87",
+  "base_commit": "484f188de0ee2e83a38e91914dde00ae77f582b4",
+  "candidate_manifest": "artifacts/priority-fact-erasure-contract-fix-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "0d35e91111cf0614b806d6345e004fd1ba23c63846df754d7d7adff6008a636d",
+  "incident_report": "reports/priority-B03-segment34-source-erasure-incident-20260909.json",
+  "change": {
+    "wire_formats": [
+      "flat",
+      "grouped"
+    ],
+    "fact_allowed_effects": [
+      "erase",
+      "retain",
+      "uncertain"
+    ],
+    "source_allowed_effects": [
+      "erase",
+      "retain",
+      "mixed",
+      "uncertain"
+    ],
+    "fact_context_additions": [
+      "fact_kind",
+      "dependency_count"
+    ],
+    "dependency_metadata": "Actual count only; no depends_on list, member table or previously invisible IDs. An inferred reflection is derived text, not a raw human witness or deletion authorization.",
+    "diagnostic_split": [
+      "Mixed erasure is not allowed for fact candidates",
+      "Mixed source erasure requires explicit quotes"
+    ],
+    "unchanged": [
+      "candidate and boundary membership",
+      "targets and members",
+      "source text and existing context",
+      "actual erasure partitions and commit guards",
+      "uncertain refusal",
+      "model round and capacity budgets"
+    ]
+  },
+  "validation": {
+    "failure_first": {
+      "path": "artifacts/priority-fact-erasure-contract-fix-20260909/fact-erasure-contract-red.txt",
+      "tests": 6,
+      "failed": 3,
+      "passed": 3
+    },
+    "targeted_green": {
+      "path": "artifacts/priority-fact-erasure-contract-fix-20260909/fact-erasure-contract-green.txt",
+      "passed": 6
+    },
+    "initial_full": {
+      "path": "artifacts/priority-fact-erasure-contract-fix-20260909/full-tests.txt",
+      "passed": 632,
+      "failed": 1,
+      "cause": "Lossless transport reconstruction included newly added allowed_effects. Updated test to assert its values, then remove only that transport field before reconstructing original candidates."
+    },
+    "final_full": {
+      "path": "artifacts/priority-fact-erasure-contract-fix-20260909/full-tests-final.txt",
+      "passed": 633,
+      "failed": 0,
+      "duration_ms": 10681.249709
+    },
+    "build_passed": true,
+    "independent_review": "Parent reviewed production diff and exact refusal behavior; no blocking findings.",
+    "actual_output_replay": {
+      "status": "protocol_input_enhancement_only_original_mixed_fact_still_rejected",
+      "cloud_calls": 0,
+      "database_opens": 0,
+      "database_writes": 0,
+      "embedding_calls": 0,
+      "commit_calls": 0,
+      "request_sha256": "86751ab0132e3531e8fb6c0cdb792d6b8e81da3b48bd28a63a57125015601df3",
+      "snapshot_sha256": "f3a8df730a2b02671312ff9c7bfa0150514760ddced4eb84d3697491216cfbcf",
+      "actual_packets_sha256": "c8fd11b920cf58cc99d932ec24b6512bb09bb3eac3a3c45515c19d34c314541d",
+      "runs": [
+        {
+          "name": "base_484",
+          "calls": [
+            {
+              "purpose": "extraction",
+              "input_sha256": "7d83177ddf32988a0773c40dabca00873ea091e9c641a6f77b377e230869d095",
+              "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+              "input_matches_actual": true,
+              "system_matches_actual": true,
+              "input_characters": 34086
+            },
+            {
+              "purpose": "verification",
+              "input_sha256": "f77444192fb03102a72595ae86d94d16ea5d82f1243103ddc2e15990aac9a4c8",
+              "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+              "input_matches_actual": true,
+              "system_matches_actual": true,
+              "input_characters": 6032
+            },
+            {
+              "purpose": "source_erasure",
+              "input_sha256": "09fcf5c6a2e0cea99ad58132cbf26475de78906511df958d2b8a905e300c00d6",
+              "system_sha256": "aaba22b3b4a31ff5ffc4c3703159901491e40bc40e93a1c9da9085eaa5ca6225",
+              "input_matches_actual": true,
+              "system_matches_actual": true,
+              "input_characters": 2530
+            }
+          ],
+          "failure": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Mixed erasure requires a source and explicit quotes"
+          }
+        },
+        {
+          "name": "candidate",
+          "calls": [
+            {
+              "purpose": "extraction",
+              "input_sha256": "7d83177ddf32988a0773c40dabca00873ea091e9c641a6f77b377e230869d095",
+              "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+              "input_matches_actual": true,
+              "system_matches_actual": true,
+              "input_characters": 34086
+            },
+            {
+              "purpose": "verification",
+              "input_sha256": "f77444192fb03102a72595ae86d94d16ea5d82f1243103ddc2e15990aac9a4c8",
+              "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+              "input_matches_actual": true,
+              "system_matches_actual": true,
+              "input_characters": 6032
+            },
+            {
+              "purpose": "source_erasure",
+              "input_sha256": "4052a3dbb2ace281ae70121a94a1925c92aabdb8e2578d8002981a09183dd237",
+              "system_sha256": "a1b3f501e64f82dccb3d90d166ce904c405bcf7f89489809f395398322c4ea15",
+              "input_matches_actual": false,
+              "system_matches_actual": false,
+              "input_characters": 2625
+            }
+          ],
+          "failure": {
+            "code": "EVIDENCE_VALIDATION",
+            "message": "Mixed erasure is not allowed for fact candidates"
+          }
+        }
+      ],
+      "audit": {
+        "first_two_actual_inputs_and_systems_exact": true,
+        "source_and_boundary_membership_unchanged": true,
+        "source_text_and_existing_context_unchanged": true,
+        "additional_fields": [
+          "SOURCES[*].allowed_effects",
+          "SOURCES[fact].context.fact_kind",
+          "SOURCES[fact].context.dependency_count"
+        ],
+        "new_member_references": 0,
+        "dependency_metadata": "count only, not a member table, human witness or authorization",
+        "unknown_semantics_not_sampled": true,
+        "write_recovery_proven": false
+      }
+    },
+    "changed_dist_files": [
+      "source-erasure-grouped.d.ts",
+      "source-erasure-grouped.js",
+      "source-erasure-grouped.js.map",
+      "source-erasure.d.ts",
+      "source-erasure.js",
+      "source-erasure.js.map"
+    ]
+  },
+  "limits": {
+    "cloud_calls": 0,
+    "database_opens": 0,
+    "database_writes": 0,
+    "qa_calls": 0,
+    "score_changes": 0,
+    "no_positive_verdict_fabricated": true,
+    "original_mixed_output_still_refused": true,
+    "fresh_write_success_not_established": true,
+    "new_source_prompt_changes_require_new_semantic_output_before_any_recovery_claim": true
+  }
+}
