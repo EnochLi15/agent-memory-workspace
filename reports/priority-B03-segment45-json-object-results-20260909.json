@@ -1,0 +1,198 @@
+{
+  "protocol": "single-add-configuration-trial-result-v1",
+  "created_at": "2026-09-08T21:03:02.530748+00:00",
+  "campaign": "priority-B03-segment45-add-20260909-02",
+  "candidate": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+    "commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30"
+  },
+  "effective_override": {
+    "verificationResponseFormat": "json_object"
+  },
+  "result": {
+    "sample_id": "B03_remember",
+    "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-45:0",
+    "http_status": 200,
+    "elapsed_ms": 22608.249958,
+    "http_attempts": 1,
+    "error_code": null,
+    "transport_error": false,
+    "revision_before": 44,
+    "revision_after": 45,
+    "receipt_present": true,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true
+    },
+    "failed_write_logical_hashes": {},
+    "integrity": "pass"
+  },
+  "runtime": {
+    "status": "finished",
+    "pid": 39019,
+    "process_identity": "Wed Sep  9 04:58:22 2026",
+    "alive": false,
+    "started_at": "2026-09-08T20:58:22.804601+00:00",
+    "finished_at": "2026-09-08T20:58:46.270728+00:00",
+    "children": {
+      "sleep-prevention": {
+        "pid": 39042,
+        "process_identity": "Wed Sep  9 04:58:22 2026",
+        "alive": false,
+        "exit_code": -15,
+        "stopped_by_runner": true
+      },
+      "service": {
+        "pid": 39044,
+        "process_identity": "Wed Sep  9 04:58:22 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": true
+      },
+      "http-add-0": {
+        "pid": 39054,
+        "process_identity": "Wed Sep  9 04:58:23 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": null
+      }
+    }
+  },
+  "compiled_files_verified": 141,
+  "configuration_evidence": {
+    "actual_service_matches_frozen_effective_config": true,
+    "format_audit_records": 2,
+    "verification_and_source_erasure_audited_format": "json_object",
+    "note": "Audit and same-branch client construction establish the configured SDK request mode; no provider-side wire or enforcement claim is made."
+  },
+  "standard_validation": {
+    "extracted_and_verified_facts": 7,
+    "verified_user_messages": 7,
+    "original_request_messages": 14,
+    "operations": 0,
+    "replacements": 0,
+    "source_candidate_pairs": 5,
+    "source_effects": {
+      "retain": 5
+    },
+    "source_reason": "independent_record",
+    "new_fact_records": 7,
+    "new_message_records": 14,
+    "old_fact_or_message_records_removed_or_changed": 0
+  },
+  "degradation": {
+    "successful_degraded_adds": 1,
+    "reason": "aggregate_deferred_erasure",
+    "meaning": "Only newly computed optional aggregate cards nominated against historical erasure boundaries were deferred. The seven extracted facts and original messages still underwent normal verification; source candidates were independently retained.",
+    "source_code": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/service-dist/extraction.js:881"
+  },
+  "latency": {
+    "http_elapsed_ms": 22608.249958,
+    "generation_elapsed_ms": 21706.363958,
+    "embedding_elapsed_ms": 464.19637499999953,
+    "stages": [
+      {
+        "line": 1,
+        "record_sha256": "66bef6eea67b4ea59c41d6224e7e6afce87c4d9005641848d827ae8da19e087c",
+        "trace_id": "ee5dc147-4f0a-4bc9-bcec-ff5c8f3d775b",
+        "kind": "generation",
+        "purpose": "extraction",
+        "outcome": "ok",
+        "elapsed_ms": 13523.952333
+      },
+      {
+        "line": 2,
+        "record_sha256": "627036e97fde5db58dd8c46bf4e2763ebb6d8de28655922c87baa3e7e7f9a446",
+        "trace_id": "a9d26b3a-7ca1-4f7c-b3aa-6b62603ee56a",
+        "kind": "generation",
+        "purpose": "verification",
+        "outcome": "ok",
+        "elapsed_ms": 4125.6078750000015,
+        "verification_response_format": "json_object",
+        "verification_scope": {
+          "facts": 7,
+          "operations": 0,
+          "replacements": 0,
+          "messages": 7,
+          "reused": 0
+        }
+      },
+      {
+        "line": 3,
+        "record_sha256": "d7eaddea99a4bfc4c962ae80f4549d7407573c7a841de9601cb03e3fdb0e1d22",
+        "trace_id": "b735cdbc-39b6-4af8-932b-5f4c92b84dd1",
+        "kind": "generation",
+        "purpose": "source_erasure",
+        "outcome": "ok",
+        "elapsed_ms": 4056.803749999999,
+        "verification_response_format": "json_object"
+      },
+      {
+        "line": 4,
+        "record_sha256": "fa7c1bd5a06cea5590f2c3b54b831c5c911448bba765cec59fede2b7f67eb72e",
+        "kind": "embedding",
+        "action": "add",
+        "outcome": "ok",
+        "elapsed_ms": 464.19637499999953
+      }
+    ],
+    "other_HTTP_elapsed_ms": 437.68962499999907
+  },
+  "comparison_limits": {
+    "prior_campaign": "priority-B03-segment45-add-20260909-01",
+    "prior_http_status": 503,
+    "prior_http_elapsed_ms": 65428.257666,
+    "prior_final_facts": 8,
+    "prior_source_pairs": 6,
+    "current_final_facts": 7,
+    "current_source_pairs": 5,
+    "extraction_output_changed": true,
+    "prior_candidate_commit": "d6712b866281dc4d88f85c37830641bba7352883",
+    "current_candidate_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+    "prior_source_verdict_reused": false,
+    "interpretation": "This single trial succeeded with json_object on the fixed unified baseline. The changed extraction/proposal, workload and candidate prevent attributing the entire latency difference to response format. It does not prove general stability or that the gateway always fails strict schema."
+  },
+  "integrity": {
+    "status": "pass",
+    "revision": 45,
+    "exact_receipts": 45,
+    "original_prefix_receipts": 44,
+    "original_source_and_snapshot_unchanged": true,
+    "all_frozen_inputs_and_code_pins_match": true,
+    "controller_and_all_owned_children_stopped": true
+  },
+  "qa": {
+    "questions_run": 0,
+    "new_scores": 0
+  },
+  "evidence": {
+    "independent_validation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-json-object-result-20260909/independent-validation.json",
+    "independent_validation_sha256": "b4df827155fc8f444fcda9804d881582a00faf89db823405742bae2c16436879",
+    "prior_result_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-B03-segment45-results-20260909.json",
+    "prior_result_report_sha256": "4f72df2f616ca7c09207ec8d2bb94eee1b5250b18f5f764adc5691dd98beec57",
+    "source_files": {
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/plan.json": "d9f61cd105f76aaedec68b90a7cfb1c41741035bbeb4a0dc9d2b8434c198653f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/runtime.json": "b83fe76339ca8e7ae98c452e9d934f2d4cecd01926770992ad84080bc5432192",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/summary.json": "b529936e8c5503eb23d6606d8242c6b409956d25804f28c81fa4f1206bc6cf5f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/service.json": "84a937ba49c27bf214ebc169b9fd3f474a1f4ed46b62b2824ec005ce3baed25a",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/effective-service-config.json": "84a937ba49c27bf214ebc169b9fd3f474a1f4ed46b62b2824ec005ce3baed25a",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/model-calls.jsonl": "68c22b583b3b28daaa4782cbeef92040e213bb9f8020fa339f64aa1f6bf8fb05",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/model-trace.jsonl": "4a516a9111601fa01064a3dc890eff37bb34dfa84f99b25ea3dac72b36dec7c3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/results.private.json": "7abcc02d6cbf05c7883bbeae0daa87d4af293313b0e1a24e3d3fd7a329d375bb",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/http-results/0.private.json": "4cc455a80175f8bfb7314acb427e5e549a7dc33f1d6801e85fbddcfa4d792f0f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/service.log": "46126af4081650cb1038e7254b0c25da74312dc121817972c588b5c8e9bbd206",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/frozen-inputs.private.json": "e3c82da5a775808b9e19049b5cd31fce0a9e61aa0979b138fe5a3d1b87734ff3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/candidate-manifest.json": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "2a76af7f5184ddd29e0363700b5eb8a10775f7546766484b916df3d34389c461",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/snapshots/B03_remember-rev44.sqlite": "2527f38217f79afb9f020bf477b02777bb1f39ffd671d31612ecf4043d7a24c2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "4311877e98e497029d4b2f250a8d595531e46a2b00d0f2d9cae774d1ba4be7f3"
+    }
+  },
+  "new_model_calls_during_audit": 0
+}

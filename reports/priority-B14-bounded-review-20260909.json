@@ -1,0 +1,377 @@
+{
+  "status": "bounded_read_only_review_complete_no_candidate",
+  "base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "wip_commit": "a3847b18bb10118bab85b5da5f17353ec3aae63f",
+  "recommendation": "Do not restart B14 or revive the final-preview WIP as a small recovery candidate. The old derived-witness mismatch and independent keep-authorization problem remain. A separate small fail-closed fix for unavailable erasure-binding classification is justified by a local counterexample, but cannot recover the latest B14 recorded packet.",
+  "actual_B14_latest_recorded_path": {
+    "source_report": "reports/priority-B14-erasure-witness-incident-20260909.json",
+    "commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+    "revision": 43,
+    "flow": [
+      "extraction",
+      "repair",
+      "repair",
+      "verification",
+      "erasure_binding"
+    ],
+    "operations": "Both repeated residence instructions were covered and independently accepted. Earlier source/missing-instruction problems progressed beyond their old blockers.",
+    "terminal": "Existing reflection card from revision6 has source_quotes=[]; original row2 uses generated card content as witness and effect=uncertain. Current decoder rejects Invalid erasure scope witness; uncertain is independently terminal.",
+    "full_original_messages_and_keep_exception_delivered": true,
+    "capability_fallback_in_this_latest_recorded_path": false,
+    "new_autoaggregate_deferral_applies": false,
+    "deferral_reason": "The card already exists in the snapshot and this request has forget operations. The 5ca deferral only omits newly returned internal aggregatePatterns cards on its no-operation path; it cannot suppress this old card or its members."
+  },
+  "current_component_reproduction": {
+    "script": "artifacts/priority-B14-bounded-review-20260909/recheck.mjs",
+    "result": "artifacts/priority-B14-bounded-review-20260909/recheck-results.json",
+    "erasure_ts_exactly_equal_to_50cc": true,
+    "original_entire_packet": "Still rejected with Invalid erasure scope witness; no modified verdict and no commit.",
+    "original_food_rows_0_and_1": "Both still individually pass decodeErasure plus validateErasurePlan despite the original explicit keep exception. This is the same component-level safety gap recorded before; it is not evidence of a successful unsafe full B14 commit.",
+    "protocol_only_fix_risk": "Exposing inherited parent witnesses alone removes one obstruction while leaving those original wrong expansion proposals admissible. Actual uncertain must never become erase/retain, nor may a model-generated aggregate quote become a human source.",
+    "existing_guards": "Retained value-context cannot borrow a source span subsequently erased; source partitions and witness progress remain independent checks. They do not convert every accepted expanded erase into separately verified keep authorization."
+  },
+  "wip_39_failure_review": {
+    "historical_full_suite": {
+      "total": 569,
+      "passed": 530,
+      "failed": 39
+    },
+    "direct_observation": "All 39 terminal log blocks fail at the new Missing or stale final erasure authorization guard. Their test fixtures directly invoke Extractor/prepare and TenantStore.commit; they do not execute Engine.add, previewErasure or issue the new certificate.",
+    "fixture_compatibility": "These 39 failures by themselves are fixture/Prepared-contract mismatches, not 39 demonstrated unsafe deletions and not 39 proven Engine product regressions. A negative safety branch can pass and a later intended-success branch fail only because the certificate is absent.",
+    "product_boundary": "The WIP does change product behavior: expanded fact erasure and raw/passage rewriting require an extra independent final verifier, including direct-target cleanup. Writes whose verifier is unavailable can now fail. Offline/extraction-offline erasure cannot supply the new certificate; bounded preview resource cost and final event/index coverage are unresolved.",
+    "not_fix_by_blanket_certificates": true,
+    "demonstrated_wrong_deletions_from_39_log_alone": 0,
+    "not_a_claim_all_old_paths_are_safe": true,
+    "separate_safety_reds": "The two original-food component red requirements are separate from the 39 missing-certificate suite failures and remain red on 5ca.",
+    "two_unreviewed_contracts": [
+      {
+        "test": "degraded erasure binding erases echoes but retains an independent same-literal record",
+        "observed_fixture": "Its same-source backup echo is correctly deleted and different-source coworker retained in the fixture. It leaves the general same-source independent-neighbor case uncovered; that extension is unsafe in the new pure-prepare probe."
+      },
+      {
+        "test": "a newly erased nonlexical value still receives deterministic unreviewed source cleanup",
+        "observed_fixture": "The exact authorized emoji-only target/source is deleted. That fixture is not demonstrated wrong; it does not prove safety when a broad source span also contains an unextracted keep clause. Do not relabel its intended exact deletion unsafe without a separate counterexample."
+      }
+    ],
+    "failure_inventory": [
+      {
+        "test": "semantic erasure binds same-chunk restatements across scope labels while keeping an independently sourced same name",
+        "location": "tests/erasure-binding.test.ts:1:2154",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "a pronoun-only retention witness cannot keep a value borrowed from the erased neighboring claim",
+        "location": "tests/erasure-binding.test.ts:1:5467",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "independent-name evidence cannot exempt an unlinked echo elsewhere in the same passage",
+        "location": "tests/erasure-binding.test.ts:1:7999",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "explicit restore preserves its authorized value and support while old unrelated erasures remain enforced",
+        "location": "tests/erasure-binding.test.ts:1:9200",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "forget also scrubs older unlinked assistant echoes from searchable raw history",
+        "location": "tests/erasure-binding.test.ts:1:10282",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "fault injection rolls back independent-retention certificates and forced erasures together",
+        "location": "tests/erasure-binding.test.ts:1:11175",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "context-backed retention commits atomically, preserves raw neighbors and survives restart",
+        "location": "tests/erasure-context.test.ts:1:6053",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "erasure removes scope payloads atomically while restart, neighbors, replay and explicit restore keep their boundaries",
+        "location": "tests/erasure-metadata.test.ts:1:1006",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "committing and restarting after erasing literal code user preserves normalized user facts but blocks code replay",
+        "location": "tests/erasure-role-labels.test.ts:1:5226",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "retire a contaminated summary while preserving independently searchable raw clauses and neighbor facts",
+        "location": "tests/mixed-fact-retirement.test.ts:1:3444",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "a repeated retirement gets its exact missing witness, not an unrelated current recommendation",
+        "location": "tests/operation-obligation-repair.test.ts:1:2090",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "reviewed partial deletion preserves an independent inferred witness, spans=true",
+        "location": "tests/partial-source-inference.test.ts:1:3746",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "reviewed partial deletion preserves an independent inferred witness, spans=false",
+        "location": "tests/partial-source-inference.test.ts:1:3746",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "all distinct witnesses across multiple sources must survive",
+        "location": "tests/partial-source-inference.test.ts:1:4495",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "an explicit dependency is still erased when its authorized source witness is cut",
+        "location": "tests/partial-source-inference.test.ts:1:4802",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "loss of part of any witness still invalidates inferred support",
+        "location": "tests/partial-source-inference.test.ts:1:5358",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "uncertain support stays conservative: same quote in multiple declared sources",
+        "location": "tests/partial-source-inference.test.ts:1:6181",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "degraded erasure binding erases echoes but retains an independent same-literal record",
+        "location": "tests/review-regressions.test.ts:1:2150",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": true
+      },
+      {
+        "test": "prepare and atomic commit preserve every grouped boundary pair above the legacy pair cap",
+        "location": "tests/source-erasure-grouped.test.ts:1:9729",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source erasure removes old assistant paraphrases and preserves unextracted mixed-sentence neighbors",
+        "location": "tests/source-erasure.test.ts:1:4146",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "missing or uncertain source partitions cannot be committed and later echoes remain checked",
+        "location": "tests/source-erasure.test.ts:1:4827",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source plan rejects stale raw evidence and rolls back source cuts with the transaction",
+        "location": "tests/source-erasure.test.ts:1:5982",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "explicit restoration of the authorized value survives v4 source checks without reviving old raw text",
+        "location": "tests/source-erasure.test.ts:1:10713",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "large source cleanup is atomic across batches; workers=1, reject final batch=false",
+        "location": "tests/source-erasure.test.ts:1:12767",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "large source cleanup is atomic across batches; workers=3, reject final batch=false",
+        "location": "tests/source-erasure.test.ts:1:12767",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "verified erased facts are not rejudged, while all their original sources still undergo cleanup",
+        "location": "tests/source-erasure.test.ts:1:14166",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source scope receives surviving fact meanings while never exempting a retired witness",
+        "location": "tests/source-erasure.test.ts:1:15527",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source quote repair shares cancellation and permits one global repair: workers=1, repeat=false",
+        "location": "tests/source-erasure.test.ts:1:17036",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source quote repair shares cancellation and permits one global repair: workers=1, repeat=true",
+        "location": "tests/source-erasure.test.ts:1:17036",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source quote repair shares cancellation and permits one global repair: workers=3, repeat=false",
+        "location": "tests/source-erasure.test.ts:1:17036",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source quote repair shares cancellation and permits one global repair: workers=3, repeat=true",
+        "location": "tests/source-erasure.test.ts:1:17036",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "later writes never reapply a historical erased span over a retained mixed-source neighbor",
+        "location": "tests/source-erasure.test.ts:1:19753",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "a newly erased nonlexical value still receives deterministic unreviewed source cleanup",
+        "location": "tests/source-erasure.test.ts:1:21457",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": true
+      },
+      {
+        "test": "v8 validates full-history proof at atomic commit, preserving state on tamper and rollback",
+        "location": "tests/source-operation-batches.test.ts:1:7904",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "v7 erases historical assertions and cross-session echoes atomically while preserving true records and neighbors",
+        "location": "tests/source-operation-history.test.ts:1:4939",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "v9 validates routing at atomic commit and refuses reuse of v8 storage",
+        "location": "tests/source-operation-routing.test.ts:1:6015",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "source-only removal preserves true facts through rollback, retry, restart and every stored retrieval surface",
+        "location": "tests/source-operations.test.ts:1:4908",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "forget and explicit restore still erase raw details without resurrecting old sources in v5",
+        "location": "tests/transitions.test.ts:1:10636",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      },
+      {
+        "test": "an unresolved implicit preference cannot cancel an authorized unrelated forget",
+        "location": "tests/transitions.test.ts:1:11850",
+        "observed_error": "Missing or stale final erasure authorization",
+        "classification": "direct-store fixture omits new certificate",
+        "unreviewed_behavior_requires_separate_policy_decision": false
+      }
+    ]
+  },
+  "small_independent_safety_scope": {
+    "current_location": "src/extraction.ts erasure_binding deterministic fallback (around lines699-724)",
+    "trigger": [
+      "erasureBinding enabled, rawOnly false, and ambiguous erasureWork.candidates nonempty",
+      "offline or extraction_offline mode, or a non-EVIDENCE_VALIDATION classifier/capability failure with outer request still alive",
+      "fallback marks a candidate erase when sameSlot/shared source, or when no own colliding-value witness exists"
+    ],
+    "local_counterexample": "Synthetic prepare-only request forgets a residence and explicitly keeps food preferences. Target and independent food fact have separate complete quotes in one shared source, no depends_on. Stubbed unavailable erasure_binding returns erasure_binding_deterministic with neighbor effect=erase and only target in operation IDs.",
+    "probe_scope": "sourceErasure=false, all model calls stubbed, initial positive verification explicitly a synthetic fixture; no database opened and no commit. The production source-erasure=true path and whole-write behavior were not newly exercised.",
+    "proposed_minimum": "When ambiguous candidate work lacks semantic classification, reject rather than synthesizing either erase or independent retain. Preserve automatic exact-boundary cases, explicit restore exclusions, no-candidate and ordinary no-erasure writes. Do not widen the original target set or discard source/keep evidence.",
+    "expected_behavior_change": "The existing degraded erasure-binding fixture would need an intentional fail-closed expectation, not a forged approval. Reviewed deletion paths should retain their existing successful fixtures.",
+    "necessary_regressions": [
+      "same-source independent quote with explicit keep",
+      "different-source same literal",
+      "no independent value witness without deletion authority",
+      "semantic uncertain remains terminal",
+      "ordinary capability fallback without ambiguous erasure work",
+      "direct/no-candidate exact deletion and restore boundary unchanged"
+    ],
+    "B14_recovery_claim": false,
+    "service_implementation_started": false
+  },
+  "priority_decision": "Finish B03 recovery first. If a short safety hardening task is wanted next, choose the bounded erasure-binding capability guard. A B14 recovery attempt requires explicit inherited-evidence and keep-authorization contracts together; neither a quote-only patch nor a384 full-preview compatibility work is justified as the next small probe.",
+  "limits": {
+    "new_model_calls": 0,
+    "qa_calls": 0,
+    "original_db_opens": 0,
+    "database_writes": 0,
+    "service_or_config_changes": 0,
+    "new_full_suite_run": false,
+    "new_model_samples": 0,
+    "preview_architecture_changes": 0
+  },
+  "evidence_hashes": {
+    "recheck.mjs": "083784c0adf0537e20b047e3ef435fcde71175682aae5aa28e8f2c5162141a5f",
+    "recheck-results.json": "862c8969f222a561db52ee7a3cb6ac90b3f407e2fb61ae974a06d37be3f6ad48",
+    "current_src_erasure.ts": "9699a17205df96395f06ace454b548476cd51e00a37cfdb43dda0167dcb153a2",
+    "current_dist_erasure.js": "7bef285b0c94bffd380ea335ede413d05de31dbbf1da26fba2e008d52e53ed96",
+    "current_src_extraction.ts": "635faad8e91b1e61f19616d3322389eeb08356086c3c45a94a5bc227b060d56d",
+    "old_39_failure_log": "b4c7d7f60655d74dbb27a2b3cb2b12fdb06dc006182e008a29122b3ed21106cd",
+    "reports/priority-B14-final-erasure-auth-wip-20260909.json": "6c92de530836f121cbb593dc0124222be26c11033e1786cd3d79c5abe97c2964",
+    "reports/priority-B14-derived-evidence-design-20260909.json": "58a0dd07727b393417b95a819cebeb971e0859cbd7e91403bde31fbf0b730560",
+    "reports/priority-recovery-B14-feedback-20260909.json": "fdc7cdf46eb081db34762813207d2a602ca9910a717f2bc2f4106d6791c5c920",
+    "reports/priority-B14-erasure-witness-incident-20260909.json": "c2a40231eb13064cd1eb6324205a9b25a6be642fd53c652375aeab1864cdaa8d"
+  }
+}

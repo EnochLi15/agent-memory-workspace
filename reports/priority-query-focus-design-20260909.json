@@ -1,0 +1,92 @@
+{
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "scope": "Generic read-only query-focus review; no tuning or new evaluation on the original ten queries.",
+  "confirmed_findings": [
+    "applySubjectDemotion treats any first-person pronoun as user focus, independently of its grammatical role.",
+    "QueryIntent has retrieval mode, temporal flags and untyped entities, but no ownership or narrator/target roles.",
+    "SearchRequest.options supplies candidate strings, not subject scope.",
+    "Typed relation expansion repeats the first-person-to-user assumption. Optional semantic reranking happens after subject demotion and candidate truncation, and is disabled in the recorded runs."
+  ],
+  "code": [
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service/src/retrieval.ts",
+      "line": 171
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service/src/types.ts",
+      "line": 62
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service/src/text.ts",
+      "line": 37
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service/src/retrieval-policy.ts",
+      "line": 35
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-deferral-scope-split-20260909/service/src/engine.ts",
+      "line": 114
+    }
+  ],
+  "single_candidate_design": {
+    "name": "query focus independent of retrieval mode",
+    "focus_values": [
+      "self_state",
+      "other_people",
+      "unknown"
+    ],
+    "criterion": "Determine whose requested property/state is sought. Reporting clauses identify narrator/source; possessive relations must preserve which noun they modify.",
+    "effects": {
+      "self_state": "Keep current subject demotion.",
+      "other_people": "Only when independently established, cancel the third-party penalty for actual facts; preserve raw/event handling.",
+      "unknown": "Keep baseline. Do not expand scope."
+    },
+    "producer_status": "No reliable existing structured producer found; defer production implementation rather than stack query-keyword exemptions.",
+    "excluded_shortcuts": [
+      "I/my alone",
+      "list/trajectory alone",
+      "people/friends mention alone",
+      "untyped capitalized entity alone"
+    ]
+  },
+  "generic_contrast_fixtures": [
+    {
+      "query": "list my friends’ plans",
+      "expected": "other_people"
+    },
+    {
+      "query": "list my plans with my friends",
+      "expected": "self_state"
+    },
+    {
+      "query": "list the food preferences I told you about for my friends",
+      "expected": "other_people"
+    },
+    {
+      "query": "list my food preferences",
+      "expected": "self_state"
+    },
+    {
+      "query": "my contacts’ preferences",
+      "expected": "other_people"
+    },
+    {
+      "query": "my preferences for contacting people",
+      "expected": "self_state"
+    }
+  ],
+  "ambiguous_must_not_expand": [
+    "our plans",
+    "my friends and I",
+    "my family updates",
+    "what I know about us",
+    "conflicting ownership clauses or requests only inside quoted text"
+  ],
+  "local_check": "Three novel minimal pairs run through frozen intent pure function: same mode/entities/self flags and same third-party multiplier despite opposite ownership. This proves missing representation, not semantic classifier accuracy.",
+  "decision": "Defer prior broad mode exemption. No new production rule or model request.",
+  "cloud_calls": 0,
+  "service_changes": 0,
+  "database_writes": 0
+}

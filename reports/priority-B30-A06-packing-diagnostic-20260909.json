@@ -1,0 +1,262 @@
+{
+  "status": "diagnostic_candidate_not_recommended_for_deployment_without_scope_tests",
+  "unified_base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "cloud_calls": 0,
+  "new_answer_or_judge_calls": 0,
+  "new_QA_scores": false,
+  "service_files_modified": false,
+  "database_writes_to_originals": false,
+  "original_queries_and_vectors_unchanged": true,
+  "recorded_Search_exactly_reproduced": 10,
+  "hard_limits_unchanged": {
+    "candidate_pool": 200,
+    "max_selected_evidence": 32,
+    "token_budget": 6000
+  },
+  "confirmed_mechanism": [
+    "B30 p1/p3/p4/p5 originally select 32 subject=user facts; p2 selects 29 user facts plus three neutral operation events.",
+    "Self-referential wording applies 0.3 to all non-user subjects before the combined 200-candidate cut. Patricia p1 fact is absent from that cut despite entering semantic and lexical routes.",
+    "The correct Patricia source passage is combined candidate rank 53 for p1, then raw*0.4 moves it to packing-score rank 132 before coverage utility. P3 passage rank62 becomes packing-score rank132; Patricia fact rank166 becomes96.",
+    "The December source is combined candidate rank5 for p5, then raw*0.4 moves it to packing-score rank115. These are separate stage ranks; none is a route-local rank.",
+    "The existing 0.35 item novelty and 0.15 source novelty cannot offset these score differences. Final recorded reasons for these in-pool witnesses are count-limit, not token-budget rejection."
+  ],
+  "candidate": {
+    "description": "For non-current intent modes only, skip blanket third-party subject demotion for actual non-user/non-assistant facts. Keep projected operation-event, raw and assistant weighting exactly as before. No erasure visibility change, query edit, extra slot or token, target-name or expected-answer heuristic.",
+    "implementation_point": "src/retrieval.ts applySubjectDemotion; currently implemented only in an isolated diagnostic module copy.",
+    "diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-evidence-packing-diagnostic-20260909/candidate-policy.diff",
+    "one_final_policy_no_parameter_sweep": true
+  },
+  "paired_results": [
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "mode": "trajectory",
+      "old_count": 32,
+      "new_count": 32,
+      "old_tokens": 5984,
+      "new_tokens": 5960,
+      "retained_baseline_ids": 23,
+      "added_count": 9,
+      "removed_count": 9,
+      "context_identical": false,
+      "posthoc_Patricia_fact": {
+        "before": false,
+        "after": true
+      },
+      "posthoc_December_facts": {
+        "before": 0,
+        "after": 2
+      }
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p2_target_binding#longitudinal_operation#3",
+      "mode": "operation",
+      "old_count": 32,
+      "new_count": 32,
+      "old_tokens": 5052,
+      "new_tokens": 5380,
+      "retained_baseline_ids": 18,
+      "added_count": 14,
+      "removed_count": 14,
+      "context_identical": false,
+      "posthoc_Patricia_fact": {
+        "before": false,
+        "after": true
+      },
+      "posthoc_December_facts": {
+        "before": 0,
+        "after": 2
+      }
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p3_state_transition#longitudinal_operation#5",
+      "mode": "list",
+      "old_count": 32,
+      "new_count": 32,
+      "old_tokens": 5501,
+      "new_tokens": 5254,
+      "retained_baseline_ids": 18,
+      "added_count": 14,
+      "removed_count": 14,
+      "context_identical": false,
+      "posthoc_Patricia_fact": {
+        "before": false,
+        "after": true
+      },
+      "posthoc_December_facts": {
+        "before": 0,
+        "after": 2
+      }
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "mode": "current",
+      "old_count": 32,
+      "new_count": 32,
+      "old_tokens": 5688,
+      "new_tokens": 5688,
+      "retained_baseline_ids": 32,
+      "added_count": 0,
+      "removed_count": 0,
+      "context_identical": true,
+      "posthoc_Patricia_fact": {
+        "before": false,
+        "after": false
+      },
+      "posthoc_December_facts": {
+        "before": 0,
+        "after": 0
+      }
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p5_operation_application#longitudinal_operation#9",
+      "mode": "operation",
+      "old_count": 32,
+      "new_count": 32,
+      "old_tokens": 5376,
+      "new_tokens": 5160,
+      "retained_baseline_ids": 18,
+      "added_count": 14,
+      "removed_count": 14,
+      "context_identical": false,
+      "posthoc_Patricia_fact": {
+        "before": false,
+        "after": false
+      },
+      "posthoc_December_facts": {
+        "before": 0,
+        "after": 2
+      }
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "mode": "trajectory",
+      "old_count": 17,
+      "new_count": 16,
+      "old_tokens": 5953,
+      "new_tokens": 5945,
+      "retained_baseline_ids": 15,
+      "added_count": 1,
+      "removed_count": 2,
+      "context_identical": false,
+      "posthoc_third_party_wedding_decoy_added": true
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+      "mode": "operation",
+      "old_count": 19,
+      "new_count": 18,
+      "old_tokens": 5989,
+      "new_tokens": 5994,
+      "retained_baseline_ids": 16,
+      "added_count": 2,
+      "removed_count": 3,
+      "context_identical": false,
+      "posthoc_third_party_wedding_decoy_added": true
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "mode": "list",
+      "old_count": 28,
+      "new_count": 27,
+      "old_tokens": 5996,
+      "new_tokens": 5935,
+      "retained_baseline_ids": 26,
+      "added_count": 1,
+      "removed_count": 2,
+      "context_identical": false,
+      "posthoc_third_party_wedding_decoy_added": false,
+      "Surfsand_guard": {
+        "before_position": 26,
+        "after_position": 26,
+        "exact_evidence_unchanged": true,
+        "only_Surfsand_evidence_count": 1
+      }
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "mode": "current",
+      "old_count": 17,
+      "new_count": 17,
+      "old_tokens": 5998,
+      "new_tokens": 5998,
+      "retained_baseline_ids": 17,
+      "added_count": 0,
+      "removed_count": 0,
+      "context_identical": true,
+      "posthoc_third_party_wedding_decoy_added": false
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+      "mode": "current",
+      "old_count": 20,
+      "new_count": 20,
+      "old_tokens": 5981,
+      "new_tokens": 5981,
+      "retained_baseline_ids": 20,
+      "added_count": 0,
+      "removed_count": 0,
+      "context_identical": true,
+      "posthoc_third_party_wedding_decoy_added": false
+    }
+  ],
+  "negative_result": [
+    "An initial unguarded non-current exemption was rejected: it filled B30p1/p2 and A06p1 with projected memory events. Its artifacts remain separately named rejected-event-unbounded-* for audit.",
+    "The final guarded candidate preserves A06p3 Surfsand exactly at position26 and restores B30 correct-person/month evidence, but newly retrieves Priya wedding evidence in A06p1/p2 and displaces some prior user records. This exposes an unresolved own-state versus other-person boundary.",
+    "B30p2 erased-identity trace deficiency is not fixed, and no lost deleted preference value was restored."
+  ],
+  "next_minimum": [
+    "Treat this as evidence for the actor-demotion cause, not a ready retrieval fix or measured QA gain.",
+    "Before implementation, require generic cases distinguishing a requested set of people or related entities from lists of the user's own restrictions/history; retain near-match third-party suppression in the latter. Keep operation-event guards and A06p3 single booking-fact preservation.",
+    "Keep source deduplication tied to actual witness spans/proposition coverage; a blanket per-source cap can drop distinct booking facts and is not justified by this diagnostic."
+  ],
+  "artifacts": {
+    "artifacts/priority-B30-tail-qa-20260909-01/service.json": "5b28be1a97879fbb091b5a5945f817c7041e090c703d677eae053d25822ba9bf",
+    "artifacts/priority-B30-tail-qa-20260909-01/search-vectors.private.jsonl": "eefbdfb5fcae9c9d5dff108e0432c02aaaf98153f118adf099d1ffa1b924972f",
+    "artifacts/priority-B30-tail-qa-20260909-01/retrieval-stages.jsonl": "f7a896c05b4cefe67867653d123fee0c82839a7389569c5ad7eb9b5bede99600",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/requests.jsonl": "485f81b543b222747f179756dfebcf095a00cca5335b25cce473bee05a2cac25",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/retrievals.jsonl": "1f8c8c03bdfddd02c5c87c7be46eb761bad619e43c20670883264746bac4ab8e",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/predictions.jsonl": "bf5fed126f8d06dae1a91493d673c91c5f32d93d6c6b8548760409beefbdb124",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/judgments.jsonl": "76bb495dd18e760587896fec8926bd733250653f595988d3481663270c2d304a",
+    "artifacts/priority-event-recovery-20260909-01/service.json": "2e5042ea19c1e76e00d155c5597f986b40d1bb40e45b2604207646c426850eda",
+    "artifacts/priority-event-recovery-20260909-01/search-vectors.private.jsonl": "6cfc957949b7df99e46d924076f66eb8d31dd0f3139d68569ad9937b3932a633",
+    "artifacts/priority-event-recovery-20260909-01/retrieval-stages.jsonl": "3eb5ac86dee3ea9dcd9522e799fa0ec1d482c135d4835866dfe3974a62842bc6",
+    "eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-a06/requests.jsonl": "f8ead354fa798186b549b0460f90f2c255711995e2b1180d231ba39c051c4513",
+    "eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-a06/retrievals.jsonl": "23c17a76cb77ce0fcc0e9662c8224b4ded3ab59f12660dc9858d57b3a6235a48",
+    "eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-a06/predictions.jsonl": "095312cd6c5ffbb854994ef7e1a034c62c520ed07ba3932fa158e2419cda5860",
+    "eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-a06/judgments.jsonl": "40a3dd01594113a29a449a3ba8d56e01b550ab6a7befb498b6a259d0c55cafe0",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/inspect.mjs": "87556cee1ba57419d810f9589ec3d17abf33608bdf233cddd4e0fb336a97d4a9",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/paired.mjs": "ffa208fa7f4d02fc1118bfdd197bf9199aa24ae0b0b4686e0205841fc0177b17",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/candidate-policy.diff": "6af0615488dfd14408e24e4d975befe4b8bc31dbb552c57a3597347750194395",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/paired-selection.json": "85f96ff275466cdddc1825df7a0100d16cfe613ca85eb99204373cf5631b1048",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/posthoc-assessment.json": "2188f22b48f1569c7492082e9ddd207d686df0042bbacc1c6d38d3a396e904d2",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/paired-contexts.private.json": "f6b9fc3ab08b94fde3e7d1c947989d4b7fc6100642b74327a8ecf2087893e570",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/B30-inspection.private.json": "2858314515ad520dc0dc4a7cb39b9ad50d359c44b2c6124121ad25624bd880d9",
+    "artifacts/priority-evidence-packing-diagnostic-20260909/snapshot-provenance.json": "b2c2e6b1e2d150733a7cb0358cb22f07e99a5016ac6bfb5517026f4cc981e545"
+  },
+  "snapshot_provenance": {
+    "B30": {
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-tail-qa-20260909-01/data/21336bef65e29958fa1adfd86c152e56ae1b66af6d977a2c11038a742b992e31/memory.sqlite",
+      "source_sha256": "fcb75e95cfbf2c2c41853f436e0e6d2b2b4840d770c0e3e717cb8e50580219d7",
+      "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-evidence-packing-diagnostic-20260909/B30-rev51.sqlite",
+      "snapshot_sha256": "e3b913e8ec569d614a0c76aad7253f3a1adb23972c69ac280109f64eb0924ba8",
+      "source_unchanged": true
+    },
+    "A06": {
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/b8371f72cbe206a0e94482d8afa9389e3ad89e6f9e758c27b509f73d6be1aadf/memory.sqlite",
+      "source_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-evidence-packing-diagnostic-20260909/A06-rev51.sqlite",
+      "snapshot_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "source_unchanged": true
+    }
+  }
+}

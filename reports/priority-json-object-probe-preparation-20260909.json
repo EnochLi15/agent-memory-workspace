@@ -1,0 +1,70 @@
+{
+  "protocol": "json-object-single-add-preparation-v1",
+  "created_at": "2026-09-08T20:58:03.671316+00:00",
+  "status": "ready_for_root_plan_and_launch",
+  "wrapper": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-json-object-failed-add.py",
+  "wrapper_sha256": "2d8dcc94e40d8a6c42b35385c9405f073500e93f4395689eb152f012a3c09a77",
+  "tests": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_json_object_failed_add.py",
+  "tests_sha256": "78324eb1633f73b7eb6345aca2f0582f089c56dec5c0af85b3eaa79afbb5950f",
+  "tests_passed": 4,
+  "fixed_runner_unchanged": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-fixed-failed-adds.py": "1b35935faecf285d0441983ff75d8892b902349480567f5396190ad35be2323d"
+  },
+  "candidate": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+    "commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30"
+  },
+  "compiled_files_verified": 141,
+  "inputs": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-01/inputs.private.json",
+  "inputs_sha256": "e3c82da5a775808b9e19049b5cd31fce0a9e61aa0979b138fe5a3d1b87734ff3",
+  "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-45:0",
+  "request_sha256": "80a431e54bc709221b53565967f4c01b40421c284e3e6bc535156a1a94c97830",
+  "prefix_revision": 44,
+  "exact_prefix_receipts": 44,
+  "baseline_verification_response_format": "json_schema",
+  "only_effective_override": {
+    "verificationResponseFormat": "json_object"
+  },
+  "provenance_only_addition": "failed_add_execution.configuration_override",
+  "effective_config_environment_hash_recomputed": true,
+  "prospective_effective_config_sha256": "9e1f7cbf1db699958ee9ee505b4f019c0fb190e8e13c5e0a45141fde48891a01",
+  "config_preview_note": "Hash computed locally from the expected configuration only; no campaign or plan was created. No secret values are included in this report.",
+  "old_source_runtime_terminal": true,
+  "all_owned_children_stopped": true,
+  "idle": {
+    "cloud_start_allowed": true,
+    "blockers": [],
+    "full_status": "failed",
+    "recovery_status": "failed"
+  },
+  "port_checked_free": 8124,
+  "target_campaign_exists": false,
+  "plan_command": [
+    "python3",
+    "scripts/probes/run-json-object-failed-add.py",
+    "--campaign",
+    "priority-B03-segment45-add-20260909-02",
+    "--port",
+    "8124",
+    "--plan"
+  ],
+  "validate_command": [
+    "python3",
+    "scripts/probes/run-json-object-failed-add.py",
+    "--campaign",
+    "priority-B03-segment45-add-20260909-02",
+    "--validate"
+  ],
+  "run_command": [
+    "python3",
+    "scripts/probes/run-json-object-failed-add.py",
+    "--campaign",
+    "priority-B03-segment45-add-20260909-02",
+    "--run",
+    "--detach"
+  ],
+  "tail_inheritance": "The existing B03 thin adapter pins origin_service_config to the successful previous/service.json. Its frozen core reads that file and overrides only dataDir, port, host and recovery_execution; verificationResponseFormat=json_object is preserved.",
+  "new_model_calls": 0,
+  "new_plan_created": false
+}

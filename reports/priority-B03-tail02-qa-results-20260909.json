@@ -1,0 +1,358 @@
+{
+  "protocol": "single-sample-tail-qa-result-v1",
+  "created_at": "2026-09-08T21:05:00.565252+00:00",
+  "campaign": "priority-B03-tail-qa-20260909-02",
+  "candidate_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "candidate_manifest_sha256": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+  "compiled_files_verified": 141,
+  "scope": "Mixed-version B03 complete original history recovery from the actual successful revision45 prefix, followed by the unchanged six-question standard QA. The4/6 result is not a fresh50-add run, a972-question score, or a sum of earlier repeated attempts.",
+  "configuration": {
+    "verificationResponseFormat": "json_object",
+    "actual_service_config_inherited_from_successful_source": true,
+    "previous": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02",
+    "format_audit_records": 6,
+    "all_format_audits_match": true
+  },
+  "runtime": {
+    "status": "finished",
+    "pid": 39533,
+    "process_identity": "Wed Sep  9 04:59:20 2026",
+    "alive": false,
+    "started_at": "2026-09-08T20:59:21.564695+00:00",
+    "finished_at": "2026-09-08T21:02:22.436047+00:00",
+    "children": {
+      "sleep-prevention": {
+        "pid": 39553,
+        "process_identity": "Wed Sep  9 04:59:21 2026",
+        "alive": false,
+        "exit_code": -15,
+        "stopped_by_runner": true
+      },
+      "service": {
+        "pid": 39555,
+        "process_identity": "Wed Sep  9 04:59:21 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": true
+      },
+      "eval-b03-tail": {
+        "pid": 39567,
+        "process_identity": "Wed Sep  9 04:59:22 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": null
+      }
+    }
+  },
+  "history": {
+    "original_sessions": 50,
+    "total_original_adds": 50,
+    "prefix_receipts": 45,
+    "prefix_HTTP_matches": 45,
+    "new_tail_attempted": 5,
+    "new_tail_successful": 5,
+    "new_tail_failed": 0,
+    "new_tail_not_attempted": 0,
+    "revision_before": 45,
+    "revision_after": 50,
+    "exact_final_receipts": 50,
+    "physical_HTTP_responses": 50,
+    "transport_attempts": 50,
+    "successful_degraded_adds": 1,
+    "successful_degraded_request_ids": [
+      "priority-full-20260908-01-candidate:memops:B03_remember:segment-50:0"
+    ],
+    "prefix_write_generation_calls": 0,
+    "tail_write_generation_calls": 11,
+    "search_rerank_generation_calls": 0,
+    "successful_degraded_events": [
+      {
+        "event": "degraded",
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-50:0",
+        "reasons": [
+          "aggregate_deferred_erasure"
+        ]
+      }
+    ]
+  },
+  "qa": {
+    "planned_questions": 6,
+    "judged_questions": 6,
+    "correct": 4,
+    "accuracy_over_fixed_denominator": 0.6666666666666666,
+    "question_statuses": [
+      {
+        "qid": "B03_remember.json#p1_operation_trace#longitudinal_operation#1",
+        "status": "judged",
+        "correct": false,
+        "error": null
+      },
+      {
+        "qid": "B03_remember.json#p2_target_binding#longitudinal_operation#3",
+        "status": "judged",
+        "correct": true,
+        "error": null
+      },
+      {
+        "qid": "B03_remember.json#p3_state_transition#longitudinal_operation#5",
+        "status": "judged",
+        "correct": true,
+        "error": null
+      },
+      {
+        "qid": "B03_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+        "status": "judged",
+        "correct": true,
+        "error": null
+      },
+      {
+        "qid": "B03_remember.json#p5_operation_application#longitudinal_operation#9",
+        "status": "judged",
+        "correct": false,
+        "error": null
+      },
+      {
+        "qid": "B03_remember.json#p6_remember_negative#longitudinal_operation#11",
+        "status": "judged",
+        "correct": true,
+        "error": null
+      }
+    ],
+    "previous_results_unchanged": true,
+    "additional_sampling_or_rejudging": false,
+    "manifest": {
+      "run_id": "priority-B03-tail-qa-20260909-02-candidate-memops",
+      "status": "finished",
+      "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+      "service_commit": "6381bef2d705c3bc63b3616d529149d947a171f1",
+      "memory_namespace": "priority-full-20260908-01-candidate",
+      "answer_model": "glm-5.2",
+      "judge_model": "glm-5.2",
+      "judge_kind": "rubric",
+      "mode": "proxy",
+      "planned_questions": 6,
+      "top_k": 100,
+      "chunk_messages": 20,
+      "chunk_words": 2000,
+      "started_at": "2026-09-08T20:59:22.337Z",
+      "finished_at": "2026-09-08T21:02:21.685Z"
+    }
+  },
+  "latency": {
+    "runtime_elapsed_ms": 180871.352,
+    "evaluator_elapsed_ms": 179348.0,
+    "cached_prefix_HTTP_elapsed_sum_ms": 53.69157799999999,
+    "new_tail_HTTP_elapsed_sum_ms": 53729.011377,
+    "search_HTTP_elapsed_sum_ms": 858.2488350000131,
+    "QA_and_other_evaluator_time_ms": 124707.04820999998,
+    "QA_timing_caveat": "The standard records have no separate Answer/Judge timing. This remainder contains their combined time and evaluator overhead.",
+    "service_model_groups": [
+      {
+        "kind": "generation",
+        "purpose_or_action": "extraction",
+        "count": 5,
+        "outcomes": {
+          "ok": 5
+        },
+        "elapsed_sum_ms": 32349.429458,
+        "elapsed_mean_ms": 6469.885891599999,
+        "elapsed_max_ms": 10935.947332999996
+      },
+      {
+        "kind": "generation",
+        "purpose_or_action": "verification",
+        "count": 5,
+        "outcomes": {
+          "ok": 5
+        },
+        "elapsed_sum_ms": 15757.013501000001,
+        "elapsed_mean_ms": 3151.4027002000003,
+        "elapsed_max_ms": 5452.421042000002
+      },
+      {
+        "kind": "embedding",
+        "purpose_or_action": "add",
+        "count": 5,
+        "outcomes": {
+          "ok": 5
+        },
+        "elapsed_sum_ms": 1177.1775409999973,
+        "elapsed_mean_ms": 235.43550819999945,
+        "elapsed_max_ms": 457.23933300000135
+      },
+      {
+        "kind": "generation",
+        "purpose_or_action": "source_erasure",
+        "count": 1,
+        "outcomes": {
+          "ok": 1
+        },
+        "elapsed_sum_ms": 2920.133249999999,
+        "elapsed_mean_ms": 2920.133249999999,
+        "elapsed_max_ms": 2920.133249999999
+      },
+      {
+        "kind": "embedding",
+        "purpose_or_action": "search",
+        "count": 6,
+        "outcomes": {
+          "ok": 6
+        },
+        "elapsed_sum_ms": 396.14000000002125,
+        "elapsed_mean_ms": 66.02333333333688,
+        "elapsed_max_ms": 76.05887500000244
+      }
+    ],
+    "tail_requests": [
+      {
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-46:0",
+        "status": "ok",
+        "http_elapsed_ms": 11715.620334000001,
+        "model_stages": [
+          {
+            "trace_id": "cd63f6d5-cfc7-4ace-ba93-2c1f7222330f",
+            "purpose": "extraction",
+            "outcome": "ok",
+            "elapsed_ms": 9247.621666
+          },
+          {
+            "trace_id": "0ec41ec9-8a75-410a-95e0-ab82f2b07d41",
+            "purpose": "verification",
+            "outcome": "ok",
+            "elapsed_ms": 1925.0279999999984,
+            "verification_response_format": "json_object"
+          }
+        ]
+      },
+      {
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-47:0",
+        "status": "ok",
+        "http_elapsed_ms": 13223.076041999999,
+        "model_stages": [
+          {
+            "trace_id": "a8a8efc8-a1ac-462a-8697-f52ef0c175e9",
+            "purpose": "extraction",
+            "outcome": "ok",
+            "elapsed_ms": 4108.616292000001
+          },
+          {
+            "trace_id": "10f77479-0983-4829-b819-adb1a8543e84",
+            "purpose": "verification",
+            "outcome": "ok",
+            "elapsed_ms": 5452.421042000002,
+            "verification_response_format": "json_object"
+          },
+          {
+            "trace_id": "7b815c24-af3b-4f46-aaa2-ad8e3e4a623f",
+            "purpose": "source_erasure",
+            "outcome": "ok",
+            "elapsed_ms": 2920.133249999999,
+            "verification_response_format": "json_object"
+          }
+        ]
+      },
+      {
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-48:0",
+        "status": "ok",
+        "http_elapsed_ms": 5749.073542000002,
+        "model_stages": [
+          {
+            "trace_id": "3b533fba-caf5-4cac-b1c9-057d06ecb9c6",
+            "purpose": "extraction",
+            "outcome": "ok",
+            "elapsed_ms": 4094.362167000003
+          },
+          {
+            "trace_id": "7eef8317-4540-4c94-9d44-3673e60fd7bf",
+            "purpose": "verification",
+            "outcome": "ok",
+            "elapsed_ms": 1256.2248340000006,
+            "verification_response_format": "json_object"
+          }
+        ]
+      },
+      {
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-49:0",
+        "status": "ok",
+        "http_elapsed_ms": 14692.470083999997,
+        "model_stages": [
+          {
+            "trace_id": "f2507658-633e-4cb0-b34b-87ed8c04ff8a",
+            "purpose": "extraction",
+            "outcome": "ok",
+            "elapsed_ms": 10935.947332999996
+          },
+          {
+            "trace_id": "52ec69a1-99c7-4b57-84e9-74afa9815e18",
+            "purpose": "verification",
+            "outcome": "ok",
+            "elapsed_ms": 3191.5910000000003,
+            "verification_response_format": "json_object"
+          }
+        ]
+      },
+      {
+        "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-50:0",
+        "status": "ok",
+        "http_elapsed_ms": 8348.771375000004,
+        "model_stages": [
+          {
+            "trace_id": "d51febf3-f134-4469-a880-3dbe137e8c1b",
+            "purpose": "extraction",
+            "outcome": "ok",
+            "elapsed_ms": 3962.881999999998
+          },
+          {
+            "trace_id": "0cae3873-c197-4989-a777-f6a851f39461",
+            "purpose": "verification",
+            "outcome": "ok",
+            "elapsed_ms": 3931.748625,
+            "verification_response_format": "json_object"
+          }
+        ]
+      }
+    ]
+  },
+  "integrity": {
+    "status": "pass",
+    "independently_recomputed_summary_match": true,
+    "complete_standard_receipts": 50,
+    "source_database_sha256_unchanged": "4311877e98e497029d4b2f250a8d595531e46a2b00d0f2d9cae774d1ba4be7f3",
+    "capture_sha256_unchanged": "42a6ddcde17ae4636a8dcec5ad16b822443e914cb82779102017359d5c143e7e",
+    "source_capture_all_tables_and_schema_unchanged": true,
+    "all_original_inputs_candidate_entry_dependencies_pinned": true,
+    "controller_and_all_owned_children_stopped": true,
+    "clone_note": "The clone changed by five successful new writes as intended; the original source and captured revision45 snapshot stayed unchanged."
+  },
+  "interpretation_limit": "One completed continuation demonstrates this recorded outcome only; it does not establish universal JSON-format stability or isolate format as the cause of score/latency differences.",
+  "evidence": {
+    "independent_validation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail02-results-20260909/independent-validation.json",
+    "independent_validation_sha256": "d080ea763034e78d30c70ff71f472bab65a6f8864060b79ec36f4ae7a4f988b4",
+    "source_files": {
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/plan.json": "b2a243d14832fd359056a97d7f0b7ab7d494283b02c2e829ea37fb70db026cf8",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/runtime.json": "c15bb2f5cf2b85c0f9a57e156aa58171b00afa21bad20f071db21f8a8c576c9f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/summary.json": "0bccb4bbd33afbe70ae29c1a50217d14e7f4be600486d8af9774529322779cdc",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/service.json": "69d76fa47e9b1723660fab85b85bba4894b2d1d471eb97197512b7a6c3d99423",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/model-calls.jsonl": "9a1d4a81e3cf12d3f777712913cf69ff4cdee36e8e23c305d2e2bd547c399c2c",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/model-trace.jsonl": "bcb1274e44bfedb14037390137ea9b54b6cfa947b407b116bb185ed7c5f900c2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/http-receipts.jsonl": "1e0fc09262fbb4e3c2043a825338fcdc151e118272cb0a7dd1ddebe9fe2acd81",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/service.log": "0b3acbe2ce3055d99018ae42d4368a8708b39acbad4e1ebdb6e1b716997134d5",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/samples.json": "b8df0d111bb26914c93dadad61f82a6017e4da0cdb612501e005a3334ded7c41",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/schedule.json": "52bc481b73bab77e7936b91b32e16d8e9e2164ed2bcbfd454290e3f59dc53da0",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/receipts.private.json": "e7a90dceb7b5ea4109f4ac00ba33cd64dca2cf43884ec3b6b77b11fc1102cb69",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/candidate-manifest.json": "fd1590e3e523dd316a1f2fe87d90c454ca0d1c310467ff3aa4686cd7bd3b5d95",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/search-vectors.private.jsonl": "14638e4cb7696bd1c3b45a6cb07a50073236ff9780b53f00a3b44c0b32d29f2c",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/retrieval-stages.jsonl": "0140f217120776a5142b4f9ade401459c4c13cd08a70c6cfcb951f4533e17a4e",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/manifest.json": "da81a0b58ffb09b06b8f0fe3fef38a619a9176dd9fba51b7e465efa1ee538c6e",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/requests.jsonl": "b206e5c648f4d44ac5940aa0099cc726eabea7bfe13d25a0634721697c15f8a2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/ingest.jsonl": "5426c623f5dc274ec3434de97f7e2205bb2e68fabd352d3e3e02da14b6e20d4b",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/predictions.jsonl": "bc9b05447cd25df12669e0b6a5218f42d6d21dcfbb397b07a03262209a3881b2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/judgments.jsonl": "635e90b42e715f5a115341385bd088405d3bb7b3d72965e73ebe5d0a13ec0873",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/retrievals.jsonl": "8e90c547229d26829f4187cbe9cf01eb8cf6aef503aa77f717ecc3168a0c1ae3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment45-add-20260909-02/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "4311877e98e497029d4b2f250a8d595531e46a2b00d0f2d9cae774d1ba4be7f3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/B03-rev45.sqlite": "42a6ddcde17ae4636a8dcec5ad16b822443e914cb82779102017359d5c143e7e",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a"
+    }
+  },
+  "new_model_calls_during_audit": 0
+}

@@ -1,0 +1,142 @@
+{
+  "status": "read_only_design_no_candidate_or_model_call",
+  "base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "recommendation": "Prefer an explicitly configured, documented json_object provider profile before implementing source-format recovery. Keep strict local source and semantic decoders. Do not strip the recorded trailing prose or replay classification as a repair.",
+  "actual_failure": {
+    "campaign": "artifacts/priority-B03-segment45-add-20260909-01",
+    "candidate": "d6712b866281dc4d88f85c37830641bba7352883",
+    "trace_id": "c9f7333f-a397-498b-a137-596c4e99f09b",
+    "audit_response_format": "json_schema",
+    "schema_name": "source_erasure_v4",
+    "schema_strict": true,
+    "output_chars": 906,
+    "leading_object_chars": 490,
+    "trailing_prose_chars": 416,
+    "diagnostic_rows": {
+      "count": 6,
+      "effect": "retain",
+      "erase_quotes": [],
+      "reason": "independent_record"
+    },
+    "finish_reason": "stop",
+    "refusal_detected": false,
+    "signal_aborted": false,
+    "transport_retry_count": 0,
+    "failure_chain": [
+      "parseModelJson rejects the entire output as SyntaxError",
+      "source executor wraps an untyped failure as VERIFICATION_UNAVAILABLE",
+      "conservative fallback rejects all six unresolved pairs; no source verdict or write is accepted"
+    ],
+    "output_sha256": "0e3f494495e9de37f709c4f946e152963a1848e7709ead71ce31df01dca24299",
+    "incident_report": "reports/priority-B03-segment45-speaker-results-20260909.json",
+    "incident_report_sha256": "188cd12ca807a2d6a2f8eca1139a12614d22f1c6c6cfdd2b9450662f1a4692d9"
+  },
+  "configuration_evidence": {
+    "actual": {
+      "llmModel": "glm-5.2",
+      "verificationFormat": "compact",
+      "verificationResponseFormat": "json_schema",
+      "modelTransportAttempts": 3,
+      "addTimeout": 115000,
+      "sourceErasureWorkers": 3,
+      "sourceErasureGrouped": true,
+      "writeContinuation": false
+    },
+    "client_evidence": "Frozen models.js uses the same structured boolean for the actual audit field and the response_format passed to SDK create(). Frozen config, model code, source schema, launcher and runner pins agree. This is stronger than an unattached intended-format log.",
+    "wire_limit": "No provider request body, raw HTTP wire, schema acknowledgement or gateway echo was captured. The /add wire capture is not provider wire. This proves the client branch, not receipt or enforcement by the gateway.",
+    "sdk_limit": "Current SDK 6.27.0 posts the supplied body and JSON.stringify serializes it without a visible response_format removal. Its node_modules symlink was not individually pinned for the historical execution; this is not historical wire proof.",
+    "not_reasoning_channel": "Frozen collection appends delta.content only; the recorded suffix was part of returned answer content, not separately concatenated reasoning_content.",
+    "independent_audit": "campaign_runner read-only code/config/audit/pin review; no keys read or model calls"
+  },
+  "official_documentation": [
+    {
+      "url": "https://docs.bigmodel.cn/api-reference/%E6%A8%A1%E5%9E%8B-api/%E5%AF%B9%E8%AF%9D%E8%A1%A5%E5%85%A8",
+      "observed": "The chat API response_format documentation lists text and json_object; it does not state an OpenAI strict json_schema contract.",
+      "retrieval": "Official search-index page content retrieved 2026-09-09; direct opens were intermittently unavailable."
+    },
+    {
+      "url": "https://docs.bigmodel.cn/cn/guide/capabilities/struct-output",
+      "observed": "The GLM-5.2 structured-output examples set json_object. The JSON Schema example places a schema in the prompt and validates parsed output client-side.",
+      "retrieval": "Official search-index page content retrieved 2026-09-09; direct opens were intermittently unavailable."
+    }
+  ],
+  "ranked_hypotheses": [
+    {
+      "hypothesis": "The configured OpenAI strict json_schema form has no proven enforcement contract on this provider route.",
+      "status": "Plausible; official documented mode differs, but gateway behavior is unproven.",
+      "falsifiable_check": "In a separately authorized future experiment, record the effective request format and provider metadata, change only the existing format setting to json_object, and observe whole-output validity. One valid response would not prove general enforcement."
+    },
+    {
+      "hypothesis": "The local service accidentally sent json_object instead of json_schema.",
+      "status": "Contradicted by actual audit plus the same frozen request-construction branch."
+    },
+    {
+      "hypothesis": "The complete response was lost or truncated during transport.",
+      "status": "No supporting trace evidence: stream completed with stop, full JSON plus prose, no abort/refusal/retry."
+    },
+    {
+      "hypothesis": "Source semantics explicitly returned uncertain.",
+      "status": "Not the recorded failure: the diagnostic leading object contains six retains. Its invalid whole envelope still cannot be treated as an accepted verdict."
+    }
+  ],
+  "configuration_first": {
+    "proposed_setting": {
+      "verificationResponseFormat": "json_object"
+    },
+    "unchanged": [
+      "model and reasoning setting",
+      "all prompts and original inputs",
+      "strict local schemas and complete-candidate checks",
+      "uncertain/mixed-on-fact refusal",
+      "source partitions and witness guards",
+      "shared deadline and existing transport-attempt limit"
+    ],
+    "scope_limit": "The existing setting applies to all supported semantic stages, not source_erasure alone. An add with this setting would be a new run, not an exact replay of the old six decisions. No automatic response-format downgrade on errors is proposed.",
+    "evidence_limit": "Using the documented mode is a compatibility correction proposal, not evidence that it fixes this failed add or guarantees JSON on the Coding route.",
+    "future_audit": "If later authorized, retain the redacted effective body hash, response-format object/schema hash and provider response identifiers/status; never record auth headers. The existing actual-format audit remains useful."
+  },
+  "optional_protocol_recovery_design_not_implemented": {
+    "reason_to_defer": "This requires a typed format-failure result and coordination with the one global source repair budget. It is not a safe one-line parser change. Prefer the configuration check first.",
+    "eligibility": [
+      "Source-erasure only; completed stop response, no refusal/abort/transport ambiguity, complete output retained within existing 200000-character limit.",
+      "Exactly one unambiguous complete leading JSON object with no prefix, duplicate keys, alternate JSON block or truncated string. Treat it only as an immutable proposal.",
+      "All candidate indices and referenced source/boundary mappings are complete and exact. Every effect, reason and literal quote passes existing local validation; any uncertain, mixed-on-fact, unknown/duplicate/missing row or quote defect is terminal for this format path.",
+      "At most one format-defective batch, at most eight rows requiring confirmation, suffix at most 4096 characters, and total repair input within the existing bounded source payload capacity; reject overflow without truncation.",
+      "No previous or sibling semantic rejection. No literal/reason repair already needed or consumed. Original source-work fingerprint and candidate set remain fixed."
+    ],
+    "single_call_contract": "One consistency certificate call receives the complete original output INCLUDING every suffix character, the immutable parsed rows, exact original source/boundary input and their hashes. It only assesses whether the complete recorded response unambiguously states those same fixed decisions. It must not classify sources afresh, rewrite any effect/reason/quote, create authorization or hide contradictory prose. Ambiguous, contradictory, instruction-like or uncertain suffixes require refusal.",
+    "response_and_application": "A bounded, strictly decoded certificate identifies every original row and confirms consistency against the supplied hashes. It contains no replacement decisions. The server returns the unchanged original rows only after all certificates accept and the ordinary whole-plan decoder/partition/witness/commit checks pass. A hash binds data, not semantic correctness; consistency acceptance is still a model judgment.",
+    "budget": "Consume the same one global source repair allowance, never one repair per batch; keep the original add AbortSignal/deadline and configured finite transport limit. No follow-up repair of malformed certificates, no fresh deadline, no continuation resampling, and no offline fallback that certifies unresolved source work.",
+    "cache_and_siblings": "A typed failed-format record must be replayable and preserve prior semantic failures. Retain sibling cancellation/draining and final all-batches acceptance. Never reset a prior uncertain verdict to obtain another classification.",
+    "current_case_limit": "The six original retain rows and all original references would remain unchanged. The 416-character suffix has not been consistency-verified, and no certificate exists. This design does not accept the recorded output."
+  },
+  "required_counterexamples": [
+    "JSON says retain; suffix says uncertain ownership or directs erase: reject, keep original rows unchanged.",
+    "JSON already contains uncertain or mixed fact: reject without format repair.",
+    "Two JSON objects, duplicate JSON keys or indices, omitted candidate, changed reason/effect/quote/reference: reject.",
+    "Partial output, finish_reason length, refusal, cancelled stream or over-limit suffix: reject without truncating.",
+    "Suffix tells the parser or verifier to ignore the contract: reject; all response text is untrusted data.",
+    "A sibling semantic rejection exists, or another source quote repair is required: no extra format allowance.",
+    "Certificate changes a row, omits an index, mismatches a hash, becomes malformed or times out: no plan and no second protocol call.",
+    "Continuation repeats the same failed response: no reset of prior refusal or unbounded provider resampling."
+  ],
+  "performed": {
+    "new_model_calls": 0,
+    "qa_calls": 0,
+    "database_opens": 0,
+    "database_writes": 0,
+    "candidate_or_config_edits": 0,
+    "new_parser": false,
+    "automatic_retries": 0,
+    "web_reads": "Official provider documentation only",
+    "local_reproduction": "Existing saved parse-replay confirms rejection of the complete actual text; current code and tests read without modifying them."
+  },
+  "base_file_sha256": {
+    "src/models.ts": "f43c7f4b06ed6b0a6cab1f7109fb9d8226dc9ab7363842d677623bd98a68ac74",
+    "src/model-json.ts": "f0679dcc646834c6baed1c9694ef21ae025e6a6d321b7861f63f6d4908998465",
+    "src/source-erasure-execution.ts": "ce5a057e7cd506c4ad02daf0906549955bccef5b3814a110773b15708e97f8e2",
+    "src/source-erasure.ts": "5a1c1402196db0724fc3e941de43d7bfbc6b52f1f270aeb535912e2019bcd0c0",
+    "src/source-erasure-grouped.ts": "d91314c99833f3dd667da1c0c9293ab8d26f16eaa1ab143a0d171b722a1087f2",
+    "src/config.ts": "062f19e312f706256f94e54fba3e05c6851fbdd2a1c18556c8f3049303e367f8"
+  }
+}

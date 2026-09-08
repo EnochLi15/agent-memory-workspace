@@ -1,0 +1,513 @@
+{
+  "status": "READ_ONLY_RECORDED_EVIDENCE_ANALYSIS",
+  "campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02",
+  "actual_score": {
+    "correct": 4,
+    "total": 6,
+    "new_judgments": 0
+  },
+  "database": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite",
+    "access": "SQLite mode=ro",
+    "revision": 50,
+    "receipts": 50,
+    "integrity_check": "ok",
+    "sha256_before": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a",
+    "sha256_after": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a",
+    "original_first_read_sha256": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a"
+  },
+  "questions": [
+    {
+      "qid": "B03_remember.json#p1_operation_trace#longitudinal_operation#1",
+      "actual_judge_correct": false,
+      "selected": 32,
+      "tokens": 5999,
+      "user_facts_selected": 26,
+      "non_fact_evidence_selected": 6,
+      "discarded_counts": {
+        "budget": 1,
+        "count-limit": 167
+      },
+      "query_sha256": "ee7453e1270496def1d1206791814a4544e2baffc55951997547f1c99cf158d8",
+      "retrievals_line": 1,
+      "predictions_line": 1,
+      "judgments_line": 1,
+      "stages_line": 1
+    },
+    {
+      "qid": "B03_remember.json#p5_operation_application#longitudinal_operation#9",
+      "actual_judge_correct": false,
+      "selected": 32,
+      "tokens": 5651,
+      "user_facts_selected": 32,
+      "non_fact_evidence_selected": 0,
+      "discarded_counts": {
+        "count-limit": 168
+      },
+      "query_sha256": "bdada01e43e79dfab24efb674e5983201c21788556eea24748e7daa25729c487",
+      "retrievals_line": 5,
+      "predictions_line": 5,
+      "judgments_line": 5,
+      "stages_line": 9
+    }
+  ],
+  "targets": {
+    "team_member_and_entry_role": {
+      "fact_id": "0fc37bf776108508078023b6aef11dbbcfa5790ea4385fd1a358b15fe371eca2",
+      "predicate": "team_join",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 20,
+      "source_ids": [
+        "ebd4c5821f9bc6ed8004071a57d4a88bb6d60de15dbd941fdd0ffc540667556f"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 4,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 154,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      }
+    },
+    "executive_current_title": {
+      "fact_id": "ab7408c56e4e0ec3cd54e44f9f0d32164ed9ee112678250b93261253e689834e",
+      "predicate": "job_title",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 14,
+      "source_ids": [
+        "b4c6c9525b617772b4f9797e3450cfdae6fe86dcd1cff79d2c6fee94e7b492b2"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 5,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      }
+    },
+    "direct_manager": {
+      "fact_id": "deee71cb05de08e3b85f5e298750efd92a863c41995b86cf437445bdaeb3d6d2",
+      "predicate": "manager",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 14,
+      "source_ids": [
+        "b4c6c9525b617772b4f9797e3450cfdae6fe86dcd1cff79d2c6fee94e7b492b2"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 5,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 175,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      }
+    },
+    "management_chain": {
+      "fact_id": "dbe27358049815d595d0872ffd24d265d9bc11f573e71f9e77568b18eabc68fe",
+      "predicate": "reports_to",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 14,
+      "source_ids": [
+        "43050d17898da1901ed84343a64be17a92ed7445165fd3e68764ce77c8859590"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 3,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical",
+          "entity"
+        ],
+        "combined_candidate_rank": 112,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      }
+    },
+    "interim_role": {
+      "fact_id": "fe35ccaace371c20e5a997d213fba4958ee2ae5f9558522e5be333f2daf43236",
+      "predicate": "interim_role",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 20,
+      "source_ids": [
+        "deac892a3bc7f41e0e4a8d613a5f61e340471aac34e51bff23933384ed199c87"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 4,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 119,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 147,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      }
+    },
+    "interim_role_confirmation": {
+      "fact_id": "8dab4d7da94c7cd02e6a28ed984f0c10a78c2b946fac67a7361a7e5017b00ecc",
+      "predicate": "role_history",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 47,
+      "source_ids": [
+        "78e2c93dd068604806f8b59220c61e0cfec5a0460a5413d06fba2d684136d672"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 2,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 118,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 154,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      }
+    },
+    "official_title": {
+      "fact_id": "1e645ee77ba9dd6757bbcab04699b0923d799ffdc869620a2a467bb09fbf4dd3",
+      "predicate": "job_title",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 14,
+      "source_ids": [
+        "6dfca93c4e6184b12b23aed78d7f927be7c2f313c2ad04bfac7ad0ea632ba9f4"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 4,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic"
+        ],
+        "combined_candidate_rank": null,
+        "selected_position": null,
+        "discard_reason": null
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 176,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      }
+    },
+    "official_title_later_confirmation": {
+      "fact_id": "9ff1f626f1bc4978686496240ad79fe4e295dfb9d9491e85e5017475d1effc7d",
+      "predicate": "job_title_distinction",
+      "state": "active",
+      "modality": "confirmed",
+      "revision": 45,
+      "source_ids": [
+        "37d2f71c5c3cdaf66375c0b972a8ed9ccb51db2cea43cad121495c2b68d66078"
+      ],
+      "source_message_searchable": [
+        false
+      ],
+      "active_passages_for_source": 5,
+      "p1": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 144,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      },
+      "p5": {
+        "eligible": true,
+        "routes": [
+          "semantic",
+          "lexical"
+        ],
+        "combined_candidate_rank": 171,
+        "selected_position": null,
+        "discard_reason": "count-limit"
+      }
+    }
+  },
+  "complete_source_witnesses": {
+    "team_member": {
+      "passage_id": "source-d86956b88b4749ff4fd6f51a5208906ccd97a082ac96729529677a34d3ed9451",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 39,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 144,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    },
+    "executive_title": {
+      "passage_id": "source-f8193f87f3147b4cd838d59f23c9ce082fe2c4017b3da7ec2f4fb841cb4608af",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic"
+        ],
+        "combined_candidate_rank": 105,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic"
+        ],
+        "combined_candidate_rank": 152,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    },
+    "executive_title_confirmation": {
+      "passage_id": "source-4b3558cf4934e7894bb80a692864c36f7318e121f21c4248e0177e8191d7c99f",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic"
+        ],
+        "combined_candidate_rank": 155,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 179,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    },
+    "management_chain": {
+      "passage_id": "source-0ed5a93d2cbf5a25a82604724ecb5c2878d99ab5925194fa07e534d776ebe64b",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic"
+        ],
+        "combined_candidate_rank": 80,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 10,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    },
+    "interim_role": {
+      "passage_id": "source-07071c8e443402444c9ebc34f8a49034550d887db6810df416efd2d0870cdbb2",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 17,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 16,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    },
+    "interim_role_confirmation": {
+      "passage_id": "source-e29df8624e884febac4ddd095c2ce6d8419ea8ffd007ee2aa76fd009a02ddf9e",
+      "state": "active",
+      "p1": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 6,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      },
+      "p5": {
+        "routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "combined_candidate_rank": 27,
+        "selected_position": null,
+        "discard_reason": "count-limit",
+        "source_indexed": true,
+        "source_filtered": false
+      }
+    }
+  },
+  "rank_definition": "One-based combined candidate_ids rank before pack score changes/coverage arbitration. It is not a route-local rank, not final packing utility, and not final selected rank. Routes report membership only.",
+  "confirmed_findings": [
+    "All inspected target facts remain active and confirmed. Necessary claims survive in active indexed source passages; these are not extraction omissions or erasure losses. Original message searchable=false does not imply deletion: segmented active passages carry the exact relevant claims.",
+    "P1 omits the correct member and current executive title because their complete evidence is absent from the final 32. Another-team member is present in an operation event; the Answer includes that distractor, explicitly labels another team, and associates an ambiguous first-name email reference with it.",
+    "P1 does contain management-chain source context through selected historical aggregate position 5 and temporary-role operation events at positions 26/27; Answer uses those parts.",
+    "P5 has no complete interim-role or management-chain/title evidence in the selected 32. It contains a user experience aggregate mentioning the official title, labelled inferred. The Answer caveats that title and says the chain was never recorded; the latter overstates absence from its selected context because the confirmed chain exists in the database.",
+    "P1 intent is trajectory/list with first-person and no entities. P5 is current/temporal with first-person and an untyped executive-role acronym entity. Existing subject demotion applies 0.3 to the relevant named-person facts. Raw source scores receive a separate 0.4 packing factor. These are code-path facts, not a measured isolated causal ablation.",
+    "Every listed complete source witness that reached candidate200 was discarded for count-limit. P1 also has one unrelated budget discard; P5 uses only 5651 of 6000 tokens. Do not infer these target omissions were token overflow."
+  ],
+  "attribution": {
+    "primary": "Evidence selection/candidate competition",
+    "secondary": "Answer inference is bounded by an incomplete context; global claims that the information was never recorded are unsupported. P1 also associates an ambiguous first-name reference with the selected other-team person.",
+    "not_supported": [
+      "claim that facts were never extracted",
+      "claim that erasure removed these facts",
+      "claim that Answer ignored complete selected target evidence",
+      "claim of recovered QA accuracy from any offline policy"
+    ]
+  },
+  "next_step": "Use existing real vectors and stages for a future generic evidence-selection study with query-focus and third-party distractor controls. Do not hardcode these people/titles, enlarge limits, alter questions or generate replacement scores.",
+  "input_hashes": {
+    "eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/predictions.jsonl": "bc9b05447cd25df12669e0b6a5218f42d6d21dcfbb397b07a03262209a3881b2",
+    "eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/judgments.jsonl": "635e90b42e715f5a115341385bd088405d3bb7b3d72965e73ebe5d0a13ec0873",
+    "eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/retrievals.jsonl": "8e90c547229d26829f4187cbe9cf01eb8cf6aef503aa77f717ecc3168a0c1ae3",
+    "eval/artifacts/priority-B03-tail-qa-20260909-02-candidate-memops/requests.jsonl": "b206e5c648f4d44ac5940aa0099cc726eabea7bfe13d25a0634721697c15f8a2",
+    "artifacts/priority-B03-tail-qa-20260909-02/retrieval-stages.jsonl": "0140f217120776a5142b4f9ade401459c4c13cd08a70c6cfcb951f4533e17a4e",
+    "artifacts/priority-B03-tail-qa-20260909-02/service.json": "69d76fa47e9b1723660fab85b85bba4894b2d1d471eb97197512b7a6c3d99423"
+  },
+  "cloud_calls": 0,
+  "model_replays": 0,
+  "http_calls": 0,
+  "database_writes": 0,
+  "private_text_copied_into_report": false
+}
