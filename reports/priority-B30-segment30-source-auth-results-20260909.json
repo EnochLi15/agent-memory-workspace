@@ -1,0 +1,114 @@
+{
+  "status": "failed; source-hint candidate showed no write recovery; stop iteration and preserve versions",
+  "campaign": "priority-B30-segment30-add-20260909-02",
+  "candidate_commit": "4b855790bdf0ea31467fe23692dfdb91212a62e4",
+  "candidate_manifest_sha256": "7a497aace961991426d90c357850c1eef645fe1fa3046f8256713eb08738bfb7",
+  "http": {
+    "sample_id": "B30_forget",
+    "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+    "http_status": 503,
+    "elapsed_ms": 45503.205416,
+    "http_attempts": 1,
+    "error_code": "EVIDENCE_VALIDATION",
+    "transport_error": false,
+    "revision_before": 30,
+    "revision_after": 30,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3",
+      "after": "233fa80ec6d0df8de397852ba5ae09f355bf2b1739ae9250415a980823893ca3"
+    },
+    "integrity": "pass",
+    "successful_degraded_add": false
+  },
+  "provider_calls": [
+    {
+      "purpose": "extraction",
+      "trace_id": "f417d684-e024-4208-a796-c77288ab4393",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 24575.825125
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "7b880ec7-bea6-432c-9751-611bf5303c94",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 5379.372541000001
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "1a0524bb-c7f3-444b-8638-3cb4c0276748",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 2829.316624999996
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "03904f5f-5a5c-4ce8-9737-166f13234057",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 12538.469417
+    }
+  ],
+  "hint_triggered": {
+    "second_repair_candidate_count": 1,
+    "operation_index": 1,
+    "source_index": 6,
+    "exact_direct_quote_sha256": "d98f0acb102e5550f5c815c34641f30c8e10154ffb2bc41bf1c0ca85586d5b30",
+    "actual_system_matches_frozen_candidate_warning": true,
+    "scope": {
+      "fact_indices": [],
+      "operation_indices": [
+        1
+      ],
+      "source_indices": [
+        6
+      ]
+    },
+    "response": "Removed operation 1; no source replacement was returned."
+  },
+  "source_trajectory": {
+    "initial_operation0": "Correct direct stop-tracking command on mixed m10/m18 targets.",
+    "repair1": "Narrowed operation 0 to m10 preferred_name/family; appended operation 1 for m18 name_reason with an updated-state explanation as its source. That state quote is byte-identical to run 01 and fails the unchanged instruction-source gate.",
+    "repair2": "Received the exact direct instruction as a candidate for operation 1, but removed operation 1 exactly as in run 01; operation 0 source and target remained unchanged.",
+    "verification": "13 fact checks pass; operation 0 authorized/target_matches true; replacement check passes. Message 6 alone is missing: the existing name_reason remains uncovered by the requested retirement."
+  },
+  "comparison_to_01": {
+    "prior_report": "reports/priority-B30-segment30-candidate-incident-20260909.json",
+    "facts_before": 14,
+    "facts_now": 13,
+    "new_extraction_replacement_already_targets_only_m10": true,
+    "old_extraction_replacement_mixed_m10_m18": true,
+    "repair1_new_operation1_source_identical": true,
+    "repair2_removal_output_identical": true,
+    "run01_candidate_hint_present": false,
+    "run02_candidate_hint_present": true,
+    "final_missing_target_same": "m18 name_reason",
+    "preferred_name_semantic_pass_both": true,
+    "limitation": "The fresh extraction differs; this is an observed second run, not a controlled replay of identical outputs."
+  },
+  "interpretation": "The repair output removes the related-reason operation even with a same-message direct-source candidate, while the final verifier explicitly treats that reason record as part of the requested coverage. This is a visible disagreement between repair behavior and semantic completeness assessment. The repair output provides no explanation, so its internal reason for declining the candidate is unknown. The final missing finding is not an authorization verdict for a new m18 operation with a changed source.",
+  "boundaries": {
+    "no_more_prompt_changes": true,
+    "no_cloud_retry_by_diagnosis": true,
+    "no_code_or_candidate_changes": true,
+    "no_database_open_or_write": true,
+    "no_full_clone_or_replay": true,
+    "no_tail_start": true,
+    "no_score_change": true,
+    "diagnostic_cloud_calls": 0
+  },
+  "next_step": "Stop this small-hint candidate iteration. Before any new implementation, explain the repair-versus-verifier target-scope disagreement using the existing packets and contract; do not automatically apply the candidate source, enlarge target scope, add repair rounds, or turn the missing finding into deletion authorization.",
+  "artifact": "artifacts/priority-B30-segment30-source-auth-result-20260909"
+}

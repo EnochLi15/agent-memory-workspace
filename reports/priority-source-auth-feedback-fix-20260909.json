@@ -1,0 +1,85 @@
+{
+  "status": "frozen_for_new_single_add; feedback_only_not_write_recovery",
+  "base_commit": "b8d501f88dfddb1d4607cece7e88980aa8729790",
+  "candidate_commit": "4b855790bdf0ea31467fe23692dfdb91212a62e4",
+  "candidate_dist": "artifacts/priority-source-auth-feedback-20260909/candidate-dist",
+  "candidate_manifest": "artifacts/priority-source-auth-feedback-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "7a497aace961991426d90c357850c1eef645fe1fa3046f8256713eb08738bfb7",
+  "dist_files": 141,
+  "incident_report": "reports/priority-B30-segment30-candidate-incident-20260909.json",
+  "change": "SOURCE_AUTHORIZATION_CANDIDATES exposes exact direct retirement spans from a source-rejected forget operation’s original message during scoped patch repair. A separate conditional prompt marks them as possible citations, never target authorization or missing coverage. The helper neither edits a source nor changes operations.",
+  "bounds": {
+    "same_original_operation_message_only": true,
+    "requires_both_operation_and_source_repair_scope": true,
+    "only_source_rejected_forget_operations": true,
+    "max_rows": 8,
+    "max_serialized_json_characters": 4096,
+    "over_limit": "omit entire hint; never truncate quotes",
+    "empty_hint": "no input field and unchanged system prompt",
+    "valid_sibling_may_already_cover_candidate": true
+  },
+  "unchanged": [
+    "source authorization and target/property/scope binding",
+    "chronology and independent semantic verification",
+    "repair round limit",
+    "valid sibling operations",
+    "main checkout and all previously frozen artifacts"
+  ],
+  "tests": {
+    "failure_first": {
+      "tests": 8,
+      "passed": 4,
+      "failed": 4,
+      "log": "source-auth-feedback-red.txt"
+    },
+    "final_targeted": {
+      "passed": 11,
+      "failed": 0,
+      "log": "source-auth-feedback-final-green.txt"
+    },
+    "full_service": {
+      "passed": 609,
+      "failed": 0,
+      "log": "full-test.txt"
+    },
+    "build_passed": true,
+    "independent_review": "next_eval_risk independently passed 11 tests and reviewed message/scope/size limits and semantic-refusal boundaries without remaining blocker",
+    "authored_fixture_limit": "Wrong legal-name, other-person and other-scope targets receive authored negative verdicts through the real semantic decoder and remain rejected. These fixtures do not judge any actual B30 target."
+  },
+  "actual_packet_comparison": {
+    "source_campaign": "priority-B30-segment30-add-20260909-01",
+    "first_two_packets_system_input_output_exact": true,
+    "second_repair_added_input_fields": [
+      "SOURCE_AUTHORIZATION_CANDIDATES"
+    ],
+    "second_repair_only_appends_candidate_warning_to_system": true,
+    "all_other_second_repair_fields_identical": true,
+    "repair_scope": {
+      "fact_indices": [],
+      "operation_indices": [
+        1
+      ],
+      "source_indices": [
+        6
+      ]
+    },
+    "original_proposal_and_targets_unchanged": true,
+    "candidate_operation_index": 1,
+    "candidate_source_index": 6,
+    "candidate_count": 1,
+    "stop": "Before unseen second-repair output; no substitute model patch or positive verifier output was supplied.",
+    "replay_report": "artifacts/priority-source-auth-feedback-20260909/replay-report.json"
+  },
+  "isolation": {
+    "cloud_calls": 0,
+    "embedding_calls": 0,
+    "qa_calls": 0,
+    "commit_attempts": 0,
+    "snapshot_revision": 30,
+    "snapshot_sha256": "463d55c50b58df11e65948d901664560b4c2139373bb1172ce80b336a940a269",
+    "snapshot_unchanged": true,
+    "failed_receipt": null,
+    "source_database_untouched": true
+  },
+  "next_step": "Root may run the new frozen single-add campaign 02 using the existing fixed inputs. A changed model repair and subsequent semantic/source-erasure verification are still required; no write or QA improvement is claimed here."
+}
