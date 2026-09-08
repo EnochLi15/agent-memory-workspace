@@ -1,0 +1,192 @@
+{
+  "protocol": "single-failed-add-readonly-result-v1",
+  "created_at": "2026-09-08T20:07:17.281001+00:00",
+  "campaign": "priority-B03-segment34-add-20260909-01",
+  "scope": "One real unchanged single-attempt HTTP add on its actual mixed-version revision33 prefix. No QA, score changes, model replay, or additional cloud calls during audit.",
+  "candidate": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "0d35e91111cf0614b806d6345e004fd1ba23c63846df754d7d7adff6008a636d",
+    "commit": "36e766921220c64d114d7e5ec83d306cbc560a87"
+  },
+  "compiled_files_verified": 141,
+  "result": {
+    "sample_id": "B03_remember",
+    "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-34:0",
+    "http_status": 503,
+    "elapsed_ms": 8586.559125,
+    "http_attempts": 1,
+    "error_code": "EVIDENCE_VALIDATION",
+    "transport_error": false,
+    "revision_before": 33,
+    "revision_after": 33,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "aa7ea9e8ade7796a9f176b909b12c800f116dee0bd6bdfd5c0835703c564af18",
+      "after": "aa7ea9e8ade7796a9f176b909b12c800f116dee0bd6bdfd5c0835703c564af18"
+    },
+    "integrity": "pass"
+  },
+  "error_message": "Uncertain or invalid compact source erasure effect",
+  "runtime": {
+    "status": "failed",
+    "pid": 13690,
+    "process_identity": "Wed Sep  9 04:05:04 2026",
+    "alive": false,
+    "children": {
+      "sleep-prevention": {
+        "pid": 13715,
+        "process_identity": "Wed Sep  9 04:05:04 2026",
+        "alive": false,
+        "exit_code": -15,
+        "stopped_by_runner": true
+      },
+      "service": {
+        "pid": 13717,
+        "process_identity": "Wed Sep  9 04:05:04 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": true
+      },
+      "http-add-0": {
+        "pid": 13733,
+        "process_identity": "Wed Sep  9 04:05:04 2026",
+        "alive": false,
+        "exit_code": 0,
+        "stopped_by_runner": null
+      }
+    }
+  },
+  "actual_call_sequence": [
+    {
+      "trace_id": "5b954430-0d0d-46d6-96c9-21354ee075f0",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "elapsed_ms": 3446.2156670000004,
+      "line": 1,
+      "record_sha256": "c2eb658a4d69bf0310110af3655eeb96d1de8a480e5224df318b3716131d4780"
+    },
+    {
+      "trace_id": "7bc00ff7-c27b-448a-aac2-8a93df3dc09a",
+      "purpose": "verification",
+      "outcome": "ok",
+      "elapsed_ms": 1451.594666,
+      "verification_scope": {
+        "facts": 2,
+        "operations": 0,
+        "replacements": 0,
+        "messages": 3,
+        "reused": 0
+      },
+      "line": 2,
+      "record_sha256": "f03295e4ea456ecd79856c54d37e84a9cb2f632f9dc7d0c9eae460af8792bed9"
+    },
+    {
+      "trace_id": "bdee7c9b-37a7-4c37-8140-8ffb6087bc88",
+      "purpose": "source_erasure",
+      "outcome": "ok",
+      "elapsed_ms": 3544.0464999999995,
+      "line": 3,
+      "record_sha256": "729eb86c70d0a73774ecc13bd2517874d290efc73699c216ca1be42a83fa00b6"
+    }
+  ],
+  "latency": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/model-calls.jsonl",
+    "source_sha256": "32a52c272fc3ecd61534a216d48926aec8e4cf09a57f7c9c6bfae050fd9d4fa2",
+    "http_elapsed_ms": 8586.559125,
+    "model_elapsed_ms": 8441.856833,
+    "non_model_remainder_ms": 144.70229199999994,
+    "interpretation": "This request spends3.446s on extraction,1.452s on semantic verification,3.544s on source erasure; timings are measured for this run."
+  },
+  "failure_stage": {
+    "stage": "source_erasure",
+    "trace_id": "bdee7c9b-37a7-4c37-8140-8ffb6087bc88",
+    "model_transport_outcome": "ok",
+    "service_validation_outcome": "rejected",
+    "classification": "explicit_semantic_uncertain",
+    "attribution": "Original trace inspection by retrieval_optimization; final compact response independently checked for uncertain/mixed_fact.",
+    "final_response": {
+      "index": 0,
+      "effect": "uncertain",
+      "erase_quotes": [],
+      "reason": "mixed_fact"
+    },
+    "sole_candidate": {
+      "kind": "automatically aggregated fact created during this preparation",
+      "evidence_kind": "reflection",
+      "value_origin": "inferred",
+      "dependency_count": 6,
+      "source_quotes": 0
+    },
+    "preceding_stages": {
+      "extracted_facts": 2,
+      "operations": 0,
+      "semantic_verification": "all pass",
+      "repair_calls": 0
+    },
+    "protocol_observation": "The new per-row allowed_effects excludes mixed and was present in the actual prompt. The model returned the explicit uncertain effect; this failure is not a malformed compact effect or failure to apply the allowed-effects protocol.",
+    "safety_boundary": "A well-formed uncertain response is a refusal to authorize the erasure effect, not evidence that the write should be accepted."
+  },
+  "comparison_with_original_event_failure": {
+    "original_error": "Mixed erasure requires a source and explicit quotes",
+    "current_error": "Uncertain or invalid compact source erasure effect",
+    "conclusion": "The original request failed for mixed without a source and explicit quotes. The new protocol constraint was applied, but this run returned explicit semantic uncertain on the single inferred aggregate candidate. The failure remains unresolved and no successful write is claimed."
+  },
+  "integrity": {
+    "status": "pass",
+    "revision_before": 33,
+    "revision_after": 33,
+    "exact_standard_prefix_receipts": 33,
+    "failed_request_receipt_absent": true,
+    "all_tables_and_schema_unchanged": true,
+    "logical_hashes": {
+      "before": "aa7ea9e8ade7796a9f176b909b12c800f116dee0bd6bdfd5c0835703c564af18",
+      "after": "aa7ea9e8ade7796a9f176b909b12c800f116dee0bd6bdfd5c0835703c564af18"
+    },
+    "source_snapshot_unchanged": true,
+    "all_owned_processes_stopped": true,
+    "candidate_inputs_execution_hashes_unchanged": true
+  },
+  "qa": {
+    "questions_run": 0,
+    "new_scores": 0,
+    "earlier_repeated_samples_added": false
+  },
+  "tail_gate": {
+    "open": false,
+    "reason": "The probe returnedHTTP503 with revision33 and no segment-34:0 receipt."
+  },
+  "evidence": {
+    "independent_validation": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-result-20260909/independent-validation.json",
+    "independent_validation_sha256": "0f0e856cd32f1ed54dcce6a249e3d521f60c3ea81e260d7fdd105e86ab14fb2e",
+    "source_files": {
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "b7fb2772cb5f9680e61406f2bc699f5f423681a3df341247e83cd962f345dd1b",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/snapshots/B03_remember-rev33.sqlite": "75cc65ac568e14cacaa92ae2516fc7d07b20739f132c2cbddc8e9b7e5226f229",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite": "12140820371577a7a8aa1b0134365ea90aadccbed3619c3bdc5d617778e2edbc",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/plan.json": "93515e813c9989d23e6a977df6ace9544c1c771be3758c14596c4ee364eacf12",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/runtime.json": "06c0c3451e97e4c88281aa1100b759e06e0d2f0b587b72d91b87a6872fd87105",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/summary.json": "0ecd42e836654e975b5789af276b068b566c1b136af3961d4259fa7400fc361f",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/results.private.json": "401ef8a84a44f3028d4de6684f2ebd9fcbd3f8a0cb86fb355d1d4b276c91179b",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/http-results/0.private.json": "067a4a8a50a536a83f9baf6607cf84a980fdb873293b1181b0ade4b3c4a7fb37",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/model-calls.jsonl": "32a52c272fc3ecd61534a216d48926aec8e4cf09a57f7c9c6bfae050fd9d4fa2",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/model-trace.jsonl": "69d76d8448ddc3b12833988dd6979ada4b9c440c2304e0f385c1af3b41763281",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/service.log": "d77ac180f87cda2d5af2dfbcbad18896b7da6027dde2413602f78cbf756f21cf",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/frozen-inputs.private.json": "4cea486c0d25e257e5ff78d7ab009e75e378b815b21de7a32624be60db292ae0",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/inputs.private.json": "4cea486c0d25e257e5ff78d7ab009e75e378b815b21de7a32624be60db292ae0"
+    }
+  },
+  "new_model_calls": 0,
+  "degradation": {
+    "successful_committed_degraded_adds": 0,
+    "note": "No successful commit occurred. Absence of a committed degraded event does not establish whether preparation used any degraded path."
+  }
+}
