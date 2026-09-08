@@ -1,0 +1,246 @@
+{
+  "protocol": "B30-segment30-single-add-provenance-v1",
+  "created_at": "2026-09-08T18:51:53.683943+00:00",
+  "status": "inputs_ready_candidate_pending",
+  "scope": "Only prepare the original B30 segment-30:0 failed add on an isolated actual rev30 historical prefix. No new cloud calls, candidate selection, Answer/Judge, rejudgment, source DB modification or old executor modification.",
+  "campaign": "priority-B30-segment30-add-20260909-01",
+  "inputs": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/inputs.private.json",
+  "inputs_sha256": "3eca7f45d88ba272343a7a13fc54eef00c5365955c23b1a595327dd854f5f8fe",
+  "request": {
+    "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+    "request_sha256": "92b53047c8621e5f921bf1ca0bc37d06faae3e14c74460de43248d636f98db47",
+    "original_attempt": 0,
+    "original_HTTP_attempts": 1,
+    "failed_request_receipt_present": false,
+    "body_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/original-request.private.json",
+    "body_file_sha256": "ceed5da89c4a7c338dd06d0321639cb3800ed65eb881a6aea34a288010b2e695",
+    "record_sha256": "25a157df7b6ffb4322f1fa29f05ecb74d8282543d2a323516525dc7be5a888b9",
+    "failed_ingest_record_sha256": "3f567fdc4c5932e4f7a9877e6ad71c4fe08fa9ac78ae5327a3b66d3ea9d0b23a"
+  },
+  "snapshot": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/21336bef65e29958fa1adfd86c152e56ae1b66af6d977a2c11038a742b992e31/memory.sqlite",
+    "source_sha256_before_and_after": "0b10b017d184fa7a26702e68f8a8f2af5ec7e8255a92ce301bb820b364d6c95a",
+    "copy": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/snapshots/B30_forget-rev30.sqlite",
+    "copy_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391",
+    "method": "SQLite read-only immutable source backup after confirming WAL absent or zero bytes; complete logical-state hashes match. Backup page-layout hash differs from source, as recorded.",
+    "revision": 30,
+    "verified_prefix_receipts": 30,
+    "prefix_receipts_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/verified-prefix-receipts.private.json",
+    "prefix_receipts_sha256": "7edc3766e0485971287a26a138119b14e77ce54a9bcc9ce46d1f8bdaf83e4fe4",
+    "logical_state": {
+      "schema_sha256": "c884d8d0a802e74b0c4792b068433974efbbbaffec9c7f02f6576f1e97c3e051",
+      "tables": {
+        "evidence_fts": {
+          "rows": 90,
+          "sha256": "a771f3885067d5b7cfb20726fd7ae84afb1258c9d1d2cc8f1e6eac0349bb8da2"
+        },
+        "evidence_fts_config": {
+          "rows": 1,
+          "sha256": "22c9c66a8c32334225cdab8d3a747f4123ab1379869e857944ed498710d656df"
+        },
+        "evidence_fts_content": {
+          "rows": 90,
+          "sha256": "07387e49fe54e5097961c1264670f81e472ffa54b94559659bdb7680eb7ccae1"
+        },
+        "evidence_fts_data": {
+          "rows": 24,
+          "sha256": "f8977427eb1a2456f8cd0bad163fb381a4c18251d99566b349ca56f954256347"
+        },
+        "evidence_fts_docsize": {
+          "rows": 90,
+          "sha256": "5b5f33982de2bc8329b8fdc3a38db9e48f2a6e1424ce743ee347595a2430ae2a"
+        },
+        "evidence_fts_idx": {
+          "rows": 22,
+          "sha256": "72338dd45e166b51087e2df5a2ec34483b66d607b4712ac47a66338f91f25b28"
+        },
+        "facts": {
+          "rows": 93,
+          "sha256": "065c05b6cab43fdec9771acd082d1d0be3737768f50511e2151cff5a0ca38578"
+        },
+        "markers": {
+          "rows": 2,
+          "sha256": "144bacb66070bdaa857c16072883c6110d3e75e7dcbd68bfd1bb7d90b0a29b37"
+        },
+        "memory_events": {
+          "rows": 95,
+          "sha256": "ba6985816d85cf47149e791e9b1fbd97473829c559f5a52f4bacd1ef108d6a3f"
+        },
+        "messages": {
+          "rows": 296,
+          "sha256": "545823e0157f0ace3a6b93c2eb5d1b033398fb083c792923339937869e6f348b"
+        },
+        "meta": {
+          "rows": 4,
+          "sha256": "62fba09a7db22e99a3219ec6e1f380d5c33e78202ae4e163499fb7d0974dda29"
+        },
+        "operations": {
+          "rows": 3,
+          "sha256": "4d4ffd483b6ceb31f61537fcf8a0b2b32b945b887fce4e48b51792fe22895b2c"
+        },
+        "passage_fts": {
+          "rows": 323,
+          "sha256": "2bd3cd7599ba422f72267ffb9f95e639a920bc320cc35ddf1b90b2adcb072f01"
+        },
+        "passage_fts_config": {
+          "rows": 1,
+          "sha256": "22c9c66a8c32334225cdab8d3a747f4123ab1379869e857944ed498710d656df"
+        },
+        "passage_fts_content": {
+          "rows": 323,
+          "sha256": "3186d4f8a60037b43907216388cc6611460d3944bef953a86b8fe992c843c79f"
+        },
+        "passage_fts_data": {
+          "rows": 13,
+          "sha256": "48cf6bc2dc4fcde7a7ffa38380f3cc00d1a2042cbc7f9b055d7b4c6fa05d7c8f"
+        },
+        "passage_fts_docsize": {
+          "rows": 323,
+          "sha256": "b88ec9fe8c35cdc6b12e4464054a5e667d08cdbc016e6cce05aad094f3a34420"
+        },
+        "passage_fts_idx": {
+          "rows": 11,
+          "sha256": "514471180fe84e5c302b4006a73458d6703d7b2a56ace9007067819ff66b63dc"
+        },
+        "passages": {
+          "rows": 326,
+          "sha256": "add5cf087d27a4bedd05f52b0b6953b364e12b2e3cb351a376d7d78708c02463"
+        },
+        "preparation_attempts": {
+          "rows": 0,
+          "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        "requests": {
+          "rows": 30,
+          "sha256": "c4923a882a73d033cfce23d2953d2364f9016d7a95753a2e9886a5cb623405d0"
+        },
+        "sessions": {
+          "rows": 29,
+          "sha256": "20e0af1819df6568ca6d7096bf13fb79b7305776d97e3ee41fe6e1605d70c82b"
+        }
+      }
+    }
+  },
+  "origin_runtime": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/runtime.json",
+    "status": "failed",
+    "controller_alive": false,
+    "owned_children_alive": {
+      "sleep-prevention": false,
+      "service": false,
+      "eval-a06": false,
+      "eval-b03-b30": false
+    },
+    "controller_recorded_pid": 70066,
+    "controller_recorded_identity": "Wed Sep  9 02:23:24 2026",
+    "checked_at": "2026-09-08T18:51:53.684716+00:00"
+  },
+  "evaluation_identity": {
+    "namespace": "priority-full-20260908-01-candidate",
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "chunks": {
+      "messages": 20,
+      "words": 2000
+    },
+    "sample": "B30_forget",
+    "original_total_adds": 51,
+    "pre_failure_revision": 30,
+    "failed_schedule_index_zero_based": 30,
+    "model": "glm-5.2",
+    "service_configuration_differences_from_executed_event_recovery": [
+      "port",
+      "dataDir",
+      "recovery_execution"
+    ],
+    "semantic_configuration_unchanged": true,
+    "original_service_config": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/service.json",
+    "original_service_config_sha256": "504876e155a2b846397c9facf9efd643d27548e4485b31e601263f0864da2b01"
+  },
+  "existing_runner": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-fixed-failed-adds.py",
+    "requires_source_change": false,
+    "reusable_input_validation": "passed",
+    "prefix_payload_and_receipts": "all 30 match exact frozen evaluator request hashes and standard success receipts",
+    "candidate_schema": "commit plus dist or dist_hashes mapping every compiled file; optional new compatible manifest projection preserves original manifest bytes/provenance",
+    "execution_files_are_hash_pinned_by_existing_runner": true,
+    "cloud_start_origin_check": {
+      "cloud_start_allowed": true,
+      "blockers": [],
+      "full_status": "failed",
+      "recovery_status": "failed"
+    },
+    "input_schema": "failed-adds-fixed-inputs-v1",
+    "single_attempt_add_timeout_ms": 116000,
+    "port": 8120,
+    "port_bind_check": "available at report preparation; launch rechecks"
+  },
+  "commands": {
+    "plan": [
+      "python3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-fixed-failed-adds.py",
+      "--campaign",
+      "priority-B30-segment30-add-20260909-01",
+      "--plan",
+      "--inputs",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/inputs.private.json",
+      "--inputs-sha256",
+      "3eca7f45d88ba272343a7a13fc54eef00c5365955c23b1a595327dd854f5f8fe",
+      "--candidate-dist",
+      "${CANDIDATE_DIST}",
+      "--candidate-manifest",
+      "${CANDIDATE_MANIFEST}",
+      "--expected-service-commit",
+      "${CANDIDATE_COMMIT}",
+      "--port",
+      "8120"
+    ],
+    "validate": [
+      "python3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-fixed-failed-adds.py",
+      "--campaign",
+      "priority-B30-segment30-add-20260909-01",
+      "--validate"
+    ],
+    "run_once_detached": [
+      "python3",
+      "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-fixed-failed-adds.py",
+      "--campaign",
+      "priority-B30-segment30-add-20260909-01",
+      "--run",
+      "--detach"
+    ]
+  },
+  "commands_markdown": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/commands.md",
+  "commands_markdown_sha256": "30ac19d18c8c407effa6e8cac0d67266244871d011c5382e9b13d5d283dc5109",
+  "expected_outcomes": {
+    "success": {
+      "revision": 31,
+      "exact_receipts": 31,
+      "original_prefix_unchanged": true,
+      "new_receipt_matches_original_request_hash": true
+    },
+    "failure": {
+      "revision": 30,
+      "exact_receipts": 30,
+      "failed_request_absent": true,
+      "clone_logical_state_unchanged": true
+    },
+    "prefix_HTTP_replay": false,
+    "prefix_scope": "The single-add runner restores and validates 30 existing receipts; it sends only the original failed request once. It does not replay 30 HTTP prefixes or run the remaining history/QA."
+  },
+  "validation_limits": [
+    "The candidate has not yet been frozen. Full --plan/--validate is deferred until candidate commit/dist/manifest are supplied.",
+    "Port availability is a point-in-time observation.",
+    "Only new preparation artifacts were written; frozen old campaigns/scripts/data were not changed."
+  ],
+  "new_model_calls": 0,
+  "source_files": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/plan.json": "bc3a8b02e7d7f9ff8e348b267340a470a753fd225ea90c2527655abc7c0c0173",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/summary.json": "26cb002107d8ab1d77ff12471e382842f49cd7f09a2e6e1796036d55707ea315",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/runtime.json": "b9348dfb633502277d1f737312fb3c77e10429c267d6138670b9529bbea16cd2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-b03-b30/requests.jsonl": "616e7dbfee552c824a62b03bddaf1724e690737f323fe2c1e9218b0e255b762e",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-event-recovery-20260909-01-candidate-memops-b03-b30/ingest.jsonl": "ff5704a1619c0e492deaf90c64f014f96f8100202ee2d88eb999cb9f1440370a"
+  },
+  "source_provenance_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-add-20260909-01/source-provenance.json",
+  "source_provenance_sha256": "59c88d42d91532cf0650cf335c01e0688b72661bb8dc2763d2d05a6d609d5de6"
+}

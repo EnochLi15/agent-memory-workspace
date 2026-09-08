@@ -1,0 +1,102 @@
+{
+  "protocol": "B30-segment30-semantic-retirement-incident-v1",
+  "scope": "Read-only diagnosis of the completed ce935 recovery run. Original request and all four recorded model outputs are unchanged.",
+  "candidate_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+  "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-30:0",
+  "source_run": "priority-event-recovery-20260909-01",
+  "http": {
+    "status": 503,
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Evidence still fails semantic verification after repair",
+    "elapsed_ms": 44563.934,
+    "physical_attempts": 1,
+    "model_transport_retries": 0
+  },
+  "database": {
+    "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01/data/21336bef65e29958fa1adfd86c152e56ae1b66af6d977a2c11038a742b992e31/memory.sqlite",
+    "snapshot": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/before.sqlite",
+    "snapshot_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391",
+    "revision_before_and_after_failed_request": 30,
+    "failed_request_receipts": 0,
+    "successful_new_tail_adds": 17,
+    "starting_revision": 13,
+    "stored_receipts": 30,
+    "clone_unchanged_after_exact_replay": true
+  },
+  "stage_sequence": [
+    {
+      "stage": "extraction",
+      "trace_id": "a1c6a023-15e7-4e2a-849b-302822dcb43d",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 15620.0259580001,
+      "input_sha256": "207980118029de5dcdaa5502ef22330f51d851ab4f8a76a1397baed3a1104e6f"
+    },
+    {
+      "stage": "repair",
+      "trace_id": "34e15674-ee7c-454e-9d7b-faeeb8e36644",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 10480.616708999965,
+      "input_sha256": "29673c894609d96068576810b75c7a4489126333a7aad8d9a0853740ed722cda"
+    },
+    {
+      "stage": "repair",
+      "trace_id": "88704839-1eb1-475f-a6ea-41e3438b5404",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 7143.33600000001,
+      "input_sha256": "a79c096a91d08fd3abc8fb7b1c08698b85e525fd8675d4d3c17de0441a6daf75"
+    },
+    {
+      "stage": "verification",
+      "trace_id": "c7356d3a-6e05-4254-aa20-d22bafc02013",
+      "outcome": "ok",
+      "attempt": 0,
+      "elapsed_ms": 11250.21158299991,
+      "input_sha256": "cc5792a0505041fce6efa8e0c748c0dcb4fc39558a8f705210215be6b9dd38e2"
+    }
+  ],
+  "findings": {
+    "extraction": "Eleven supported fact proposals and one forget operation. The operation combines m10 preferred_name/family with m18 name_reason/unspecified scope.",
+    "repair1": "The service reports two different property/scope groups plus a source-authorization failure. The model correctly narrows to m10 and sets family scope; all fact proposals remain unchanged. No replacement fact or supersedes problem exists.",
+    "repair2": "The service still says the exact source is not an authorizing deletion instruction and tells the model to remove an unsupported operation. The model removes only that operation, leaving eleven unchanged facts.",
+    "verification": "All11 fact checks return supported/owner-correct. Message6 alone returns missing because the user asked to stop tracking the specific preference, but the proposal only stores the relaxed state and has no operation. This is an omission finding, not a fact contradiction or transport failure.",
+    "bounded_loop": "Both repair opportunities were consumed before the first semantic verification. The final semantic omission cannot be repaired within the original two-round budget, so the service rejects the write. No source-erasure or transition-verification model stage is reached.",
+    "authorization_disagreement": "instructionSpans/realControl/authorizesForget fail to recognize the literal no-need-to-worry-about-tracking wording, and forgetObligations is empty. The final semantic verifier treats the same span as a stop-tracking instruction. Removing only worry about from an isolated diagnostic phrase flips the original matcher to true. That edit was never used in the exact packet replay."
+  },
+  "exact_replay": {
+    "packets": 4,
+    "all_system_and_input_hashes_match": true,
+    "original_outputs_modified": false,
+    "same_terminal_error": {
+      "name": "Error",
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Evidence still fails semantic verification after repair"
+    },
+    "embedding_calls": 0,
+    "findings": [
+      {
+        "facts": 11,
+        "operations": 0,
+        "findings": [
+          "message 6: The user explicitly asks to stop tracking Patricia's specific name preference, but no forget/retract operation is proposed on any prior Patricia preference record; only a new fact of the relaxed state (fact 4) is added, which records rather than executes the no-tracking request.; missing statement: No need to worry about tracking a specific preference for her anymore."
+        ]
+      }
+    ],
+    "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/replay-report.json"
+  },
+  "minimal_next_step": "Test a narrow no-need-to-worry-about-retaining/tracking authorization branch with negation, hypothetical/reported/quoted, question, uncertainty and distinct-target/scope regressions. Preserve the corrected m10/family selector and every final semantic/erasure check. Do not add m18, remove the operation automatically, raise repair rounds, or declare write success before a new independent semantic verdict.",
+  "limitations": [
+    "The evidence establishes disagreement between a deterministic intent gate and a recorded semantic omission verdict; it does not itself prove that any broader deletion scope is authorized.",
+    "A narrow intent correction may reach verification earlier but source-erasure and remaining write stages have not been evaluated.",
+    "No replacement model response, cloud request, retry, original database mutation or regrade occurred."
+  ],
+  "cloud_calls": 0,
+  "artifacts": {
+    "private_packets": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/recorded-calls.private.json",
+    "request": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/request.private.json",
+    "replay_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/replay.mjs",
+    "frozen_runtime_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-segment30-witness-20260909/source-manifest.json"
+  }
+}
