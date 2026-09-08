@@ -1,0 +1,94 @@
+{
+  "status": "FROZEN_CANDIDATE_NOT_DEPLOYED",
+  "commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+  "base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/final-manifest.json",
+  "manifest_sha256": "70a4b158a4e6e25b6db211c820574e6909e1ef67987f4cff2b8d0726fa4a7efe",
+  "service": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/service",
+  "candidate_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/candidate-dist",
+  "dist_file_count": 144,
+  "worktree_dist_equals_candidate_dist": true,
+  "validation": {
+    "full_passed": 692,
+    "full_failed": 0,
+    "baseline_tests": 678,
+    "new_tests": 14,
+    "build_passed": true,
+    "root_review": "no blockers",
+    "independent_review": "retrieval_optimization: no blockers",
+    "cloud_calls": 0,
+    "new_qa_calls": 0,
+    "deployment_performed": false
+  },
+  "red_green_evidence": [
+    "First protocol test failed before the query-focus module existed, then passed.",
+    "Classifier API/cache test failed before implementation, then passed.",
+    "Real candidate score factor test failed on the baseline retrieval implementation, then passed.",
+    "Real Engine concurrency test failed before Engine integration, then passed with the nonempty fixture and exact expected retrieval results."
+  ],
+  "verified_behavior": [
+    "Query-only payload; strict enum/field schema and exact uniquely located query excerpts. Server computes UTF-16 start/end.",
+    "Feature-off/self/unknown/failure complete evidence content, scores and ordering match baseline in generic fixtures.",
+    "Only actual third-party fact prior is relaxed; source/raw and operation-event factors, lifecycle visibility, candidate 200 / evidence 32 / token 6000 settings remain unchanged.",
+    "Classification and embedding execute concurrently; worker search/candidates/pack consistently receive the same focus.",
+    "Standard Models with loopback provider tests enforce single transport even with ordinary configured attempts=3, 512 tokens, 4096 characters, invalid-output fallback, actual deadline socket cancellation, parent abort propagation and cache behavior.",
+    "Cache: exact query plus prompt/model configuration fingerprint, 128 LRU entries, five minutes, valid decisions only; failure/timeout/aborted work not cached."
+  ],
+  "runtime_budget": {
+    "flag": "MEMORY_QUERY_FOCUS=true",
+    "default_enabled": false,
+    "timeout_env": "MEMORY_QUERY_FOCUS_TIMEOUT_MS",
+    "timeout_default_ms": 8000,
+    "timeout_range_ms": [
+      100,
+      8000
+    ],
+    "query_char_limit": 8192,
+    "transport_attempts_max": 1,
+    "model_completion_tokens_max": 512,
+    "model_output_chars_max": 4096,
+    "cache_entries_max": 128,
+    "cache_ttl_ms": 300000,
+    "api": "QueryFocusClassifier(config,Models).classify(query,parentSignal,optionalTrace)",
+    "retrieval_api": "collectCandidates(store,request,vector,config,focus=unknown); packEvidence unchanged"
+  },
+  "remaining_uncertainty": [
+    "No live semantic query classification or new QA was performed. Authored unit packets test protocol handling, not actual model accuracy.",
+    "other_people relaxes the prior for actual third-party facts, including named-entity mismatches. It does not certify all people are relevant; the independent holdout and recorded-query paired study remain necessary.",
+    "The classifier may return unknown on short-deadline/format/provider failure and preserve baseline retrieval. Parent cancellation still aborts Search."
+  ],
+  "privacy": {
+    "cloud_calls": 0,
+    "live_cloud_adds": 0,
+    "new_qa_answers_or_judgments": 0,
+    "original_database_writes": 0,
+    "old_frozen_candidates_modified": false,
+    "generic_tests_use_local_mock_http_provider": true
+  },
+  "logs": {
+    "query-focus-build.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-build.txt",
+      "sha256": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7"
+    },
+    "query-focus-full-tests.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-full-tests.txt",
+      "sha256": "dd86c4d7c3ae92e2003bcaad745ddc525e081cf92469c5f8719721151e000b49"
+    },
+    "query-focus-initial-red.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-initial-red.txt",
+      "sha256": "d09aa68050ac738d381825cd3b0f187ff6bf7a55dba7dbf42a9edc0410f1f94f"
+    },
+    "query-focus-classifier-red.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-classifier-red.txt",
+      "sha256": "8f694a2eeadd7bd3a2e4a1d8c44b83b5dacf594136c997b8725a8000ae62648a"
+    },
+    "query-focus-retrieval-red.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-retrieval-red.txt",
+      "sha256": "581da047b54d6d21bfb05b40db4c08ac4d77649c6bdef5346a8747451586b0b3"
+    },
+    "query-focus-engine-red.txt": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-20260909/query-focus-engine-red.txt",
+      "sha256": "1c95e214cbd8f9794839a8f8cfafbfc905cd571934dd80f4685d61283752a7da"
+    }
+  }
+}

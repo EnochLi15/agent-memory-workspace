@@ -1,0 +1,200 @@
+{
+  "protocol": "priority-16-query-paired-preparation-v1",
+  "created_at": "2026-09-08T21:30:59.150929+00:00",
+  "status": "ready_for_root_controlled_focus_sampling",
+  "input_bundle": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/inputs.private.json",
+  "input_bundle_sha256": "086912dab377a86d0cbdf37a5542c756367b429837cde7b76c2f30d1c5b61161",
+  "query_only_input": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/queries.private.json",
+  "query_only_input_sha256": "75fcae2e2aeaf492d83247687510b0cfe5e9f78c25a03cb60f212d55b75f8340",
+  "adapter": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/paired.mjs",
+  "adapter_sha256": "5e705cc1705142b2a5d404c98f7f509003120ba788007796a31eaf3138beac61",
+  "adapter_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/adapter-manifest.json",
+  "adapter_manifest_sha256": "5a1813394cc2764816de4994433dab5bba22ffda3088d1fd946018c365cd239d",
+  "reproduction": {
+    "original_versions_exact": 16,
+    "unified_5ca_exact": 16,
+    "total": 16,
+    "comparison": "Full ordered memory objects including content and score; recorded retrieval stage order, revision and token count also checked.",
+    "comparison_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/baseline-reproduction/comparison.json",
+    "comparison_sha256": "e7a6f748101f3172f525b9886451d2c2b543b5d78f842caccd3c8efd3a6becc7"
+  },
+  "sources": [
+    {
+      "label": "B03",
+      "campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-02",
+      "questions": 6,
+      "revision": 50,
+      "original_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+      "source_database_sha256": "de28ca944babd8ba5d24f26b3aadb69e2e33ca5c11a5bfef4ed1ecc891cda42a",
+      "snapshot_sha256": "ca5c64a2c854beebd21bc8f486525a5506be8264dd2929cca3fc0915249cb1be"
+    },
+    {
+      "label": "B30",
+      "campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B30-tail-qa-20260909-01",
+      "questions": 5,
+      "revision": 51,
+      "original_commit": "a0b2bf0a9ad79029ea5c41f7e80eb28c51d4a520",
+      "source_database_sha256": "fcb75e95cfbf2c2c41853f436e0e6d2b2b4840d770c0e3e717cb8e50580219d7",
+      "snapshot_sha256": "e3b913e8ec569d614a0c76aad7253f3a1adb23972c69ac280109f64eb0924ba8"
+    },
+    {
+      "label": "A06",
+      "campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-event-recovery-20260909-01",
+      "questions": 5,
+      "revision": 51,
+      "original_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+      "source_database_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec",
+      "snapshot_sha256": "8d3c60559588d65c946789afe1906a71d1255679ba031754dcf95e15ddda70ec"
+    }
+  ],
+  "unified_baseline_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "unified_baseline_runtime_note": "The archived final-dist has no module-resolution link. Execution used the already-frozen B03 service-dist, whose complete 141-file map equals the 5ca final-dist map. No frozen artifact was changed.",
+  "limits": {
+    "candidateLimit": 200,
+    "maxEvidence": 32,
+    "tokenBudget": 6000
+  },
+  "queries": [
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "ee7453e1270496def1d1206791814a4544e2baffc55951997547f1c99cf158d8",
+      "count": 32,
+      "tokens": 5999,
+      "memories_sha256": "18eedbf99074a3d078e58865ec40e760061fcfa3f8f92e68a062af66e7d95a69"
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "9e9da11ce8e7d3494cd9377ad2288f6fcdc32df4c623fe01bfaf0f0ad71a7ce5",
+      "count": 32,
+      "tokens": 5688,
+      "memories_sha256": "a9cb273415e2607aa68a3302de1acced11bb116e35d7a8c21d2a2b28059280bb"
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "b23d09fd7c9178838ed0bfeaafd0430216bd4b09da1c6f12b092437e7bf2fb89",
+      "count": 32,
+      "tokens": 5737,
+      "memories_sha256": "4c80fe52c73d02fb3b15127f11e3df917ea018b0d17e5cff5c7e0baf7c1fa7ff"
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "4e8d205a260f8c63e7c143d31b3af24f61712acb505e3699023f733fb5ccc26c",
+      "count": 32,
+      "tokens": 5395,
+      "memories_sha256": "4fea7cfd6046a5894b6d84a12bf62ccaf64cc21e22a96048989b7be549d6a2d0"
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "bdada01e43e79dfab24efb674e5983201c21788556eea24748e7daa25729c487",
+      "count": 32,
+      "tokens": 5651,
+      "memories_sha256": "81b00a35999749a02e641e0e15e94da1f694e867e6604a927cace2e09267dd86"
+    },
+    {
+      "dataset": "B03",
+      "qid": "B03_remember.json#p6_remember_negative#longitudinal_operation#11",
+      "query_sha256": "c7cf3c5918b108fed60123d88951c5692014d7601b4aa548831cf1c6c449629f",
+      "count": 32,
+      "tokens": 5723,
+      "memories_sha256": "2c1513d667a9a8972cd12054b2e4d39a7ae51178e262fad91e26384fbc012f04"
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "42377c71db139d5c60de22ee0424c1892a4b1ed1047951292458e2d66050e2b9",
+      "count": 32,
+      "tokens": 5984,
+      "memories_sha256": "4626234aa202658dfe1da49eef63c153e176585a9af9fdd793fa7fb05cd3342e"
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "c7b48e7ae8bd255a14c2dae3a9ee94b65054c08cb704046f8598ae2c0c3fbd7f",
+      "count": 32,
+      "tokens": 5052,
+      "memories_sha256": "ac2eec27362036e9ec182a6badaab23c7cb258376680ecaa14365e6e1105b331"
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "a2e6964410e1f119456b8a7124891c508e7318ffc493e7aa9587af7548638b11",
+      "count": 32,
+      "tokens": 5501,
+      "memories_sha256": "1c70b7c17f0a3eaf9ee2e306a17160fe88f089dd9f350642568eb1a0cd6a8c65"
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "aa1f0878e970959e36465e50183d3c9b61a2a35de0f2113455af2fbfa24b27b5",
+      "count": 32,
+      "tokens": 5688,
+      "memories_sha256": "2888885a9d7bd5bd573f21ed6193d2b73fdb68712479c6bacc7e7e604a41ac20"
+    },
+    {
+      "dataset": "B30",
+      "qid": "B30_forget.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "d00774f9f8d6085f7025f07c013724cbd118dda037c8df14c390943d4b935b44",
+      "count": 32,
+      "tokens": 5376,
+      "memories_sha256": "bb39dfa18909989228027631a5f3bc8aa50ea14a3d6e36634ed31ff43e061488"
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "query_sha256": "e2e1012f84bf95ed8a00c863c46e1178dfa94e728a275333ee19bfa3b935fd5b",
+      "count": 17,
+      "tokens": 5953,
+      "memories_sha256": "8e9e3d76b854ee6507bde178309ee608b1988762103660b8c6b3e6bb1daa0793"
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+      "query_sha256": "f6ccbfde3b4899d2b09f2c21ce1ba50561a2a76540cf7b2f15395f480cb1f2a4",
+      "count": 19,
+      "tokens": 5989,
+      "memories_sha256": "13857909a1e052b17b2811462de213d614c493d75cf854d8f1fe1d0853a62e3f"
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "query_sha256": "4cd8300b22298c85c9c6901efa252773f1ba2431482cb91ffe8e6aa99f373f27",
+      "count": 28,
+      "tokens": 5996,
+      "memories_sha256": "6320ed07e7dd90396bf0cc2a4959aa24e2dfd1c92e1b58ee07aef8ccb43d1128"
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+      "query_sha256": "28cdfe1f3f879777e0550a3a3f5bb7b95f97bc21f790b14bddf74d554403bb75",
+      "count": 17,
+      "tokens": 5998,
+      "memories_sha256": "8a3c45a2f22635898242bce3996d5539dd138b942694ec6c97c3e32c91de251c"
+    },
+    {
+      "dataset": "A06",
+      "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+      "query_sha256": "c2b6c016905f81123806cac32a634a7e86a5a15b234176a8382c353e460c47e9",
+      "count": 20,
+      "tokens": 5981,
+      "memories_sha256": "b65946781e671b5217685e8ca8a4a2e941a1fb9dec9837fe520750f901663d94"
+    }
+  ],
+  "integrity": {
+    "all_input_pins_unchanged": true,
+    "source_database_hashes_unchanged": true,
+    "database_open_mode": "readonly",
+    "query_vectors": "Original recorded 768-dimensional vectors; exact input query match; no recomputation.",
+    "original_scores_unchanged": true
+  },
+  "candidate_sampling": "Pending root-controlled query-only sampling; no candidate focus result has been supplied or synthesized.",
+  "baseline_command": "node /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/paired.mjs --output <fresh-output-directory>",
+  "candidate_command": "node /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-paired-20260909/paired.mjs --output <fresh-output-directory> --candidate-entry <frozen-service-dist>/retrieval.js --candidate-sha256 <entry-sha256> --candidate-manifest <candidate-manifest.json> --candidate-manifest-sha256 <manifest-sha256> --focus-results <actual-focus-results.json> --focus-sha256 <focus-file-sha256>",
+  "new_model_calls": 0,
+  "new_QA_calls": 0,
+  "privacy": "Raw query text, vectors, memory contents and model text remain in private local artifacts; no gold or Answer/Judge content is included in this report."
+}

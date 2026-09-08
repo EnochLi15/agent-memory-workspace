@@ -1,0 +1,59 @@
+{
+  "protocol": "query-focus-diagnostic-v1",
+  "created_at": "2026-09-08T21:48:38.740598+00:00",
+  "candidate_commit": "9c7cf1bc3daa77288202c68dcba321686e478aaa",
+  "feature_default": "off",
+  "configuration_override": {
+    "queryFocus": true,
+    "queryFocusTimeout": 8000
+  },
+  "runtime_campaign": "priority-query-focus-validation-20260909-01",
+  "query_counts": {
+    "generic_holdout": 18,
+    "original_benchmark": 16,
+    "total": 34
+  },
+  "real_model_calls": 34,
+  "outcomes": {
+    "model": 34
+  },
+  "generic_results": {
+    "correct": 17,
+    "denominator": 18,
+    "unwanted_other_people_expansions": 0,
+    "baseline_preserving_cases": 12,
+    "mismatches": [
+      {
+        "qid": "generic:g14",
+        "expected": "unknown",
+        "observed": "self_state",
+        "retrieval_effect": "Both unknown and self_state preserve the baseline."
+      }
+    ]
+  },
+  "classifier_latency_ms": {
+    "mean": 1416.4547315294126,
+    "median": 1308.9202289999998,
+    "p95_inclusive": 2519.36240845,
+    "max": 3026.1512500000026,
+    "sum": 48159.460872000025
+  },
+  "validation": {
+    "syntax_checks": "Python compile and Node syntax check passed",
+    "actual_preflight": "passed",
+    "negative_preflights_rejected": [
+      "missing execution pins",
+      "disabled focus despite updated config file hash",
+      "duplicate original query despite unique qid"
+    ],
+    "new_model_calls_in_preflight": 0
+  },
+  "interpretation": "Single pre-frozen diagnostic cohort, not a population accuracy estimate or an Answer/Judge evaluation. One unknown-to-self classification mismatch causes no scope expansion. Benchmark scope results were passed once to read-only paired retrieval with recorded original vectors.",
+  "new_QA_scores": 0,
+  "evidence": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-validation-20260909/generic-cases.private.json": "0aa8035d440b0d2da84a5edc23895d53dff6a52abc92be3c95e2acc31271e1bb",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-validation-20260909-01/plan.json": "a08208f4875cf33da8f9218a65e55e13f8f1b3b10e06bc55ba6c09b1f7fa51c3",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-query-focus-validation-20260909-01/focus-results.private.json": "560e9ffd7f7f766984d03eb47892674342620a5ad4d95cd770c98147a20ab582",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-query-focus-validation-results-20260909.json": "a0ef47fc6f95330ed8f563a06234474247df4af45486ddcde22f079a9ad68445"
+  }
+}

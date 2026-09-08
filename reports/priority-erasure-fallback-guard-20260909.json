@@ -1,0 +1,126 @@
+{
+  "status": "frozen_local_safety_candidate_no_cloud_or_B14_recovery",
+  "commit": "d44a5bbe28fb38fdce6571e7b7d95d4f39bb3a73",
+  "base_commit": "5ca2929d09e718c4aa5353460a1f9338ad0a9c30",
+  "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-fallback-guard-20260909/service",
+  "candidate_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-fallback-guard-20260909/candidate-dist",
+  "candidate_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-fallback-guard-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "db4bc52f0e7e7dc5e4f1763f8ec968cbfcc421121405e44bb33552a1470b8eb2",
+  "dist_file_count": 141,
+  "changed_dist": [
+    "extraction.js",
+    "extraction.js.map"
+  ],
+  "change": {
+    "problem": "On unavailable erasure_binding classification, ambiguous candidate records were assigned erase from source overlap or absent literal-value witnesses, or retain from a same-literal witness. None establishes authorization or independence.",
+    "behavior": "Nonempty unverified ambiguous work now raises EVIDENCE_VALIDATION. No proposal is returned and the transaction cannot commit its direct target alone. Successful model decisions retain the original decode/commit path.",
+    "retained_paths": [
+      "no-candidate direct target and exact automatic boundary handling",
+      "ordinary capability fallback without ambiguous erasure work",
+      "existing explicit restore exclusions",
+      "original semantic uncertain/refusal",
+      "source partition and witness validation",
+      "target IDs, chronology, repair/model budgets and database schema"
+    ],
+    "unavailable_includes": [
+      "classifier capability/protocol failure",
+      "offline mode with ambiguous erasure work",
+      "extraction_offline fallback with ambiguous erasure work"
+    ],
+    "production_files": [
+      "src/extraction.ts"
+    ],
+    "scope_exclusions": [
+      "inherited evidence or parent witnesses",
+      "a384 preview/final-effects architecture",
+      "gold/query/budget changes",
+      "new provider call or retry",
+      "global disablement of ordinary write fallback"
+    ]
+  },
+  "validation": {
+    "failure_first": {
+      "tests": 11,
+      "pass": 4,
+      "fail": 7,
+      "log": "targeted-red-complete.txt",
+      "method": "Final test body imported the original pinned 5ca dist through baseline-reference.test.ts; only module import paths differ from the committed tests."
+    },
+    "targeted_final": {
+      "tests": 14,
+      "pass": 14,
+      "fail": 0,
+      "new_guard_tests": 11,
+      "log": "targeted-freeze.txt"
+    },
+    "full_initial": {
+      "tests": 688,
+      "pass": 687,
+      "fail": 1,
+      "reason": "The one old review-regressions fixture explicitly required deterministic scope classification on outage.",
+      "log": "full-initial.txt"
+    },
+    "full_final": {
+      "tests": 689,
+      "pass": 689,
+      "fail": 0,
+      "elapsed_ms": 11247.856208,
+      "log": "full-freeze.txt"
+    },
+    "build": "pass",
+    "build_log": "build-freeze.txt",
+    "diff_check": "pass",
+    "working_tree": "clean",
+    "fixture_correction": "An initial value-free-quote fixture did not actually enter erasure candidates; it was corrected to retain the structured resolved fact content while its source quote is value-free, and now asserts the exact erasure_binding call. Final red/green results use the corrected fixture; initial logs remain preserved.",
+    "review": "Root independently reviewed the production diff and initial tests, requested removal of unused imports and full-table immutability in the adjusted old regression. Both were completed before final build/full tests. next_eval_risk was occupied by query-focus and did not perform a second code review."
+  },
+  "old_test_expectation_change": {
+    "file": "tests/review-regressions.test.ts",
+    "old_contract": "Classifier outage automatically deleted a same-source backup echo and retained a different-source coworker with the same name.",
+    "why_changed": "The particular fixture deletion was intended, but same-source/literal shape cannot certify that behavior generally. The new independent-food counterexample demonstrates an actual wrong synthetic commit under that rule.",
+    "new_contract": "First assert unavailable classifier leaves every database table, revision and receipt state unchanged. Then supply explicit synthetic scope decisions and retain all original successful target/echo-erasure and coworker-preservation assertions.",
+    "not_blanket_positive_certificates": true
+  },
+  "synthetic_transaction_comparison": {
+    "artifact": "transaction-check-results.json",
+    "script": "transaction-check.mjs",
+    "kind": "temporary local SQLite fixtures, all model verdicts mocked; not actual B14 replay",
+    "baseline": {
+      "commit_succeeds": true,
+      "revision": 2,
+      "receipt_present": true,
+      "direct_target_state": "erased",
+      "independent_food_state": "erased"
+    },
+    "candidate": {
+      "commit_succeeds": false,
+      "revision": 1,
+      "receipt_present": false,
+      "direct_target_state": "active",
+      "independent_food_state": "active",
+      "every_table_unchanged": true
+    },
+    "before_and_candidate_after_table_hash": "37d9105236dbbc930926dec2ab547e7e162dae7c75b074b864181cce75eb7629",
+    "module_identity": "The transaction check validates every service/dist file against the frozen candidate manifest before importing the dependency-resolvable worktree dist."
+  },
+  "B14_causal_limit": "The latest recorded real B14 failure returned a successful erasure_binding output and then failed its old-card witness/uncertain checks. It did not use capability fallback. This candidate cannot be presented as B14 recovery; original whole packet remains rejected and no actual B14 add was attempted.",
+  "activity": {
+    "provider_model_calls": 0,
+    "qa_calls": 0,
+    "actual_B14_probes": 0,
+    "original_database_opens": 0,
+    "original_database_writes": 0,
+    "main_service_changes": 0,
+    "old_report_changes": 0
+  },
+  "evidence_sha256": {
+    "targeted-red-complete.txt": "739f46c8993f48f71cd1e84ffa4f36af4d6fa25bb1b6ac1d565b83bc4a352e33",
+    "baseline-reference.test.ts": "53ddf11417a0234fb4b2b35c230e165305e6cdacb559b303f48c3afd5800c81a",
+    "targeted-freeze.txt": "b3ecb7fca177fed8f37a1dba4b28f2527310219f4d40bd6d56e70fb1ae5a8544",
+    "full-initial.txt": "d6585634c3106860dc5a306e7861164b77be56605d6db485f9eadb7cdf3e5f44",
+    "full-freeze.txt": "d9ff3ed0dda4c5ce48e39fba074d0eec278a4db13160a9754a5fb0b67bd07c03",
+    "build-freeze.txt": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "transaction-check.mjs": "c69194e903a7687bdf7ac920177788c8c290ab2b1afdaf67f0c9957bdf9c75dc",
+    "transaction-check-results.json": "034709a75ffc7ab6d78b10a3577db7ccb91a300a52cfd38b3337ddc81209fd4a"
+  }
+}
