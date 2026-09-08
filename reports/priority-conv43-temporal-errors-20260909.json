@@ -1,0 +1,1187 @@
+{
+  "protocol": "conv43-temporal-error-attribution-v1",
+  "created_at": "2026-09-08T23:40:01.951059+00:00",
+  "scope": "Read-only attribution of all final temporal errors, preserving the earlier completed-prefix boundary and original scores. No source text, prediction text, answer values, model prompts, or private dialogue is included.",
+  "boundaries": {
+    "initial": {
+      "read_at_utc": "2026-09-08T23:25:31.291893+00:00",
+      "judgment_lines": 30,
+      "bytes": 6008,
+      "prefix_sha256": "7e76e348c549c0c4633389ff3686216a9a56d13c92cabc069e3c47855c941984",
+      "temporal_errors": [
+        "conv-43#q0011",
+        "conv-43#q0027"
+      ]
+    },
+    "final": {
+      "read_at_utc": "2026-09-08T23:33:58.902412+00:00",
+      "judgment_lines": 47,
+      "judged": 47,
+      "correct": 36,
+      "bytes": 9411,
+      "sha256": "7881b8f3da135ce30de05bfc29f25b866aedd4ae144b457b9624ed34db10751e",
+      "temporal_total": 24,
+      "temporal_errors": [
+        "conv-43#q0011",
+        "conv-43#q0027",
+        "conv-43#q0041"
+      ],
+      "new_temporal_errors": [
+        "conv-43#q0041"
+      ],
+      "initial_prefix_unchanged": true
+    },
+    "category_note": "q0035 and q0036 are category 1 and are intentionally covered by the separate multi-hop analysis."
+  },
+  "snapshot": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-tail-qa-20260909-01/data/3d86b7d517147a1821f1852287cba2b6a330ec2e7a451470e6f8cac161f90613/memory.sqlite",
+    "revision": 43,
+    "read_mode": "mode=ro&immutable=1 after runtime terminal",
+    "runtime_status": "finished",
+    "sha256_before_and_after": "769b91a2fcb6b16d818031e9baf9916a335f20dc9db4ea38a05521f1751ff1d3",
+    "prior_readonly_diagnostic_snapshot": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/original-readonly-snapshot.sqlite",
+      "revision": 38,
+      "sha256": "baf9562a024412268264780f8f6922709db39d4a6a79e7c2f4247a7b121be62e"
+    }
+  },
+  "evaluation_protocol": {
+    "mode": "upstream-reproduction",
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "answer_model": "glm-5.2",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "fixed_answer_constraint": "Answer using only the supplied memory evidence; preserve temporal precision and do not add unsupported facts.",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "judge_observability": "The retained refined-Python judgments expose the binary score and a generic adapter marker, not the model rationale. No old/new repeated verdict comparison or independent rejudgment is available."
+  },
+  "questions": [
+    {
+      "qid": "conv-43#q0011",
+      "category_code": "2",
+      "query_sha256": "1395f5fdecc27bdd4e28cffe5fbf50ed76d98a1b018150dd63b3ea0b690c0bb4",
+      "gold_sha256": "017e81c5fcca058fad29cc9ce0bc2168a9283cad27421f907577d109937f5f70",
+      "boundary": "initial_30",
+      "actual_judgment": false,
+      "context_count": 32,
+      "reported_estimated_tokens": 4898,
+      "source_id_coverage_diagnostic": {
+        "matched": 3,
+        "total": 4,
+        "any": true,
+        "all": false
+      },
+      "focus": "other_people",
+      "facts": [
+        {
+          "fact_id": "708cb3e9eed761d58292a85f468997864e2b7daf3ac5d499f1817f6e4fced494",
+          "predicate": "game_event",
+          "state": "active",
+          "modality": "tentative",
+          "claim_sha256": "4b935f55b5cc6b9ece53b29ccf9817f7aae179fe614c2654a3b0e296d877247b",
+          "source_ids": [
+            "f637f7a43ddd6d76897a0efcd378654d02903f3308d6d4811d1e528912665d0f"
+          ],
+          "quote_sha256": [
+            "42e598f042f4d581ca813ca3dbe71eca37f0f058fd169fcce9c2ad0815e870f2"
+          ],
+          "rendered_positions": [
+            18
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            false
+          ],
+          "event_time_precision": "month",
+          "event_time_resolution": "resolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 27,
+            "lexical": 21,
+            "entity": 27,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        },
+        {
+          "fact_id": "0d6539b9ae680987178044fddf37b53d64248db99620276e3ffb2d0eb4e9b792",
+          "predicate": "preference",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "d574506c36552d9325f6ff23d5c86549b7708ad1a4345858222cd0f38628d2be",
+          "source_ids": [
+            "f637f7a43ddd6d76897a0efcd378654d02903f3308d6d4811d1e528912665d0f"
+          ],
+          "quote_sha256": [
+            "822dca25037f0e42e5a53a19bac405de08979b14a7d9eb4033d4441e3a56ae32"
+          ],
+          "rendered_positions": [
+            4
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true
+          ],
+          "event_time_precision": "unknown",
+          "event_time_resolution": "unresolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 5,
+            "lexical": 5,
+            "entity": 5,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        },
+        {
+          "fact_id": "f8d96b16a1b50363df45f09a76055ac3fda97fa795da208c7f67962cbe9f8551",
+          "predicate": "game_event",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "a1352e95670242d3651895dc20be88091f10dca4d183a4df0f8352131b9aec4e",
+          "source_ids": [
+            "b2d4b8486375ad9f507afe6ea0b461498ca63d95c1bfe9e1a25ed4a0857960e3"
+          ],
+          "quote_sha256": [
+            "8ebedcd6d93539f98adbe7323cf5849b4401dbbd0ae00a2af19c97d5b44ae9e7",
+            "3b4e6988399b4afcba22e907969effbb89d9ee2a04931b25dbd2692dea8ecbb3",
+            "f2e891630ea8d2f252ac4df0c20eb7d14a7cf51cf0bc5dfab699fcdaf85da4b5"
+          ],
+          "rendered_positions": [],
+          "full_claim_in_context": false,
+          "each_full_quote_in_context": [
+            false,
+            false,
+            false
+          ],
+          "event_time_precision": "week",
+          "event_time_resolution": "resolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": false,
+          "route_local_positions": {
+            "semantic": null,
+            "lexical": null,
+            "entity": 215,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        },
+        {
+          "fact_id": "059df1b9b4319a092b2eadced0f598f40e9221142ab667f6411ea051e667bed5",
+          "predicate": "travel",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "2c5b7d57c284d8921c43214673588442733de27fe8986312c25cf7e3dcdbccaf",
+          "source_ids": [
+            "9ed10205431b53057ebf9c2a7e85f49b23efcfb289a87d17c959d5e1da055f22"
+          ],
+          "quote_sha256": [
+            "d9b1d33c2a3f3e6fbea063fb66036a2f66bc431db1f0ead38b4ea12a3bc8c1fd"
+          ],
+          "rendered_positions": [
+            6
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true
+          ],
+          "event_time_precision": "unknown",
+          "event_time_resolution": "unresolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 16,
+            "lexical": 15,
+            "entity": 16,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        },
+        {
+          "fact_id": "0cfd4fb2138688c567571271cdf4ceb22d98419bed961358ab3c8ee4d2addd3a",
+          "predicate": "travel",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "b01eec1d7a1781935f1075922bcf5b741d12f41f28dbf2d21dace7c3e385e050",
+          "source_ids": [
+            "7ce2358eb8ba0456f12b1994bce2395a5eb5b83cb69e70bd615236e2951dcfc7"
+          ],
+          "quote_sha256": [
+            "a1fa03f8174d4e1b3399739f19431978ff6beac0854695f9e0b186ea83526259",
+            "ab34365c7b52a1d036f4725f8604de526c4680980a203ca3b3ceae4c3c6342e3"
+          ],
+          "rendered_positions": [
+            1
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true,
+            true
+          ],
+          "event_time_precision": "unknown",
+          "event_time_resolution": "unresolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 1,
+            "lexical": 1,
+            "entity": 1,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        }
+      ],
+      "original_sources": [
+        {
+          "source_id": "f637f7a43ddd6d76897a0efcd378654d02903f3308d6d4811d1e528912665d0f",
+          "original_reference_id": "D3:19",
+          "source_content_sha256": "0ab7980b9abc9a7c6cec417c7c93aa6e15def82d8c53abd139517939a2a5b2ba",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": false,
+          "linked_fact_ids": [
+            "708cb3e9eed761d58292a85f468997864e2b7daf3ac5d499f1817f6e4fced494",
+            "0d6539b9ae680987178044fddf37b53d64248db99620276e3ffb2d0eb4e9b792"
+          ],
+          "passage_count": 4,
+          "source_candidate_checks": [
+            {
+              "id": "source-6a0d0e7adff9adf60b5e13aa9f3ec35eaa525e95004cb5aa08a81ae9c4a3786c",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 7,
+                "source-lexical": null
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-ccfe200967a3ed45e16e0d8958464b028e5fb1649ec98cc8ee3a466aa5e0479f",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": 150
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-391bb2097160bc5c79d4c9548fe4637a57173c25aa4b6023d598d05c11375ed5",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-91ba2d45d153aef4e937dafc837c0c465fdc956e2448fdc2990164a456380b58",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        },
+        {
+          "source_id": "b2d4b8486375ad9f507afe6ea0b461498ca63d95c1bfe9e1a25ed4a0857960e3",
+          "original_reference_id": "D5:2",
+          "source_content_sha256": "73c8f4d291352b5551892991b131ce671051e29190e711ab1d91a28572d3e862",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": false,
+          "linked_fact_ids": [
+            "f8d96b16a1b50363df45f09a76055ac3fda97fa795da208c7f67962cbe9f8551"
+          ],
+          "passage_count": 9,
+          "source_candidate_checks": [
+            {
+              "id": "source-f471d8d76fb466e64c3014b6a7d0382efac3ac92923ee93b44d063381954f365",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": 179
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-008e5873e0cf9d29fce0566fcf9b8ad9822942160a7cd6487f0a6f68fc660158",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-f7d92dd1bf10471d8f48cb95ee094ecab2e69dc795947df0c2cd386df9ee232a",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-f469a01245de06c0d4b755b9702fb97e299203e38a09de1976fdb583cac25313",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-b2a9c9e31fe729594d947f4080ccc926537447dec5e41d57a8625467347db12d",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-086091935d739bca4fdd0434dfc9b2dc9cd08a26b3a5d5f0edfcf6bedf830a05",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-af5ec969d1cb8351270d7f7b541cf03f426e19f7cf93b101b0f382fd852c9127",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-9870b4ef5d9ded06f8b8e67d2f6b7ff1a492e6daf2708e74eaa230b5d8896450",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-064e3c148cdfa70ac4fb9cd4e9e53c6ef3adc45c51a0476012ebac59e270589c",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        },
+        {
+          "source_id": "9ed10205431b53057ebf9c2a7e85f49b23efcfb289a87d17c959d5e1da055f22",
+          "original_reference_id": "D6:1",
+          "source_content_sha256": "9f1ccb2e7a2eea02b4f2223faf8ea92cf609e54909f2dfa90e9b2ce3955e67e9",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": true,
+          "linked_fact_ids": [
+            "059df1b9b4319a092b2eadced0f598f40e9221142ab667f6411ea051e667bed5"
+          ],
+          "passage_count": 6,
+          "source_candidate_checks": [
+            {
+              "id": "source-f8f48998efa870f4186825e6d8ff16fdad0bfa17f0cea81a6b48f036165cf94e",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-e36cde7cbe717155bc7829d6e9195ab193921d3c87cb23535546b8675185d071",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-bc8a9464e322926f73f10da67f8fa7b230626771743b543de1d788c666bc3a5b",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-0edba628d6d419d1908f76048c330b0d275bf49ef5867fea42ae3ac4ef8f3088",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-2091aea2e0ed691c9d603ee912fd111db8cb5f4372c19cfff6281a9778fb6f2e",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-6fca8d97eebe4e81e914ba805d2f7f2e87a5980fd2f21379d657eae6eab83285",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        },
+        {
+          "source_id": "7ce2358eb8ba0456f12b1994bce2395a5eb5b83cb69e70bd615236e2951dcfc7",
+          "original_reference_id": "D6:3",
+          "source_content_sha256": "b637bfeb8f3de67533296863cd6222879c4e69a91046e0b8c1b66f8b7d519fac",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": false,
+          "linked_fact_ids": [
+            "0cfd4fb2138688c567571271cdf4ceb22d98419bed961358ab3c8ee4d2addd3a",
+            "f924fcac8f69b18def6c02c5dda5c80bbcbd6284c4a05d56ecd93187874665a6"
+          ],
+          "passage_count": 4,
+          "source_candidate_checks": [
+            {
+              "id": "source-23dc6db70a2880916588076d2131b984b66e22bbc3699e6f001c26934944f230",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 1,
+                "source-lexical": 1
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-388e0a79a43df5f6647cce68f3e1e4a2c0b4cda00a8fc800730f4e9d72bfdcd0",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-715840768097d70080090dc353d504d6f0f4edada7370da0238ddc8b412132f8",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-8458bbe55ce80bb01c2575b2d900719c4ddee319d13384e2538786665a3ac273",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        }
+      ],
+      "pins": {
+        "retrievals": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/retrievals.jsonl",
+          "line": 11,
+          "line_sha256": "39115c106b984342ac5c751c72a503477e90d56f8d1744825b1510333c8be0b2"
+        },
+        "predictions": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/predictions.jsonl",
+          "line": 11,
+          "line_sha256": "6c1adf79eb357e3b1725b79dd1fd2dac9ed3fd5139cdd2279310533830899780"
+        },
+        "judgments": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/judgments.jsonl",
+          "line": 11,
+          "line_sha256": "49ea8bff8144e45a484e066bcabcb6bbfa2cc06513713c0c16c931d72cbecccf"
+        }
+      },
+      "stage_pin": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-tail-qa-20260909-01/retrieval-stages.jsonl",
+        "line": 21,
+        "line_sha256": "8471489498a014795fe24ae65ed59204d2333038befbb933383e82a1bb9ec1bd"
+      },
+      "classification": [
+        "intermediate_event_candidate_recall_gap",
+        "cross_session_event_identity_reasoning_required"
+      ],
+      "confirmed_findings": [
+        "The planned-location event claim and correct month precision are returned, together with the later destination event and its complete witnesses.",
+        "The intervening completed-event fact and all three source quotes are stored and eligible but absent from the Answer context and the final 200-candidate pool. Its entity-route position is 215; one passage from that source is source-lexical position 179, also outside the final candidate pool. These are route-local positions, not final packing ranks.",
+        "The missing raw source has not been redacted; standalone raw searchability is false after fact representation, while nine indexed passages remain admitted. None reaches the final candidate pool.",
+        "The failure cannot be attributed to the final token limit: the missing bridge is already absent before packing."
+      ],
+      "answer_behavior": "The Answer abstains because the provided memories do not establish the prior location.",
+      "causal_limit": "The reference also requires linking a prior plan to a subsequently completed activity across sessions. Supplying the missing intermediate evidence has not been tested and is not guaranteed to produce a correct Answer.",
+      "time_anchor_finding": "No observed incorrect normalization; the issue is incomplete event-chain evidence rather than a demonstrated date arithmetic error."
+    },
+    {
+      "qid": "conv-43#q0027",
+      "category_code": "2",
+      "query_sha256": "65ef1b64bdc256ea49b7da1157c22aa1a47fb09fc9a225db6f6ba89a7c65900a",
+      "gold_sha256": "eafee54d62308ae51e97aa8cfd510e205372a4c669ba4d8d9c8d20c8cf074f5d",
+      "boundary": "initial_30",
+      "actual_judgment": false,
+      "context_count": 32,
+      "reported_estimated_tokens": 4461,
+      "source_id_coverage_diagnostic": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "focus": "other_people",
+      "facts": [
+        {
+          "fact_id": "c93f22bb6ca194df6fc3528e2e45919adb8cbfd9e5b627c9062ee1fdac853770",
+          "predicate": "travel",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "15298f4cf70429cf02ce677168cc261226d590db829b573b32df0df83a08aede",
+          "source_ids": [
+            "63c011e1b06ba253d549db01a876ca921951bd591c490edf166480ce86e4ae9f"
+          ],
+          "quote_sha256": [
+            "51c7c2dfbbfd1c904af7a87c6d450712327b0e1de7f1e30581a41fdaf1f65b7e",
+            "b919b17f6911e5579d38a2362b0882baac736a01832f2bea68c870a3b5e55fd4"
+          ],
+          "rendered_positions": [
+            16
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true,
+            true
+          ],
+          "event_time_precision": "year",
+          "event_time_resolution": "resolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 1,
+            "lexical": 1,
+            "entity": 1,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        }
+      ],
+      "original_sources": [
+        {
+          "source_id": "63c011e1b06ba253d549db01a876ca921951bd591c490edf166480ce86e4ae9f",
+          "original_reference_id": "D14:16",
+          "source_content_sha256": "9e09fb824da119fca269ccdb17e57dde93b2ef8622f13ee6dd952d943065c530",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": true,
+          "linked_fact_ids": [
+            "c93f22bb6ca194df6fc3528e2e45919adb8cbfd9e5b627c9062ee1fdac853770"
+          ],
+          "passage_count": 4,
+          "source_candidate_checks": [
+            {
+              "id": "source-7ef4e65c8dbdccb1603d18c3d8a18ef7fc10c44cd11fc9a718211e051ef10618",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 1,
+                "source-lexical": null
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-a4ba6ab431af07d0636a2bca7b9b21dd135de1ef9f0c78ded93b686d46f03422",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-d64a4b3c9a419d9159488405c1b51ae27a57b9af73dbda4e2cbc9d1a6495cb7b",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-2bcf2713913f8e04df23c6ccbfa70a0e94b278212c23b7d56fe0be90014df394",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        }
+      ],
+      "pins": {
+        "retrievals": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/retrievals.jsonl",
+          "line": 25,
+          "line_sha256": "0a5c5f2cd5a99ec094bfb70cb0c0343401a508e0766ba32a8e9e1de412d64747"
+        },
+        "predictions": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/predictions.jsonl",
+          "line": 25,
+          "line_sha256": "20f87c39a2b6e8e14bfcb535c9e8fb13bb2460c5fdf8b10cd55ac58096fecfe9"
+        },
+        "judgments": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/judgments.jsonl",
+          "line": 25,
+          "line_sha256": "0e97862fdbcb056fa18b3f5def678ce7edeaf6de30b146bf7be9ca71ef6a735b"
+        }
+      },
+      "stage_pin": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-tail-qa-20260909-01/retrieval-stages.jsonl",
+        "line": 49,
+        "line_sha256": "108852abb80bff543ca134765f0ab0939589711470e6fce7837cf26743b7d6ca"
+      },
+      "classification": [
+        "answer_protocol_commonsense_bridge_boundary"
+      ],
+      "confirmed_findings": [
+        "The only annotated travel fact is present at rendered position 16 with its complete claim, both original quotes and the complete raw source.",
+        "Relative-year resolution is correct at year precision. No needed memory source was lost in packing."
+      ],
+      "answer_behavior": "The Answer acknowledges the destination trip but refuses to infer a broader administrative-region visit because that region is not explicitly stated in the memories.",
+      "causal_limit": "The reference expects a background geographic bridge. Under the fixed memory-only Answer instruction, this is an inference-policy boundary rather than retrieval failure. No external lookup or adjudication was performed.",
+      "protocol_constraint": "Do not hardcode a destination-to-region fact, change the Judge, or relabel this score. Any future policy for ordinary background knowledge must be a separately declared general protocol experiment."
+    },
+    {
+      "qid": "conv-43#q0041",
+      "category_code": "2",
+      "query_sha256": "89f38637209d92aaa556b589b347fab9d9878745f96eae9fc3a6c646fc8184ce",
+      "gold_sha256": "a01d41726e3a32e8d706966cec111f32bb9dd34fd663eebcb79db2a112e44d6b",
+      "boundary": "added_at_final_47",
+      "actual_judgment": false,
+      "context_count": 32,
+      "reported_estimated_tokens": 5080,
+      "source_id_coverage_diagnostic": {
+        "matched": 1,
+        "total": 2,
+        "any": true,
+        "all": false
+      },
+      "focus": "other_people",
+      "facts": [
+        {
+          "fact_id": "eae83ea226572238095676dc70e019e186200218acd2197a52aa69449ffece74",
+          "predicate": "social_event",
+          "state": "active",
+          "modality": "confirmed",
+          "claim_sha256": "d7dabe7c338cb0f16800e6af21757e394e58c708e382e08fc45c033825bdca00",
+          "source_ids": [
+            "4cbe92845ecc10edb15138e4edc6bfee1d72d3938881440bf9feceed69c8f69c"
+          ],
+          "quote_sha256": [
+            "ad55d8599230545ede6444e41ff416a2ad135e98625d3c45f532a5af9c6bb599",
+            "18eaa79ae341269cc84c57e02a9c162f7ebe4d50b2ae2eca2bdf5820c78a38b6"
+          ],
+          "rendered_positions": [
+            1
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true,
+            true
+          ],
+          "event_time_precision": "unknown",
+          "event_time_resolution": "unresolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 1,
+            "lexical": 1,
+            "entity": 1,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        },
+        {
+          "fact_id": "4823de0fa1fb457f5477cbef216d172895a21967b70308a67b44f70facc9ca99",
+          "predicate": "shared_photo",
+          "state": "active",
+          "modality": "inferred",
+          "claim_sha256": "a3e1ef930a198d681530f0698f880945239cacfc6cca0f3ebaad0d42c2b9fcac",
+          "source_ids": [
+            "4cbe92845ecc10edb15138e4edc6bfee1d72d3938881440bf9feceed69c8f69c"
+          ],
+          "quote_sha256": [
+            "18eaa79ae341269cc84c57e02a9c162f7ebe4d50b2ae2eca2bdf5820c78a38b6",
+            "1059e5a93e12eb3aaa4817d80f75a3518bd3eb092a735627d1576c85a10b8741"
+          ],
+          "rendered_positions": [
+            30
+          ],
+          "full_claim_in_context": true,
+          "each_full_quote_in_context": [
+            true,
+            true
+          ],
+          "event_time_precision": "unknown",
+          "event_time_resolution": "unresolved",
+          "eligible_at_actual_search": true,
+          "in_final_200_candidate_pool": true,
+          "route_local_positions": {
+            "semantic": 140,
+            "lexical": 68,
+            "entity": null,
+            "source-semantic": null,
+            "source-lexical": null
+          },
+          "discarded": null
+        }
+      ],
+      "original_sources": [
+        {
+          "source_id": "4cbe92845ecc10edb15138e4edc6bfee1d72d3938881440bf9feceed69c8f69c",
+          "original_reference_id": "D4:8",
+          "source_content_sha256": "7d27b4637937fa016bf56d4c0a4827c2f5d5b985c0b5b590b04f0af0d44064ba",
+          "searchable_as_standalone_raw": false,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": true,
+          "linked_fact_ids": [
+            "eae83ea226572238095676dc70e019e186200218acd2197a52aa69449ffece74",
+            "4823de0fa1fb457f5477cbef216d172895a21967b70308a67b44f70facc9ca99"
+          ],
+          "passage_count": 6,
+          "source_candidate_checks": [
+            {
+              "id": "source-df20fd887ca8173f834e3f7e956b0e3c328084d2a9e16f8a6b13e865b8bbbf8f",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 2,
+                "source-lexical": 2
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-200b0d562ebdf559083039af64d9360d43e430d2dc6d583ae3db56a4acbc1f1c",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-bd6d6a7f5397203638bfd45a2dbe1a8a52bf41ff21684c0386873ad5fcc8ee91",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 3,
+                "source-lexical": 3
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-3d254df0685fa4377fe26a57e1853a9bd5462804cf26a45a1c70cc1fd962155a",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-2d8ef16215eeff4a6218f657a6565f2805b26a1e3e19711a5ee8a422ac022591",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-0289d2d2a0554658e36bd525c3b17231d0bfd0c377edb74e30d584ff7dafcb93",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        },
+        {
+          "source_id": "f717a19e11f578f9325e76a0ca70c58687449c8a524ea02ca11db2c15a37b2fb",
+          "original_reference_id": "D22:2",
+          "source_content_sha256": "b5ee85934cfec6c3f535e61bd9fadfb74bf1324b29a030f44a305ffa5fa7a254",
+          "searchable_as_standalone_raw": true,
+          "partial": false,
+          "redacted": false,
+          "full_original_source_in_context": false,
+          "linked_fact_ids": [],
+          "passage_count": 7,
+          "source_candidate_checks": [
+            {
+              "id": "source-6da8b26d8ccb28dc41934043c22ebba329191cfb20352067559580e0de6b80eb",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-e4e9b78c48aba23b76123007bd620212674e3096dc2c0f667989d8fefce5dd8b",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-846d57c6268468cb2359a5cf784400aa325b5db14965718022c2f41f3cef5a0b",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 136,
+                "source-lexical": 76
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-b8df9ba2c3acd4b41a6918d119d42f6ab36b4ed3a15b98b8eb2fa4fd90423cec",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": 1,
+                "source-lexical": 1
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-f6a7e80a27dcd5c4df49c55715c2e79d6009b823a9cc3e0090f37354034e9943",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": true,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": 137
+              },
+              "discarded": "count-limit"
+            },
+            {
+              "id": "source-93aa9849e5e9541578bd5d522b4a99e4dbcc50e9a4877157f56ec5087c64a546",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            },
+            {
+              "id": "source-5b81dc33f8fd177f5d7a42767591b3c270aca42fef0b7a134d7432a72c23fb86",
+              "indexed": true,
+              "filtered": false,
+              "in_final_200_pool": false,
+              "route_local_positions": {
+                "semantic": null,
+                "lexical": null,
+                "entity": null,
+                "source-semantic": null,
+                "source-lexical": null
+              },
+              "discarded": null
+            }
+          ]
+        }
+      ],
+      "pins": {
+        "retrievals": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/retrievals.jsonl",
+          "line": 39,
+          "line_sha256": "a2eb504b4392c19eb115323cec29915343d21c5eb90c82dbdf8a448c723abdbf"
+        },
+        "predictions": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/predictions.jsonl",
+          "line": 39,
+          "line_sha256": "f77fb2dc40984131e0745bae92e660c1ba7a2b0f89f05d17d7d457ae7d7dfc23"
+        },
+        "judgments": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/judgments.jsonl",
+          "line": 39,
+          "line_sha256": "6d511688d1045f79c7bed872b060e67810f70b9d2b0e03aee0e83a712d633bdd"
+        }
+      },
+      "stage_pin": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-tail-qa-20260909-01/retrieval-stages.jsonl",
+        "line": 77,
+        "line_sha256": "92c73bba67f069f628dcf4d318e1fb23ca828daa5cc16dcbb91afb043ef4f175"
+      },
+      "classification": [
+        "later_temporal_restatement_packing_gap",
+        "report_time_vs_event_time_precision"
+      ],
+      "confirmed_findings": [
+        "The event description is returned at position 1 with its complete claim, both witnesses and the complete early original source.",
+        "The later retrospective original source is intact, independently searchable, unredacted and represented by seven source passages, but has no linked extracted fact. Initial semantic verification classifies its message as not_memorable; the later repair does not recheck that message.",
+        "The full retrospective time-bearing clause is stored in an active source passage. That exact passage is ranked 1 in each source-only semantic and lexical route and enters the final 200-candidate pool, but the actual pack discards it for count-limit. Route-local first position does not imply first position in the fused/packed list.",
+        "Actual context has 32 items and reports 5080 estimated tokens; the explicit discard reason is item count, not the token limit."
+      ],
+      "retrospective_passage": {
+        "id": "source-b8df9ba2c3acd4b41a6918d119d42f6ab36b4ed3a15b98b8eb2fa4fd90423cec",
+        "source_id": "f717a19e11f578f9325e76a0ca70c58687449c8a524ea02ca11db2c15a37b2fb",
+        "content_sha256": "581f4038d6a495070c3126b33b73144db888d7bf4467c09a06a9815881ca1c74",
+        "fragment_sha256": "581f4038d6a495070c3126b33b73144db888d7bf4467c09a06a9815881ca1c74",
+        "full_fragment_exactly_present_in_original_source": true
+      },
+      "answer_behavior": "The Answer reports the date on which the event was recounted and explicitly declines to assign an exact event date. It does not straightforwardly assert the reference event month.",
+      "causal_limit": "The later clause dates the prior telling of the event, so report-time versus event-time inference still needs care. Its omission is a demonstrated evidence-selection gap, but adding it alone has not been tested. The mere appearance of the same month in the Answer is not proof of Judge error.",
+      "time_anchor_finding": "The early event correctly remains unresolved where no explicit event-time phrase exists; do not silently convert an observation date to an event date.",
+      "extraction_trace_pin": {
+        "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/model-trace.jsonl",
+        "line": 90,
+        "line_sha256": "7ef44e671aff33c0e4a52365a82771f94bd47db8ccfcffb7d72562efcb49325b"
+      }
+    }
+  ],
+  "general_mechanism_suggestions": [
+    "Evaluate bounded same-person event-chain retrieval for intermediate event evidence before the 200-candidate cutoff, using held-out cases and the same query and budgets.",
+    "Evaluate evidence packing that preserves a high-relevance raw retrospective time clause alongside the original event claim, rather than letting already-represented facts consume every item slot; test complete-claim/quote coverage, not source-ID count alone.",
+    "Treat memory-grounded temporal inference and ordinary external geographic knowledge as separate protocol questions. Preserve the current Answer/Judge rules and scores; no fact- or answer-specific exceptions."
+  ],
+  "causal_limits": [
+    "These are observations from one fixed run, not paired causal proof that any proposed retrieval change would recover the Answer.",
+    "Source-ID hits and route ranks are only diagnostics. The conclusions above separately check whole claims, quotes and intact original source text.",
+    "No demonstrated arithmetic time-anchor bug or sufficient evidence of Judge inconsistency was found."
+  ],
+  "actions": {
+    "additional_model_calls": 0,
+    "rejudgments": 0,
+    "database_writes": 0,
+    "candidate_changes": 0,
+    "score_changes": 0,
+    "new_report_only": true
+  }
+}

@@ -1,0 +1,1141 @@
+{
+  "report_protocol": "conv43-tail-results-v1",
+  "created_at": "2026-09-08T23:37:29.684356+00:00",
+  "campaign": "priority-conv43-tail-qa-20260909-01",
+  "status": "finished",
+  "integrity": "pass",
+  "result": {
+    "fixed_denominator": 47,
+    "judged": 47,
+    "correct": 36,
+    "incorrect": 11,
+    "accuracy": 0.7659574468085106,
+    "service_error": 0,
+    "answer_error": 0,
+    "judge_error": 0,
+    "by_category": {
+      "multi_hop": {
+        "category_code": "1",
+        "planned": 23,
+        "judged": 23,
+        "correct": 15,
+        "incorrect": 8,
+        "accuracy": 0.6521739130434783
+      },
+      "temporal": {
+        "category_code": "2",
+        "planned": 24,
+        "judged": 24,
+        "correct": 21,
+        "incorrect": 3,
+        "accuracy": 0.875
+      }
+    }
+  },
+  "versions": {
+    "executed_candidate": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+    "candidate_manifest_sha256": "aa2cce509f9ea5bc66d23a40a8e67935c622b90a8349c958197d203bcd809b94",
+    "dist_files": 144,
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "eval_manifest_service_commit": "6381bef2d705c3bc63b3616d529149d947a171f1",
+    "metadata_limit": "The evaluator service_commit names the original checkout. Actual executed service is the separate plan/manifest/launcher-pinned 292ea743 candidate.",
+    "plan": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/plan.json",
+      "sha256": "66640c4a5cb4cac59ba94a3aacc5dc4d586018af94105505737341ce3c7d8fff"
+    },
+    "entry": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/executor/scripts/probes/run-conv43-tail-qa.py",
+      "sha256": "d0719ef4c84a08e2f52f424569362081c08a43aabb4a67d0a2e7a44480af7506"
+    },
+    "preparation_report": {
+      "path": "reports/priority-conv43-tail-preparation-20260909.json",
+      "sha256": "d74dcfd90d2b2e709a7d63568fb12211309487315302692b9bb7c49614e5b6d3"
+    }
+  },
+  "protocol": {
+    "sample": "conv-43",
+    "sessions": 29,
+    "messages": 680,
+    "questions": 47,
+    "original_qids_and_search_queries_preserved": true,
+    "namespace": "priority-conv43-20260909-01-candidate",
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "answer_model": "glm-5.2",
+    "concurrency": 1,
+    "top_k": 100,
+    "chunk_messages": 20,
+    "chunk_words": 2000,
+    "configured_add_transport_attempt_limit": 3,
+    "observed_add_attempts": 1,
+    "service": {
+      "queryFocus": true,
+      "queryFocusTimeout": 8000,
+      "verificationResponseFormat": "json_object",
+      "candidateLimit": 200,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "rerank": false
+    },
+    "actual_config_matches_pinned_base": true,
+    "actual_service_config_sha256": "569f543a4fab67dbaeebd0cd0413e71210ddd73a3e585283f90475829966783a",
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "standard_judge_probe": {
+      "score": 1,
+      "elapsed_ms": 11446.204,
+      "outside_fixed_denominator": true
+    },
+    "inherited_judge_metadata_limit": "service.json inherits evaluation_configuration.judge_model=glm-5.2 from the shared spec. Actual LoCoMo CLI/runtime/manifest use refined-python with local qwen3:14b; the inherited field is not the effective Judge."
+  },
+  "ingestion": {
+    "schedule_adds": 43,
+    "physical_HTTP_responses": 43,
+    "HTTP_200": 43,
+    "prefix_200_exact_receipt_matches": 38,
+    "fresh_tail_successes": 5,
+    "failed": 0,
+    "unattempted": 0,
+    "all_attempt_zero": true,
+    "revision_before": 38,
+    "revision_after": 43,
+    "exact_receipts_after": 43,
+    "successful_degraded_adds": 0,
+    "fresh_adds": [
+      {
+        "position": 39,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+        "request_sha256": "7edbdcf0652680210d422aa9ac972e013f498596179490dc4b70ff902949308c",
+        "elapsed_ms": 38586.895958
+      },
+      {
+        "position": 40,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:1",
+        "request_sha256": "cdc265f93f80af71d41adc3fc4e37c97b8d6b2051d0120e0b1092f5d8f67bdcc",
+        "elapsed_ms": 58657.351042
+      },
+      {
+        "position": 41,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:0",
+        "request_sha256": "bd5fcd2a02d48b1f0bafe9b6e48bb7f82c3589b32a14d9995e30dd249707e1f6",
+        "elapsed_ms": 35084.33283299999
+      },
+      {
+        "position": 42,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:1",
+        "request_sha256": "3d9285896840a56ed81a6401dc87010771b8807a810cbaad9d2f724af2d0d0e2",
+        "elapsed_ms": 3731.2994589999726
+      },
+      {
+        "position": 43,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-29:0",
+        "request_sha256": "b1faa04b98f5480cb2453f8df874e9b6eabda4166a7ebf5ef3b17c5d191ff5b9",
+        "elapsed_ms": 18783.26654099999
+      }
+    ]
+  },
+  "integrity_checks": {
+    "frozen_validate": "passed",
+    "frozen_pins_checked": 415,
+    "all_pins_unchanged": true,
+    "144_dist_files_exact": true,
+    "source_database_sha256_before": "5d67b16a03d66d8de3f8302a020604b6208e23fe0e07288f79629c28e9dc9403",
+    "source_database_sha256_after": "5d67b16a03d66d8de3f8302a020604b6208e23fe0e07288f79629c28e9dc9403",
+    "captured_snapshot_sha256": "baf9562a024412268264780f8f6922709db39d4a6a79e7c2f4247a7b121be62e",
+    "source_and_snapshot_all_logical_tables_unchanged": true,
+    "clone_revision_43_and_all_receipt_hashes_and_bodies_exact": true,
+    "clone_database_sha256": "769b91a2fcb6b16d818031e9baf9916a335f20dc9db4ea38a05521f1751ff1d3",
+    "all_JSONL_complete": true,
+    "47_complete_actual_768d_vectors_captured": true,
+    "storage_check": {
+      "integrity": "pass",
+      "reasons": [],
+      "planned_adds": 43,
+      "successful_adds": 43,
+      "revision": 43,
+      "exact_receipts": 43,
+      "physical_HTTP_responses": 43,
+      "write_generation_calls": 13,
+      "search_query_focus_generation_calls": 47,
+      "add_embedding_calls": 5,
+      "scope": "Only actual successful original HTTP adds may have committed receipts; failed and unattempted requests remain outside the receipt set.",
+      "prefix_adds": 38,
+      "new_successful_tail_adds": 5,
+      "new_tail_adds": 5,
+      "source_unchanged": true
+    }
+  },
+  "model_audit": {
+    "service_calls": 112,
+    "generation_calls": 60,
+    "write_generation_calls": 13,
+    "write_generation_only_five_new_tail_ids": true,
+    "prefix_generation_calls": 0,
+    "query_focus_calls": 47,
+    "query_focus_each_original_query_once": true,
+    "query_focus_input_exactly_query_only": true,
+    "focus_outcomes": {
+      "model": 46,
+      "fallback": 1
+    },
+    "focus_classes": {
+      "other_people": 46,
+      "unknown": 1
+    },
+    "focus_attempt_zero": 47,
+    "focus_transport_attempt_limit": 1,
+    "focus_fallbacks": 1,
+    "generation_outcomes": {
+      "ok": 60
+    },
+    "purposes": {
+      "extraction": {
+        "calls": 5,
+        "outcomes": {
+          "ok": 5
+        },
+        "latency": {
+          "count": 5,
+          "sum_ms": 83182.87787399998,
+          "mean_ms": 16636.575574799997,
+          "median_ms": 18940.18391600001,
+          "min_ms": 1402.3593330000003,
+          "max_ms": 28227.787374999993
+        }
+      },
+      "query_focus": {
+        "calls": 47,
+        "outcomes": {
+          "ok": 47
+        },
+        "latency": {
+          "count": 47,
+          "sum_ms": 65046.85325000016,
+          "mean_ms": 1383.9756010638332,
+          "median_ms": 1080.920582999941,
+          "min_ms": 878.3560419999994,
+          "max_ms": 7118.259915999952
+        }
+      },
+      "repair": {
+        "calls": 1,
+        "outcomes": {
+          "ok": 1
+        },
+        "latency": {
+          "count": 1,
+          "sum_ms": 18469.255584,
+          "mean_ms": 18469.255584,
+          "median_ms": 18469.255584,
+          "min_ms": 18469.255584,
+          "max_ms": 18469.255584
+        }
+      },
+      "state_transition": {
+        "calls": 2,
+        "outcomes": {
+          "ok": 2
+        },
+        "latency": {
+          "count": 2,
+          "sum_ms": 16098.595126000015,
+          "mean_ms": 8049.297563000007,
+          "median_ms": 8049.297563000007,
+          "min_ms": 5166.088959000001,
+          "max_ms": 10932.506167000014
+        }
+      },
+      "verification": {
+        "calls": 5,
+        "outcomes": {
+          "ok": 5
+        },
+        "latency": {
+          "count": 5,
+          "sum_ms": 27273.884125000026,
+          "mean_ms": 5454.776825000005,
+          "median_ms": 5758.507708999998,
+          "min_ms": 1387.425958000007,
+          "max_ms": 9603.046333000006
+        }
+      }
+    },
+    "embeddings": {
+      "add": 5,
+      "search": 47,
+      "outcome": "all ok",
+      "model": "nomic-embed-text:latest",
+      "dimensions": 768
+    },
+    "rerank_calls": 0,
+    "packing_tokens": {
+      "min": 3913,
+      "max": 5998,
+      "mean": 5124.765957446809
+    },
+    "maximum_memories_returned": 32,
+    "state_transition_requests": [
+      {
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+        "trace_id": "8f957793-0ca6-4f81-b3bd-a2ebb54739b8",
+        "pairs": 6,
+        "input_characters": 20346,
+        "input_sha256": "46aa0260d947ed12079a9b46ba73a4d7d0c57d3a4b70f0033fb4b5d92a7cae8c"
+      },
+      {
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:0",
+        "trace_id": "7193e320-3246-4458-9067-36f07811aea9",
+        "pairs": 12,
+        "input_characters": 38423,
+        "input_sha256": "4fe2a7a2707073b9de295a9463192a71b228d9f3a90f9532249edc605c983af9"
+      }
+    ],
+    "benchmark_calls": "47 standard predictions and 47 judgments; evaluator Answer and local Judge are outside this service audit.",
+    "focus_fallback_detail": {
+      "qid": "conv-43#q0012",
+      "query_sha256": "a52a976ed61a77352de5d96065e83134a9f41fa282684c493b8bfd9c4664b004",
+      "trace_id": "4b28e415-334e-45f5-a436-1864aa09c8b6",
+      "provider_outcome": "ok",
+      "attempt": 0,
+      "proposed_focus": "other_people",
+      "application_focus": "unknown",
+      "application_outcome": "fallback",
+      "cause": "The single supplied evidence quote does not literally occur in the original query. decodeQueryFocus rejects it before use; resolver applies conservative unknown. This is not a timeout or a model-requested legitimate unknown.",
+      "evidence_quote_characters": 22,
+      "output_canonical_sha256": "4c458271157f41092caf5c98c674826ff1c81d6e42ee86d26fd02e2525d4f422",
+      "final_question_correct": true,
+      "guard_source": "artifacts/priority-transition-batching-20260909/service/src/query-focus.ts:27"
+    }
+  },
+  "performance": {
+    "runtime_started_at": "2026-09-08T23:16:10.826818+00:00",
+    "runtime_finished_at": "2026-09-08T23:28:28.825402+00:00",
+    "runtime_ms": 737998.584,
+    "eval_started_at": "2026-09-08T23:16:24.046Z",
+    "eval_finished_at": "2026-09-08T23:28:28.464Z",
+    "eval_ms": 724418.0,
+    "all_add": {
+      "count": 43,
+      "sum_ms": 154910.20983299997,
+      "mean_ms": 3602.563019372092,
+      "median_ms": 1.082749999999976,
+      "min_ms": 0.5354580000000055,
+      "max_ms": 58657.351042
+    },
+    "prefix_add": {
+      "count": 38,
+      "sum_ms": 67.06400000000008,
+      "mean_ms": 1.76484210526316,
+      "median_ms": 1.022208500000005,
+      "min_ms": 0.5354580000000055,
+      "max_ms": 19.34895899999998
+    },
+    "fresh_add": {
+      "count": 5,
+      "sum_ms": 154843.14583299996,
+      "mean_ms": 30968.629166599992,
+      "median_ms": 35084.33283299999,
+      "min_ms": 3731.2994589999726,
+      "max_ms": 58657.351042
+    },
+    "search": {
+      "count": 47,
+      "sum_ms": 86253.3755430002,
+      "mean_ms": 1835.1782030425575,
+      "median_ms": 1542.68274999992,
+      "min_ms": 1313.6016669999808,
+      "max_ms": 7581.551665999985
+    },
+    "focus": {
+      "count": 47,
+      "sum_ms": 65046.85325000016,
+      "mean_ms": 1383.9756010638332,
+      "median_ms": 1080.920582999941,
+      "min_ms": 878.3560419999994,
+      "max_ms": 7118.259915999952
+    },
+    "unattributed_eval_residual_ms": 483254.41462399985,
+    "timing_limit": "Frozen eval does not independently time Answer or Judge. Residual includes both plus scheduling/logging/other overhead and is not either measured component. Search already includes focus and embedding; do not add focus time twice."
+  },
+  "processes": {
+    "controller": {
+      "pid": 95624,
+      "process_identity": "Wed Sep  9 07:16:09 2026",
+      "status": "finished",
+      "exit_code": 0,
+      "alive": false,
+      "started_at": "2026-09-08T23:16:10.826818+00:00",
+      "finished_at": "2026-09-08T23:28:28.825402+00:00"
+    },
+    "children": {
+      "sleep-prevention": {
+        "pid": 95637,
+        "process_identity": "Wed Sep  9 07:16:10 2026",
+        "exit_code": -15,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-08T23:16:10.838460+00:00",
+        "finished_at": "2026-09-08T23:28:28.824165+00:00"
+      },
+      "service": {
+        "pid": 95649,
+        "process_identity": "Wed Sep  9 07:16:11 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-08T23:16:11.456681+00:00",
+        "finished_at": "2026-09-08T23:28:28.824181+00:00"
+      },
+      "judge": {
+        "pid": 95653,
+        "process_identity": "Wed Sep  9 07:16:11 2026",
+        "exit_code": 143,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-08T23:16:12.004562+00:00",
+        "finished_at": "2026-09-08T23:28:28.824184+00:00"
+      },
+      "judge-preflight": {
+        "pid": 95656,
+        "process_identity": "Wed Sep  9 07:16:12 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": null,
+        "started_at": "2026-09-08T23:16:12.311279+00:00",
+        "finished_at": "2026-09-08T23:16:23.757483+00:00"
+      },
+      "locomo": {
+        "pid": 95711,
+        "process_identity": "Wed Sep  9 07:16:23 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": null,
+        "started_at": "2026-09-08T23:16:23.767596+00:00",
+        "finished_at": "2026-09-08T23:28:28.608612+00:00"
+      }
+    },
+    "all_owned_exited": true,
+    "final_status_alive_note": "final-status.json was written inside the controller and contains its then-live snapshot. This report separately rechecks current process identity after completion.",
+    "monitor_gaps": [],
+    "shared_Ollama": "The preexisting shared Ollama process is outside run ownership and was not stopped."
+  },
+  "causal_limits": [
+    "The initial 8717 run remains 0/47 with 47 service_error judgments. This recovery reuses its 38-write prefix with a new candidate and newly sampled tail outputs; 36/47 is not a controlled code-only score gain.",
+    "Live state-transition requests used single batches of six and twelve pairs. There is no live multi-batch acceptance evidence. The original 27-pair case was split 22+5 only during exact recorded-prefix offline validation with synthetic uncertain decisions.",
+    "No old predictions or judgments were rewritten; no extra model counterfactual, retry run or rejudging was performed for this report."
+  ],
+  "question_results": [
+    {
+      "qid": "conv-43#q0000",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "97cc3ffeccb8104cecb5e1270d0e7d7a239a7888f65abc3161c2bb2374927754",
+      "judgment_canonical_sha256": "49ce59bc01b06761f64caa6c0c619944f0e6090e9998a5118e84136c6a8d8993",
+      "search_elapsed_ms": 1519.0437920000113,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "991a4145-9c63-4ae9-8fe4-cccfe77e3cc0",
+      "focus_elapsed_ms": 1225.1672499999986
+    },
+    {
+      "qid": "conv-43#q0001",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "0d818f8e52b51a64e000aa839b8b6b50dbf5238102382696345d326b976514da",
+      "judgment_canonical_sha256": "7b0813c8b8cc5292dd4c7b6195033ea476e505cdef300e746e15dd954a69e2ed",
+      "search_elapsed_ms": 1551.8328329999931,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "cbe15bce-fa53-4699-8c8a-513ef680c491",
+      "focus_elapsed_ms": 1013.5742500000051
+    },
+    {
+      "qid": "conv-43#q0003",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "ff4f39380f61258073287f0b0ea61e2bd7b7c5c439205e5ebc15cd668591b45a",
+      "judgment_canonical_sha256": "b3c608293bc34b2b3bf609fdabf4656e5d3c0161f4ff73b2a178b9a8f8c79ee2",
+      "search_elapsed_ms": 1940.8726669999887,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "702d6c11-990f-4d76-bcda-2a4adc3e46e5",
+      "focus_elapsed_ms": 1442.4769169999927
+    },
+    {
+      "qid": "conv-43#q0004",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "cb39e60c84881c4a7fb2f707dffdf499ce40d99d21343136a24c08a716f3305c",
+      "judgment_canonical_sha256": "aed412619e4233861256206e607adc521e629e915baa5d31b3e0c0d43cfb9052",
+      "search_elapsed_ms": 1478.8432499999763,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "6ebdacd6-15c8-488a-b5e0-e9f881d34594",
+      "focus_elapsed_ms": 996.1535830000066
+    },
+    {
+      "qid": "conv-43#q0005",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "b511af5a71b077dba6e2b0bd9326717d8fbdba7b560dbdb4e9a09a0c596f7d90",
+      "judgment_canonical_sha256": "2d8d08683881076f138b6025f9fd5fd52acb30cb01e0fe3afd64cce181878908",
+      "search_elapsed_ms": 1496.9512500000128,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "d020aa0c-6279-44ae-a620-53924be97a16",
+      "focus_elapsed_ms": 1029.1300000000047
+    },
+    {
+      "qid": "conv-43#q0006",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "a3ec3bc27f42fc383cbf18daa10950c0da33f51ee8b97bf20ac4d58ae059616a",
+      "judgment_canonical_sha256": "e250bb3c130c9f95539594bfe4ac066a4977c29a8e150fbf96ee71be600e1a71",
+      "search_elapsed_ms": 1485.1717089999875,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "aa9e1810-6f85-4a90-89d8-5df69546c8f7",
+      "focus_elapsed_ms": 1022.086083000002
+    },
+    {
+      "qid": "conv-43#q0007",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "254bdc5bcca3faf652df4466e569093d7ac783547918fa421592cbc5e57aadf0",
+      "judgment_canonical_sha256": "f6004815c8ea416ff838e324194cbcc30785a2df389237cdc1bcee8bf77c851f",
+      "search_elapsed_ms": 1406.4923750000016,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "1657da61-d4cd-4dec-80dc-d878a2b87285",
+      "focus_elapsed_ms": 952.9513330000045
+    },
+    {
+      "qid": "conv-43#q0008",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "3cde9c2e910acc4bb5536cb5fa9ceb53bdd284ee709820a890e320bd906768d3",
+      "judgment_canonical_sha256": "3366f879c7a4bf70b073c2b09dccbb9a23ceafb1bac02bc85418bebe35e3ccab",
+      "search_elapsed_ms": 1354.458249999996,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "3ef988ea-7fca-4c6b-8dbc-2e33c4b45590",
+      "focus_elapsed_ms": 944.9337090000045
+    },
+    {
+      "qid": "conv-43#q0009",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "53bdaef3bd2e750cd5a696ddd80451b7c9fb68ecac25ebe3423cd6568cebd9a2",
+      "judgment_canonical_sha256": "a4a557fe69e580ccc0f90d4c05deb2ae75d2a05f0d416407c439b5e80e8f8673",
+      "search_elapsed_ms": 1647.7573749999865,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "3ac05d44-b198-40b6-b531-f43f7a2fb551",
+      "focus_elapsed_ms": 1202.7035000000033
+    },
+    {
+      "qid": "conv-43#q0010",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "7f133f8c1eda6f202f7b75bd687c888b984125c5931aee7bced478ce940cec47",
+      "judgment_canonical_sha256": "1b707b42278573e790ab191831048b130fd9790dfd2e1564e69cbdd6122af835",
+      "search_elapsed_ms": 1845.5309170000255,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "b142412e-1460-451c-a9be-ff6cecae111d",
+      "focus_elapsed_ms": 1487.8583339999896
+    },
+    {
+      "qid": "conv-43#q0011",
+      "category": "2",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "1395f5fdecc27bdd4e28cffe5fbf50ed76d98a1b018150dd63b3ea0b690c0bb4",
+      "judgment_canonical_sha256": "cdf86b30b4fb93506df4b2524adec72d9cb986528c5aeb6e6c13adcb279147a5",
+      "search_elapsed_ms": 1703.507958000002,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "f8c7d801-bd88-4ed1-9544-5e78a57f4246",
+      "focus_elapsed_ms": 1230.297208999982
+    },
+    {
+      "qid": "conv-43#q0012",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "a52a976ed61a77352de5d96065e83134a9f41fa282684c493b8bfd9c4664b004",
+      "judgment_canonical_sha256": "3eba26c06da6f47002ba45d966eb521fbe0038947ebb8bddeadbf6f627d71f9d",
+      "search_elapsed_ms": 1621.3199579999782,
+      "focus": "unknown",
+      "focus_outcome": "fallback",
+      "focus_calls": 1,
+      "focus_trace_id": "4b28e415-334e-45f5-a436-1864aa09c8b6",
+      "focus_elapsed_ms": 1183.7710829999996
+    },
+    {
+      "qid": "conv-43#q0013",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "3067f3aed47314af2064ab88fb1566853a63fce9affe6c047d03268139e26188",
+      "judgment_canonical_sha256": "32d1014e7f9b50e8aa1b59e5f2e4c09502187352d567c5c7795887c77eeb98f9",
+      "search_elapsed_ms": 1455.2064169999794,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "086a012d-3961-4513-9196-af7878b3ac27",
+      "focus_elapsed_ms": 1005.2828750000335
+    },
+    {
+      "qid": "conv-43#q0014",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "b5442f261058af6609767779dae81031155a655784773feac3bcb92191bdb615",
+      "judgment_canonical_sha256": "952b07e3c2b461c4cd7a88668e2dbb7b6f4e37105e03bd7ee4d55a44a9b433c9",
+      "search_elapsed_ms": 2096.605209000001,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "0adf319d-3dfb-4f2d-bdfb-2f912c1ef62e",
+      "focus_elapsed_ms": 1655.513541000022
+    },
+    {
+      "qid": "conv-43#q0015",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "f8f477c1739e91c29ae98a18bf3cd5694f0a5894b4d49cd032bc7979a0cf03c3",
+      "judgment_canonical_sha256": "a517bd468358f01fd294323eab14934a7973c8b1353eef1e6ec810d98cf23426",
+      "search_elapsed_ms": 1513.0114169999724,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "b0cbaec0-edeb-4a7f-a747-8fa0dff68d63",
+      "focus_elapsed_ms": 1060.4541249999893
+    },
+    {
+      "qid": "conv-43#q0016",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "ba814579eb292e0e7bddd204b897b3470aab8c9edde5dde296b698288ac80bdc",
+      "judgment_canonical_sha256": "5f3e44470d6092412d78af488a0d3d6352e448f3237757a13132bd961f63c7a6",
+      "search_elapsed_ms": 1398.8014589999802,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "6303e6aa-4baa-4838-afca-8f485c159cb4",
+      "focus_elapsed_ms": 940.0112500000396
+    },
+    {
+      "qid": "conv-43#q0017",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "44cb29bb4f9e19461abd0aa94298c32c5fc2a49ebeeea35b6d4255761d3fdfb4",
+      "judgment_canonical_sha256": "3d6022cc0abd2a81927d46ec639c34c3d307e25216ac069d1427cb4c661fb0fa",
+      "search_elapsed_ms": 2185.6002500000177,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "f1c9b45d-699e-43f0-9363-5390d3c0a744",
+      "focus_elapsed_ms": 1802.6813749999856
+    },
+    {
+      "qid": "conv-43#q0019",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "a48edac97108135322af15486be7cb977366e5ccb41013c536aa1191831efc63",
+      "judgment_canonical_sha256": "ca8b9c11fea9fb2a5c136f43aea3191ffe86ccf61d7e653f6c28724e5d3c40b9",
+      "search_elapsed_ms": 1580.5862920000218,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "d3f9a6c8-4b77-4951-89b0-16a21dc88c01",
+      "focus_elapsed_ms": 1142.7760830000043
+    },
+    {
+      "qid": "conv-43#q0021",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "8b9ff6c2546d540bb1f34d5e36d044dff7721921650a8614c1a3ff94de7cb964",
+      "judgment_canonical_sha256": "c92eba1e0ef739d4f4d93ab24845f5882ffd40fe673199bbb2585968da7c194b",
+      "search_elapsed_ms": 1423.0729169999831,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "d768f2d4-30e0-42f1-880c-f08bdddbfc12",
+      "focus_elapsed_ms": 977.6829160000198
+    },
+    {
+      "qid": "conv-43#q0022",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "a821defb223d8c26c5552d0c9fb6166ac884002aacc54005ae67af4a1e283335",
+      "judgment_canonical_sha256": "f08cfd4b9a4b60694592dfe08bb02cf89da4c35c511117652e9484e4f3640eff",
+      "search_elapsed_ms": 1500.7432910000207,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "131cb050-b5b5-441d-b5d2-af348e1ef165",
+      "focus_elapsed_ms": 1138.1146670000162
+    },
+    {
+      "qid": "conv-43#q0023",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "1e8d594276616f7584a6c0afcd83387cfb4877cc433baf83eb9025ea0577be08",
+      "judgment_canonical_sha256": "a9721fd1361cff0caea5fa1f7f7b9e22feb3fd713a58907b2814c0be772698be",
+      "search_elapsed_ms": 2114.100625000021,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "9d370666-6896-4d23-9ef1-d3e4b34bff13",
+      "focus_elapsed_ms": 1682.5999999999767
+    },
+    {
+      "qid": "conv-43#q0024",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "6ffd0716ba34417f8f183106f67c7c2a1b3fd4bc75899a586e4781375dc8933f",
+      "judgment_canonical_sha256": "1b7cc7b5b0ea38fc0c38e82a18eff9efd7c24641b7740739b558dfc48fe6cd18",
+      "search_elapsed_ms": 1326.0232500000275,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "f8742f10-87c4-4212-b363-62e66602d232",
+      "focus_elapsed_ms": 967.3706670000101
+    },
+    {
+      "qid": "conv-43#q0025",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "2299cfc3ce11712eb9bb8c5c85070929afcbc1639a4a6dd9be4f5350ac206fcd",
+      "judgment_canonical_sha256": "2e70dcd2bbe37bc0c8866c14a8dc753f739e866f7637367e59b2a4127a9a4ce5",
+      "search_elapsed_ms": 1313.6016669999808,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "0ac4b3c7-ff87-4c6b-b590-15c0a4195e80",
+      "focus_elapsed_ms": 938.3815000000177
+    },
+    {
+      "qid": "conv-43#q0026",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "41a9b3f8a1fd586f7bd3095d9e87ddb95b86753d327a8ad196dc5caee86f96dc",
+      "judgment_canonical_sha256": "ab8e0dfea85f4a5031dac9cec72f2f269bea470f517fa9c3153af461a7e8c86d",
+      "search_elapsed_ms": 1861.2666250000475,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "773e3740-dd0e-4e36-b783-6a169934ea9a",
+      "focus_elapsed_ms": 1427.9172499999986
+    },
+    {
+      "qid": "conv-43#q0027",
+      "category": "2",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "65ef1b64bdc256ea49b7da1157c22aa1a47fb09fc9a225db6f6ba89a7c65900a",
+      "judgment_canonical_sha256": "9f73979c2b58aee9c51ae3ebea4842f58ff47976205a1039ae81831eb88d8350",
+      "search_elapsed_ms": 1628.9044160000049,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "ddff9908-d3d1-4c26-846d-c7bf786d5b24",
+      "focus_elapsed_ms": 1259.332791999972
+    },
+    {
+      "qid": "conv-43#q0028",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "d24c8cf6a853279501fe7e0669f525f9e6a57753c7ddbedadd9405a47a05c458",
+      "judgment_canonical_sha256": "c0e1c67d4abb87b3cf9d00c724b08ab57681a1ed526e733f81b1e15f791f0916",
+      "search_elapsed_ms": 1445.9674579999992,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "60721946-eeac-4b80-9294-8ed2605897e6",
+      "focus_elapsed_ms": 1006.8522910000174
+    },
+    {
+      "qid": "conv-43#q0029",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "0c0e0f6e945ed32f9da69b753822a4503a607992118d691c317c621324bd9c43",
+      "judgment_canonical_sha256": "ca22708c9e1547be95dbaf9557eb1aed7669ae7176582b38fafbc1848bacfdd0",
+      "search_elapsed_ms": 4962.516917000001,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "9dffbb74-fed7-4fb5-98d0-763bf0ddd747",
+      "focus_elapsed_ms": 4538.72775000002
+    },
+    {
+      "qid": "conv-43#q0030",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "c55bd056dd571381669ccd4fc48cb2dde56e6eb3f5c08296dd3cbbced249450f",
+      "judgment_canonical_sha256": "ee44abd4d4ee1b3f0ad7723ba6955a8b895426a5acbef80027e807f1b2ed5ca4",
+      "search_elapsed_ms": 7581.551665999985,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "e198612c-41f2-4440-a4b7-5699fceafc88",
+      "focus_elapsed_ms": 7118.259915999952
+    },
+    {
+      "qid": "conv-43#q0031",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "339d0e8c521105d806f568b928b51c91b43ff440871d191fd2821be5e9ed4247",
+      "judgment_canonical_sha256": "8361bc59b6b83f7b3f6e3fd34e0210d73a57fe1c2c90cc82baf2ece2684ab2b7",
+      "search_elapsed_ms": 1522.1255419999943,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "33b4b239-669b-435d-be64-e45bd85b66d3",
+      "focus_elapsed_ms": 953.4877090000082
+    },
+    {
+      "qid": "conv-43#q0032",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "3a718b7f0c8b402fe1c2ab2a30d87d1ec2af1e6bbdfe61fb0ceae996d53978bb",
+      "judgment_canonical_sha256": "6fb561f254e0778d9b5c8abd2713494d1852927572a0efddc315379434e1d2ad",
+      "search_elapsed_ms": 1472.574707999942,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "1a61220a-4977-42b1-a045-46de3cd9d589",
+      "focus_elapsed_ms": 994.500667000073
+    },
+    {
+      "qid": "conv-43#q0033",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "2da897a90ea202939f6afa7fd9200288f1ff39d017fe594652166fe63afd7638",
+      "judgment_canonical_sha256": "512f7f3172b68d8713d0dad5d2735acc46797feb0c4a331c78ada5cb6d3f3f18",
+      "search_elapsed_ms": 1548.4899580000201,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "28339f22-4632-410c-a249-c78f4ce82c0d",
+      "focus_elapsed_ms": 1080.858375000069
+    },
+    {
+      "qid": "conv-43#q0034",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "84cd5abb9d845eb6ed3d79b91ebbbf832d6d95d051588ffffab3ce43a1c9cf04",
+      "judgment_canonical_sha256": "a3d89db9ae5c9910ba818ce021186e676cf4054c1d032339b3319fb054304249",
+      "search_elapsed_ms": 1338.189209000091,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "692ac1c6-2c74-48c2-9c36-a49d3d61eb49",
+      "focus_elapsed_ms": 878.3560419999994
+    },
+    {
+      "qid": "conv-43#q0035",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "118ed9e2b934373159fdde47b7223511edf1d11e81009d2310f2518af4cdcfda",
+      "judgment_canonical_sha256": "21c5cf1b80c599dcc94b91c7a68f9ad836781204822eaa8519726ca6deca98eb",
+      "search_elapsed_ms": 1528.8258749999804,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "b38c4959-99fd-4426-99f8-a8d82b74557c",
+      "focus_elapsed_ms": 1074.0200829999521
+    },
+    {
+      "qid": "conv-43#q0036",
+      "category": "1",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "e1cd1e57b246d5796b68219e2459df4f7323d44e46208a13ae051e224c9b374e",
+      "judgment_canonical_sha256": "ba307864de8cb1d898894e8918f9490b1e3ba6775e38af36a99eb18a955c3c29",
+      "search_elapsed_ms": 2457.9370000000345,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "5efb836d-c15e-4163-ae06-fcdc31ca93c6",
+      "focus_elapsed_ms": 1910.374833000009
+    },
+    {
+      "qid": "conv-43#q0037",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "8597beda1f170bcf6012ffc9452e4735c683b669454e7f87ff026a543c2ad8e4",
+      "judgment_canonical_sha256": "76889c8011fcd3071f864e6645d5c56c1b9ec45d5e2a53331d710cf2e3e91569",
+      "search_elapsed_ms": 1758.220500000054,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "a9e0936d-5f18-4286-83c3-3879ec66a583",
+      "focus_elapsed_ms": 1268.2698749999981
+    },
+    {
+      "qid": "conv-43#q0038",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "6ba5b03ce7f27ba39a673a652f263b8c7d8928a3383916f1cdd8984ae5439f20",
+      "judgment_canonical_sha256": "e0dab534b85c79a4188811110f9bbde571ed51e2c0fd7b2b55ed574880676841",
+      "search_elapsed_ms": 2203.9839159999974,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "6a0b4d8d-7f6a-4a54-8e0b-f8f18532c54d",
+      "focus_elapsed_ms": 1734.645666000084
+    },
+    {
+      "qid": "conv-43#q0039",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "98cf70c4fa0e426f588ab5ccb172ddaa8ae0eeeb9bf0724d373b83760b756929",
+      "judgment_canonical_sha256": "fec419b632f8e63cf89db569d4756536892eb3fa28ef6c7f1c6c3fed92118694",
+      "search_elapsed_ms": 1709.2141250000568,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "eed7def6-5af9-48ce-bde6-a0eb8fe66875",
+      "focus_elapsed_ms": 1234.112458000076
+    },
+    {
+      "qid": "conv-43#q0040",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "a4c53c863dc1f8af009127cb3ad08aa43256a36bcd3d25e19337e0072f2bcbea",
+      "judgment_canonical_sha256": "809f4a34f5789982653b100c4a71ebf700b8d6acdbab5110626257798bfc96bd",
+      "search_elapsed_ms": 1480.8179170000367,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "ca6a1ed7-1148-4eab-9f57-d3ef50ab8e21",
+      "focus_elapsed_ms": 1007.8142920000246
+    },
+    {
+      "qid": "conv-43#q0041",
+      "category": "2",
+      "status": "judged",
+      "correct": false,
+      "query_sha256": "89f38637209d92aaa556b589b347fab9d9878745f96eae9fc3a6c646fc8184ce",
+      "judgment_canonical_sha256": "735bea4c848afe2ce99ee7e49bda54b48af6a5f7eb10c5db786b918b57710dc1",
+      "search_elapsed_ms": 1484.2561670000432,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "1e65a75c-7669-44ab-a19e-3e2dbab38a83",
+      "focus_elapsed_ms": 1014.686791999964
+    },
+    {
+      "qid": "conv-43#q0042",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "93893693e1a57cf026441521edd6426407598fc28ff57c4e2b2fde64acf239a7",
+      "judgment_canonical_sha256": "d04de19e4e34c796539611923f3d5e3cf819f9ced05f8544041e32ceab1da508",
+      "search_elapsed_ms": 1920.8012090000557,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "6a118cc4-bbbc-4f86-801b-c8d732cecd70",
+      "focus_elapsed_ms": 1428.3339589999523
+    },
+    {
+      "qid": "conv-43#q0043",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "2665c1de1adfe810c397cc8c234b871479414814b72ceedeb7d0d8f5168f70f1",
+      "judgment_canonical_sha256": "e41254f99ced1a3ea4d100cd64a6a492183fd67d9792c5f44eff72718fea8087",
+      "search_elapsed_ms": 2028.6646660000551,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "69f1b9a1-457f-466e-938e-1fd1b47ebf3e",
+      "focus_elapsed_ms": 1560.1030000000028
+    },
+    {
+      "qid": "conv-43#q0044",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "d8783c18ca172b915b4addf8471fb6bb81abde62b586c9ccbf93d16ee43d4aef",
+      "judgment_canonical_sha256": "461facf3c9c29594b4406d2801707fb90dd27d7b3c1b305104ece8fbf4f8fc4c",
+      "search_elapsed_ms": 1374.5188749999506,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "ed5b9c13-30cd-4474-aa0c-cbf0c6b329e7",
+      "focus_elapsed_ms": 902.0213750000112
+    },
+    {
+      "qid": "conv-43#q0045",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "6a2a275b9bc0d7cb88c4a3d70684465328ac6f1c5bb56cdb58a814aef35cb454",
+      "judgment_canonical_sha256": "9b885d41d3daa2a7d9a20d1f6b8398836a5706abc448359482e54fd2cbd94ce0",
+      "search_elapsed_ms": 1802.2727079999167,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "6907d4a6-8ccb-4bd5-98e7-0f290037da3c",
+      "focus_elapsed_ms": 1309.962041999912
+    },
+    {
+      "qid": "conv-43#q0046",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "704e466cb5a99b18f206b11fa5a88877b9630cbaf96a509528aa85bf888ecdae",
+      "judgment_canonical_sha256": "ad6d5df5c1ee5edf2c57f40b604377a9879fca79e1b191c3bdc0d7f29517aef7",
+      "search_elapsed_ms": 1452.5455830000574,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "a8d30039-e8b7-4699-ab4c-718b9aa34002",
+      "focus_elapsed_ms": 960.1311250000726
+    },
+    {
+      "qid": "conv-43#q0047",
+      "category": "1",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "4e75bd66a5df1380a79e2454b0cf8095a11c400e15be728a2a7398e6311b822e",
+      "judgment_canonical_sha256": "3e7d6db33ae106310cb4e3e51320494f701b343a37e61688b9ed1f87c24e9e3b",
+      "search_elapsed_ms": 1542.68274999992,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "d8246443-fdfa-4db5-b7ea-cca4c04fd7d4",
+      "focus_elapsed_ms": 1080.920582999941
+    },
+    {
+      "qid": "conv-43#q0048",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "ea5e447ff729a8f08ddc7015ee11a454b31d53a921a1c00f017b775da76f90bf",
+      "judgment_canonical_sha256": "46fb9d99cc43acfc3e932b94141410e874d49a4ea808e39231766a9708783ed4",
+      "search_elapsed_ms": 1767.3478749999776,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "5844a3ff-0183-471e-aebb-c241323ddb67",
+      "focus_elapsed_ms": 1305.3823749999283
+    },
+    {
+      "qid": "conv-43#q0049",
+      "category": "2",
+      "status": "judged",
+      "correct": true,
+      "query_sha256": "a73ed53b6465ee7869d103e920cc5ac01336dd5038708e82caf5d92d12a02dae",
+      "judgment_canonical_sha256": "fe855abf76955b96aac6a2143d1295ac965854c80df7e6afadd669ae8cf13de5",
+      "search_elapsed_ms": 1420.5647500000196,
+      "focus": "other_people",
+      "focus_outcome": "model",
+      "focus_calls": 1,
+      "focus_trace_id": "424bf195-ae64-4e5b-a998-4aa886e293ce",
+      "focus_elapsed_ms": 955.8097500000149
+    }
+  ],
+  "artifacts": {
+    "manifest": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/manifest.json",
+      "sha256": "bf34430cad6e39a8241836e2e6f9c47b7a1e38fca122fc2f805d6cc4e9556c26"
+    },
+    "ingest": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/ingest.jsonl",
+      "sha256": "1ca404a55deaed38ada5e5c0a78c82bbfa3457a1a4d6ecf7fb04f2efa94fcc7b"
+    },
+    "requests": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/requests.jsonl",
+      "sha256": "1f418d9164c194f72f0024e515b6b2fd8233988643275658c13bfd1fa712424c"
+    },
+    "retrievals": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/retrievals.jsonl",
+      "sha256": "7f4b9627199225d3a72349832e27b0558a733e097d6f2648a6a462552134f626"
+    },
+    "predictions": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/predictions.jsonl",
+      "sha256": "f7b939863cab37fbae102a58470458c733f33b8fbab5a4d6adb19aae728cd49b"
+    },
+    "judgments": {
+      "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/judgments.jsonl",
+      "sha256": "7881b8f3da135ce30de05bfc29f25b866aedd4ae144b457b9624ed34db10751e"
+    },
+    "HTTP": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/http-receipts.jsonl",
+      "sha256": "044009113507b6473f5c42b20a9530700621720a4e003152fea3be4192e12cc9"
+    },
+    "calls": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/model-calls.jsonl",
+      "sha256": "aae97ca38b2a665db8b4f52fa537d4dd588ecc9579c533a04bf0569943e9db0a"
+    },
+    "private_trace": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/model-trace.jsonl",
+      "sha256": "2efe0193d06318fb08b1cc1e6be616b61d6f52c6e5eb37de814c73d0b63b77b7"
+    },
+    "stages": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/retrieval-stages.jsonl",
+      "sha256": "4bae8c9e8e9e5dfb73cdb765d3bcb739b3affb771c0f6c0b65d49ec5cc94fcfd"
+    },
+    "private_vectors": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/search-vectors.private.jsonl",
+      "sha256": "242200b51a60a28ce423b3a9745af9d9d61a3aa8589e767d7df8f181ee38686d"
+    },
+    "runtime": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/runtime.json",
+      "sha256": "2ea178119adaa99d5992226683ae2a74cb5408fc5aa823f1728e343f634fa11b"
+    },
+    "final_status": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/final-status.json",
+      "sha256": "a2366fd0d0b842cdcb895e1a7fb792c3b509116b554b8d42aee356c0d2eecce1"
+    }
+  }
+}

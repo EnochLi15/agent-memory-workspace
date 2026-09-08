@@ -1,0 +1,1259 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-08T23:41:08.646570+00:00",
+  "task": "conv43 completed multi-hop failures: read-only claim and quote diagnosis",
+  "candidate_commit": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+  "campaign": "artifacts/priority-conv43-tail-qa-20260909-01",
+  "eval_run": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo",
+  "initial_snapshot": {
+    "judgments.jsonl": {
+      "complete_prefix_bytes": 6408,
+      "complete_rows": 32,
+      "sha256": "d2a6308bd97c1a26377780b29c1d2cfb199bfca32d2d510b345c4d35f4a37647"
+    },
+    "predictions.jsonl": {
+      "complete_prefix_bytes": 16892,
+      "complete_rows": 33,
+      "sha256": "46802b0d4cf691b2f44fcb72476e6839d63dbe3a08714dfed66d043cc1e63cf4"
+    },
+    "retrievals.jsonl": {
+      "complete_prefix_bytes": 673640,
+      "complete_rows": 33,
+      "sha256": "486d6289697032440dcf33364631d792533be6640420f0d0af00d2a3044d154b"
+    }
+  },
+  "terminal_snapshot": {
+    "judgments.jsonl": {
+      "bytes": 9411,
+      "complete_rows": 47,
+      "sha256": "7881b8f3da135ce30de05bfc29f25b866aedd4ae144b457b9624ed34db10751e"
+    },
+    "predictions.jsonl": {
+      "bytes": 23261,
+      "complete_rows": 47,
+      "sha256": "f7b939863cab37fbae102a58470458c733f33b8fbab5a4d6adb19aae728cd49b"
+    },
+    "retrievals.jsonl": {
+      "bytes": 954047,
+      "complete_rows": 47,
+      "sha256": "7f4b9627199225d3a72349832e27b0558a733e097d6f2648a6a462552134f626"
+    }
+  },
+  "scope": {
+    "initial_failed_multihop_qids": [
+      "conv-43#q0004",
+      "conv-43#q0006",
+      "conv-43#q0010",
+      "conv-43#q0022",
+      "conv-43#q0023",
+      "conv-43#q0028"
+    ],
+    "terminal_added_multihop_qids": [
+      "conv-43#q0035",
+      "conv-43#q0036"
+    ],
+    "terminal_added_temporal_qid_delegated": "conv-43#q0041",
+    "total_judged": 47,
+    "total_correct": 36,
+    "multihop_failed_reviewed": 8,
+    "definition": "原数据 category=1；其中部分问题本身含时间语义，仍按原category归属，未改题类。"
+  },
+  "inputs": {
+    "dataset_sha256": "cc53643e566824d905ab8759952928353ccca78bbd723f705fa2bb7e8e2d65e4",
+    "plan_sha256": "66640c4a5cb4cac59ba94a3aacc5dc4d586018af94105505737341ce3c7d8fff",
+    "service_config_sha256": "1ae81b6ae7b4be9438502ca0ebcd0aaf182125b5ad3186de792b594a35d33b61",
+    "retrieval_stages_sha256": "4bae8c9e8e9e5dfb73cdb765d3bcb739b3affb771c0f6c0b65d49ec5cc94fcfd",
+    "search_vectors_sha256": "242200b51a60a28ce423b3a9745af9d9d61a3aa8589e767d7df8f181ee38686d"
+  },
+  "database_audit": {
+    "access": "SQLite URI mode=ro, coherent read transaction; no backup or write needed for this terminal read",
+    "revision": 43,
+    "receipt_count": 43,
+    "fact_count": 595,
+    "raw_message_count": 680,
+    "facts_logical_sha256": "4e2644e33cf4a47d410bff02a7ca8e4087df3d240f740ef0aecce1c1c333a1a1",
+    "messages_logical_sha256": "bd9fe413e271e7f8939024cf0ae84fb11f0462301d706fba190589e89b07ef39"
+  },
+  "fixed_retrieval": {
+    "candidate_limit": 200,
+    "max_evidence": 32,
+    "token_budget": 6000,
+    "rerank": false,
+    "relation_mode": "off",
+    "experimental_multihop": false,
+    "coverage_packing": true,
+    "coverage_activation": "只在现有intent.list或trajectory为真时启用；本8题仅q0006。"
+  },
+  "findings": [
+    {
+      "qid": "conv-43#q0004",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "cb39e60c84881c4a7fb2f707dffdf499ce40d99d21343136a24c08a716f3305c",
+      "gold_sha256": "c55d5990e86ffe0d55625e228f938fb49bdfe47f34534e97e39288ae86d64e86",
+      "prediction_record_sha256": "2a5e963c4e5dc25c40c64cdeed9d289d8042a9d34e5939345335c13f97c8e114",
+      "judgment_record_sha256": "aed412619e4233861256206e607adc521e629e915baa5d31b3e0c0d43cfb9052",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 4787,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "355a41bfdca808292e86e6110c5e27e565b350129df2b812e98d2e4598dc2e54",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 4,
+        "total": 4,
+        "any": true,
+        "all": true
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "answer_or_reference_scope_ambiguity",
+        "confidence": "medium",
+        "conclusion": "已选正文与原文引用包含全部参考答案所需的关系，回答也逐项覆盖。回答增加了有原文支持但参考答案未枚举的项目，并对题目措辞加了不必要的限定。二元judge未给实质理由，不能据此证明检索失败，也不能直接改判。",
+        "mechanism": "参考集合可能不完整；有证据的额外项目与回答范围限定可能影响精确判分。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "reference_relation_1",
+          "fact_id": "0dea2da65603a249b7f7cec35eafad990350232058c76a573c1c49d07f241b86",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "b0becf94a0b2cb0753ad955e454dc33a036ed160623f777b40fb76b349dac0d3",
+          "claim_sha256": "19866346324dfc24a04cdfc917cdd7285f226995d870369275f54f8f4e6635d9",
+          "quotes_sha256": "bde1511994c54a51702fa0f11802318c585157746f650b8fcc4edced040c4e2f",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "46826d8160dbb28391ae302893e407e25d87c67b81ab7c2729b333e1588f5933"
+          ],
+          "source_bodies_sha256": [
+            "b0e6ad76258ebfb930159578ea20a5c6d2cd175c7bc8f4cf2083798556dcf40a"
+          ],
+          "visible": true,
+          "candidate_rank": 1,
+          "selected_rank": 1,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "80107f0bf1ac03a1bedcba65f5096f3cbfbae640323ec1e82cc448d91bd94869"
+        },
+        {
+          "role": "reference_relation_2",
+          "fact_id": "b79202776984131898fd8e45db5dcfafd86b962c2400389491e985a1fb9fcdd6",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "38838a18331e5e10e662d34cc9bff3c6b7c0cb1bfadbe3e3da611a47e58528be",
+          "claim_sha256": "886cf9503d4eee176bea674d0de2ac5a7ee331c12f120173814b8c033de6e54e",
+          "quotes_sha256": "4d0c8f6e66d61c7fc08f515c98084f66bff2288cc954749af94a624c2094db36",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "46826d8160dbb28391ae302893e407e25d87c67b81ab7c2729b333e1588f5933"
+          ],
+          "source_bodies_sha256": [
+            "b0e6ad76258ebfb930159578ea20a5c6d2cd175c7bc8f4cf2083798556dcf40a"
+          ],
+          "visible": true,
+          "candidate_rank": 2,
+          "selected_rank": 2,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "14be2f8e4b08e66836bf484c9fd8ea93d563baf4a7038e2211e525cddb1d0f53"
+        },
+        {
+          "role": "reference_relation_3",
+          "fact_id": "4c51e51c23558240bdb3c8938de63006dc6c7b3420d9fa0d0a65ba5e27609c4e",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "ea0fbb1e8bac6c7c876d43319fdec89640e6f6b1b6fd999ee11520eab999d873",
+          "claim_sha256": "d8ee0ecc09bb364e82252349cd12a69f2962a13448eac771d80159520876392e",
+          "quotes_sha256": "bb7506da332dad36691b63f5088c7e5d3d4b848dd7e931784738e9e356dbba54",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "49d5cf8d2b4a2a9a2a1c4e227f1251bd7256bdec2eb922b34a03f901998ebc0d"
+          ],
+          "source_bodies_sha256": [
+            "024cc951c7beea88a0171070906ab77c4535bb1601ee5888f8133a4481f71829"
+          ],
+          "visible": true,
+          "candidate_rank": 10,
+          "selected_rank": 10,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "cba56d15af65c9b2f0cc60744e22227a99335bfb1b63e53b5a6824055060bc7a"
+        },
+        {
+          "role": "extra_supported_relation",
+          "fact_id": "927458cfd48a3dbb09b4ed1786d3f6f77426ead639fb0c45fa5bf542b675f17e",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "72247dc62216f215d29897b00063d167d28c6ee5d4eac65912462e3f1c832a1c",
+          "claim_sha256": "cf5062c62d42b30efcf6bbfb19ff2c5799615b9740860ecfd1d1408861154e49",
+          "quotes_sha256": "e1677232851d7945ddcb3f3a4d19af012c1741fbb34cd90b4fbd45b7af7b2e12",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "b0847c1c75128614d3515456651747e85c293463513f3a55c4fabc40207a2952"
+          ],
+          "source_bodies_sha256": [
+            "af4e344655d0a2846ef344443704ee377f63f8e624679accb532fefc811fd012"
+          ],
+          "visible": true,
+          "candidate_rank": 16,
+          "selected_rank": 16,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "d1dffd1b5d23cc915d9d6f8bbe69df76e41f7dd14b67dad5ae2dfc0369bb58e1"
+        }
+      ],
+      "raw_anchors": []
+    },
+    {
+      "qid": "conv-43#q0006",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "a3ec3bc27f42fc383cbf18daa10950c0da33f51ee8b97bf20ac4d58ae059616a",
+      "gold_sha256": "674b2a469a3b0214903b57eb983dff4f9b346307f841332be9d28833b9418fd9",
+      "prediction_record_sha256": "51fc7713836e88f8d41f8c09a6d98a7bd70dfd6ffbe9809c16c05e876d203af7",
+      "judgment_record_sha256": "e250bb3c130c9f95539594bfe4ac066a4977c29a8e150fbf96ee71be600e1a71",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 5911,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "ea9c74ea98e9560d4e09a9c070706b4c86a8ea160957d4c0105137626dbca672",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 2,
+        "total": 4,
+        "any": true,
+        "all": false
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": true,
+      "diagnosis": {
+        "layer": "candidate_pool_and_count_limit",
+        "confidence": "high",
+        "conclusion": "被排除主题之外的活动证据仍是active事实，完整原文也仍在库。一个完整活动事实进入候选184后因count-limit未选；另一条明确爱好事实不在200候选内；较短偏好事实在57但也未选。实际回答看不到该替代活动，所以否定回答与缺失上下文一致。",
+        "mechanism": "问题的排除条件没有成为证据选择约束；占主导的被排除主题累积很多候选。现有list覆盖奖励不保证覆盖排除后剩余的答案部分。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "alternative_activity",
+          "fact_id": "30632b9a1ea8753b465476fdee4d0c919758c55df7c1c309ad48455813285e4a",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "5bc429e960459a9d72a8c2af265568e7b233d2e19d8872dbb9f378999de07fdf",
+          "claim_sha256": "72f3fa65e903c88c560819f708adea60143105881ad97528f8b8948200f85111",
+          "quotes_sha256": "d32ccdfab56d1b7489e5060e4454e74995e26c4b2eda185f84657dc15ec9105d",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "b508ffb8f98f941e8adcee5854635945003a9a14e4271ecb34706b95c5e75b6d"
+          ],
+          "source_bodies_sha256": [
+            "684ccdb3993c258374586c9aaaaac7362297e4665aa703ec70dfa54aea818d2b"
+          ],
+          "visible": true,
+          "candidate_rank": 184,
+          "selected_rank": null,
+          "routes": [
+            "semantic",
+            "entity"
+          ],
+          "discard_reason": "count-limit",
+          "selected_complete_content_sha256": null
+        },
+        {
+          "role": "explicit_alternative_hobby",
+          "fact_id": "198793511b7cb09e48e49fb85f74e8dd2c991479f6587eeca84307ae3cc445a7",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "f7be44c9c7f99ccb0948cbc373afd13a6334dbc941307dc9d6809fdf8616ab61",
+          "claim_sha256": "f7830e38b62f876dca523cada677a6d9d69ec3dfa336e86f8b70cecdc38f5f27",
+          "quotes_sha256": "018e3f05ecddeb1d31bc1e5cabb1515d93b808c6c92ccb4db26318133e5522fe",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "491ea1b458331e23f1048ed26e53dfeb378ac83b156ac1a3fbcb1bcfdc9f85ca"
+          ],
+          "source_bodies_sha256": [
+            "892eae1bf0252da87cb89872d837427a408bcbe44d7eb88c092b43cd7c50bd55"
+          ],
+          "visible": true,
+          "candidate_rank": null,
+          "selected_rank": null,
+          "routes": [
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": null
+        },
+        {
+          "role": "short_preference_requires_source_context",
+          "fact_id": "3e076d19bde75f37bdb9dc22a11eb474d8f4b6cf4978d80e9af868fd39dc3e03",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "1c98dedfaca726dfb657c2abf93d575c43a8e66573794a305dc2d852c48e3d2d",
+          "claim_sha256": "ea4b307b51788bf242b90a389a43c80c4687b61393c0acf91dc6cf90127d8c39",
+          "quotes_sha256": "fbc6e5506959a92341975aed9044876093e6ae5c28aad446f493aa972c04d78e",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "491ea1b458331e23f1048ed26e53dfeb378ac83b156ac1a3fbcb1bcfdc9f85ca"
+          ],
+          "source_bodies_sha256": [
+            "892eae1bf0252da87cb89872d837427a408bcbe44d7eb88c092b43cd7c50bd55"
+          ],
+          "visible": true,
+          "candidate_rank": 57,
+          "selected_rank": null,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": "count-limit",
+          "selected_complete_content_sha256": null
+        }
+      ],
+      "raw_anchors": [
+        {
+          "source_id": "b508ffb8f98f941e8adcee5854635945003a9a14e4271ecb34706b95c5e75b6d",
+          "body_sha256": "684ccdb3993c258374586c9aaaaac7362297e4665aa703ec70dfa54aea818d2b",
+          "passages": [
+            {
+              "id": "source-b2fdd1ebdd1ed30e9f0748911460de22f9fd6680f3bccfb6a33a20919b9e3417",
+              "visibility_filtered": false,
+              "candidate_rank": null,
+              "selected_rank": null,
+              "routes": [
+                "source-semantic"
+              ],
+              "discard_reason": null
+            }
+          ]
+        },
+        {
+          "source_id": "491ea1b458331e23f1048ed26e53dfeb378ac83b156ac1a3fbcb1bcfdc9f85ca",
+          "body_sha256": "892eae1bf0252da87cb89872d837427a408bcbe44d7eb88c092b43cd7c50bd55",
+          "passages": []
+        }
+      ]
+    },
+    {
+      "qid": "conv-43#q0010",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "7f133f8c1eda6f202f7b75bd687c888b984125c5931aee7bced478ce940cec47",
+      "gold_sha256": "faa008e7e50385fe755095876369323e1729975524c231c651f01334ad1987fc",
+      "prediction_record_sha256": "bea2d013f5225c714731d402e84e2ea545014f679059f68b2e118131b29e0839",
+      "judgment_record_sha256": "1b707b42278573e790ab191831048b130fd9790dfd2e1564e69cbdd6122af835",
+      "judgment_correct": false,
+      "selected_count": 31,
+      "selected_tokens": 5972,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "907edabec0e8fde2cb5719976c62a32901e16c6a02694c66ca0224d71749e5c6",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 5,
+        "total": 5,
+        "any": true,
+        "all": true
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "counting_ambiguity_with_unannotated_budget_loss",
+        "confidence": "medium",
+        "conclusion": "五个参考来源的完整胜利叙述全部已选，回答逐条列出并区分重复复述。另一个未标注的获奖事实仍active，候选71因budget被丢弃；另一简短胜利话语仍有raw但未形成独立事实。这些话语不足以直接证明应再计一个不同比赛，因此不能断言参考计数错误，也不能断言补回即会正确。",
+        "mechanism": "计数需要跨消息的事件同一性判断，source覆盖满不代表计数依据完整；非标注但可能相关的事件仍会被预算排除。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "annotated_win_1",
+          "fact_id": "4a76138e08d5b1815a78de103fc6aaac6fba51abc758f3ce426a606e088ce533",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "f45733891a029f2a0bf4e2cf99942c1b6f58b563865a072600dbfb9cd58fc55b",
+          "claim_sha256": "9b0c735c8f480f42fdc77c6b288f02e0897e6bcba17e9e64a13925fb95f87a64",
+          "quotes_sha256": "87176c399a3a35d960043e807165ee88d5f172e48b30b17730b7a2b76ca5aaed",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "de59206e3dc76446b29b6c0d8838f5cf8794761216ab7eb7b11e7615eb6aeb0a"
+          ],
+          "source_bodies_sha256": [
+            "0f483b4023cc5b6469863f4bf939541ee83de21e67f5b646d8c51c9bba5e64fb"
+          ],
+          "visible": true,
+          "candidate_rank": 1,
+          "selected_rank": 1,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "9f02465a8c5c04d9b31fd960a50e4401ca9b29adde2e49598ce2e2cc22cf5a41"
+        },
+        {
+          "role": "annotated_win_2",
+          "fact_id": "f8d96b16a1b50363df45f09a76055ac3fda97fa795da208c7f67962cbe9f8551",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "14c79b3fd40668cdece4afa2acadc9aaae47710ec0c6049b8b39c87d874b9f04",
+          "claim_sha256": "a1352e95670242d3651895dc20be88091f10dca4d183a4df0f8352131b9aec4e",
+          "quotes_sha256": "da5c8dc201ec7f31f54bf711847a57cfd5c6bbef65a60128e829a6665a9413ab",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "b2d4b8486375ad9f507afe6ea0b461498ca63d95c1bfe9e1a25ed4a0857960e3"
+          ],
+          "source_bodies_sha256": [
+            "fbe1398f63970a77a884885144e2235f9c6e448ecd8c4cf9879133c9b79d1682"
+          ],
+          "visible": true,
+          "candidate_rank": 8,
+          "selected_rank": 8,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "e960b3aebb51f29c5375d00ab8d4b0fee1471dfd8f2d46008d9adf5a48a61aa8"
+        },
+        {
+          "role": "annotated_win_3",
+          "fact_id": "24c9d968e35c680b7ecca7cbd95d2d5115c2d6f200463e48991064917db3ef5b",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "f6746db67d49d4ece6ebf029f6930e046f0c9b392e7a0c67caa7bdbdd71ee676",
+          "claim_sha256": "58b2995a14cf818e4dab5f620b45767c53718f787a0e9431854febdb722cfb7a",
+          "quotes_sha256": "0e80e2b58d775dde04731ba43d786c50fa960a2361cd337ecb3fb54f48bc36b1",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "96fc5ae2a389ec8bea1df61eea7397c5e93c38f01ca48d4b9dd6b4cb33b49d8e"
+          ],
+          "source_bodies_sha256": [
+            "4cbe31dfbdbd0cbc547ea62222be8e907455bad941aa6aa6f3645cd818b5889d"
+          ],
+          "visible": true,
+          "candidate_rank": 10,
+          "selected_rank": 10,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "43aaee3a95be429cea30cfe8aacdd0350207746b2474c980f1c999fb92828570"
+        },
+        {
+          "role": "annotated_win_4",
+          "fact_id": "5d290b20d6905bc239f71384bf9164a22361e7491d4c27e6fb73727bb698b639",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "05ff57b70f3b0182adef81c7a47ce854878038fec47f492183a831bde7d9cbe2",
+          "claim_sha256": "fa0bffa7058dbb3689d4cb09399e9bff5b4a21d27f405fec1f332d2b0cf8a62d",
+          "quotes_sha256": "fd2ac29d6f38d46a591a0f29cc749272700939b28f36f6b66dad0c6df026db99",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "6d5310504464d0fd9bad8af08dc80c339b5d92e3db4a79578971de38477158dc"
+          ],
+          "source_bodies_sha256": [
+            "67d93cd44a1c55577aaa1ab7ed449d3677a995cfe67e30799976bdf1bdfc08d1"
+          ],
+          "visible": true,
+          "candidate_rank": 7,
+          "selected_rank": 7,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "8ab448a0c9df919a5b813240710c4825ed80f152b54ae14720907977ad545030"
+        },
+        {
+          "role": "annotated_win_5",
+          "fact_id": "77ebd8f35f1d3fa6a118facdece0bae0cfaa71109b074dd6c6f23133eb4f1f9a",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "2ebeb745a1eedef33726e3c8dfe48bcf278c3d2f7f5fac0a904c93ae34402803",
+          "claim_sha256": "9a276721887f38616a3c229dfff92125dde3d5451caa69db418efc81d444df2b",
+          "quotes_sha256": "fb2b16c71142918e49445c87979f05737207c8383dce4cd3bce8c3e51e44cd96",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "93fd11c758abb91a641fea7300d2ba2ffd5a929f521984932f2a9095462edec0"
+          ],
+          "source_bodies_sha256": [
+            "ad0ba7be0722fab565eb2bf1a3c71d613de1b78087e52d97a82c0eb2b84575eb"
+          ],
+          "visible": true,
+          "candidate_rank": 13,
+          "selected_rank": 13,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "c1574a5b1032b3176d9ce2e8927818b2699ad4d3d0dbbd4f2cd883fbbcb2dde6"
+        },
+        {
+          "role": "unannotated_award_event",
+          "fact_id": "0e82283df1a82af787317d2849756164c5641865e0f1d205639a9adf6e299dc3",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "248269ff7ed38f84d35bb2ce2117dd725ec63fc129cb87046917a4e9ecc0980e",
+          "claim_sha256": "fc439c828ba84e94bb6de29436d95d4490038d0a78ed62958f19732a15ab4443",
+          "quotes_sha256": "05e2379da8cc375dd542741b9e781db707291a27221a3fd15516e7f92b4e12cd",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "8c782cab4371e167568479535ed85af4cb25f6ae2594f3cc675394aaf3e24e36"
+          ],
+          "source_bodies_sha256": [
+            "fb20d2910755772f07acf9076ba3e9e157bcbc45f9be8bc159fa8a9645d29b9f"
+          ],
+          "visible": true,
+          "candidate_rank": 71,
+          "selected_rank": null,
+          "routes": [
+            "semantic",
+            "entity"
+          ],
+          "discard_reason": "budget",
+          "selected_complete_content_sha256": null
+        }
+      ],
+      "raw_anchors": [
+        {
+          "source_id": "8c782cab4371e167568479535ed85af4cb25f6ae2594f3cc675394aaf3e24e36",
+          "body_sha256": "fb20d2910755772f07acf9076ba3e9e157bcbc45f9be8bc159fa8a9645d29b9f",
+          "passages": [
+            {
+              "id": "source-f453c4f4c63fb549a17103fcddbcc27c7ed962d091317cc4629d85188fb4fce5",
+              "visibility_filtered": false,
+              "candidate_rank": null,
+              "selected_rank": null,
+              "routes": [
+                "source-semantic"
+              ],
+              "discard_reason": null
+            }
+          ]
+        },
+        {
+          "source_id": "9c45590c511800d6732b9f613b2c3ce39904fdb9f888570403101db772454ede",
+          "body_sha256": "642979e291d96a337dc51bcd059553b386197dc3b84144a7161b8d228bbf3563",
+          "passages": [
+            {
+              "id": "source-3d4853fa260133d785d4e5acfd819aa170c6f97c2f5c34d6c6d91b9442efb949",
+              "visibility_filtered": false,
+              "candidate_rank": null,
+              "selected_rank": null,
+              "routes": [
+                "source-lexical"
+              ],
+              "discard_reason": null
+            },
+            {
+              "id": "source-f61b12eacbd24fe61cf43c065d09aa8d701b8d0a5a1522c4f8b9a1f082eb4264",
+              "visibility_filtered": false,
+              "candidate_rank": 64,
+              "selected_rank": null,
+              "routes": [
+                "source-semantic",
+                "source-lexical"
+              ],
+              "discard_reason": "budget"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "conv-43#q0022",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "a821defb223d8c26c5552d0c9fb6166ac884002aacc54005ae67af4a1e283335",
+      "gold_sha256": "6fc5005616554f81f85e240e83091b696fd1ace8e53c1a6152781131bc47e3b5",
+      "prediction_record_sha256": "79b4304363190b35371680caaba9ae05b7ff689a420fab144a12f23de2ca5c91",
+      "judgment_record_sha256": "f08cfd4b9a4b60694592dfe08bb02cf89da4c35c511117652e9484e4f3640eff",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 4917,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "0f759b15253e203442623c03b5b0026b5a9ed543382bd3746af9ab8774c6b54f",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 1,
+        "total": 2,
+        "any": true,
+        "all": false
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "count_limit_missing_second_evidence",
+        "confidence": "high",
+        "conclusion": "第二活动的组织成员关系事实仍active，候选126，相关raw候选191，均因count-limit未选。已选装备事实只提供弱关联，回答因此只谨慎推测该活动；另一个回答列出的活动有完整原文支持，但参考未列出。",
+        "mechanism": "融合排序与32条选择未覆盖不同活动的关系证据；该复数问题未被现有list意图识别，覆盖奖励未启用。只用了4917 token，所以不是6000 token总容量不足。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "second_activity_membership",
+          "fact_id": "aa7835077732518ce8c8119e89adda114074b10bb3d20270864ced7991ddc09f",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "389cea2eed98b2de6ae3858818459a02e7cecd3c95c2b542a3e616607a6aea95",
+          "claim_sha256": "c04704195781fb2e2f21afb55990f5b896daeb148c896af5054d3d8e4daa1b27",
+          "quotes_sha256": "e630cc3c2d2470c8909ade0a81e9868ae664713c3e7b7cbbc9befbb05b4fe177",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "b029c2c409d8ffbb8d0e08e2ebb45305a2f4a2131ec055b9212e84cb6db1854c"
+          ],
+          "source_bodies_sha256": [
+            "79e293127fc9010d01f5d7a0cd6302caa66dd75062eb4b5d25bd26b54524c086"
+          ],
+          "visible": true,
+          "candidate_rank": 126,
+          "selected_rank": null,
+          "routes": [
+            "semantic",
+            "entity"
+          ],
+          "discard_reason": "count-limit",
+          "selected_complete_content_sha256": null
+        },
+        {
+          "role": "weak_equipment_proxy",
+          "fact_id": "4fe4fe643b70b4a9b271d66368e07403840103ea5ae1655754e30dd8b20bb5c9",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "a8ce510ea27ff8c67a3f2a66247f628b4f4e58b2afcdaad1f32d47397f09eaf4",
+          "claim_sha256": "34716d78663783406d838f1a1c127ed7d1af9c9daf8ac7504a4c54489d464892",
+          "quotes_sha256": "5f4ac76b015e9d7e0b1700df8d0e4fb9ce128857fcaf49f5949e759183321cf7",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "cea505414f275039b79b57f095d5e9324bdd815f06aa3190f8b1d6d1cbd6a2b1"
+          ],
+          "source_bodies_sha256": [
+            "012f6f3c1abc59dfc2d1b5f68f94a8e144b12f1d6cdc048bdcb027a86a47f035"
+          ],
+          "visible": true,
+          "candidate_rank": 1,
+          "selected_rank": 1,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "b6f2b91815c0c1d4d33cd323a59b41d770c076c36dc627e6675325fe6c5375d6"
+        },
+        {
+          "role": "selected_first_activity",
+          "fact_id": "3e076d19bde75f37bdb9dc22a11eb474d8f4b6cf4978d80e9af868fd39dc3e03",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "1c98dedfaca726dfb657c2abf93d575c43a8e66573794a305dc2d852c48e3d2d",
+          "claim_sha256": "ea4b307b51788bf242b90a389a43c80c4687b61393c0acf91dc6cf90127d8c39",
+          "quotes_sha256": "fbc6e5506959a92341975aed9044876093e6ae5c28aad446f493aa972c04d78e",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "491ea1b458331e23f1048ed26e53dfeb378ac83b156ac1a3fbcb1bcfdc9f85ca"
+          ],
+          "source_bodies_sha256": [
+            "892eae1bf0252da87cb89872d837427a408bcbe44d7eb88c092b43cd7c50bd55"
+          ],
+          "visible": true,
+          "candidate_rank": 5,
+          "selected_rank": 5,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "a2fb90473e507801a963ddf026ed1b44bdc6c7df415fbd0f4b0aea4e7409ac7c"
+        },
+        {
+          "role": "extra_supported_activity",
+          "fact_id": "6c5c124418d4c677e47bace1fe967818aaf1f73f4cf944294a3343af42839918",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "c04ac721306c55739c80c98b005dde09ecc0df1e896bfcd13a86f131db6e585c",
+          "claim_sha256": "4c8ad359497ab3ec0ac04d3a15d5e32d8526550a5b1613da8ef9cce31efd934a",
+          "quotes_sha256": "c27406b93d9b29efaef0f13707515d254a39f3a3836a4c75792c963202e52e3d",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "4379bcc24f34651fc26fc720e36bde0d4af163d239cd7e7870102cd2726aa9b4"
+          ],
+          "source_bodies_sha256": [
+            "2de700a2196a47d3362e441b03841ba889dc32b0caa4272459cf3571c745fcfe"
+          ],
+          "visible": true,
+          "candidate_rank": 28,
+          "selected_rank": 27,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "c7076d2432487ab05f3d836cdd77754ce91076385c344511faf02ce5ab0d7c57"
+        }
+      ],
+      "raw_anchors": [
+        {
+          "source_id": "b029c2c409d8ffbb8d0e08e2ebb45305a2f4a2131ec055b9212e84cb6db1854c",
+          "body_sha256": "79e293127fc9010d01f5d7a0cd6302caa66dd75062eb4b5d25bd26b54524c086",
+          "passages": [
+            {
+              "id": "source-1664bbe4bb39b78d07da745f79e6281ef4650aaccbaa18626563d40e76ff70a9",
+              "visibility_filtered": false,
+              "candidate_rank": 191,
+              "selected_rank": null,
+              "routes": [
+                "source-semantic",
+                "source-lexical"
+              ],
+              "discard_reason": "count-limit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "conv-43#q0023",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "1e8d594276616f7584a6c0afcd83387cfb4877cc433baf83eb9025ea0577be08",
+      "gold_sha256": "6ae24d30e5ad0ca7b9a3c9eb28e5ec47aff9594d97b63d55cb486b78f4d1d62d",
+      "prediction_record_sha256": "f49b6faec65a883663115d62947726211fcb39a33c6af07f8a593ae92ca8b0ce",
+      "judgment_record_sha256": "a9721fd1361cff0caea5fa1f7f7b9e22feb3fd713a58907b2814c0be772698be",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 5716,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "eaba6fcad39f775ebdf71bf0b1df18075a91505b9ce531a8740bebdd3ae412f8",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 1,
+        "total": 3,
+        "any": true,
+        "all": false
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "count_limit_missing_second_subject_relation",
+        "confidence": "high",
+        "conclusion": "第二人物的明确偏好事实仍active，候选65，含完整原句的raw候选96，均因count-limit未选。已选第一人物具名偏好和第二人物未具名偏好，缺失把第二人物连接到答案实体的关系，所以Answer只能回答半边。",
+        "mechanism": "跨人物问题的200候选里已存在完整桥接证据，但32条选择不保证每个问题人物的目标关系都有见证。query_focus只取消人物降权，不提供按人物的证据覆盖。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "first_subject_named_preference",
+          "fact_id": "fb569a26d1b01215338521342b70852a3d9d858b70877388677d420aae2806cd",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "9d05bf68103d9506f1db52baad8c77490c00becb24dbb805a793cecc5579fd26",
+          "claim_sha256": "37888d9ec4740d2937b4171e448c7692a05ee137b8c8bfe28a8a4bd75a6ef395",
+          "quotes_sha256": "4a1c12864a61a09cdb86bf16f8b36642e4966b399a740cfc085cc4b15442c792",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "a35838c1908b40d5169a71e182022b769328006e4242e16b668a2e61d8758858"
+          ],
+          "source_bodies_sha256": [
+            "a789b39164fffa12e5c7de4e0858fedcd2daed9390a8a8a8bccd8dc7f0df3e1c"
+          ],
+          "visible": true,
+          "candidate_rank": 1,
+          "selected_rank": 1,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "34ce961d797b4367876825bebcea923d0c994378be62e68e300761cbb41de6ac"
+        },
+        {
+          "role": "second_subject_unnamed_preference",
+          "fact_id": "482d5e48dcc22d4d2fae9d99f5304100b2d10269dd134ea115dad85d17be33ba",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "598047a504d353e30d9fb27447cd064ea5ee46732c70a3de6ecf3bf1df5631df",
+          "claim_sha256": "6762ad3da2164a80fa7f06d613423305165416823c1b8630569bf1d56e249d25",
+          "quotes_sha256": "0955a262f0404859bd5ef493485fced77cb6998f86fb321aed164159682460d2",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "3cb99869031a9deb06b9e0dd7fc3a724fd83bc0db0a6f4622afc0b8dfc1be19e"
+          ],
+          "source_bodies_sha256": [
+            "0d6b38ff11cc9cae77fad872507745d432804df3df8b8e15cbd987d19048cdfa"
+          ],
+          "visible": true,
+          "candidate_rank": 4,
+          "selected_rank": 4,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "c3f169390052e1b4c8039b553017a1761c3a23c1fee2beaab2780c0f09eeb988"
+        },
+        {
+          "role": "second_subject_named_preference",
+          "fact_id": "303ab8b008cb2323a58f79a9fca50c6f879686e82733cceed48550532ef1064c",
+          "state": "active",
+          "kind": "preference",
+          "fact_body_sha256": "2d79ad8acb21aace2f2259b908c51f4aae227b9ef8c7b503c498685e6be1f32f",
+          "claim_sha256": "21e9a663a87d5abc89dfe2811217a9c2d6f83e09fbb3b6541c7b8b56f60541a4",
+          "quotes_sha256": "f47de1693e59eccfa8a12e87aafaf4c09b0f25ffb7d4a931856a9d554c1defe9",
+          "quote_count": 1,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "14186cf3e3db6a7cb8a43d5f78085bda52db9036b05f9316f62d1f4d5ece2cbe"
+          ],
+          "source_bodies_sha256": [
+            "f4c5d29fb35032cb20d5cdd15ce33494e3e09400bfb47e7aa61fb19b6e35f575"
+          ],
+          "visible": true,
+          "candidate_rank": 65,
+          "selected_rank": null,
+          "routes": [
+            "semantic",
+            "entity"
+          ],
+          "discard_reason": "count-limit",
+          "selected_complete_content_sha256": null
+        },
+        {
+          "role": "second_subject_related_event",
+          "fact_id": "de970fa52499e6d47c2e313a854bd0b5cd2b538af0869c07dd20d660ddf351c8",
+          "state": "active",
+          "kind": "reflection",
+          "fact_body_sha256": "7b6389bc331948b19fcc1f081273dfb16ac575be0fed9042af83088a77adb0e8",
+          "claim_sha256": "9d7dc4d3d3f6f60c9428b049bbfe2a6c52c6ba2c7d6e369c461e4cff0a62214e",
+          "quotes_sha256": "252db23d1fb4b94eb0c63394385546c7ce63cff050ba8edc6391dbb82ac45930",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "14186cf3e3db6a7cb8a43d5f78085bda52db9036b05f9316f62d1f4d5ece2cbe"
+          ],
+          "source_bodies_sha256": [
+            "f4c5d29fb35032cb20d5cdd15ce33494e3e09400bfb47e7aa61fb19b6e35f575"
+          ],
+          "visible": true,
+          "candidate_rank": null,
+          "selected_rank": null,
+          "routes": [
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": null
+        }
+      ],
+      "raw_anchors": [
+        {
+          "source_id": "14186cf3e3db6a7cb8a43d5f78085bda52db9036b05f9316f62d1f4d5ece2cbe",
+          "body_sha256": "f4c5d29fb35032cb20d5cdd15ce33494e3e09400bfb47e7aa61fb19b6e35f575",
+          "passages": [
+            {
+              "id": "source-46949b18c2d33aab057230a2e1e79691914cdf1f111168862845217ea92126f7",
+              "visibility_filtered": false,
+              "candidate_rank": 96,
+              "selected_rank": null,
+              "routes": [
+                "source-semantic"
+              ],
+              "discard_reason": "count-limit"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qid": "conv-43#q0028",
+      "category": "1",
+      "scope": "initial_completed_prefix",
+      "question_sha256": "d24c8cf6a853279501fe7e0669f525f9e6a57753c7ddbedadd9405a47a05c458",
+      "gold_sha256": "78427545d8b2cb068225b1687a224df37d39bc9e2df2e7f77bb71ea0b1272370",
+      "prediction_record_sha256": "0490250953e3c1d0136c216ce763d5beafa57737b795e7007b47a1bb72e4dfb4",
+      "judgment_record_sha256": "c0e1c67d4abb87b3cf9d00c724b08ab57681a1ed526e733f81b1e15f791f0916",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 5204,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "20354415bd303a803c003c560d97af5e3ba871858daefb0e5daf293046879d9d",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 2,
+        "total": 2,
+        "any": true,
+        "all": true
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "answer_partial_evidence_use",
+        "confidence": "high",
+        "conclusion": "体裁与情节特征两个必要事实均active，完整正文与引用分别已选在9和24。回答只输出体裁，没有组合第二事实；这不是抽取、候选池或打包遗漏。",
+        "mechanism": "长上下文里已给足的分散事实未被合成为回答的全部属性。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "genre",
+          "fact_id": "0e7e40123d3e32c675844d06567eb5d3aa2af7663e0695da51bc9b0865c7a5ae",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "1cf2f273220a88e0223a0650224f9148de402606266da44950975d0f901f20fc",
+          "claim_sha256": "140709644482775a2f271b262c3ebd75f1d2cda671ba26faba2d77d64e1abbae",
+          "quotes_sha256": "1cff021cdcbfd30a762abce18a170651a93267dd59e1cb0e56c06849d29dacf4",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "da8bbd5bb787426d9320eb4f7e30f12bf52571000b7e69e788877a68530eb575"
+          ],
+          "source_bodies_sha256": [
+            "009a5493fbc35ef756e2af521b02f13e21cac088159e218e1d295cb4237e1d59"
+          ],
+          "visible": true,
+          "candidate_rank": 8,
+          "selected_rank": 9,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "d2837ded5809a9148b4907927de53f5da34c444e443d5939b2c29cf39af84b01"
+        },
+        {
+          "role": "story_feature",
+          "fact_id": "f1c4c0e0b8dd48019150cd9de5130b5377cbd14f0ed7f2be0a21484f88c20b03",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "7afac9bf66094e16a77333459c8605c9b3ca26b076e2668e8d36d14160c24f4f",
+          "claim_sha256": "a2b4d460aa757abf27d8e95e03edd609b8c4b23235f9a541892609e156bf0cfe",
+          "quotes_sha256": "a8c0f6b4a4afea4cb57c7939b7739fa729c12016d097d9b5d7452c54fb6f04b3",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "e66567d6f35768b6ec374d7d02569b586612dc3d118827dfbff62cfe7cbd51d5"
+          ],
+          "source_bodies_sha256": [
+            "23d487ba78d0972e1dc3ab6cc9181ef3cd964ee74f2f30b472d98b36db4d0790"
+          ],
+          "visible": true,
+          "candidate_rank": 23,
+          "selected_rank": 24,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "bb9c8ef8db9e92badde8cb6b142239aa583408e451ba9a2ea03ca4d40e777093"
+        }
+      ],
+      "raw_anchors": []
+    },
+    {
+      "qid": "conv-43#q0035",
+      "category": "1",
+      "scope": "terminal_extension",
+      "question_sha256": "118ed9e2b934373159fdde47b7223511edf1d11e81009d2310f2518af4cdcfda",
+      "gold_sha256": "31bceb5bc315ac8fbce80b1a58e5012d512a32acbfe6d8b8919b6f497d83c51d",
+      "prediction_record_sha256": "2153ea258b815364321c57bf823c0f8bddb9f106f0dcdca317a46710bc1a4a67",
+      "judgment_record_sha256": "21c5cf1b80c599dcc94b91c7a68f9ad836781204822eaa8519726ca6deca98eb",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 5062,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "12056c9b101672c02750b2b3f38a8e4b58fe57e654076ce49378d358779891bf",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "answer_temporal_anchor_and_event_identity_ambiguity",
+        "confidence": "high_for_context_presence_medium_for_inference",
+        "conclusion": "参考来源的当周受伤完整正文与观察日期在rank3，另一个明确但未解析的过去赛季事件在rank1。回答只依赖后者，忽略可支持近似月份的当前受伤背景。原文没有精确受伤日，也没有明确证明两段描述是同一事件；应区分可回答的近似范围与不可确定的日期。",
+        "mechanism": "显式但未解析的时间词压过同一人物当前事件的时间背景；Answer将不能确定精确事件日扩大成完全无月份证据。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "explicit_unresolved_prior_event",
+          "fact_id": "2391ed93deac58bd06246abd9e2a34b0c72cefea0753fd59b1c0a80795fadb67",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "34ac081d9463fe41610d74426a2aa2a1eb49dc61ed00bbe388eb5cb692b0366f",
+          "claim_sha256": "28a3b7f5aabc8ff4faa866ab583c5feedc1d962fb9f6ae3b042497c71f3b56bf",
+          "quotes_sha256": "7419e50d2d9b9df87715f3876f3fc445deb2c0e34f320456466cdf8da3a8928e",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "fb4512a55418c85b28c5900d26afdbbe72f9ca8df9475ea63b2ee181b1fd5057"
+          ],
+          "source_bodies_sha256": [
+            "f06a4f76a0925dcc23f8b523e8a7bd8f3a55c04823f7a466de3afa7f55020734"
+          ],
+          "visible": true,
+          "candidate_rank": 1,
+          "selected_rank": 1,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "ae0b4f5100e8b54b670967b4cf3d839a53b9c42edc231d7095371d22a0411f02"
+        },
+        {
+          "role": "current_event_with_observation_anchor",
+          "fact_id": "630863f6c4568601120be0170acd705bf0efbb51aac122df0d2118c2309e18b0",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "467d48bc64773efff59c3b84d5ba989ba1be5dfcaa18cda32f6a397fe9f6b490",
+          "claim_sha256": "0a6fffd1a37089f58f6ef35a3ebf41dc213b8e7b4bba8d03670bb9a073aff6f6",
+          "quotes_sha256": "5fb92e046ef1453ebe29eccac6ebb5345209a7468167377fd2efafc450f5e804",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "e4a9cfe4b4f08c2e7e145f69dd72f9dc151c720e8440e745d7879251a59d6b60"
+          ],
+          "source_bodies_sha256": [
+            "71af86e8b59959a5ca05196f18cefc056b814738c6a9054e3e288c8952ca2872"
+          ],
+          "visible": true,
+          "candidate_rank": 3,
+          "selected_rank": 3,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "e797c0ba0149842869e6660e8e65ac34093d739dd967bbb8b049a97e7ffaad95"
+        }
+      ],
+      "raw_anchors": []
+    },
+    {
+      "qid": "conv-43#q0036",
+      "category": "1",
+      "scope": "terminal_extension",
+      "question_sha256": "e1cd1e57b246d5796b68219e2459df4f7323d44e46208a13ae051e224c9b374e",
+      "gold_sha256": "0326f3864a48f0c43fba3d9a084da8fdc9e177872aab26bffde6873957b3d878",
+      "prediction_record_sha256": "035d50583f9a69a7c454cc18e99bcf265d584d513ae092e65f5f89dfc98b0707",
+      "judgment_record_sha256": "ba307864de8cb1d898894e8918f9490b1e3ba6775e38af36a99eb18a955c3c29",
+      "judgment_correct": false,
+      "selected_count": 32,
+      "selected_tokens": 5065,
+      "candidate_count": 200,
+      "selected_full_memories_sha256": "1a1cd605d7cb3f80eca9df83a3ce946f58b5de2c1fa19c73d45b390a7e6bd486",
+      "selected_ids_match_stage_order": true,
+      "source_coverage": {
+        "matched": 2,
+        "total": 2,
+        "any": true,
+        "all": true
+      },
+      "focus": {
+        "focus": "other_people",
+        "outcome": "model"
+      },
+      "list_coverage_enabled_by_query": false,
+      "diagnosis": {
+        "layer": "answer_event_scoping_and_later_state_substitution",
+        "confidence": "high_for_context_presence_medium_for_episode_link",
+        "conclusion": "参考书籍重读事实与受伤背景的完整正文均已选在21和15。回答提到参考书籍却改选更晚的当前书籍，并把更晚康复活动作为连续时间段依据。现有原文没有明确给出一个完整、唯一的康复区间，因此不能把后来当前状态自动替代题目历史事件中的状态。",
+        "mechanism": "历史事件关联被更晚的当前状态取代；必要证据已在context，需独立评估回答的事件范围判断。"
+      },
+      "claim_and_quote_anchors": [
+        {
+          "role": "current_event_context",
+          "fact_id": "630863f6c4568601120be0170acd705bf0efbb51aac122df0d2118c2309e18b0",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "467d48bc64773efff59c3b84d5ba989ba1be5dfcaa18cda32f6a397fe9f6b490",
+          "claim_sha256": "0a6fffd1a37089f58f6ef35a3ebf41dc213b8e7b4bba8d03670bb9a073aff6f6",
+          "quotes_sha256": "5fb92e046ef1453ebe29eccac6ebb5345209a7468167377fd2efafc450f5e804",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "e4a9cfe4b4f08c2e7e145f69dd72f9dc151c720e8440e745d7879251a59d6b60"
+          ],
+          "source_bodies_sha256": [
+            "71af86e8b59959a5ca05196f18cefc056b814738c6a9054e3e288c8952ca2872"
+          ],
+          "visible": true,
+          "candidate_rank": 14,
+          "selected_rank": 15,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "e797c0ba0149842869e6660e8e65ac34093d739dd967bbb8b049a97e7ffaad95"
+        },
+        {
+          "role": "reference_historical_book",
+          "fact_id": "bf78fb065537afdf590a18e0095e2d565962ae247fe2898b40a7573860773b77",
+          "state": "active",
+          "kind": "event",
+          "fact_body_sha256": "33c453f61bd0a8c26481cd848d21e533b27a3ca202e934113647903a69f7c842",
+          "claim_sha256": "08b80747ff30728684617f9d9c0d73727b6d16ecaa579f061fd9f9027969cc44",
+          "quotes_sha256": "a302eed95b24ef43c087ed86f8ca9cfa9c125c774b3acf8fe91d84e3a19a855e",
+          "quote_count": 3,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "29ba3fe48b33df0217f5d505a118d51f3eec164cd0d669693322c9ed45b75b2f"
+          ],
+          "source_bodies_sha256": [
+            "3d7d80a9524afbf8879770b6d7b38fc59f3e763bf7dae39ae46e2d68a80622af"
+          ],
+          "visible": true,
+          "candidate_rank": 21,
+          "selected_rank": 21,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "3f9a41e54a787f038769b7fd8dbd62931472682170879e7b663dd4629db61d05"
+        },
+        {
+          "role": "later_current_book",
+          "fact_id": "92f246584d670791c355c7e7fa1d8d327a1c2cf9346cf0c6185255f4ca8c5fc7",
+          "state": "active",
+          "kind": "fact",
+          "fact_body_sha256": "868a1e9d03f777bca7cfe98b30eb1e02cfe8db61dc02cdfd3a357ef1720ada37",
+          "claim_sha256": "7209c74be93d66bec12dff58e123474cf73914bc3d481e41baf909c5c70ac8ac",
+          "quotes_sha256": "2b87d070cedb5fdc7dcbc9117008a4853e6ef62c09d906e15b279c9fc214d6fa",
+          "quote_count": 2,
+          "all_quotes_present_in_declared_raw_sources": true,
+          "source_ids": [
+            "fb1cf7b808dec599b97f906435f5f8f9919fd78e51747a3e305f09cb7bd61bf1"
+          ],
+          "source_bodies_sha256": [
+            "b0eb0f956cc698719b33f316f5d9acc2774f8679bc96e910c5c1d2372e500ed4"
+          ],
+          "visible": true,
+          "candidate_rank": 4,
+          "selected_rank": 5,
+          "routes": [
+            "semantic",
+            "lexical",
+            "entity"
+          ],
+          "discard_reason": null,
+          "selected_complete_content_sha256": "158e1e9ed4bd2bb6445db76265158f2cec565f07db82f0743d42ecaf8e77bb43"
+        }
+      ],
+      "raw_anchors": []
+    }
+  ],
+  "mechanism_summary": {
+    "clear_retrieval_loss": [
+      "conv-43#q0006",
+      "conv-43#q0022",
+      "conv-43#q0023"
+    ],
+    "additional_unannotated_evidence_budget_loss_with_count_ambiguity": [
+      "conv-43#q0010"
+    ],
+    "answer_layer_with_required_context_present": [
+      "conv-43#q0028",
+      "conv-43#q0035",
+      "conv-43#q0036"
+    ],
+    "reference_answer_scope_ambiguity": [
+      "conv-43#q0004"
+    ],
+    "no_proven_loss_of_indispensable_extracted_fact": "已证明缺失的直接活动/成员关系/第二人物偏好事实均active。计数题另一raw胜利话语未形成独立事实，但不能证明它代表新的独立事件。"
+  },
+  "minimum_next_step": {
+    "phase": "先固定向量离线选择对照，不运行QA，不修改现有候选",
+    "preserve": [
+      "原47题及既有16题都保留对照",
+      "200候选/32证据/6000 token不变",
+      "原可见性/当前历史/遗忘与引用完整性不变",
+      "按完整claim+quote检查新增与被替换证据；不只算source覆盖"
+    ],
+    "isolate": [
+      "先在原200候选内比较按问题人物与问题子部分的证据选择，观察第二人物/第二活动是否进入且不丢现有有效信息。",
+      "q0006另列候选池外损失；仅优化packing无法恢复池外的明确爱好事实。可单独比较现有conditional typed relation路线，但不能假定其property过滤与每节点8条选择能覆盖所需桥接。",
+      "q0028/q0035/q0036另作回答组合与事件范围问题，不能用增加召回来冒充恢复。",
+      "q0004/q0010保留参考范围与事件同一性不确定，不根据gold编写运行时规则。"
+    ],
+    "vector_reuse": "本轮实际向量已保存；本次仅核对路径/hash，未执行反事实搜索或调用任何模型。"
+  },
+  "limits": [
+    "没有模型重判、重抽或新调用；没有修改源数据库、评分或冻结产物。",
+    "没有证明任何修改会提分；原判分保持。",
+    "公共报告只存ID/hash/机制结论，不包含原问题、gold、回答或私人来源原文。",
+    "审查逐条使用完整已选claim及其引用，并与原始消息及active事实核对；同source ID不能代替所需关系在正文中出现。"
+  ]
+}
