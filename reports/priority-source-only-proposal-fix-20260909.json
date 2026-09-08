@@ -1,0 +1,70 @@
+{
+  "status": "frozen_for_new_single_add; downstream source erasure and commit not yet demonstrated",
+  "base_commit": "4b855790bdf0ea31467fe23692dfdb91212a62e4",
+  "candidate_commit": "484f188de0ee2e83a38e91914dde00ae77f582b4",
+  "candidate_dist": "artifacts/priority-source-only-proposal-fix-20260909/candidate-dist",
+  "candidate_manifest": "artifacts/priority-source-only-proposal-fix-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "6727cd4fc9ab42a8ef6fbd277e61d2b361cbed5cb5ae35e77204b2c1c3db1958",
+  "dist_files": 141,
+  "change": "A bounded source-only proposal may replace a non-authorizing citation of an existing forget operation with the unique direct retirement span in that same original message. It is a proposal only and follows the unchanged standard semantic, chronology, target binding and erasure/commit checks.",
+  "eligibility": [
+    "enhanced structured mode with lifecycle enabled",
+    "unmodified standard Models.verify method; custom or disabled verification retains the model-driven repair path",
+    "no invalid fact source, invalid human operation source, existing degradation, unresolved target/property/scope binding or expired model signal",
+    "original source index and quote unchanged by resolveSource; original quote uniquely located",
+    "every affected forget has explicit targets and exactly one bounded candidate in its original message; candidate quote also uniquely occurs",
+    "source-only clone passes same-chunk chronology and selector binding while retaining exactly the original target IDs"
+  ],
+  "safety_behavior": [
+    "source replacement drops any old citation offset",
+    "same alias-based failedProposal is updated only at the changed source, so later scoped repairs see the checked proposal",
+    "existing VerificationSession is preserved: changed source invalidates the operation/message certificate; unrelated semantic failures remain locked",
+    "a sticky per-prepare flag prevents capability failures after a source proposal from entering offline fallback; existing explicit refusal types are preserved",
+    "any degraded final preparation on this new path rejects before returning a prepared write",
+    "no additional model round or attempt is added; the final existing attempt may verify the proposal and must reject on failure"
+  ],
+  "tests": {
+    "initial_failure_first": {
+      "total": 14,
+      "passed": 7,
+      "failed": 7,
+      "log": "source-only-proposal-red.txt"
+    },
+    "original_message_review_regression": {
+      "total": 18,
+      "passed": 17,
+      "failed": 1,
+      "log": "source-original-message-red.txt"
+    },
+    "new_tests_passed": 18,
+    "targeted_including_existing_hint_tests": 29,
+    "full_service_passed": 627,
+    "full_service_failed": 0,
+    "build_passed": true,
+    "independent_review": "next_eval_risk: final original-message, chronology, scope, cache, semantic failure, timeout/protocol/degraded, and replay boundaries approved",
+    "existing_test_adjustment": "The earlier source-hint tests use an explicit custom wrapper around the standard verifier to exercise the retained model-driven hint path; independent new tests exercise the unmodified standard method and its decoder."
+  },
+  "recorded_replay": {
+    "original_02_extraction_and_repair1_outputs_reused": 2,
+    "manual_source_patch_injected": false,
+    "automatically_generated_standard_verification_system_and_input_equal_prior_actual_experiment": true,
+    "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+    "input_sha256": "2b19292ac275093d76136b32a11242769c5b65054b9a25af7db1d62e92b05ffc",
+    "real_verification_output_reused_only_after_exact_match": true,
+    "prior_actual_experiment_report": "reports/priority-B30-source-only-verification-20260909.json",
+    "stopped_before_unrecorded_stage": "source_erasure",
+    "replay_report": "artifacts/priority-source-only-proposal-fix-20260909/replay-report.json"
+  },
+  "isolation": {
+    "cloud_calls": 0,
+    "embedding_calls": 0,
+    "commit_attempts": 0,
+    "qa_calls": 0,
+    "score_changes": 0,
+    "snapshot_revision": 30,
+    "snapshot_sha256": "463d55c50b58df11e65948d901664560b4c2139373bb1172ce80b336a940a269",
+    "snapshot_unchanged": true,
+    "main_checkout_and_frozen_candidates_untouched": true
+  },
+  "next_step": "Root may evaluate the frozen candidate with the existing single-add runner using a new 03 campaign ID. The prior single accepted counterfactual applies only to its exact input and is not blanket authorization for other records; full add success still requires fresh downstream erasure and commit checks."
+}
