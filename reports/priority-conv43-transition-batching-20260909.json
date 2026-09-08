@@ -1,0 +1,199 @@
+{
+  "protocol": "conv43-transition-batching-candidate-report-v1",
+  "created_at": "2026-09-08T23:14:23.256155+00:00",
+  "status": "frozen_candidate_local_diagnostics_passed_actual_tail_not_yet_verified",
+  "scope": "Preserve the original deterministic capacity failure and the candidate protocol/control-flow evidence. This report does not claim a successful real semantic transition, add, tail, or QA run.",
+  "candidate": {
+    "commit": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+    "base_commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+    "manifest": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-transition-batching-20260909/final-manifest.json",
+      "sha256": "aa2cce509f9ea5bc66d23a40a8e67935c622b90a8349c958197d203bcd809b94"
+    },
+    "compiled_files": 144,
+    "dist_manifest_matches_independently_replayed_candidate_build": true,
+    "production_files": [
+      "src/transitions.ts",
+      "src/extraction.ts"
+    ]
+  },
+  "original_failure": {
+    "campaign": "priority-conv43-20260909-01",
+    "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+    "write_index_one_based": 39,
+    "revision": 38,
+    "receipts": 38,
+    "failed_request_receipt": null,
+    "error_code": "EVIDENCE_VALIDATION",
+    "error_message": "Implicit transition verification exceeds bounded capacity",
+    "exact_recorded_packets": 2,
+    "packet_stages": [
+      "extraction",
+      "verification"
+    ],
+    "recorded_system_and_input_exact": true,
+    "standard_verification": {
+      "model_facts": 18,
+      "operations": 0,
+      "findings": []
+    },
+    "prepared_facts_before_guard": 23,
+    "note": "The 23 prepared facts include the service-generated derived output; the recorded model proposal contains 18 facts. The original guard was reproduced unchanged with both the frozen dist and a capture-only dist copy."
+  },
+  "capacity_evidence": {
+    "candidate_pairs": 27,
+    "global_pair_limit": 64,
+    "unique_pairs": 27,
+    "duplicate_pairs": 0,
+    "candidate_json_utf16_chars": 68053,
+    "original_character_limit": 64000,
+    "complete_transition_input_utf16_chars": 76206,
+    "distinct_old_facts": 27,
+    "distinct_incoming_facts": 1,
+    "repeated_fact_occurrences": 26,
+    "repeated_identical_fact_serialization_chars": 29354,
+    "overflow_dimension": "UTF-16 serialized length, not number of comparisons",
+    "facts_or_witnesses_removed": 0
+  },
+  "bounded_change": {
+    "global_pair_limit": 64,
+    "complete_packet_utf16_limit": 64000,
+    "max_batches": 4,
+    "preflight": "All packets are planned before any transition call. A single oversized complete pair or need for more than four packets rejects before the first call.",
+    "preserved": [
+      "Original candidate set and ordering",
+      "Complete original request messages",
+      "All original fact fields and witness quote slots",
+      "Original transition prompt and decoder",
+      "Fingerprint over the full original request, prior snapshot, incoming facts and operations",
+      "Existing shared model signal/deadline",
+      "Global atomic commit validation"
+    ],
+    "collection": "Each batch decodes local indexes, maps them back by its offset, then the combined decisions undergo the original full-work decode. No partial transitionPlan is assigned. Existing capability fallback remains all-pair uncertain rather than keeping a partly accepted plan."
+  },
+  "independent_local_review_and_replay": {
+    "review": "No blocker found within the bounded batching change. No tests or models were rerun while writing this report.",
+    "exact_original_candidate_set": true,
+    "full_snapshot_fingerprint": "ffa723d1f38c823f50571247d9e846f20e9682663dac7f4c21ee4fac89acfbc6",
+    "independently_recomputed_fingerprint_matches": true,
+    "batches": [
+      {
+        "offset": 0,
+        "pairs": 22,
+        "utf16_chars": 63201,
+        "input_sha256": "0b38c5379534b6d361df251088fc840280d83b87f3595705a0f9277cb0659955",
+        "complete_original_messages_facts_and_quote_slots": true
+      },
+      {
+        "offset": 22,
+        "pairs": 5,
+        "utf16_chars": 18891,
+        "input_sha256": "e5658f4e956a4bbcab06312dcf3ff2b9e89cbcaca97acfe8033c955c42ee4108",
+        "complete_original_messages_facts_and_quote_slots": true
+      }
+    ],
+    "normal_historical_single_packets": [
+      {
+        "trace_id": "955e329d-1b10-49f0-9648-dc60eddd84ec",
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-12:0",
+        "input_sha256": "57eeb517f0e1ceb7f9b3600cf0317a5887e5892ebfb9a3c70b07062722c6805b",
+        "utf16_chars": 39881,
+        "exact_single_packet_match": true
+      },
+      {
+        "trace_id": "4c74c2fb-d8e9-4eb3-851e-8eeed3a5d22a",
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-16:0",
+        "input_sha256": "bfa2bf3c383dd94c9e0313f64ad9ab13985d0ee114c38c8e2554a79bb3a33e24",
+        "utf16_chars": 15961,
+        "exact_single_packet_match": true
+      },
+      {
+        "trace_id": "63f85328-a31e-485e-9df8-8cd2fa97fc01",
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-24:0",
+        "input_sha256": "3b01e4cf79f754097e22aca953e0ab4aa2bbd8561357f6eb9faca0967d8f6cd0",
+        "utf16_chars": 7295,
+        "exact_single_packet_match": true
+      }
+    ],
+    "global_coverage_pair_keys": 27,
+    "missing_duplicate_and_stale_plans_rejected": true,
+    "no_hidden_or_dropped_work_comparisons": true,
+    "synthetic_transition_outputs": true,
+    "synthetic_relation": "uncertain",
+    "synthetic_use": "Explicit synthetic uncertain responses advanced the actual candidate prepare control flow through both transition packets and global decoding. They are not provider outputs or positive semantic fixtures.",
+    "stop_boundary": "The first unknown embedding call aborted the parent signal. No prepared output was returned, and commit was not called.",
+    "new_real_semantic_calls": 0,
+    "new_real_embedding_calls": 0,
+    "commit_calls": 0,
+    "QA_calls": 0,
+    "cloud_calls": 0,
+    "original_snapshot_and_guard_experiment_unchanged": true
+  },
+  "tests": {
+    "full_suite": {
+      "executed_by": "root",
+      "tests": 713,
+      "passed": 713,
+      "failed": 0,
+      "build": "passed",
+      "evidence": "Root-executed checks recorded in the frozen candidate manifest; this report author did not rerun them."
+    },
+    "red_green": {
+      "initial_red": {
+        "tests": 1,
+        "passed": 0,
+        "failed": 1,
+        "reason": "The original large complete transition work is rejected by the old capacity guard.",
+        "log": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-transition-batching-20260909/transition-batching-initial-red.txt",
+          "sha256": "e4e5b8afa3aaf283ca1956a81d4c74fdd0a0164a97195dbe9e9813b74e3143c8"
+        }
+      },
+      "targeted_green": {
+        "tests": 10,
+        "passed": 10,
+        "failed": 0,
+        "log": {
+          "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-transition-batching-20260909/transition-batching-targeted-green.txt",
+          "sha256": "67a3efba8ab56157080e1388cabf07d760809be5a29aa89daf84c7bf612e71b5"
+        }
+      },
+      "coverage": [
+        "Lossless packet splitting and unchanged single-packet wire",
+        "Global 64-pair limit",
+        "Original source slots and complete global decision coverage at commit in synthetic fixtures",
+        "Bad second-packet witness and cancellation reject before partial transaction",
+        "Later transport outage discards early decisions before the existing all-pair fallback",
+        "Oversized single pair and more than four batches reject before calls"
+      ],
+      "log_naming_caveat": "transition-batching-expanded-red.txt actually records an intermediate 9/9 passing run; it is not additional failing-baseline evidence."
+    }
+  },
+  "evidence": {
+    "original_reproduction_manifest": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/reproduction-manifest.json",
+      "sha256": "9065db9acb75893a7a93c3a7d684ef9eba4189372c3657bd2d359a197c9bc8bc"
+    },
+    "original_replay_summary": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/replay-summary.json",
+      "sha256": "5ea79c9c8068759f78ecf027f19f2fbb4a3967a299a2a51c309bcde3dc08e9b6"
+    },
+    "private_captured_work": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/candidate-work.private.json",
+      "sha256": "50af6a67cb1fbdb73e05a9de6836aa977e63aa6b5c07cb28d9504b129f83d300"
+    },
+    "candidate_diagnostic_manifest": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/candidate-batching/diagnostic-manifest.json",
+      "sha256": "981ab624b4a2987530a86449d6500b33f32a33c4e47bfb7678929872ae9c51c1"
+    },
+    "candidate_diagnostic_result": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/candidate-batching/result.json",
+      "sha256": "5feec59734badfbc7dc08b1c96f8f2b672a480bc95ac57c0d3ea77ce3a7555ff"
+    },
+    "private_candidate_packets_with_explicit_synthetic_outputs": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-transition-repro-20260909/candidate-batching/transition-packets.private.json",
+      "sha256": "5939be0676eaf32a89656168cdc49daddc1d4ad68b5035023b24f69173dfd15d"
+    }
+  },
+  "next_validation": "A new separately recorded real tail/add execution must obtain its own semantic decisions and complete the normal embedding, commit and original LoCoMo QA protocol. No original failure or score is replaced by these local diagnostics."
+}

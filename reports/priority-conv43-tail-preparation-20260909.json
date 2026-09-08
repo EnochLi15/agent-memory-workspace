@@ -1,0 +1,251 @@
+{
+  "protocol": "conv43-tail-preparation-report-v1",
+  "created_at": "2026-09-08T23:20:56.210621+00:00",
+  "campaign": "priority-conv43-tail-qa-20260909-01",
+  "scope": "Preparation and complete five-tail ingestion through QA start. All 47 original questions remain the denominator; this report does not assert a final QA score.",
+  "plan": {
+    "path": "artifacts/priority-conv43-tail-qa-20260909-01/plan.json",
+    "sha256": "66640c4a5cb4cac59ba94a3aacc5dc4d586018af94105505737341ce3c7d8fff"
+  },
+  "entry": {
+    "path": "artifacts/priority-conv43-tail-qa-20260909-01/executor/scripts/probes/run-conv43-tail-qa.py",
+    "sha256": "d0719ef4c84a08e2f52f424569362081c08a43aabb4a67d0a2e7a44480af7506"
+  },
+  "candidate": {
+    "commit": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+    "base_commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+    "manifest": {
+      "path": "artifacts/priority-transition-batching-20260909/final-manifest.json",
+      "sha256": "aa2cce509f9ea5bc66d23a40a8e67935c622b90a8349c958197d203bcd809b94"
+    },
+    "dist_files": 144,
+    "build": "passed",
+    "service_tests": {
+      "passed": 713,
+      "total": 713,
+      "targeted": 10
+    }
+  },
+  "preflight": {
+    "plan_validation": "passed",
+    "independent_frozen_entry_validation": "passed",
+    "model_calls_during_preparation": 0,
+    "adapter_tests": {
+      "file": {
+        "path": "scripts/probes/test_conv43_tail_qa.py",
+        "sha256": "5b2c3fb5fe0c4c32d6908eb08d0ffa15be4d6814e9c8b04a1b95532fde8eb11a"
+      },
+      "passed": 3,
+      "total": 3,
+      "coverage": [
+        "Actual failed origin is terminal with 38 successful exact receipts, request 39 failed and four unattempted.",
+        "Exact reviewed base transformations preserve namespace and original LoCoMo protocol; candidate root/commit/manifest binding overrides the old 8717 constants.",
+        "Missing prefix receipts, changed request hashes and inclusion of the failed request are rejected."
+      ]
+    },
+    "all_pinned_files_match": true,
+    "unique_pins_checked": 415
+  },
+  "execution_adaptation": {
+    "base_entry_sha256": "289358edcfa9150a07d8bd49c6ead42ce82611cef96a72e6ea295a88bac43881",
+    "adapted_base_sha256": "2e3e317e28d9edd79335e735846bf4b74122280f74c0ffd0e5ce81c8fe417eb3",
+    "changes": [
+      "Two exact namespace substitutions preserve the original tenant.",
+      "Two exact status counter substitutions report 38 prefix adds and five fresh adds.",
+      "Candidate root, commit and manifest SHA are read from separately frozen candidate-binding.json; the prior candidate is not executed."
+    ],
+    "base_core_and_helpers_reused": true,
+    "restoration": "The service launcher restores the readonly captured snapshot into a new run-owned clone before service startup and verifies its hash, complete prefix receipts and logical tables.",
+    "terminal_requirements": [
+      "Original source and captured snapshot remain unchanged.",
+      "Every replayed successful prefix HTTP receipt is identical; no prefix generation is allowed.",
+      "Only successful contiguous new-tail requests increase revision and add receipts; failed and unattempted tail requests have no receipts.",
+      "All owned children remain governed by the original ManagedRun cleanup and deadline."
+    ]
+  },
+  "input": {
+    "source_campaign": "artifacts/priority-conv43-20260909-01",
+    "source_revision": 38,
+    "source_database_sha256": "5d67b16a03d66d8de3f8302a020604b6208e23fe0e07288f79629c28e9dc9403",
+    "captured_snapshot": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/conv43-rev38.sqlite",
+      "sha256": "baf9562a024412268264780f8f6922709db39d4a6a79e7c2f4247a7b121be62e"
+    },
+    "captured_logical_state_sha256": "9753d9f4c6068593794c2341b151131b44cc93d7ca9d22fa8f6af4fecbecaada",
+    "namespace": "priority-conv43-20260909-01-candidate",
+    "new_clone_directory": "artifacts/priority-conv43-tail-qa-20260909-01/data",
+    "sample_id": "conv-43",
+    "sessions": 29,
+    "messages": 680,
+    "original_qids": 47,
+    "qid_order_sha256": "28bbe60a9f834b3a4b7f9a97f315dd9364d98714b7345e076b15fa8b336fd0c3",
+    "dataset": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/conv43.json",
+      "sha256": "cc53643e566824d905ab8759952928353ccca78bbd723f705fa2bb7e8e2d65e4"
+    },
+    "schedule": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/schedule.json",
+      "sha256": "2fa4a8028960304f3eff2dff12333931ab9c65ab337672b69f13f1d8a45ff191"
+    },
+    "prefix_receipts": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/receipts.private.json",
+      "sha256": "55fcd8b1323c56f802dcc5a6ccd875595454bc4252c818f24eb1f9f8abeb79f9"
+    },
+    "total_original_adds": 43,
+    "idempotent_prefix_adds": 38,
+    "new_tail_adds": 5,
+    "fixed_question_denominator": 47,
+    "prior_run_score_unchanged": "0/47 service_error; no prior predictions or judgments are rewritten."
+  },
+  "model_protocol": {
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "answer_model": "glm-5.2",
+    "concurrency": 1,
+    "eval_top_k": 100,
+    "max_messages_per_add": 20,
+    "max_words_per_add": 2000,
+    "service": {
+      "queryFocus": true,
+      "queryFocusTimeout": 8000,
+      "verificationResponseFormat": "json_object",
+      "candidateLimit": 200,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "rerank": false
+    },
+    "configuration_overrides": {
+      "MEMORY_QUERY_FOCUS": "true",
+      "MEMORY_QUERY_FOCUS_TIMEOUT_MS": "8000",
+      "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_object"
+    },
+    "actual_service_configuration_matches_pinned_base": true,
+    "actual_service_json": {
+      "path": "artifacts/priority-conv43-tail-qa-20260909-01/service.json",
+      "sha256": "1ae81b6ae7b4be9438502ca0ebcd0aaf182125b5ad3186de792b594a35d33b61"
+    },
+    "shared_dependencies": "The same pinned frozen evaluator, local upstream Judge bridge and shared dependency targets from the preceding conv43 run are reused; no new isolated venv is claimed."
+  },
+  "startup_audit": {
+    "controller_pid": 95624,
+    "controller_process_identity": "Wed Sep  9 07:16:09 2026",
+    "runtime_started_at": "2026-09-08T23:16:10.826818+00:00",
+    "service_pid": 95649,
+    "evaluator_pid": 95711,
+    "evaluator_started_at": "2026-09-08T23:16:23.767596+00:00",
+    "port": 8125,
+    "standard_local_judge_probe": {
+      "purpose": "Original synthetic health preflight; not a benchmark question.",
+      "elapsed_seconds": 11.446204,
+      "score": 1.0,
+      "exit_code": 0,
+      "artifact": {
+        "path": "artifacts/priority-conv43-tail-qa-20260909-01/locomo-judge-preflight.log",
+        "sha256": "91975eb8acf8a5193e5fa19a6d68aded8978ba48d43608ccc29d47d3ed953434"
+      }
+    },
+    "prefix_HTTP_200_verified": 38,
+    "prefix_receipt_matches_verified": 38,
+    "first_recovered_add": {
+      "schedule_position": 39,
+      "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+      "request_sha256": "7edbdcf0652680210d422aa9ac972e013f498596179490dc4b70ff902949308c",
+      "http_status": 200,
+      "attempt": 0,
+      "elapsed_ms": 38586.895958,
+      "model_calls": [
+        {
+          "purpose": "extraction",
+          "trace_id": "4518c2f1-901d-4cb0-9378-380c1b7f98c9",
+          "elapsed_ms": 23517.523333,
+          "outcome": "ok",
+          "attempt": 0,
+          "input_sha256": "e51097d4f6f766c42d1e4730f064520b7196352925f0b35492f0bb6bcf05be44"
+        },
+        {
+          "purpose": "verification",
+          "trace_id": "71a331b5-786a-4fe3-8d61-6a6ce16041ba",
+          "elapsed_ms": 7281.416209000003,
+          "outcome": "ok",
+          "attempt": 0,
+          "input_sha256": "fea6aa06af98f5f88ee8e1d9e0b10c8fbef497d543c9cdfb6005fa9cf55a1305"
+        },
+        {
+          "purpose": "state_transition",
+          "trace_id": "8f957793-0ca6-4f81-b3bd-a2ebb54739b8",
+          "elapsed_ms": 5166.088959000001,
+          "outcome": "ok",
+          "attempt": 0,
+          "input_sha256": "46aa0260d947ed12079a9b46ba73a4d7d0c57d3a4b70f0033fb4b5d92a7cae8c"
+        }
+      ],
+      "state_transition_calls": 1,
+      "state_transition_candidates": 6,
+      "state_transition_input_characters": 20346
+    },
+    "ingestion_complete": {
+      "HTTP_200": 43,
+      "idempotent_prefix_receipts_matched": 38,
+      "fresh_adds_succeeded": 5,
+      "failed_adds": 0,
+      "unattempted_adds": 0,
+      "all_attempt_zero": true,
+      "revision": 43,
+      "exact_saved_receipts": 43,
+      "fresh_add_elapsed_ms": [
+        38586.895958,
+        58657.351042,
+        35084.33283299999,
+        3731.2994589999726,
+        18783.26654099999
+      ],
+      "fresh_add_total_ms": 154843.14583299996,
+      "new_transition_calls": [
+        {
+          "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+          "trace_id": "8f957793-0ca6-4f81-b3bd-a2ebb54739b8",
+          "pairs": 6,
+          "input_characters": 20346,
+          "input_sha256": "46aa0260d947ed12079a9b46ba73a4d7d0c57d3a4b70f0033fb4b5d92a7cae8c",
+          "outcome": "ok",
+          "elapsed_ms": 5166.088959000001
+        },
+        {
+          "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:0",
+          "trace_id": "7193e320-3246-4458-9067-36f07811aea9",
+          "pairs": 12,
+          "input_characters": 38423,
+          "input_sha256": "4fe2a7a2707073b9de295a9463192a71b228d9f3a90f9532249edc605c983af9",
+          "outcome": "ok",
+          "elapsed_ms": 10932.506167000014
+        }
+      ],
+      "successful_tail_degraded_events": 0,
+      "degraded_evidence": "No successful degraded event appears in the service log at the ingestion-complete cutoff.",
+      "completed_ingest_artifact": {
+        "path": "eval/artifacts/priority-conv43-tail-qa-20260909-01-candidate-locomo/ingest.jsonl",
+        "sha256": "1ca404a55deaed38ada5e5c0a78c82bbfa3457a1a4d6ecf7fb04f2efa94fcc7b"
+      },
+      "complete_HTTP_artifact": {
+        "path": "artifacts/priority-conv43-tail-qa-20260909-01/http-receipts.jsonl",
+        "sha256": "044009113507b6473f5c42b20a9530700621720a4e003152fea3be4192e12cc9"
+      },
+      "QA_started": true,
+      "first_complete_judgment": {
+        "qid": "conv-43#q0000",
+        "status": "judged",
+        "correct": true,
+        "canonical_record_sha256": "49ce59bc01b06761f64caa6c0c619944f0e6090e9998a5118e84136c6a8d8993"
+      },
+      "not_a_final_score": true
+    }
+  },
+  "causal_limit": {
+    "live_result": "All five recovered writes succeeded. Newly sampled outputs required one six-pair/20346-character transition request for session-27:0 and one twelve-pair/38423-character request for session-28:0. Neither request exercised multiple batches; live multi-batch semantic acceptance remains untested.",
+    "offline_evidence": "The original recorded extraction and verification were reproduced locally with 27 unique pairs; the candidate emitted complete 22+5 batches of 63201 and 18891 characters. Only synthetic uncertain decisions were supplied, causing rejection before embedding; this demonstrates partitioning and fail-closed control flow, not real semantic acceptance.",
+    "inference_limit": "The success and latency difference cannot be attributed solely to batching because upstream model outputs changed. No additional real counterfactual, retry or rejudging was performed for this report."
+  },
+  "updated_at": "2026-09-08T23:21:50.611789+00:00"
+}

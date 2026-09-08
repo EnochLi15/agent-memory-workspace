@@ -1,0 +1,644 @@
+{
+  "protocol": "priority-conv43-terminal-results-v1",
+  "created_at": "2026-09-08T22:59:58.050627+00:00",
+  "campaign": "priority-conv43-20260909-01",
+  "candidate_commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+  "status": "failed",
+  "execution_status": "ingestion_failed_before_QA",
+  "planned_questions": 47,
+  "question_records": 47,
+  "judged": 0,
+  "correct": 0,
+  "accuracy_over_planned": 0,
+  "question_status_counts": {
+    "service_error": 47
+  },
+  "ingestion_gate": {
+    "status": "fail",
+    "reasons": [
+      "final_ingest_non_ok",
+      "missing_ingest_receipts",
+      "service_error_samples"
+    ]
+  },
+  "ingestion": {
+    "planned_adds": 43,
+    "successful_adds": 38,
+    "failed_adds": 1,
+    "unattempted_adds": 4,
+    "physical_requests": 39,
+    "physical_HTTP_responses": 39,
+    "transport_attempts": 39,
+    "retries": 0,
+    "failure": {
+      "schedule_position_1based": 39,
+      "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:0",
+      "request_sha256": "7edbdcf0652680210d422aa9ac972e013f498596179490dc4b70ff902949308c",
+      "http_status": 503,
+      "error_code": "EVIDENCE_VALIDATION",
+      "message": "Implicit transition verification exceeds bounded capacity",
+      "elapsed_ms": 31064.4820839999,
+      "stored_receipt_present": false,
+      "model_calls": [
+        {
+          "purpose": "extraction",
+          "trace_id": "0a54bed5-83b4-4bdf-8a12-d9cf1b3c3895",
+          "outcome": "ok",
+          "attempt": 0,
+          "elapsed_ms": 23157.03395800013
+        },
+        {
+          "purpose": "verification",
+          "trace_id": "343c9601-da84-4716-9338-7cde40bbd077",
+          "outcome": "ok",
+          "attempt": 0,
+          "elapsed_ms": 7736.703666000161
+        }
+      ],
+      "attribution_scope": "Both observed model calls succeeded; the subsequent service rejected the request. Detailed transaction/mechanism attribution is handled separately."
+    },
+    "unattempted_requests": [
+      {
+        "schedule_position_1based": 40,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-27:1",
+        "request_sha256": "cdc265f93f80af71d41adc3fc4e37c97b8d6b2051d0120e0b1092f5d8f67bdcc"
+      },
+      {
+        "schedule_position_1based": 41,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:0",
+        "request_sha256": "bd5fcd2a02d48b1f0bafe9b6e48bb7f82c3589b32a14d9995e30dd249707e1f6"
+      },
+      {
+        "schedule_position_1based": 42,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-28:1",
+        "request_sha256": "3d9285896840a56ed81a6401dc87010771b8807a810cbaad9d2f724af2d0d0e2"
+      },
+      {
+        "schedule_position_1based": 43,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-29:0",
+        "request_sha256": "b1faa04b98f5480cb2453f8df874e9b6eabda4166a7ebf5ef3b17c5d191ff5b9"
+      }
+    ],
+    "successful_degraded_adds": 1,
+    "degraded_events": [
+      {
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-20:1",
+        "reasons": [
+          "extraction_offline"
+        ],
+        "committed_success": true
+      }
+    ]
+  },
+  "database_integrity": {
+    "status": "pass",
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/data/3d86b7d517147a1821f1852287cba2b6a330ec2e7a451470e6f8cac161f90613/memory.sqlite",
+    "final_revision": 38,
+    "exact_receipts": 38,
+    "only_successful_schedule_prefix_has_receipts": true,
+    "failed_request_has_no_receipt": true,
+    "all_four_unattempted_requests_have_no_receipt": true,
+    "request_receipt_hash_and_body_verified": true,
+    "sqlite_quick_check": "ok",
+    "database_sha256": "5d67b16a03d66d8de3f8302a020604b6208e23fe0e07288f79629c28e9dc9403",
+    "table_counts": {
+      "meta": 4,
+      "requests": 38,
+      "facts": 520,
+      "messages": 604,
+      "sessions": 26,
+      "operations": 0,
+      "memory_events": 520,
+      "markers": 0,
+      "passages": 2656,
+      "evidence_fts": 520,
+      "evidence_fts_data": 72,
+      "evidence_fts_idx": 70,
+      "evidence_fts_content": 520,
+      "evidence_fts_docsize": 520,
+      "evidence_fts_config": 1,
+      "passage_fts": 2656,
+      "passage_fts_data": 32,
+      "passage_fts_idx": 30,
+      "passage_fts_content": 2656,
+      "passage_fts_docsize": 2656,
+      "passage_fts_config": 1,
+      "preparation_attempts": 0
+    },
+    "limit": "This independently verifies the final committed prefix. It does not invent a complete before-request database snapshot for the failed preparation."
+  },
+  "model_calls": {
+    "service_audit_records": 145,
+    "generation": 107,
+    "generation_outcomes": {
+      "ok": 106,
+      "error": 1
+    },
+    "generation_by_purpose": {
+      "extraction": {
+        "calls": 39,
+        "outcomes": {
+          "ok": 38,
+          "error": 1
+        },
+        "elapsed_total_ms": 602019.018997,
+        "elapsed_mean_ms": 15436.385102487178,
+        "elapsed_max_ms": 29098.435541999992
+      },
+      "repair": {
+        "calls": 17,
+        "outcomes": {
+          "ok": 17
+        },
+        "elapsed_total_ms": 95766.6389189999,
+        "elapsed_mean_ms": 5633.3317011176405,
+        "elapsed_max_ms": 18328.69445900002
+      },
+      "state_transition": {
+        "calls": 3,
+        "outcomes": {
+          "ok": 3
+        },
+        "elapsed_total_ms": 10991.374584000092,
+        "elapsed_mean_ms": 3663.7915280000307,
+        "elapsed_max_ms": 6282.580958000035
+      },
+      "verification": {
+        "calls": 48,
+        "outcomes": {
+          "ok": 48
+        },
+        "elapsed_total_ms": 282202.8945000001,
+        "elapsed_mean_ms": 5879.226968750003,
+        "elapsed_max_ms": 16662.46529099997
+      }
+    },
+    "attempt_values": [
+      0
+    ],
+    "generation_retry_records": 0,
+    "all_generation_traces_match_attempted_add_ids_and_tenant": true,
+    "add_embedding_calls": 38,
+    "add_embedding_outcomes": {
+      "ok": 38
+    },
+    "query_focus_calls": 0,
+    "search_embedding_calls": 0,
+    "search_rerank_calls": 0,
+    "benchmark_Answer_calls": 0,
+    "benchmark_Judge_calls": 0,
+    "synthetic_local_Judge_preflight_calls": 1,
+    "prior_recoverable_model_error": [
+      {
+        "trace_id": "6779ebd9-4efe-4f83-bc56-540110d624ec",
+        "purpose": "extraction",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 11030.654584000004,
+        "error_type": "SyntaxError",
+        "error_category": "invalid_json",
+        "finish_reason": "stop",
+        "stream_started": true,
+        "refusal_detected": false,
+        "request_id": "priority-conv43-20260909-01-candidate:locomo:conv-43:session-20:1"
+      }
+    ]
+  },
+  "evaluation_protocol": {
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "judge_quantization": "Q4_K_M",
+    "answer_model": "glm-5.2",
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "answer_inference": {
+      "stream": true,
+      "max_completion_tokens": 1800,
+      "attempts": 3
+    },
+    "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+    "contract_sha256": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab",
+    "split_sha256": "094570626ffb97d802043aa52278b2035c6f8c624f1c99fe8a7ed535b9b2898a",
+    "concurrency": 1,
+    "top_k": 100,
+    "chunk_messages": 20,
+    "chunk_words": 2000,
+    "manifest_status": "finished",
+    "manifest_status_meaning": "The evaluator finished writing its 47 service-error records; this does not mean ingestion or QA succeeded."
+  },
+  "configuration": {
+    "actual_matches_frozen_service_base_plus_original_metadata": true,
+    "actual_service_config_sha256": "47e22673a3cdcb51e57bd36b320b2cf5093fe70a7e7ad1b27c58c252e3645a40",
+    "queryFocus": true,
+    "queryFocusTimeout": 8000,
+    "verificationResponseFormat": "json_object",
+    "candidateLimit": 200,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "rerank": false,
+    "score_version_note": "No score from the earlier 9c7 10/16 MemoryOps run is transferred to this 8717 conv-43 run.",
+    "evaluator_git_service_commit_metadata": "6381bef2d705c3bc63b3616d529149d947a171f1",
+    "executed_service_commit": "8717d918160e36f4e8822d0ad80298342e474c5a",
+    "git_metadata_note": "The evaluator reports Git metadata from its original frozen checkout. The separately executed service is the hash-pinned 8717 artifact identified by plan/source_checkpoints and launcher."
+  },
+  "timing": {
+    "controller_runtime_ms": 1061612.1700000002,
+    "evaluator_wall_ms": 1039183.0,
+    "successful_add_HTTP_total_ms": 1007892.3292919998,
+    "successful_add_HTTP_mean_ms": 26523.48234978947,
+    "successful_add_HTTP_max_ms": 58528.610665999935,
+    "failed_add_HTTP_ms": 31064.4820839999,
+    "all_add_HTTP_ms": 1038956.8113759997,
+    "generation_total_ms": 990979.927,
+    "add_embedding_total_ms": 31150.374665000316,
+    "evaluator_non_add_overhead_ms": 226.1886240002932,
+    "local_Judge_preflight_ms": 21256.06,
+    "note": "This run failed before Search/Answer/benchmark Judge. The small evaluator residual is overhead, not QA time. Model-stage sums and HTTP wall time are separate measurements."
+  },
+  "frozen_integrity": {
+    "status": "pass",
+    "plan_sha256": "15ae8d19c59b1bb4b7ff2b6ce888bbe7f5db9add5a2d04566124fd366d079c2a",
+    "entry_sha256": "289358edcfa9150a07d8bd49c6ead42ce82611cef96a72e6ea295a88bac43881",
+    "candidate_manifest_sha256": "0b43eb46dd1c7c189f386e57d4f61188edca24d1eda7f119e6be5fa7eb65c61c",
+    "candidate_dist_files": 144,
+    "all_dist_files_unchanged": true,
+    "all_plan_pins_unchanged": true,
+    "checked_pin_paths": 218,
+    "original_dataset_sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc",
+    "selected_dataset_sha256": "cc53643e566824d905ab8759952928353ccca78bbd723f705fa2bb7e8e2d65e4",
+    "schedule_sha256": "2fa4a8028960304f3eff2dff12333931ab9c65ab337672b69f13f1d8a45ff191",
+    "complete_original_29_sessions_680_messages_47_qids_preserved": true,
+    "shared_runtime_note": "The frozen source/locks/helpers remain unchanged. Shared node_modules/.venv dependencies are documented in the preparation report, not claimed to be a newly isolated environment."
+  },
+  "owned_processes": {
+    "controller": {
+      "pid": 80249,
+      "process_identity": "Wed Sep  9 06:36:44 2026",
+      "started_at": "2026-09-08T22:36:44.331300+00:00",
+      "finished_at": "2026-09-08T22:54:25.943470+00:00",
+      "status": "failed",
+      "exit_code": 1,
+      "error_type": "RuntimeError",
+      "alive": false
+    },
+    "children": {
+      "sleep-prevention": {
+        "pid": 80268,
+        "process_identity": "Wed Sep  9 06:36:44 2026",
+        "started_at": "2026-09-08T22:36:44.339626+00:00",
+        "finished_at": "2026-09-08T22:54:25.942472+00:00",
+        "exit_code": -15,
+        "stopped_by_runner": true,
+        "alive": false
+      },
+      "service": {
+        "pid": 80270,
+        "process_identity": "Wed Sep  9 06:36:44 2026",
+        "started_at": "2026-09-08T22:36:44.344519+00:00",
+        "finished_at": "2026-09-08T22:54:25.942488+00:00",
+        "exit_code": 0,
+        "stopped_by_runner": true,
+        "alive": false
+      },
+      "judge": {
+        "pid": 80274,
+        "process_identity": "Wed Sep  9 06:36:44 2026",
+        "started_at": "2026-09-08T22:36:44.898388+00:00",
+        "finished_at": "2026-09-08T22:54:25.942490+00:00",
+        "exit_code": 143,
+        "stopped_by_runner": true,
+        "alive": false
+      },
+      "judge-preflight": {
+        "pid": 80276,
+        "process_identity": "Wed Sep  9 06:36:45 2026",
+        "started_at": "2026-09-08T22:36:45.013349+00:00",
+        "finished_at": "2026-09-08T22:37:06.269409+00:00",
+        "exit_code": 0,
+        "stopped_by_runner": null,
+        "alive": false
+      },
+      "locomo": {
+        "pid": 80420,
+        "process_identity": "Wed Sep  9 06:37:06 2026",
+        "started_at": "2026-09-08T22:37:06.281283+00:00",
+        "finished_at": "2026-09-08T22:54:25.835923+00:00",
+        "exit_code": 0,
+        "stopped_by_runner": null,
+        "alive": false
+      }
+    },
+    "all_owned_exited": true,
+    "monitor_gaps": [],
+    "exit_note": "Service exit 0, Judge exit 143 and caffeinate exit -15 followed run-owned teardown. The evaluator exited 0 after writing service-error rows; the controller exited 1 because the ingestion gate failed."
+  },
+  "questions": [
+    {
+      "qid": "conv-43#q0000",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "9462790c76f443f83dcb9a0466653f763559154768eab77cb1a825a10636f85e"
+    },
+    {
+      "qid": "conv-43#q0001",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "2a1cf1fd9938d9f23311fec946e3c5385f53083f90500a3519fedb114ab0959c"
+    },
+    {
+      "qid": "conv-43#q0003",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "169f14589198e3d57288a99deda0c12b6b430964f21fb1ac8c4943f1db83b314"
+    },
+    {
+      "qid": "conv-43#q0004",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "ea8462211cf85d4779b08a6221831c31a316f74666565221b66faa486dece66d"
+    },
+    {
+      "qid": "conv-43#q0005",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "272c0a5a113a8a1167a05234428ac6935b99356f60825e04bebb1661b00fcafa"
+    },
+    {
+      "qid": "conv-43#q0006",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "13b51b28401f40f74eda14327f92fcaf9f258f3ec6cce5823fc30bb118a52d58"
+    },
+    {
+      "qid": "conv-43#q0007",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "fa22066bc0e5c17043a7caf4f16e93d5afed6bf3370a032f0571e98a3817ec63"
+    },
+    {
+      "qid": "conv-43#q0008",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "b5aa1b1786a626399212329b764eee05de25ae9214afc7bd13b80ad7357b8f6b"
+    },
+    {
+      "qid": "conv-43#q0009",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "061fad1b591ac963f814d0fcac291edfb906c217b8e8b73ef46547bf1a12154c"
+    },
+    {
+      "qid": "conv-43#q0010",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "3006176ebd0a35324ef322e6a534a4debd0d8d69cc2f27de412bb93fd90c3e4d"
+    },
+    {
+      "qid": "conv-43#q0011",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "b8dda365f8f3251ac9945ff069546f6392c8c364b80d8347b678c11788acde9e"
+    },
+    {
+      "qid": "conv-43#q0012",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "f2456165674f251fc84744559b7053cdea1f1e017f5adddd0d86bc8de46a65fc"
+    },
+    {
+      "qid": "conv-43#q0013",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "6fbdcee05f9975a6895b6bc86242fea147416b80fcfedf58e1144e4bce15aee0"
+    },
+    {
+      "qid": "conv-43#q0014",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "b3f23e993f1c4fecd72800278874ed5466c9a95ed44c8e06075ab55a2a48813b"
+    },
+    {
+      "qid": "conv-43#q0015",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "bcd3695760788df764ed04c48043c3dbe454b2ae69ae81310730763010dc0811"
+    },
+    {
+      "qid": "conv-43#q0016",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "59f5904105104238e3effe3e0ee30497dee0e74e477a7e892e45013627412544"
+    },
+    {
+      "qid": "conv-43#q0017",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "93dc02c3579a6166f20e0c853464d87b9381716df8ba9d36ff5cde0571ddc79e"
+    },
+    {
+      "qid": "conv-43#q0019",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "4c3dcd4a48080250a6e001fb6770536db73797278a4e54b3e9cdae3beda6448c"
+    },
+    {
+      "qid": "conv-43#q0021",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "8f95b042e60c4582ef0334cf5982086d1f0b69d5c1205c9b197beb08b16048b0"
+    },
+    {
+      "qid": "conv-43#q0022",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "33e674778bcc7261e18a84301f5aa92f7f6f1aac50dd355193448d3979c14907"
+    },
+    {
+      "qid": "conv-43#q0023",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "fd922a75f6825920119cba1528c20796de14d481f7b57b74cc435736450d83a3"
+    },
+    {
+      "qid": "conv-43#q0024",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "55a7842eebdab33d593a8a15fe665b44da293d2effb32e23bd6494219a2a4705"
+    },
+    {
+      "qid": "conv-43#q0025",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "ab2bec1f4e327eb4553f399b4759ad9d90b50aa21064cdea4fc8e2d952a466ff"
+    },
+    {
+      "qid": "conv-43#q0026",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "816aa7b9d4fe3a8ade432f721c70150a166c7a41f0bfb3249e7c220c7af3ef26"
+    },
+    {
+      "qid": "conv-43#q0027",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "b142b7efcf0fd390e8e30349b40e384a79a1f58a4053fdc4423b3eaac784170e"
+    },
+    {
+      "qid": "conv-43#q0028",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "6f2f716be4171ab7d69a9d1038dcbe9d571dd2c8d01af801c8130613192a8025"
+    },
+    {
+      "qid": "conv-43#q0029",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "f86af69354354733895fa66c739a507ad9e764234865e7ead21dcbb770dea6c3"
+    },
+    {
+      "qid": "conv-43#q0030",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "7933141ae5ada1ac56d65d3aca4ac8f4bf739431df35d63f031265e1cb793eba"
+    },
+    {
+      "qid": "conv-43#q0031",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "4b9568c391e1548246a780df0d7aa760c7b42b8b80658dcf1535afd422e0f82e"
+    },
+    {
+      "qid": "conv-43#q0032",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "cefac2c27df99a9eaacd02fec5574e2aedb4060798487a0510c6a936f40b5014"
+    },
+    {
+      "qid": "conv-43#q0033",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "289e8d323537603be9ae5cc477c152e90e3c0f7fdbda63d1bbeda2227bb72817"
+    },
+    {
+      "qid": "conv-43#q0034",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "43955aba1f96ab450eb48eead4bdd245a0d5e4453faad9c3c5bdf7d0452fb8c5"
+    },
+    {
+      "qid": "conv-43#q0035",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "35ca0e522019c471aa34cd51672f99b13aa855dfe2661968f6e37fe26fab723d"
+    },
+    {
+      "qid": "conv-43#q0036",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "1d434afe8ae916e6d1c5ff9a8ede2d3341d73ef364eb42218e29d64836fd8b8b"
+    },
+    {
+      "qid": "conv-43#q0037",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "c94ed007e8c02aa68161e18ebbf566121835f4999504ffdacfb95c6d02b6903b"
+    },
+    {
+      "qid": "conv-43#q0038",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "dc2c8a725cde6b31aa6a149e6f031d701ae49c45921f18c1d928f6d3e9dd8e9a"
+    },
+    {
+      "qid": "conv-43#q0039",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "7fffee70052ba4a45f34a6de92fd8fd0a4adc0c3e22f090933f87de59866da7a"
+    },
+    {
+      "qid": "conv-43#q0040",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "1238f972650d6cd0ad5adf0a44f7478a83765aa3a8804536268222acf8ec88a4"
+    },
+    {
+      "qid": "conv-43#q0041",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "a8f270c836b1c3ed4d3c2c759bc95b8c6e200a7c61328efe06a251c80cab7f6c"
+    },
+    {
+      "qid": "conv-43#q0042",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "265bb5fa1a653152c6e51ca3fbe0295389b2cb3c7700aed0e87593b025de4cad"
+    },
+    {
+      "qid": "conv-43#q0043",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "acb6ab9c3166fab3a998759f2315c162525541206dca852c28aef635897f3302"
+    },
+    {
+      "qid": "conv-43#q0044",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "110acc66c105de70e8020788132b8c48696658e5346267dfae246d4160fc4e65"
+    },
+    {
+      "qid": "conv-43#q0045",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "6a90beb55ace9fa70956896d43885475bc20da1ae360eabf33c5b3fa183ed327"
+    },
+    {
+      "qid": "conv-43#q0046",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "45a9dcae6de970015c171556df24105dd268566133c86b61578b483a1d821ba0"
+    },
+    {
+      "qid": "conv-43#q0047",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "3f9ee77847ddc1eef5f3743bf23f2f1504a674456f7c8667726112d23a5f5584"
+    },
+    {
+      "qid": "conv-43#q0048",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "a9e737190a86d9322e448e3b819f5a483cdbe63631d551410e1237f1b51885fa"
+    },
+    {
+      "qid": "conv-43#q0049",
+      "status": "service_error",
+      "correct": false,
+      "judgment_record_sha256_including_LF": "9fcad79693ea822e1ac49a649f4ba072b24ab3b080979a32a273661332acf70d"
+    }
+  ],
+  "record_pins": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/runtime.json": "eb192d6bcc92e9ea31931140aa46f8e2e3101742562b8985ac26f8a752016bec",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/final-status.json": "34bae2d51c4c514050a7521899899b3933f98ffb78dff22b02a72abf62112574",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/gate.json": "40b6e0b2a3e5adb18092a86230328e9e13f5629a9860b576cd67e869c00a38ee",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/locomo-integrity.json": "40b6e0b2a3e5adb18092a86230328e9e13f5629a9860b576cd67e869c00a38ee",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/model-calls.jsonl": "6fef45f959269f9cd8f24808f93d2041caab2eb8fc4bd14970797a00bfa7499c",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/model-trace.jsonl": "7bef5a4e45b1f75b5880890aba94fc752bfaca460d791700ade2c6bff68ef998",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/http-receipts.jsonl": "55b96810444deeaadcb596e172e9f47450045dfdaef44611603694b0d285bd05",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/service.json": "6e801a24ead2ad534a0a1c07ac0d9f49a8cefed44e459d3c38d8113a63cabbc7",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/service.log": "e59730890c5ff9985839812b1cb4aeae63cca87bd6780086786f242d209dccf6",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-20260909-01/locomo-judge-preflight.log": "91975eb8acf8a5193e5fa19a6d68aded8978ba48d43608ccc29d47d3ed953434",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo/manifest.json": "6a50b241324202bdd91ed242dd6aaa8adf63017ef72a1ff2916321cb5c7e2ff8",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo/requests.jsonl": "df5c7c7fd9e2f89ab3c91aad688a9a300d1c19b6988092be95fe9b6c0c33b2ae",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo/ingest.jsonl": "7ac992ab5df02825a789bf0dc2d83fca19e24f83f85c9d8e89a2a7764fd00e92",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo/judgments.jsonl": "cea17b950837c0f952781142fae8e616c0348c61b5a8c02615bd87139e4473ba",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv43-20260909-01-candidate-locomo/metrics.json": "82a275349983cc25bb9ad535a43528b99de4e0d287d7a956b72e961e064b5b3a"
+  },
+  "reviewer_actions": {
+    "new_model_calls": 0,
+    "rejudging": 0,
+    "restarts": 0,
+    "database_mutations": 0,
+    "frozen_artifact_changes": 0
+  },
+  "privacy": "Only summaries, identifiers, timing and hashes are included; no private model outputs, conversation facts, answers or credentials."
+}
