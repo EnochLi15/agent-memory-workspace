@@ -1,0 +1,236 @@
+{
+  "protocol": "readonly-B14-erasure-scope-witness-incident-v1",
+  "created_at": "2026-09-08T16:49:12.506828+00:00",
+  "candidate_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+  "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+  "http_status": 503,
+  "elapsed_ms": 44729.535665999996,
+  "error": {
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Invalid erasure scope witness"
+  },
+  "summary": "Both explicit retirement instructions were covered and independently verified. The current failure is an erasure-binding witness protocol mismatch for a historical derived aggregate with no direct source quotes.",
+  "attribution_limit": "AT_RISK_OPERATION_INSTRUCTIONS was absent in both repair inputs. This attempt demonstrates delivery of existing MISSING_OPERATION_INSTRUCTIONS, not causal benefit of the newly added AT_RISK feedback.",
+  "flow": [
+    "extraction emits one residence operation with invented scope and a concatenated non-substring quote",
+    "repair 1 uses target/source feedback to set scope empty and cite only the first instruction",
+    "repair 2 receives the exact second missing instruction and appends a same-target operation citing its own original quote",
+    "independent verification accepts both operations and proposal; erasure_binding runs",
+    "erasure_binding decision 2 is uncertain and copies generated aggregate content as quote; empty source_quotes makes it impossible to satisfy the source-witness guard",
+    "decoder throws before source erasure or transaction commit"
+  ],
+  "final_operations": [
+    {
+      "operation_index": 0,
+      "type": "forget",
+      "subject": "Kevin",
+      "predicate": "former_residence",
+      "scope": "",
+      "value": "Portland",
+      "boundary": "value",
+      "target_ids": [
+        "eaab4b96c33be1ee8aa677e67e2e3658d31768cff4f7b224913822559be5e339"
+      ],
+      "source": {
+        "index": 6,
+        "quote": "Actually, can you forget that Kevin lived in Portland?"
+      }
+    },
+    {
+      "operation_index": 1,
+      "type": "forget",
+      "subject": "Kevin",
+      "predicate": "former_residence",
+      "scope": "",
+      "value": "Portland",
+      "boundary": "value",
+      "target_ids": [
+        "eaab4b96c33be1ee8aa677e67e2e3658d31768cff4f7b224913822559be5e339"
+      ],
+      "source": {
+        "index": 6,
+        "quote": "Just remove the Portland detail."
+      }
+    }
+  ],
+  "operation_checks": [
+    [
+      0,
+      true,
+      true,
+      null
+    ],
+    [
+      1,
+      true,
+      true,
+      null
+    ]
+  ],
+  "exact_failure": {
+    "source_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-integrated-20260909/service/src/erasure.ts",
+    "source_line": 160,
+    "executed_file": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-failed-adds-20260909-01/service-dist/erasure.js",
+    "executed_line": 204,
+    "function": "decodeErasure",
+    "candidate_index": 2,
+    "fact_id": "pattern-da59aa3e4f431f4f82e0d7dafcd14f06742009565804b5b553335544bec53e31",
+    "fact_revision_in_before_snapshot": 6,
+    "kind": "reflection",
+    "modality": "inferred",
+    "source_quotes": [],
+    "source_id_count": 2,
+    "depends_on": [
+      "e7ed5f2c21ceb25419c4ec42a29dd79fecee8431966815f0c132cf067f1864d9",
+      "76cf70c3ada36535e6bb113f9b6759acb3c84b855c994fd785dc7cb53df1fd03"
+    ],
+    "context_source_slots": [],
+    "decision_effect": "uncertain",
+    "decision_quote_equals_generated_fact_content": true,
+    "failing_condition": "!candidate.fact.source_quotes.some(q => q.includes(decision.quote))",
+    "other_rows": {
+      "candidate_count": 4,
+      "decision_count": 4,
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "all_other_quotes_match": true
+    },
+    "uncertain_is_still_a_refusal": "The following branch at source line161 separately rejects effect=uncertain. Supplying a real witness must not turn that semantic refusal into erase or retain."
+  },
+  "why_no_witness_is_available_in_current_protocol": "aggregatePatterns persists source_ids and depends_on but intentionally sets source_quotes=[] (extraction.ts:773). erasureWork admits the aggregate by its colliding content value; linked context construction also requires an existing direct source quote, leaving this candidate context_source_slots empty.",
+  "grounded_design_options": {
+    "confirmed_available_dependencies": [
+      {
+        "id": "e7ed5f2c21ceb25419c4ec42a29dd79fecee8431966815f0c132cf067f1864d9",
+        "state": "active",
+        "revision": 6,
+        "source_quote_count": 2,
+        "source_witness_matches": [
+          {
+            "source_id": "5d4e3204863fdeeb5eac8446b452e3b99fd9b0ee6f3721c050f306dc2bd3513c",
+            "quote_sha256": "4af29907cef4b99964dda490295b3a2d40fcc6926d64732b7cab2738b409d645",
+            "quote_utf16_length": 41,
+            "unique_occurrences": 1
+          },
+          {
+            "source_id": "5d4e3204863fdeeb5eac8446b452e3b99fd9b0ee6f3721c050f306dc2bd3513c",
+            "quote_sha256": "2d8f036b8604f8586ce96a8ac7976b1745f3bfd2ba4f28224f5bc2d808b4c8e8",
+            "quote_utf16_length": 129,
+            "unique_occurrences": 1
+          }
+        ]
+      },
+      {
+        "id": "76cf70c3ada36535e6bb113f9b6759acb3c84b855c994fd785dc7cb53df1fd03",
+        "state": "active",
+        "revision": 6,
+        "source_quote_count": 1,
+        "source_witness_matches": [
+          {
+            "source_id": "193a7908c50cbda05b850d0652cedc011acd6a919ab60260d00eb59c20612705",
+            "quote_sha256": "06dd035da6b272de34bd2973fb6a8532a8ba3611429c371f75696f09ab3b6dd5",
+            "quote_utf16_length": 100,
+            "unique_occurrences": 1
+          }
+        ]
+      }
+    ],
+    "recommended_minimum": "Resolve this card’s explicit depends_on to the same-tenant stored parent facts and their exact source_ids/source_quotes, and expose auditable inherited witnesses with parent/source identity. Here both real parents exist and their three source quotes occur uniquely in the linked original messages. Keep direct-source records on the existing protocol; validate a derived witness through its explicit dependency path and exact underlying source. Do not present generated aggregate text as a human quote or select a source from source_id alone.",
+    "limits": "Dependency evidence enables a new independent decision; it does not preapprove erasure or retention of the aggregate. Missing/cyclic/stale dependency evidence and an actual uncertain response must continue to fail closed. No new verdict, code change, or probe was produced.",
+    "separate_semantic_observation": "The recorded erasure model also proposed erase for food-preference and food-memory candidates0/1 despite the narrow residence command and keep language. These decisions were not committed; fixing quote plumbing alone would not establish correct erasure semantics."
+  },
+  "rollback": {
+    "sample_id": "B14_forget",
+    "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+    "http_status": 503,
+    "elapsed_ms": 44729.535665999996,
+    "http_attempts": 1,
+    "error_code": "EVIDENCE_VALIDATION",
+    "transport_error": false,
+    "revision_before": 43,
+    "revision_after": 43,
+    "receipt_present": false,
+    "checks": {
+      "sqlite_integrity": true,
+      "tenant_unchanged": true,
+      "single_matching_http_result": true,
+      "prefix_receipts_unchanged": true,
+      "exact_receipt_set": true,
+      "revision_transition": true,
+      "failed_request_absent_or_success_receipt_matches": true,
+      "failed_write_logical_state_unchanged": true
+    },
+    "failed_write_logical_hashes": {
+      "before": "a884423b10dbc594ebdf7b27238ccea6c98284f2e7e84eb9ea023ea638cc41d6",
+      "after": "a884423b10dbc594ebdf7b27238ccea6c98284f2e7e84eb9ea023ea638cc41d6"
+    },
+    "integrity": "pass",
+    "successful_degraded_add": false
+  },
+  "model_stages": [
+    {
+      "trace_id": "135f2e81-63c2-40ff-b9e9-62422a14abfb",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "input_sha256": "0af8fbc534816091b2e7ca6959af0014b621a4bd51b9f6c25d32adc39b0572fa",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59"
+    },
+    {
+      "trace_id": "590ce4a0-48b2-497f-877b-d70208332579",
+      "purpose": "repair",
+      "outcome": "ok",
+      "input_sha256": "e8f5e8f11f971636ed9fe2652b1dfb89b2cdb0cc27be218eccc6b2a1a70eb822",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0"
+    },
+    {
+      "trace_id": "655f0aff-6302-4045-990a-52764a6555a7",
+      "purpose": "repair",
+      "outcome": "ok",
+      "input_sha256": "1c1010870b751406659e0fdb7ad2e0bd90ce26b5b278cbb9123e008a96320674",
+      "system_sha256": "188d20731a663bbadf3c6eb18816f8f70524b07367a0720239a2eb9cfa2c51c0"
+    },
+    {
+      "trace_id": "42ede87d-fa67-49ae-9c36-05dbfdb20701",
+      "purpose": "verification",
+      "outcome": "ok",
+      "input_sha256": "981d5c919f9cb57d2d1715f7568ec41b109fedaa9cc92272442d12887e1c26b9",
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3"
+    },
+    {
+      "trace_id": "1f241335-d775-4c04-b678-de50a11ac356",
+      "purpose": "erasure_binding",
+      "outcome": "ok",
+      "input_sha256": "5ca1a6d2931f9ad49b367b062b466774c6618ccec601f161310fdf82dfb4b8a8",
+      "system_sha256": "e42e7a3a3f7e9e2ad9d8e731069f124d9f0bf297fc28090f833e78a6a3da1433"
+    }
+  ],
+  "provenance": {
+    "snapshot_sha256": "c74c50c636732facbea634f2744510440b315b72bb6a61a8ce1b0bfe2dd50240",
+    "http_result_sha256": "3a1853db50d14c92e8d98e427567dd7d17b39646c8b8d4a9baa6ef20586b5796",
+    "executed_erasure_js_sha256": "7bef285b0c94bffd380ea335ede413d05de31dbbf1da26fba2e008d52e53ed96",
+    "private_erasure_packet_sha256": "35a3440b78110cb2a4829eaf00f9e12005e2ec41f845a24b597242d951fc34ed",
+    "private_artifact": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B14-erasure-witness-20260909"
+  },
+  "scope": {
+    "cloud_calls": 0,
+    "live_code_changes": 0,
+    "run_output_changes": 0,
+    "score_changes": 0
+  },
+  "keep_context_delivery": {
+    "confirmed": "present",
+    "trace_id": "1f241335-d775-4c04-b678-de50a11ac356",
+    "all_16_NEW_MESSAGES_equal_original_request": true,
+    "message_index": 6,
+    "role": "user",
+    "exact_keep_clause": "Everything else about his food preferences and Mia and our dinner dates — keep all of that.",
+    "message_sha256": "5b8da92ea43f4166d81522fb00621087fd2b5a1b1c8d211fac818d1a15ec1111",
+    "construction": "erasure.ts:144 sends NEW_MESSAGES:req.messages alongside SOURCE_PARTITION_ENABLED, CONTEXT_ONLY, SOURCE_CONTEXTS, FACTS, BOUNDARIES and CANDIDATES; extraction.ts:670 serializes that complete object for purpose=erasure_binding.",
+    "authorization_projection": "erasure.ts:102 stores only {quote:o.source.quote,target:meaning(f)} inside each BOUNDARIES.authorization. The two same-boundary operations share one map key, so this field contains the later Just remove the Portland detail. quote. This does not remove the full original user message from NEW_MESSAGES.",
+    "conclusion": "The keep exception was not lost in transport or input construction. The recorded erase decisions for food candidates0/1 were made with the explicit keep clause available. Supplying missing derived witnesses can repair the quote protocol, but must not authorize replaying those original erase decisions as semantically correct."
+  }
+}

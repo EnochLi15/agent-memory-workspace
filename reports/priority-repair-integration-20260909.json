@@ -1,0 +1,46 @@
+{
+  "protocol": "priority-repair-integration-v1",
+  "at": "2026-09-08T16:40:12.107025+00:00",
+  "candidate_commit": "50ccac83fa59f85de418dcde2c4e69444c99607b",
+  "branch": "fix/priority-repair-followups-20260909",
+  "base": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "changes": [
+    "Guarded really wording in direct second-person retirement instructions.",
+    "Conditional instruction-coverage feedback when semantic repair removes rejected operations.",
+    "Typed scope-only rejection can spend an existing repair attempt without mutating the rejected proposal or broadening scope.",
+    "Scope feedback limited to eight examples with omitted count; full structural checks still run."
+  ],
+  "validation": {
+    "service_tests": {
+      "passed": 565,
+      "total": 565
+    },
+    "build": "passed",
+    "interaction": "Semantic findings, proposal slots, exact scope and conditional instruction feedback are preserved across a rejected out-of-scope patch.",
+    "original_model_packets": "Original invalid packets remain rejected; no original benchmark verdicts were changed.",
+    "initial_build_order_error": "Tests invoked before build in the new worktree failed because compiled dist modules did not exist. Build then 563 tests passed; after feedback bounding and interaction regressions, final build and 565 tests passed."
+  },
+  "manifest": "artifacts/priority-repair-integrated-20260909/final-manifest.json",
+  "manifest_sha256": "97fdf3c914389ec78c42216af3e0b52b01c88fd6e0cbe305151100985b28cb35",
+  "next_probe": {
+    "campaign": "priority-failed-adds-20260909-01",
+    "scope": "Exactly three fixed original failed HTTP adds on original-version historical snapshots, one per B14_forget/B03_remember/B30_forget; no QA or benchmark score.",
+    "status_at_report": "completed",
+    "finished_at": "2026-09-08T16:43:49.107288+00:00",
+    "successful_adds": 2,
+    "failed_adds": 1,
+    "integrity": "pass",
+    "results_report": "reports/priority-fixed-failed-adds-results-20260909.json"
+  },
+  "previous_completed_evaluation": {
+    "campaign": "priority-failed-tail-20260909-01",
+    "service_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+    "correct": 7,
+    "planned_questions": 16,
+    "report": "reports/priority-failed-tail-results-20260909.json"
+  },
+  "separate_quality_work": {
+    "A06": "reports/priority-A06-tail-retrieval-diagnosis-20260909.json",
+    "limitation": "No query vectors were saved; no candidate-pool counterfactual or QA score is inferred."
+  }
+}

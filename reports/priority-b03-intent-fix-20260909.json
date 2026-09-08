@@ -1,0 +1,182 @@
+{
+  "protocol": "guarded-second-person-emphasis-candidate-v1",
+  "date": "2026-09-09",
+  "status": "Independent follow-up candidate validated locally; not merged into the frozen 16-question recovery candidate.",
+  "base_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "candidate_commit": "84577fed00221248a4c66787bf8e6d6edf69456a",
+  "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/service",
+  "change": {
+    "source_file": "src/operation-intent.ts",
+    "new_recognition": "Only the literal second-person form \"you do not/don't really need to ... anymore\". Existing non-emphasized recognition is unchanged.",
+    "new_branch_exclusions": [
+      "Confirmation questions ending ? or ？",
+      "maybe/perhaps/possibly/probably/necessarily and not sure/certain",
+      "not saying/asking/telling",
+      "keep forgetting/deleting/erasing/removing"
+    ],
+    "inherited_protection": [
+      "Quoted/reported/conditional/negative/procedural instruction guards",
+      "Target identity and scope validation",
+      "Same-chunk source chronology",
+      "Independent semantic verification"
+    ],
+    "not_changed": [
+      "chronology logic",
+      "authorizesForget implementation",
+      "raw source or source quote widening",
+      "scope or replacement guards",
+      "model configuration and budgets",
+      "frozen e9b5da4 source and dist"
+    ]
+  },
+  "failure_first": {
+    "baseline_e9b5da4": {
+      "tests": 7,
+      "passed": 4,
+      "failed": 3,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/emphasized-retirement-red-final.txt"
+    },
+    "initial_optional_really_rejected_by_review": {
+      "reason": "Uncertain Maybe/confirmation forms needed a separate guarded matching branch.",
+      "tests": 6,
+      "passed": 5,
+      "failed": 1,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/emphasized-uncertainty-red.txt"
+    },
+    "new_branch_negative_review": {
+      "reason": "Keep deleting/forgetting/erasing/removing and not saying must not create new deletion authority.",
+      "tests": 7,
+      "passed": 5,
+      "failed": 2,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/emphasized-negation-red.txt"
+    }
+  },
+  "validation": {
+    "new_tests": {
+      "tests": 7,
+      "passed": 7,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/emphasized-retirement-green.txt"
+    },
+    "full_service": {
+      "tests": 545,
+      "passed": 545,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/full-tests-final.txt"
+    },
+    "build": {
+      "passed": true,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/build-final.txt"
+    },
+    "independent_review": "Previously flagged five blocking negative cases reject; four ordinary emphasis forms still match (9 independent local assertions).",
+    "original_B03_prefix": {
+      "protocol": "B03-two-recorded-outputs-local-boundary-v1",
+      "note": "The original first repair response is held fixed. Its system prompt already differs at e9b5da4; unknown later repair and semantic outputs are never fabricated.",
+      "backup_sha256": "660bd2814ced6ceee577a34df3b597a5d87ee8ea805ed421557d584bcfec1fa8",
+      "backup_unchanged": true,
+      "results": [
+        {
+          "variant": "base_e9b5da4",
+          "model_outputs_replayed": 2,
+          "cloud_calls": 0,
+          "original_forget_obligations": 0,
+          "matches": [
+            {
+              "purpose": "extraction",
+              "purpose_match": true,
+              "system_match": true,
+              "input_match": true
+            },
+            {
+              "purpose": "repair",
+              "purpose_match": true,
+              "system_match": false,
+              "input_match": true
+            }
+          ],
+          "after_recorded_first_repair": {
+            "authorization_passes": false,
+            "fact_start": 45,
+            "fact_end": 161,
+            "operation_start": 163,
+            "remaining_binding_codes": [
+              "OPERATION_SCOPE",
+              "replacement_subject_mismatch"
+            ],
+            "authorization_error_present": true,
+            "semantic_verification_calls": 0,
+            "next_output_available": false,
+            "prepare_success": false,
+            "commit_attempted": false
+          },
+          "revision_before": 19,
+          "revision_after": 19,
+          "receipt": null
+        },
+        {
+          "variant": "emphasized_candidate",
+          "model_outputs_replayed": 2,
+          "cloud_calls": 0,
+          "original_forget_obligations": 1,
+          "matches": [
+            {
+              "purpose": "extraction",
+              "purpose_match": true,
+              "system_match": true,
+              "input_match": true
+            },
+            {
+              "purpose": "repair",
+              "purpose_match": true,
+              "system_match": false,
+              "input_match": true
+            }
+          ],
+          "after_recorded_first_repair": {
+            "authorization_passes": true,
+            "fact_start": 45,
+            "fact_end": 161,
+            "operation_start": 163,
+            "remaining_binding_codes": [
+              "OPERATION_SCOPE",
+              "replacement_subject_mismatch"
+            ],
+            "authorization_error_present": false,
+            "semantic_verification_calls": 0,
+            "next_output_available": false,
+            "prepare_success": false,
+            "commit_attempted": false
+          },
+          "revision_before": 19,
+          "revision_after": 19,
+          "receipt": null
+        }
+      ]
+    },
+    "semantic_verification_boundary": {
+      "generic_fixture_reached_verification": true,
+      "generic_fixture_verdict_supplied": false,
+      "generic_fixture_commit": false,
+      "overlapping_fact_and_operation_witness_still_rejected": true,
+      "original_B03_reached_verification": false,
+      "reason": "Original first repair leaves OPERATION_SCOPE and replacement subject mismatch. The real prefix cannot reach Models.verify under this patch alone. It now passes retirement recognition/authorization; remaining binding refusals are preserved."
+    }
+  },
+  "isolation": {
+    "cloud_calls": 0,
+    "model_outputs_changed": false,
+    "original_database_writes": 0,
+    "frozen_e9b5da4_source_and_dist_manifest_match": true,
+    "included_in_current_16_question_recovery": false
+  },
+  "limits": [
+    "No complete B03 write recovery or QA improvement is proven.",
+    "Original extraction and first repair outputs are held fixed; the first repair system already differs in e9b5da4 from the original baseline. Unknown subsequent repair and semantic responses are not fabricated.",
+    "A later live evaluation must resolve independent scope/replacement problems and pass full semantic/source verification; the generic stopped fixture does not substitute for that evaluation."
+  ],
+  "artifacts": {
+    "diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/candidate.diff",
+    "dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/candidate-dist",
+    "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/candidate-manifest.json",
+    "prefix_replay_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/replay-prefix.mjs",
+    "prefix_private_feedback": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-b03-intent-fix-20260909/prefix-replay.private.json"
+  }
+}

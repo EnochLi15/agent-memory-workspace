@@ -1,0 +1,229 @@
+{
+  "protocol": "readonly-A06-forget-intact-witness-incident-v1",
+  "generated_at": "2026-09-08T15:44:16.456348+00:00",
+  "request_id": "priority-full-20260908-01-candidate:memops:A06_forget:segment-37:0",
+  "original_error": {
+    "http_status": 503,
+    "code": "EVIDENCE_VALIDATION",
+    "message": "Source erasure left every original witness intact for an erased fact",
+    "elapsed_ms_approximately": 69131.8,
+    "affected_questions": 5
+  },
+  "scope": "Read original trace and SQLite in mode=ro; consistent backup, copied runtime with capture-only guards, and original recorded model packets. No cloud/embedding calls; unit vectors replace embedding only. Original live store and frozen checkout unchanged.",
+  "replay": {
+    "protocol": "isolated-recorded-prepare-and-commit-intact-witness-v1",
+    "scope": "Copied database only. Recorded outputs and original Models.verify logic; unit-vector embedding stub. No network. Capturing guards in copied dist only.",
+    "request_id": "priority-full-20260908-01-candidate:memops:A06_forget:segment-37:0",
+    "revision": 37,
+    "recorded_calls": [
+      {
+        "purpose": "extraction",
+        "expected": "extraction",
+        "system_match": true,
+        "input_match": true,
+        "trace_id": "5c34236b-fefb-4cb2-a54b-3f839e193b95"
+      },
+      {
+        "purpose": "verification",
+        "expected": "verification",
+        "system_match": true,
+        "input_match": true,
+        "trace_id": "58088ca1-3b8b-41be-8b89-54a571422fb3"
+      },
+      {
+        "purpose": "source_erasure",
+        "expected": "source_erasure",
+        "system_match": true,
+        "input_match": true,
+        "trace_id": "ac26fb20-30df-4597-86ad-242efc6e5d40"
+      },
+      {
+        "purpose": "source_erasure_repair",
+        "expected": "source_erasure_repair",
+        "system_match": true,
+        "input_match": true,
+        "trace_id": "903000c5-7f19-49d5-a94c-06904961aa06"
+      }
+    ],
+    "prepared": {
+      "degraded": [],
+      "facts": 7,
+      "operations": [
+        {
+          "type": "forget",
+          "subject": "Tomás",
+          "predicate": "divorce",
+          "value": "Tomás's divorce details: separation timeline, ex-wife Andrea's name, finalization",
+          "target_ids": [
+            "a523b8cf861ac9db58f0fbfb40c95dff82dc70c8c387233c04c3e39a80eeb2b3",
+            "7b0c453645420e19fac731ce863f348562a2aac8272e21ee5fc4d15b57ec97ef"
+          ]
+        },
+        {
+          "type": "forget",
+          "subject": "Priya",
+          "predicate": "wedding_details",
+          "value": "Priya's personal stuff: her engagement and wedding details",
+          "target_ids": [
+            "89bebdeba50129734cad23cdf7ced6e9a86cacdbf8ee8b0ee86fc31addd58f33",
+            "21646d22714b57d160f99b7c1b09c1ad0473a846634353a9866efa0222ab973a",
+            "eb7054aec773ff3fa45522c8e46c6f2f89dc102733fc6f7b0725e3f3580b1f9d"
+          ]
+        }
+      ]
+    },
+    "commit": {
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Source erasure left every original witness intact for an erased fact"
+    },
+    "revision_after": 37,
+    "failed_receipt": null
+  },
+  "root_cause_classification": "Commit-time inferred-fact propagation based on shared source ID adds an erase obligation that did not exist in the source review context. Not an erasure verdict newly returned for a fact candidate; not a prior erased record.",
+  "causal_chain": [
+    "Source work has5 direct operation targets and no upstream erasure-plan deletions.",
+    "Grouped source10 lists2 divorce records in linked_erased_facts and the inferred friend-support pattern in linked_facts, meaning it is expected to survive unless a boundary covers it.",
+    "Model returns a mixed partition removing divorce clauses45–121 and122–188, preserving the neighboring friend-support witness189–258.",
+    "Grouped checkJointObligations tests only the2 fixed linked_erased_facts, which have been cut, so preparation succeeds with no degradation.",
+    "During commit, deleting a direct target marks the entire shared source ID as redacted. The inferred-fact rule erases the friend-support pattern because it shares that source, despite depends_on being empty.",
+    "The final erased-ID set now contains this additional inferred fact. assertErasedWitnessProgress checks its original quote and finds it entirely intact.",
+    "The transaction rejects and rolls back; original revision and receipt count remain37, and the5 sample questions become service_error."
+  ],
+  "object_set_counts": {
+    "operation_targets": 5,
+    "upstream_erasure_plan": 0,
+    "source_plan_erased_facts": 0,
+    "commit_propagation_events": 1,
+    "commit_final_erased": 7,
+    "prior_erased": 1,
+    "intact_witness_failures": 1
+  },
+  "offending_fact": {
+    "id": "08e00c1e031ee145e969cd2d5cd3a70a0f36f8097f6a57260095fd2d931fdb7e",
+    "subject": "user",
+    "predicate": "friend_support_pattern",
+    "modality": "inferred",
+    "depends_on": [],
+    "operation_target": false,
+    "upstream_erasure_plan_erase": false,
+    "source_candidate": false,
+    "source_plan_erase": false,
+    "prior_erased": false,
+    "commit_propagation": {
+      "dependent": true,
+      "leaked": false,
+      "forced": false
+    },
+    "witness_source_id": "b9a21f51c9423d8ce4e4ac90dbfabd47f1c9410fe74a4673335a31739508ca5a",
+    "witness_session": "segment-23",
+    "witness_span": {
+      "start": 189,
+      "end": 258
+    },
+    "source_cuts": [
+      {
+        "start": 45,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 188
+      },
+      {
+        "start": 45,
+        "end": 121
+      },
+      {
+        "start": 122,
+        "end": 188
+      }
+    ],
+    "grouped_source_index": 10,
+    "original_source_candidate_indices": [
+      13,
+      14
+    ]
+  },
+  "prepare_vs_commit": {
+    "prepare_check": "source-erasure-grouped.ts checkJointObligations: only context.linked_erased_facts for each grouped source candidate",
+    "prepare_fixed_erased_ids": [
+      "7b0c453645420e19fac731ce863f348562a2aac8272e21ee5fc4d15b57ec97ef",
+      "a523b8cf861ac9db58f0fbfb40c95dff82dc70c8c387233c04c3e39a80eeb2b3"
+    ],
+    "prepare_retained_ids": [
+      "13065d936e69689820a2c25d7c8d9d40d1a90761e9728d2b8447a49bc9f6d04b",
+      "08e00c1e031ee145e969cd2d5cd3a70a0f36f8097f6a57260095fd2d931fdb7e",
+      "034af438e85a7f1656c30b251080280be5ec6e966e21c9c9c5c9ad5dcc3451ba"
+    ],
+    "commit_check": "storage.ts assertErasedWitnessProgress: all original/prepared witness records whose ID is in the final erasedIds, after dependency/leak/forced propagation",
+    "rule_responsible": "(f.depends_on??[]).some(id=>erasedIds.has(id)) || (f.modality==='inferred'&&f.source_ids.some(id=>redactedSources.has(id)))",
+    "scope_gap": "The second disjunct treats any cut/deletion within a source as invalidating every inferred fact on that source, while the source partition preserves independent clauses. The source plan did not review that newly added erase obligation.",
+    "invariant_to_keep": "A committed erased fact must not retain all its original witnesses. Reconcile the erased object set and source partition before commit; this guard correctly exposed the inconsistency."
+  },
+  "original_store_rechecked": {
+    "revision": 37,
+    "receipts": 37,
+    "failed_request_receipts": 0
+  },
+  "request_schema": {
+    "keys": [
+      "request_id",
+      "user_id",
+      "session_id",
+      "messages"
+    ],
+    "messages": 20,
+    "message_keys": [
+      "content",
+      "role",
+      "timestamp"
+    ],
+    "sha256": "7632ff08f44af784bd118d5001f8b646561f77f35be7c79ab6e33c35fea3cfa3"
+  },
+  "model_trace_provenance": [
+    {
+      "trace_id": "5c34236b-fefb-4cb2-a54b-3f839e193b95",
+      "purpose": "extraction",
+      "input_sha256": "a34f93e2ef71d61c76366c443d74ce019d8dd47c2daf3bdbda44f048af2f0739",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59"
+    },
+    {
+      "trace_id": "58088ca1-3b8b-41be-8b89-54a571422fb3",
+      "purpose": "verification",
+      "input_sha256": "19737dd83407843076bddd9b4302c6ac3361a1196a696b6b264f402df9def584",
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3"
+    },
+    {
+      "trace_id": "ac26fb20-30df-4597-86ad-242efc6e5d40",
+      "purpose": "source_erasure",
+      "input_sha256": "72a7288aad1120b7b1687ba543263aeffaeb41078c7106403eb004be41cf3dae",
+      "system_sha256": "aaba22b3b4a31ff5ffc4c3703159901491e40bc40e93a1c9da9085eaa5ca6225"
+    },
+    {
+      "trace_id": "903000c5-7f19-49d5-a94c-06904961aa06",
+      "purpose": "source_erasure_repair",
+      "input_sha256": "e05cc6d8444a55610ec5a7212203c291c1010d5406c059ea5e0310720550e545",
+      "system_sha256": "2a064a66d440b521878bda73cb7160211524f6589186d21112035ebfbeae8d4f"
+    }
+  ],
+  "consistent_snapshot": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-A06-forget-witness-20260908/before.sqlite",
+    "sha256": "eaaf8dc267024856c5bc89749564ae7a93a42dfc3b4b237aba6d21804fa445df",
+    "revision": 37,
+    "method": "SQLite backup from mode=ro original connection before replay"
+  },
+  "private_artifacts": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-A06-forget-witness-20260908",
+  "reproduce_commands": [
+    "cd /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-A06-forget-witness-20260908 && node replay.mjs",
+    "cd /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-A06-forget-witness-20260908 && node inspect.mjs"
+  ],
+  "artifact_sha256": {
+    "replay.mjs": "4f5f50a9c0cb6bd8fb7b896953701d64e44354f857ff909c35c89b4be58edf8d",
+    "inspect.mjs": "b30e3f85a86a923c69dbe93d6657d3824cc1400bc80dafa7f4676ecf2ea64704",
+    "recorded-calls.json": "7ef9973fc8e03191a827f06e3567e83c7e19728322993d085649b27e67b57186",
+    "replay-report.json": "6a3bf663f1cc83fd3e7810a449c860459ec0aea28c29093d848223b1efc139d9",
+    "prepared.private.json": "96f7dead2a004004dba019e5ac473ab4c5142c6a69aaa98c97606270990d652b",
+    "witness-failure.private.json": "c2e4f3677a1a0178ba8e73b96a7b6e11f973e96a6d8a97ba8c4874bab65c97e5",
+    "set-comparison.private.json": "6ab75b315f2e9bde1b69814a8e90477f2aa5bce4b89356e408c0566c4e542edb"
+  }
+}

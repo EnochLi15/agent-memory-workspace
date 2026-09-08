@@ -1,0 +1,201 @@
+{
+  "protocol": "priority-targeted-recovery-report-v1",
+  "campaign": "priority-failed-tail-20260909-01",
+  "finished_at": "2026-09-08T16:20:01.740054+00:00",
+  "scope": "Targeted recovery with original-version historical prefixes and candidate-version tails; all 16 questions use the normal HTTP evaluator. Not fresh ingestion, a 972-question score, or a retrieval-only ablation. Original results remain unchanged.",
+  "service_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+  "elapsed_seconds": 868.665,
+  "all_owned_processes_stopped": true,
+  "question_records_complete_and_unique": true,
+  "planned_questions": 16,
+  "correct": 7,
+  "accuracy_over_planned": 0.4375,
+  "by_sample": [
+    {
+      "sample_id": "B14_forget",
+      "correct": 0,
+      "planned_questions": 5,
+      "status_counts": {
+        "service_error": 5
+      },
+      "new_successful_adds": 0,
+      "final_failed_adds": 1
+    },
+    {
+      "sample_id": "A06_forget",
+      "correct": 1,
+      "planned_questions": 5,
+      "status_counts": {
+        "judged": 5
+      },
+      "new_successful_adds": 14,
+      "final_failed_adds": 0
+    },
+    {
+      "sample_id": "B01_remember",
+      "correct": 6,
+      "planned_questions": 6,
+      "status_counts": {
+        "judged": 6
+      },
+      "new_successful_adds": 15,
+      "final_failed_adds": 0
+    }
+  ],
+  "question_status_counts": {
+    "service_error": 5,
+    "judged": 11
+  },
+  "prefix_receipts_verified": 116,
+  "prefix_write_model_calls": 0,
+  "unknown_write_model_calls": 0,
+  "new_tail_adds_planned": 39,
+  "new_tail_adds_attempted": 30,
+  "new_tail_adds_successful": 29,
+  "new_tail_adds_failed": 1,
+  "new_tail_adds_unattempted": 9,
+  "successful_degraded_adds": 0,
+  "failed_adds": [
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "status": "failed",
+      "attempt": 0,
+      "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_INTENT\",\"message\":\"Unresolved retirement instruction or unauthorized operation after bounded repair\"}}",
+      "elapsed_ms": 51813.336834
+    }
+  ],
+  "latency": {
+    "new_successful_add": {
+      "count": 29,
+      "total_ms": 437181.609,
+      "mean_ms": 15075.228,
+      "p50_ms": 10081.53,
+      "p95_nearest_rank_ms": 40361.865,
+      "max_ms": 69532.405
+    },
+    "new_failed_add": {
+      "count": 1,
+      "total_ms": 51813.337,
+      "mean_ms": 51813.337,
+      "p50_ms": 51813.337,
+      "p95_nearest_rank_ms": 51813.337,
+      "max_ms": 51813.337
+    },
+    "search_http": {
+      "count": 11,
+      "total_ms": 1674.697,
+      "mean_ms": 152.245,
+      "p50_ms": 151.009,
+      "p95_nearest_rank_ms": 227.287,
+      "max_ms": 227.287
+    },
+    "model_stage_attempts": [
+      {
+        "kind": "embedding",
+        "stage": "add",
+        "outcome": "ok",
+        "count": 29,
+        "total_ms": 5555.601,
+        "mean_ms": 191.572,
+        "p50_ms": 162.986,
+        "p95_nearest_rank_ms": 444.482,
+        "max_ms": 505.639
+      },
+      {
+        "kind": "embedding",
+        "stage": "search",
+        "outcome": "ok",
+        "count": 11,
+        "total_ms": 617.585,
+        "mean_ms": 56.144,
+        "p50_ms": 56.18,
+        "p95_nearest_rank_ms": 69.928,
+        "max_ms": 69.928
+      },
+      {
+        "kind": "generation",
+        "stage": "extraction",
+        "outcome": "ok",
+        "count": 30,
+        "total_ms": 217148.877,
+        "mean_ms": 7238.296,
+        "p50_ms": 5412.917,
+        "p95_nearest_rank_ms": 21305.118,
+        "max_ms": 28023.465
+      },
+      {
+        "kind": "generation",
+        "stage": "repair",
+        "outcome": "ok",
+        "count": 9,
+        "total_ms": 38038.224,
+        "mean_ms": 4226.469,
+        "p50_ms": 2669.53,
+        "p95_nearest_rank_ms": 8757.972,
+        "max_ms": 8757.972
+      },
+      {
+        "kind": "generation",
+        "stage": "source_erasure",
+        "outcome": "ok",
+        "count": 9,
+        "total_ms": 35326.094,
+        "mean_ms": 3925.122,
+        "p50_ms": 2467.641,
+        "p95_nearest_rank_ms": 9815.442,
+        "max_ms": 9815.442
+      },
+      {
+        "kind": "generation",
+        "stage": "source_erasure_repair",
+        "outcome": "ok",
+        "count": 1,
+        "total_ms": 7087.058,
+        "mean_ms": 7087.058,
+        "p50_ms": 7087.058,
+        "p95_nearest_rank_ms": 7087.058,
+        "max_ms": 7087.058
+      },
+      {
+        "kind": "generation",
+        "stage": "verification",
+        "outcome": "error",
+        "count": 1,
+        "total_ms": 10604.39,
+        "mean_ms": 10604.39,
+        "p50_ms": 10604.39,
+        "p95_nearest_rank_ms": 10604.39,
+        "max_ms": 10604.39
+      },
+      {
+        "kind": "generation",
+        "stage": "verification",
+        "outcome": "ok",
+        "count": 33,
+        "total_ms": 165350.405,
+        "mean_ms": 5010.618,
+        "p50_ms": 2469.821,
+        "p95_nearest_rank_ms": 15917.41,
+        "max_ms": 23107.899
+      }
+    ]
+  },
+  "limits": [
+    "Retain all original judgments; service errors receive zero credit.",
+    "Recovery reuses original-version historical prefixes; it is not fresh ingestion or a complete 972-question score.",
+    "An ingestion failure stops the remaining history of that sample; 9 unattempted B14 tail adds are retained as unattempted.",
+    "Answer and Judge per-call latency was not recorded by this frozen evaluator. Search and service model timings do not include Answer/Judge.",
+    "Successful degradation counters do not describe failed preparation paths."
+  ],
+  "evidence_hashes": {
+    "artifacts/priority-failed-tail-20260909-01/plan.json": "7b1031a8642ddfd5cd9a6b0aa2934b274de2ab68b6f15fa4c059fbdbe1905fdc",
+    "artifacts/priority-failed-tail-20260909-01/summary.json": "f11ff90d293b443c8a7c37a2603a98e71929999c0ca8912cde78b980be4fd2c1",
+    "artifacts/priority-failed-tail-20260909-01/http-receipts.jsonl": "dcbf4c93320a75890adc2ff0c10f9ed67f59e3fcc5ee4c78fd21260662c6be13",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/manifest.json": "9bed9cdf194a0940ba3f54a38d09f1ef50972d3ab6ede67c6165d61867fdd410",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/ingest.jsonl": "f5870aad038a9c208ce2e645e58f2b01bd3cdeebaa165c3a2c7562fdffcf1bc8",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/judgments.jsonl": "05401c4ee5c9735c459e39a50c96c2476a0d6087b634794009187ba1ed310190",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-failed-tail-20260909-01-candidate-memops-tail/retrievals.jsonl": "29315f0d27a937ce68d7bb798d3be13a7a9308e7279930814ac95ddc1f01ef0a",
+    "artifacts/priority-failed-tail-20260909-01/model-calls.jsonl": "f64b97be392b61bd191d124cf4095044b788055c5111aa111030ed9f354bd003"
+  }
+}

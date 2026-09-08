@@ -1,0 +1,325 @@
+{
+  "protocol": "readonly-transport-metadata-diagnostic-v1",
+  "campaign": "priority-full-20260908-01",
+  "generated_at": "2026-09-08T15:29:14.996213+00:00",
+  "scope": "Read-only snapshot of completed audit lines and frozen code. No model requests, private prompt/response/key output, process changes, or frozen-code edits.",
+  "snapshot": {
+    "source": "artifacts/priority-full-20260908-01/model-calls.jsonl",
+    "complete_lines": 149,
+    "bytes": 58172,
+    "sha256": "e6157a95d77b468deb34427bf31da7e59c40e6c9ba6b9c8b6571cdbb64915b47",
+    "first_at": "2026-09-08T15:21:55.546Z",
+    "last_at": "2026-09-08T15:28:53.144Z",
+    "kind_counts": {
+      "generation": 99,
+      "embedding": 42,
+      "generation_retry": 8
+    }
+  },
+  "generation": {
+    "attempts": 99,
+    "successful_attempts": 90,
+    "failed_attempts": 9,
+    "failure_categories": {
+      "connection": 8,
+      "invalid_json": 1
+    },
+    "elapsed_ms_total": 404076.6067050003,
+    "failed_attempt_elapsed_ms": 34686.138124000005,
+    "scheduled_backoff_ms": 4000,
+    "failed_plus_backoff_ms": 38686.138124000005,
+    "failed_plus_backoff_over_generation_elapsed": 0.09573961343484347,
+    "failed_plus_backoff_over_generation_plus_backoff": 0.0948011659780496,
+    "successful_attempts_over_4_seconds": 34,
+    "max_success_elapsed_ms": 14724.984540999983
+  },
+  "connection": {
+    "count": 8,
+    "all_ECONNRESET": true,
+    "all_signal_not_aborted": true,
+    "all_stream_not_started": true,
+    "all_http_status_missing": true,
+    "elapsed_ms_min": 4015.853082999998,
+    "elapsed_ms_max": 4034.419916999992,
+    "elapsed_ms_median": 4022.6792705000043,
+    "failed_attempt_elapsed_ms": 32187.089291,
+    "scheduled_backoff_ms": 4000,
+    "failed_plus_backoff_ms": 36187.089291,
+    "failed_plus_backoff_over_generation_elapsed": 0.08955502172244953,
+    "failure_rows": [
+      {
+        "at": "2026-09-08T15:22:16.498Z",
+        "trace_id": "845f97dd-db0e-479c-9f91-284753eedad8",
+        "purpose": "extraction",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4015.853082999998,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:22:34.236Z",
+        "trace_id": "829a5fca-e0fa-45ee-85bc-7a60d0ab1b33",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4021.0175000000017,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:23:04.817Z",
+        "trace_id": "775a6262-344a-4f01-8801-940423740ebc",
+        "purpose": "extraction",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4018.725542,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:24:35.126Z",
+        "trace_id": "ad3e9bdf-0805-45cc-b35e-aa56d44edc66",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4034.419916999992,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:25:44.874Z",
+        "trace_id": "b769f09f-3ac9-4f41-b961-7d113e152ffa",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4024.9819579999894,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:25:53.244Z",
+        "trace_id": "5898057c-1136-462e-8b0e-f071f93ba96a",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4024.341041000007,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:26:11.296Z",
+        "trace_id": "76214097-c8c5-4521-bc75-da940a84d6f2",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4018.836708000017,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      },
+      {
+        "at": "2026-09-08T15:27:23.189Z",
+        "trace_id": "d733bf0d-e5c6-4b78-9341-ad48a065b037",
+        "purpose": "verification",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 4028.913541999995,
+        "error_type": "Error",
+        "error_category": "connection",
+        "transport_code": "ECONNRESET",
+        "provider_error_code": null,
+        "http_status": null,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false
+      }
+    ],
+    "recoveries": [
+      {
+        "failed_at": "2026-09-08T15:22:16.498Z",
+        "purpose": "extraction",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:22:30.200Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 13200.116708000001
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:22:34.236Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:22:39.732Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 4993.891042000003
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:23:04.817Z",
+        "purpose": "extraction",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:23:09.169Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 3849.061333999998
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:24:35.126Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:24:37.451Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 1821.9499589999905
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:25:44.874Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:25:47.621Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 2243.578208000021
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:25:53.244Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:25:56.190Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 2443.50450000001
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:26:11.296Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:26:17.278Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 5479.003459000029
+          }
+        ]
+      },
+      {
+        "failed_at": "2026-09-08T15:27:23.189Z",
+        "purpose": "verification",
+        "recovered": true,
+        "next_attempts": [
+          {
+            "at": "2026-09-08T15:27:27.341Z",
+            "attempt": 1,
+            "outcome": "ok",
+            "elapsed_ms": 3650.433874999988
+          }
+        ]
+      }
+    ]
+  },
+  "timeouts": {
+    "sdk_ms": 115000,
+    "add_request_signal_ms": 115000,
+    "http_request_timeout_ms": 116000,
+    "shared_extraction_model_budget_ms": 90000,
+    "sdk_hidden_retries": 0,
+    "service_transport_attempts": 3,
+    "model_min_interval_ms": 0,
+    "first_retry_delay_ms": 500
+  },
+  "findings": [
+    "Confirmed: the recorded failures are ECONNRESET before an accepted HTTP/SSE response, with no caller-signal abortion. This is not evidence of a local four-second total timeout.",
+    "Confirmed: frozen code configures SDK/add timeout at 115s and the shared extraction model budget at 90s; generation has no four-second timeout. SDK retries are disabled; service retries preserve the same signal and use a 500ms first backoff.",
+    "Inference limit: the tight four-second cluster indicates a repeatable transport timing pattern, but these fields cannot distinguish local networking, an intermediary, or the provider. No party can be assigned the reset from this evidence.",
+    "Connection retry recovery time is normal successful-generation work, so it is not counted wholesale as extra overhead. Overhead estimates count failed attempts and logged backoffs; generation timing excludes queue wait. This is a completed-call snapshot, not a campaign wall-time or cost estimate.",
+    "The invalid_json event is a separate verification-format recovery, not a transport retry; its failed-generation time is included in the all-failures figure."
+  ],
+  "minimal_future_diagnostic_if_rate_increases": [
+    "In a separate authorized diagnostic run, emit only local trace ID, attempt, relative DNS/connect/TLS/headers/first-SSE/error times, reused-connection boolean, address family, and a bounded transport error/cause code.",
+    "Record expected deadline, remaining budget, abort-state/reason category, HTTP status if any, and socket bytesRead/bytesWritten if available. Use random socket correlation IDs; omit prompt/output, body, auth/header values, raw peer addresses, and free-form error messages.",
+    "Do not alter the active benchmark to collect these fields; current successful recovery does not justify interrupting it."
+  ],
+  "frozen_code_sha256": {
+    "src/models.ts": "f43c7f4b06ed6b0a6cab1f7109fb9d8226dc9ab7363842d677623bd98a68ac74",
+    "src/model-retry.ts": "f8eb2e4cc967da9db7aa116e012fc7831d37eed11d7f4b898f5ee73d3c2902e7",
+    "src/model-failure.ts": "4b191662d4bd48ba7a28d10743843f4fd7f997e64c5ce346ab53f50c32f5ffe4",
+    "src/model-gate.ts": "4cd2709a84c0733f7a54199a9c46112e3309a2b63124e510bec3f1e24ef03c34",
+    "src/extraction.ts": "b81c2663820601e7263c8814beb0623946f181bc95ec4523c0e4d0223f53d10d",
+    "src/server.ts": "de3aa3ec03f2762b7f12de19ac594e68d8125f16e59d38dc8daaf029762366f0",
+    "node_modules/openai/src/client.ts": "00413c0b4199f1c30168ebaf430527b3c8165259f5634ebff97a49396edcf0e0"
+  }
+}

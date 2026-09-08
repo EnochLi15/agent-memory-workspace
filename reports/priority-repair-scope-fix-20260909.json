@@ -1,0 +1,135 @@
+{
+  "protocol": "priority-repair-scope-fix-v1",
+  "generated_at": "2026-09-08T16:29:29.465891+00:00",
+  "candidate": {
+    "service_root": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/service",
+    "commit": "760453b67aab54cce6683742d32753f8801925bf",
+    "parent": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+    "git_clean": true,
+    "hash_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/candidate-hashes.json",
+    "hash_manifest_sha256": "29cfd053feff0f3f6ed6ca633c84585062cd12683929cb31e44d5ae1526d3704",
+    "diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/candidate.patch",
+    "diff_sha256": "4379173e91185fc0bed0b344685599c1115bfe2ff58aad34c8b623c6a0abac6e"
+  },
+  "incident": {
+    "source_report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-full-B30-binding-incidents-20260909.json",
+    "case": "B30_forget segment-13",
+    "repair_trace_id": "3491ceb0-3a28-4003-ac81-b04bd494024e",
+    "private_source_sha256": "70f7add72c777e69ef9d65c43b1f31b72262019b0ce8acf80b13f100aa8fabb2",
+    "input_sha256": "a06c1e0e0db1071c9a33e7e2c60ada212459feba0c8e310e546fdc742aa36225",
+    "output_sha256": "23b866082213a46281756722cff28be3020fc76336ce647c0ee991442cf62d3c",
+    "original_scope": {
+      "fact_indices": [
+        4
+      ],
+      "operation_indices": [],
+      "source_indices": [
+        8
+      ]
+    },
+    "original_http_code": "OPERATION_TARGET",
+    "original_http_message": "Invalid target/scope repair patch"
+  },
+  "control_flow_confirmation": {
+    "design_finding": "Existing RepairScopeError and attempt<maxRepairRounds branch intentionally allow bounded retries for scope-only patch rejections. This is not evidence of an intentional terminal policy for every out-of-scope patch.",
+    "original_budget": {
+      "spec": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-20260908-01/checkout/configs/priority-single-worker-run-20260908.json",
+      "spec_sha256": "11991decc5c03bd2a443b6c33211d79eab6d37463d9b295ad2abad64a8fc9c6b",
+      "maxRepairRounds": 2,
+      "recorded_extraction_calls": 1,
+      "recorded_repair_calls": 1,
+      "loop_attempt_at_rejection": 1,
+      "remaining_repair_calls": 1
+    },
+    "original_failure": "Ordinary ServiceError for unflagged operation and the binding-prefix wrapper both prevented the existing bounded retry branch. The captured first repair was loop attempt 1 of maxRepairRounds 2.",
+    "verified_later_model_output_exists": false
+  },
+  "change": [
+    "Classify structurally valid edits to existing but unflagged fact/operation indexes, and explicitly outside-scope sources, as RepairScopeError with exact index feedback.",
+    "Validate on private clones and defer scope-only classification until patch schema, duplicate/unavailable indexes and same-chunk references have passed; combined malformed patches stay terminal.",
+    "Handle an in-budget RepairScopeError before binding-prefix OPERATION_TARGET wrapping, preserving the full previous proposal and exact scope while spending only an already-authorized iteration.",
+    "Preserve existing edited-item original-source exception, original scope rejection, terminal structural errors, exhausted-budget behavior, all authorization/chronology/semantic/storage checks."
+  ],
+  "validation": {
+    "new_regression_red": {
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/targeted-red.log",
+      "sha256": "aed5dbbae657027c2ec1cdb497849a0105584a48f2a2cb1cedfc5027a3a80df0",
+      "tests": 12,
+      "pass": 4,
+      "fail": 8
+    },
+    "new_regression_initial_green": {
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/targeted-green.log",
+      "sha256": "ceafc66b41847c4bbe7cef432800d7f318be13703485265cb59f4e37fc4814a8",
+      "tests": 12,
+      "pass": 12,
+      "fail": 0
+    },
+    "targeted_final": {
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/targeted-final.log",
+      "sha256": "b95b4dc9965ce383608e56f2f7dfd29d1cb891d516fa70833f90c180333ea5db",
+      "tests": 45,
+      "pass": 45,
+      "fail": 0
+    },
+    "full_initial": {
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/full-tests.log",
+      "sha256": "e33548d243114dd4dfb651464c0e7705bdc7607ca2b3139af768aa08618d95ef",
+      "tests": 550,
+      "pass": 549,
+      "fail": 1
+    },
+    "full_initial_failure_resolution": "One existing error-prefix assertion failed after index insertion. Preserve the legacy error prefix and append index details; no assertion weakening.",
+    "full_final": {
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/full-tests-green.log",
+      "sha256": "99c0c5a94e7710f20a6753d2c6ae62049c0a0619b933d6f08af9f142f1af4e6e",
+      "tests": 550,
+      "pass": 550,
+      "fail": 0
+    },
+    "build": {
+      "command": "npm run build",
+      "exit_code": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/build.log",
+      "sha256": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7"
+    },
+    "original_patch": {
+      "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/original-patch-replay.json",
+      "sha256": "1fc4fcffd43a133960fdf20971d8cdb6cd69c2c40e8e87f11ed72bd15f6577b8",
+      "script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-repair-scope-fix-20260909/replay-original.mjs",
+      "script_sha256": "5d8204b2929ed1e1eb17bdc8310e2c01273d452f9a8d0cf35a3a53021d095d4a",
+      "versions": [
+        "original frozen dist",
+        "candidate dist"
+      ],
+      "cases": 10,
+      "all_rejected": true,
+      "all_base_fields_raw_and_scope_unchanged": true,
+      "candidate_scope_error": "Repair modified unflagged operation index 0"
+    },
+    "bounded_fixture": {
+      "with_remaining_budget": "Extraction plus first invalid repair plus exactly one repair feedback call; previous FAILED_PROPOSAL and REPAIR_SCOPE deep-equal. A synthetic scoped patch reaches verifier, whose unknown verdict deliberately throws. No embedding/write.",
+      "budget_exhausted": "maxRepairRounds=1 rejects after two calls; maxRepairRounds=2 with repeated invalid patch rejects after three. Both remain OPERATION_TARGET.",
+      "structure": "Unavailable/missing index, duplicate edit and dangling new:N remain ordinary terminal errors even alongside an outside-scope edit."
+    }
+  },
+  "limitations": [
+    "No cloud calls or new model outputs. Original B30 recorded output remains rejected and cannot be counted as a successful write.",
+    "Local fixture confirms retry routing and budget preservation only; subsequent semantic correctness still requires independent verification.",
+    "Candidate isolated from baseline, other candidate trees and the active 16-question evaluation; no SQLite or live service data accessed."
+  ],
+  "artifacts": {
+    "baseline-build.log": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "build.log": "21c9b0ec778debf02089555386c386809d9a56a96190c1f56d582647194829b7",
+    "candidate-hashes.json": "29cfd053feff0f3f6ed6ca633c84585062cd12683929cb31e44d5ae1526d3704",
+    "candidate.patch": "4379173e91185fc0bed0b344685599c1115bfe2ff58aad34c8b623c6a0abac6e",
+    "full-tests-green.log": "99c0c5a94e7710f20a6753d2c6ae62049c0a0619b933d6f08af9f142f1af4e6e",
+    "full-tests.log": "e33548d243114dd4dfb651464c0e7705bdc7607ca2b3139af768aa08618d95ef",
+    "original-patch-replay.json": "1fc4fcffd43a133960fdf20971d8cdb6cd69c2c40e8e87f11ed72bd15f6577b8",
+    "original-patch-replay.log": "8a3c5ab3c69faf76d28cafa9d4621784a3d6fb390b4098e5544a2ca3c2498ef6",
+    "replay-original.mjs": "5d8204b2929ed1e1eb17bdc8310e2c01273d452f9a8d0cf35a3a53021d095d4a",
+    "targeted-final.log": "b95b4dc9965ce383608e56f2f7dfd29d1cb891d516fa70833f90c180333ea5db",
+    "targeted-green.log": "ceafc66b41847c4bbe7cef432800d7f318be13703485265cb59f4e37fc4814a8",
+    "targeted-red.log": "aed5dbbae657027c2ec1cdb497849a0105584a48f2a2cb1cedfc5027a3a80df0"
+  }
+}

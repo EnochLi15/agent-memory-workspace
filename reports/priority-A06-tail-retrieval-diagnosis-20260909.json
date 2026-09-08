@@ -1,0 +1,371 @@
+{
+  "protocol": "A06-tail-completed-evidence-diagnosis-v1",
+  "date": "2026-09-09",
+  "run": "priority-failed-tail-20260909-01",
+  "sample": "A06_forget",
+  "scope": {
+    "judgments": "All 5 completed A06 judgments; saved result 1 correct, 4 false. No new judging.",
+    "database_revision": 51,
+    "read_only_backup": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/a06-complete.sqlite",
+    "backup_sha256": "3b1195744cfb3de5ac3a0420c50751a310531ffc1db0c4025eda61088d125e6f",
+    "cloud_or_local_model_calls": 0,
+    "live_writes": 0,
+    "implementation_changes": 0,
+    "unfinished_records_used": false
+  },
+  "headline": "Required retained facts and their original quotes exist. Failures split between candidate-pool truncation, token-budget packing and answer output; p4 is distractor echo rather than retrieved forgotten detail.",
+  "token_competition": [
+    {
+      "question": "p1",
+      "saved_correct": false,
+      "candidate_count": 200,
+      "selected": 17,
+      "tokens": 5953,
+      "max_tokens": 6000,
+      "max_evidence": 32,
+      "raw_selected": 0,
+      "patterns": 9,
+      "pattern_tokens": 4620,
+      "pattern_budget_share_percent": 77.6,
+      "pattern_body_with_time_lead_tokens": 2984,
+      "pattern_support_tokens": 897,
+      "pattern_metadata_tokens": 739,
+      "pattern_stored_content_tokens": 1990,
+      "rerank_used": false,
+      "discard_counts": {
+        "budget": 183
+      }
+    },
+    {
+      "question": "p2",
+      "saved_correct": true,
+      "candidate_count": 200,
+      "selected": 18,
+      "tokens": 5980,
+      "max_tokens": 6000,
+      "max_evidence": 32,
+      "raw_selected": 0,
+      "patterns": 8,
+      "pattern_tokens": 4232,
+      "pattern_budget_share_percent": 70.8,
+      "pattern_body_with_time_lead_tokens": 2875,
+      "pattern_support_tokens": 670,
+      "pattern_metadata_tokens": 687,
+      "pattern_stored_content_tokens": 2803,
+      "rerank_used": false,
+      "discard_counts": {
+        "budget": 182
+      }
+    },
+    {
+      "question": "p3",
+      "saved_correct": false,
+      "candidate_count": 200,
+      "selected": 28,
+      "tokens": 5996,
+      "max_tokens": 6000,
+      "max_evidence": 32,
+      "raw_selected": 0,
+      "patterns": 5,
+      "pattern_tokens": 2172,
+      "pattern_budget_share_percent": 36.2,
+      "pattern_body_with_time_lead_tokens": 1387,
+      "pattern_support_tokens": 410,
+      "pattern_metadata_tokens": 375,
+      "pattern_stored_content_tokens": 1342,
+      "rerank_used": false,
+      "discard_counts": {
+        "budget": 172
+      }
+    },
+    {
+      "question": "p4",
+      "saved_correct": false,
+      "candidate_count": 200,
+      "selected": 17,
+      "tokens": 5998,
+      "max_tokens": 6000,
+      "max_evidence": 32,
+      "raw_selected": 0,
+      "patterns": 8,
+      "pattern_tokens": 4507,
+      "pattern_budget_share_percent": 75.1,
+      "pattern_body_with_time_lead_tokens": 2880,
+      "pattern_support_tokens": 941,
+      "pattern_metadata_tokens": 686,
+      "pattern_stored_content_tokens": 2808,
+      "rerank_used": false,
+      "discard_counts": {
+        "budget": 183
+      }
+    },
+    {
+      "question": "p5",
+      "saved_correct": false,
+      "candidate_count": 200,
+      "selected": 20,
+      "tokens": 5981,
+      "max_tokens": 6000,
+      "max_evidence": 32,
+      "raw_selected": 0,
+      "patterns": 6,
+      "pattern_tokens": 3463,
+      "pattern_budget_share_percent": 57.9,
+      "pattern_body_with_time_lead_tokens": 2294,
+      "pattern_support_tokens": 633,
+      "pattern_metadata_tokens": 536,
+      "pattern_stored_content_tokens": 2240,
+      "rerank_used": false,
+      "discard_counts": {
+        "budget": 180
+      }
+    }
+  ],
+  "pattern_explanation": {
+    "main_cost": "Rendered pattern body is the largest component, about 64–66% of pattern tokens for the four false questions; support adds about 18–21%, metadata about 15–17%.",
+    "p1": "9 patterns consume 4620/5953 tokens. Five are superseded and four active. Rendered body/time lead is 2984 tokens versus 1990 for stored content; historical Former-value plus Original-statement rendering and time lead add 994 tokens before support (897) and metadata (739).",
+    "measurement": "Exact service estimateTokens applied to each saved selected content reproduces every recorded budget total. Component allocations use cumulative-prefix differences so body+support+metadata equals each item total; body includes time lead/event-date text.",
+    "implication": "Source support is material but is not the only volume problem. These runs hit the 6000-token limit at 17–28 items, with all discarded candidates labeled budget, not the 32-item limit."
+  },
+  "per_false_question": {
+    "p1": {
+      "missing": "Retained maiden name, true sister/couple engagement, anniversary booking/destination, dog breed.",
+      "layer": "Candidate pool plus packing. Maiden-name and breed facts are recalled but excluded from final 200; the correct raw fragments are also absent. Same-source neighboring fragments in the pool do not carry those details. Sister-engagement fact is excluded, but its correct raw fragment reaches the pool and is discarded for budget. Both anniversary facts are candidates 44/45 and discarded for budget.",
+      "answer": "Marriage/date/courthouse evidence was selected and used. Missing required semantics are absent from selected evidence.",
+      "facts": [
+        {
+          "label": "maiden_name",
+          "fact_id": "3601ad4534b4fdce883cb01be5c2b64faab198672c61bf0dadbd6d88d84e0115",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "sister_engagement",
+          "fact_id": "bcdf28bc7f76d80c74517a29366bad9a923246ab0eca539fff0d9fb34ec409e4",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "anniversary_booking",
+          "fact_id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 45,
+          "fact_selected": false,
+          "fact_discard": "budget",
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "anniversary_kept_plan",
+          "fact_id": "c66c98854c70d352366597166f1ee2c84526792c46ed004f251a6144b85ed921",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 44,
+          "fact_selected": false,
+          "fact_discard": "budget",
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "dog_preference_original",
+          "fact_id": "9cd0b46d4fc2297eee01ac2f165584f8e05e89e563e2ac7df258aacd2a436d78",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "dog_preference_confirmed",
+          "fact_id": "2a25652e74de85858de376167c1991dc8e661819506d23e2a01356404657e6fd",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": false,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        }
+      ]
+    },
+    "p3": {
+      "missing": "Maiden name and the true sister/couple engagement.",
+      "layer": "Maiden-name fact is recalled but lost at the 200-candidate pool and none of its raw fragments enter the pool. Engagement fact is also lost there; its correct raw fragment enters but is discarded for budget.",
+      "answer": "Available marriage date, anniversary destination/stay and dog breed were covered by Answer. Marriage fact itself was budget-discarded, but another selected fact with the same source provided the needed date/context; fact-ID absence alone is not evidence absence.",
+      "facts": [
+        {
+          "label": "maiden_name",
+          "fact_id": "3601ad4534b4fdce883cb01be5c2b64faab198672c61bf0dadbd6d88d84e0115",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "sister_engagement",
+          "fact_id": "bcdf28bc7f76d80c74517a29366bad9a923246ab0eca539fff0d9fb34ec409e4",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": false,
+          "candidate_position": null,
+          "fact_selected": false,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "marriage",
+          "fact_id": "795311f395f5ea114ba7dafc9670129736331798c8f564dfb804db8e34d5c54c",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 81,
+          "fact_selected": false,
+          "fact_discard": "budget",
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "anniversary_booking",
+          "fact_id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 46,
+          "fact_selected": true,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 0,
+          "correct_primary_quote_passages_selected": 0
+        }
+      ]
+    },
+    "p4": {
+      "missing": null,
+      "layer": "Answer output.",
+      "evidence": "The response starts with the correct no-specific-personal-details choice, then repeats forbidden divorce/identity/timeline terms in a negating explanation. Those terms occur in distractor options and not in any of the 17 selected memories.",
+      "interpretation": "Observed input provenance is consistent with answer copying distractor options. This is not evidence of storage erasure reversal or retrieval leakage; the internal generation mechanism was not measured.",
+      "rejudged": false
+    },
+    "p5": {
+      "missing": "Names of the intended engaged couple in the card.",
+      "layer": "Packing plus incomplete answer use/disambiguation.",
+      "evidence": "The true sister-engagement fact is candidate 86 and all four passages from that source are budget-discarded. Selected rank 13 dinner fact f4105aed contains both intended names, but its verbatim pronouns do not establish the sister/engagement relation. Another selected engagement concerns a different couple. Answer omits the names while correctly using the destination/stay/six-year anniversary evidence.",
+      "interpretation": "The names are already present in selected evidence, so this cannot be called a pure retrieval-name miss. The missing relationship fact prevents confident attribution to Answer alone.",
+      "facts": [
+        {
+          "label": "sister_engagement",
+          "fact_id": "bcdf28bc7f76d80c74517a29366bad9a923246ab0eca539fff0d9fb34ec409e4",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 86,
+          "fact_selected": false,
+          "fact_discard": "budget",
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "sister_dinner",
+          "fact_id": "f4105aed62d7241f5819922f8fb8c6d6db4cdea7b88200d5ee113b493d507820",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 30,
+          "fact_selected": true,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "anniversary_booking",
+          "fact_id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 13,
+          "fact_selected": true,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        },
+        {
+          "label": "marriage",
+          "fact_id": "795311f395f5ea114ba7dafc9670129736331798c8f564dfb804db8e34d5c54c",
+          "active": true,
+          "raw_witnesses_intact": true,
+          "fact_recalled": true,
+          "fact_in_200_candidates": true,
+          "candidate_position": 2,
+          "fact_selected": true,
+          "fact_discard": null,
+          "correct_primary_quote_passages_in_candidates": 1,
+          "correct_primary_quote_passages_selected": 0
+        }
+      ]
+    }
+  },
+  "relation_to_prior_retrieval_candidates": {
+    "not_applied_to_live": true,
+    "raw_twin_patch": "The archived patch changes unconditional raw ×0.4 suppression to actual twins only. Current traces show zero raw selected, and correct engagement fragments are present before packing, so there is a relevant packing mechanism to test. It cannot recover maiden-name/breed evidence absent from the candidate pool, nor directly prevent p4 distractor echo.",
+    "temporal_patch": "Among the four false queries only p5 has temporal=true, so the archived resolved-time-only ranking patch has no direct effect on p1/p3/p4 packing.",
+    "distinct_bottleneck": "Prior conv30 diagnosis was predominantly a 32-fact item cap; these A06 searches instead fill ~6000 tokens with fewer than 32 items and have additional candidate-pool losses.",
+    "offline_comparison_not_run": "No fixed query embeddings were recorded: stage logs contain route IDs and selections, embedding-call logs metadata, and private model traces JSON stages only. Recreating embeddings would require a model call; none was made. Rank-route lists alone do not retain every original numeric score/order needed for an exact counterfactual.",
+    "qa_improvement_claimed": false
+  },
+  "next_evaluation_focus": [
+    "Evaluate generic candidate coverage and cost-aware packing with bounded pattern body/support/metadata volume; preserve privacy and current/history filtering.",
+    "Test answer handling of supplied multiple-choice distractors separately from retrieval. Do not encode benchmark names, qids or gold answers into runtime rules."
+  ],
+  "artifacts": {
+    "detailed_stages": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/stage-analysis.json",
+    "analysis_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/analyze-stages.mjs",
+    "private_answer_evidence": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/answer-evidence.private.json",
+    "complete_record_cutoffs": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/record-bounds.json",
+    "snapshot_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-A06-tail-retrieval-diagnosis-20260909/snapshot-manifest.json"
+  },
+  "hashes": {
+    "stage-analysis.json": "59795e15f19b684d13f2ead54077a6041ea42c7a1e8e5a16b7c556c3eb78cf27",
+    "analyze-stages.mjs": "19d25f3f71cec808099d5f417f5f14669b0e3cb13441f59dd1cc655c85cf4d2c",
+    "answer-evidence.private.json": "61f046cd1a4229f2adfe3664b1a7e29380bfe2ccacad2cb1beb65921ff8d8346",
+    "record-bounds.json": "ae9162284f7d79a0d8dcef48e5adaa4facf868cbd2c3ba856648a405896eb482",
+    "snapshot-manifest.json": "566efccdce13666c830f294b3d43a85e2ee8bf805e24dc89b963650b2a805b07",
+    "completed-retrievals.private.json": "72f3d448b6b352bcddbd62b88ca010f2bddfd164cbbf7cc9c8c01b67816701a5",
+    "retrieval-stages.private.json": "114f32ea297f1c50b98d3fd6db024c69f305ec8daf0a942f311e8540e0bec30a"
+  }
+}

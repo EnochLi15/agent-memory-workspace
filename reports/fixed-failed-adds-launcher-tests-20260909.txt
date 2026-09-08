@@ -1,0 +1,19 @@
+test_all_compiled_files_must_match_manifest_and_commit (test_fixed_failed_adds.FixedAddBoundaries.test_all_compiled_files_must_match_manifest_and_commit) ... ok
+test_changed_private_input_is_rejected_before_reading_configuration (test_fixed_failed_adds.FixedAddBoundaries.test_changed_private_input_is_rejected_before_reading_configuration) ... ok
+test_existing_execution_or_plan_outputs_are_never_reused (test_fixed_failed_adds.FixedAddBoundaries.test_existing_execution_or_plan_outputs_are_never_reused) ... ok
+test_failed_http_requires_no_logical_mutation_not_just_no_receipt (test_fixed_failed_adds.FixedAddBoundaries.test_failed_http_requires_no_logical_mutation_not_just_no_receipt) ... ok
+test_frozen_inputs_and_snapshots_can_preexist_without_being_overwritten (test_fixed_failed_adds.FixedAddBoundaries.test_frozen_inputs_and_snapshots_can_preexist_without_being_overwritten) ... ok
+test_full_or_recovery_owned_child_prevents_cloud_start (test_fixed_failed_adds.FixedAddBoundaries.test_full_or_recovery_owned_child_prevents_cloud_start) ... ok
+test_generated_service_uses_only_config_and_has_no_qa_client (test_fixed_failed_adds.FixedAddBoundaries.test_generated_service_uses_only_config_and_has_no_qa_client) ... ok
+test_logical_hash_ignores_row_layout_and_preserves_blob_values (test_fixed_failed_adds.FixedAddBoundaries.test_logical_hash_ignores_row_layout_and_preserves_blob_values) ... ok
+test_missing_recovery_owner_is_not_assumed_idle (test_fixed_failed_adds.FixedAddBoundaries.test_missing_recovery_owner_is_not_assumed_idle) ... ok
+test_only_own_detached_launch_is_consumed (test_fixed_failed_adds.FixedAddBoundaries.test_only_own_detached_launch_is_consumed) ... ok
+test_single_http_attempt_keeps_503_and_does_not_retry (test_fixed_failed_adds.FixedAddBoundaries.test_single_http_attempt_keeps_503_and_does_not_retry) ... ok
+test_success_requires_exact_receipt_and_revision_plus_one (test_fixed_failed_adds.FixedAddBoundaries.test_success_requires_exact_receipt_and_revision_plus_one) ... ok
+test_transport_failure_that_committed_is_not_claimed_as_rollback (test_fixed_failed_adds.FixedAddBoundaries.test_transport_failure_that_committed_is_not_claimed_as_rollback) ... ok
+test_unknown_or_prefix_generation_identity_fails_summary (test_fixed_failed_adds.FixedAddBoundaries.test_unknown_or_prefix_generation_identity_fails_summary) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.764s
+
+OK

@@ -1,0 +1,236 @@
+{
+  "protocol": "readonly-B30-repair-binding-incidents-v1",
+  "generated_at": "2026-09-08T16:07:43.062034+00:00",
+  "scope": "Read original traces/frozen code; re-execute only pure applyRepair/decodeSourceReferences/operationBindingProblems with unchanged recorded inputs. No model calls, store accesses, code changes, or recovery-launcher/plan changes.",
+  "cases": {
+    "B30_forget": {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+      "original_failure": {
+        "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Invalid target/scope repair patch\"}}",
+        "elapsed_ms": 25620.15420800005
+      },
+      "affected_questions": 5,
+      "pure_runtime_classification": {
+        "code": "EVIDENCE_VALIDATION",
+        "message": "Repair modified an unavailable or unflagged operation",
+        "constructor": "ServiceError",
+        "isRepairScopeError": false,
+        "scope": {
+          "fact_indices": [
+            4
+          ],
+          "operation_indices": [],
+          "source_indices": [
+            8
+          ]
+        },
+        "edited_fact_indices": [
+          4
+        ],
+        "edited_operation_indices": [
+          0
+        ],
+        "operation_changed_fields": [
+          "predicate",
+          "scope",
+          "value",
+          "reason"
+        ]
+      },
+      "trace_provenance": [
+        {
+          "trace_id": "d1f6ed0a-1809-4573-9a51-dccea279e316",
+          "purpose": "extraction",
+          "at": "2026-09-08T15:56:52.853Z",
+          "input_sha256": "aa089a6f61d657b4b99906ec67433e336ad5112d8a36d107f4958f040a87479a",
+          "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59"
+        },
+        {
+          "trace_id": "3491ceb0-3a28-4003-ac81-b04bd494024e",
+          "purpose": "repair",
+          "at": "2026-09-08T15:57:01.033Z",
+          "input_sha256": "a06c1e0e0db1071c9a33e7e2c60ada212459feba0c8e310e546fdc742aa36225",
+          "system_sha256": "3cfb234a117193a8ee3b7c5b7114e49a3f55a29e4f404342b701a84976558ee7"
+        }
+      ],
+      "trigger_class": "Patch edit outside REPAIR_SCOPE: unflagged operation index0.",
+      "prior_binding_feedback": {
+        "replacement_fact_index": 4,
+        "target_handle": "new:2",
+        "mismatched_fields": [
+          "property",
+          "scope"
+        ],
+        "operations_errors": [],
+        "selector_errors": []
+      },
+      "causal_chain": [
+        "Initial job_start fact4 supersedes earlier name_change_event fact2 despite property/scope mismatch.",
+        "Feedback names fact4 and both fields; REPAIR_SCOPE permits fact4 only, with operation_indices empty.",
+        "Patch clears fact4.supersedes but also edits operation0 predicate/scope/value/reason.",
+        "applyRepair rejects the unflagged operation as ordinary ServiceError(EVIDENCE_VALIDATION).",
+        "The extraction binding-prefix catch maps this to OPERATION_TARGET Invalid target/scope repair patch."
+      ],
+      "feedback_assessment": "The repair input already gives the relevant fact index, mismatched property/scope fields and permitted edit scope. The observed trigger is not alias/chronology, malformed JSON, or new deletion authorization. The final generic error loses the specific unflagged operation category/index.",
+      "retry_limit_clarification": "The bounded RepairScopeError retry does not apply: this error is plain ServiceError, and the earlier binding-prefix catch converts it immediately. Reordering those conditions alone would not make this case retryable."
+    },
+    "B30_reflect": {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_reflect:segment-31:0",
+      "original_failure": {
+        "request_id": "priority-full-20260908-01-candidate:memops:B30_reflect:segment-31:0",
+        "status": "failed",
+        "attempt": 0,
+        "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"OPERATION_TARGET\",\"message\":\"Unresolved operation subject, property or scope after repair\"}}",
+        "elapsed_ms": 49453.38979199994
+      },
+      "affected_questions": 5,
+      "pure_runtime_classification": {
+        "decoding": [
+          {
+            "trace_id": "22d4a6a4-3848-4ad8-8633-b1316f3b39ce",
+            "purpose": "extraction",
+            "decoded": false,
+            "code": "EXTRACTION_SCHEMA",
+            "message": "Explicit sources are only for unique same-message operation target subclauses"
+          },
+          {
+            "trace_id": "7668a459-4b9d-4d05-be50-58ff472e430b",
+            "purpose": "repair",
+            "decoded": false,
+            "code": "EXTRACTION_SCHEMA",
+            "message": "Explicit sources are only for unique same-message operation target subclauses"
+          },
+          {
+            "trace_id": "2b1f584c-017a-4f46-af55-87cde08191ff",
+            "purpose": "repair",
+            "decoded": true,
+            "operation_targets": [
+              [
+                "new:2",
+                "new:3",
+                "new:4"
+              ]
+            ],
+            "binding_problems": [
+              {
+                "operation": 0,
+                "code": "OPERATION_SCOPE",
+                "codes": [
+                  "OPERATION_SCOPE"
+                ],
+                "requested": {
+                  "subject": "sophia",
+                  "predicate": "age",
+                  "scope": "cousin's daughter Sophia"
+                },
+                "selected_targets": [
+                  {
+                    "id": "new:2",
+                    "proposal_index": 2,
+                    "subject": "sophia",
+                    "predicate": "age",
+                    "scope": "cousin's daughter Sophia",
+                    "content": "用户表哥（堂兄）的女儿 Sophia 十岁了。"
+                  },
+                  {
+                    "id": "new:3",
+                    "proposal_index": 3,
+                    "subject": "sophia",
+                    "predicate": "name_usage",
+                    "scope": "cousin's daughter Sophia",
+                    "content": "用户表哥（堂兄）的女儿 Sophia 开始告诉所有人称呼她为 \"Fia\"。"
+                  },
+                  {
+                    "id": "new:4",
+                    "proposal_index": 4,
+                    "subject": "user cousin",
+                    "predicate": "opinion",
+                    "scope": "cousin's daughter Sophia",
+                    "content": "用户的表哥（堂兄）认为 Sophia 的 \"Fia\" 昵称只是一个阶段，但还是接受了。"
+                  }
+                ],
+                "selected_target_groups": [
+                  {
+                    "subject": "sophia",
+                    "predicate": "age",
+                    "property": "age",
+                    "scope": "cousin's daughter Sophia",
+                    "target_ids": [
+                      "new:2"
+                    ]
+                  },
+                  {
+                    "subject": "sophia",
+                    "predicate": "name_usage",
+                    "property": "name usage",
+                    "scope": "cousin's daughter Sophia",
+                    "target_ids": [
+                      "new:3"
+                    ]
+                  },
+                  {
+                    "subject": "user cousin",
+                    "predicate": "opinion",
+                    "property": "opinion",
+                    "scope": "cousin's daughter Sophia",
+                    "target_ids": [
+                      "new:4"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "trace_provenance": [
+        {
+          "trace_id": "22d4a6a4-3848-4ad8-8633-b1316f3b39ce",
+          "purpose": "extraction",
+          "at": "2026-09-08T16:02:54.843Z",
+          "input_sha256": "bb73c371cb59a2a60ef6d9839208eafd6012f7e342cfbe6c7d93e3e13e0c2315",
+          "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59"
+        },
+        {
+          "trace_id": "7668a459-4b9d-4d05-be50-58ff472e430b",
+          "purpose": "repair",
+          "at": "2026-09-08T16:03:08.995Z",
+          "input_sha256": "376d5b8cb2cb5224a8322fa8657484c31166f334efee6a0520cf37795d81fcb7",
+          "system_sha256": "56321b902f09b8a5f7c79ccab242aa21b9cc2b6ee7c11262c8ea37bb4488a43a"
+        },
+        {
+          "trace_id": "2b1f584c-017a-4f46-af55-87cde08191ff",
+          "purpose": "repair",
+          "at": "2026-09-08T16:03:20.606Z",
+          "input_sha256": "161d1cafcd481dc825652b4100d8ca64b33e89c1a16654ad07511ee01edbe400",
+          "system_sha256": "56321b902f09b8a5f7c79ccab242aa21b9cc2b6ee7c11262c8ea37bb4488a43a"
+        }
+      ],
+      "trigger_class": "Two source-encoding protocol failures followed by a cross-subject target binding failure after repair-budget exhaustion.",
+      "causal_chain": [
+        "Initial and first repair outputs use explicit sources for message6 facts; the forget is in message8, so the same-message operation-target exception does not apply.",
+        "Both feedback messages describe the exception but do not identify offending group/local fact indexes or valid reference slots.",
+        "The last repair changes to source_refs, decodes successfully, and produces valid new:2/new:3/new:4 handles.",
+        "A forget operation with subject sophia targets two sophia facts plus a user cousin/opinion fact. operationBindingProblems reports OPERATION_SCOPE.",
+        "Both repair rounds were already spent, so no later model request receives this new binding feedback. All five questions become service_error."
+      ],
+      "feedback_assessment": "The source-encoding feedback is actionable in principle but generic. Exact group6 fact indexes and valid source_refs slots would localize it. The final binding feedback identifies operation0 and partitions targets by subject, but it arises after the allowed repairs. No alias or chronology failure was observed in the final decoded proposal."
+    }
+  },
+  "private_bundle_directory": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B30-binding-incidents-20260909",
+  "artifact_sha256": {
+    "pure-runtime-classification.json": "c541bee5546185d542175bd957374f1605442da672901afbcc346025b56c5d16",
+    "B30_forget.private.json": "70f7add72c777e69ef9d65c43b1f31b72262019b0ce8acf80b13f100aa8fabb2",
+    "B30_reflect.private.json": "5f4cac17726a16910e2af9fd147f7dc51791c19b75467909a0409b584102734d"
+  },
+  "frozen_source_sha256": {
+    "src/extraction.ts": "b81c2663820601e7263c8814beb0623946f181bc95ec4523c0e4d0223f53d10d",
+    "src/repair.ts": "3e4936c4ec5d7009e3a2ea2c5ce9805aea22879dd93b45a526df2b602c373a44",
+    "src/source-references.ts": "68977f913680fe481051f214e7f0bce104f3c04bca8a3e70e7623a51207fc8ee",
+    "src/types.ts": "10ea92badc1514fd3eb35369d595b32134148b62e5a0f3d1484f0752943bd488"
+  },
+  "result_limit": "Pure reproductions establish the observed protocol/binding failures, not repaired end-to-end writes or semantic correctness."
+}

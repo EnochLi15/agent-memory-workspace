@@ -1,0 +1,269 @@
+{
+  "protocol": "priority-source-erasure-incident-v1",
+  "written_at": "2026-09-08T16:01:25.782680+00:00",
+  "campaign": "priority-full-20260908-01",
+  "sample_id": "B14_reflect",
+  "request_id": "priority-full-20260908-01-candidate:memops:B14_reflect:segment-31:0",
+  "classification": "explicit_model_semantic_uncertainty",
+  "conclusion": "The model returned two explicit uncertain verdicts in an otherwise complete, schema-valid source-erasure response. The decoder correctly rejected unresolved semantics; this is not a missing-field, index, compact-shape or quote-repair defect.",
+  "original_failure": {
+    "request_id": "priority-full-20260908-01-candidate:memops:B14_reflect:segment-31:0",
+    "status": "failed",
+    "attempt": 0,
+    "error": "Error: /add: HTTP 503 {\"error\":{\"code\":\"EVIDENCE_VALIDATION\",\"message\":\"Uncertain or invalid compact source erasure effect\"}}",
+    "elapsed_ms": 44179.88416699995
+  },
+  "sample_impact": {
+    "successful_prior_adds": 31,
+    "failed_adds": 1,
+    "questions_marked_service_error": 5,
+    "scope": "The sample stopped on this request and all 5 planned questions retained zero credit; no answer or Judge retry is involved."
+  },
+  "actual_call_trajectory": [
+    {
+      "at": "2026-09-08T15:54:36.524Z",
+      "trace_id": "d7567c2c-b3bc-4267-a76e-5a7ee91c1a73",
+      "purpose": "extraction",
+      "model": "glm-5.2",
+      "attempt": 0,
+      "outcome": "ok",
+      "input_sha256": "d3197b3ae62d9c1ae47ce701bf2a1fefdab09f3497ab8149bc8f1f593fe5b0cc",
+      "elapsed_ms": 19424.99679200002,
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+      "input_keys": [
+        "EXTRACTION_PROTOCOL",
+        "PARTICIPANT_INDEX",
+        "OBSERVATION_DATE",
+        "EXISTING_FACTS",
+        "CONTEXT_ONLY",
+        "NEW_MESSAGES"
+      ],
+      "output_summary": {
+        "message_groups": 9
+      }
+    },
+    {
+      "at": "2026-09-08T15:54:43.389Z",
+      "trace_id": "0522197d-4614-4cbe-9f0a-130724d360ca",
+      "purpose": "verification",
+      "model": "glm-5.2",
+      "attempt": 0,
+      "outcome": "ok",
+      "input_sha256": "f2a3d3d7f21ef07de9d875212940378b275afe3ba1aea5360a2f3c170c9ca8e0",
+      "elapsed_ms": 6855.956458000001,
+      "system_sha256": "9e3248ec617f4be819c5ccc80a1505f78a4e90acd65dcffefd768077e8083dc3",
+      "input_keys": [
+        "NEW_MESSAGES",
+        "PARTICIPANT_INDEX",
+        "MESSAGE_SOURCE_LINKS",
+        "CHECK_SCOPE",
+        "REPLACEMENT_TARGETS",
+        "PROPOSAL",
+        "TARGET_FACTS",
+        "OMISSION_HINTS",
+        "VERIFICATION_PROTOCOL"
+      ],
+      "output_summary": {
+        "fact_checks": 17,
+        "all_fact_checks_supported_and_valid": true,
+        "operation_checks": 0,
+        "replacement_checks": 0,
+        "message_checks": 9
+      }
+    },
+    {
+      "at": "2026-09-08T15:55:01.226Z",
+      "trace_id": "067d70ba-bfcc-4de2-9a49-d238887cf64c",
+      "purpose": "source_erasure",
+      "model": "glm-5.2",
+      "attempt": 0,
+      "outcome": "ok",
+      "input_sha256": "0d1a7a872af2e0d1272f5fb4b434ad1ccb2e01e1bf24d56291c609fefc7a694d",
+      "elapsed_ms": 17804.104667000007,
+      "system_sha256": "aaba22b3b4a31ff5ffc4c3703159901491e40bc40e93a1c9da9085eaa5ca6225",
+      "input_keys": [
+        "BOUNDARIES",
+        "SOURCES"
+      ],
+      "output_summary": {
+        "decisions": 11,
+        "effect_counts": {
+          "retain": 9,
+          "uncertain": 2
+        },
+        "single_batch": {
+          "index": 0,
+          "count": 1,
+          "offset": 0,
+          "candidates": 11
+        }
+      }
+    }
+  ],
+  "feedback_and_retries": {
+    "generation_calls": 3,
+    "provider_outcomes": [
+      "ok",
+      "ok",
+      "ok"
+    ],
+    "transport_attempts_per_call": [
+      0,
+      0,
+      0
+    ],
+    "http_add_attempt": 0,
+    "verification_feedback": "All 17 fact checks supported and valid; no operation or replacement checks and no repair call followed.",
+    "extraction_repair_calls": 0,
+    "source_erasure_repair_calls": 0,
+    "erasure_binding_calls": 0,
+    "state_transition_calls": 0,
+    "source_erasure_fallback_observed": false,
+    "terminal_path": "executeSourceErasure -> sourceReasonProblems -> compactSourceRows rejects index 2 uncertain -> Extractor.semanticRefusal rethrows EVIDENCE_VALIDATION; the response also contains uncertain at index 8."
+  },
+  "source_review": {
+    "boundaries": 1,
+    "original_pairs": 11,
+    "grouped_sources": 11,
+    "fact_candidates": 3,
+    "raw_source_candidates": 8,
+    "decision_indexes_complete_and_unique": true,
+    "schema_valid": true,
+    "effect_counts": {
+      "retain": 9,
+      "uncertain": 2
+    },
+    "uncertain_decisions": [
+      {
+        "index": 2,
+        "kind": "fact",
+        "id": "pattern-c82373ccbc1484499e5f612c1fd0583cadda2cff21d95353c853ed274d9a2d64",
+        "effect": "uncertain",
+        "reason": "uncertain_owner",
+        "erase_quotes": [],
+        "context_role": null,
+        "context_subject": "user",
+        "context_predicate": "request",
+        "context_modality": "inferred",
+        "source_quote_count": 0,
+        "linked_facts": null,
+        "linked_erased_facts": null,
+        "boundary_refs": [
+          {
+            "boundary_slot": 0,
+            "matching_words": [
+              "kevin",
+              "vegan"
+            ]
+          }
+        ],
+        "plaintext_evidence_file": "artifacts/priority-full-B14-reflect-witness-20260908/source-erasure-input.private.json"
+      },
+      {
+        "index": 8,
+        "kind": "source",
+        "id": "b2f845fe0fa010e5e2999917a7d62a105b4de27f1265d3fdb35f07d552078380",
+        "effect": "uncertain",
+        "reason": "uncertain_scope",
+        "erase_quotes": [],
+        "context_role": "user",
+        "context_subject": null,
+        "context_predicate": null,
+        "context_modality": null,
+        "source_quote_count": null,
+        "linked_facts": 7,
+        "linked_erased_facts": 0,
+        "boundary_refs": [
+          {
+            "boundary_slot": 0,
+            "matching_words": [
+              "kevin",
+              "him",
+              "vegan"
+            ]
+          }
+        ],
+        "plaintext_evidence_file": "artifacts/priority-full-B14-reflect-witness-20260908/source-erasure-input.private.json"
+      }
+    ],
+    "boundary_context": {
+      "historical": true,
+      "revision": 30,
+      "subject": "user",
+      "predicate": "consideration",
+      "authorization_is_null": true,
+      "scope_is_protected": true
+    },
+    "semantic_cause_limit": "The response supplies only categorical reasons, not a rationale. It does not prove which phrase made ownership or scope uncertain. Historical null authorization, a user-request aggregate with no own source_quotes, and a mixed user source are observed context, not independently established deletion or retention verdicts."
+  },
+  "candidate_assessment": {
+    "commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+    "head_commit_subject": "fix: identify bounded source reference errors for targeted repair",
+    "head_changed_files": [
+      "src/source-references.ts",
+      "tests/source-reference-feedback.test.ts"
+    ],
+    "related_to_incident": false,
+    "reason": "The request already passed extraction decoding and verification. e9b5da4 targets bounded source-reference protocol feedback, not explicit source-erasure semantic uncertainty. Earlier conservative fallback and partial-inference storage fixes do not resolve this path: semantic refusal occurs before fallback/commit.",
+    "same_source_erasure_module_hashes": true,
+    "recorded_response_replay_baseline": {
+      "status": "rejected",
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Uncertain or invalid compact source erasure effect"
+    },
+    "recorded_response_replay_candidate": {
+      "status": "rejected",
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Uncertain or invalid compact source erasure effect"
+    },
+    "candidate_success_claimed": false
+  },
+  "read_only_validation": {
+    "network_calls": 0,
+    "model_calls": 0,
+    "source_changes": 0,
+    "dist_changes": 0,
+    "database_opens": 0,
+    "model_outputs_changed": false,
+    "input_prompt_changed": false,
+    "exact_input_and_system_parity": true,
+    "replay_script": "artifacts/priority-full-B14-reflect-witness-20260908/decoder-replay.mjs",
+    "replay_result": "artifacts/priority-full-B14-reflect-witness-20260908/decoder-replay.json"
+  },
+  "next_action": "Keep this incident distinct from repairable wire-format failures. Do not retry or relabel either uncertain row as retain/erase merely to pass ingestion; resolving it requires an independently justified semantic review design. It remains an unresolved write failure for the current candidate.",
+  "evidence": {
+    "private_packet": "artifacts/priority-full-B14-reflect-witness-20260908",
+    "original_hashes": {
+      "artifacts/priority-full-20260908-01/model-trace.jsonl": "175f4703aed2ccb4e53cae005590dd7498e2ab3bbc2d5cb10c0857d1f075e391",
+      "artifacts/priority-full-20260908-01/model-calls.jsonl": "dfa90eb3b74a34be1b59fda59180a209ea1a5c9fefec0b68ec09191d59d616b6",
+      "eval/artifacts/priority-full-20260908-01-candidate-memops-risk/ingest.jsonl": "f7f8c6795dec211e272708a86b26bd3cd36731dfbfbee11b2628d996c3efa6cb",
+      "eval/artifacts/priority-full-20260908-01-candidate-memops-risk/judgments.jsonl": "272671206d7de921d42a5695f82265082f2413ab0a490e9481c063822ad39e16"
+    },
+    "report_packet_hashes": {
+      "affected-questions.json": "2e68c998ce8d629bb5d350dc35336b4076576b019acde8e73a9898c5a35c6fc0",
+      "decoder-replay.json": "9f9c848a12a76e302f7ba61ebc96b75ab956dac4c93943d3f40836b7424da9f0",
+      "decoder-replay.mjs": "a4776a25b4d37ffdb0e4687b953e9bb3c8e172e73c35e97cd5d729eda9c9ff6d",
+      "ingest.json": "94d862c789df902e9600c9bdc6410b3a1ec77fac5dfa6d86fc0a0a8de311f62b",
+      "recorded-calls.json": "f619da3e3d97c309c6a230dde4229332d619eafb6cd97b409f217abdcd86e7d9",
+      "recorded-traces.private.json": "bee54ef548c9d237865bd57f355d42c5894ad4e355e47f42f46754fe672d711e",
+      "request.private.json": "75df5b55ee782b441ff0716da018f11159c19b59e4908a7c6b176a59604ee019",
+      "source-erasure-input.private.json": "96bf68b5136dfa48887661756741b7bf93d34609e7db25699ce8e94c0a6521a7",
+      "source-erasure-output.json": "71bdeaa7ff2411fe785ee9d9476c5811495fee191c3f71b5fb98a0aff672e64b",
+      "source-hashes.json": "6d35a208b8a56bf854a65d790aa8de3625a763ac0bfa2a24b875027b6c3f788c"
+    },
+    "code_locations": [
+      {
+        "path": "artifacts/priority-full-20260908-01/checkout/service/src/source-erasure.ts",
+        "line": 104
+      },
+      {
+        "path": "artifacts/priority-full-20260908-01/checkout/service/src/source-erasure-execution.ts",
+        "line": 14
+      },
+      {
+        "path": "artifacts/priority-full-20260908-01/checkout/service/src/extraction.ts",
+        "line": 677
+      }
+    ]
+  }
+}

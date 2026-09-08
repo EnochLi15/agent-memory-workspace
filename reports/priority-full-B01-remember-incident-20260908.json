@@ -1,0 +1,105 @@
+{
+  "protocol": "source-reference-feedback-replay-v1",
+  "generated_at": "2026-09-08T15:53:11.828Z",
+  "request_id": "priority-full-20260908-01-candidate:memops:B01_remember:segment-36:0",
+  "scope": "Recorded malformed outputs are still rejected. More precise bounded feedback is verified without editing their references or claiming a successful real-model write.",
+  "remote_calls": 0,
+  "recorded_outputs_unchanged": true,
+  "replays": [
+    {
+      "trace_id": "6b8d2610-2ffc-4b9c-8364-517e74477a02",
+      "purpose": "extraction",
+      "input_sha256": "28319aefa73d30a168e6c0731031ef8b964be6cf25e4b8993ad01e6409314a79",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+      "output_sha256": "8a5b2d3055e0339d0db77c0ce46bf1bf5a1f8453ff2ddaf4e00071f797e17d31",
+      "baseline": {
+        "code": "EXTRACTION_SCHEMA",
+        "message": "Invalid referenced extraction schema: message_groups.1: Unrecognized key(s) in object: 'message_groups'"
+      },
+      "candidate": {
+        "code": "EXTRACTION_SCHEMA",
+        "message": "Invalid referenced extraction schema: message_groups.1: Unrecognized key(s) in object: 'message_groups'"
+      }
+    },
+    {
+      "trace_id": "fe252993-2265-4881-aca0-04477cb3da2d",
+      "purpose": "repair",
+      "input_sha256": "552c9ce0931bc80454b6e00de231c17bbd1c5076e8dd61eb1eddef5004076d27",
+      "system_sha256": "56321b902f09b8a5f7c79ccab242aa21b9cc2b6ee7c11262c8ea37bb4488a43a",
+      "output_sha256": "77789efb1220aa07f013679bb056935108a0aa25f93bbf032f89e71300092924",
+      "baseline": {
+        "code": "EXTRACTION_SCHEMA",
+        "message": "Unknown, duplicate or non-human source reference"
+      },
+      "candidate": {
+        "code": "EXTRACTION_SCHEMA",
+        "problems": {
+          "total": 1,
+          "problems": [
+            {
+              "group_message_index": 2,
+              "fact_index": 0,
+              "reference": [
+                2,
+                1
+              ],
+              "reason": "unknown_span",
+              "available_span_slots": [
+                0
+              ],
+              "available_span_count": 1
+            }
+          ],
+          "truncated": false
+        }
+      }
+    },
+    {
+      "trace_id": "e0ad170c-47d9-4c48-95cd-c5b33a571906",
+      "purpose": "repair",
+      "input_sha256": "e7e8671f336cb0e61d79b2d8e7134f1529098f86a2b3b1125ec14ff866c311e8",
+      "system_sha256": "56321b902f09b8a5f7c79ccab242aa21b9cc2b6ee7c11262c8ea37bb4488a43a",
+      "output_sha256": "d82135b8e5aa1a7fe6362137c50eaabd21318c1e94ac87019b6131c5247398e5",
+      "baseline": {
+        "code": "EXTRACTION_SCHEMA",
+        "message": "Unknown, duplicate or non-human source reference"
+      },
+      "candidate": {
+        "code": "EXTRACTION_SCHEMA",
+        "problems": {
+          "total": 1,
+          "problems": [
+            {
+              "group_message_index": 2,
+              "fact_index": 0,
+              "reference": [
+                2,
+                1
+              ],
+              "reason": "unknown_span",
+              "available_span_slots": [
+                0
+              ],
+              "available_span_count": 1
+            }
+          ],
+          "truncated": false
+        }
+      }
+    }
+  ],
+  "write_recovery_proven": false,
+  "tests": {
+    "red": {
+      "total": 4,
+      "pass": 1,
+      "fail": 3
+    },
+    "green": {
+      "total": 4,
+      "pass": 4,
+      "fail": 0
+    }
+  },
+  "source_sha256": "3c6bb85ae5364dc2308e8596fb6c45b3ef131da2f5a627599ce4f9a878e0320b"
+}

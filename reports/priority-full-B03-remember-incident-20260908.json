@@ -1,0 +1,139 @@
+{
+  "protocol": "read-only-B03-remember-failure-diagnosis-v1",
+  "campaign": "priority-full-20260908-01",
+  "sample": "B03_remember",
+  "segment": "segment-20:0",
+  "service_error_questions": 6,
+  "original_error": {
+    "http": 503,
+    "code": "OPERATION_TARGET",
+    "message": "Unknown memory operation target after repair"
+  },
+  "scope": {
+    "cloud_calls": 0,
+    "source_code_changes": 0,
+    "original_database_writes": 0,
+    "candidate_expansion": false,
+    "frozen_e9b5da4_source_and_dist_manifest_match": true
+  },
+  "classification": {
+    "not_unknown_alias": true,
+    "not_source_reference_coordinate_failure": true,
+    "not_model_semantic_uncertain": true,
+    "actual_terminal_guard": "Same-chunk target evidence must end no later than operation authorization witness starts.",
+    "independent_authorization_gap": "The original wording contains \"you don't really need to track him anymore\". secondPersonRetirement recognizes the unmodified pattern without the adverb, so every original instruction span is intent=none and forgetObligations=[]; both operation quotes remain unauthorized."
+  },
+  "trajectory": [
+    {
+      "call": 0,
+      "purpose": "extraction",
+      "trace_id": "6a4ad075-7b9f-4635-a885-2a3c51d2437c",
+      "result": "new:6:0 correctly decodes to new:13. Fact 13 cites the entire two-sentence retirement context, overlapping its operation witness.",
+      "feedback_next": "Unknown target chronology. new:N may only reference an earlier sourced fact in this chunk. Repair the invalid references."
+    },
+    {
+      "call": 1,
+      "purpose": "repair",
+      "trace_id": "fc3af7e6-0a75-4bf8-a2f0-f822457eec93",
+      "result": "Narrows fact 13 quote; mistaken explicit start=17 uniquely resolves to 45. Chronology now passes.",
+      "feedback_next_codes": [
+        "OPERATION_SCOPE: operation contractor engagement vs transient fact empty scope",
+        "Replacement fact 1: subject Priya Mukherjee does not match selected existing fact subject Priya",
+        "Authorization error: operation source is not an authorizing deletion instruction"
+      ]
+    },
+    {
+      "call": 2,
+      "purpose": "repair",
+      "trace_id": "4cda462a-9529-4015-ae6b-47c3c99923f3",
+      "result": "Removes unsupported supersedes reference and matches operation scope to empty fact scope. Broadens operation quote to start at 45, reintroducing same-chunk chronology failure.",
+      "feedback_terminal": "Unknown memory operation target after repair"
+    }
+  ],
+  "coordinates": [
+    {
+      "stage": "initial",
+      "target_reference": "new:13",
+      "fact_index": 13,
+      "message_index": 6,
+      "fact_start": 45,
+      "fact_end": 245,
+      "operation_start": 163,
+      "operation_end": 245,
+      "required_fact_end_at_or_before_operation_start": false,
+      "operation_scope": "contractor engagement",
+      "fact_scope": "",
+      "authorization_passes": false
+    },
+    {
+      "stage": "after_first_repair",
+      "target_reference": "new:13",
+      "fact_index": 13,
+      "message_index": 6,
+      "fact_start": 45,
+      "fact_end": 161,
+      "operation_start": 163,
+      "operation_end": 245,
+      "required_fact_end_at_or_before_operation_start": true,
+      "operation_scope": "contractor engagement",
+      "fact_scope": "",
+      "authorization_passes": false
+    },
+    {
+      "stage": "after_second_repair",
+      "target_reference": "new:13",
+      "fact_index": 13,
+      "message_index": 6,
+      "fact_start": 45,
+      "fact_end": 161,
+      "operation_start": 45,
+      "operation_end": 245,
+      "required_fact_end_at_or_before_operation_start": false,
+      "operation_scope": "",
+      "fact_scope": "",
+      "authorization_passes": false
+    }
+  ],
+  "diagnostic_counterfactual": {
+    "change": "Remove only \"really\" from the local diagnostic string; do not modify original request.",
+    "original_forget_obligations": 0,
+    "counterfactual_forget_obligations": 1,
+    "meaning": "Locates a lexical coverage limitation; it is not semantic permission to change the stored request or bypass refusal."
+  },
+  "existing_candidate_relation": {
+    "baseline_exact_packets": "All 3 purpose/system/input matches; same OPERATION_TARGET.",
+    "candidate_replay": "Holding original outputs fixed gives the same OPERATION_TARGET. Initial packet and repair inputs match; both PATCH_PROMPT system hashes differ, so this is explicitly counterfactual and does not predict new live model output.",
+    "same_chunk_binding_code_changed": false,
+    "operation_intent_code_changed": false,
+    "source_reference_feedback_applicable": false,
+    "source_erasure_or_storage_changes_reached": false,
+    "B14_missing_instruction_feedback_applicable": false,
+    "interpretation": "Outside the frozen 16-question recovery candidate scope. No implemented fix or recovery claim."
+  },
+  "followup_candidates_for_later_review": [
+    "Improve chronology feedback with operation/fact indexes and exact source intervals so repair can see the actual conflict.",
+    "Separately evaluate guarded second-person retirement adverbs with negation, quotation and conditional negative cases; do not silently rewrite the original source.",
+    "Do not merge distinct actor spellings or bypass target chronology/authorization merely to make this request return HTTP 200."
+  ],
+  "reproduction": {
+    "script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B03-remember-witness-20260908/replay.mjs",
+    "summary": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B03-remember-witness-20260908/replay-summary.json",
+    "private_full_feedback": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B03-remember-witness-20260908/replay-report.private.json",
+    "snapshot": {
+      "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/service/.data/priority-full-20260908-01-candidate/d99bfc78523445b3bbd2f2a30a6af2ef920e14178edb2c3e219d65db869b5c2c/memory.sqlite",
+      "backup": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B03-remember-witness-20260908/before.sqlite",
+      "backup_sha256": "660bd2814ced6ceee577a34df3b597a5d87ee8ea805ed421557d584bcfec1fa8",
+      "revision": 19
+    },
+    "baseline_revision_after": 19,
+    "baseline_receipt": null,
+    "cloud_calls": 0
+  },
+  "hashes": {
+    "recorded-calls.private.json": "85ee90d0ce6effeeef4827e53de67423e3e860cd6b7e53d223f925f002780efd",
+    "request.private.json": "d107f87b42ea782e8d61037c823ffd7419abf62c7c6d59a68a675e00ee65423d",
+    "before.sqlite": "660bd2814ced6ceee577a34df3b597a5d87ee8ea805ed421557d584bcfec1fa8",
+    "replay.mjs": "215ce91f8dcccb410c7e41548bc7511d64fdf87f504962a7f82e9954c0c7ed2f",
+    "replay-summary.json": "6a31ea388218031c2a7ba3a60fdbff30c5c844c76f4c4228d0f98fea3ec8e28f"
+  }
+}

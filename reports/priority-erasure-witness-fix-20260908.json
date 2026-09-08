@@ -1,0 +1,276 @@
+{
+  "protocol": "erasure-boundary-candidate-diagnosis-v1",
+  "date": "2026-09-08",
+  "status": "Completed local candidate validation; no mainline merge and no live provider recovery claim for B14/B01.",
+  "base_commit": "6381bef2d705c3bc63b3616d529149d947a171f1",
+  "candidate_worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/service",
+  "candidate_commits": {
+    "ab": "9e0213e43b0234c682439385e10316f942afdeb2",
+    "a06": "9fb4e7204d74f6aebc3f8a3a885db300543a9c1b",
+    "b01": "e9b5da47360fb4cc7936029aa50b3557c93f87de"
+  },
+  "isolation": {
+    "cloud_calls": 0,
+    "original_store_writes": 0,
+    "running_baseline_modified": false,
+    "retrieval_candidates_modified": false
+  },
+  "diagnosis": {
+    "B14": {
+      "original_control": "reports/priority-full-B14-forget-incident-20260908.json",
+      "reproduced": "Three recorded system/input packets exactly matched; offline preparation subsequently hit retained-witness guard and rolled back at revision 43.",
+      "rejected_hypotheses": [
+        "Gluten recommendation sentence was not a forget-obligation regex match.",
+        "Storage guard did not require an exact whole remaining sentence; the retained quote was completely removed."
+      ],
+      "causal_chain": [
+        "Second repeated Portland instruction lacked its own operation source witness.",
+        "Generic repair feedback and duplicate-operation wording prompted repair of an unrelated advice sentence.",
+        "Unauthorized repair was correctly rejected, but exhausted intent fell through EXTRACTION_SCHEMA to offline extraction.",
+        "Lexical used/time nomination supplied no erasure authority, yet deterministic fallback erased all candidate sources.",
+        "Unrelated remedy experience lost its only witness; storage correctly rejected the transaction."
+      ]
+    },
+    "A06": {
+      "original_control": "reports/priority-full-A06-forget-incident-20260908.json",
+      "reproduced": "Four recorded packets with no degradation; independent inferred friend_support_pattern was erased solely through shared source ID despite intact reviewed quote.",
+      "guard_preserved": true
+    },
+    "B01": {
+      "original_control": "reports/priority-full-B01-remember-incident-20260908.json",
+      "recorded_outputs_unchanged": 3,
+      "true_write_recovery_proven": false,
+      "offline_replay_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-source-reference-feedback-20260908/replay.mjs"
+    }
+  },
+  "changes": {
+    "A": {
+      "behavior": [
+        "Precise missing instruction index/span/quote is exposed only within effective repair source scope.",
+        "Distinct instruction witnesses may bind the same target; source/owner/property/scope/chronology and semantics remain mandatory.",
+        "Unrepaired pending or unauthorized intent returns OPERATION_INTENT, including subsequent model/protocol failure."
+      ],
+      "changed_old_test_contracts": [
+        "Repeated empty extraction requires repaired operation rather than automatic offline deletion.",
+        "Repeated unauthorized negation/quotation/conditional source requires removal or typed refusal rather than silent offline success."
+      ],
+      "files": [
+        "src/extraction.ts",
+        "src/repair.ts",
+        "tests/operation-obligation-repair.test.ts",
+        "tests/operation-intent.test.ts"
+      ]
+    },
+    "B": {
+      "behavior": "Nonempty unreviewed source-erasure work returns EVIDENCE_VALIDATION; nomination certifies neither erase nor retain. Empty work returns an empty matching plan.",
+      "availability_limit": "Writes that require source-erasure review fail explicitly when review is unavailable. A write with no new forget can still require review under historical erasure boundaries. Capability fallback remains for ordinary writes that do not involve an unverified deletion boundary.",
+      "files": [
+        "src/source-erasure-fallback.ts",
+        "src/extraction.ts",
+        "tests/source-erasure-fallback.test.ts"
+      ]
+    },
+    "A06": {
+      "behavior": "A validated source plan plus all unambiguous, fully located and wholly intact witnesses prevents source-ID-only inference invalidation. Explicit dependencies, value leaks, forced erasure and legacy behavior remain.",
+      "conservative_cases": [
+        "Missing source or quote",
+        "Unlocated, partial or invalid spans",
+        "Any witness partially cut",
+        "Ambiguous repeated quote or matching multiple sources",
+        "Unreviewed source",
+        "Explicit erased dependency"
+      ],
+      "files": [
+        "src/storage.ts",
+        "tests/partial-source-inference.test.ts"
+      ]
+    },
+    "B01": {
+      "behavior": "Report all malformed source reference coordinates with bounded count, exact group/fact/ref, reason and available human evidence slots. Strict rejection and original evidence are unchanged; no automatic reference replacement.",
+      "files": [
+        "src/source-references.ts",
+        "tests/source-reference-feedback.test.ts"
+      ],
+      "validation": "4 new source-reference feedback tests pass; frozen decoder red reproduced 3 failures. Exact original three model outputs still reject; two repaired outputs now identify message 2 fact 0 reference [2,1] and available slot [0]."
+    }
+  },
+  "validation": {
+    "ab_full": {
+      "tests": 520,
+      "passed": 520,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/full-tests-ab-final.txt"
+    },
+    "ab_targeted": {
+      "tests": 79,
+      "passed": 79,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/targeted-tests.txt"
+    },
+    "ab_red": {
+      "tests": 7,
+      "failed": 6,
+      "passed": 1,
+      "runtime": "frozen 6381bef dist",
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/operation-obligation-all-red-tests.txt"
+    },
+    "scope_red": {
+      "tests": 1,
+      "failed": 1,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/operation-scope-red-tests.txt"
+    },
+    "source_fallback_red": {
+      "tests": 6,
+      "failed": 4,
+      "passed": 2,
+      "method": "Same tests against isolated legacy whole-source erase reference; original first red tool output was not saved to disk.",
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/source-erasure-fallback-red.txt"
+    },
+    "source_fallback_green": {
+      "tests": 6,
+      "passed": 6,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/source-erasure-fallback-green.txt"
+    },
+    "a06_red": {
+      "tests": 14,
+      "failed": 3,
+      "passed": 11,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/partial-source-inference-red.txt"
+    },
+    "a06_green": {
+      "tests": 14,
+      "passed": 14,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/partial-source-inference-green.txt"
+    },
+    "b14_exact_input_boundary": {
+      "protocol": "candidate-b14-no-cloud-boundary-replay-v1",
+      "cloud_calls": 0,
+      "original_control": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-B14-forget-witness-20260908/replay-report.json",
+      "original_database_sha256": "c74c50c636732facbea634f2744510440b315b72bb6a61a8ce1b0bfe2dd50240",
+      "revision_before": 43,
+      "extraction_packet_matches": {
+        "system": true,
+        "input": true,
+        "purpose": true
+      },
+      "changed_repair_input": {
+        "missing_count": 1,
+        "message_index": 6,
+        "start": 526,
+        "end": 559,
+        "quote_sha256": "0ccd1f1d384233168f0cdc63e64701e11de14e9b90304ef64166f0f337d38282",
+        "in_scope": true,
+        "system_differs_from_old": true,
+        "input_differs_from_old": true
+      },
+      "unreviewed_source_fallback": {
+        "code": "EVIDENCE_VALIDATION",
+        "candidates": 97,
+        "original_fingerprint_matches": true,
+        "generated_decisions": 0,
+        "commit_attempted": false
+      },
+      "repair_boundary": {
+        "code": "OPERATION_INTENT",
+        "model_outputs_replayed": 1,
+        "new_repair_outputs_available": 0,
+        "write_recovery_proven": false
+      },
+      "revision_after": 43,
+      "receipt": null,
+      "snapshot_unchanged": true,
+      "original_database_unchanged": true
+    },
+    "positive_mock": "Repeated same-target value/boundary commands pass actual authorization, verification mock, reviewed mixed source handling and commit: one marker, target erased, independent pottery preserved.",
+    "final_full": {
+      "tests": 538,
+      "passed": 538,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/full-tests-final.txt"
+    },
+    "build": {
+      "exit_code": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/build-final.txt"
+    },
+    "a06_exact_recorded_replay": {
+      "protocol": "candidate-a06-exact-recorded-prepare-and-commit-v1",
+      "cloud_calls": 0,
+      "original_control": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-full-A06-forget-witness-20260908/replay-report.json",
+      "backup_sha256": "eaaf8dc267024856c5bc89749564ae7a93a42dfc3b4b237aba6d21804fa445df",
+      "revision_before": 37,
+      "recorded_calls": [
+        {
+          "purpose": "extraction",
+          "expected": "extraction",
+          "system_match": true,
+          "input_match": true,
+          "trace_id": "5c34236b-fefb-4cb2-a54b-3f839e193b95"
+        },
+        {
+          "purpose": "verification",
+          "expected": "verification",
+          "system_match": true,
+          "input_match": true,
+          "trace_id": "58088ca1-3b8b-41be-8b89-54a571422fb3"
+        },
+        {
+          "purpose": "source_erasure",
+          "expected": "source_erasure",
+          "system_match": true,
+          "input_match": true,
+          "trace_id": "ac26fb20-30df-4597-86ad-242efc6e5d40"
+        },
+        {
+          "purpose": "source_erasure_repair",
+          "expected": "source_erasure_repair",
+          "system_match": true,
+          "input_match": true,
+          "trace_id": "903000c5-7f19-49d5-a94c-06904961aa06"
+        }
+      ],
+      "result": {
+        "commit": "success",
+        "revision_after": 38,
+        "receipt_present": true,
+        "degraded": [],
+        "forgotten_target_count": 5,
+        "all_direct_targets_erased": true,
+        "retained_inference": {
+          "id": "08e00c1e031ee145e969cd2d5cd3a70a0f36f8097f6a57260095fd2d931fdb7e",
+          "predicate": "friend_support_pattern",
+          "state": "active",
+          "all_quotes_unchanged": true
+        },
+        "original_erased_source_intervals_absent": true,
+        "erased_fact_count": 6,
+        "model_output_modifications": 0
+      },
+      "original_backup_unchanged": true
+    },
+    "b01_red": {
+      "tests": 4,
+      "failed": 3,
+      "passed": 1,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/source-reference-feedback-red.txt"
+    },
+    "b01_green": {
+      "tests": 4,
+      "passed": 4,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/source-reference-feedback-green.txt"
+    }
+  },
+  "limitations": [
+    "B14 real model write recovery is not proven by prompt change, typed refusal or mocked positive fixture; parent must schedule true tail replay after provider gate.",
+    "No Answer/Judge calls; no claim of improved QA score.",
+    "B01 feedback is diagnostic; actual corrected model output and resulting write recovery still require parent-scheduled validation."
+  ],
+  "artifacts": {
+    "ab_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/ab-dist",
+    "ab_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/ab-manifest.json",
+    "ab_diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/ab.diff",
+    "a06_diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/a06.diff",
+    "b14_replay": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/replay-b14-candidate.mjs",
+    "a06_replay": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/replay-a06-candidate.mjs",
+    "final_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/final-dist",
+    "final_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/final-manifest.json",
+    "combined_diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/combined.diff",
+    "b01_diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-erasure-witness-fix-20260908/b01.diff"
+  }
+}

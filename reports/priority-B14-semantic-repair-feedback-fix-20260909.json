@@ -1,0 +1,93 @@
+{
+  "protocol": "priority-B14-semantic-repair-feedback-fix-v1",
+  "created_at": "2026-09-08T16:26:37.017106+00:00",
+  "candidate_commit": "1653081b41f3e8db7721ef88714b5627223b7951",
+  "base_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "summary": "在语义修补前报告移除被拒操作后才会新增的指令覆盖缺口；保持当前missing语义、原范围、两轮预算和全部授权校验。",
+  "confirmed_facts": [
+    "原B14最后repair前当前missing为空；语义拒绝operation 1实际占据message 6第二条命令。移除该操作才使span [526,559)缺失。",
+    "既有REPAIR_SCOPE允许修改operation 1、追加来自message 6的操作；无需编辑正确operation 0或扩大范围。",
+    "原四包在e9和新候选下都仍然OPERATION_INTENT失败。新候选前三次模型调用的system/input哈希完全相同；第四次仅新增条件性反馈和对应prompt。",
+    "人工构造的改目标与remove+append两种最终patch均在两轮repair内通过原有局部校验，并触发新的独立语义核验，其scope严格为operation 1和message 6。未提供新核验响应即主动停止。"
+  ],
+  "inference_and_limits": [
+    "已有两轮内具备提交正确patch的信息和权限；这证明可行修补存在，不能证明真实模型一定会采用它。",
+    "即使模型修正，仍需真实独立语义verdict及后续source-erasure和commit成功；本地测试没有证明真实恢复、服务写入成功或分数变化。",
+    "补丁不延长共享请求时间预算，不能保证后续模型阶段在剩余时间内完成。"
+  ],
+  "implementation": {
+    "files": [
+      "src/repair.ts",
+      "src/extraction.ts",
+      "tests/semantic-retirement-repair.test.ts"
+    ],
+    "entry": "semantic verification findings -> scoped AT_RISK_OPERATION_INSTRUCTIONS -> next bounded PATCH_PROMPT",
+    "conditional_field": {
+      "index": 6,
+      "start": 526,
+      "end": 559,
+      "quote": "Just remove the Portland detail.",
+      "rejected_operation_indices": [
+        1
+      ]
+    },
+    "eligibility": [
+      "Only explicit operation N semantic findings with an existing editable operation index.",
+      "Only obligations newly missing in a counterfactual proposal without those rejected operations.",
+      "Only active REPAIR_SCOPE.source_indices; exclude independently resolved source instructions.",
+      "A remaining non-rejected covering operation suppresses the warning. Message/fact findings do not declare scoped operations rejected."
+    ],
+    "preserved": [
+      "No target selection or operation mutation by feedback helper.",
+      "No added repair rounds, expanded patch scope, merged instruction witnesses or fabricated authority.",
+      "Current MISSING_OPERATION_INSTRUCTIONS continues to mean already missing.",
+      "Changed operations require a fresh semantic verifier response; unchanged certificates may be reused."
+    ]
+  },
+  "validation": {
+    "full_tests": {
+      "total": 544,
+      "passed": 544,
+      "failed": 0,
+      "sha256": "a6472e6c8985f1e4f77d1c7fbc8d4bd8eba75c210f571b1745a52fbfbb86bceb"
+    },
+    "typecheck": {
+      "passed": true,
+      "sha256": "9b7390217791914096773a2f12ff8364ec9fcf057f746af3ab367e61140baea0"
+    },
+    "targeted_red": {
+      "total": 4,
+      "passed": 1,
+      "failed": 3,
+      "sha256": "c327148476e14dd5809ec25f4ca454ef294766961d229d85c823b782f40ecf69"
+    },
+    "targeted_green": {
+      "total": 6,
+      "passed": 6,
+      "failed": 0,
+      "sha256": "aab0eb198fb7a4ac113866f811f159af31e1853fb1d0bb525e2bfc0fbfd03273"
+    },
+    "recorded_replay_sha256": "945b099a4c45d5aafc9fd2cb145d84fee346babb88ca320cbda30809d4c814f9"
+  },
+  "recorded_replay": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-semantic-repair-feedback-20260909/recorded-replay-report.json",
+  "reproduce": {
+    "targeted": "cd /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-semantic-repair-feedback-20260909/service && node --import tsx --test tests/semantic-retirement-repair.test.ts",
+    "recorded": "node /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-semantic-repair-feedback-20260909/replay.mjs"
+  },
+  "artifacts": {
+    "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-semantic-repair-feedback-20260909/final-manifest.json",
+    "manifest_sha256": "42bf6a9d726c95f013f6ce6443774db04cf8df6d91fd0f0e342b24fa8afc940a",
+    "dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-semantic-repair-feedback-20260909/final-dist",
+    "source_db_sha256": "c74c50c636732facbea634f2744510440b315b72bb6a61a8ce1b0bfe2dd50240",
+    "request_sha256": "f86f7c72f79a31317633389a1896a48bffd62ae39f7ef750890232a61ef9240d",
+    "recorded_calls_sha256": "7f4ffdd32b6eddf76725bd676f1a7c71e3e55dfc86eb38c57374dd0ce1f37d5f"
+  },
+  "safety_scope": {
+    "cloud_calls": 0,
+    "score_changes": 0,
+    "live_service_changes": 0,
+    "original_database_unchanged": true,
+    "original_candidate_dist_hashes_match_plan": true,
+    "new_passing_semantic_verdicts": 0
+  }
+}

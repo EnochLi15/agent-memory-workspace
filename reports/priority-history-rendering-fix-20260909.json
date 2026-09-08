@@ -1,0 +1,129 @@
+{
+  "protocol": "priority-history-rendering-fix-20260909-v1",
+  "status": "independent_candidate_frozen_not_merged",
+  "candidate_commit": "8cc94c9b66a5228ac21c49ce471f9721220aee58",
+  "base_commit": "e9b5da47360fb4cc7936029aa50b3557c93f87de",
+  "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/service",
+  "cloud_calls": 0,
+  "embedding_calls": 0,
+  "answer_judge_calls": 0,
+  "current_16_question_scores_modified": false,
+  "source_changes": [
+    "src/retrieval.ts",
+    "tests/history-rendering.test.ts"
+  ],
+  "diagnosis": {
+    "reproduction": "The historical renderer copies f.value into a Former wrapper and then includes the complete f.content as Original statement. For content equal to value or a canonical aggregate card, the same old value is rendered twice.",
+    "falsifiable_hypothesis": "Omit the extra wrapper value only when the original content unambiguously carries that exact complete value; preserve the full original statement and all surrounding historical context. The fixed selected set should cost fewer tokens without any other text changes.",
+    "minimal_boundary": [
+      "Nonempty content===value.",
+      "Or id starts pattern-, kind reflection, modality inferred, cardinality multiple, and content exactly matches the service-generated [Aggregated pattern] subject: predicate — value (N statements) format for an integer N>=2 without leading zeros.",
+      "N is validated as the original format only; statement count is not inferred from distinct dependencies, and the original N remains untouched.",
+      "Free prose with contains(value), multiple possible values, short substrings and template/metadata lookalikes retain the explicit wrapper value."
+    ],
+    "preserved": [
+      "Original content verbatim, including negation.",
+      "Superseded/retracted status, valid-until dates, event time and source metadata.",
+      "Existing same-scope successor and as-of behavior; multiple-valued aggregates do not acquire a single-value successor.",
+      "Candidate collection, ranking, raw arbitration, source support, privacy filters and 6000 token budget."
+    ]
+  },
+  "validation": {
+    "failure_first": {
+      "tests": 12,
+      "baseline_pass": 3,
+      "baseline_fail": 9,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/history-rendering-red-final.txt",
+      "method": "Exact final tests copied into an isolated red-reference directory with src pointing to untouched e9b5da4. Early fixture cardinality expectations were corrected before this authoritative baseline run."
+    },
+    "targeted": {
+      "tests": 12,
+      "pass": 12,
+      "fail": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/history-rendering-green-final.txt"
+    },
+    "full_service": {
+      "tests": 550,
+      "pass": 550,
+      "fail": 0,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/full-tests-final.txt"
+    },
+    "build": {
+      "passed": true,
+      "log": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/build.txt"
+    },
+    "review": "Independent read-only review found no blocker; metadata negative cases now independently vary id, kind, modality and cardinality.",
+    "baseline_immutability": {
+      "manifest_sha256": "d6ed537b207e22e922f0e5c7e7c806b8019342dfe1815ca4e9c59e618bfcb4fb",
+      "entries_checked": 151,
+      "baseline_worktree_clean": true,
+      "source_and_both_dist_copies_match": true
+    }
+  },
+  "a06_fixed_selected_set": {
+    "method": "Validate each changed stored fact through both production packEvidence renderers with a singleton frame. Apply only that exact wrapper deletion to completed original selected text. Preserve IDs, order, scores, source context, quotes, dates and metadata. Sum the service estimator over the unchanged selected set.",
+    "questions": [
+      {
+        "question": "p1_operation_trace",
+        "selected_count": 17,
+        "before_tokens": 5953,
+        "after_tokens": 5126,
+        "saved_tokens": 827,
+        "changed_count": 5
+      },
+      {
+        "question": "p2_target_binding",
+        "selected_count": 18,
+        "before_tokens": 5980,
+        "after_tokens": 5980,
+        "saved_tokens": 0,
+        "changed_count": 0
+      },
+      {
+        "question": "p3_state_transition",
+        "selected_count": 28,
+        "before_tokens": 5996,
+        "after_tokens": 5996,
+        "saved_tokens": 0,
+        "changed_count": 0
+      },
+      {
+        "question": "p4_candidate_disambiguation",
+        "selected_count": 17,
+        "before_tokens": 5998,
+        "after_tokens": 5998,
+        "saved_tokens": 0,
+        "changed_count": 0
+      },
+      {
+        "question": "p5_operation_application",
+        "selected_count": 20,
+        "before_tokens": 5981,
+        "after_tokens": 5981,
+        "saved_tokens": 0,
+        "changed_count": 0
+      }
+    ],
+    "total_saved_tokens": 827,
+    "changed_occurrences": 5,
+    "p1_saved_percent": 13.892155215857551,
+    "details": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/fixed-rendering-comparison.json",
+    "limitations": [
+      "No query vectors were recorded and no candidate collection or reranking was replayed.",
+      "The original packing order, support truncation and selected evidence set are held fixed. This does not predict selection or source coverage under a new packing run.",
+      "No Answer/Judge rerun and no QA score or accuracy improvement claim."
+    ]
+  },
+  "next_evaluation": "Keep this candidate separate from e9b5da4 write recovery and prior raw/temporal retrieval candidates. A later fixed 72-question paired retrieval/Answer/Judge run is required, including unchanged and displaced non-gold evidence; this render-only audit cannot establish new coverage or accuracy.",
+  "artifacts": {
+    "dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/candidate-dist",
+    "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/candidate-manifest.json",
+    "manifest_sha256": "117ed9cb1f08e8e3c048ef702fed9c5be313a0cc84c570e3f07f170dd35754d5",
+    "diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/candidate.diff",
+    "reproduction_script": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-history-rendering-fix-20260909/compare-fixed-rendering.mjs"
+  },
+  "changed_dist_relative_to_base": [
+    "retrieval.js",
+    "retrieval.js.map"
+  ]
+}

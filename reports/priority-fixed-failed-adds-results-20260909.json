@@ -1,0 +1,178 @@
+{
+  "protocol": "fixed-failed-adds-http-result-v1",
+  "scope": "One HTTP /add per frozen failed request, using mixed-version historical prefixes. No HTTP retry, QA evaluation, rejudging, or score changes.",
+  "at": "2026-09-08T16:43:49.107288+00:00",
+  "candidate_provenance": {
+    "kind": "compiled-artifact",
+    "manifest_sha256": "97fdf3c914389ec78c42216af3e0b52b01c88fd6e0cbe305151100985b28cb35",
+    "commit": "50ccac83fa59f85de418dcde2c4e69444c99607b"
+  },
+  "results": [
+    {
+      "sample_id": "B14_forget",
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "http_status": 503,
+      "elapsed_ms": 44729.535665999996,
+      "http_attempts": 1,
+      "error_code": "EVIDENCE_VALIDATION",
+      "transport_error": false,
+      "revision_before": 43,
+      "revision_after": 43,
+      "receipt_present": false,
+      "checks": {
+        "sqlite_integrity": true,
+        "tenant_unchanged": true,
+        "single_matching_http_result": true,
+        "prefix_receipts_unchanged": true,
+        "exact_receipt_set": true,
+        "revision_transition": true,
+        "failed_request_absent_or_success_receipt_matches": true,
+        "failed_write_logical_state_unchanged": true
+      },
+      "failed_write_logical_hashes": {
+        "before": "a884423b10dbc594ebdf7b27238ccea6c98284f2e7e84eb9ea023ea638cc41d6",
+        "after": "a884423b10dbc594ebdf7b27238ccea6c98284f2e7e84eb9ea023ea638cc41d6"
+      },
+      "integrity": "pass",
+      "successful_degraded_add": false
+    },
+    {
+      "sample_id": "B03_remember",
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-20:0",
+      "http_status": 200,
+      "elapsed_ms": 55993.410459,
+      "http_attempts": 1,
+      "error_code": null,
+      "transport_error": false,
+      "revision_before": 19,
+      "revision_after": 20,
+      "receipt_present": true,
+      "checks": {
+        "sqlite_integrity": true,
+        "tenant_unchanged": true,
+        "single_matching_http_result": true,
+        "prefix_receipts_unchanged": true,
+        "exact_receipt_set": true,
+        "revision_transition": true,
+        "failed_request_absent_or_success_receipt_matches": true
+      },
+      "failed_write_logical_hashes": {},
+      "integrity": "pass",
+      "successful_degraded_add": false
+    },
+    {
+      "sample_id": "B30_forget",
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+      "http_status": 200,
+      "elapsed_ms": 41070.452291999994,
+      "http_attempts": 1,
+      "error_code": null,
+      "transport_error": false,
+      "revision_before": 12,
+      "revision_after": 13,
+      "receipt_present": true,
+      "checks": {
+        "sqlite_integrity": true,
+        "tenant_unchanged": true,
+        "single_matching_http_result": true,
+        "prefix_receipts_unchanged": true,
+        "exact_receipt_set": true,
+        "revision_transition": true,
+        "failed_request_absent_or_success_receipt_matches": true
+      },
+      "failed_write_logical_hashes": {},
+      "integrity": "pass",
+      "successful_degraded_add": false
+    }
+  ],
+  "snapshots_unchanged": true,
+  "frozen_inputs_and_dist_unchanged": true,
+  "planned_adds": 3,
+  "completed_http_attempts": 3,
+  "unknown_generation_calls": 0,
+  "prefix_generation_calls": 0,
+  "successful_degraded_adds": 0,
+  "model_stages": [
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempts": 2
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B14_forget:segment-43:0",
+      "purpose": "erasure_binding",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-20:0",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-20:0",
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempts": 2
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-20:0",
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B03_remember:segment-20:0",
+      "purpose": "source_erasure",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+      "purpose": "extraction",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+      "purpose": "repair",
+      "outcome": "ok",
+      "attempts": 1
+    },
+    {
+      "request_id": "priority-full-20260908-01-candidate:memops:B30_forget:segment-13:0",
+      "purpose": "verification",
+      "outcome": "ok",
+      "attempts": 1
+    }
+  ],
+  "degradation_counter_scope": "Service degraded events describe successful committed writes only; failed prepare phases may have degraded before rollback.",
+  "integrity": "pass",
+  "all_adds_succeeded": false,
+  "runtime": {
+    "status": "failed",
+    "all_owned_processes_stopped": true,
+    "elapsed_seconds": 143.428
+  },
+  "benchmark_score_note": "These three HTTP add results are not QA scores and do not change the completed 7/16 targeted evaluation or original 0/37 high-risk gate result.",
+  "artifact_hashes": {
+    "artifacts/priority-failed-adds-20260909-01/plan.json": "21f49f588b3e7a1dbeeefab2aacb7d316fdac67e4a41c5551f13afc81b0a12cb",
+    "artifacts/priority-failed-adds-20260909-01/summary.json": "27dc2b425f750ca018b3fe8785dbb9baa801d80fe8dcc3c112f26a202e2db866",
+    "artifacts/priority-failed-adds-20260909-01/model-calls.jsonl": "2776dd9cb3b8a31ccb8126a3847e6512ebe7c78e02d5d29a3c72567df324281f",
+    "artifacts/priority-failed-adds-20260909-01/runtime.json": "d343fd50e9d7f9eaa2558b2f43014fbe87dc26e91afb5941f3ec108d4e6abedf"
+  }
+}
