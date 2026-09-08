@@ -1,0 +1,51 @@
+{
+  "candidate_commit": "a0b2bf0a9ad79029ea5c41f7e80eb28c51d4a520",
+  "candidate_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-forget-scope-split-20260909/final-dist",
+  "candidate_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-forget-scope-split-20260909/candidate-manifest.json",
+  "candidate_manifest_sha256": "cc616fdd567ca1b4c74e31c2358149cc2692abc5929239ef46f19e3a89e69e35",
+  "change": "Bounded local structural proposal using existing selected_target_groups; no new target selection or authorization.",
+  "guards": [
+    "Enhanced standard Models.verify only; source stays on original model message and quote, unique direct human citation.",
+    "Only explicit active non-reflection targets with empty depends_on, common subject, no scopeHash, value boundary; at most eight selected targets per split and eight appended operations per proposal.",
+    "Original slot must exist and retains original index; append other groups after siblings. Each group uses one exact stored subject/predicate/scope/value tuple.",
+    "Chronology and selectors rechecked; any target expansion rejects local split. Repair aliases synchronized.",
+    "Existing exact verification fingerprints unchanged; new or changed operations and message coverage checked; unchanged failed certificates persist.",
+    "Sticky rejection on any degraded preparation or missing independent semantic verification."
+  ],
+  "validation": {
+    "targeted_passed": 27,
+    "full_passed": 654,
+    "full_failed": 0,
+    "build_passed": true,
+    "cloud_calls": 0,
+    "embedding_calls": 0,
+    "commit_attempts": 0,
+    "original_03_packets_system_input_exact": 4,
+    "replay_stopped_before": "new_split_semantic_verification",
+    "full_add_success_claimed": false
+  },
+  "cost": "No new model stage or repair round. A structurally valid split proceeds to the normal verification for its current existing attempt. In recorded 03 it exposes one previously unreachable verification call; no output supplied locally.",
+  "replay": {
+    "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-forget-scope-split-20260909/replay-report.json",
+    "report_sha256": "e773ffbe914a5ab45bcb9aff2a5e72ae91ee3c5c6f1cc72e0cf9a0a7bc66d2db",
+    "snapshot_revision": 30,
+    "snapshot_sha256": "f32427264572795bb91b6140de2a668f4f9766561989ec67aba142117af32391",
+    "next_input_sha256": "b7e248ab084e9cc97b25c21654d23557c40b3c32159e2cdf3d107340967bb133",
+    "next_check_scope": {
+      "fact_indices": [],
+      "operation_indices": [
+        0,
+        1
+      ],
+      "replacements": [],
+      "message_indices": [
+        6
+      ]
+    },
+    "original_four_outputs_unmodified": true,
+    "target_union_exact": true,
+    "original_11_facts_unchanged": true,
+    "no_new_verdict_supplied": true
+  },
+  "remaining": "B30 actual add remains failed in recorded 03. Candidate has no live success, erasure or commit verdict; final semantic target authorization including keep exceptions remains undecided."
+}

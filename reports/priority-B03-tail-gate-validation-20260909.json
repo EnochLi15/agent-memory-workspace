@@ -1,0 +1,59 @@
+{
+  "protocol": "single-tail-negative-source-gate-v1",
+  "created_at": "2026-09-08T20:13:17.126699+00:00",
+  "adapter": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b03-tail-qa.py",
+  "adapter_sha256": "7b079398b2c734a70fc196395f992da7c3ae034b175e22fb139958f4a35ca207",
+  "tests": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_b03_tail_qa.py",
+  "tests_sha256": "7f3d3f32eee389577e61842af0ec477437c6e79758efa9faeccacb1b8b0422f6",
+  "source": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01",
+  "source_http_status": 503,
+  "source_revision": 33,
+  "source_receipts": 33,
+  "command": [
+    "python3",
+    "scripts/probes/run-b03-tail-qa.py",
+    "--previous",
+    "priority-B03-segment34-add-20260909-01",
+    "--campaign",
+    "priority-B03-tail-qa-20260909-01",
+    "--port",
+    "8125",
+    "--plan"
+  ],
+  "exit_code": 1,
+  "expected_rejection": "Actual single-add HTTP 200 is required before planning",
+  "rejected_before_campaign_creation": true,
+  "target_campaign_exists": false,
+  "source_files_and_B30_adapter_unchanged": {
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/plan.json": "93515e813c9989d23e6a977df6ace9544c1c771be3758c14596c4ee364eacf12",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/runtime.json": "06c0c3451e97e4c88281aa1100b759e06e0d2f0b587b72d91b87a6872fd87105",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/results.private.json": "401ef8a84a44f3028d4de6684f2ebd9fcbd3f8a0cb86fb355d1d4b276c91179b",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-segment34-add-20260909-01/inputs.private.json": "4cea486c0d25e257e5ff78d7ab009e75e378b815b21de7a32624be60db292ae0",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b30-tail-qa.py": "2c6ed34f52d195c6fe2a2923e448ceedab61ddfebf7313ddad08322e021130a2",
+    "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_b30_tail_qa.py": "f65df3184040be5292ee443c39c7543554a8f388e51cdf7723bb671a46b5c4bd"
+  },
+  "tests_result": {
+    "command": "python3 -m unittest discover -s scripts/probes -p 'test_b[03][03]_tail_qa.py' -v",
+    "passed": 7,
+    "B03_new": 3,
+    "B30_unchanged": 4,
+    "coverage": [
+      "HTTP503 refused before creating campaign or database",
+      "revision34 without success receipt refused; exact34 accepted; corrupted receipt refused",
+      "50 sessions/50 unique adds/6 unique questions/16 remaining add boundaries",
+      "existing B30 path gate, failed HTTP, missing receipt and fixed denominator regressions"
+    ]
+  },
+  "counts_from_original_frozen_eval": {
+    "sessions": 50,
+    "total_adds": 50,
+    "required_prefix_receipts": 34,
+    "remaining_tail_adds": 16,
+    "planned_questions": 6,
+    "first_tail": "segment-35:0",
+    "last_tail": "segment-50:0"
+  },
+  "future_source_handling": "Explicit --previous selects a direct artifacts child; prepare records plan.previous and frozen validate/run read plan.previous, not the CLI default. Candidate and successful successor are still pending.",
+  "new_model_calls": 0,
+  "new_success_plan": false
+}
