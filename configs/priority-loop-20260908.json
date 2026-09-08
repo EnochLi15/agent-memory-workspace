@@ -1,0 +1,15 @@
+{
+  "policy": "Diagnostic only; first two complete sessions and six priority questions with all annotated evidence inside that prefix. Not a full-history benchmark score.",
+  "source_sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc",
+  "dataset_sha256": "4382b53b9cfc7579bac2ffef9170587da7c6e5ca58732d4ccaa868873f2a6add",
+  "qids": [
+    "conv-26#q0003",
+    "conv-26#q0004",
+    "conv-26#q0000",
+    "conv-26#q0001",
+    "conv-26#q0066",
+    "conv-26#q0067"
+  ],
+  "sessions": 2,
+  "messages": 35
+}

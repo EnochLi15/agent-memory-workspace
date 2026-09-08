@@ -8,6 +8,7 @@ import argparse,json,os,pathlib,subprocess,time,urllib.request,hashlib,sys
 from contextlib import ExitStack
 from experiment_runtime import ManagedRun, RunInterrupted, launch_detached, read_status, evaluation_schedule, run_benchmark_jobs
 from experiment_identity import validate_reuse
+from judge_runtime import start_local_judge
 root=pathlib.Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--trace-models',action='store_true');p.add_argument('--profile',required=True);p.add_argument('--split',choices=['dev','test'],default='dev');p.add_argument('--port',type=int);p.add_argument('--detach',action='store_true');p.add_argument('--status',action='store_true');p.add_argument('--concurrency',type=int);p.add_argument('--reuse-ingestion');p.add_argument('--upstream-judge',action='store_true');p.add_argument('--benchmark',choices=['both','locomo','memops'],default='both');p.add_argument('--locomo-data');p.add_argument('--memops-data');p.add_argument('--spec',type=pathlib.Path,default=root/'configs/experiments.json');args=p.parse_args()
 campaign=root/'artifacts'/args.campaign
@@ -72,6 +73,9 @@ try:
   config_file.write_text(json.dumps(safe,indent=2)+'\n')
   if sys.platform=='darwin':
    runtime.spawn('sleep-prevention',['/usr/bin/caffeinate','-i','-w',str(os.getpid())],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+  judge_base=None
+  if args.upstream_judge and args.benchmark in ('both','locomo'):
+   judge_base=start_local_judge(runtime,files,root,campaign,args.profile,env)
   log=files.enter_context(open(campaign/(args.profile+'-service.log'),'x'));service=runtime.spawn('service',service_command,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT)
   for _ in range(80):
    runtime.poll()
@@ -90,7 +94,7 @@ try:
    if 'answer_model' in evaluation:command+=['--answer-model',evaluation['answer_model']]
    if 'judge_model' in evaluation and not (benchmark=='locomo' and args.upstream_judge):command+=['--judge-model',evaluation['judge_model']]
    if benchmark=='locomo' and args.upstream_judge:
-    run_env.update(EVALUATOR_API_BASE='http://127.0.0.1:8766/v1',EVALUATOR_API_KEY='local');command+=['--judge-model','qwen3:14b','--mode','upstream-reproduction']
+    run_env.update(EVALUATOR_API_BASE=judge_base,EVALUATOR_API_KEY='local');command+=['--judge-model','qwen3:14b','--mode','upstream-reproduction']
    out=files.enter_context(open(campaign/(args.profile+'-'+benchmark+'.log'),'x'));job=runtime.spawn(benchmark,command,cwd=root/'eval',env=run_env,stdout=out,stderr=subprocess.STDOUT);print(json.dumps({'event':'started','run_id':run_id,'pid':job.pid,'service_pid':service.pid}),flush=True)
    return benchmark,job,out
   run_benchmark_jobs(runtime,service,['locomo','memops'] if args.benchmark=='both' else [args.benchmark],launch_benchmark,execution)

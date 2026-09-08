@@ -1,0 +1,22 @@
+{
+  "policy": "Fixed prior to execution, all selected questions and complete histories retained; four operations across two agents; smoke test, not a representative accuracy estimate.",
+  "datasets": {
+    "locomo-conv30-72.json": {
+      "sha256": "360313250f968618177c4dc07771342cebe40c9f64401293d7a8a11e3de8bf68",
+      "samples": [
+        "conv-30"
+      ],
+      "questions": 72
+    },
+    "memops-four-operations-20.json": {
+      "sha256": "45e47391afdef1d97428e27bf579a376dc68241c0d93bc2f0b5fd41c1e39f91d",
+      "samples": [
+        "A02_forget",
+        "A02_remember",
+        "B01_reflect",
+        "B01_update"
+      ],
+      "questions": 20
+    }
+  }
+}

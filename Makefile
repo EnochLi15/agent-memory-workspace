@@ -25,8 +25,7 @@ local-debug:
 test:
 	cd service && npm run build && npm test
 	cd eval && npm run build && npm test
-	python3 -m unittest discover -s scripts/probes -p 'test_experiment_*.py'
-	python3 -m unittest discover -s scripts/probes -p 'test_delivery_gates.py'
+	python3 -m unittest discover -s scripts/probes -p 'test_*.py'
 	node --test scripts/probes/local.test.mjs
 eval-init:
 	python3 -m venv eval/.venv

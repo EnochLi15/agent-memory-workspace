@@ -67,3 +67,28 @@ python3 scripts/summarize-costs.py --require-complete
 ```
 
 前者逐条核对HTTP输入、终态问题集合、选项类型及普通Answer源码边界，补充时延尾部、证据条数和实际预算函数估算；后者汇总服务模型日志与已有资源采样。严格开关会拒绝在实验未完成时生成最终审计。省略开关时仅生成显式标为不完整的快照；原版mem0来源ID和未记录账单的范围限制写入产物。
+
+## 当前优先评测范围（2026-09-08）
+
+后续质量测试优先运行 `configs/priority-benchmarks-20260908.json` 冻结的题目，再运行更广范围回归。通过 `python3 scripts/select-priority-benchmarks.py` 从本地固定上游数据重建，清单包含完整 qid、输入 hash 和分布。保留完整会话，不按已有得分筛题。
+
+- LoCoMo：9 个指定对话、500 题；保留用户给定的各对话配额与数字类别配额 1/2/4=167/167/166。类别名称纠正为多跳/时间/单跳。由于没有官方 qid 清单，此处为确定性的公开重建子集。
+- MemOps：31 个指定 agent、95 个指定操作样本、472 道纵向题。用户表合计 470，固定源中 C02 实际为 15 而非 13，全部保留；不补入范围外题目凑足 500。
+- `configs/priority-benchmarks-run-20260908.json` 使用发布版服务行为与当前本地 GLM-5.2 配置，Answer 使用 GLM-5.2；LoCoMo Judge 使用本地 Qwen3:14b 量化版及上游 refined 提示词，MemOps Judge 为 GLM-5.2 rubric 代理。并发 1、两套基准顺序执行、独立存储，旧划分和历史结果保留。该子集已公开用于优先测试，不再作为未暴露保留集。
+
+启动命令（每次必须使用新 campaign）：
+
+```sh
+python3 scripts/run-experiment.py --campaign priority-20260908-02 --profile candidate --port 8118 --spec configs/priority-benchmarks-run-20260908.json --locomo-data .data/priority-20260908-v1/locomo.json --memops-data .data/priority-20260908-v1/memops.json --upstream-judge --detach
+python3 scripts/run-experiment.py --campaign priority-20260908-02 --profile candidate --status
+```
+
+运行报告位于 `eval/artifacts/priority-20260908-02-candidate-{locomo,memops}/`；未完成或未判定题目保留在完整计划分母内。选择清单不代表评测已完成。
+
+首个 `priority-20260908-01` 批次因预检发现 GLM-5.2 不支持上游 Judge 的关闭思考参数而主动停止，尚无题目判分；保留原始灌入记录。修正后的 02 批次采用独立命名空间与本地 Qwen Judge，不修改上游评测源码。
+
+## Judge 进程归属修复（2026-09-08）
+
+上游 Judge 模式由 runner 管理独占适配器，先绑定随机本地端口、核对 PID、执行真实 Qwen bridge 预检，再启动服务灌入。Judge 作为必需子进程，在每次 runtime poll 中检查；意外退出使本批次及时终止，保存退出码并清理本批次进程。其他任务的 Judge 不被接管或关闭。适配器新增健康身份接口及正常信号/停止日志；SIGKILL 的退出码由父进程记录。原始 Judge 提示词及模型推理参数保持不变。
+
+旧 `priority-full-conv30-20260908-02` 的 27 次写入全部成功、6 份答案均保留，6 条 judge_error 未改写。进程管理修复通过独立预检与故障注入验证，不是旧批次补分。

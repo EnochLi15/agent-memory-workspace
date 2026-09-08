@@ -1,0 +1,15 @@
+{
+  "policy": "Six questions from the frozen priority set; retain all 19 original sessions; fixed model/config and private trace; diagnostic small sample, not the entire benchmark score.",
+  "qids": [
+    "conv-30#q0003",
+    "conv-30#q0005",
+    "conv-30#q0000",
+    "conv-30#q0001",
+    "conv-30#q0002",
+    "conv-30#q0004"
+  ],
+  "source_sha256": "23e67bdf5d22ad9c880fe9c4cf7f5a9fe1d27aefb4f5a4478c0d027a09ffccbc",
+  "dataset_sha256": "5076d147662027f42d745c8fd9c09698b2d13ae9429232f7f78731dea197cc1e",
+  "sessions": 19,
+  "messages": 369
+}

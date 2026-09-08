@@ -139,17 +139,17 @@ class ManagedRun:
     def interrupt(self, signum, _frame):
         raise RunInterrupted(signum)
 
-    def spawn(self, role, command, **kwargs):
+    def spawn(self, role, command, required=False, **kwargs):
         if role in self.processes:
             raise ValueError('A managed role cannot be launched twice')
         child = subprocess.Popen(command, **kwargs)
         self.processes[role] = child
         self.state['children'][role] = {'pid': child.pid, 'process_identity': process_identity(child.pid),
-                                        'started_at': now(), 'exit_code': None}
+                                        'started_at': now(), 'exit_code': None, 'required': required}
         self.poll()
         return child
 
-    def poll(self):
+    def poll(self, check_required=True):
         tick = time.time()
         if tick - self.last_tick > 30:
             self.state['monitor_gaps'].append({'at': now(), 'seconds': round(tick - self.last_tick, 3),
@@ -162,6 +162,10 @@ class ManagedRun:
                 row.update(exit_code=code, finished_at=now())
         self.state['updated_at'] = now()
         write_json(self.path, self.state)
+        if check_required:
+            for role, row in self.state['children'].items():
+                if row.get('required') and row['exit_code'] is not None:
+                    raise RuntimeError(f'Required process {role} exited with code {row["exit_code"]}')
 
     def __exit__(self, kind, error, _traceback):
         # Terminate only Popen handles owned by this run; never signal saved PIDs.
@@ -174,7 +178,7 @@ class ManagedRun:
                 except subprocess.TimeoutExpired:
                     child.kill()
                     child.wait(timeout=5)
-        self.poll()
+        self.poll(check_required=False)
         failed = any(r['exit_code'] != 0 and not r.get('stopped_by_runner')
                      for r in self.state['children'].values())
         self.state.update(status='interrupted' if isinstance(error, RunInterrupted) else
