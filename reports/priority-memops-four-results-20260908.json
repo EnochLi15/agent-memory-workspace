@@ -1,0 +1,329 @@
+{
+  "campaign": "priority-memops-four-20260908-01",
+  "status": "finished",
+  "scope": "Four fixed full-history operation samples across A02 and B01; local GLM-5.2 rubric proxy. Not a representative score for all 472 selected MemOps questions.",
+  "metrics": {
+    "reporting_protocol": "group-aware-outcome-report-v1",
+    "group_outcomes": {
+      "protocol": "recorded-group-outcome-bootstrap-v1",
+      "group_count": 2,
+      "groups": [
+        {
+          "benchmark": "memops",
+          "group_id": "A02",
+          "recorded": 11,
+          "correct": 10
+        },
+        {
+          "benchmark": "memops",
+          "group_id": "B01",
+          "recorded": 9,
+          "correct": 8
+        }
+      ],
+      "interval_95": [
+        0.8888888888888888,
+        0.9090909090909091
+      ],
+      "unavailable_reason": null,
+      "scope": "Resample declared conversation/background groups with all variants together. Infrastructure failures remain in the denominator; this does not infer unjudged answer quality or unseen-data performance."
+    },
+    "legacy_sample_bootstrap_scope": "sample-ID resampling for historical compatibility; use group_outcomes for declared background grouping",
+    "question_status_counts": {
+      "judged": 20
+    },
+    "unrecorded_questions": 0,
+    "sample_bootstrap_95": [
+      0.8,
+      1
+    ],
+    "evidence_coverage": "N/A: no mapped source-ID diagnostics recorded",
+    "mode": "proxy",
+    "planned": 20,
+    "judged": 20,
+    "correct": 18,
+    "accuracy_over_planned": 0.9,
+    "judged_accuracy": 0.9,
+    "incomplete": 0,
+    "slices": {
+      "memops/Forget/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Forget/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Remember/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Remember/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Remember/StateTransition": {
+        "total": 2,
+        "judged": 2,
+        "correct": 1
+      },
+      "memops/Remember/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Remember/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/StateTransition": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Reflect/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Update/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 0
+      },
+      "memops/Update/TargetBinding": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Update/CandidateDisambiguation": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      },
+      "memops/Update/OperationApplication": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      }
+    },
+    "add_ms": {
+      "p50": 9774.429707999807,
+      "p95": 32764.135541999945,
+      "max": 63066.788375000004
+    },
+    "search_ms": {
+      "p50": 139.36512500001118,
+      "p95": 232.65720899996813,
+      "max": 232.65720899996813
+    }
+  },
+  "operations": {
+    "Forget": {
+      "planned": 5,
+      "judged": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    },
+    "Remember": {
+      "planned": 6,
+      "judged": 6,
+      "correct": 5,
+      "accuracy": 0.8333333333333334
+    },
+    "Reflect": {
+      "planned": 5,
+      "judged": 5,
+      "correct": 5,
+      "accuracy": 1.0
+    },
+    "Update": {
+      "planned": 4,
+      "judged": 4,
+      "correct": 3,
+      "accuracy": 0.75
+    }
+  },
+  "write_audit": {
+    "planned_chunks": 204,
+    "http_success": 204,
+    "http_failure": 0,
+    "degraded": 2,
+    "nondegraded": 202,
+    "degraded_fraction": 0.00980392156862745,
+    "events": [
+      {
+        "event": "degraded",
+        "request_id": "priority-memops-four-20260908-01-candidate:memops:A02_forget:segment-37:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      },
+      {
+        "event": "degraded",
+        "request_id": "priority-memops-four-20260908-01-candidate:memops:B01_update:segment-41:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      }
+    ]
+  },
+  "timing": {
+    "wall_seconds": 3271.749,
+    "ingestion_seconds": 2583.487741206,
+    "mean_seconds_per_write": 12.66415559414706,
+    "estimated_4898_chunk_ingestion_hours_at_this_pilot_rate": 17.23028725003675,
+    "estimate_scope": "Crude extrapolation from four samples; excludes Answer/Judge/retries and variation across other backgrounds."
+  },
+  "service_model_calls": {
+    "extraction": {
+      "calls": 204,
+      "errors": 2,
+      "elapsed_seconds": 1381.4992461270006,
+      "reported_total_tokens": 2112439
+    },
+    "verification": {
+      "calls": 218,
+      "errors": 0,
+      "elapsed_seconds": 945.5610720779977,
+      "reported_total_tokens": 1102584
+    },
+    "embedding": {
+      "calls": 221,
+      "errors": 0,
+      "elapsed_seconds": 51.58123762400014,
+      "reported_total_tokens": 0
+    },
+    "repair": {
+      "calls": 30,
+      "errors": 0,
+      "elapsed_seconds": 160.0491952489999,
+      "reported_total_tokens": 391797
+    },
+    "state_transition": {
+      "calls": 3,
+      "errors": 0,
+      "elapsed_seconds": 10.708342208999618,
+      "reported_total_tokens": 10866
+    }
+  },
+  "wrong_answers": [
+    {
+      "question": {
+        "qid": "A02_remember.json#p3_state_transition#longitudinal_operation#5",
+        "question": "My manager and my department — are they part of the same organizational unit at Meridian, or are they in different divisions?",
+        "gold_answer": "They are closely related. Your manager Rachel Tseng leads the analytics division, and your department is Strategic Analytics, which falls under that analytics division umbrella. So your manager and department are within the same organizational unit.",
+        "gold_rubric": {
+          "must_include": [
+            "Rachel Tseng",
+            "Strategic Analytics",
+            "analytics division"
+          ],
+          "acceptable_paraphrases": [
+            "same division",
+            "under the same umbrella",
+            "Rachel Tseng heads the division that includes Strategic Analytics"
+          ],
+          "must_not_include": [
+            "Strategy & Insights"
+          ],
+          "harmful_extra": [
+            "Saying the department and manager are in different divisions",
+            "Using Strategy & Insights as the department name"
+          ],
+          "harmless_extra": [
+            "analytics division lead title"
+          ]
+        },
+        "category": "Remember/StateTransition",
+        "gold_evidence": []
+      },
+      "answer": "The memories don't explicitly state the hierarchy between them. What's confirmed: your manager is Rachel Tseng, who leads the analytics division, and your official department is Strategic Analytics. No memory says whether Strategic Analytics is a unit within the analytics division or a separate one, so the exact relationship isn't established. There is no evidence they're in different divisions, though — by contrast, the only explicitly noted \"completely different division\" case was David Lam, whose manager was Kevin Osei, the operations division lead.",
+      "judgment": {
+        "qid": "A02_remember.json#p3_state_transition#longitudinal_operation#5",
+        "sample_id": "A02_remember",
+        "benchmark": "memops",
+        "category": "Remember/StateTransition",
+        "status": "judged",
+        "correct": false,
+        "raw": "\n{\"correct\": false, \"reason\": \"The answer names all three required entities (Rachel Tseng, Strategic Analytics, analytics division), but it fails to convey the core semantic conclusion required by the question and reference: that Strategic Analytics falls under the analytics division led by Rachel Tseng, making the manager and department part of the same organizational unit. Instead, the answer claims the hierarchy 'isn't established' and that the relationship is unknown, which directly contradicts the reference's established relationship and leaves the actual question (same unit vs. different divisions) unanswered. No partial credit applies.\"}\n"
+      }
+    },
+    {
+      "question": {
+        "qid": "B01_update.json#p1_operation_trace#longitudinal_operation#1",
+        "question": "Over the course of our conversations about Darren Liu's Seattle job offer, which of my messages first establish the salary figure and which ones later determine the figure that should be relied on going forward?",
+        "gold_answer": "You first mentioned the salary as $145K for the senior DevOps role. You then said Darren corrected you and the salary is actually $152K. Later, you reported the company revised the offer down to $148K due to role restructuring. You also mentioned a recruiter email about a potential bump to $155K, but you clarified that hasn't gone into effect yet, so the figure to rely on is from the message about the $148K revision.",
+        "gold_rubric": {
+          "must_include": [
+            "$145K as the initial figure",
+            "$152K as a correction",
+            "$148K as the revision due to restructuring",
+            "$155K as pending/not yet in effect"
+          ],
+          "acceptable_paraphrases": [
+            "the recruiter's $155K promise hasn't materialized",
+            "the $148K revision is the current reliable figure"
+          ],
+          "must_not_include": [
+            "$155K as the current confirmed salary"
+          ],
+          "harmful_extra": [
+            "treating $155K as the active salary"
+          ],
+          "harmless_extra": [
+            "mentioning the senior DevOps role title",
+            "mentioning the role restructuring context"
+          ]
+        },
+        "category": "Update/OperationTrace",
+        "gold_evidence": []
+      },
+      "answer": "**Messages that first established the salary figure:**\n- The first concrete figure came when you reported that the company revised Darren's Seattle offer down to **$148K** after restructuring the role (moving some on-call responsibilities to a different team) — Darren was a little annoyed but still found the role interesting.\n- You reiterated that figure shortly afterward in your recap that the Seattle offer was \"currently at $148K for a senior DevOps role.\"\n\n**Messages that later determined the figure to rely on:**\n- You ruled out a **$142K** figure, noting a job listing from the same Seattle company was for a different level, not Darren's offer.\n- You relayed the recruiter's email that the offer would be bumped back to **$155K** once the new budget cycle starts \"next month\" — this remained tentative and had not taken effect.\n- The determining message was your follow-up: you confirmed the $155K increase hadn't gone into effect yet, that the official offer remained **$148K** until the budget adjustment actually materialized, and you asked that it be tracked exactly that way — $148K as the current active amount, $155K as tentative.\n- Later, you told Jess that **$144K** was wrong (the offer was higher), consistent with the $148K figure.\n\n**Bottom line:** $148K is the confirmed official figure to rely on going forward; $155K is a tentative, not-yet-effective increase contingent on the budget cycle.",
+      "judgment": {
+        "qid": "B01_update.json#p1_operation_trace#longitudinal_operation#1",
+        "sample_id": "B01_update",
+        "benchmark": "memops",
+        "category": "Update/OperationTrace",
+        "status": "judged",
+        "correct": false,
+        "raw": "\n{\"correct\": false, \"reason\": \"The answer fails the must_include conditions. It never mentions the $145K initial figure or the $152K correction — instead it incorrectly claims the first established figure was the $148K restructuring revision. It does correctly identify $148K as the restructuring revision and treats $155K as pending/not in effect (no must_not_include violation), but since two required semantic conditions are missing and the initial-figure claim contradicts the reference, no credit can be awarded.\"}\n"
+      }
+    }
+  ]
+}

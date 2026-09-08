@@ -1,0 +1,545 @@
+{
+  "generated_at": "2026-09-08T14:58:44.414825+00:00",
+  "scope": "Paired QA on cloned frozen ingestion: 72 LoCoMo questions in one conversation and 20 MemOps questions in four operation samples. Not the 972-question selected-suite score. Answer and Judge remain stochastic; this is one observed run per candidate, not a causal effect estimate.",
+  "comparisons": [
+    {
+      "benchmark": "locomo",
+      "baseline": "priority-conv30-72-20260908-02",
+      "candidate": "priority-quality-locomo-20260908-01",
+      "matching_inputs": {
+        "dataset_sha256": "360313250f968618177c4dc07771342cebe40c9f64401293d7a8a11e3de8bf68",
+        "answer_model": "glm-5.2",
+        "answer_inference": {
+          "stream": true,
+          "max_completion_tokens": 1800,
+          "attempts": 3
+        },
+        "judge_model": "qwen3:14b",
+        "judge_kind": "refined-python",
+        "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+        "rubric_prompt_sha256": "ac62ed729c4994310c7064235afcfee33d6e553161d7b434a8daceb19aa6e31d",
+        "contract_sha256": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab",
+        "split_sha256": "094570626ffb97d802043aa52278b2035c6f8c624f1c99fe8a7ed535b9b2898a",
+        "seed": 20260905,
+        "top_k": 100,
+        "chunk_messages": 20,
+        "chunk_words": 2000,
+        "mode": "upstream-reproduction",
+        "memory_namespace": "post-pull-conv30-20260908-01-candidate",
+        "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe"
+      },
+      "baseline_score": {
+        "planned": 72,
+        "correct": 51,
+        "accuracy": 0.7083333333333334,
+        "status_counts": {
+          "judged": 72
+        },
+        "slices": {
+          "2": {
+            "planned": 23,
+            "correct": 14
+          },
+          "4": {
+            "planned": 40,
+            "correct": 30
+          },
+          "1": {
+            "planned": 9,
+            "correct": 7
+          }
+        }
+      },
+      "candidate_score": {
+        "planned": 72,
+        "correct": 56,
+        "accuracy": 0.7777777777777778,
+        "status_counts": {
+          "judged": 71,
+          "pipeline_error": 1
+        },
+        "slices": {
+          "2": {
+            "planned": 23,
+            "correct": 20
+          },
+          "4": {
+            "planned": 40,
+            "correct": 31
+          },
+          "1": {
+            "planned": 9,
+            "correct": 5
+          }
+        }
+      },
+      "improved": 8,
+      "regressed": 3,
+      "changes": [
+        {
+          "qid": "conv-30#q0011",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Jon started going to the gym \"last week\" as he reported on 16 March 2023 (confirmed), which resolves to the week of 6 March 2023 through 12 March 2023 (event interval 2023-03-06 inclusive to 2023-03-13 exclusive, week precision). He said he started it to stay on track with his venture.",
+          "candidate_answer": "Jon said on 16 March 2023 that he started hitting the gym \"last week\" — that is, the week before 16 March 2023, approximately the week of 9 March 2023 (week precision; exact days unspecified), to stay on track with his venture. This is a confirmed statement by Jon.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0012",
+          "category": "2",
+          "before": true,
+          "after": false,
+          "candidate_status": "judged",
+          "baseline_answer": "Gina's online clothing store was open as of **16 March 2023**, when she announced: \"Yay! My online clothes store is open! I've been dreaming of this for a while now – can't wait to see what happens!\" (confirmed, spoken by Gina).\n\nNote: this memory states the store was open *as of* 16 March 2023 rather than giving an exact opening day. Related memories show she was already \"working hard on my online store\" by 8 February 2023 and later (25 April 2023) said she started it \"not so long ago\" (date unresolved), so the precise opening date is not explicitly recorded beyond the 16 March 2023 confirmation.",
+          "candidate_answer": "Gina's online clothes store was open as of 16 March 2023, when she announced \"My online clothes store is open!\" after dreaming of it for a while. An exact earlier opening date isn't recorded — on 25 April 2023 she only said she had started it \"not so long ago,\" and by 8 February 2023 she was already describing working hard on her online store.",
+          "candidate_judgment": "{\"score\": 0.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0015",
+          "category": "1",
+          "before": true,
+          "after": false,
+          "candidate_status": "judged",
+          "baseline_answer": "Jon, yes: he said he's starting a dance studio because he's passionate about dancing and wants to share it with others (2023-01-20, tentative), and later confirmed \"I love it\" keeps his confidence up (2023-04-25). Gina, no: she said she started her own business to take control of her own destiny after losing her job (2023-04-25, confirmed) — not out of something she loves. So the memories support Jon starting a business out of what he loves, but not Gina.",
+          "candidate_answer": "Only partially. For Jon, yes (tentatively): on 2023-01-20 he said he's starting a dance studio \"cause I'm passionate about dancing and it'd be great to share it with others,\" and on 2023-04-25 (confirmed) he said \"I love it and that'll keep my confidence up.\" Note he also decided to start his own business after losing his banking job (tentative, 2023-01-20).\n\nFor Gina, no stated love motive: on 2023-04-25 (confirmed) she said she started her own business (online clothing store) \"after losing my job, I wanted to take control of my own destiny\" — her stated motivation was control over her destiny, not love of the field. No memory states Gina's business grew out of something she loves.",
+          "candidate_judgment": "{\"score\": 0.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0017",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Gina reported she had \"just got accepted\" for an internship on 27 May 2023 (during a conversation at 7:18 pm that day), so the acceptance was announced then. Note that the memory records it as a **fashion internship** (a part-time position in the fashion department of an international company), not explicitly a \"design internship.\" The design internship she interviewed for was on 10 May 2023, with the interview reported as going \"great\" on 11 May 2023, but no memory explicitly states an acceptance for a \"design internship\" by that name.",
+          "candidate_answer": "Gina got accepted on 27 May 2023. In a conversation at 7:18 pm that day, she said she \"just got accepted for a fashion internship\" — the same internship she had interviewed for on 10 May 2023 (which she described as a design internship), a part-time position in the fashion department of an international company.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0018",
+          "category": "1",
+          "before": true,
+          "after": false,
+          "candidate_status": "judged",
+          "baseline_answer": "Events Jon participated in to promote his business (his dance studio):\n\n- **A fair on 24 April 2023** (confirmed): Jon went to a fair to show off his studio; it was stressful and great, and he got some possible leads.\n- **Networking events on 20 June 2023** (confirmed): Jon said he \"chose to go to networking events to make things happen.\"\n- **Networking events recently, as of 21 July 2023** (confirmed): Jon said he'd been networking lately, and described the last networking event as awesome — he met some investors and got good advice.\n- **A dance competition event in May 2023** (tentative): Jon's dance studio, along with other schools, was to perform for a night of performances and judging; Jon invited Gina to attend.\n\nSeparately, on 16 June 2023 Jon mentioned generally that he'd been doing some promotion for his business, without naming a specific event.",
+          "candidate_answer": "Based on the memories, the events Jon participated in to promote his dance studio business venture are:\n\n1. **A fair on 24 April 2023** (confirmed) — Jon went to a fair to show off his studio, which he found both stressful and great; he got some possible leads from it.\n\n2. **Networking events on 20 June 2023** (confirmed) — Jon said he \"chose to go to networking events to make things happen.\"\n\n3. **A networking event** (confirmed, reported 21 July 2023) — Jon described it as awesome, where he met some investors and got good advice; he also mentioned networking \"lately\" had gotten him some good stuff (no exact dates given for those).\n\n4. **A May 2023 dance event** (tentative) — Jon invited Gina to an event next month (May 2023) at which his dance studio and some other schools would perform for a night of performances and judging.\n\nAdditionally, on 16 June 2023 Jon mentioned he had \"been doing some promotion\" for his business, though no specific event was named for that.",
+          "candidate_judgment": "{\"score\": 0.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0020",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Jon received mentorship from a businessman on 15 June 2023. This is confirmed (day precision), reported by Jon on 16 June 2023 as having happened \"yesterday,\" and he described the session as inspiring and making him even more pumped to chase his dreams. Note: the memories do not explicitly state the mentorship was specifically to promote his venture (scope unspecified), though Jon did mention doing promotion for his business in the same 16 June 2023 conversation.",
+          "candidate_answer": "Jon received mentorship on 15 June 2023. He reported it on 16 June 2023, saying he \"got mentored by this amazing business dude yesterday,\" and that it was inspiring and made him even more pumped to chase his dreams (confirmed, speaker: Jon). Around that same time — as of 16 June 2023 — Jon said he had been doing some promotion for his business, calling it a \"crazy ride\" but that he was hanging in there.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0022",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Jon was in Rome during the week of 12 June 2023 (interval 2023-06-12 inclusive to 2023-06-19 exclusive, week precision), for a short trip to clear his mind. This is resolved from his statement on 19 June 2023: \"Took a short trip last week to Rome to clear my mind a little.\"",
+          "candidate_answer": "Jon was in Rome for a short trip during the week before 19 June 2023 (approximately the week of 12 June 2023). This is confirmed by his own statement on 19 June 2023: \"Took a short trip last week to Rome to clear my mind a little.\" The exact days within that week are unspecified.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0026",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Gina made the limited edition line (which included the camouflage hoodie from her own collection) \"last week\" as of her conversation on 21 June 2023 — that is, during the week of approximately 12–18 June 2023 (interval 2023-06-12 inclusive to 2023-06-19 exclusive, week precision). She said she created it to show off her style and creativity, and it was tough but worth it.",
+          "candidate_answer": "Gina said on 21 June 2023 that she had made her limited edition hoodie line \"last week,\" i.e., the week before 21 June 2023 (approximately the week of 15 June 2023); the exact days were not specified.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0027",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Jon went to networking events on 20 June 2023 — he said so himself on 21 June 2023, stating \"Yesterday I chose to go to networking events to make things happen\" (confirmed, day precision). Additionally, on 21 July 2023 Jon mentioned he had been networking \"lately\" and referred to a recent networking event where he met investors and got good advice, but no exact date was given for that event. Note: the memories describe this networking as being for his business (a dance studio), not specifically a store.",
+          "candidate_answer": "Jon went to networking events on 20 June 2023 — confirmed by his message on 21 June 2023: \"Yesterday I chose to go to networking events to make things happen.\"\n\nHe also mentioned on 21 July 2023 that he had \"lately\" been networking, including a more recent networking event (exact date unspecified) that he called awesome, where he met some investors and got good advice.\n\nNote: the memories describe Jon's business as a dance studio, not a store, but the networking events were tied to that business.",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0028",
+          "category": "2",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Gina first mentioned being noticed by fashion editors on 9 July 2023, saying it happened \"last week\" — resolving to the week of 26 June 2023 (inclusive) to 3 July 2023 (exclusive), with week-level precision. She described it as amazing but kinda scary, with a lot of pressure to keep going up.",
+          "candidate_answer": "Gina started being recognized by fashion editors during the week before July 9, 2023. On July 9, 2023, she said, \"Last week was wild, I got noticed by fashion editors and it's been amazing but kinda scary.\" The exact days within that week are unspecified (week precision only).",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        },
+        {
+          "qid": "conv-30#q0037",
+          "category": "4",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "Gina says the dancers look great and that she can't wait to see them rock the festival, adding it's going to be awesome (noted as tentative, in the context of a nearby festival the following month).",
+          "candidate_answer": "Gina says the dancers look great and she can't wait to see them rock the festival — \"Gonna be awesome!\" (noted as a tentative memory, in the context of a nearby festival the following month).",
+          "candidate_judgment": "{\"score\": 1.0, \"reason\": \"llm_judge_refined\", \"name\": \"refined\"}\n"
+        }
+      ],
+      "snapshot_audit": {
+        "http_receipts": 27,
+        "write_model_calls": 0,
+        "service_model_calls": {
+          "embedding": 72
+        }
+      },
+      "elapsed_seconds": 1527.341,
+      "search_mean_ms": 375.0317776666689,
+      "infrastructure_errors": [
+        {
+          "qid": "conv-30#q0070",
+          "sample_id": "conv-30",
+          "benchmark": "locomo",
+          "category": "4",
+          "status": "pipeline_error",
+          "error": "TypeError: fetch failed",
+          "retrieval_recorded": true,
+          "answer_recorded": false
+        }
+      ],
+      "remaining_wrong": [
+        "conv-30#q0002",
+        "conv-30#q0003",
+        "conv-30#q0007",
+        "conv-30#q0009",
+        "conv-30#q0012",
+        "conv-30#q0015",
+        "conv-30#q0018",
+        "conv-30#q0031",
+        "conv-30#q0040",
+        "conv-30#q0042",
+        "conv-30#q0044",
+        "conv-30#q0052",
+        "conv-30#q0053",
+        "conv-30#q0057",
+        "conv-30#q0066",
+        "conv-30#q0070"
+      ]
+    },
+    {
+      "benchmark": "memops",
+      "baseline": "priority-memops-four-20260908-01",
+      "candidate": "priority-quality-memops-20260908-01",
+      "matching_inputs": {
+        "dataset_sha256": "45e47391afdef1d97428e27bf579a376dc68241c0d93bc2f0b5fd41c1e39f91d",
+        "answer_model": "glm-5.2",
+        "answer_inference": {
+          "stream": true,
+          "max_completion_tokens": 1800,
+          "attempts": 3
+        },
+        "judge_model": "glm-5.2",
+        "judge_kind": "rubric",
+        "answer_prompt_sha256": "85dd3311956f3053b4174b9662840565cc15809354dbedbad2fe292784dc0ff6",
+        "rubric_prompt_sha256": "ac62ed729c4994310c7064235afcfee33d6e553161d7b434a8daceb19aa6e31d",
+        "contract_sha256": "58b8b7c950f239c1a5a7fbc92e143921d6942dfdceedc5057c5776611a4419ab",
+        "split_sha256": "094570626ffb97d802043aa52278b2035c6f8c624f1c99fe8a7ed535b9b2898a",
+        "seed": 20260905,
+        "top_k": 100,
+        "chunk_messages": 20,
+        "chunk_words": 2000,
+        "mode": "proxy",
+        "memory_namespace": "priority-memops-four-20260908-01-candidate",
+        "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe"
+      },
+      "baseline_score": {
+        "planned": 20,
+        "correct": 18,
+        "accuracy": 0.9,
+        "status_counts": {
+          "judged": 20
+        },
+        "slices": {
+          "Forget/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/StateTransition": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/StateTransition": {
+            "planned": 2,
+            "correct": 1
+          },
+          "Remember/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/StateTransition": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/OperationTrace": {
+            "planned": 1,
+            "correct": 0
+          },
+          "Update/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          }
+        }
+      },
+      "candidate_score": {
+        "planned": 20,
+        "correct": 19,
+        "accuracy": 0.95,
+        "status_counts": {
+          "judged": 20
+        },
+        "slices": {
+          "Forget/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/StateTransition": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Forget/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/StateTransition": {
+            "planned": 2,
+            "correct": 2
+          },
+          "Remember/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Remember/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/OperationTrace": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/StateTransition": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Reflect/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/OperationTrace": {
+            "planned": 1,
+            "correct": 0
+          },
+          "Update/TargetBinding": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/CandidateDisambiguation": {
+            "planned": 1,
+            "correct": 1
+          },
+          "Update/OperationApplication": {
+            "planned": 1,
+            "correct": 1
+          }
+        }
+      },
+      "improved": 1,
+      "regressed": 0,
+      "changes": [
+        {
+          "qid": "A02_remember.json#p3_state_transition#longitudinal_operation#5",
+          "category": "Remember/StateTransition",
+          "before": false,
+          "after": true,
+          "candidate_status": "judged",
+          "baseline_answer": "The memories don't explicitly state the hierarchy between them. What's confirmed: your manager is Rachel Tseng, who leads the analytics division, and your official department is Strategic Analytics. No memory says whether Strategic Analytics is a unit within the analytics division or a separate one, so the exact relationship isn't established. There is no evidence they're in different divisions, though — by contrast, the only explicitly noted \"completely different division\" case was David Lam, whose manager was Kevin Osei, the operations division lead.",
+          "candidate_answer": "They appear to be on the same side of the organization. Your direct manager at Meridian is Rachel Tseng, who leads the analytics division, and your official department is Strategic Analytics — consistent with the same analytics area rather than a separate division. This fits with your earlier note that David Lam, whose manager was Kevin Osei (operations division lead), was in a \"completely different division\" from you. The memories do not explicitly define the formal reporting structure beyond this, but nothing in them suggests your manager and department are in different divisions.",
+          "candidate_judgment": "\n{\"correct\": true, \"reason\": \"The answer includes all must_include elements: 'Rachel Tseng', 'Strategic Analytics', and 'analytics division'. It correctly conveys the core semantic point that the manager and department are within the same organizational unit — 'consistent with the same analytics area rather than a separate division' — matching the reference's 'under that analytics division umbrella' paraphrase. It does not use the forbidden term 'Strategy & Insights' and does not claim the manager and department are in different divisions (it explicitly states the opposite). The tangential mention of David Lam/Kevin Osei concerns a different employee's division and does not violate any listed must_not_include or harmful_extra condition.\"}\n"
+        }
+      ],
+      "snapshot_audit": {
+        "http_receipts": 204,
+        "write_model_calls": 0,
+        "service_model_calls": {
+          "embedding": 20
+        }
+      },
+      "elapsed_seconds": 1124.803,
+      "search_mean_ms": 290.31807080001124,
+      "infrastructure_errors": [],
+      "remaining_wrong": [
+        "B01_update.json#p1_operation_trace#longitudinal_operation#1"
+      ]
+    }
+  ],
+  "pilot_total": {
+    "planned": 92,
+    "before_correct": 69,
+    "after_correct": 75,
+    "before_accuracy": 0.75,
+    "after_accuracy": 0.8152173913043478
+  },
+  "candidate_artifact": {
+    "manifest_sha256": "21501c9e347bcee65904a67b5c2c6450b2ab7dccdcad74d59e8f6ef9d2933358",
+    "manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-quality-fix-20260908/code-snapshot.json",
+    "scope": "Frozen compiled service copied after 18 targeted tests. May predate concurrent shared-workspace fixes; final regression must use integrated current source.",
+    "excludes": "Concurrent uncommitted erasure fixes in extraction.ts, erasure.ts and storage.ts after this artifact was frozen."
+  },
+  "recovery": {
+    "protocol": "priority-quality-recovery-v1",
+    "started_at": "2026-09-08T14:37:52.764Z",
+    "candidate_manifest_sha256": "21501c9e347bcee65904a67b5c2c6450b2ab7dccdcad74d59e8f6ef9d2933358",
+    "scope": "Isolated model/parser diagnostics; no add/search, no storage commit, no benchmark score replacement.",
+    "json_recovery": {
+      "original_trace_id": "7209dba9-6fd2-4690-ac2a-f4d8139daba3",
+      "output_sha256": "f0205562329d76878e2f070ef07bcf32ee8686fe49021ab7d0078d40bdddbe28",
+      "status": "parsed_and_group_schema_and_source_quotes_valid",
+      "groups": 6,
+      "facts": 5,
+      "operations": 0,
+      "local_http_calls": 1,
+      "remote_model_calls": 0,
+      "normalization": {
+        "at": "2026-09-08T14:37:52.797Z",
+        "kind": "generation",
+        "purpose": "extraction",
+        "syntax_normalization": "typographic_key_quotes_only",
+        "repaired_key_quotes": 3,
+        "removed_commas": 0,
+        "trace_id": "455a1d5c-1ded-4b2c-a34b-dade0a7d8c65",
+        "model": "glm-5.2",
+        "attempt": 0,
+        "outcome": "ok",
+        "elapsed_ms": 21.803499999999985,
+        "usage": null,
+        "output_chars": 1836
+      },
+      "semantic_verification": "Not a new semantic verdict; normal independent verification remains required before storage."
+    },
+    "http_replay": {
+      "status": "failed",
+      "original_trace_id": "50bd3149-2643-4973-8d66-4b07d08a7bdd",
+      "input_sha256": "effc9027e6758b71fdbee27b83c30cd8e0c86116cfb69085fed97f2880b8cb59",
+      "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+      "model": "glm-5.2",
+      "max_transport_attempts": 1,
+      "elapsed_ms": 1508.682834,
+      "audit": [
+        {
+          "at": "2026-09-08T14:37:54.330Z",
+          "kind": "generation",
+          "purpose": "extraction",
+          "trace_id": "31ff8dea-ea5e-4c4f-8b03-d55ecb1d4cfc",
+          "model": "glm-5.2",
+          "attempt": 0,
+          "outcome": "error",
+          "elapsed_ms": 1507.56,
+          "usage": null,
+          "error_type": "Error",
+          "error_category": "provider_http",
+          "http_status": 400,
+          "signal_aborted": false,
+          "stream_started": false,
+          "finish_reason": null,
+          "refusal_detected": false,
+          "transport_code": null,
+          "provider_error_code": "1301"
+        }
+      ],
+      "limitation": "Current replay cannot retroactively establish the original HTTP 400 cause. No retry policy or input content was changed."
+    },
+    "finished_at": "2026-09-08T14:37:54.331Z"
+  },
+  "historical_followup": {
+    "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/reports/priority-history-followup-20260908.json",
+    "scope": "A later quoted-statement fix passed one independent targeted QA. Its verdict is not inserted into the 92-question v1 total."
+  },
+  "provider_replay_interpretation": {
+    "observed": "The exact original request again returned HTTP 400 with provider_error_code=1301 before streaming, in about 1.5 seconds.",
+    "official_meaning": "The provider reports possible unsafe or sensitive input/generated content.",
+    "source": "https://docs.bigmodel.cn/cn/api/api-code",
+    "limit": "The original run did not record its provider code. This diagnoses the new exact-input replay; it does not identify a particular triggering passage or prove the original code."
+  }
+}

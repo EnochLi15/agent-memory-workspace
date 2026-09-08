@@ -1,0 +1,46 @@
+{
+  "run": "post-pull-conv30-20260908-01-candidate-locomo",
+  "scope": "6 fixed questions, full conv-30 history",
+  "sessions": 19,
+  "messages": 369,
+  "successful_adds": 27,
+  "failed_adds": 0,
+  "planned_questions": 6,
+  "judged": 6,
+  "correct": 4,
+  "accuracy": 0.6666666666666666,
+  "service_errors": 0,
+  "judge_errors": 0,
+  "wrong_answers": [
+    {
+      "qid": "conv-30#q0003",
+      "question": "What do Jon and Gina both have in common?",
+      "gold_answer": [
+        "They lost their jobs and decided to start their own businesses.",
+        "They lost their jobs, decided to start their own businesses, and share a strong passion for dance.",
+        "They lost their jobs, decided to start their own businesses, and are pursuing entrepreneurial ventures driven by their shared passion for dance."
+      ],
+      "answer": "Based on the memories, Jon and Gina have several things in common:\n\n1. **Each says the other's support means a lot to them** — Jon said Gina's support \"means a lot\" / \"means a ton\" (March 23, June 21, 2023), and Gina told Jon \"Your support means a lot\" (April 3, 2023).\n\n2. **Each says they are always there for the other** — Jon said \"I am always there for you!\" (April 3, 2023), and Gina said \"I'm always around for you\" (June 13, 2023).\n\n3. **Both are pursuing their goals/dreams** — Gina said she's \"gonna keep pursuing my goals\" (April 3, 2023), and Jon spoke of chasing his dream, keeping pushing through struggles, and making his dreams come true (July 9, 2023).\n\n4. **Both are excited to collaborate with each other on dance** — Gina said she's \"pumped to collaborate\" and make \"sweet moves\" together (July 21, 2023), and Jon said \"Let's make our collaboration awesome and bring some dance magic to the world\" (July 21, 2023).",
+      "source_coverage": {
+        "matched": 0,
+        "total": 4,
+        "any": false,
+        "all": false
+      }
+    },
+    {
+      "qid": "conv-30#q0002",
+      "question": "How do Jon and Gina both like to destress?",
+      "gold_answer": [
+        "by dancing"
+      ],
+      "answer": "The memories do not contain any information about how Jon and Gina like to destress. While the memories show that dance has special meaning to both of them (Jon noted dance is \"a really cool way to express themselves\"), nothing in the supplied evidence describes either of them using any activity to destress.",
+      "source_coverage": {
+        "matched": 0,
+        "total": 2,
+        "any": false,
+        "all": false
+      }
+    }
+  ]
+}

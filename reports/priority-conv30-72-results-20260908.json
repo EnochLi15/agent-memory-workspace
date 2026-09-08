@@ -1,0 +1,669 @@
+{
+  "campaign": "priority-conv30-72-20260908-02",
+  "status": "finished",
+  "scope": "All 72 priority-selected questions in one conversation, not the 500-question LoCoMo suite or 972-question overall result. Local quantized upstream-prompt Judge; original verdicts unchanged.",
+  "metrics": {
+    "reporting_protocol": "group-aware-outcome-report-v1",
+    "group_outcomes": {
+      "protocol": "recorded-group-outcome-bootstrap-v1",
+      "group_count": 1,
+      "groups": [
+        {
+          "benchmark": "locomo",
+          "group_id": "conv-30",
+          "recorded": 72,
+          "correct": 51
+        }
+      ],
+      "interval_95": null,
+      "unavailable_reason": "fewer_than_two_groups",
+      "scope": "Resample declared conversation/background groups with all variants together. Infrastructure failures remain in the denominator; this does not infer unjudged answer quality or unseen-data performance."
+    },
+    "legacy_sample_bootstrap_scope": "sample-ID resampling for historical compatibility; use group_outcomes for declared background grouping",
+    "question_status_counts": {
+      "judged": 72
+    },
+    "unrecorded_questions": 0,
+    "sample_bootstrap_95": [
+      0.7083333333333334,
+      0.7083333333333334
+    ],
+    "evidence_coverage": {
+      "questions": 72,
+      "any_hit": 0.8611111111111112,
+      "all_hit": 0.7916666666666666,
+      "mean_fraction": 0.8296296296296295,
+      "scope": "original source ID recall, not semantic entailment"
+    },
+    "mode": "upstream-reproduction",
+    "planned": 72,
+    "judged": 72,
+    "correct": 51,
+    "accuracy_over_planned": 0.7083333333333334,
+    "judged_accuracy": 0.7083333333333334,
+    "incomplete": 0,
+    "slices": {
+      "locomo/2": {
+        "total": 23,
+        "judged": 23,
+        "correct": 14
+      },
+      "locomo/4": {
+        "total": 40,
+        "judged": 40,
+        "correct": 30
+      },
+      "locomo/1": {
+        "total": 9,
+        "judged": 9,
+        "correct": 7
+      }
+    },
+    "add_ms": {
+      "p50": 1.2078750000000014,
+      "p95": 2.8207910000000425,
+      "max": 14.17916600000001
+    },
+    "search_ms": {
+      "p50": 252.9550000000745,
+      "p95": 338.98741599999994,
+      "max": 408.85920800000895
+    }
+  },
+  "elapsed_evaluation_seconds": 878.021,
+  "snapshot_audit": {
+    "audited_at": "2026-09-08T12:40:01.140551+00:00",
+    "model_log_sha256": "b90da63bd38cca746c7334dd03eb3737545cd9483a8f69cf57da387c909d897d",
+    "classification_fields": [
+      "kind",
+      "purpose"
+    ],
+    "counts": {
+      "embedding": 72
+    },
+    "write_model_calls": 0,
+    "http_receipts": 27,
+    "http_total_ms": 48.41587200000009
+  },
+  "wrong_source_coverage": {
+    "none": 9,
+    "all": 12
+  },
+  "temporal_wrong": {
+    "total": 9,
+    "all_gold_source_ids_present": 8
+  },
+  "interpretation": [
+    "9 wrong answers received no gold source IDs; stage diagnostics place the relevant indexed sources at candidate cutoff or final packing loss.",
+    "12 wrong answers received all gold source IDs; source-ID presence does not establish semantic sufficiency.",
+    "8 of 9 wrong temporal answers have all annotated source IDs; several contain the reference date together with caveats or interval conversions. Saved-answer, date-resolution and Judge calibration review is warranted; this report does not override their scores."
+  ],
+  "next_steps": [
+    "Use this frozen 72-question baseline for retrieval/rerank comparisons while preserving Answer/Judge configuration.",
+    "Separately review temporal precision, unnecessary answer caveats, and question/reference inconsistencies; keep all diagnostic judgments separate from the original score.",
+    "Complete MemOps four-operation pilot and account for degradation before expansion."
+  ],
+  "wrong_answers": [
+    {
+      "qid": "conv-30#q0002",
+      "question": "How do Jon and Gina both like to destress?",
+      "gold_answer": [
+        "by dancing"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D1:7",
+        "D1:6"
+      ],
+      "answer": "The memories do not state how Jon and Gina destress. The closest related information is that Jon said dance has special meaning to both of them and is a cool way for them to express themselves (2023-04-09, confirmed), but destressing specifically is not mentioned.",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 2,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0003",
+      "question": "What do Jon and Gina both have in common?",
+      "gold_answer": [
+        "They lost their jobs and decided to start their own businesses.",
+        "They lost their jobs, decided to start their own businesses, and share a strong passion for dance.",
+        "They lost their jobs, decided to start their own businesses, and are pursuing entrepreneurial ventures driven by their shared passion for dance."
+      ],
+      "category": "1",
+      "gold_evidence": [
+        "D1:2",
+        "D1:3",
+        "D1:4",
+        "D2:1"
+      ],
+      "answer": "Based on the memories, Jon and Gina have several things in common:\n\n- **Mutual support that the other values:** Jon said Gina's support \"means a lot\" (2023-03-23), \"means a ton\" (2023-06-21), and that her belief in him \"means the world\" (2023-07-09), all confirmed. Gina likewise said Jon's support \"means a lot\" (2023-04-03, confirmed).\n- **Being there for each other:** Jon said \"I am always there for you\" (2023-04-03, confirmed), and Gina said \"I'm always around for you\" (2023-06-13, confirmed).\n- **Pursuing their goals/dreams:** Gina said she's \"gonna keep pursuing my goals\" (2023-04-03, confirmed), and Jon said he'll \"keep pushing and make my dreams come true\" while working on his business (2023-07-09, confirmed).",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 4,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 0.5,
+        "rerank_selected": 0.5,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0007",
+      "question": "When did Gina launch an ad campaign for her store?",
+      "gold_answer": [
+        "29 January, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D2:1"
+      ],
+      "answer": "Gina reported on 29 January 2023 (at 2:32 pm) that she had just launched an ad campaign for her clothing store in hopes of growing the business (confirmed memory). Since she said \"just launched,\" the campaign was started on or shortly before that date. A later, tentative memory from 3 April 2023 notes she planned to do more ads to reach more people, but that is separate from the original launch.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0009",
+      "question": "Which city have both Jean and John visited?",
+      "gold_answer": [
+        "Rome"
+      ],
+      "category": "1",
+      "gold_evidence": [
+        "D2:5",
+        "D15:1"
+      ],
+      "answer": "The memories do not contain information about anyone named \"Jean\" or \"John.\" The only people mentioned are Jon and Gina: Jon visited Paris (28 January 2023) and Rome (week of ~12 June 2023), while Gina has never visited Paris and has only been to Rome once. Since no records exist for Jean or John, I cannot determine a city both have visited.",
+      "reported_source_coverage": {
+        "matched": 2,
+        "total": 2,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0011",
+      "question": "When did Jon start to go to the gym?",
+      "gold_answer": [
+        "March, 2023",
+        "the week before 16 March, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D6:1"
+      ],
+      "answer": "Jon started going to the gym \"last week\" as he reported on 16 March 2023 (confirmed), which resolves to the week of 6 March 2023 through 12 March 2023 (event interval 2023-03-06 inclusive to 2023-03-13 exclusive, week precision). He said he started it to stay on track with his venture.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0017",
+      "question": "When did Gina get accepted for the design internship?",
+      "gold_answer": [
+        "27 May, 2023",
+        "May, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D12:1"
+      ],
+      "answer": "Gina reported she had \"just got accepted\" for an internship on 27 May 2023 (during a conversation at 7:18 pm that day), so the acceptance was announced then. Note that the memory records it as a **fashion internship** (a part-time position in the fashion department of an international company), not explicitly a \"design internship.\" The design internship she interviewed for was on 10 May 2023, with the interview reported as going \"great\" on 11 May 2023, but no memory explicitly states an acceptance for a \"design internship\" by that name.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0020",
+      "question": "When did Jon receive mentorship to promote his venture?",
+      "gold_answer": [
+        "15 June, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D14:1"
+      ],
+      "answer": "Jon received mentorship from a businessman on 15 June 2023. This is confirmed (day precision), reported by Jon on 16 June 2023 as having happened \"yesterday,\" and he described the session as inspiring and making him even more pumped to chase his dreams. Note: the memories do not explicitly state the mentorship was specifically to promote his venture (scope unspecified), though Jon did mention doing promotion for his business in the same 16 June 2023 conversation.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0022",
+      "question": "When was Jon in Rome?",
+      "gold_answer": [
+        "June 2023",
+        "the week before 19 June, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D15:1"
+      ],
+      "answer": "Jon was in Rome during the week of 12 June 2023 (interval 2023-06-12 inclusive to 2023-06-19 exclusive, week precision), for a short trip to clear his mind. This is resolved from his statement on 19 June 2023: \"Took a short trip last week to Rome to clear my mind a little.\"",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0026",
+      "question": "When did Gina design a limited collection of hoodies?",
+      "gold_answer": [
+        "June 2023",
+        "the week before 21 June, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D16:3"
+      ],
+      "answer": "Gina made the limited edition line (which included the camouflage hoodie from her own collection) \"last week\" as of her conversation on 21 June 2023 — that is, during the week of approximately 12–18 June 2023 (interval 2023-06-12 inclusive to 2023-06-19 exclusive, week precision). She said she created it to show off her style and creativity, and it was tough but worth it.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0027",
+      "question": "When did Jon visit networking events for his store?",
+      "gold_answer": [
+        "20 June, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D16:6"
+      ],
+      "answer": "Jon went to networking events on 20 June 2023 — he said so himself on 21 June 2023, stating \"Yesterday I chose to go to networking events to make things happen\" (confirmed, day precision). Additionally, on 21 July 2023 Jon mentioned he had been networking \"lately\" and referred to a recent networking event where he met investors and got good advice, but no exact date was given for that event. Note: the memories describe this networking as being for his business (a dance studio), not specifically a store.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0028",
+      "question": "When did Gina start being recognized by fashion editors?",
+      "gold_answer": [
+        "July 2023",
+        "the week before 9 July, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D17:1"
+      ],
+      "answer": "Gina first mentioned being noticed by fashion editors on 9 July 2023, saying it happened \"last week\" — resolving to the week of 26 June 2023 (inclusive) to 3 July 2023 (exclusive), with week-level precision. She described it as amazing but kinda scary, with a lot of pressure to keep going up.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0031",
+      "question": "When did Gina mention Shia Labeouf?",
+      "gold_answer": [
+        "23 July, 2023"
+      ],
+      "category": "2",
+      "gold_evidence": [
+        "D19:4"
+      ],
+      "answer": "The memories provided do not contain any mention of Shia Labeouf by Gina, so I cannot determine when she mentioned him.",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0037",
+      "question": "What does Gina say about the dancers in the photo?",
+      "gold_answer": [
+        "They look graceful"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D1:24",
+        "D1:25"
+      ],
+      "answer": "Gina says the dancers look great and that she can't wait to see them rock the festival, adding it's going to be awesome (noted as tentative, in the context of a nearby festival the following month).",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 2,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 0.5,
+        "rerank_selected": 0.5,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0040",
+      "question": "What did Gina find for her clothing store on 1 February, 2023?",
+      "gold_answer": [
+        "The perfect spot for her store"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D3:2"
+      ],
+      "answer": "On 1 February 2023, Gina emailed some wholesalers and one of them replied and said yes that same day (confirmed). This was a wholesaler agreement for her clothing store, and she was over the moon about it because it meant she could expand her store and get closer to her customers (that expansion plan is tentative).\n\nNote: the \"cool new fashion piece\" Gina found for her store was mentioned on 8 February 2023, not 1 February.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0042",
+      "question": "What did Jon say about Gina's progress with her store?",
+      "gold_answer": [
+        "hard work's paying off"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D3:3"
+      ],
+      "answer": "The memories do not contain any comment by Jon specifically about Gina's progress with her store — all statements about how the store is doing (e.g., \"doing great,\" \"roller coaster but rewarding,\" \"growing the customer base\") come from Gina herself. The closest related remark from Jon is from 2023-03-16, when he said Gina's success really inspires him to keep pushing forward and that her determination is awesome, but that statement was not specifically about the store (scope unspecified).",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0044",
+      "question": "What did Jon say about creating a special experience for customers?",
+      "gold_answer": [
+        "It's the key to making them feel welcome and coming back"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D3:9"
+      ],
+      "answer": "The memories do not contain any statement by Jon about creating a special experience for customers. The closest related statements are that he wants to create a place for people to dance and express themselves, wants the studio to be a place of support and encouragement for all their dancers, and plans to adapt and tweak from customer feedback—but none of these match the specific phrasing in the question.",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0052",
+      "question": "How does Gina stay confident in her business?",
+      "gold_answer": [
+        "By reminding herself of her successes and progress, having a support system, and focusing on why she started"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D10:8"
+      ],
+      "answer": "Gina herself has described several ways she stays confident and positive about her business:\n\n- **Staying positive on purpose**: Agreeing with Jon's advice, she said \"staying positive is key,\" and she's \"always working on\" building relationships and creating a strong brand image for her store (2023-03-23).\n- **Drawing motivation from fashion**: She said fashion fuels her creativity and she loves finding new trends for her store, which \"keeps me motivated to keep growing\" (2023-04-03).\n- **An inspiring quote**: She said a quote \"kept me positive through tough times,\" and she even made a tattoo to remind herself of it (2023-02-08).\n- **Embracing risk as part of success**: She believes taking risks is scary but \"the only way to grow... just part of the journey to success\" (2023-02-08), and she finds starting her own store and taking risks both scary and rewarding (2023-01-29).\n- **Trusting her own effort**: She believes that with her hard work and effort she can make a special shopping experience for her customers — \"It's tough but I'm up for the challenge!\" (2023-02-01).\n- **Determination despite the ride**: She said it's been a \"wild ride\" starting her business, \"but I'm not giving up!\" (2023-04-03), that the tough journey is very rewarding (2023-04-25), and that being her own boss and doing something she loves is awesome (2023-06-16).\n- **Dance as stress relief**: She also notes dance is her go-to stress reliever, which helps her through tough times (2023-01-20, 2023-04-03).",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0053",
+      "question": "What kind of professional experience did Gina get accepted for on May 23, 2023?",
+      "gold_answer": [
+        "fashion internship"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D12:1"
+      ],
+      "answer": "I don't have a record of Gina getting accepted for anything on May 23, 2023. The memories show she was accepted for a fashion internship, which she reported on May 27, 2023 (a part-time position in the fashion department of an international company). Prior to that, she had a design internship interview on May 10, 2023, which she said went great.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0057",
+      "question": "How does Jon use the clipboard with a notepad attached to it?",
+      "gold_answer": [
+        "To set goals, track achievements, and find areas for improvement"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D13:11"
+      ],
+      "answer": "The memories do not mention Jon using a clipboard with a notepad attached to it. While the memories describe Jon using a whiteboard to stay on track and visualize goals, using a planner/notebook system to stay organized and motivated, and writing his plans and goals down on paper, none of them reference a clipboard with a notepad attached. I do not know how Jon uses such an item.",
+      "reported_source_coverage": {
+        "matched": 1,
+        "total": 1,
+        "any": true,
+        "all": true
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 1.0
+      }
+    },
+    {
+      "qid": "conv-30#q0066",
+      "question": "According to Gina, what makes Jon a perfect mentor and guide?",
+      "gold_answer": [
+        "His positivity and determination"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D17:7"
+      ],
+      "answer": "I don't know. The memories contain no statement by Gina describing Jon as a perfect mentor and guide. The closest related remark is Gina (2023-06-13) saying Jon's one-on-one mentoring and training will really push dancers to reach their goals, but she never calls him a \"perfect mentor and guide\" or explains what would make him one.",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    },
+    {
+      "qid": "conv-30#q0070",
+      "question": "What does Jon compare facing the same challenges to?",
+      "gold_answer": [
+        "having a partner to dance with",
+        "a partner to dance with",
+        "like having a partner to dance with"
+      ],
+      "category": "4",
+      "gold_evidence": [
+        "D6:15"
+      ],
+      "answer": "The memories do not contain any statement where Jon compares facing the same challenges to something. The closest related memory (2023-03-16) has Jon saying he keeps facing new challenges and is sure it'll be worth it in the end, but he makes no comparison, and it refers to new challenges rather than the same ones. I do not know.",
+      "reported_source_coverage": {
+        "matched": 0,
+        "total": 1,
+        "any": false,
+        "all": false
+      },
+      "source_stage_coverage": {
+        "indexed": 1.0,
+        "eligible": 1.0,
+        "recalled": 1.0,
+        "candidate_pool": 1.0,
+        "rerank_selected": 1.0,
+        "packed": 0.0
+      }
+    }
+  ]
+}

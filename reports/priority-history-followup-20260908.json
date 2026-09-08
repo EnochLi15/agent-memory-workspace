@@ -1,0 +1,133 @@
+{
+  "run_id": "priority-history-followup-20260908-01-candidate-memops",
+  "scope": "One targeted follow-up after the quoted-statement fix, on unchanged full B01_update history; not substituted into the completed 92-question v1 score.",
+  "candidate": {
+    "service_commit": "6ea38670470fbbead5727c86200bccc1e8e96487",
+    "source_diff_sha256": "e1b7be6fe37f1937b33c7e44ef9185bdd1fada5872cba7b03dce31192dd4f457",
+    "dist_hashes": {
+      "verification-named.js": "5e6561c12c87f09f7bd5efc80cf2fe45bedb30ba7b215bf3b29e8bce0c0b429d",
+      "events.js": "ffd8b8617baa0358aa73169a0148e6765c5e5d792cf7df37f1dc9bae36e567d6",
+      "source-operation-routing.js": "31eb07ebf0f9136b7d8b8c6a50ab0330a965d08227ff450186583ca041f5e77f",
+      "prompts.js": "ec2371ed5bea84963116613eae53e62cf87b31b466ae8fb5e91aa96410866491",
+      "proposal-input.js": "de37ab7010eed18222274e204bac790ece612fa16ca13062c8f714cf981956df",
+      "types.js": "a3ed7d8d693e7a576a19494a1f0172b5093217b59c60bfac7ce85bd7b5eb7ff1",
+      "temporal.js": "a4ad3f9d1326da334c4780639838b3ae6b3d270fa73790ba95cf22e70a9d0b90",
+      "retrieval-policy.js": "3ec03f32c69caecc2cd0e21aa75283dad75213ba7231e2605befc039a38db671",
+      "server.js": "40655f39bd2e7d85d09a28a45e34f8541450239f7829bd765eca02dec167ed87",
+      "source-erasure-grouped.js": "4edf5eb63a998229f3f57dd106ebb4d328da79e42692c7132e3a04316f017768",
+      "model-failure.js": "a73665395795e23a2f6d1b8560f0af6644f37a07c5b7c0b192b1d9300d22f384",
+      "repair.js": "5b6b027b12ef263da3adb163ff9dc3d86cfa0c127db9302ccd98e05ab891dc7a",
+      "write-continuation.js": "3183098dd64d746820830d47596742fe76184bd0a0a9622a63d5d37df2b74c89",
+      "extraction-groups.js": "7eb2a5ce39b6e82554cd01258c2e6e9157b36ef6e0a65cc5c9c6eaf9d5d1b1d0",
+      "source-operations.js": "a0fd9e6fa8ed7eab3d926d61bd23f8f7136db1abac9f354dafc31f6aefe8b4e9",
+      "models.js": "0fa6034cd1c5b57c9c3b796696a1ee244d592b1be743ac5b6c8da46ebc73b2ab",
+      "source-operation-batches.js": "9b6102749e79f91e401780140dd5cc7e30984683da3f89fb41fe5461ffebf688",
+      "config.js": "aecc97fba3c68a095e8571ec656576e46c394e68d8a6a00bee368806b83a1d52",
+      "source-coverage.js": "3a9efce142427bf96f2b92382dac8f64816e5dd302bf06c14831f5caf2dcf608",
+      "verification.js": "bae4e086722659c4149cb7218e1b24b74350b674266dfb061f35efb0f489e1ae",
+      "source-erasure-execution.js": "26d1dca93869498895c082526734f68d904294d92844a312c427fff693c43107",
+      "binding.js": "bd494fff57d9239c9e6005fb9ed918c2936f2d271428f3b300a2eedfd53394de",
+      "verification-recovery.js": "135ca66464a51dd93c55658014b3b3eb187a4d283dbf8ac95f4007edc5badfd5",
+      "erasure.js": "7bef285b0c94bffd380ea335ede413d05de31dbbf1da26fba2e008d52e53ed96",
+      "model-json.js": "cf41e4828f0c768ec73941b416da88ab2caa658fee81c9256b2b4a9ea2b6f019",
+      "source-erasure.js": "893ee946a16e17f5bb512ed97f7e0eb8f500aab9b99ecc0829be7edb5ad9b419",
+      "preparation-ledger.js": "865786bd8db74531d03fdef71dad50dafc4f6cb46f8b3442a7c034da75ebe3d7",
+      "verification-session.js": "a1971fd3e19d5bb44d6585dc9ae7c5615421d81ab27a266b0cee420776ef6b11",
+      "verification-compact.js": "9fb9b5c31460c501b37d8396c7a19e81e14984b54f3994aad7915a28eb2466c3",
+      "transitions.js": "f68b49d6ec54ea345441d1949fabbda60a8ef246e34a1c6f142479a62f86b54d",
+      "passages.js": "f616022de7c06b99dd48fee4e0792c5ea06e7d3d73370346b42a56c382db50e9",
+      "extraction.js": "d50e834d95e09ccd67e7ecb45dad93a147aca86e5d1b9fd3356ddd2eb1b2cac1",
+      "reranking.js": "e5964b84e0bddeb1c7bcdaf4a3b0eaa02bb59f21d41b74b12c064cb88bf112dc",
+      "engine.js": "6e299dc3c3400bd694e6b75205f1f8c4ec48ff39245d3cdb2947c7f5f02e873d",
+      "model-retry.js": "e0b3880d0826b1b56497e23992379afa9d720430b0acc8ad7bccd6ae0d3248f6",
+      "source-references.js": "ca4732930723fc3b7dbd04e4dae3cb1d12bf9d65b1fc0b5d96a8c09f525f6531",
+      "operation-intent.js": "4d8258c70b79af5995c1e9c6b1acd9003b44e035d976153e84d119e0b43ccf21",
+      "db-worker.js": "93b8a342e570a24a9546c6f569911aa7261ebd51117d9a5d5599d1db7317641e",
+      "text.js": "930becb72422b41719b82fba2c3a206d1afbb5197ef0d89b501ebf03b59957d5",
+      "extraction-shards.js": "e170d6dcd3ec502898892ba55d1aca9c6eb3f2a752a8c2f7870b4e98fbc5150c",
+      "retrieval.js": "4cfaabc385247a3195b83491aec9969f1908caa261a5aca5e050209580ead638",
+      "storage.js": "9da8a5f2df1b0f24ce4d5b66d637e64567ba70f6274ce2cb5ec89de19283e0a4",
+      "model-gate.js": "0c991712fe2b1954bb74c9ef524a94c3af636669b2bcdcfd703af50099232cda",
+      "mem0/scoring.js": "c7fa478ed82bf59f0cedb35bb90434e013e31bfc6d8d8dfcb21d6ceee2cb7da9",
+      "mem0/entity_extraction.js": "409c2a8c0c22c4807479a999a4442266befcc974afb955b5c2ee3229e538796b",
+      "mem0/lemmatization.js": "3b88cdcdd19e927e0c3807887d3f5b6eda9c807e1db035d5cc9cce95b4a5f218"
+    },
+    "scope": "Integrated service including erasure fixes and follow-up quoted historical statement visibility; separate from 92-question v1 QA."
+  },
+  "evaluator_equivalence": {
+    "kind": "baseline_working_tree_patch_committed_verbatim",
+    "baseline_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe",
+    "candidate_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "patch_sha256": "2d29cd1208cca279f0c992850180f6fc6db0b756b346c7f25237d589e7b3bd2c"
+  },
+  "verdict": {
+    "qid": "B01_update.json#p1_operation_trace#longitudinal_operation#1",
+    "sample_id": "B01_update",
+    "benchmark": "memops",
+    "category": "Update/OperationTrace",
+    "status": "judged",
+    "correct": true,
+    "raw": "\n{\"correct\": true, \"reason\": \"The answer satisfies all must_include conditions: it identifies $145K as the initial figure, $152K as the correction, $148K as the revision due to role restructuring, and $155K as a pending bump that has not gone into effect. It correctly designates the message confirming the $148K revision (and clarifying the $155K is tentative) as the one fixing the figure to rely on going forward. The must_not_include condition is not violated — the answer explicitly treats $155K as tentative and $148K as the current active figure, so it does not treat $155K as the confirmed salary. Additional details (the unrelated $142K job listing, Jess's incorrect $144K guess) are harmless extra context that does not contradict the reference or rubric.\"}\n"
+  },
+  "prediction": {
+    "qid": "B01_update.json#p1_operation_trace#longitudinal_operation#1",
+    "sample_id": "B01_update",
+    "benchmark": "memops",
+    "category": "Update/OperationTrace",
+    "answer": "**Messages that first established the salary figure:**\n- Your earliest statement gave Darren's Seattle senior DevOps offer as $145K/year at a mid-sized company; that figure was later corrected to $152K, and the $145K version is not a valid or current fact.\n- In a later conversation, you reported that the company revised the offer down to $148K after restructuring the role (some on-call responsibilities moved to another team), and in a recap in that same conversation you reiterated that \"the Seattle offer is currently at $148K.\"\n\n**Messages that later determined the figure to rely on going forward:**\n- You relayed that Darren's recruiter emailed him about bumping the offer back to $155K once the new budget cycle starts next month — you showed this as tentative and not yet in effect.\n- In the message following that, you confirmed the $155K \"hasn't gone into effect\" and stated that \"for now the official offer is still $148K until that budget thing actually materializes,\" directing that it be tracked with $148K as the current active figure and $155K marked as tentative. That message is what fixed $148K as the figure to rely on going forward.\n\nTwo other messages did not set the figure: the $142K job listing you saw was explicitly a different level and not Darren's offer, and with Jess you only said her $144K guess was wrong and the actual number was \"higher than that,\" without giving the exact figure."
+  },
+  "metrics": {
+    "reporting_protocol": "group-aware-outcome-report-v1",
+    "group_outcomes": {
+      "protocol": "recorded-group-outcome-bootstrap-v1",
+      "group_count": 1,
+      "groups": [
+        {
+          "benchmark": "memops",
+          "group_id": "B01",
+          "recorded": 1,
+          "correct": 1
+        }
+      ],
+      "interval_95": null,
+      "unavailable_reason": "fewer_than_two_groups",
+      "scope": "Resample declared conversation/background groups with all variants together. Infrastructure failures remain in the denominator; this does not infer unjudged answer quality or unseen-data performance."
+    },
+    "legacy_sample_bootstrap_scope": "sample-ID resampling for historical compatibility; use group_outcomes for declared background grouping",
+    "question_status_counts": {
+      "judged": 1
+    },
+    "unrecorded_questions": 0,
+    "sample_bootstrap_95": [
+      1,
+      1
+    ],
+    "evidence_coverage": "N/A: no mapped source-ID diagnostics recorded",
+    "mode": "proxy",
+    "planned": 1,
+    "judged": 1,
+    "correct": 1,
+    "accuracy_over_planned": 1,
+    "judged_accuracy": 1,
+    "incomplete": 0,
+    "slices": {
+      "memops/Update/OperationTrace": {
+        "total": 1,
+        "judged": 1,
+        "correct": 1
+      }
+    },
+    "add_ms": {
+      "p50": 0.8027079999999387,
+      "p95": 2.3556659999999283,
+      "max": 17.135749999999916
+    },
+    "search_ms": {
+      "p50": 257.47529199999985,
+      "p95": 257.47529199999985,
+      "max": 257.47529199999985
+    }
+  },
+  "http_receipts": 50,
+  "write_model_calls": 0
+}

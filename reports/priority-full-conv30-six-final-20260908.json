@@ -1,0 +1,23 @@
+{
+  "run": "priority-full-conv30-20260908-02-candidate-locomo",
+  "scope": "full conv-30 history, fixed six priority questions",
+  "sessions": 19,
+  "messages_ingested": 369,
+  "successful_adds": 27,
+  "failed_adds": 0,
+  "retrievals": 6,
+  "predictions": 6,
+  "planned_questions": 6,
+  "judgment_statuses": {
+    "judge_error": 6
+  },
+  "valid_judgments": 0,
+  "correct": null,
+  "valid_accuracy": null,
+  "earned_points_in_planned_denominator": 0,
+  "planned_denominator": 6,
+  "judge_endpoint_probe": "<urlopen error [Errno 61] Connection refused>",
+  "judge_process_probe": "",
+  "diagnosis": "Configured judge endpoint port8766 has no listener; owned adapter PID48793 is absent. Its log contains startup only, without an exit reason. Separate detached adapter was not part of the experiment runtime lifecycle; exact termination cause unknown.",
+  "next_step": "Pause automatic follow-up after allowed retry exhausted. Manage Judge lifecycle/readiness with experiment runner before a separately authorized new run. Preserve all original answers and failure records; no retrospective score replacement."
+}

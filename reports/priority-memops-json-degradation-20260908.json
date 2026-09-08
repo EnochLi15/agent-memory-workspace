@@ -1,0 +1,25 @@
+{
+  "campaign": "priority-memops-four-20260908-01",
+  "request_id": "priority-memops-four-20260908-01-candidate:memops:A02_forget:segment-37:0",
+  "trace_id": "7209dba9-6fd2-4690-ac2a-f4d8139daba3",
+  "observed_at": "2026-09-08T12:31:04.741Z",
+  "output_sha256": "f0205562329d76878e2f070ef07bcf32ee8686fe49021ab7d0078d40bdddbe28",
+  "cause": "The model used U+201C/U+201D delimiters for three message_index keys; the strict JSON parser rejects this syntax.",
+  "reproduction": {
+    "type": "SyntaxError",
+    "message": "Expected property name or '}' in JSON at position 30 (line 4 column 6)"
+  },
+  "smart_quoted_key_occurrences": 3,
+  "diagnostic_only_ascii_key_normalization": {
+    "parses": true,
+    "message_groups": 6,
+    "facts": 5
+  },
+  "runtime_effect": "The extraction capability failure triggered ordinary-mode offlineExtract, persisted an HTTP 200 receipt and emitted extraction_offline.",
+  "limitations": [
+    "Syntax normalization here is an offline causal probe, not a production fix.",
+    "The normalized proposal has not passed schema/source/semantic verification.",
+    "Effect on final accuracy is not established."
+  ],
+  "decision": "Keep both running baselines unchanged. Preserve this failure and evaluate bounded format-repair options separately after the frozen run."
+}

@@ -1,0 +1,13 @@
+{
+  "run": "priority-loop-20260908-01",
+  "scope": "two-session prefix diagnostic; not full-history score",
+  "messages": 35,
+  "successful_adds": 2,
+  "failed_adds": 0,
+  "planned_questions": 6,
+  "judged": 6,
+  "correct": 5,
+  "accuracy": 0.8333333333333334,
+  "wrong_qid": "conv-26#q0004",
+  "diagnosis": "Gold evidence D1:5 was retrieved. It mentions inspiring transgender stories but does not directly establish the speaker identity. Answer declined the identity label; judge marked incorrect. No answer injection or historical rejudge."
+}

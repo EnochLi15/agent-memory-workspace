@@ -1,0 +1,22 @@
+[
+  {
+    "request_id": "priority-20260908-02-candidate:locomo:conv-41:session-3:0",
+    "mode": "original_request_with_injected_missing_groups",
+    "messages": 17,
+    "revision": 1,
+    "degraded": [
+      "extraction_offline"
+    ],
+    "facts": 14
+  },
+  {
+    "request_id": "priority-20260908-02-candidate:locomo:conv-30:session-15:0",
+    "mode": "original_request_with_injected_model_budget",
+    "messages": 20,
+    "revision": 1,
+    "degraded": [
+      "extraction_offline"
+    ],
+    "facts": 13
+  }
+]

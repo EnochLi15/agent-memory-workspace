@@ -1,0 +1,65 @@
+{
+  "protocol": "priority-quality-recovery-v1",
+  "started_at": "2026-09-08T14:37:52.764Z",
+  "candidate_manifest_sha256": "21501c9e347bcee65904a67b5c2c6450b2ab7dccdcad74d59e8f6ef9d2933358",
+  "scope": "Isolated model/parser diagnostics; no add/search, no storage commit, no benchmark score replacement.",
+  "json_recovery": {
+    "original_trace_id": "7209dba9-6fd2-4690-ac2a-f4d8139daba3",
+    "output_sha256": "f0205562329d76878e2f070ef07bcf32ee8686fe49021ab7d0078d40bdddbe28",
+    "status": "parsed_and_group_schema_and_source_quotes_valid",
+    "groups": 6,
+    "facts": 5,
+    "operations": 0,
+    "local_http_calls": 1,
+    "remote_model_calls": 0,
+    "normalization": {
+      "at": "2026-09-08T14:37:52.797Z",
+      "kind": "generation",
+      "purpose": "extraction",
+      "syntax_normalization": "typographic_key_quotes_only",
+      "repaired_key_quotes": 3,
+      "removed_commas": 0,
+      "trace_id": "455a1d5c-1ded-4b2c-a34b-dade0a7d8c65",
+      "model": "glm-5.2",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 21.803499999999985,
+      "usage": null,
+      "output_chars": 1836
+    },
+    "semantic_verification": "Not a new semantic verdict; normal independent verification remains required before storage."
+  },
+  "http_replay": {
+    "status": "failed",
+    "original_trace_id": "50bd3149-2643-4973-8d66-4b07d08a7bdd",
+    "input_sha256": "effc9027e6758b71fdbee27b83c30cd8e0c86116cfb69085fed97f2880b8cb59",
+    "system_sha256": "aab129aca5e56d90481d5ab65bdd8d737871803e16182df071c710d194796d59",
+    "model": "glm-5.2",
+    "max_transport_attempts": 1,
+    "elapsed_ms": 1508.682834,
+    "audit": [
+      {
+        "at": "2026-09-08T14:37:54.330Z",
+        "kind": "generation",
+        "purpose": "extraction",
+        "trace_id": "31ff8dea-ea5e-4c4f-8b03-d55ecb1d4cfc",
+        "model": "glm-5.2",
+        "attempt": 0,
+        "outcome": "error",
+        "elapsed_ms": 1507.56,
+        "usage": null,
+        "error_type": "Error",
+        "error_category": "provider_http",
+        "http_status": 400,
+        "signal_aborted": false,
+        "stream_started": false,
+        "finish_reason": null,
+        "refusal_detected": false,
+        "transport_code": null,
+        "provider_error_code": "1301"
+      }
+    ],
+    "limitation": "Current replay cannot retroactively establish the original HTTP 400 cause. No retry policy or input content was changed."
+  },
+  "finished_at": "2026-09-08T14:37:54.331Z"
+}

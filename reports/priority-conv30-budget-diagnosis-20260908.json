@@ -1,0 +1,33 @@
+{
+  "original_run": "priority-full-conv30-20260908-01",
+  "status": "finished_with_service_errors",
+  "successful_adds": 16,
+  "failed_adds": 1,
+  "questions": 6,
+  "judged": 0,
+  "service_errors": 6,
+  "score": 0,
+  "failure_session": 13,
+  "failure": "semantic rejection followed by internal model deadline",
+  "timing_ms": {
+    "three_serial_extractions": 46232,
+    "binding_repair": 11961,
+    "semantic_verification": 26701,
+    "final_repair_until_deadline": 5077
+  },
+  "isolated_single_worker": {
+    "request_id": "priority-full-conv30-20260908-01-candidate:locomo:conv-30:session-13:0",
+    "extraction_workers": 1,
+    "mode": "isolated_prepare_no_commit",
+    "checks": [
+      []
+    ],
+    "status": "prepared",
+    "facts": 20,
+    "degraded": [],
+    "elapsed_ms": 27310
+  },
+  "interpretation": "New model run with copied historical state, no commit. Single worker passed in 27.3s but stochastic outputs differ; does not prove all long histories pass. No model/Judge/budget change.",
+  "next_run": "priority-full-conv30-20260908-02",
+  "automatic_restarts_used": 1
+}

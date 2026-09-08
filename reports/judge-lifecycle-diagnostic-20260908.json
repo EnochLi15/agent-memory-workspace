@@ -1,0 +1,11 @@
+{
+  "protocol": "judge-lifecycle-diagnostic-v1",
+  "real_qwen_preflight": "passed",
+  "embedding_preflight": "passed",
+  "endpoint": "http://127.0.0.1:64778/v1",
+  "controlled_kill_detected": true,
+  "judge_exit_code": -9,
+  "owned_evaluation_fixture_stopped": true,
+  "scope": "No benchmark questions or saved answers judged; toy readiness and controlled process failure only.",
+  "runtime": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/judge-lifecycle-diagnostic-20260908/runtime.json"
+}

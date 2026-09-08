@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-09-08T13:13:33.634Z",
+  "campaign": "priority-memops-four-20260908-01",
+  "request_id": "priority-memops-four-20260908-01-candidate:memops:B01_update:segment-41:0",
+  "trace_id": "50bd3149-2643-4973-8d66-4b07d08a7bdd",
+  "purpose": "extraction",
+  "error_category": "provider_http",
+  "http_status": 400,
+  "stream_started": false,
+  "input_sha256": "effc9027e6758b71fdbee27b83c30cd8e0c86116cfb69085fed97f2880b8cb59",
+  "confirmed_cause": "Provider returned HTTP 400 before generation streaming began. Ordinary-mode extraction fell back to offlineExtract and the service committed an HTTP 200 receipt with extraction_offline marker.",
+  "unresolved": "The captured audit retains status/category but not the provider response body or provider error code. Exact reason for HTTP 400 cannot be recovered from this trace.",
+  "do_not_infer": [
+    "Not enough evidence to call this a timeout, quota limit, content filter or request-schema failure.",
+    "Do not treat refusal_detected=false as proof that upstream content filtering was absent; no completion stream began."
+  ],
+  "decision": "Preserve frozen baseline. Add safe provider error-code diagnostics in a separate change; review this request independently without rewriting its result."
+}

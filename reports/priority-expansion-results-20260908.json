@@ -1,0 +1,122 @@
+{
+  "status": "finished",
+  "recorded_at": "2026-09-08T13:19:29.189914+00:00",
+  "scope": "Completed diagnostic pilot: 72 questions from one LoCoMo conversation plus 20 questions from four MemOps operation samples; this is not the selected 972-question overall score. Original scores preserved.",
+  "locomo": {
+    "correct": 51,
+    "planned": 72,
+    "accuracy": 0.7083333333333334,
+    "report": "reports/priority-conv30-72-results-20260908.json"
+  },
+  "memops": {
+    "correct": 18,
+    "planned": 20,
+    "accuracy": 0.9,
+    "operations": {
+      "Forget": {
+        "planned": 5,
+        "judged": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "Remember": {
+        "planned": 6,
+        "judged": 6,
+        "correct": 5,
+        "accuracy": 0.8333333333333334
+      },
+      "Reflect": {
+        "planned": 5,
+        "judged": 5,
+        "correct": 5,
+        "accuracy": 1.0
+      },
+      "Update": {
+        "planned": 4,
+        "judged": 4,
+        "correct": 3,
+        "accuracy": 0.75
+      }
+    },
+    "report": "reports/priority-memops-four-results-20260908.json"
+  },
+  "observed_pilot_micro": {
+    "correct": 69,
+    "planned": 92,
+    "accuracy": 0.75
+  },
+  "snapshot_audit": {
+    "audited_at": "2026-09-08T12:40:01.140551+00:00",
+    "model_log_sha256": "b90da63bd38cca746c7334dd03eb3737545cd9483a8f69cf57da387c909d897d",
+    "classification_fields": [
+      "kind",
+      "purpose"
+    ],
+    "counts": {
+      "embedding": 72
+    },
+    "write_model_calls": 0,
+    "http_receipts": 27,
+    "http_total_ms": 48.41587200000009
+  },
+  "memops_write_audit": {
+    "planned_chunks": 204,
+    "http_success": 204,
+    "http_failure": 0,
+    "degraded": 2,
+    "nondegraded": 202,
+    "degraded_fraction": 0.00980392156862745,
+    "events": [
+      {
+        "event": "degraded",
+        "request_id": "priority-memops-four-20260908-01-candidate:memops:A02_forget:segment-37:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      },
+      {
+        "event": "degraded",
+        "request_id": "priority-memops-four-20260908-01-candidate:memops:B01_update:segment-41:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      }
+    ]
+  },
+  "memops_timing": {
+    "wall_seconds": 3271.749,
+    "ingestion_seconds": 2583.487741206,
+    "mean_seconds_per_write": 12.66415559414706,
+    "estimated_4898_chunk_ingestion_hours_at_this_pilot_rate": 17.23028725003675,
+    "estimate_scope": "Crude extrapolation from four samples; excludes Answer/Judge/retries and variation across other backgrounds."
+  },
+  "expansion_gate": {
+    "all_planned_questions_judged": true,
+    "zero_http_or_judge_errors": true,
+    "degradation_free": false,
+    "memops_four_operation_pipeline_completed": true,
+    "decision": "Do not immediately launch the full 972-question pipeline. Complete targeted retrieval/history and format-failure diagnostics on saved state, then run LoCoMo 500 first; MemOps 472 follows after the two degradation classes and history-trace error are addressed or explicitly accepted as the measured baseline."
+  },
+  "next_steps": [
+    {
+      "priority": 1,
+      "work": "Replay the existing 72-question frozen state for candidate-ranking and packing/reranker comparisons with fixed Answer/Judge settings and budget."
+    },
+    {
+      "priority": 2,
+      "work": "Inspect the 12 LoCoMo wrong answers with full source-ID coverage, especially temporal precision and answer caveats. Keep Judge calibration diagnostics separate from original scores."
+    },
+    {
+      "priority": 3,
+      "work": "Review MemOps organization inference and salary history-trace errors. The trajectory question was recognized as historical, but its returned evidence omitted 145K/152K; do not assume intent detection is the cause."
+    },
+    {
+      "priority": 4,
+      "work": "Add bounded invalid-JSON recovery and safe provider error-code observability in an isolated change with regression checks; do not reinterpret HTTP400 as a proven cause beyond provider rejection."
+    },
+    {
+      "priority": 5,
+      "work": "Freeze the resulting code/config and run all 500 selected LoCoMo questions; preserve ingestion for further retrieval comparisons. Calibrate MemOps full-run cost from the pilot before its 472-question run."
+    }
+  ]
+}

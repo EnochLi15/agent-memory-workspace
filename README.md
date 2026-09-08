@@ -4,6 +4,10 @@
 
 设计说明见 [docs/方案设计-最终交付版.md](docs/方案设计-最终交付版.md)（赛题对齐、六能力机制矩阵、写入成功哲学）。工作区结构：本仓负责编排与报告，`service/`（TS 服务实现）与 `eval/`（HTTP 契约校验器/评测器）为固定 commit 的 submodule，只通过 HTTP 通信。
 
+## 当前测试优先级
+
+优先测试已冻结的 LoCoMo 500 题与 MemOps 472 题，完成后再扩大范围。题目 ID 与数据校验值见 [优先清单](configs/priority-benchmarks-20260908.json)，执行方式与口径见 [实验协议](docs/EXPERIMENT-PROTOCOL.md#当前优先评测范围2026-09-08)。此清单为公开重建子集。
+
 ## 快速启动（非交互）
 
 ```sh
@@ -48,8 +52,9 @@ make down
 
 ## 验证状态（2026-09-08）
 
-- 单元 **466/466**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 10 项、多源佐证 2 项、上游验证恢复/具名协议/信封重放 31 项、分片坏 JSON 降档 1 项）。
-- 契约校验器 **12/12**（offline 实例）。
+- PR 合入及本地整合：service **507/507**、eval **41/41**、工作区 **44/44**，真实 HTTP 契约 **12/12**。版本、修复与复现命令见 [合入验证报告](reports/post-merge-validation-20260908.md)。
+- 遗忘回归：优先 MemOps 95 个样本共 **4,898 次离线写入**，修复前后均为 **4,889 成功、9 次相同拒绝**，没有新增失败；这不是质量判分或全量写入成功。
+- 优先评测的分片遗漏、内部超时降级与补丁越界重试已修复；原批次失败记录保留，历史诊断及未解决边界见 [写入诊断报告](reports/priority-write-diagnosis-20260908.md)，独立 92 题回放范围见 [质量修复报告](reports/priority-quality-fixes-20260908.md)。
 - intent v2 全量回归：LoCoMo refined 1,382 题 {CURRENT:1376, HISTORICAL:5, TRAJECTORY:1} 零误报；MemOps 纵向 134 去重对 32/32 命中 TRAJECTORY。
 - 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**聚合卡端到端**（跨会话累积→单卡全值→forget 全路径清且兄弟成员原文零连坐→复述零复活→干净重建→restore 成员回归家族卡）、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中且聚合卡照常产出）。
 - 已知边界：offline 形态转述类查询召回有限（无嵌入），由 enhanced 形态覆盖；source-first v10 表示未纳入 release（见上表）。

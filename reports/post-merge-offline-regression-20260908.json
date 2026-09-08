@@ -1,0 +1,97 @@
+{
+  "date": "2026-09-08",
+  "scope": "Deterministic offline write regression, not Answer/Judge quality scoring.",
+  "workspace_merge": "afadad1b279a02ca959c5fb1a7e026520995ff91",
+  "service_merge": "c5ad49dddad3c3e5c4d99093565e85fa26c8049c",
+  "service_pr_head": "53b01bd36a464ab57efe58c41bcea0800ae1c92c",
+  "service_safety_commit": "6ea38670470fbbead5727c86200bccc1e8e96487",
+  "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+  "data": {
+    "path": "eval/.data/priority-20260908-v1/memops.json",
+    "sha256": "d7ff854e095de24280b39f867b0963447e89af3f9dd815e9e94e9761866f4744",
+    "samples": 95,
+    "questions": 472,
+    "messages": 51108
+  },
+  "chunking": {
+    "messages": 20,
+    "words": 2000
+  },
+  "baseline": {
+    "requests": 4898,
+    "committed": 4889,
+    "failed": 9,
+    "elapsed_ms": 82968
+  },
+  "candidate": {
+    "requests": 4898,
+    "committed": 4889,
+    "failed": 9,
+    "elapsed_ms": 53522
+  },
+  "added_failures": [],
+  "resolved_baseline_failures": [],
+  "unchanged_failures": [
+    {
+      "sample": "A06_forget",
+      "session": "segment-8",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "A06_forget",
+      "session": "segment-37",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B01_remember",
+      "session": "segment-23",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B03_remember",
+      "session": "segment-12",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B14_forget",
+      "session": "segment-43",
+      "part": 0,
+      "code": "OPERATION_TARGET"
+    },
+    {
+      "sample": "B14_reflect",
+      "session": "segment-29",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B30_forget",
+      "session": "segment-15",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B30_reflect",
+      "session": "segment-31",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    },
+    {
+      "sample": "B30_reflect",
+      "session": "segment-39",
+      "part": 0,
+      "code": "OPERATION_INTENT"
+    }
+  ],
+  "method": "Every scheduled chunk was attempted through the real Extractor and TenantStore in fresh temporary tenant databases. Failures did not truncate the remaining writes. No external model or judge was called.",
+  "limitation": "The nine baseline rejections remain. Equal write outcomes do not establish retrieval quality or success on the complete enhanced benchmark.",
+  "reproduce": "node scripts/probes/replay-offline-operations.mjs --dataset eval/.data/priority-20260908-v1/memops.json --output artifacts/offline-replay-new.json",
+  "log_sha256": {
+    "artifacts/merged-pr-offline-replay.json": "f3a83646f5906b93589ce9635623390c3aee97529b90bba6293284f086a0ac62",
+    "artifacts/post-merge-offline-replay-final.json": "0127cd87a3b5433d1d4161525f3bceb89018b5d7c30a3f17cdead2ecbce8bedc"
+  }
+}

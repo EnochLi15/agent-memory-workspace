@@ -1,0 +1,95 @@
+{
+  "scope": "Static audit only; does not change benchmark inputs or historical results.",
+  "specification": "/Users/enoch/Workspace/comp/Agent-Memory-赛题规范.md:144",
+  "specification_status": "Local saved competition specification. Exact official converter/tokenization was not supplied.",
+  "dataset_sha256": "45e47391afdef1d97428e27bf579a376dc68241c0d93bc2f0b5fd41c1e39f91d",
+  "rows": [
+    {
+      "sample": "A02_forget",
+      "sessions": 50,
+      "messages": 524,
+      "chunks_20_2000": 50,
+      "chunks_40_4000": 50,
+      "split_sessions": []
+    },
+    {
+      "sample": "A02_remember",
+      "sessions": 50,
+      "messages": 542,
+      "chunks_20_2000": 52,
+      "chunks_40_4000": 50,
+      "split_sessions": [
+        {
+          "session": "segment-30",
+          "messages": 16,
+          "words": 2002,
+          "chunk_messages": [
+            15,
+            1
+          ]
+        },
+        {
+          "session": "segment-37",
+          "messages": 12,
+          "words": 2071,
+          "chunk_messages": [
+            11,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "B01_reflect",
+      "sessions": 50,
+      "messages": 546,
+      "chunks_20_2000": 52,
+      "chunks_40_4000": 50,
+      "split_sessions": [
+        {
+          "session": "segment-20",
+          "messages": 14,
+          "words": 2186,
+          "chunk_messages": [
+            13,
+            1
+          ]
+        },
+        {
+          "session": "segment-29",
+          "messages": 22,
+          "words": 2092,
+          "chunk_messages": [
+            20,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "sample": "B01_update",
+      "sessions": 50,
+      "messages": 540,
+      "chunks_20_2000": 50,
+      "chunks_40_4000": 50,
+      "split_sessions": []
+    }
+  ],
+  "totals": {
+    "sessions": 200,
+    "messages": 2152,
+    "chunks": 204,
+    "counterfactual_larger_threshold_chunks": 200
+  },
+  "interpretation": [
+    "One add corresponds to an ordered chunk inside a session. It is not one question, one turn pair, or the full sample.",
+    "The four samples have 200 sessions and 204 chunks. Only four additional chunks come from threshold splitting.",
+    "Doubling both local thresholds would reduce 204 chunks to 200 without crossing sessions, but would change the stated ingestion policy; this is not an approved benchmark configuration.",
+    "The large fixed cost per synchronous add and process-wide single-lane generation are implementation choices, not requirements to use multiple model passes."
+  ],
+  "remaining_questions": [
+    "Exact official session conversion and approximately-2000-word counting algorithm.",
+    "Exact selected platform deadline within the stated 1–120s add range.",
+    "Whether the platform may concurrently write independent users."
+  ]
+}
