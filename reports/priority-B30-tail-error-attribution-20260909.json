@@ -1,0 +1,216 @@
+{
+  "run_id": "priority-B30-tail-qa-20260909-01",
+  "review_scope": "Read-only attribution of the five existing standard Answer/Judge outcomes; no model query, rejudge, score modification, service edit or database write.",
+  "snapshot_revision": 51,
+  "fixed_denominator": 5,
+  "recorded_correct": 1,
+  "limits": {
+    "candidateLimit": 200,
+    "maxEvidence": 32,
+    "tokenBudget": 6000,
+    "rerank": false,
+    "relationMode": "off"
+  },
+  "patricia_preservation": {
+    "fact_id": "c1ed4cd5ea9c5e3d51636621a322cf8a47de26a79ed494dcc0861c83f8dc06dc",
+    "state": "active",
+    "revision_written": 31,
+    "source_id": "6f531661c7a17e7fd59313a6d15523615c233b6e1580409f2dd89c83fce09b24",
+    "source_searchable": true,
+    "exact_quote_survives": true,
+    "active_source_passages": [
+      "source-1c4846bc1962728263a3a414e1a45541b9eefc4bf63fc10ee2d21781d74eece9",
+      "source-a36760ceb7e9e03d46e0b27ceb8d9b9082bff52c079ddfad27efa053241ed54e"
+    ],
+    "fact_semantics": "Aunt is now fine with either name; the old preference and old reason were erased separately.",
+    "new_state_erased": false
+  },
+  "p1_p3": [
+    {
+      "qid": "B30_forget.json#p1_operation_trace#longitudinal_operation#1",
+      "judge_correct": false,
+      "answer_mentions_Patricia": false,
+      "selected_evidence": 32,
+      "packed_tokens": 5984,
+      "discard_reason_counts": {
+        "count-limit": 168
+      },
+      "fact": {
+        "eligible_fact": true,
+        "source_indexed": false,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "semantic",
+          "lexical"
+        ],
+        "candidate_rank_before_packing": null,
+        "discard_reasons": [],
+        "selected": false
+      },
+      "source_quote": {
+        "eligible_fact": false,
+        "source_indexed": true,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "candidate_rank_before_packing": 53,
+        "discard_reasons": [
+          "count-limit"
+        ],
+        "selected": false
+      },
+      "source_intro": {
+        "eligible_fact": false,
+        "source_indexed": true,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "source-semantic"
+        ],
+        "candidate_rank_before_packing": null,
+        "discard_reasons": [],
+        "selected": false
+      },
+      "cause": "The new state and exact human evidence survive. Search packing/candidate selection omits them before Answer; the recorded Answer has no Patricia evidence to use."
+    },
+    {
+      "qid": "B30_forget.json#p3_state_transition#longitudinal_operation#5",
+      "judge_correct": false,
+      "answer_mentions_Patricia": false,
+      "selected_evidence": 32,
+      "packed_tokens": 5501,
+      "discard_reason_counts": {
+        "count-limit": 168
+      },
+      "fact": {
+        "eligible_fact": true,
+        "source_indexed": false,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "semantic",
+          "lexical"
+        ],
+        "candidate_rank_before_packing": 166,
+        "discard_reasons": [
+          "count-limit"
+        ],
+        "selected": false
+      },
+      "source_quote": {
+        "eligible_fact": false,
+        "source_indexed": true,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "source-semantic"
+        ],
+        "candidate_rank_before_packing": 62,
+        "discard_reasons": [
+          "count-limit"
+        ],
+        "selected": false
+      },
+      "source_intro": {
+        "eligible_fact": false,
+        "source_indexed": true,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "candidate_rank_before_packing": 31,
+        "discard_reasons": [
+          "count-limit"
+        ],
+        "selected": false
+      },
+      "cause": "The new state and exact human evidence survive. Search packing/candidate selection omits them before Answer; the recorded Answer has no Patricia evidence to use."
+    }
+  ],
+  "p2": {
+    "qid": "B30_forget.json#p2_target_binding#longitudinal_operation#3",
+    "judge_correct": false,
+    "erased_record_id": "7223bd907de0ccd919b88257d21fe8ff6304de0a24ee494adf3990dae9d8d445",
+    "erased_at_revision": 38,
+    "identity_only_in_hidden_erased_fact_subject": true,
+    "visible_identity_counts": {
+      "facts": 0,
+      "messages": 0,
+      "passages": 0
+    },
+    "returned_forget_events": 3,
+    "returned_event_identity": "memory record; forgotten value not retained",
+    "cause": "The erased child preference is no longer visible, and the exposed forget events omit target identity. Answer explicitly says it cannot identify the person. This is an operation-trace identity/erasure contract gap for this rubric, not omission of available Patricia state or evidence that the segment-30 split newly erased that state."
+  },
+  "p4": {
+    "qid": "B30_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+    "judge_correct": true
+  },
+  "p5": {
+    "qid": "B30_forget.json#p5_operation_application#longitudinal_operation#9",
+    "judge_correct": false,
+    "stored_correct_month": "December",
+    "facts_and_source_remain_active": true,
+    "selected_evidence": 32,
+    "packed_tokens": 5376,
+    "evidence_dispositions": {
+      "e1b7a454787d9abf0afb09c0eb5a50dfd7ab804b6a36d37e5298fdcd483265ae": {
+        "eligible_fact": true,
+        "source_indexed": false,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "semantic",
+          "lexical"
+        ],
+        "candidate_rank_before_packing": null,
+        "discard_reasons": [],
+        "selected": false
+      },
+      "761e96d3a3f931c260ef77cd75518f3c9115946d996835e8b723eb835d555a6d": {
+        "eligible_fact": true,
+        "source_indexed": false,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "semantic",
+          "lexical"
+        ],
+        "candidate_rank_before_packing": null,
+        "discard_reasons": [],
+        "selected": false
+      },
+      "source-1cd52e0af690574b64fe0c51580dc52580649cc5536d9d7bd70a7eacc8a61421": {
+        "eligible_fact": false,
+        "source_indexed": true,
+        "source_filtered": false,
+        "retrieval_routes": [
+          "source-semantic",
+          "source-lexical"
+        ],
+        "candidate_rank_before_packing": 5,
+        "discard_reasons": [
+          "count-limit"
+        ],
+        "selected": false
+      }
+    },
+    "December_in_returned_context": false,
+    "confounding_returned_context": "Raj starts at another consulting firm in November; the timing is close to Marc.",
+    "answer_error": "Infers Marc started around November from another person's month despite no exact Marc start date in supplied evidence.",
+    "cause": "Missing exact date in Search plus unsupported cross-person temporal inference by Answer; correct evidence was stored and not erased."
+  },
+  "interpretation_limits": [
+    "No question is rejudged. These are causal attributions from actual persisted evidence, outputs and deterministic packing code.",
+    "P1/P3 relevant source passages explicitly have count-limit, not budget, discard. Near-6000 packed tokens do not prove token budget caused those omissions.",
+    "Route membership arrays are insertion membership, not individual-route rank. candidate_rank_before_packing is the actual sorted 200-candidate list.",
+    "Raw evidence receives the existing 0.4 packing multiplier; broad entity/item coverage and exact cause of its ranking loss need separate bounded retrieval work, not new gold-specific service rules."
+  ],
+  "evidence_files": {
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/retrievals.jsonl": "1f8c8c03bdfddd02c5c87c7be46eb761bad619e43c20670883264746bac4ab8e",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/predictions.jsonl": "bf5fed126f8d06dae1a91493d673c91c5f32d93d6c6b8548760409beefbdb124",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/judgments.jsonl": "76bb495dd18e760587896fec8926bd733250653f595988d3481663270c2d304a",
+    "eval/artifacts/priority-B30-tail-qa-20260909-01-candidate-memops/requests.jsonl": "485f81b543b222747f179756dfebcf095a00cca5335b25cce473bee05a2cac25",
+    "artifacts/priority-B30-tail-qa-20260909-01/retrieval-stages.jsonl": "f7a896c05b4cefe67867653d123fee0c82839a7389569c5ad7eb9b5bede99600",
+    "artifacts/priority-B30-tail-qa-20260909-01/service-dist/retrieval.js": "4cfaabc385247a3195b83491aec9969f1908caa261a5aca5e050209580ead638",
+    "artifacts/priority-full-20260908-01/checkout/eval/dist/runner.js": "55ff37995cbc5ab303b537addd79c982f5dac330f4afb0c3aec86b4ccf0291c7"
+  }
+}

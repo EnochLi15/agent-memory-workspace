@@ -45,4 +45,23 @@ class B03TailTests(unittest.TestCase):
         self.samples[0]['questions'][-1]['qid']='0'
         with self.assertRaisesRegex(ValueError,'six unique questions'):m.partition(self.samples,self.schedule)
 
+    def test_later_successful_segment45_uses_exact45_prefix_and_five_remaining_adds(self):
+        row=self.schedule[44];case={**self.case,'revision':44,'request_id':row['request_id'],'request_sha256':row['hash']}
+        receipts={r['request_id']:{'hash':r['hash'],'receipt':{'success':True,'request_id':r['request_id'],'user_id':self.user,'session_id':r['request_id'][len(self.user)+1:].rsplit(':',1)[0]}} for r in self.schedule[:45]}
+        prefix={rid:r for rid,r in receipts.items() if rid!=case['request_id']}
+        result={**self.result,'request_id':case['request_id'],'response':receipts[case['request_id']]['receipt']}
+        with closing(sqlite3.connect(self.path)) as db,db:
+            db.executescript('CREATE TABLE meta(key TEXT,value TEXT);CREATE TABLE requests(id TEXT,hash TEXT,receipt TEXT);')
+            db.executemany('INSERT INTO meta VALUES (?,?)',[('user_id',self.user),('source_format','dual-source-v5-s1'),('revision','45')])
+            db.executemany('INSERT INTO requests VALUES (?,?,?)',[(rid,r['hash'],json.dumps(r['receipt'])) for rid,r in receipts.items()])
+        actual=m.successful_prefix(self.path,case,prefix,result,self.schedule,self.namespace)
+        self.assertEqual(actual,receipts);self.assertEqual(len(self.schedule)-len(actual),5)
+        self.assertTrue(self.schedule[len(actual)]['request_id'].endswith(':segment-46:0'))
+
+    def test_case_revision_must_match_exact_original_request_and_hash(self):
+        for changes in [{'revision':44},{'request_id':self.schedule[34]['request_id']},{'request_sha256':'changed'}]:
+            with self.assertRaisesRegex(ValueError,'exact original schedule position'):
+                m.successful_prefix(self.path,{**self.case,**changes},self.prefix,self.result,self.schedule,self.namespace)
+        self.assertFalse(self.path.exists(),'Misaligned provenance must fail before opening the database')
+
 if __name__=='__main__':unittest.main()

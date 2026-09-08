@@ -10,7 +10,7 @@ spec=importlib.util.spec_from_file_location('b03_frozen_core',CORE);core=importl
 fixed,tail=core.fixed,core.tail
 sha,read,write=core.sha,core.read_json,core.write_json
 SAMPLE='B03_remember';CAMPAIGN='priority-B03-tail-qa-20260909-01';PREVIOUS=ROOT/'artifacts/priority-B03-segment34-add-20260909-01'
-SCOPE='B03 original complete 50-add history and six fixed questions; 34 real committed prefix receipts and 16 remaining adds. No rewritten questions or previous-score changes.'
+SCOPE='B03 original complete 50-add history and six fixed questions; resume from the exact committed prefix after a real successful single add. No rewritten questions or previous-score changes.'
 
 
 def previous_path(value):
@@ -36,16 +36,18 @@ def partition(samples,schedule):
 
 def successful_prefix(database,case,prefix,result,schedule,namespace):
     if result.get('http_status')!=200 or result.get('http_attempts')!=1:raise ValueError('Actual single-add HTTP 200 is required before planning')
+    revision=case.get('revision');own=[r for r in schedule if r['sample_id']==SAMPLE]
+    if type(revision) is not int or not 0<=revision<len(own) or case['sample_id']!=SAMPLE or (case['request_id'],case['request_sha256'])!=(own[revision]['request_id'],own[revision]['hash']):raise ValueError('Single-add case must match its exact original schedule position')
     check=fixed.database_result(database,case,prefix,result)
-    if check['integrity']!='pass' or check['revision_after']!=34:raise ValueError('Successful add must have its exact receipt and revision 34')
-    return core.prefix_receipts(database,schedule,namespace,SAMPLE,34)
+    if check['integrity']!='pass' or check['revision_after']!=revision+1:raise ValueError(f'Successful add must have its exact receipt and revision {revision+1}')
+    return core.prefix_receipts(database,schedule,namespace,SAMPLE,revision+1)
 
 
 def source(previous):
     previous=previous_path(previous);idle(previous);p=read(previous/'plan.json')
     if p['protocol']!='fixed-failed-adds-http-v1' or p['planned_adds']!=1:raise ValueError('Expected the single B03 failed-add probe')
     data,origin,_,prefix=fixed.validate_inputs(p['inputs'],p['inputs_sha256']);case=data['cases'][0]
-    if len(data['cases'])!=1 or case['sample_id']!=SAMPLE or case['revision']!=33 or not case['request_id'].endswith(':segment-34:0'):raise ValueError('Single-add source identity changed')
+    if len(data['cases'])!=1 or case['sample_id']!=SAMPLE:raise ValueError('Single-add source identity changed')
     results=read(previous/'results.private.json')
     if len(results)!=1 or read(previous/'http-results/0.private.json')!=results[0]:raise ValueError('Original raw successful HTTP result is required')
     phase=next(x for x in origin['phases'] if x['id']=='memops-risk');eval_root=Path(origin['code_root'])/'eval'
@@ -58,7 +60,7 @@ def source(previous):
     files={str(f):sha(f.read_bytes()) for f in paths};files.update(p['execution_files'])
     dependencies={str(Path(origin['code_root'])/f):h for f,h in origin['frozen_code_hashes'].items()}
     dependencies.update({str(f):sha(f.read_bytes()) for d in ['dist','python'] for f in (eval_root/d).rglob('*') if f.is_file() and '__pycache__' not in f.parts and f.suffix!='.pyc'})
-    snapshot={'sample_id':SAMPLE,'revision':34,'source':str(database),'source_sha256':sha(database.read_bytes()),'logical_state':fixed.logical_state(database)}
+    snapshot={'sample_id':SAMPLE,'revision':case['revision']+1,'source':str(database),'source_sha256':sha(database.read_bytes()),'logical_state':fixed.logical_state(database)}
     return p,origin,samples,schedule,receipts,snapshot,files,dependencies
 
 
@@ -68,7 +70,7 @@ def prepare(args):
     source_dir=previous_path(args.previous);previous,origin,samples,schedule,receipts,snapshot,files,dependencies=source(source_dir)
     if not 1024<=args.port<=65535 or args.port in (8115,8116,8117,8118,8119,8120):raise ValueError('Use an independent port')
     campaign.mkdir(mode=0o700);write(campaign/'samples.json',samples);write(campaign/'schedule.json',schedule);write(campaign/'receipts.private.json',receipts)
-    captured=campaign/'B03-rev34.sqlite'
+    captured=campaign/f"B03-rev{snapshot['revision']}.sqlite"
     with closing(sqlite3.connect(Path(snapshot['source']).as_uri()+'?mode=ro',uri=True)) as src,closing(sqlite3.connect(captured)) as dst:src.backup(dst)
     if fixed.logical_state(captured)!=snapshot['logical_state']:raise ValueError('Source changed during capture')
     snapshot.update(path=str(captured),sha256=sha(captured.read_bytes()))
@@ -84,7 +86,7 @@ def prepare(args):
     dependencies.update({str(f):sha(f.read_bytes()) for f in executor.rglob('*') if f.is_file()})
     dependencies.update({str(campaign/f):sha((campaign/f).read_bytes()) for f in ['package.json','observe-search.mjs','service-launcher.mjs']})
     run_id=campaign.name+'-candidate-memops';phase={'id':'b03-tail','samples':[SAMPLE],'dataset':str(campaign/'samples.json'),'dataset_sha256':sha((campaign/'samples.json').read_bytes()),'planned_questions':len(samples[0]['questions']),'run_id':run_id,'run_dir':str(ROOT/'eval/artifacts'/run_id),'timeout_seconds':10800}
-    pinned={str(campaign/f):sha((campaign/f).read_bytes()) for f in ['samples.json','schedule.json','receipts.private.json','candidate-manifest.json','B03-rev34.sqlite']}
+    pinned={str(campaign/f):sha((campaign/f).read_bytes()) for f in ['samples.json','schedule.json','receipts.private.json','candidate-manifest.json',captured.name]}
     plan={'protocol':'single-B03-tail-qa-v1','campaign':campaign.name,'created_at':core.now(),'scope':SCOPE,'entry_point':str(probes/HERE.name),'previous':str(source_dir),'namespace':origin['namespace'],'eval_code_root':str(Path(origin['code_root'])/'eval'),'eval_commit':tail.EVAL_COMMIT,'spec':origin['spec'],'env_file':origin['env_file'],'candidate_commit':previous['candidate_provenance']['commit'],'candidate_dist':str(campaign/'service-dist'),'candidate_files':previous['candidate_files'],'origin_service_config':str(source_dir/'service.json'),'port':args.port,'data_dir':str(campaign/'data'),'phases':[phase],'planned_questions':len(samples[0]['questions']),'prefix_receipts':len(receipts),'total_adds':len(schedule),'new_tail_adds':len(schedule)-len(receipts),'snapshots':[snapshot],'origin_files':files,'dependencies':dependencies,'pinned_files':pinned}
     write(campaign/'plan.json',plan);result=validate(campaign);write(campaign/'validation.json',result);return result
 
@@ -100,7 +102,7 @@ def validate(campaign,allow_owned_launch=False):
     if read(campaign/'samples.json')!=samples or read(campaign/'schedule.json')!=schedule or read(campaign/'receipts.private.json')!=receipts or len(plan['snapshots'])!=1:raise ValueError('Original data or prefix changed')
     frozen=plan['snapshots'][0]
     if any(frozen.get(k)!=v for k,v in snapshot.items()) or sha(Path(frozen['path']).read_bytes())!=frozen['sha256'] or fixed.logical_state(frozen['path'])!=snapshot['logical_state']:raise ValueError('Actual successful source or captured snapshot changed')
-    if core.prefix_receipts(frozen['path'],schedule,origin['namespace'],SAMPLE,34)!=receipts:raise ValueError('Captured prefix differs')
+    if core.prefix_receipts(frozen['path'],schedule,origin['namespace'],SAMPLE,snapshot['revision'])!=receipts:raise ValueError('Captured prefix differs')
     return {'validation':'passed','model_calls_made':0,'candidate_commit':plan['candidate_commit'],'planned_questions':len(samples[0]['questions']),'prefix_receipts':len(receipts),'new_tail_adds':len(schedule)-len(receipts),'total_adds':len(schedule),'previous_status':idle(source_dir),'entry_point':plan['entry_point']}
 
 

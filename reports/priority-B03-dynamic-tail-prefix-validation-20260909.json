@@ -1,0 +1,66 @@
+{
+  "protocol": "dynamic-single-sample-prefix-validation-v1",
+  "created_at": "2026-09-08T20:29:41.043067+00:00",
+  "adapter": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/run-b03-tail-qa.py",
+  "adapter_sha256": "80198fce75b094d0762a4c6ed472fdb851be934ecd04821413dd5f77b44c5688",
+  "tests": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_b03_tail_qa.py",
+  "tests_sha256": "5fbe6332df7c4bd9912175c1705aa2c92632e058531519633dd13ed75be4c1e0",
+  "scope": "Only the live B03 thin adapter changes; all historical frozen executors/results remain unchanged. Actual successful HTTP result, exact original schedule position, final revision and receipts remain mandatory before any new plan or campaign directory.",
+  "tests_result": {
+    "red": {
+      "original_B03_passed": 3,
+      "new_regressions_failed": 2,
+      "causes": [
+        "Fixed revision34 rejected a complete successful revision45 prefix",
+        "A mismatched case revision/request reached database open before provenance rejection"
+      ]
+    },
+    "green": {
+      "B03_passed": 5,
+      "unchanged_B30_passed": 4,
+      "total_passed": 9
+    },
+    "command": "python3 -m unittest discover -s scripts/probes -p 'test_b[03][03]_tail_qa.py' -v"
+  },
+  "real_successful_source34_check": {
+    "source": "priority-B03-segment34-add-20260909-02",
+    "revision": 34,
+    "exact_receipts": 34,
+    "remaining_adds": 16,
+    "planned_questions": 6,
+    "result": "passed without creating a plan"
+  },
+  "fixture_successful_source45_check": {
+    "revision": 45,
+    "exact_receipts": 45,
+    "remaining_adds": 5,
+    "first_tail_request_suffix": "segment-46:0",
+    "planned_questions": 6,
+    "note": "Local SQLite fixture only; no real segment45 success is claimed."
+  },
+  "real_failed_source_gate": {
+    "source": "priority-B03-segment34-add-20260909-01",
+    "command": [
+      "python3",
+      "scripts/probes/run-b03-tail-qa.py",
+      "--previous",
+      "priority-B03-segment34-add-20260909-01",
+      "--campaign",
+      "priority-B03-tail-qa-20260909-02",
+      "--plan",
+      "--port",
+      "8125"
+    ],
+    "exit_code": 1,
+    "reason": "Actual single-add HTTP 200 is required before planning",
+    "target_exists": false
+  },
+  "unchanged_old_artifacts": {
+    "B03_tail01_entry": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-B03-tail-qa-20260909-01/executor/scripts/probes/run-b03-tail-qa.py",
+    "B03_tail01_entry_sha256": "7b079398b2c734a70fc196395f992da7c3ae034b175e22fb139958f4a35ca207",
+    "B03_tail01_all_plan_pins_verified": true,
+    "B30_live_entry_sha256": "2c6ed34f52d195c6fe2a2923e448ceedab61ddfebf7313ddad08322e021130a2"
+  },
+  "new_model_calls": 0,
+  "new_success_plan_created": false
+}

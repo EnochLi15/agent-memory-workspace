@@ -1,0 +1,59 @@
+{
+  "status": "tail_incomplete_due_new_group_envelope_failure",
+  "campaign": "artifacts/priority-B03-tail-qa-20260909-01",
+  "candidate_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "runtime": {
+    "started_at": "2026-09-08T20:17:11.765502+00:00",
+    "finished_at": "2026-09-08T20:19:32.904934+00:00",
+    "exit_code": 1,
+    "all_owned_stopped": true
+  },
+  "prefix": {
+    "receipts": 34,
+    "http_receipts_verified": 34,
+    "source_revision": 34,
+    "original_source_and_frozen_snapshot_hashes_unchanged": true
+  },
+  "tail": {
+    "planned": 16,
+    "succeeded": 10,
+    "failed": 1,
+    "not_attempted": 5,
+    "failed_segment": 45,
+    "final_revision": 44,
+    "final_receipt_count": 44,
+    "successful_degraded_adds": 3
+  },
+  "qa": {
+    "planned": 6,
+    "correct": 0,
+    "service_error": 6,
+    "answer_calls": 0,
+    "judge_calls": 0,
+    "meaning": "0/6 over planned questions due ingest failure, not six judged wrong answers."
+  },
+  "integrity": "pass",
+  "failure": {
+    "stage": "extraction_group_envelope",
+    "error_code": "EVIDENCE_VALIDATION",
+    "inner_error_code": "EXTRACTION_SCHEMA",
+    "detail_report": "reports/priority-B03-segment45-incident-20260909.json"
+  },
+  "backup": "artifacts/priority-B03-segment45-incident-20260909/before.sqlite",
+  "backup_sha256": "2527f38217f79afb9f020bf477b02777bb1f39ffd671d31612ecf4043d7a24c2",
+  "audit": {
+    "cloud_calls": 0,
+    "database_writes": 0,
+    "source_hashes": {
+      "original": "89998a4c69f38508f4a97ef3a8954101aceaa826bbfd6eba7bac8b1340cabc68",
+      "frozen": "4148af794f8af2182be92d7eeda8c9317b0ebbcbe15a5a93089bb382eadc95fa"
+    },
+    "file_hashes": {
+      "runtime.json": "434ac9a02c465195af5eebf16cd222be0bb6008d85f4826d48b6a3fc6455477d",
+      "summary.json": "6aa06e3b77e742ecfb111a2f0d1ac732d5c2a9ceb5984b0a8ff6209dcf362695",
+      "question-status.json": "b30291c59dcc5d3bbe5c29d91e663c82910a9b93a55414fdb50da96abc45e9b3",
+      "request-status.json": "47c335760e9d71e2fe3e4ac01351786ee578cd1982e031224dc15f38066819c4",
+      "phase-status.json": "396e6771b79700f83e8d011f522a752cdb4aa10e2ea347c88f93aad359b6e196"
+    }
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "status": "actual_group_envelope_failure_before_semantic_verification",
+  "campaign": "artifacts/priority-B03-tail-qa-20260909-01",
+  "candidate_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "successful_tail_adds": 10,
+  "failed_segment": 45,
+  "unattempted_tail_adds": 5,
+  "qa_questions_service_error": 6,
+  "revision": 44,
+  "receipt_count": 44,
+  "failed_request_absent": true,
+  "backup_sha256": "2527f38217f79afb9f020bf477b02777bb1f39ffd671d31612ecf4043d7a24c2",
+  "provider_calls": [
+    {
+      "purpose": "extraction",
+      "trace_id": "666ae5b8-4e88-431b-a4f3-23496bf658ff",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 8490.261333000002
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "8d62f705-cd2f-41c4-b8ef-941806f25e86",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 11801.22045800001
+    },
+    {
+      "purpose": "repair",
+      "trace_id": "af9aa801-ae39-4cdf-8623-957948ce04c4",
+      "attempt": 0,
+      "outcome": "ok",
+      "elapsed_ms": 7692.883499999996
+    }
+  ],
+  "decoder_replay": {
+    "status": "original_three_outputs_reproduce_group_refusal",
+    "cloud_calls": 0,
+    "database_writes": 0,
+    "source_message_index": 9,
+    "source_role": "assistant",
+    "matched_speaker": "Absolutely. Here's the updated version",
+    "expected": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      9,
+      10,
+      12
+    ],
+    "runs": [
+      {
+        "purpose": "extraction",
+        "trace_id": "666ae5b8-4e88-431b-a4f3-23496bf658ff",
+        "outcome": "ok",
+        "attempt": 0,
+        "input_sha256": "fe38e9483986285f217c9a5d16fd125f0cce1c152b58b2482b604891514231b0",
+        "output_sha256": "6e1db0b972bfa64e1095f70f160a4a253c8eca260d67acdbe9dc487f549eefac",
+        "actual_indexes": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ],
+        "missing_indexes": [
+          9
+        ],
+        "facts": 3,
+        "operations": 0,
+        "failure": {
+          "code": "EXTRACTION_SCHEMA",
+          "message": "Grouped extraction must cover every participant exactly once"
+        },
+        "counterfactual_empty_group_decode": "structural_only_pass",
+        "semantic_verification": "not_called_no_verdict"
+      },
+      {
+        "purpose": "repair",
+        "trace_id": "8d62f705-cd2f-41c4-b8ef-941806f25e86",
+        "outcome": "ok",
+        "attempt": 0,
+        "input_sha256": "fa64ca3a271c62e21b4a4d6d359cbe5e178283d689399ee021750bdb585fad5d",
+        "output_sha256": "1be15b599b8922fc48e7c99f8139e3a1f93889796ca641f4c86bea50ef78e09b",
+        "actual_indexes": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ],
+        "missing_indexes": [
+          9
+        ],
+        "facts": 8,
+        "operations": 0,
+        "failure": {
+          "code": "EXTRACTION_SCHEMA",
+          "message": "Grouped extraction must cover every participant exactly once"
+        },
+        "counterfactual_empty_group_decode": "structural_only_pass",
+        "semantic_verification": "not_called_no_verdict"
+      },
+      {
+        "purpose": "repair",
+        "trace_id": "af9aa801-ae39-4cdf-8623-957948ce04c4",
+        "outcome": "ok",
+        "attempt": 0,
+        "input_sha256": "f7f1d46fbe53ffb26c9a19fde64daaf6011256dee85c1a74ec8c31793842adf5",
+        "output_sha256": "1893db4c70912fbf494ddc63e28ee742b347fb47abd0a2edb1ac10dac4a23912",
+        "actual_indexes": [
+          0,
+          2,
+          4,
+          6,
+          8,
+          10,
+          12
+        ],
+        "missing_indexes": [
+          9
+        ],
+        "facts": 9,
+        "operations": 0,
+        "failure": {
+          "code": "EXTRACTION_SCHEMA",
+          "message": "Grouped extraction must cover every participant exactly once"
+        },
+        "counterfactual_empty_group_decode": "structural_only_pass",
+        "semantic_verification": "not_called_no_verdict"
+      }
+    ],
+    "diagnosis": "A generic assistant draft introduction is incorrectly treated as a named human speaker. All model outputs omit that assistant group while preserving all real user groups.",
+    "limits": [
+      "The empty-group diagnostic only demonstrates envelope decoding. It does not establish semantic completeness or change the participant classifier.",
+      "No repaired output, positive verification, source-erasure plan or commit was fabricated.",
+      "The original failure occurs before independent fact/message verification and before autoaggregation."
+    ]
+  },
+  "feedback": "Both repairs received the same generic complete-participant feedback, with no explicit missing index. Other groups expanded from 3 to 8 to 9 facts, but group9 remained absent.",
+  "next_step": "Fix generic assistant sentence introductions being mistaken for a speaker name. Preserve real initials/titles/multilingual names and all role=user participants. Do not fill a false participant group or assign not_memorable.",
+  "cloud_calls": 0,
+  "database_writes_to_original": 0,
+  "source_backup_only": true,
+  "scope_limit": "Pure decoder counterfactual passes do not establish semantic completeness. No fresh verifier verdict or commit has been supplied."
+}

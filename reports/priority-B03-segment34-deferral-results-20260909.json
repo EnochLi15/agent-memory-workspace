@@ -1,0 +1,97 @@
+{
+  "status": "actual_single_add_succeeded_and_content_audited",
+  "campaign": "artifacts/priority-B03-segment34-add-20260909-02",
+  "candidate_commit": "eaddb821a2d0f7f26964fd5d1e6468a3869eaf3d",
+  "http_status": 200,
+  "elapsed_ms": 4478.901458,
+  "revision": [
+    33,
+    34
+  ],
+  "receipts": [
+    33,
+    34
+  ],
+  "prefix_receipts_exact": true,
+  "owned_processes_stopped": true,
+  "sqlite_integrity": "ok",
+  "degraded_reasons": [
+    "aggregate_deferred_erasure"
+  ],
+  "provider_stages": [
+    {
+      "purpose": "extraction",
+      "trace_id": "5339287e-4dab-46a6-be60-dac2d85eefae",
+      "attempt": 0,
+      "outcome": "ok"
+    },
+    {
+      "purpose": "verification",
+      "trace_id": "cf8f4bcf-3b60-44f0-98ee-af7f772ce990",
+      "attempt": 0,
+      "outcome": "ok"
+    }
+  ],
+  "actual_facts": {
+    "count": 3,
+    "difference_from_previous_run": "The actual new extraction has three accepted facts; prior fixed-packet replay had two. The additional fact records travel-guide interest.",
+    "predicates": [
+      "experience",
+      "travel_guide_interest",
+      "plan"
+    ],
+    "all_verified_fact_fields_stored_exact": true,
+    "quotes_match_after_existing_storage_trim": true,
+    "source_spans_match_original_verification_quotes_exact": true,
+    "all_vectors_768": true,
+    "new_reflection_cards": 0
+  },
+  "messages": {
+    "count": 6,
+    "content_role_timestamp_exact": true
+  },
+  "old_data": {
+    "all_95_fact_rows_byte_identical": true,
+    "all_350_message_rows_byte_identical": true,
+    "all_97_event_rows_byte_identical": true,
+    "old_card_count": 13,
+    "all_old_cards_unchanged": true,
+    "previous_five_members_unchanged": true,
+    "current_experience_member_present": true
+  },
+  "events": {
+    "new_count": 3,
+    "new_types": [
+      "remember",
+      "remember",
+      "remember"
+    ],
+    "new_reflection_events": 0
+  },
+  "checks": {
+    "source_databases_physical_hash_unchanged_by_audit": true,
+    "readonly_database_opens": 2,
+    "database_writes": 0,
+    "cloud_calls": 0,
+    "qa_calls": 0,
+    "score_changes": 0
+  },
+  "input_hashes": {
+    "runtime.json": "8454535a128f0564f68066513c00dcd84a5b2b2a286543916c5285767c935ba3",
+    "summary.json": "362dc523c941895a7b57c4aa20c9e8863688834bee732f591e5d1aadca162302",
+    "results.private.json": "a2bf0d541ee07f9a330d498ab56f110d9528ec0f9ea9bd0bbb09b54b5d8e6f99",
+    "model-trace.jsonl": "8ada7dd2cbb2df19613f52d3db540587f67743c3311fbfc9ac4690be4c269097",
+    "model-calls.jsonl": "2d890b5b371de3da45b936d17fd82804bac838f04fdb9c3cf65956ad258f9322",
+    "service.log": "f7b088dbbac4dc33ead3702b15eff39024ab8f8e659b2b905dac1a18512073a4",
+    "frozen-inputs.private.json": "4cea486c0d25e257e5ff78d7ab009e75e378b815b21de7a32624be60db292ae0"
+  },
+  "database_hashes": {
+    "before": "75cc65ac568e14cacaa92ae2516fc7d07b20739f132c2cbddc8e9b7e5226f229",
+    "after": "89998a4c69f38508f4a97ef3a8954101aceaa826bbfd6eba7bac8b1340cabc68"
+  },
+  "limits": [
+    "Success includes an explicitly deferred optional aggregate card; reflect/list retrieval impact is not yet measured.",
+    "The new actual extraction differs from the preceding fixed-output local replay; no two-fact identity claim is made.",
+    "No additional cloud request, retry, QA or database write was performed for this audit."
+  ]
+}
