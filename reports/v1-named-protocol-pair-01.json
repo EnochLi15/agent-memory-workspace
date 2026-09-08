@@ -1,0 +1,228 @@
+{
+  "protocol": "fixed-small-named-protocol-comparison-v1",
+  "campaign": "v1-named-protocol-pair-01",
+  "scope": "One exposed ten-question run per protocol; identical caps, not equal realized compute. No generalization or formal release claim. No 100-question rerun.",
+  "service_tests": 439,
+  "all_workspace_tests": 507,
+  "effective_config_differences": [
+    "dataDir",
+    "verificationFormat"
+  ],
+  "runs": {
+    "control": {
+      "verification_format": "compact",
+      "runtime_status": "finished",
+      "source_commit": "611a2f9fb64c38206e78d9e641286cf12bb54102",
+      "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe",
+      "dataset_sha256": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+      "writes": {
+        "ok": 5
+      },
+      "write_elapsed_ms": 55082.051165000004,
+      "questions": {
+        "judged": 10
+      },
+      "judge_correct": 5,
+      "judge_total": 10,
+      "service_generation_calls": 13,
+      "service_calls_by_purpose": {
+        "extraction": 5,
+        "verification": 6,
+        "source_erasure": 1,
+        "repair": 1
+      },
+      "protocol_repair_calls": 0,
+      "generation_errors": {},
+      "service_token_usage": {
+        "prompt_tokens": 42800,
+        "completion_tokens": 2259,
+        "total_tokens": 45059
+      },
+      "service_tokens_per_successful_write": 9011.8,
+      "storage_checks": {
+        "passed": true,
+        "count": 20
+      },
+      "raw_judgments": [
+        {
+          "qid": "small-city",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-manager",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-work-browser",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-friend-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-forgotten-code",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-tablet-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-olivia-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-andrew-hobby",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-andrew-city",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-tablet-sale",
+          "status": "judged",
+          "correct": false
+        }
+      ],
+      "cost_scope": "Service generation only; Answer/Judge tokens are not recorded by this audit.",
+      "elapsed_seconds": 191.686929
+    },
+    "candidate": {
+      "verification_format": "named",
+      "runtime_status": "finished",
+      "source_commit": "611a2f9fb64c38206e78d9e641286cf12bb54102",
+      "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe",
+      "dataset_sha256": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+      "writes": {
+        "ok": 5
+      },
+      "write_elapsed_ms": 47887.50566699999,
+      "questions": {
+        "judged": 10
+      },
+      "judge_correct": 6,
+      "judge_total": 10,
+      "service_generation_calls": 11,
+      "service_calls_by_purpose": {
+        "extraction": 5,
+        "verification": 5,
+        "source_erasure": 1
+      },
+      "protocol_repair_calls": 0,
+      "generation_errors": {},
+      "service_token_usage": {
+        "prompt_tokens": 36028,
+        "completion_tokens": 2752,
+        "total_tokens": 38780
+      },
+      "service_tokens_per_successful_write": 7756.0,
+      "storage_checks": {
+        "passed": true,
+        "count": 20
+      },
+      "raw_judgments": [
+        {
+          "qid": "small-city",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-manager",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-work-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-friend-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-forgotten-code",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-tablet-browser",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-olivia-browser",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-andrew-hobby",
+          "status": "judged",
+          "correct": true
+        },
+        {
+          "qid": "small-andrew-city",
+          "status": "judged",
+          "correct": false
+        },
+        {
+          "qid": "small-tablet-sale",
+          "status": "judged",
+          "correct": true
+        }
+      ],
+      "cost_scope": "Service generation only; Answer/Judge tokens are not recorded by this audit.",
+      "elapsed_seconds": 334.98543
+    }
+  },
+  "human_labels": 0,
+  "score_overrides": false,
+  "evidence_sha256": {
+    "artifacts/v1-named-protocol-pair-01/control-runtime.json": "5fb4544d43ae2d5b19ba2adfe8b8df69dc7f9673e0b441cf4a243a053750ddeb",
+    "artifacts/v1-named-protocol-pair-01/control-service.json": "489eafe2ea4c69949752cb89a807c17d4112e3104630859c57a6ec7130fc0728",
+    "artifacts/v1-named-protocol-pair-01/control-model-trace.jsonl": "17e79b334ac3b00a17d8277ab627d7fb2c1626eb5281920fa03e1f466aeb4120",
+    "artifacts/v1-named-protocol-pair-01/control-model-calls.jsonl": "194e972bae0a23acd1360cbb7259c433f5c2255f30db65249eaf8ea1ae1ad8c0",
+    "artifacts/v1-named-protocol-pair-01/control-storage-check.json": "73c9ae54d8c6a85c0ecc0f1733829646e656958c9f3cb18d60fe6179beb91854",
+    "artifacts/v1-named-protocol-pair-01/control-audit.json": "f8e576448b5b4060f58459a2f9731c789ac8dd330835ae1793fb8c64bf8cab4e",
+    "eval/artifacts/v1-named-protocol-pair-01-control-memops/manifest.json": "76d9966dfb569b304f354ae75173d089d1dad84c5220b99e702b0aebfe92c9dc",
+    "eval/artifacts/v1-named-protocol-pair-01-control-memops/judgments.jsonl": "ef45a17d89e7b96dac78b89a9644cdff00b0c54b325c7da1dfd76b7465db6831",
+    "eval/artifacts/v1-named-protocol-pair-01-control-memops/ingest.jsonl": "20393282109dfdcff615572271bac700fe1622d2d81a6a8281f8e95a23283b24",
+    "artifacts/v1-named-protocol-pair-01/candidate-runtime.json": "162778f2e1526f216e46399880600359964a773201c9d65260823850ca2fa281",
+    "artifacts/v1-named-protocol-pair-01/candidate-service.json": "f180e08b4c7807a45a116a5cd6eab0ac7f81d0428e93d22c841d322a07cf35cb",
+    "artifacts/v1-named-protocol-pair-01/candidate-model-trace.jsonl": "18f286f32dda7f80593dc21cd4eb316fa6c246e7551fb27bc5b128773099e36e",
+    "artifacts/v1-named-protocol-pair-01/candidate-model-calls.jsonl": "a295cef49d4d22fd77d1e6bc5d44fc1c7da59d10b3c8ea66d6f04ce620165f3a",
+    "artifacts/v1-named-protocol-pair-01/candidate-storage-check.json": "15897740111683989660e40d8baeb522668ad9304d69c259b23911a6978e30e3",
+    "artifacts/v1-named-protocol-pair-01/candidate-audit.json": "74f28e803c671d6bd90a541a54510f5afe300d2af64b59f7808b9b8f29a06ea1",
+    "eval/artifacts/v1-named-protocol-pair-01-candidate-memops/manifest.json": "93a2c935b5f8d1d5b4dad090f43d90ebd4109babcb00399891f3ade79397b966",
+    "eval/artifacts/v1-named-protocol-pair-01-candidate-memops/judgments.jsonl": "0e440bb10d71c681c95d8a6784bf12eb93ad048fd30ca5e52c55eeb4c79b910d",
+    "eval/artifacts/v1-named-protocol-pair-01-candidate-memops/ingest.jsonl": "1fb548057d207dce5e051b144097bb4e6096a4a3e37f13f5028ec753c7eb9c33",
+    "artifacts/v1-named-protocol-replay-01/result.json": "f96632e9f333e82d45948ef3391b889f6ad0409c85d6577d6c7afc0a0e099ff8"
+  },
+  "offline_replay": {
+    "protocol": "named-verification-offline-equivalence-v1",
+    "source_sha256": "f32e0fa929043766c284931e3e64663a9c2a622cd6c177bbc644cd4a8f558376",
+    "model_calls": 0,
+    "scope": "Mechanical re-encoding of recorded parsed verifier output; proves adapter parity, not model adherence to the new protocol. Invalid raw JSON remains rejected.",
+    "records": 144,
+    "equivalent": 143,
+    "invalid_json_rejected": 1
+  },
+  "deployment_decision": "Keep compact as deployment default; named is implemented and explicitly selectable, but this single pair cannot establish a stable reduction in protocol failures.",
+  "interpretation": {
+    "causal_limit": "The control first extraction omitted unsold-tablet state and required semantic repair; candidate first extraction already included it. Extraction behavior was unchanged but outputs varied. Lower cost is not attributable solely to verification encoding.",
+    "raw_score_limit": "Single exposed small pair with existing Answer/Judge calibration limitations. No independent human labels or adjusted accuracy.",
+    "unimplemented": "Targeted missing-check repair and failure isolation are not part of this protocol-only change."
+  }
+}

@@ -15,6 +15,7 @@ make down
 
 - **Docker**：`docker compose up -d` 默认 offline 形态；LLM 形态用 `MEMORY_CONFIG_FILE=configs/release-enhanced.env docker compose up -d`，并在本地 `.env` 填 `MEMORY_LLM_API_KEY` / `MEMORY_LLM_BASE_URL`。`stop_grace_period: 125s` 覆盖 add 尾时。
 - **裸机**：`set -a; . configs/release-offline.env; set +a; MEMORY_DATA_DIR=/data/mem node service/dist/server.js`（:8088）。
+- **无 Docker 本地开发**：Node 24.18.0（`nvm use`）后 `make local` 原生离线运行（默认无需模型；另一终端 `make contract` 校验，启动终端 Ctrl+C 停止，数据保留）；`make local-dev` 自动编译并重启，`make local-debug` 支持 TypeScript 断点；配置模型后 `make local LOCAL_MODE=enhanced`。本地模式使用独立数据目录，详见[无 Docker 开发指南](docs/LOCAL-DEVELOPMENT.md)。
 - 增强模式的本地 embedding（nomic-embed-text）须预置于 Ollama，服务不自动下载。
 
 ## LLM 使用披露（赛题要求）
@@ -45,9 +46,9 @@ make down
 | `configs/release-offline.env` | offline | 确定性规则 | 词法 FTS5（porter 词干）+ 原文 | 零依赖，评测兜底形态 |
 | `configs/release-enhanced.env` | enhanced | LLM 分组（v5 组合） | 混合（语义+词法+实体）+ 原文 | source-first v10 家族（routing/batches/source-first）保持关闭：其"独立覆盖"表示依赖活模型、无法降档，可用性优先 |
 
-## 验证状态（2026-09-07）
+## 验证状态（2026-09-08）
 
-- 单元 **434/434**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 10 项、多源佐证 2 项）。
+- 单元 **466/466**（`cd service && npm test`；含并发、故障注入、原子回滚、Unicode、聚合卡 10 项、多源佐证 2 项、上游验证恢复/具名协议/信封重放 31 项、分片坏 JSON 降档 1 项）。
 - 契约校验器 **12/12**（offline 实例）。
 - intent v2 全量回归：LoCoMo refined 1,382 题 {CURRENT:1376, HISTORICAL:5, TRAJECTORY:1} 零误报；MemOps 纵向 134 去重对 32/32 命中 TRAJECTORY。
 - 场景回归：无时间戳 add、现值/历史包裹模板、题面候选、时间 unresolved、遗忘全路径、**聚合卡端到端**（跨会话累积→单卡全值→forget 全路径清且兄弟成员原文零连坐→复述零复活→干净重建→restore 成员回归家族卡）、**enhanced + 死 LLM 端点端到端**（health 2xx 如实 degraded、add 降档 200、检索命中且聚合卡照常产出）。
@@ -55,4 +56,6 @@ make down
 
 ## 历史与归档
 
-本仓继承基座（EnochLi15/agent-memory-workspace）全部工程骨架（事务化存储、双源索引、幂等、写续传）与历史评测档案。基座 glm-5.2 两轮 100 题 0/100 写入失败的事故记录与限流修正见 [reports/](reports/)；其根因（source-first 严格契约 + 分组/核验覆盖失败即 5xx）已由本轮降档哲学修复并以测试固化。历史 GPT 331/1000 等归档仅作对照，不代表当前配置。部署细节见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)，模型准备见 [docs/MODEL-SETUP.md](docs/MODEL-SETUP.md)，实验协议见 [docs/EXPERIMENT-PROTOCOL.md](docs/EXPERIMENT-PROTOCOL.md)。
+本仓继承基座（EnochLi15/agent-memory-workspace）全部工程骨架（事务化存储、双源索引、幂等、写续传）与历史评测档案。基座 glm-5.2 两轮 100 题 0/100 写入失败的事故记录与限流修正见 [reports/](reports/)；其根因（source-first 严格契约 + 分组/核验覆盖失败即 5xx）已由本轮降档哲学修复并以测试固化。历史 GPT 331/1000 等归档仅作对照，不代表当前配置。部署细节见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)，模型准备见 [docs/MODEL-SETUP.md](docs/MODEL-SETUP.md)，实验协议见 [docs/EXPERIMENT-PROTOCOL.md](docs/EXPERIMENT-PROTOCOL.md)，本地开发见 [docs/LOCAL-DEVELOPMENT.md](docs/LOCAL-DEVELOPMENT.md)。
+
+基座在服务主分支上的后续协议演进记录（与本分支降档哲学独立推进，供对照）：[写入协议修正](reports/v1-protocol-fix.md)（420 项回归 + 6 条原始输出回放）；[固定小集闭环](reports/v1-compat-fix-02.md)（430 项回归，5 次写入 + 10 题判分 + 20 项存储检查，原始评分 5/10）；[具名核验协议对照](reports/v1-named-protocol-pair-01.md)（439 项回归，named 6/10 vs compact 5/10，默认仍 compact、named 显式可选）；[有限核验恢复](reports/v1-verification-recovery-01.md)（519 项回归，5/5 写入 + 10/10 判分 + 20/20 存储检查）。上述记录均在合并前的基座配置下取得；本分支已将其验证恢复管线合入，并与降档哲学按写入模式二分（续传模式保持严格终结、评测模式能力故障降档）。

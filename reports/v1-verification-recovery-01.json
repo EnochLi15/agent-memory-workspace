@@ -1,0 +1,170 @@
+{
+  "protocol": "bounded-verification-recovery-validation-v1",
+  "service_commit": "2c2a5e2847b11bd51423b290bb8c85a3930953b5",
+  "eval_commit": "c1bca67468d338eebcaa1eafd39c28227ad11fbe",
+  "workspace_commit_at_run": "3e37a6a48f9dce886566f55a97d4ebfddcc78d2b",
+  "changes": [
+    "Verification syntax errors get one fresh full-scope verification within the existing two-call budget.",
+    "Parseable protocol failures retain only independently validated unique in-scope checks; retry requests remaining checks only.",
+    "Known negative findings are retained; unknown fields, conflicting identities, exhausted repair, and uncertain erasure remain rejected.",
+    "A private verification-result envelope lets HTTP continuation replay malformed output and resume its repair without marking a subsequently recovered write terminal. Extraction syntax failures remain terminal."
+  ],
+  "budgets": {
+    "verification_calls_per_verify": 2,
+    "add_timeout_ms": 115000,
+    "search_timeout_ms": 55000,
+    "semantic_repairs_max": 2,
+    "transport_attempts_max": 3,
+    "default_verification_format": "compact",
+    "expanded_sample_or_baseline_run": false
+  },
+  "tests": {
+    "service": 451,
+    "eval_node": 24,
+    "eval_python": 17,
+    "experiments_python": 14,
+    "delivery_python": 10,
+    "local_node": 3,
+    "total_passed": 519,
+    "failed": 0,
+    "command": "make test",
+    "coverage": [
+      "Targeted remaining-check repair for compact/named; verbose negatives survive missing arrays.",
+      "Duplicate IDs, cached-check replacement, failed-repair cache isolation, deadline exhaustion and sparse replacement ordinals.",
+      "Real HTTP/SSE recovery, atomic refusal after exhausted repair, and identical-payload continuation after transient repair failure."
+    ]
+  },
+  "targeted_original_replay": {
+    "original_trace_id": "a268fd88-254a-4a16-9dc7-c32caaff8a00",
+    "original_response_sha256": "29748c080ab4cbf565dfb2039155eaef35deb4f26b53438b22da894b06168587",
+    "database_writes": 0,
+    "scope": "Original malformed verifier output replay followed by at most one logical live verification repair; no extraction, answer, judge, or original database mutation.",
+    "completed_verification": false,
+    "error": {
+      "code": "EVIDENCE_VALIDATION",
+      "message": "Unknown compact verification field"
+    },
+    "replayed_invalid_responses": 1,
+    "live_logical_calls": 1
+  },
+  "targeted_replay_analysis": "One live GLM-5.2 call restored JSON syntax but introduced unsupported top-level source_coverage_checks; final semantic verification did not complete. No third call or database write. Current diagnostic now includes the unexpected field name.",
+  "small_campaign": {
+    "campaign": "v1-small-verification-recovery-01",
+    "dataset_sha256": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "runtime_status": "finished",
+    "planned": 10,
+    "question_statuses": {
+      "judged": 10
+    },
+    "judge_correct": 5,
+    "raw_judge_accuracy": 0.5,
+    "writes": {
+      "ok": 5
+    },
+    "retrievals": 10,
+    "service_generation_calls": 11,
+    "service_generation_purposes": {
+      "extraction": 5,
+      "verification": 5,
+      "source_erasure": 1
+    },
+    "service_generation_outcomes": {
+      "ok": 11
+    },
+    "verification_protocol_repair_calls": 0,
+    "service_usage": {
+      "prompt_tokens": 36446,
+      "completion_tokens": 1972,
+      "total_tokens": 38418
+    },
+    "token_scope": "Service generation only; excludes Answer/Judge and embeddings.",
+    "successful_write_elapsed_ms_total": 33913.376332,
+    "runtime_elapsed_seconds": 195.481774,
+    "storage_checks": {
+      "protocol": "v1-fixed-small-storage-readback-v1",
+      "campaign": "v1-small-verification-recovery-01",
+      "checks": {
+        "bounded-retention": {
+          "receipts_match_logical_adds": true,
+          "no_pending_preparation": true,
+          "Maya_Chrome_retained": true,
+          "Olivia_Edge_retained": true,
+          "Andrew_Boston_retained": true,
+          "Andrew_painting_retained": true,
+          "no_unauthorized_forget_event": true,
+          "no_erased_facts": true
+        },
+        "bounded-lifecycle": {
+          "receipts_match_logical_adds": true,
+          "no_pending_preparation": true,
+          "code_absent_from_readable_tables_and_fts": true,
+          "code_erased_without_vector_or_quotes": true,
+          "current_city_Portland": true,
+          "current_browser_Safari": true,
+          "old_city_superseded": true,
+          "old_browser_superseded": true,
+          "Clara_neighbor_retained": true,
+          "Kevin_Brave_retained": true,
+          "forget_event_present": true,
+          "two_update_events_present": true
+        }
+      },
+      "databases": {
+        "service/.data/v1-small-verification-recovery-01-candidate/04aa991b60bf03dc0a6a53f2e22a92fac01111cc664849bdb2adb818df344a49/memory.sqlite": {
+          "sha256": "ac3966ff799cd4c186018c3ddb2d6b8a2006a489975b72c58e7287fe2941f8ee",
+          "source_format": "dual-source-v10-s1",
+          "revision": "2"
+        },
+        "service/.data/v1-small-verification-recovery-01-candidate/0a2450c8706ff994e9b12ebde766f99e5e5387be35ac71d1c5e577344f44134c/memory.sqlite": {
+          "sha256": "413e7dd0b30277230b37fcadaf40962d2c6e44775694c7ad16391bd69c6d3798",
+          "source_format": "dual-source-v10-s1",
+          "revision": "3"
+        }
+      },
+      "scope": "Readonly logical SQLite fields and FTS; no physical disk or private trace erasure claim.",
+      "check_provenance": "Reuses the previously corrected fixed 20-check verifier; current value checks use structured value, with independent superseded-history assertions.",
+      "count": 20,
+      "passed": true
+    },
+    "all_owned_children_exited": true
+  },
+  "agent_review": {
+    "human_labels": 0,
+    "raw_scores_unchanged": true,
+    "disputed_judge_rejections": [
+      "small-city",
+      "small-manager",
+      "small-work-browser",
+      "small-tablet-browser",
+      "small-tablet-sale"
+    ],
+    "basis": "The rejected quotes, current/previous browser attribution, and observation dates exist in saved retrievals and fixture messages. The judge receives question/reference/rubric/answer, without source evidence (eval/src/runner.ts). These are assistant-reviewed scoring disputes, not independent human labels or an adjusted accuracy.",
+    "unsold_tablet": "This run extracted and retrieved the explicit not-sold fact. Prior omission remains a stochastic coverage risk; no coverage fix is claimed."
+  },
+  "limits": [
+    "This exposed fixed 10-question run contains zero malformed-verification events, so it validates regression safety but does not establish a live recovery success rate.",
+    "The original malformed-output targeted replay still fails on a new unknown field.",
+    "One small run and assistant-only review cannot establish overall accuracy or stable improvement.",
+    "No new 100-question evaluation, formal release, or physical disk/private trace erasure claim."
+  ],
+  "evidence_sha256": {
+    "configs/round2-small-closed-loop-v1.json": "bae10aeba999800b18e093a80f232a4b7100ea48b08200d0e6e4187a85bbaa87",
+    "reports/v1-small-verification-recovery-01-audit.json": "4663bfced8578edd4d26ab11ed097ec8d291d2daae2f02773ce16f2f3db0517d",
+    "artifacts/v1-small-verification-recovery-01/candidate-runtime.json": "4f7d7df57c921d1b875e44e914c729adebd4265d26eb2ae0ee664e1674185884",
+    "artifacts/v1-small-verification-recovery-01/candidate-service.json": "a290e9e60cf0ea48ab38ff442444b565bff2a98e7ec80d11ba7ec1627fa2930b",
+    "artifacts/v1-small-verification-recovery-01/candidate-storage-check.json": "023345ae152ea6b1d7fe3afccac2c96294e5188465bbb6303f0aaca66b778529",
+    "artifacts/v1-small-verification-recovery-01/candidate-model-calls.jsonl": "d00a2c66a970834f6e205b6b149702b0706a40cbef2ed365f6b3aa0012a91551",
+    "artifacts/v1-small-verification-recovery-01/candidate-model-trace.jsonl": "7399978ce5fb7a018555ba301dcba477cd556036a9c6c39b2bb2289e1452a379",
+    "artifacts/v1-small-verification-recovery-01/regression-tests.log": "1bde4403b77881d3963ded922e18057e9dd84595d134bc7a3ffe7b40c1beab6c",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/manifest.json": "648291e53848c4c0155ccc96225215cf75812cfcaaf12b88cf6f79eb4d3ba15d",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/ingest.jsonl": "e12d8f07f52d4ad9f1e38bdd48b9559fcf72a54e883622c720d8372b84c08fd1",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/requests.jsonl": "a3d79611d0a03f2dff7cc77c0b2ab7d03dabdcc48ab2451148eeea7dfba27c65",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/retrievals.jsonl": "be2c2727df434e2e2921445539beaa2cad21f5f9463eea9f148e698d913143b5",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/predictions.jsonl": "91a08577c9597546b9c52a4759f809e658c30b97ae586eb71c8b8e1325be1c41",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/judgments.jsonl": "f6a40226b3082e85b65ad0e56cd1e748abd3482699b49d0057ea33d1f65de31e",
+    "eval/artifacts/v1-small-verification-recovery-01-candidate-memops/metrics.json": "2c69867f54d5d8c49b358d8f9840f1697a568e890cab50c00f200b0ab37b0295",
+    "artifacts/v1-verification-recovery-01/result.json": "e7ad4777f716fc3419d45bbea4a307e1dcf5274fed67f7e192ad1b9502a6eae3",
+    "artifacts/v1-verification-recovery-01/model-calls.jsonl": "3b557bb5640b97bac31e161e5b77f2361741e09ff177e3037371b1ae5fcfaa3a",
+    "artifacts/v1-verification-recovery-01/model-trace.jsonl": "7c5fb4ab0449e912c3a243a39f99b5739851c29919e34e00e8e273c3606fbbd2"
+  }
+}

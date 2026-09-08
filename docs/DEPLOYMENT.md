@@ -4,6 +4,8 @@
 
 ## 配置与启动
 
+无需 Docker 的启动、热重启与断点调试见[本地开发指南](LOCAL-DEVELOPMENT.md)。下文是可选的容器流程；`make build` 现在只做原生编译，镜像构建使用 `make docker-build`。
+
 增强配置只有一份：`configs/release-enhanced.env`。离线配置为 `configs/release-offline.env`。Compose 从所选文件读取行为开关，只从本地 `.env` 读取连接地址、凭据和部署参数；旧实验开关不会覆盖发布配置。`service/.env.example` 是增强配置的独立服务模板。
 
 宿主机构建需要 Node 24.18.0、Python 3 和 Docker；运行 service 镜像不依赖 eval。当前容器实测平台为 Docker Linux arm64，宿主机 macOS arm64。没有将 amd64 标为已验证。
@@ -11,7 +13,7 @@
 ```sh
 nvm use
 make init
-make build
+make docker-build
 # 已有 .env 时保留原文件；首次部署才复制：
 cp -n .env.example .env
 # 在 .env 填写可从容器访问的 MEMORY_LLM_BASE_URL 和 MEMORY_LLM_API_KEY。
