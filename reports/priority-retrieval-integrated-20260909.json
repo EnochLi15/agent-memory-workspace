@@ -1,0 +1,598 @@
+{
+  "protocol": "priority-retrieval-integrated-20260909-v1",
+  "status": "frozen_not_suitable_for_direct_promotion",
+  "primary_finding": "Both raw-twin and combined candidates remove A06 p3’s only selected Surfsand Resort evidence at the 32-evidence count limit. Better conv30 source-ID coverage does not cancel this required body-evidence regression.",
+  "base_commit": "ce935bfd34e50e64e9fe5f149ceb3cc3b93ae9d6",
+  "candidates": {
+    "first": {
+      "commit": "52a33590a0dde3c3da01472dbe95e17368892f88",
+      "manifest_sha256": "92d504449c002831ba15f94073dace9da7046bc091f74f80060013815a974e62",
+      "retrieval_js_sha256": "e8dcd5434b96f9aa4d9d45ab15d7bc95e5454640facc90ab0e4041f49d952332",
+      "original_retrieval_binary_identical": true,
+      "original_commit": "f6d4f29c2bd6b8fdca1d30a65cfb82fd61cc26e7",
+      "changed_dist_relative_to_ce935": [
+        "retrieval.js",
+        "retrieval.js.map"
+      ]
+    },
+    "combined": {
+      "commit": "3ec7347bcd36678fd8b7603f9ff3c2e623737c36",
+      "manifest_sha256": "42a28c9897a7c5175f658868c65fe9938417a6631d6165a9add7f183b2949362",
+      "retrieval_js_sha256": "81c1f1acca1ab43c5abd933503800fc0a2346720405d3274d89da7b6d90e62bb",
+      "original_retrieval_binary_identical": true,
+      "original_commit": "c46ecd78a07be4dc12f6a276e8f50995a4bc4b3a",
+      "changed_dist_relative_to_ce935": [
+        "retrieval.js",
+        "retrieval.js.map"
+      ]
+    }
+  },
+  "cloud_calls": 0,
+  "embedding_calls": 0,
+  "answer_judge_calls": 0,
+  "merge": {
+    "conflicts": 0,
+    "semantic_edits": 0,
+    "method": "Original f6d4f29 then c46ecd7 cherry-picked unchanged as separate commits.",
+    "history_rendering_8cc_included": false,
+    "source_files_changed": [
+      "src/retrieval.ts",
+      "tests/raw-evidence-packing.test.ts",
+      "tests/temporal-evidence-ranking.test.ts"
+    ],
+    "limits_unchanged": {
+      "candidateLimit": 200,
+      "maxEvidence": 32,
+      "tokenBudget": 6000
+    }
+  },
+  "validation": {
+    "first": {
+      "build": "pass",
+      "full_tests": 592,
+      "passed": 592,
+      "failed": 0
+    },
+    "combined": {
+      "build": "pass",
+      "full_tests": 596,
+      "passed": 596,
+      "failed": 0
+    },
+    "offline_queries": {
+      "conv30": 72,
+      "a06": 5,
+      "variants_per_query": 3,
+      "additional_original_c46_a06_queries": 5
+    },
+    "lifecycle_checks": "All 231 primary retrieve/pack runs select stored facts only from visible IDs and raw passages only when all linked facts are visible. Seven independent SQLite clones remain byte-identical; no constructor/server/model was instantiated.",
+    "event_privacy": "All A06 selected outputs for both integrated candidates retain ce935 closed event projection: zero whole legacy descriptors and zero incident sensitive name/divorce/separation marker hits.",
+    "inputs_unchanged": true,
+    "worktree_clean": true,
+    "visibility_ledger_totals": {
+      "runs": 231,
+      "stored_facts": 6927,
+      "raw_passages": 279,
+      "events": 15,
+      "visibility_failures": 0,
+      "retained_event_text_changes": 0
+    }
+  },
+  "vector_provenance": {
+    "conv30": "Reuses 72 local query vectors saved by the prior 20260908 retrieval diagnostic; no embedding call here. The original diagnostic generated these vectors and reproduced all 72 saved selection orders; they were not instrumented original search-call captures.",
+    "a06": "Five actual returned search vectors captured by the transparent observer in priority-A06-history-qa-20260909-01."
+  },
+  "conv30_complete_72": {
+    "baseline": {
+      "questions": 72,
+      "annotated_sources": 96,
+      "hit_sources": 74,
+      "fully_covered_questions": 57,
+      "zero_covered_questions": 10,
+      "improved_qids": [],
+      "regressed_qids": [],
+      "non_gold_source_displacements": 0,
+      "max_candidates": 200,
+      "max_evidence": 32,
+      "max_tokens": 5997,
+      "old_original_match_count": 72,
+      "changed_source_questions": 0,
+      "non_gold_displaced_questions": 0,
+      "non_gold_displaced_qids": []
+    },
+    "first": {
+      "questions": 72,
+      "annotated_sources": 96,
+      "hit_sources": 75,
+      "fully_covered_questions": 58,
+      "zero_covered_questions": 9,
+      "improved_qids": [
+        "conv-30#q0044"
+      ],
+      "regressed_qids": [],
+      "non_gold_source_displacements": 70,
+      "max_candidates": 200,
+      "max_evidence": 32,
+      "max_tokens": 5997,
+      "old_original_match_count": 72,
+      "changed_source_questions": 37,
+      "non_gold_displaced_questions": 35,
+      "non_gold_displaced_qids": [
+        "conv-30#q0004",
+        "conv-30#q0005",
+        "conv-30#q0006",
+        "conv-30#q0009",
+        "conv-30#q0015",
+        "conv-30#q0018",
+        "conv-30#q0021",
+        "conv-30#q0023",
+        "conv-30#q0032",
+        "conv-30#q0034",
+        "conv-30#q0035",
+        "conv-30#q0036",
+        "conv-30#q0037",
+        "conv-30#q0038",
+        "conv-30#q0042",
+        "conv-30#q0044",
+        "conv-30#q0045",
+        "conv-30#q0047",
+        "conv-30#q0048",
+        "conv-30#q0049",
+        "conv-30#q0050",
+        "conv-30#q0051",
+        "conv-30#q0052",
+        "conv-30#q0054",
+        "conv-30#q0055",
+        "conv-30#q0056",
+        "conv-30#q0057",
+        "conv-30#q0058",
+        "conv-30#q0059",
+        "conv-30#q0060",
+        "conv-30#q0061",
+        "conv-30#q0063",
+        "conv-30#q0064",
+        "conv-30#q0065",
+        "conv-30#q0067"
+      ]
+    },
+    "combined": {
+      "questions": 72,
+      "annotated_sources": 96,
+      "hit_sources": 76,
+      "fully_covered_questions": 59,
+      "zero_covered_questions": 8,
+      "improved_qids": [
+        "conv-30#q0031",
+        "conv-30#q0044"
+      ],
+      "regressed_qids": [],
+      "non_gold_source_displacements": 176,
+      "max_candidates": 200,
+      "max_evidence": 32,
+      "max_tokens": 6000,
+      "old_original_match_count": 72,
+      "changed_source_questions": 59,
+      "non_gold_displaced_questions": 57,
+      "non_gold_displaced_qids": [
+        "conv-30#q0000",
+        "conv-30#q0001",
+        "conv-30#q0004",
+        "conv-30#q0005",
+        "conv-30#q0006",
+        "conv-30#q0007",
+        "conv-30#q0008",
+        "conv-30#q0009",
+        "conv-30#q0010",
+        "conv-30#q0011",
+        "conv-30#q0012",
+        "conv-30#q0013",
+        "conv-30#q0014",
+        "conv-30#q0015",
+        "conv-30#q0016",
+        "conv-30#q0017",
+        "conv-30#q0018",
+        "conv-30#q0020",
+        "conv-30#q0021",
+        "conv-30#q0022",
+        "conv-30#q0023",
+        "conv-30#q0024",
+        "conv-30#q0025",
+        "conv-30#q0026",
+        "conv-30#q0027",
+        "conv-30#q0028",
+        "conv-30#q0029",
+        "conv-30#q0030",
+        "conv-30#q0031",
+        "conv-30#q0032",
+        "conv-30#q0034",
+        "conv-30#q0035",
+        "conv-30#q0036",
+        "conv-30#q0037",
+        "conv-30#q0038",
+        "conv-30#q0042",
+        "conv-30#q0044",
+        "conv-30#q0045",
+        "conv-30#q0047",
+        "conv-30#q0048",
+        "conv-30#q0049",
+        "conv-30#q0050",
+        "conv-30#q0051",
+        "conv-30#q0052",
+        "conv-30#q0054",
+        "conv-30#q0055",
+        "conv-30#q0056",
+        "conv-30#q0057",
+        "conv-30#q0058",
+        "conv-30#q0059",
+        "conv-30#q0060",
+        "conv-30#q0061",
+        "conv-30#q0063",
+        "conv-30#q0064",
+        "conv-30#q0065",
+        "conv-30#q0067",
+        "conv-30#q0071"
+      ]
+    }
+  },
+  "annotation_caveat": {
+    "qid": "conv-30#q0018",
+    "source_id": "D8:4",
+    "note": "The earlier diagnosis found this likely unreliable: the reference is a different speaker discussing her store, while the question asks about Jon’s participation. Retained unchanged in all reported annotation metrics; not silently filtered."
+  },
+  "a06_all_five": {
+    "body_matrix": [
+      {
+        "qid": "A06_forget.json#p1_operation_trace#longitudinal_operation#1",
+        "variants": {
+          "baseline": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": false
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 17,
+            "raw": 0,
+            "events": 1,
+            "tokens": 5953,
+            "added_selected": 0,
+            "removed_selected": 0,
+            "added_physical_sources": 0,
+            "removed_physical_sources": 0
+          },
+          "first": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": false
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 21,
+            "raw": 9,
+            "events": 1,
+            "tokens": 5953,
+            "added_selected": 9,
+            "removed_selected": 5,
+            "added_physical_sources": 7,
+            "removed_physical_sources": 2
+          },
+          "combined": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": false
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 21,
+            "raw": 9,
+            "events": 1,
+            "tokens": 5953,
+            "added_selected": 9,
+            "removed_selected": 5,
+            "added_physical_sources": 7,
+            "removed_physical_sources": 2
+          }
+        }
+      },
+      {
+        "qid": "A06_forget.json#p2_target_binding#longitudinal_operation#3",
+        "variants": {
+          "baseline": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": true,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 19,
+            "raw": 0,
+            "events": 4,
+            "tokens": 5989,
+            "added_selected": 0,
+            "removed_selected": 0,
+            "added_physical_sources": 0,
+            "removed_physical_sources": 0
+          },
+          "first": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": true,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": false
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 21,
+            "raw": 6,
+            "events": 4,
+            "tokens": 5980,
+            "added_selected": 6,
+            "removed_selected": 4,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 3
+          },
+          "combined": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": true,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": false
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 21,
+            "raw": 6,
+            "events": 4,
+            "tokens": 5980,
+            "added_selected": 6,
+            "removed_selected": 4,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 3
+          }
+        }
+      },
+      {
+        "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+        "variants": {
+          "baseline": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": true,
+              "Surfsand": true,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": false,
+            "selected": 28,
+            "raw": 0,
+            "events": 0,
+            "tokens": 5996,
+            "added_selected": 0,
+            "removed_selected": 0,
+            "added_physical_sources": 0,
+            "removed_physical_sources": 0
+          },
+          "first": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": true,
+              "David": false,
+              "Cannon Beach": true,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": false,
+            "selected": 32,
+            "raw": 17,
+            "events": 0,
+            "tokens": 5757,
+            "added_selected": 17,
+            "removed_selected": 13,
+            "added_physical_sources": 10,
+            "removed_physical_sources": 8
+          },
+          "combined": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": true,
+              "David": false,
+              "Cannon Beach": true,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": false,
+            "selected": 32,
+            "raw": 17,
+            "events": 0,
+            "tokens": 5757,
+            "added_selected": 17,
+            "removed_selected": 13,
+            "added_physical_sources": 10,
+            "removed_physical_sources": 8
+          }
+        }
+      },
+      {
+        "qid": "A06_forget.json#p4_candidate_disambiguation#longitudinal_operation#7",
+        "variants": {
+          "baseline": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 17,
+            "raw": 0,
+            "events": 0,
+            "tokens": 5998,
+            "added_selected": 0,
+            "removed_selected": 0,
+            "added_physical_sources": 0,
+            "removed_physical_sources": 0
+          },
+          "first": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 19,
+            "raw": 5,
+            "events": 0,
+            "tokens": 5992,
+            "added_selected": 5,
+            "removed_selected": 3,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 1
+          },
+          "combined": {
+            "literal_presence": {
+              "Choi": false,
+              "Min-ji": false,
+              "David": false,
+              "Cannon Beach": false,
+              "Surfsand": false,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 19,
+            "raw": 5,
+            "events": 0,
+            "tokens": 5992,
+            "added_selected": 5,
+            "removed_selected": 3,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 1
+          }
+        }
+      },
+      {
+        "qid": "A06_forget.json#p5_operation_application#longitudinal_operation#9",
+        "variants": {
+          "baseline": {
+            "literal_presence": {
+              "Choi": true,
+              "Min-ji": true,
+              "David": true,
+              "Cannon Beach": true,
+              "Surfsand": true,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 20,
+            "raw": 0,
+            "events": 0,
+            "tokens": 5981,
+            "added_selected": 0,
+            "removed_selected": 0,
+            "added_physical_sources": 0,
+            "removed_physical_sources": 0
+          },
+          "first": {
+            "literal_presence": {
+              "Choi": true,
+              "Min-ji": true,
+              "David": true,
+              "Cannon Beach": true,
+              "Surfsand": true,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 21,
+            "raw": 3,
+            "events": 0,
+            "tokens": 5993,
+            "added_selected": 3,
+            "removed_selected": 2,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 0
+          },
+          "combined": {
+            "literal_presence": {
+              "Choi": true,
+              "Min-ji": true,
+              "David": true,
+              "Cannon Beach": true,
+              "Surfsand": true,
+              "Basenji": true
+            },
+            "friend_support_inferred_selected": true,
+            "selected": 20,
+            "raw": 4,
+            "events": 0,
+            "tokens": 5970,
+            "added_selected": 4,
+            "removed_selected": 4,
+            "added_physical_sources": 2,
+            "removed_physical_sources": 1
+          }
+        }
+      }
+    ],
+    "physical_source_displacements": {
+      "first": {
+        "physical_source_occurrences_removed": 14,
+        "questions_with_removed_sources": 4
+      },
+      "combined": {
+        "physical_source_occurrences_removed": 15,
+        "questions_with_removed_sources": 5
+      }
+    },
+    "findings": {
+      "p1": "Nine raw passages enter and five earlier rows leave, but required Choi, Min-ji/David, beach/hotel and breed details remain absent. No claimed repair of the original omissions. The retained independent friend-support fact and selected safe operation event remain present.",
+      "p2": "Six raw passages enter and four earlier rows leave. All four selected forget events remain present and sanitized. Previously supplied Basenji context is displaced; its relevance to this target-binding question is not assumed. Independent friend-support evidence remains selected.",
+      "p3": "Both candidates reach 32 rows (17 raw) at only5757 tokens. Booking fact2ed6f52ed7b5 remains in the candidate pool but is rejected by count-limit. It was the only selected source of Surfsand Resort, which disappears from all selected text. The retained c66c98854c70 kept-plan fact still provides Cannon Beach but not the hotel name. A new short raw retention statement mentions Min-ji but supplies neither David nor their engagement binding. Choi still misses the pool.",
+      "p4": "Five raw passages enter and three earlier rows leave. The independent inferred friend-support fact is still selected; the incident sensitive markers remain absent. This does not address the prior Answer copying distractor options.",
+      "p5": "Both variants add source-5c6628d525a3f5fa24c8b1a524ea0bff0226035325c11d4925828571b148b079, whose complete raw sentence binds Lauren’s sister Min-ji to boyfriend David and engagement. First keeps the old dinner fact; combined drops it while retaining the stronger direct engagement witness. Marriage/trip/hotel/dog details remain supplied. Only this question has temporal intent, so first and combined are identical on p1–p4."
+    }
+  },
+  "comparison_with_original_c46": {
+    "conv30": "Each baseline/first/combined output exactly equals its corresponding original saved baseline/f6/c46 output for all72 questions, including ID/order/content/score/token cost. Both transplanted retrieval.js binaries are byte-identical to the original corresponding binaries.",
+    "a06": "Additional original-c46 replay matches the integrated combined output on4/5 questions. Onp2 the old c46 bundle re-exposes the two sensitive legacy event descriptions; the integrated candidate keeps them sanitized and additionally fits the marriage fact (20→21 rows,5944→5980 tokens). These differences come from the ce935 safety base, not changes to the transplanted retrieval logic.",
+    "details": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/original-c46-a06-comparison.json"
+  },
+  "recommendation": "Retain both separate commits as counterfactual materials. Do not promote or cloud-test them as a presumed improvement in this round. A later study may address raw/fact overlap consuming evidence slots, but no such rule or budget change is included here. Any future paired QA must cover all72 questions and all5 A06 questions, including57 questions with176 non-gold source displacements and the explicitp3 regression.",
+  "limitations": [
+    "Source-ID coverage does not establish semantic entailment or answer correctness.",
+    "A06 provides no gold source-ID annotations, so those metrics are not applicable; required body evidence and physical source changes are reported instead.",
+    "Observation anchors may be useful when the question asks when something was mentioned. The temporal patch only removes unparsed-anchor ranking advantage; it preserves temporal content and does not prove event time always answers a time question.",
+    "No existing score, original report, source database, current cloud campaign or frozen candidate was modified."
+  ],
+  "artifacts": {
+    "worktree": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/service",
+    "first_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/first-dist",
+    "combined_dist": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/combined-dist",
+    "first_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/first-manifest.json",
+    "combined_manifest": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/combined-manifest.json",
+    "detailed_all77_rows": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/paired-retrieval-report.json",
+    "complete_selected_evidence_private": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/replay-results.private.json",
+    "a06_body_matrix": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/a06-body-coverage.json",
+    "replay": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/replay.mjs",
+    "combined_diff": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/combined.diff",
+    "all_selected_visibility_ledger": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-retrieval-integrated-20260909/visibility-checks.json"
+  }
+}
