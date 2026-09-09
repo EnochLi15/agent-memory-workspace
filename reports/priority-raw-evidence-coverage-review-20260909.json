@@ -1,0 +1,171 @@
+{
+  "protocol": "raw-evidence-coverage-offline-review-v1",
+  "created_at": "2026-09-09T00:06:25.454078+00:00",
+  "decision": "reject_no_promotion",
+  "stable_candidate": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+  "rejected_experiment_commit": "493dfc7ec768397061442b03fb632b8de4490ca0",
+  "scope": "One preselected evidence-packing hypothesis, evaluated with all 47 completed LoCoMo queries and the existing 16 MemoryOps queries. No model, Answer or Judge calls; historical scores unchanged.",
+  "hypothesis": "Preserve the original fused score of raw evidence unless all its exact source fragments have actually been rendered in previously accepted output. Apply the existing 0.4 multiplier only after that coverage is established. Source-ID equality, summaries and partial quotes do not establish full coverage.",
+  "fixed_constraints": {
+    "candidate_limit": 200,
+    "max_evidence": 32,
+    "token_budget": 6000,
+    "collection_and_visibility": "unchanged",
+    "queries_vectors_databases_focus": "same recorded inputs and actual applied focus",
+    "gold_used_by_candidate": false
+  },
+  "baseline_replay": {
+    "complete_Search_exact": 63,
+    "total": 63,
+    "locomo_47": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv43-retrieval-replay-20260909/summary.json",
+      "sha256": "25282485ef3fa5bdbae37222705390909e3e3649fdf5dc3ccf28488d61b41719"
+    },
+    "memops_16": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-memops16-retrieval-replay-20260909/reproduction-report.json",
+      "sha256": "48f911bcae6ced44176b2c312d5d32d2cf9859596de5f2a0c5c06700d8ad85f5"
+    },
+    "same_db_no_new_ingestion": true
+  },
+  "locomo_comparison": {
+    "queries": 47,
+    "complete_Search_changed": {
+      "total": 11,
+      "original_correct": 10,
+      "original_incorrect": 1
+    },
+    "known_missing_evidence_checks": [
+      {
+        "qid": "conv-43#q0006",
+        "finding": "完整data不变；候选池外的明确爱好事实和已入池却被count-limit排除的活动事实仍未进入。"
+      },
+      {
+        "qid": "conv-43#q0011",
+        "finding": "两条raw新增、两条旧证据移除，但中间事件完整claim与三条完整quote仍缺。候选池不变，池外桥接不可能由本packing改动恢复。"
+      },
+      {
+        "qid": "conv-43#q0022",
+        "finding": "完整data不变；第二活动成员关系claim/quotes仍缺。"
+      },
+      {
+        "qid": "conv-43#q0023",
+        "finding": "完整data不变；第二人物具名偏好claim/完整quote仍缺。"
+      },
+      {
+        "qid": "conv-43#q0041",
+        "finding": "完整data不变；具有回顾时间信息的完整原来源及相关完整候选片段仍未进入。"
+      }
+    ],
+    "correct_question_mechanical_retention": {
+      "original_rendered_evidence_items": 1131,
+      "original_complete_claim_occurrences": 1131,
+      "retained_complete_claim_occurrences": 1119,
+      "lost_complete_claim_occurrences": 12,
+      "lost_claim_with_all_stored_witnesses_still_rendered": 1,
+      "lost_claim_without_complete_stored_witness_replacement": 11,
+      "original_returned_full_quote_occurrences": 1611,
+      "retained_full_quote_occurrences": 1599,
+      "lost_full_quote_occurrences": 12,
+      "questions_with_claim_and_witness_reduction": [
+        "conv-43#q0008",
+        "conv-43#q0013",
+        "conv-43#q0015",
+        "conv-43#q0017",
+        "conv-43#q0025",
+        "conv-43#q0029",
+        "conv-43#q0037",
+        "conv-43#q0042"
+      ],
+      "counting_limit": "quote为fact×quote的出现计次，同一原文在不同fact重复出现会重复计数。保留率不是独立语义单元保留率、answer准确率或score。",
+      "semantic_limit": "覆盖检测匹配完整正文/quote并限定原source归属。完整claim消失但完整原witness仍在时单列表示替换；其他损失仍需判断题目相关性，本轮按根要求不扩大逐题语义深审。"
+    },
+    "integrity": {
+      "candidate_pool_unchanged": true,
+      "visibility_unchanged": true,
+      "frame_unchanged": true,
+      "readonly_snapshot_bytes_unchanged": true,
+      "candidate_dist_hashes_unchanged_during_run": true,
+      "all_200_32_6000_constraints_passed": true
+    },
+    "summary": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-raw-evidence-coverage-20260909/conv43-comparison/summary.json",
+      "sha256": "a90ff0c9520d1481f04adc1f15f2bc60a83ee4e45df628259e51e7af21c73a19"
+    },
+    "review_notes": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-raw-evidence-coverage-20260909/conv43-comparison/review-notes.json",
+      "sha256": "54d9523bb6629280d3875525cb6c1e47b42d09193339c7a50370d21a30f79299"
+    }
+  },
+  "memops_comparison": {
+    "queries": 16,
+    "complete_Search_changed": 14,
+    "complete_Search_unchanged": 2,
+    "critical_regression": {
+      "qid": "A06_forget.json#p3_state_transition#longitudinal_operation#5",
+      "original_count": 28,
+      "candidate_count": 32,
+      "lost_complete_witness_id": "2ed6f52ed7b5e00f4488bd1353fd6e712b38ea8b241d095c3e04d3ea9e4ec4c0",
+      "original_rank": 26,
+      "candidate_rank": null,
+      "complete_quote_sha256": "59f43f0735a2f6722e956dc3a67659ab82ac43304c9010374d61817a1c85775f",
+      "complete_quote_present_after": false,
+      "unique_reservation_marker_present_after": false,
+      "surviving_reaffirmation_id": "c66c98854c70d352366597166f1ee2c84526792c46ed004f251a6144b85ed921",
+      "reaffirmation_original_rank": 12,
+      "reaffirmation_candidate_rank": 24,
+      "reaffirmation_content_unchanged": true
+    },
+    "limited_other_checks": {
+      "B03_p5_full_Search_unchanged": true,
+      "B30_p5_full_Search_unchanged": true,
+      "scope": "The A06 regression is sufficient to reject this experiment. No exhaustive relevance or gold-obligation review of every other changed memory was performed."
+    },
+    "summary": {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-raw-evidence-coverage-20260909/memops16-comparison/comparison-summary.json",
+      "sha256": "e6398e205d425ac9ffaab369bb46df7895bbdf09b9f006c6f87c135ed120831a"
+    },
+    "candidate_identity_note": "The paired run recorded its uncommitted identity. That exact dist was subsequently archived in the rejected-experiment commit; the retrieval entry hash is unchanged."
+  },
+  "validation": {
+    "build": "passed",
+    "helper_tests": {
+      "passed": 6,
+      "total": 6
+    },
+    "pack_behavior_tests": {
+      "passed": 4,
+      "total": 4
+    },
+    "same_pack_behavior_tests_on_original": {
+      "passed": 2,
+      "failed": 2,
+      "reason": "Expected documented independent-source behavior differences"
+    },
+    "full_suite_run": false,
+    "full_suite_note": "Candidate already rejected on actual paired evidence regression; not a releasable change."
+  },
+  "experiment_manifest": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-raw-evidence-coverage-20260909/experiment-manifest.json",
+    "sha256": "c2d7c612b476e7c3eb1e3948586c9cf1502f49427aa945b2f56139ac47fa1c76"
+  },
+  "performance": {
+    "per_pack_elapsed_recorded": false,
+    "timing_rerun_performed": false,
+    "static_risk": "有效分数在排序比较器中反复检查覆盖；覆盖读取source可能反复执行SQL及JSON解析。此为静态额外CPU/DB工作风险，没有实测倍率。"
+  },
+  "limits": [
+    "Complete-claim and quote occurrence counts are mechanical retention checks, not independent semantic units or predicted accuracy.",
+    "A06 p3 previously had a correct answer with a complete reservation witness. Losing that witness is a demonstrated evidence regression; no new QA was run to estimate a new score.",
+    "All highlighted LoCoMo missing bridges remain missing. This experiment does not validate either event-chain retrieval or Answer reasoning.",
+    "The prototype remains archived on an isolated branch. It is not deployed, merged into the stable service or used for the next evaluation."
+  ],
+  "next_action": "Expand actual coverage using stable 292ea743 on original complete conv-26 (129 questions, 19 sessions, 419 messages, 28 original add chunks), preserving LoCoMo protocol. Continue targeted diagnostics while that independent evaluation runs; do not reroll the completed 47/16 questions.",
+  "actions": {
+    "model_calls": 0,
+    "QA_calls": 0,
+    "score_changes": 0,
+    "original_database_writes": 0,
+    "parameter_sweep": false,
+    "new_production_deployments": 0
+  }
+}
