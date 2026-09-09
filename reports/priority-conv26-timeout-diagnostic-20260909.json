@@ -1,0 +1,384 @@
+{
+  "protocol": "conv26-timeout-diagnostic-v1",
+  "scope": "Only previously completed read-only investigation; no new replay, model call, retry, database operation or power-setting change.",
+  "candidate_commit": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+  "campaign": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01",
+  "recorded_outcome": {
+    "runtime_status": "failed",
+    "finished_at": "2026-09-09T00:58:47.782289+00:00",
+    "planned_adds": 28,
+    "successful_distinct_adds": 18,
+    "failed_distinct_add_ordinal": 19,
+    "failed_request_suffix": "session-14:0",
+    "unattempted_adds_after_failure": 9,
+    "planned_questions": 129,
+    "service_error_questions": 129,
+    "qa_executed": false,
+    "successful_adds_with_recorded_extraction_offline": 2
+  },
+  "conclusion": "The failed request stopped during extraction transport, with explicit host sleep overlapping all three HTTP attempts. No completed extraction or semantic rejection was recorded. The elapsed times cannot be interpreted as uninterrupted provider latency. An earlier independent connection-reset episode also prevents attributing every service failure to sleep.",
+  "failed_request": {
+    "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+    "request_body_sha256": "02e1e1b6bd505f8d148920707ea65bfc93a09b2ade537d2d088f1bbc647891ef",
+    "model_input_sha256_all_four_transports": "e1dcd3612ccd424fcf9a0b8b18768d98c3facbaa0c694dfcf613225ec2bbc9c5",
+    "http_attempts": [
+      {
+        "attempt": 0,
+        "client_elapsed_ms": 970504.9342079998,
+        "wrapper_http_status": 503,
+        "service_http_completion_log_present": false,
+        "stage": "extraction",
+        "trace_id": "96dc49a7-03ca-419f-b09f-bfa9d96ae46c",
+        "transports": [
+          {
+            "attempt": 0,
+            "start_reconstructed_utc": "2026-09-09T00:36:13.626Z",
+            "audit_end_utc": "2026-09-09T00:52:24.138Z",
+            "elapsed_ms": 970511.3933340001,
+            "error_category": "deadline",
+            "signal_aborted": true,
+            "stream_started": false,
+            "partial_output_characters": 0
+          }
+        ]
+      },
+      {
+        "attempt": 1,
+        "client_elapsed_ms": 245095.03099999996,
+        "wrapper_http_status": 503,
+        "service_http_completion_log_present": true,
+        "service_completion_at": "2026-09-09T00:56:30.173Z",
+        "service_elapsed_ms": 245107,
+        "stage": "extraction",
+        "trace_id": "af721182-2155-47a8-86ff-9d55e26cf968",
+        "transports": [
+          {
+            "attempt": 0,
+            "start_reconstructed_utc": "2026-09-09T00:52:25.169Z",
+            "audit_end_utc": "2026-09-09T00:56:30.135Z",
+            "elapsed_ms": 244965.58654200006,
+            "error_category": "deadline",
+            "signal_aborted": true,
+            "stream_started": true,
+            "partial_output_characters": 0
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "client_elapsed_ms": 131392.98729099985,
+        "wrapper_http_status": 503,
+        "service_http_completion_log_present": true,
+        "service_completion_at": "2026-09-09T00:58:43.619Z",
+        "service_elapsed_ms": 131455,
+        "stage": "extraction",
+        "trace_id": "8e666eed-dcad-478e-8c81-b2e09756d400",
+        "transports": [
+          {
+            "attempt": 0,
+            "start_reconstructed_utc": "2026-09-09T00:56:32.266Z",
+            "audit_end_utc": "2026-09-09T00:57:30.732Z",
+            "elapsed_ms": 58465.40420900006,
+            "error_category": "connection_timeout",
+            "signal_aborted": false,
+            "stream_started": false,
+            "partial_output_characters": 0
+          },
+          {
+            "attempt": 1,
+            "start_reconstructed_utc": "2026-09-09T00:57:31.234Z",
+            "audit_end_utc": "2026-09-09T00:58:43.549Z",
+            "elapsed_ms": 72314.37091599964,
+            "error_category": "deadline",
+            "signal_aborted": true,
+            "stream_started": true,
+            "partial_output_characters": 2805
+          }
+        ]
+      }
+    ],
+    "timing_method": "Transport starts reconstructed as model-calls audit at minus performance.now elapsed_ms, rounded to milliseconds. These are model-attempt intervals, not independently captured HTTP wire start timestamps; host suspension and wall-clock interpretation limit precision.",
+    "unreached_stages": [
+      "verification",
+      "state_transition",
+      "erasure_binding",
+      "source_erasure",
+      "successful commit"
+    ],
+    "generation_successes": 0,
+    "provider_http_status_recorded": false,
+    "finish_reason_all": null,
+    "secondary_embedding_errors": [
+      {
+        "at": "2026-09-09T00:52:24.177Z",
+        "elapsed_ms": 0.3517499999143183,
+        "count": 117
+      },
+      {
+        "at": "2026-09-09T00:56:30.172Z",
+        "elapsed_ms": 0.9882499999366701,
+        "count": 117
+      },
+      {
+        "at": "2026-09-09T00:58:43.618Z",
+        "elapsed_ms": 0.783540999982506,
+        "count": 117
+      }
+    ],
+    "embedding_interpretation": "All three subsequent embedding attempts recorded deadline with signal_aborted=true in less than 1 ms. They are secondary failures after extraction abort, not evidence of slow embedding computation or successful offline fallback/commit."
+  },
+  "configured_budgets": {
+    "add_timeout_ms": 115000,
+    "inner_model_budget_ms": 90000,
+    "model_transport_attempt_limit": 3,
+    "http_attempt_limit": 3,
+    "max_repair_rounds": 2,
+    "model_min_interval_ms": 0
+  },
+  "host_evidence": {
+    "source_command": "/usr/bin/pmset -g log",
+    "read_only": true,
+    "filtered_local_window": {
+      "start": "2026-09-09 08:09:00 +0800",
+      "end": "2026-09-09 08:59:00 +0800"
+    },
+    "collection_boundary": "Observed in two tool invocations during this diagnostic task. No standalone raw log or filtered excerpt file was saved. The entries below are a structured transcription of observed event times/reasons, not a newly collected log.",
+    "persisted_excerpt_path": null,
+    "persisted_excerpt_sha256": null,
+    "power_settings_changed": false,
+    "observed_sleep_intervals_local": [
+      {
+        "sleep": "2026-09-09 08:17:43 +0800",
+        "wake": "2026-09-09 08:32:55 +0800",
+        "reason": "Clamshell Sleep",
+        "logged_sleep_seconds": 912,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:33:14 +0800",
+        "wake": "2026-09-09 08:34:58 +0800",
+        "reason": "Maintenance Sleep",
+        "logged_sleep_seconds": 104,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:35:17 +0800",
+        "wake": "2026-09-09 08:36:04 +0800",
+        "reason": "Maintenance Sleep",
+        "logged_sleep_seconds": 47,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:36:12 +0800",
+        "wake": "2026-09-09 08:52:24 +0800",
+        "reason": "Maintenance Sleep",
+        "logged_sleep_seconds": 972,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:52:26 +0800",
+        "wake": "2026-09-09 08:56:30 +0800",
+        "reason": "Sleep Service Back to Sleep",
+        "logged_sleep_seconds": 244,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:56:37 +0800",
+        "wake": "2026-09-09 08:57:27 +0800",
+        "reason": "Maintenance Sleep",
+        "logged_sleep_seconds": 50,
+        "wake_kind": "DarkWake"
+      },
+      {
+        "sleep": "2026-09-09 08:57:52 +0800",
+        "wake": "2026-09-09 08:58:43 +0800",
+        "reason": "Maintenance Sleep",
+        "logged_sleep_seconds": 51,
+        "wake_kind": "DarkWake"
+      }
+    ],
+    "monitor_gaps": [
+      {
+        "end_utc": "2026-09-09T00:32:55.070508+00:00",
+        "seconds": 909.987
+      },
+      {
+        "end_utc": "2026-09-09T00:34:58.114851+00:00",
+        "seconds": 102.117
+      },
+      {
+        "end_utc": "2026-09-09T00:36:04.183795+00:00",
+        "seconds": 45.274
+      },
+      {
+        "end_utc": "2026-09-09T00:52:24.025257+00:00",
+        "seconds": 970.296
+      },
+      {
+        "end_utc": "2026-09-09T00:56:30.017847+00:00",
+        "seconds": 240.876
+      },
+      {
+        "end_utc": "2026-09-09T00:57:27.403683+00:00",
+        "seconds": 48.652
+      },
+      {
+        "end_utc": "2026-09-09T00:58:43.336869+00:00",
+        "seconds": 49.425
+      }
+    ],
+    "caffeinate": {
+      "pid": 17059,
+      "observed_assertion": "PreventUserIdleSystemSleep",
+      "observed_summary_times_local": [
+        "2026-09-09 08:13:15 +0800",
+        "2026-09-09 08:17:13 +0800"
+      ],
+      "observed_client_died_local": "2026-09-09 08:58:43 +0800",
+      "conclusion": "The assertion was present, but the recorded clamshell and subsequent maintenance sleeps still occurred."
+    }
+  },
+  "prior_degraded_events": [
+    {
+      "request_suffix": "session-3:0",
+      "distinct_add_ordinal": 3,
+      "success_http_attempt": 0,
+      "success_client_elapsed_ms": 36038.159625,
+      "degraded": [
+        "extraction_offline"
+      ],
+      "extraction": {
+        "outcome": "ok",
+        "elapsed_ms": 20706.354458
+      },
+      "verification": {
+        "trace_id": "2d891631-be7b-42dc-a1ee-3f153e3e2891",
+        "attempts": 3,
+        "outcomes": [
+          "ECONNRESET",
+          "ECONNRESET",
+          "ECONNRESET"
+        ],
+        "elapsed_ms": [
+          4039.310375000001,
+          4033.6900409999944,
+          4012.8407080000034
+        ],
+        "end_utc": [
+          "2026-09-09T00:11:11.623Z",
+          "2026-09-09T00:11:16.161Z",
+          "2026-09-09T00:11:21.178Z"
+        ],
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      "interpretation": "Occurred before the first observed clamshell sleep. This is independent transport-reset evidence; exact network/provider cause is not identified. HTTP 200 was obtained through offline fallback, not completed semantic verification."
+    },
+    {
+      "request_suffix": "session-13:0",
+      "distinct_add_ordinal": 18,
+      "success_http_attempt": 2,
+      "client_elapsed_ms_per_http_attempt": [
+        910958.4187080001,
+        121952.5546250001,
+        73307.24416600005
+      ],
+      "degraded": [
+        "extraction_offline"
+      ],
+      "attempts": [
+        {
+          "http_attempt": 0,
+          "trace_id": "75607b40-d3bd-496a-8655-f4cf58e0feb1",
+          "transport_error_categories": [
+            "deadline"
+          ]
+        },
+        {
+          "http_attempt": 1,
+          "trace_id": "cd0fac43-8062-4cd3-b69f-03665767ec43",
+          "transport_error_categories": [
+            "connection",
+            "connection_timeout",
+            "deadline"
+          ]
+        },
+        {
+          "http_attempt": 2,
+          "trace_id": "9da95cb0-c3b2-46e8-8079-41405b6e9359",
+          "transport_error_categories": [
+            "connection_timeout",
+            "connection_timeout",
+            "connection"
+          ],
+          "transport_elapsed_ms": [
+            10305.08620800008,
+            55591.69849999994,
+            4026.3326660001185
+          ]
+        }
+      ],
+      "successful_embedding": {
+        "at": "2026-09-09T00:36:13.085Z",
+        "elapsed_ms": 1284.8434590001125,
+        "count": 124
+      },
+      "http_success_at": "2026-09-09T00:36:13.525Z",
+      "interpretation": "The third HTTP attempt committed after extraction transport exhaustion and offline fallback. Sleep overlaps earlier timeouts and the third attempt, so recorded elapsed times mix host scheduling/suspension with connection behavior."
+    }
+  ],
+  "source_pins_observed_during_investigation": [
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/runtime.json",
+      "sha256": "0bc85496ea41e35b4d51c6cb4d93ec056696ffaba7518a034779174d466e434d"
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/service.log",
+      "sha256": "07481acb7d1da20d81935ff007fe3d38f6b8458119f7a479de554655383c5508"
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/model-calls.jsonl",
+      "sha256": "dc72cb4b386e1a3d70c8be9cf16b6a2297495b52a6490ad158237b711f5fd337"
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/model-trace.jsonl",
+      "sha256": "832030d19288ae58cc11f9f9f5c141d7146aefa161e126d57d65351b55ca9bc8",
+      "private_contents_omitted": true
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/http-receipts.jsonl",
+      "sha256": "280b5e66f33d478e92a4a4c7d7fdb0d8dc703acf277f04a8041c376c1ec1f779"
+    },
+    {
+      "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/eval/artifacts/priority-conv26-20260909-01-candidate-locomo/ingest.jsonl",
+      "sha256": "bb173f4e7fa4abc95dea73e7bff49c08eb2436139120182a48ac2e814b037b93"
+    }
+  ],
+  "certainty_limits": [
+    "Host sleep is directly recorded, not merely inferred from monitor gaps.",
+    "Sleep overlaps all three failed extraction attempts, but the precise division between inactive host time, network reconnection and provider processing is not observable.",
+    "No provider HTTP error status or successful complete output was retained for the failed request. The final partial stream does not support a semantic verdict.",
+    "The first failed HTTP attempt lacks the normal service completion-log line, although the wrapper captured status 503 and the evaluator recorded its timeout. Its HTTP wire interval must not be presented as directly measured.",
+    "The independent earlier ECONNRESET sequence remains unexplained. This report does not claim that every failure is caused by sleep or that all stable-candidate service paths were healthy.",
+    "Eighteen committed adds include two offline-degraded writes; they are not eighteen fully verified enhanced writes."
+  ],
+  "minimum_next_reproduction": {
+    "proposed_only": true,
+    "scope": "Preserve revision18 prefix, original session-14:0 request and recorded failures; a zero-model replay can check failure handling/no commit only. A later separately scheduled single-add attempt in a continuously awake environment is the smallest end-to-end diagnostic, rather than restarting the full conversation.",
+    "constraints": [
+      "Do not treat partial output as a completed proposal or borrow an earlier semantic verdict.",
+      "Do not increase deadline solely to absorb host suspension.",
+      "Any actual recovery add requires a new controlled run; none was performed by this diagnostic."
+    ]
+  },
+  "actions": {
+    "new_model_calls": 0,
+    "new_embedding_calls": 0,
+    "new_qa_calls": 0,
+    "http_retries": 0,
+    "database_writes": 0,
+    "power_setting_changes": 0,
+    "new_reproduction_runs": 0,
+    "source_artifact_changes": 0
+  }
+}

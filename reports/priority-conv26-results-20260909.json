@@ -1,0 +1,1052 @@
+{
+  "report_protocol": "conv26-execution-results-v1",
+  "created_at": "2026-09-09T01:30:26.173433+00:00",
+  "campaign": "priority-conv26-20260909-01",
+  "execution_status": "failed",
+  "integrity_status": "pass",
+  "result": {
+    "fixed_denominator": 129,
+    "correct": 0,
+    "score_over_planned": 0,
+    "judged": 0,
+    "service_errors": 129,
+    "unattempted_Answer_and_Judge_questions": 129,
+    "by_category": {
+      "single_hop": {
+        "category_code": "4",
+        "planned_questions": 69,
+        "service_errors": 69,
+        "judged": 0,
+        "correct": 0,
+        "accuracy_over_planned": 0
+      },
+      "temporal": {
+        "category_code": "2",
+        "planned_questions": 36,
+        "service_errors": 36,
+        "judged": 0,
+        "correct": 0,
+        "accuracy_over_planned": 0
+      },
+      "multi_hop": {
+        "category_code": "1",
+        "planned_questions": 24,
+        "service_errors": 24,
+        "judged": 0,
+        "correct": 0,
+        "accuracy_over_planned": 0
+      }
+    },
+    "interpretation": "These are standard service_error records after ingestion failure, not 129 incorrect model answers or completed benchmark Judge calls."
+  },
+  "versions": {
+    "executed_candidate": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+    "candidate_manifest_sha256": "aa2cce509f9ea5bc66d23a40a8e67935c622b90a8349c958197d203bcd809b94",
+    "candidate_dist_files": 144,
+    "eval_commit": "7a2ecb42976220e70ff450d30c9569552a8ee1ab",
+    "eval_manifest_service_commit": "6381bef2d705c3bc63b3616d529149d947a171f1",
+    "service_commit_note": "The evaluator records its original checkout service commit. The actual executed candidate is the separate 292ea743 artifact fixed by the plan, full manifest, launcher and dist hashes.",
+    "plan": {
+      "path": "artifacts/priority-conv26-20260909-01/plan.json",
+      "sha256": "ac4397bc9e7349e95a478d040720b7c8af1b8fc1150362e02da2e142bdfa5e78"
+    },
+    "entry": {
+      "path": "artifacts/priority-conv26-20260909-01/executor/scripts/probes/run-conv26-evaluation.py",
+      "sha256": "181b8c8053f3dab9a8ac7a6d6505b165ee28491afac66dfe3857f8e61d60c82b"
+    }
+  },
+  "protocol": {
+    "sample_id": "conv-26",
+    "original_sessions": 19,
+    "original_messages": 419,
+    "original_qids": 129,
+    "original_schedule_adds": 28,
+    "namespace": "priority-conv26-20260909-01-candidate",
+    "fresh_database": true,
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "answer_model": "glm-5.2",
+    "judge_metadata_note": "The shared service metadata inherits a glm-5.2 judge_model field; actual LoCoMo CLI/runtime/manifest use local qwen3:14b and refined-python.",
+    "concurrency": 1,
+    "top_k": 100,
+    "chunk_messages": 20,
+    "chunk_words": 2000,
+    "add_HTTP_attempt_limit": 3,
+    "model_transport_attempt_limit": 3,
+    "configuration": {
+      "queryFocus": true,
+      "queryFocusTimeout": 8000,
+      "verificationResponseFormat": "json_object",
+      "candidateLimit": 200,
+      "maxEvidence": 32,
+      "tokenBudget": 6000,
+      "rerank": false,
+      "addTimeout": 115000,
+      "searchTimeout": 55000
+    },
+    "actual_config_matches_pinned_base": true,
+    "actual_service_config_sha256": "08c4ccd9c212ff8f8d441065372386a3b3f0a30c963cb00ebf91982a1b56e08d",
+    "standard_Judge_preflight": {
+      "score": 1.0,
+      "elapsed_seconds": 14.640258,
+      "outside_benchmark_denominator": true
+    }
+  },
+  "ingestion": {
+    "planned_logical_adds": 28,
+    "attempted_logical_adds": 19,
+    "successful_logical_adds": 18,
+    "failed_logical_adds": 1,
+    "unattempted_logical_adds": 9,
+    "physical_HTTP_responses": 23,
+    "HTTP_200": 18,
+    "HTTP_503": 5,
+    "revision": 18,
+    "exact_saved_receipts": 18,
+    "failed_and_unattempted_receipts_absent": true,
+    "retry_summary": [
+      "Schedule position 18/session-13:0 timed out on attempts 0 and 1, then committed exactly once on attempt 2.",
+      "Position 19/session-14:0 timed out on all three attempts and has no receipt. Positions 20–28 were not attempted."
+    ],
+    "successful_degraded_adds": [
+      {
+        "event": "degraded",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      },
+      {
+        "event": "degraded",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "reasons": [
+          "extraction_offline"
+        ]
+      }
+    ],
+    "logical_requests": [
+      {
+        "schedule_position": 1,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-1:0",
+        "request_sha256": "4f362dea8d8c16878b4870374641706d705c34507c5fe58dab5eaf9c27db8858",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 37194.73033300001
+          }
+        ]
+      },
+      {
+        "schedule_position": 2,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-2:0",
+        "request_sha256": "6594476630922c0a2ff21d30de79e2c76a7332da4a9baac314029dea1f2e1bfd",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 30284.465625000004
+          }
+        ]
+      },
+      {
+        "schedule_position": 3,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:0",
+        "request_sha256": "1f0b59172f811ff0810385d921d42c48c370578ec88e8cae0b8feea4a4d4aeeb",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 36038.159625
+          }
+        ]
+      },
+      {
+        "schedule_position": 4,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:1",
+        "request_sha256": "abd0881ffb4d13d1a42b7d8c3a760b762b6fb5ce9e76d99a760b358934eba22d",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 7640.323041999989
+          }
+        ]
+      },
+      {
+        "schedule_position": 5,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-4:0",
+        "request_sha256": "0c80e590648cebb368b963b705398ec78eb072e7183a78b45dc1018b940de342",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 31594.561667000016
+          }
+        ]
+      },
+      {
+        "schedule_position": 6,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-5:0",
+        "request_sha256": "15d689ffd45af4e3d584d90e21c76c3b48b7a8de2409fe8348dac51764cf104a",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 29358.09150000001
+          }
+        ]
+      },
+      {
+        "schedule_position": 7,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-6:0",
+        "request_sha256": "5a1cccab064e4f53e76388332fa7097da644c6bc2fb790997f47224d53f9f18b",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 30228.512499999983
+          }
+        ]
+      },
+      {
+        "schedule_position": 8,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-7:0",
+        "request_sha256": "248c66e8bf946efdd8c013ae4263d3c75e92464e942d0d093e893f1b652e051f",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 41696.52016699998
+          }
+        ]
+      },
+      {
+        "schedule_position": 9,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-7:1",
+        "request_sha256": "0053b7c175df1699cdc70d0a02738ab8069fbdfc4854ecf2711e08769e0f2b56",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 12313.422749999998
+          }
+        ]
+      },
+      {
+        "schedule_position": 10,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-8:0",
+        "request_sha256": "8f5a280def555323e2331bbf390fa71eace053b881b4ad640f6e84815ab8621d",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 44550.55920800002
+          }
+        ]
+      },
+      {
+        "schedule_position": 11,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-8:1",
+        "request_sha256": "7872f80d55a6179a87eaf49690091dfe6bad0995480270f947db7bb8923f1389",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 35881.23700000002
+          }
+        ]
+      },
+      {
+        "schedule_position": 12,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-9:0",
+        "request_sha256": "a3c07033c14a00d1cc4cc71819bfe2843d07a7fee06102153893ace45216200e",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 23343.016584000026
+          }
+        ]
+      },
+      {
+        "schedule_position": 13,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-10:0",
+        "request_sha256": "1059dd5c20da336c22185083135f9d09853204114b2d2b5127835870bbcb83b0",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 30320.46441700001
+          }
+        ]
+      },
+      {
+        "schedule_position": 14,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-10:1",
+        "request_sha256": "7771d114cfe5cf4a1dc824731be8a18e166f264539a155722f859f82eea6eedb",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 9748.686166000029
+          }
+        ]
+      },
+      {
+        "schedule_position": 15,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-11:0",
+        "request_sha256": "f3489a1fd2d9d9fe0d6f6114ca0f891c1b7f5aa104d252ac8e2bd77ec2046d6d",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 38666.70287500002
+          }
+        ]
+      },
+      {
+        "schedule_position": 16,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-12:0",
+        "request_sha256": "8ce0627539bba7e74e5bfe6ad4382ac7db0e6d96449791879f5b1938510b04fc",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 40510.40845799999
+          }
+        ]
+      },
+      {
+        "schedule_position": 17,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-12:1",
+        "request_sha256": "41b620dce05ed1b8e8c8575cd3282cb7c3fda1d9cf489be45b1c6a90aa231d87",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 1,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "ok",
+            "observed_elapsed_ms": 5538.565917
+          }
+        ]
+      },
+      {
+        "schedule_position": 18,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "request_sha256": "1783fc9b0a1ccb3947a5d4c5a600348e527ffc451f4e4675fd3289baa74c24a3",
+        "final_status": "ok",
+        "stored_receipt": true,
+        "HTTP_attempts": 3,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "retrying",
+            "observed_elapsed_ms": 910958.4187080001,
+            "error": "TimeoutError: The operation was aborted due to timeout"
+          },
+          {
+            "attempt": 1,
+            "status": "retrying",
+            "observed_elapsed_ms": 121952.5546250001,
+            "error": "TimeoutError: The operation was aborted due to timeout"
+          },
+          {
+            "attempt": 2,
+            "status": "ok",
+            "observed_elapsed_ms": 73307.24416600005
+          }
+        ]
+      },
+      {
+        "schedule_position": 19,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+        "request_sha256": "02e1e1b6bd505f8d148920707ea65bfc93a09b2ade537d2d088f1bbc647891ef",
+        "final_status": "failed",
+        "stored_receipt": false,
+        "HTTP_attempts": 3,
+        "attempts": [
+          {
+            "attempt": 0,
+            "status": "retrying",
+            "observed_elapsed_ms": 970504.9342079998,
+            "error": "TimeoutError: The operation was aborted due to timeout"
+          },
+          {
+            "attempt": 1,
+            "status": "retrying",
+            "observed_elapsed_ms": 245095.03099999996,
+            "error": "TimeoutError: The operation was aborted due to timeout"
+          },
+          {
+            "attempt": 2,
+            "status": "failed",
+            "observed_elapsed_ms": 131392.98729099985,
+            "error": "TimeoutError: The operation was aborted due to timeout"
+          }
+        ]
+      },
+      {
+        "schedule_position": 20,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:1",
+        "request_sha256": "7c1026b606718f11c459f8f7688c9d69748fbb74cdc15bc5365052788134bb55",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 21,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-15:0",
+        "request_sha256": "232fc9afc3edcf846111eb2b76981ea59652f3416390db024ee5ee83d9aea31a",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 22,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-15:1",
+        "request_sha256": "e804d3f2d465cee7248b0b8086d80b0efd9f655f7adafa36c466d101fbb6da6b",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 23,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-16:0",
+        "request_sha256": "bab778f80534d3a247575792740d0b4e0387b4b324122383f1ee9b13ae67e5cb",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 24,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-17:0",
+        "request_sha256": "cf65a24a9fcec1663674f428bfb5c94f9e1b1f9e9ebf452aa11987d8a3559e73",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 25,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-17:1",
+        "request_sha256": "9f0a98edb9fcd3beb2578a548afbbbda6a8a3047879169730c5d56f62b2abc12",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 26,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-18:0",
+        "request_sha256": "9606f2b7edcf8d013aea6f0d4fd7f619c1e0eff6e3422d0f7ef8c88e3ab3a067",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 27,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-18:1",
+        "request_sha256": "92a9d60dbfe15bc861cb0c3573d85b2053659ae06fbf32de521301a15f7ebb04",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      },
+      {
+        "schedule_position": 28,
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-19:0",
+        "request_sha256": "a696e2eef11d73b7fbae354388532648c532f3f25adb4a5be1ee64655504c242",
+        "final_status": "unattempted",
+        "stored_receipt": false,
+        "HTTP_attempts": 0,
+        "attempts": []
+      }
+    ]
+  },
+  "failure": {
+    "failed_schedule_position": 19,
+    "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+    "request_sha256": "02e1e1b6bd505f8d148920707ea65bfc93a09b2ade537d2d088f1bbc647891ef",
+    "client_error": "TimeoutError: The operation was aborted due to timeout",
+    "observed_service_error_code": "DEADLINE",
+    "HTTP_status": 503,
+    "HTTP_attempts": 3,
+    "gate_reasons": [
+      "final_ingest_non_ok",
+      "missing_ingest_receipts",
+      "service_error_samples"
+    ],
+    "service_http_log_coverage_note": "The schedule/response observer has all 23 HTTP records. The separate service http_request event log has 22; the first session-14 attempt lacks that secondary event. Its HTTP503 and client timeout remain recorded by the primary observer and evaluator.",
+    "causal_scope": "This report verifies the recorded execution. It does not determine the cause of host-wide pauses or assert that monitoring gaps were confirmed suspension."
+  },
+  "model_audit": {
+    "audit_records": 87,
+    "write_generation_attempt_records": 54,
+    "unique_generation_stage_trace_ids": 44,
+    "generation_outcomes": {
+      "ok": 37,
+      "error": 17
+    },
+    "generation_retry_events": 10,
+    "generation_retry_reasons": {
+      "connection": 6,
+      "connection_timeout": 4
+    },
+    "generation_error_categories": {
+      "connection": 8,
+      "deadline": 5,
+      "connection_timeout": 4
+    },
+    "all_generation_identities_within_attempted_original_adds": true,
+    "purpose_statistics": {
+      "extraction": {
+        "attempt_records": 28,
+        "unique_stage_trace_ids": 23,
+        "outcomes": {
+          "ok": 17,
+          "error": 11
+        },
+        "recorded_elapsed": {
+          "count": 28,
+          "sum_ms": 2753981.1974959997,
+          "min_ms": 23.185750000178814,
+          "max_ms": 970511.3933340001,
+          "mean_ms": 98356.47133914285
+        }
+      },
+      "repair": {
+        "attempt_records": 4,
+        "unique_stage_trace_ids": 3,
+        "outcomes": {
+          "ok": 3,
+          "error": 1
+        },
+        "recorded_elapsed": {
+          "count": 4,
+          "sum_ms": 19852.774584000024,
+          "min_ms": 2409.692250000022,
+          "max_ms": 10150.728,
+          "mean_ms": 4963.193646000006
+        }
+      },
+      "verification": {
+        "attempt_records": 22,
+        "unique_stage_trace_ids": 18,
+        "outcomes": {
+          "error": 5,
+          "ok": 17
+        },
+        "recorded_elapsed": {
+          "count": 22,
+          "sum_ms": 131784.165999,
+          "min_ms": 1382.033791999973,
+          "max_ms": 13538.115875000018,
+          "mean_ms": 5990.189363590908
+        }
+      }
+    },
+    "generation_errors": [
+      {
+        "trace_id": "6acc5c7e-15a1-4a52-8ecf-48999d2842ff",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-1:0",
+        "purpose": "verification",
+        "attempt": 0,
+        "at": "2026-09-09T00:10:07.447Z",
+        "elapsed_ms": 4030.960165999997,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "2d891631-be7b-42dc-a1ee-3f153e3e2891",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:0",
+        "purpose": "verification",
+        "attempt": 0,
+        "at": "2026-09-09T00:11:11.623Z",
+        "elapsed_ms": 4039.310375000001,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "2d891631-be7b-42dc-a1ee-3f153e3e2891",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:0",
+        "purpose": "verification",
+        "attempt": 1,
+        "at": "2026-09-09T00:11:16.161Z",
+        "elapsed_ms": 4033.6900409999944,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "2d891631-be7b-42dc-a1ee-3f153e3e2891",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-3:0",
+        "purpose": "verification",
+        "attempt": 2,
+        "at": "2026-09-09T00:11:21.178Z",
+        "elapsed_ms": 4012.8407080000034,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "332bef69-08a1-4781-9194-7a7a44c9d30a",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-4:0",
+        "purpose": "repair",
+        "attempt": 0,
+        "at": "2026-09-09T00:11:52.423Z",
+        "elapsed_ms": 4039.753625000012,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "026fcbab-e28c-4d58-b729-67d479f45a61",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-8:0",
+        "purpose": "verification",
+        "attempt": 0,
+        "at": "2026-09-09T00:14:24.755Z",
+        "elapsed_ms": 4032.686416999961,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "75607b40-d3bd-496a-8655-f4cf58e0feb1",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:32:55.210Z",
+        "elapsed_ms": 910852.3750409998,
+        "error_category": "deadline",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": true,
+        "stream_started": false
+      },
+      {
+        "trace_id": "cd0fac43-8062-4cd3-b69f-03665767ec43",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:32:56.373Z",
+        "elapsed_ms": 23.185750000178814,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "cd0fac43-8062-4cd3-b69f-03665767ec43",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 1,
+        "at": "2026-09-09T00:33:07.108Z",
+        "elapsed_ms": 10231.965582999866,
+        "error_category": "connection_timeout",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "cd0fac43-8062-4cd3-b69f-03665767ec43",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 2,
+        "at": "2026-09-09T00:34:58.217Z",
+        "elapsed_ms": 110108.21416600002,
+        "error_category": "deadline",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": true,
+        "stream_started": false
+      },
+      {
+        "trace_id": "9da95cb0-c3b2-46e8-8079-41405b6e9359",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:35:10.633Z",
+        "elapsed_ms": 10305.08620800008,
+        "error_category": "connection_timeout",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "9da95cb0-c3b2-46e8-8079-41405b6e9359",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 1,
+        "at": "2026-09-09T00:36:06.729Z",
+        "elapsed_ms": 55591.69849999994,
+        "error_category": "connection_timeout",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "9da95cb0-c3b2-46e8-8079-41405b6e9359",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-13:0",
+        "purpose": "extraction",
+        "attempt": 2,
+        "at": "2026-09-09T00:36:11.761Z",
+        "elapsed_ms": 4026.3326660001185,
+        "error_category": "connection",
+        "error_type": "Error",
+        "transport_code": "ECONNRESET",
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "96dc49a7-03ca-419f-b09f-bfa9d96ae46c",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:52:24.138Z",
+        "elapsed_ms": 970511.3933340001,
+        "error_category": "deadline",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": true,
+        "stream_started": false
+      },
+      {
+        "trace_id": "af721182-2155-47a8-86ff-9d55e26cf968",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:56:30.135Z",
+        "elapsed_ms": 244965.58654200006,
+        "error_category": "deadline",
+        "error_type": "TimeoutError",
+        "transport_code": null,
+        "signal_aborted": true,
+        "stream_started": true
+      },
+      {
+        "trace_id": "8e666eed-dcad-478e-8c81-b2e09756d400",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+        "purpose": "extraction",
+        "attempt": 0,
+        "at": "2026-09-09T00:57:30.732Z",
+        "elapsed_ms": 58465.40420900006,
+        "error_category": "connection_timeout",
+        "error_type": "Error",
+        "transport_code": null,
+        "signal_aborted": false,
+        "stream_started": false
+      },
+      {
+        "trace_id": "8e666eed-dcad-478e-8c81-b2e09756d400",
+        "request_id": "priority-conv26-20260909-01-candidate:locomo:conv-26:session-14:0",
+        "purpose": "extraction",
+        "attempt": 1,
+        "at": "2026-09-09T00:58:43.549Z",
+        "elapsed_ms": 72314.37091599964,
+        "error_category": "deadline",
+        "error_type": "TimeoutError",
+        "transport_code": null,
+        "signal_aborted": true,
+        "stream_started": true
+      }
+    ],
+    "embedding_audit_invocations": 23,
+    "embedding_outcomes": {
+      "ok": 18,
+      "error": 5
+    },
+    "embedding_error_categories": {
+      "deadline": 5
+    },
+    "embedding_interpretation": "23 is the number of wrapper/audit invocations. The five deadline failures are not successful embeddings and do not establish five completed embedding-server requests.",
+    "Search_requests": 0,
+    "query_focus_calls": 0,
+    "benchmark_Answer_calls": 0,
+    "benchmark_Judge_calls": 0,
+    "state_transition_calls": 0,
+    "all_failed_embedding_records_signal_aborted": true
+  },
+  "performance": {
+    "runtime_started_at": "2026-09-09T00:09:23.641769+00:00",
+    "runtime_finished_at": "2026-09-09T00:58:47.782289+00:00",
+    "runtime_wall_seconds": 2964.14052,
+    "eval_started_at": "2026-09-09T00:09:39.167Z",
+    "eval_finished_at": "2026-09-09T00:58:43.587Z",
+    "eval_wall_seconds": 2944.42,
+    "all_HTTP_attempt_elapsed": {
+      "count": 23,
+      "sum_ms": 2938119.597832,
+      "min_ms": 5538.565917,
+      "max_ms": 970504.9342079998,
+      "mean_ms": 127744.33034052174
+    },
+    "successful_terminal_attempt_elapsed": {
+      "count": 18,
+      "sum_ms": 558215.6720000001,
+      "min_ms": 5538.565917,
+      "max_ms": 73307.24416600005,
+      "mean_ms": 31011.981777777786
+    },
+    "failed_request_attempt_elapsed": {
+      "count": 3,
+      "sum_ms": 1346992.9524989997,
+      "min_ms": 131392.98729099985,
+      "max_ms": 970504.9342079998,
+      "mean_ms": 448997.6508329999
+    },
+    "monitor_gap_count": 7,
+    "monitor_gap_intervals": [
+      {
+        "at": "2026-09-09T00:32:55.070508+00:00",
+        "seconds": 909.987,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:34:58.114851+00:00",
+        "seconds": 102.117,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:36:04.183795+00:00",
+        "seconds": 45.274,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:52:24.025257+00:00",
+        "seconds": 970.296,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:56:30.017847+00:00",
+        "seconds": 240.876,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:57:27.403683+00:00",
+        "seconds": 48.652,
+        "cause": "unknown; may include host suspension"
+      },
+      {
+        "at": "2026-09-09T00:58:43.336869+00:00",
+        "seconds": 49.425,
+        "cause": "unknown; may include host suspension"
+      }
+    ],
+    "monitor_gap_seconds_sum": 2366.627,
+    "timing_limit": "All recorded wall-clock and elapsed measurements include their affected monitoring gaps. Those intervals have unknown cause and may include host suspension. They are intervals between monitor observations, not measured sleep durations; do not subtract them to infer pure model or active-compute time. The 910/970-second deadline records must not be interpreted as pure provider generation latency. No Search/Answer/benchmark-Judge performance was measured."
+  },
+  "integrity_checks": {
+    "independent_frozen_validation": "passed",
+    "source_code_and_dependency_pins_checked": 217,
+    "all_pins_unchanged": true,
+    "candidate_144_dist_files_exact": true,
+    "complete_original_subset_qid_order_and28_schedule_exact": true,
+    "all_attempted_HTTP_payload_hashes_exact": true,
+    "sqlite_quick_check": "ok",
+    "revision_and18_receipt_ids_hashes_bodies_exact": true,
+    "database_sha256": "66091f4d50f185389c51214997d26c86498aae2514fca64056eea75c09a4f796",
+    "all_examined_JSONL_complete": true,
+    "storage_check": {
+      "integrity": "pass",
+      "reasons": [],
+      "planned_adds": 28,
+      "successful_adds": 18,
+      "revision": 18,
+      "exact_receipts": 18,
+      "physical_HTTP_responses": 23,
+      "write_generation_calls": 54,
+      "search_query_focus_generation_calls": 0,
+      "add_embedding_calls": 23,
+      "scope": "Only actual successful original HTTP adds may have committed receipts; failed and unattempted requests remain outside the receipt set."
+    }
+  },
+  "processes": {
+    "controller": {
+      "pid": 17042,
+      "process_identity": "Wed Sep  9 08:09:23 2026",
+      "status": "failed",
+      "exit_code": 1,
+      "alive": false,
+      "started_at": "2026-09-09T00:09:23.641769+00:00",
+      "finished_at": "2026-09-09T00:58:47.782289+00:00"
+    },
+    "children": {
+      "sleep-prevention": {
+        "pid": 17059,
+        "process_identity": "Wed Sep  9 08:09:23 2026",
+        "exit_code": -15,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-09T00:09:23.649486+00:00",
+        "finished_at": "2026-09-09T00:58:47.781364+00:00"
+      },
+      "service": {
+        "pid": 17061,
+        "process_identity": "Wed Sep  9 08:09:23 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-09T00:09:23.654561+00:00",
+        "finished_at": "2026-09-09T00:58:47.781380+00:00"
+      },
+      "judge": {
+        "pid": 17066,
+        "process_identity": "Wed Sep  9 08:09:24 2026",
+        "exit_code": 143,
+        "alive": false,
+        "stopped_by_runner": true,
+        "started_at": "2026-09-09T00:09:24.205222+00:00",
+        "finished_at": "2026-09-09T00:58:47.781382+00:00"
+      },
+      "judge-preflight": {
+        "pid": 17068,
+        "process_identity": "Wed Sep  9 08:09:24 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": null,
+        "started_at": "2026-09-09T00:09:24.325486+00:00",
+        "finished_at": "2026-09-09T00:09:38.965744+00:00"
+      },
+      "locomo": {
+        "pid": 17165,
+        "process_identity": "Wed Sep  9 08:09:38 2026",
+        "exit_code": 0,
+        "alive": false,
+        "stopped_by_runner": null,
+        "started_at": "2026-09-09T00:09:38.975817+00:00",
+        "finished_at": "2026-09-09T00:58:43.654614+00:00"
+      }
+    },
+    "all_owned_exited": true,
+    "ownership_note": "Actual current identities were rechecked after completion. A final-status file written by the controller may preserve a then-live controller snapshot. The preexisting shared Ollama server is not owned by this run."
+  },
+  "actions": "Read-only task-artifact audit and this new report only. No restart, extra model request, rejudging, source/DB mutation or host-global investigation.",
+  "artifacts": {
+    "manifest": {
+      "path": "eval/artifacts/priority-conv26-20260909-01-candidate-locomo/manifest.json",
+      "sha256": "e1f41696e95677c2155916d572efe4cfa47bb7628e7b7caa97d1e41eaec125c9"
+    },
+    "ingest": {
+      "path": "eval/artifacts/priority-conv26-20260909-01-candidate-locomo/ingest.jsonl",
+      "sha256": "bb173f4e7fa4abc95dea73e7bff49c08eb2436139120182a48ac2e814b037b93"
+    },
+    "judgments": {
+      "path": "eval/artifacts/priority-conv26-20260909-01-candidate-locomo/judgments.jsonl",
+      "sha256": "b2ebccd7c6ec35781c81fbfdcb88737bcd001eea5c82fd0ce7fbbeb3a28c0b5d"
+    },
+    "requests": {
+      "path": "eval/artifacts/priority-conv26-20260909-01-candidate-locomo/requests.jsonl",
+      "sha256": "f708de444afc6617986b67c3c6f6ac7b783ae00cdb46b0d0713501e260fedc51"
+    },
+    "HTTP": {
+      "path": "artifacts/priority-conv26-20260909-01/http-receipts.jsonl",
+      "sha256": "280b5e66f33d478e92a4a4c7d7fdb0d8dc703acf277f04a8041c376c1ec1f779"
+    },
+    "model_calls": {
+      "path": "artifacts/priority-conv26-20260909-01/model-calls.jsonl",
+      "sha256": "dc72cb4b386e1a3d70c8be9cf16b6a2297495b52a6490ad158237b711f5fd337"
+    },
+    "private_model_trace": {
+      "path": "artifacts/priority-conv26-20260909-01/model-trace.jsonl",
+      "sha256": "832030d19288ae58cc11f9f9f5c141d7146aefa161e126d57d65351b55ca9bc8"
+    },
+    "runtime": {
+      "path": "artifacts/priority-conv26-20260909-01/runtime.json",
+      "sha256": "0bc85496ea41e35b4d51c6cb4d93ec056696ffaba7518a034779174d466e434d"
+    },
+    "final_status": {
+      "path": "artifacts/priority-conv26-20260909-01/final-status.json",
+      "sha256": "13a2a2a65bb5f7cbe2c612e7c2b11b0a32d01337f5ab074f8247a6b56352d446"
+    },
+    "gate": {
+      "path": "artifacts/priority-conv26-20260909-01/gate.json",
+      "sha256": "f9afc395b48c638cf342d1b832436f045ce14fd349c4c44971e55696df2f36ff"
+    },
+    "service_log": {
+      "path": "artifacts/priority-conv26-20260909-01/service.log",
+      "sha256": "07481acb7d1da20d81935ff007fe3d38f6b8458119f7a479de554655383c5508"
+    },
+    "service_configuration": {
+      "path": "artifacts/priority-conv26-20260909-01/service.json",
+      "sha256": "ea3335fbc8928aaf11ce18211762357d92c97309057d6f966a2aa7619c05484b"
+    },
+    "judge_preflight": {
+      "path": "artifacts/priority-conv26-20260909-01/locomo-judge-preflight.log",
+      "sha256": "91975eb8acf8a5193e5fa19a6d68aded8978ba48d43608ccc29d47d3ed953434"
+    }
+  }
+}
