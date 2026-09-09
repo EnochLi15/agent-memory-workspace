@@ -1,0 +1,96 @@
+{
+  "created_at": "2026-09-09T00:09:21.513418+00:00",
+  "scope": "Preparation plus independently verified live start of complete original conv-26. Runtime continues in the detached process; no final score yet.",
+  "candidate_commit": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+  "candidate_manifest_sha256": "aa2cce509f9ea5bc66d23a40a8e67935c622b90a8349c958197d203bcd809b94",
+  "sample": {
+    "sample_id": "conv-26",
+    "sessions": 19,
+    "messages": 419,
+    "questions": 129,
+    "categories": {
+      "single_hop_code4": 69,
+      "temporal_code2": 36,
+      "multi_hop_code1": 24
+    },
+    "original_subset_canonical_sha256": "fdc9b7f12ae9048e32c220fd729f49b9d8ee4332cf541ba91bf8f220046ec2af",
+    "qid_order_sha256": "074256c86e66feb7b7b3afcdd11fa6dded81adaa7f30e48114c32d59f68bd239",
+    "fresh_adds": 28,
+    "chunk_messages": 20,
+    "chunk_words": 2000,
+    "schedule_sha256": "f4ec312e48180fd60da104ba9d0d4abf2a3e7072a7bd12423962c914e6f80a44"
+  },
+  "protocol": {
+    "mode": "upstream-reproduction",
+    "judge_kind": "refined-python",
+    "judge_model": "qwen3:14b",
+    "answer_model": "glm-5.2"
+  },
+  "configuration_override": {
+    "MEMORY_QUERY_FOCUS": "true",
+    "MEMORY_QUERY_FOCUS_TIMEOUT_MS": "8000",
+    "MEMORY_VERIFICATION_RESPONSE_FORMAT": "json_object"
+  },
+  "evidence_budget": {
+    "candidateLimit": 200,
+    "maxEvidence": 32,
+    "tokenBudget": 6000
+  },
+  "concurrency": 1,
+  "tests": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/scripts/probes/test_conv26_evaluation.py",
+    "sha256": "682dff949cd4fa609b945cd1f2757bb4e31f5906323c740ac98dac48a387b885",
+    "passed": 3,
+    "failed": 0
+  },
+  "plan": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/plan.json",
+    "sha256": "ac4397bc9e7349e95a478d040720b7c8af1b8fc1150362e02da2e142bdfa5e78",
+    "validation": "passed"
+  },
+  "frozen_entry": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/executor/scripts/probes/run-conv26-evaluation.py",
+    "sha256": "181b8c8053f3dab9a8ac7a6d6505b165ee28491afac66dfe3857f8e61d60c82b",
+    "validation": "passed",
+    "workspace_entry_identical": true
+  },
+  "freshness_at_completed_validation": {
+    "data_directory_existed": false,
+    "evaluation_output_existed": false,
+    "runtime_existed": false
+  },
+  "independent_review": {
+    "agent": "campaign_runner",
+    "blocking_findings": 0
+  },
+  "launch_command": "python3 /Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-conv26-20260909-01/executor/scripts/probes/run-conv26-evaluation.py --campaign priority-conv26-20260909-01 --run --detach",
+  "status": "running",
+  "preparation_model_calls_made": 0,
+  "root_independent_schedule_exact": true,
+  "launch": {
+    "controller_pid": 17042,
+    "process_identity": "Wed Sep  9 08:09:23 2026",
+    "started_at": "2026-09-09T00:09:23.641769+00:00",
+    "actual_service_matches_frozen_base": true,
+    "service_pid": 17061,
+    "judge_pid": 17066,
+    "eval_pid": 17165,
+    "eval_started_at": "2026-09-09T00:09:38.975817+00:00",
+    "judge_preflight_exit_code": 0,
+    "judge_preflight_seconds": 14.640258,
+    "snapshot_at": "2026-09-09T00:10:47.652614+00:00",
+    "successful_adds_at_snapshot": 1,
+    "recorded_questions_at_snapshot": 0,
+    "pins": {
+      "code": 171,
+      "dependencies": 16,
+      "source": 30,
+      "total": 217
+    }
+  },
+  "limits": [
+    "No final accuracy is available while ingestion/QA runs.",
+    "Local quantized qwen3:14b follows the original configured reproduction Judge protocol; this does not establish official leaderboard model equivalence.",
+    "Inherited shared-spec Judge metadata is not the effective LoCoMo Judge; the frozen CLI/runtime preserve refined-python/qwen3:14b."
+  ]
+}
