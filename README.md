@@ -4,6 +4,31 @@
 
 设计说明见 [docs/方案设计-最终交付版.md](docs/方案设计-最终交付版.md)（赛题对齐、六能力机制矩阵、写入成功哲学）。工作区结构：本仓负责编排与报告，`service/`（TS 服务实现）与 `eval/`（HTTP 契约校验器/评测器）为固定 commit 的 submodule，只通过 HTTP 通信。
 
+## 代码目录
+
+按运行职责组织实现，服务源码、评测和实验编排各有独立边界：
+
+```text
+agent-memory-workspace/
+├── service/                 # 独立 TypeScript 记忆服务
+│   ├── src/                 # HTTP、写入准备、生命周期、存储与检索编排
+│   │   ├── text/            # 实体抽取、词法归一化
+│   │   └── retrieval/       # 检索评分组件
+│   ├── tests/               # 服务回归测试
+│   ├── contracts/           # HTTP 契约快照
+│   ├── upstream/reference/  # 上游来源与许可留档
+│   └── baseline/            # 独立运行的固定版本对照
+├── eval/                    # HTTP 校验、Answer/Judge 与评测
+├── configs/                 # 发布配置与实验参数
+├── scripts/                 # 本地开发、实验编排与交付工具
+├── docs/                    # 使用指南、方案与来源说明
+└── reports/                 # 验证证据与历史报告
+```
+
+服务模块入口见 [service/README.md](service/README.md)；复用代码的来源、修改范围和许可见 [service/UPSTREAM.md](service/UPSTREAM.md)。
+
+`artifacts/` 与 `delivery/` 保存实验及交付快照，按各自记录的版本解释；当前开发目录和构建以以上结构为准。
+
 ## 当前测试优先级
 
 优先测试已冻结的 LoCoMo 500 题与 MemOps 472 题，完成后再扩大范围。题目 ID 与数据校验值见 [优先清单](configs/priority-benchmarks-20260908.json)，执行方式与口径见 [实验协议](docs/EXPERIMENT-PROTOCOL.md#当前优先评测范围2026-09-08)。此清单为公开重建子集。

@@ -92,5 +92,26 @@
     "No overall 972-question score or full-suite runtime stability claim",
     "Latest conv26 129-question run remains failed at add19 with 18 exact receipts; no recovery run launched",
     "B14 actual failure and retrieval/answer composition errors remain unresolved; rejected493 experiment excluded"
-  ]
+  ],
+  "delivery": {
+    "at": "2026-09-09T02:05:30.430591+00:00",
+    "user_request": "commit and push",
+    "service_commit": "a73871dc0689f0c8d8172a6feb163d79525677d9",
+    "service_remote": "https://github.com/EnochLi15/agent-memory-service",
+    "service_branch": "main",
+    "service_push_verified": true,
+    "remote_commit_incorporated": "7e1c20a",
+    "local_refactor_commit": "7824ef5",
+    "merge_conflicts": 0,
+    "post_merge_build_passed": true,
+    "post_merge_tests": {
+      "passed": 716,
+      "failed": 0,
+      "duration_ms": 14889.108208,
+      "log_sha256": "cb0ffa34402703d13148bc262839a6df1efc796ebca93e7ba5d997ab67a42a7d"
+    },
+    "post_merge_build_log_sha256": "a481c765eac3a034eaf4c02a85d2f196eca730ec113f4c5ec6b96303a4e884da",
+    "previous_63_query_replay_scope": "3614 candidate before incorporation of remote PR4; not rerun after merge",
+    "deployment_performed": false
+  }
 }

@@ -13,7 +13,7 @@
   "profiles": {
     "U0": {"baseline": "U0", "environment": {}},
     "U1": {"baseline": "U1", "environment": {}},
-    "U2": {"environment": {"MEMORY_RETRIEVAL":"mem0","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_RERANK":"false"}},
+    "U2": {"environment": {"MEMORY_RETRIEVAL":"classic","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_RERANK":"false"}},
     "U3": {"environment": {}},
     "B0": {"environment": {"MEMORY_MODE":"offline","MEMORY_EXPERIMENT_RAW_ONLY":"true","MEMORY_EXPERIMENT_LIFECYCLE":"false","MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RAW_FALLBACK":"false","MEMORY_RETRIEVAL":"lexical","MEMORY_RERANK":"false"}},
     "B1": {"environment": {"MEMORY_EXPERIMENT_RAW_ONLY":"true","MEMORY_EXPERIMENT_LIFECYCLE":"false","MEMORY_EXPERIMENT_TEMPORAL":"false","MEMORY_EXPERIMENT_MULTI_HOP":"false","MEMORY_EXPERIMENT_REFLECTION":"false","MEMORY_RAW_FALLBACK":"false","MEMORY_RERANK":"false"}},
