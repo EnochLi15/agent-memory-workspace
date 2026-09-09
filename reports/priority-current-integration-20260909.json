@@ -1,0 +1,96 @@
+{
+  "protocol": "current-workspace-repair-integration-v1",
+  "created_at": "2026-09-09T01:50:43.301921+00:00",
+  "candidate_commit": "3614a6bcb08ebacf771d22c8912ee61b502e92ac",
+  "workspace_head": "6381bef2d705c3bc63b3616d529149d947a171f1",
+  "workspace_snapshot_commit": "41cfebfd10aefd07f9f3456c6d139f33c637d817",
+  "verified_fixes_base": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+  "repair_commits_integrated": 17,
+  "status": "engineering_closeout_complete",
+  "source_snapshot": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-current-integration-20260909/source-snapshot-manifest.json",
+    "sha256": "880e75bc816203d96ec6bb78480451baeabf670eb4c550565f1176bd126fa0d3",
+    "entries_including_deleted": 393,
+    "tracked_and_nonignored_untracked_included": true,
+    "main_source_unchanged": true
+  },
+  "candidate_manifest": {
+    "path": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-current-integration-20260909/final-manifest.json",
+    "sha256": "026709802c5a8151a882be64ecd9f02eb4ca3fa9d6c17d9683ee95d8a2a03be8",
+    "dist_files": 144,
+    "duplicate_dist_hashes_match": true
+  },
+  "integration": {
+    "merge_conflicts": 0,
+    "overlapping_source_files": [
+      "src/config.ts",
+      "src/models.ts",
+      "src/retrieval.ts",
+      "src/storage.ts",
+      "src/text.ts"
+    ],
+    "independent_review": "passed",
+    "user_changes_preserved": [
+      "classic strict configuration enumeration and hybrid default",
+      "relocated retrieval/text modules with byte-identical bodies",
+      "new build/dev scripts and package settings",
+      "provenance comments, reference files and user tests"
+    ],
+    "rejected_experiment_493_included": false
+  },
+  "validation": {
+    "build": {
+      "passed": true,
+      "log_sha256": "a481c765eac3a034eaf4c02a85d2f196eca730ec113f4c5ec6b96303a4e884da"
+    },
+    "targeted": {
+      "passed": 75,
+      "failed": 0,
+      "log_sha256": "6ed62dff4d786d7b579225b55409bc3e0add72ec0fe24723d373627dfb33fe2b"
+    },
+    "full_suite": {
+      "passed": 715,
+      "failed": 0,
+      "duration_ms": 12331.912833,
+      "log_sha256": "ec679eaa5f8de0f5d6164a9f4c848e3e8d23aa1c830fdae5c7ec3f36a4bb8f86"
+    },
+    "paired_retrieval": {
+      "passed": 63,
+      "failed": 0,
+      "full_search_and_candidate_frames_equal_to_292_and_recorded_outputs": true,
+      "model_calls": 0,
+      "report": "/Users/enoch/Workspace/comp/agent-memory-workspace/artifacts/priority-current-integration-20260909/replay/summary.json",
+      "report_sha256": "38e48d56156da825f11c638cc3677d670969f7124dfd228c392f96744d1341db"
+    },
+    "real_evaluation": "not_started",
+    "main_worktree": {
+      "exactly_matches_candidate_source": true,
+      "source_files": 404,
+      "rebuilt": true,
+      "dist_files": 144,
+      "all_dist_hashes_match_candidate": true,
+      "build_log_sha256": "a481c765eac3a034eaf4c02a85d2f196eca730ec113f4c5ec6b96303a4e884da"
+    }
+  },
+  "promotion": {
+    "main_service_updated": true,
+    "method": "fast-forward to verified 292 ancestry with autostash restored; integrated working tree exactly equals 3614",
+    "main_head": "292ea74328d1d76aadc23f0a758a5b633300f8ba",
+    "original_user_changes_preserved": true,
+    "index_preserved_empty": true,
+    "pushed": false,
+    "deployed": false
+  },
+  "scope_boundary": "Engineering fixes are landed in the current main service worktree and match tested 3614 exactly. Prior 36/47 QA and old 0/129 service_error remain separate historical runs. This is not a full benchmark stability certification.",
+  "completed_at": "2026-09-09T01:54:15.919849+00:00",
+  "automation": {
+    "id": "automation",
+    "status": "PAUSED",
+    "reason": "User requested quick engineering closeout"
+  },
+  "remaining_limitations": [
+    "No overall 972-question score or full-suite runtime stability claim",
+    "Latest conv26 129-question run remains failed at add19 with 18 exact receipts; no recovery run launched",
+    "B14 actual failure and retrieval/answer composition errors remain unresolved; rejected493 experiment excluded"
+  ]
+}
